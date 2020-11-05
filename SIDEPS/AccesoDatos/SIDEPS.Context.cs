@@ -14,7 +14,8 @@ namespace AccesoDatos
     using System.Data.Entity.Infrastructure;
     using System.Data.Entity.Core.Objects;
     using System.Linq;
-    
+    using Entidades;
+
     public partial class SIDEPSEntities : DbContext
     {
         public SIDEPSEntities()

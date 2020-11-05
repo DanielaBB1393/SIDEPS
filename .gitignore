@@ -4,3 +4,7 @@ packages/
 *.dll
 
 *.cache
+
+SIDEPS/.vs/SIDEPS/config/
+
+SIDEPS/.vs/SIDEPS/v16/
