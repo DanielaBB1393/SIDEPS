@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SIDEPS.WCFServices {
+namespace SIDEPS.WCFCasos {
     using System.Runtime.Serialization;
     using System;
     
@@ -56,25 +56,25 @@ namespace SIDEPS.WCFServices {
         private string OPICASO25Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_07REGUSRO SIDEPS_07REGUSROField;
+        private SIDEPS.WCFCasos.SIDEPS_07REGUSRO SIDEPS_07REGUSROField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_13REGPERS SIDEPS_13REGPERSField;
+        private SIDEPS.WCFCasos.SIDEPS_13REGPERS SIDEPS_13REGPERSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_16REGASPS SIDEPS_16REGASPSField;
+        private SIDEPS.WCFCasos.SIDEPS_16REGASPS SIDEPS_16REGASPSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_20REGVIVI SIDEPS_20REGVIVIField;
+        private SIDEPS.WCFCasos.SIDEPS_20REGVIVI SIDEPS_20REGVIVIField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_24REGEGRF SIDEPS_24REGEGRFField;
+        private SIDEPS.WCFCasos.SIDEPS_24REGEGRF SIDEPS_24REGEGRFField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_27TIPAYUD[] SIDEPS_27TIPAYUDField;
+        private SIDEPS.WCFCasos.SIDEPS_27TIPAYUD[] SIDEPS_27TIPAYUDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_28REGHIS[] SIDEPS_28REGHISField;
+        private SIDEPS.WCFCasos.SIDEPS_28REGHIS[] SIDEPS_28REGHISField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -230,7 +230,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_07REGUSRO SIDEPS_07REGUSRO {
+        public SIDEPS.WCFCasos.SIDEPS_07REGUSRO SIDEPS_07REGUSRO {
             get {
                 return this.SIDEPS_07REGUSROField;
             }
@@ -243,7 +243,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_13REGPERS SIDEPS_13REGPERS {
+        public SIDEPS.WCFCasos.SIDEPS_13REGPERS SIDEPS_13REGPERS {
             get {
                 return this.SIDEPS_13REGPERSField;
             }
@@ -256,7 +256,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_16REGASPS SIDEPS_16REGASPS {
+        public SIDEPS.WCFCasos.SIDEPS_16REGASPS SIDEPS_16REGASPS {
             get {
                 return this.SIDEPS_16REGASPSField;
             }
@@ -269,7 +269,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_20REGVIVI SIDEPS_20REGVIVI {
+        public SIDEPS.WCFCasos.SIDEPS_20REGVIVI SIDEPS_20REGVIVI {
             get {
                 return this.SIDEPS_20REGVIVIField;
             }
@@ -282,7 +282,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_24REGEGRF SIDEPS_24REGEGRF {
+        public SIDEPS.WCFCasos.SIDEPS_24REGEGRF SIDEPS_24REGEGRF {
             get {
                 return this.SIDEPS_24REGEGRFField;
             }
@@ -295,7 +295,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_27TIPAYUD[] SIDEPS_27TIPAYUD {
+        public SIDEPS.WCFCasos.SIDEPS_27TIPAYUD[] SIDEPS_27TIPAYUD {
             get {
                 return this.SIDEPS_27TIPAYUDField;
             }
@@ -308,7 +308,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_28REGHIS[] SIDEPS_28REGHIS {
+        public SIDEPS.WCFCasos.SIDEPS_28REGHIS[] SIDEPS_28REGHIS {
             get {
                 return this.SIDEPS_28REGHISField;
             }
@@ -382,19 +382,19 @@ namespace SIDEPS.WCFServices {
         private string SAPUSRO07Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_03CATCANT SIDEPS_03CATCANTField;
+        private SIDEPS.WCFCasos.SIDEPS_03CATCANT SIDEPS_03CATCANTField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_04REGDIAC SIDEPS_04REGDIACField;
+        private SIDEPS.WCFCasos.SIDEPS_04REGDIAC SIDEPS_04REGDIACField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_05TIPUSRO SIDEPS_05TIPUSROField;
+        private SIDEPS.WCFCasos.SIDEPS_05TIPUSRO SIDEPS_05TIPUSROField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_08REGTELF[] SIDEPS_08REGTELFField;
+        private SIDEPS.WCFCasos.SIDEPS_08REGTELF[] SIDEPS_08REGTELFField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_25REGCASO[] SIDEPS_25REGCASOField;
+        private SIDEPS.WCFCasos.SIDEPS_25REGCASO[] SIDEPS_25REGCASOField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -589,7 +589,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_03CATCANT SIDEPS_03CATCANT {
+        public SIDEPS.WCFCasos.SIDEPS_03CATCANT SIDEPS_03CATCANT {
             get {
                 return this.SIDEPS_03CATCANTField;
             }
@@ -602,7 +602,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_04REGDIAC SIDEPS_04REGDIAC {
+        public SIDEPS.WCFCasos.SIDEPS_04REGDIAC SIDEPS_04REGDIAC {
             get {
                 return this.SIDEPS_04REGDIACField;
             }
@@ -615,7 +615,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_05TIPUSRO SIDEPS_05TIPUSRO {
+        public SIDEPS.WCFCasos.SIDEPS_05TIPUSRO SIDEPS_05TIPUSRO {
             get {
                 return this.SIDEPS_05TIPUSROField;
             }
@@ -628,7 +628,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_08REGTELF[] SIDEPS_08REGTELF {
+        public SIDEPS.WCFCasos.SIDEPS_08REGTELF[] SIDEPS_08REGTELF {
             get {
                 return this.SIDEPS_08REGTELFField;
             }
@@ -641,7 +641,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_25REGCASO[] SIDEPS_25REGCASO {
+        public SIDEPS.WCFCasos.SIDEPS_25REGCASO[] SIDEPS_25REGCASO {
             get {
                 return this.SIDEPS_25REGCASOField;
             }
@@ -712,28 +712,28 @@ namespace SIDEPS.WCFServices {
         private string SAPPERS13Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_03CATCANT SIDEPS_03CATCANTField;
+        private SIDEPS.WCFCasos.SIDEPS_03CATCANT SIDEPS_03CATCANTField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_06CATESTC SIDEPS_06CATESTCField;
+        private SIDEPS.WCFCasos.SIDEPS_06CATESTC SIDEPS_06CATESTCField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_09CATNEDU SIDEPS_09CATNEDUField;
+        private SIDEPS.WCFCasos.SIDEPS_09CATNEDU SIDEPS_09CATNEDUField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_10CATSOLI SIDEPS_10CATSOLIField;
+        private SIDEPS.WCFCasos.SIDEPS_10CATSOLI SIDEPS_10CATSOLIField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_11CATRELG SIDEPS_11CATRELGField;
+        private SIDEPS.WCFCasos.SIDEPS_11CATRELG SIDEPS_11CATRELGField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_16REGASPS[] SIDEPS_16REGASPSField;
+        private SIDEPS.WCFCasos.SIDEPS_16REGASPS[] SIDEPS_16REGASPSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_23CATFINA[] SIDEPS_23CATFINAField;
+        private SIDEPS.WCFCasos.SIDEPS_23CATFINA[] SIDEPS_23CATFINAField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_25REGCASO[] SIDEPS_25REGCASOField;
+        private SIDEPS.WCFCasos.SIDEPS_25REGCASO[] SIDEPS_25REGCASOField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -915,7 +915,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_03CATCANT SIDEPS_03CATCANT {
+        public SIDEPS.WCFCasos.SIDEPS_03CATCANT SIDEPS_03CATCANT {
             get {
                 return this.SIDEPS_03CATCANTField;
             }
@@ -928,7 +928,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_06CATESTC SIDEPS_06CATESTC {
+        public SIDEPS.WCFCasos.SIDEPS_06CATESTC SIDEPS_06CATESTC {
             get {
                 return this.SIDEPS_06CATESTCField;
             }
@@ -941,7 +941,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_09CATNEDU SIDEPS_09CATNEDU {
+        public SIDEPS.WCFCasos.SIDEPS_09CATNEDU SIDEPS_09CATNEDU {
             get {
                 return this.SIDEPS_09CATNEDUField;
             }
@@ -954,7 +954,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_10CATSOLI SIDEPS_10CATSOLI {
+        public SIDEPS.WCFCasos.SIDEPS_10CATSOLI SIDEPS_10CATSOLI {
             get {
                 return this.SIDEPS_10CATSOLIField;
             }
@@ -967,7 +967,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_11CATRELG SIDEPS_11CATRELG {
+        public SIDEPS.WCFCasos.SIDEPS_11CATRELG SIDEPS_11CATRELG {
             get {
                 return this.SIDEPS_11CATRELGField;
             }
@@ -980,7 +980,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_16REGASPS[] SIDEPS_16REGASPS {
+        public SIDEPS.WCFCasos.SIDEPS_16REGASPS[] SIDEPS_16REGASPS {
             get {
                 return this.SIDEPS_16REGASPSField;
             }
@@ -993,7 +993,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_23CATFINA[] SIDEPS_23CATFINA {
+        public SIDEPS.WCFCasos.SIDEPS_23CATFINA[] SIDEPS_23CATFINA {
             get {
                 return this.SIDEPS_23CATFINAField;
             }
@@ -1006,7 +1006,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_25REGCASO[] SIDEPS_25REGCASO {
+        public SIDEPS.WCFCasos.SIDEPS_25REGCASO[] SIDEPS_25REGCASO {
             get {
                 return this.SIDEPS_25REGCASOField;
             }
@@ -1059,16 +1059,16 @@ namespace SIDEPS.WCFServices {
         private string RECTRAT16Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_13REGPERS SIDEPS_13REGPERSField;
+        private SIDEPS.WCFCasos.SIDEPS_13REGPERS SIDEPS_13REGPERSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_14CATSEGU SIDEPS_14CATSEGUField;
+        private SIDEPS.WCFCasos.SIDEPS_14CATSEGU SIDEPS_14CATSEGUField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_15CATENFR SIDEPS_15CATENFRField;
+        private SIDEPS.WCFCasos.SIDEPS_15CATENFR SIDEPS_15CATENFRField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_25REGCASO[] SIDEPS_25REGCASOField;
+        private SIDEPS.WCFCasos.SIDEPS_25REGCASO[] SIDEPS_25REGCASOField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1172,7 +1172,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_13REGPERS SIDEPS_13REGPERS {
+        public SIDEPS.WCFCasos.SIDEPS_13REGPERS SIDEPS_13REGPERS {
             get {
                 return this.SIDEPS_13REGPERSField;
             }
@@ -1185,7 +1185,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_14CATSEGU SIDEPS_14CATSEGU {
+        public SIDEPS.WCFCasos.SIDEPS_14CATSEGU SIDEPS_14CATSEGU {
             get {
                 return this.SIDEPS_14CATSEGUField;
             }
@@ -1198,7 +1198,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_15CATENFR SIDEPS_15CATENFR {
+        public SIDEPS.WCFCasos.SIDEPS_15CATENFR SIDEPS_15CATENFR {
             get {
                 return this.SIDEPS_15CATENFRField;
             }
@@ -1211,7 +1211,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_25REGCASO[] SIDEPS_25REGCASO {
+        public SIDEPS.WCFCasos.SIDEPS_25REGCASO[] SIDEPS_25REGCASO {
             get {
                 return this.SIDEPS_25REGCASOField;
             }
@@ -1261,16 +1261,16 @@ namespace SIDEPS.WCFServices {
         private string NAPVIVI20Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_17CATMATE SIDEPS_17CATMATEField;
+        private SIDEPS.WCFCasos.SIDEPS_17CATMATE SIDEPS_17CATMATEField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_18TIPVIVI SIDEPS_18TIPVIVIField;
+        private SIDEPS.WCFCasos.SIDEPS_18TIPVIVI SIDEPS_18TIPVIVIField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_19ESTVIVI SIDEPS_19ESTVIVIField;
+        private SIDEPS.WCFCasos.SIDEPS_19ESTVIVI SIDEPS_19ESTVIVIField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_25REGCASO[] SIDEPS_25REGCASOField;
+        private SIDEPS.WCFCasos.SIDEPS_25REGCASO[] SIDEPS_25REGCASOField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SRBVIVI20Field;
@@ -1379,7 +1379,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_17CATMATE SIDEPS_17CATMATE {
+        public SIDEPS.WCFCasos.SIDEPS_17CATMATE SIDEPS_17CATMATE {
             get {
                 return this.SIDEPS_17CATMATEField;
             }
@@ -1392,7 +1392,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_18TIPVIVI SIDEPS_18TIPVIVI {
+        public SIDEPS.WCFCasos.SIDEPS_18TIPVIVI SIDEPS_18TIPVIVI {
             get {
                 return this.SIDEPS_18TIPVIVIField;
             }
@@ -1405,7 +1405,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_19ESTVIVI SIDEPS_19ESTVIVI {
+        public SIDEPS.WCFCasos.SIDEPS_19ESTVIVI SIDEPS_19ESTVIVI {
             get {
                 return this.SIDEPS_19ESTVIVIField;
             }
@@ -1418,7 +1418,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_25REGCASO[] SIDEPS_25REGCASO {
+        public SIDEPS.WCFCasos.SIDEPS_25REGCASO[] SIDEPS_25REGCASO {
             get {
                 return this.SIDEPS_25REGCASOField;
             }
@@ -1564,7 +1564,7 @@ namespace SIDEPS.WCFServices {
         private System.Nullable<decimal> MTOTELF24Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_25REGCASO[] SIDEPS_25REGCASOField;
+        private SIDEPS.WCFCasos.SIDEPS_25REGCASO[] SIDEPS_25REGCASOField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1733,7 +1733,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_25REGCASO[] SIDEPS_25REGCASO {
+        public SIDEPS.WCFCasos.SIDEPS_25REGCASO[] SIDEPS_25REGCASO {
             get {
                 return this.SIDEPS_25REGCASOField;
             }
@@ -1774,10 +1774,10 @@ namespace SIDEPS.WCFServices {
         private int CODTIPA27Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_25REGCASO SIDEPS_25REGCASOField;
+        private SIDEPS.WCFCasos.SIDEPS_25REGCASO SIDEPS_25REGCASOField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_26CATAYUD SIDEPS_26CATAYUDField;
+        private SIDEPS.WCFCasos.SIDEPS_26CATAYUD SIDEPS_26CATAYUDField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1829,7 +1829,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_25REGCASO SIDEPS_25REGCASO {
+        public SIDEPS.WCFCasos.SIDEPS_25REGCASO SIDEPS_25REGCASO {
             get {
                 return this.SIDEPS_25REGCASOField;
             }
@@ -1842,7 +1842,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_26CATAYUD SIDEPS_26CATAYUD {
+        public SIDEPS.WCFCasos.SIDEPS_26CATAYUD SIDEPS_26CATAYUD {
             get {
                 return this.SIDEPS_26CATAYUDField;
             }
@@ -1892,7 +1892,7 @@ namespace SIDEPS.WCFServices {
         private System.Nullable<System.DateTime> FECCASO28Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_25REGCASO SIDEPS_25REGCASOField;
+        private SIDEPS.WCFCasos.SIDEPS_25REGCASO SIDEPS_25REGCASOField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1983,7 +1983,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_25REGCASO SIDEPS_25REGCASO {
+        public SIDEPS.WCFCasos.SIDEPS_25REGCASO SIDEPS_25REGCASO {
             get {
                 return this.SIDEPS_25REGCASOField;
             }
@@ -2024,16 +2024,16 @@ namespace SIDEPS.WCFServices {
         private string NOMCANT03Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_02CATPROV SIDEPS_02CATPROVField;
+        private SIDEPS.WCFCasos.SIDEPS_02CATPROV SIDEPS_02CATPROVField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_04REGDIAC[] SIDEPS_04REGDIACField;
+        private SIDEPS.WCFCasos.SIDEPS_04REGDIAC[] SIDEPS_04REGDIACField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_07REGUSRO[] SIDEPS_07REGUSROField;
+        private SIDEPS.WCFCasos.SIDEPS_07REGUSRO[] SIDEPS_07REGUSROField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_13REGPERS[] SIDEPS_13REGPERSField;
+        private SIDEPS.WCFCasos.SIDEPS_13REGPERS[] SIDEPS_13REGPERSField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2085,7 +2085,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_02CATPROV SIDEPS_02CATPROV {
+        public SIDEPS.WCFCasos.SIDEPS_02CATPROV SIDEPS_02CATPROV {
             get {
                 return this.SIDEPS_02CATPROVField;
             }
@@ -2098,7 +2098,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_04REGDIAC[] SIDEPS_04REGDIAC {
+        public SIDEPS.WCFCasos.SIDEPS_04REGDIAC[] SIDEPS_04REGDIAC {
             get {
                 return this.SIDEPS_04REGDIACField;
             }
@@ -2111,7 +2111,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_07REGUSRO[] SIDEPS_07REGUSRO {
+        public SIDEPS.WCFCasos.SIDEPS_07REGUSRO[] SIDEPS_07REGUSRO {
             get {
                 return this.SIDEPS_07REGUSROField;
             }
@@ -2124,7 +2124,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_13REGPERS[] SIDEPS_13REGPERS {
+        public SIDEPS.WCFCasos.SIDEPS_13REGPERS[] SIDEPS_13REGPERS {
             get {
                 return this.SIDEPS_13REGPERSField;
             }
@@ -2171,10 +2171,10 @@ namespace SIDEPS.WCFServices {
         private string NOMDIAC04Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_03CATCANT SIDEPS_03CATCANTField;
+        private SIDEPS.WCFCasos.SIDEPS_03CATCANT SIDEPS_03CATCANTField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_07REGUSRO[] SIDEPS_07REGUSROField;
+        private SIDEPS.WCFCasos.SIDEPS_07REGUSRO[] SIDEPS_07REGUSROField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TELDIAC04Field;
@@ -2255,7 +2255,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_03CATCANT SIDEPS_03CATCANT {
+        public SIDEPS.WCFCasos.SIDEPS_03CATCANT SIDEPS_03CATCANT {
             get {
                 return this.SIDEPS_03CATCANTField;
             }
@@ -2268,7 +2268,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_07REGUSRO[] SIDEPS_07REGUSRO {
+        public SIDEPS.WCFCasos.SIDEPS_07REGUSRO[] SIDEPS_07REGUSRO {
             get {
                 return this.SIDEPS_07REGUSROField;
             }
@@ -2319,7 +2319,7 @@ namespace SIDEPS.WCFServices {
         private string DESUSRO05Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_07REGUSRO[] SIDEPS_07REGUSROField;
+        private SIDEPS.WCFCasos.SIDEPS_07REGUSRO[] SIDEPS_07REGUSROField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2358,7 +2358,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_07REGUSRO[] SIDEPS_07REGUSRO {
+        public SIDEPS.WCFCasos.SIDEPS_07REGUSRO[] SIDEPS_07REGUSRO {
             get {
                 return this.SIDEPS_07REGUSROField;
             }
@@ -2399,7 +2399,7 @@ namespace SIDEPS.WCFServices {
         private string NUMTELF08Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_07REGUSRO SIDEPS_07REGUSROField;
+        private SIDEPS.WCFCasos.SIDEPS_07REGUSRO SIDEPS_07REGUSROField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2451,7 +2451,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_07REGUSRO SIDEPS_07REGUSRO {
+        public SIDEPS.WCFCasos.SIDEPS_07REGUSRO SIDEPS_07REGUSRO {
             get {
                 return this.SIDEPS_07REGUSROField;
             }
@@ -2492,10 +2492,10 @@ namespace SIDEPS.WCFServices {
         private string NOMPROV02Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_01CATPAIS SIDEPS_01CATPAISField;
+        private SIDEPS.WCFCasos.SIDEPS_01CATPAIS SIDEPS_01CATPAISField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_03CATCANT[] SIDEPS_03CATCANTField;
+        private SIDEPS.WCFCasos.SIDEPS_03CATCANT[] SIDEPS_03CATCANTField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2547,7 +2547,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_01CATPAIS SIDEPS_01CATPAIS {
+        public SIDEPS.WCFCasos.SIDEPS_01CATPAIS SIDEPS_01CATPAIS {
             get {
                 return this.SIDEPS_01CATPAISField;
             }
@@ -2560,7 +2560,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_03CATCANT[] SIDEPS_03CATCANT {
+        public SIDEPS.WCFCasos.SIDEPS_03CATCANT[] SIDEPS_03CATCANT {
             get {
                 return this.SIDEPS_03CATCANTField;
             }
@@ -2598,7 +2598,7 @@ namespace SIDEPS.WCFServices {
         private string NOMPAIS01Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_02CATPROV[] SIDEPS_02CATPROVField;
+        private SIDEPS.WCFCasos.SIDEPS_02CATPROV[] SIDEPS_02CATPROVField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2637,7 +2637,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_02CATPROV[] SIDEPS_02CATPROV {
+        public SIDEPS.WCFCasos.SIDEPS_02CATPROV[] SIDEPS_02CATPROV {
             get {
                 return this.SIDEPS_02CATPROVField;
             }
@@ -2675,10 +2675,10 @@ namespace SIDEPS.WCFServices {
         private string DESESTC06Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_13REGPERS[] SIDEPS_13REGPERSField;
+        private SIDEPS.WCFCasos.SIDEPS_13REGPERS[] SIDEPS_13REGPERSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_22REGFAML[] SIDEPS_22REGFAMLField;
+        private SIDEPS.WCFCasos.SIDEPS_22REGFAML[] SIDEPS_22REGFAMLField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2717,7 +2717,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_13REGPERS[] SIDEPS_13REGPERS {
+        public SIDEPS.WCFCasos.SIDEPS_13REGPERS[] SIDEPS_13REGPERS {
             get {
                 return this.SIDEPS_13REGPERSField;
             }
@@ -2730,7 +2730,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_22REGFAML[] SIDEPS_22REGFAML {
+        public SIDEPS.WCFCasos.SIDEPS_22REGFAML[] SIDEPS_22REGFAML {
             get {
                 return this.SIDEPS_22REGFAMLField;
             }
@@ -2768,10 +2768,10 @@ namespace SIDEPS.WCFServices {
         private string DESNEDU09Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_13REGPERS[] SIDEPS_13REGPERSField;
+        private SIDEPS.WCFCasos.SIDEPS_13REGPERS[] SIDEPS_13REGPERSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_22REGFAML[] SIDEPS_22REGFAMLField;
+        private SIDEPS.WCFCasos.SIDEPS_22REGFAML[] SIDEPS_22REGFAMLField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2810,7 +2810,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_13REGPERS[] SIDEPS_13REGPERS {
+        public SIDEPS.WCFCasos.SIDEPS_13REGPERS[] SIDEPS_13REGPERS {
             get {
                 return this.SIDEPS_13REGPERSField;
             }
@@ -2823,7 +2823,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_22REGFAML[] SIDEPS_22REGFAML {
+        public SIDEPS.WCFCasos.SIDEPS_22REGFAML[] SIDEPS_22REGFAML {
             get {
                 return this.SIDEPS_22REGFAMLField;
             }
@@ -2861,7 +2861,7 @@ namespace SIDEPS.WCFServices {
         private string DESSOLI10Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_13REGPERS[] SIDEPS_13REGPERSField;
+        private SIDEPS.WCFCasos.SIDEPS_13REGPERS[] SIDEPS_13REGPERSField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2900,7 +2900,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_13REGPERS[] SIDEPS_13REGPERS {
+        public SIDEPS.WCFCasos.SIDEPS_13REGPERS[] SIDEPS_13REGPERS {
             get {
                 return this.SIDEPS_13REGPERSField;
             }
@@ -2938,7 +2938,7 @@ namespace SIDEPS.WCFServices {
         private string DESRELG11Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_13REGPERS[] SIDEPS_13REGPERSField;
+        private SIDEPS.WCFCasos.SIDEPS_13REGPERS[] SIDEPS_13REGPERSField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2977,7 +2977,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_13REGPERS[] SIDEPS_13REGPERS {
+        public SIDEPS.WCFCasos.SIDEPS_13REGPERS[] SIDEPS_13REGPERS {
             get {
                 return this.SIDEPS_13REGPERSField;
             }
@@ -3018,10 +3018,10 @@ namespace SIDEPS.WCFServices {
         private int CODFINA23Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_13REGPERS SIDEPS_13REGPERSField;
+        private SIDEPS.WCFCasos.SIDEPS_13REGPERS SIDEPS_13REGPERSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_22REGFAML SIDEPS_22REGFAMLField;
+        private SIDEPS.WCFCasos.SIDEPS_22REGFAML SIDEPS_22REGFAMLField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3073,7 +3073,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_13REGPERS SIDEPS_13REGPERS {
+        public SIDEPS.WCFCasos.SIDEPS_13REGPERS SIDEPS_13REGPERS {
             get {
                 return this.SIDEPS_13REGPERSField;
             }
@@ -3086,7 +3086,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_22REGFAML SIDEPS_22REGFAML {
+        public SIDEPS.WCFCasos.SIDEPS_22REGFAML SIDEPS_22REGFAML {
             get {
                 return this.SIDEPS_22REGFAMLField;
             }
@@ -3151,22 +3151,22 @@ namespace SIDEPS.WCFServices {
         private string OACFAML22Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_06CATESTC SIDEPS_06CATESTCField;
+        private SIDEPS.WCFCasos.SIDEPS_06CATESTC SIDEPS_06CATESTCField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_09CATNEDU SIDEPS_09CATNEDUField;
+        private SIDEPS.WCFCasos.SIDEPS_09CATNEDU SIDEPS_09CATNEDUField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_12CATPARE SIDEPS_12CATPAREField;
+        private SIDEPS.WCFCasos.SIDEPS_12CATPARE SIDEPS_12CATPAREField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_15CATENFR SIDEPS_15CATENFRField;
+        private SIDEPS.WCFCasos.SIDEPS_15CATENFR SIDEPS_15CATENFRField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_21CATORGS SIDEPS_21CATORGSField;
+        private SIDEPS.WCFCasos.SIDEPS_21CATORGS SIDEPS_21CATORGSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_23CATFINA[] SIDEPS_23CATFINAField;
+        private SIDEPS.WCFCasos.SIDEPS_23CATFINA[] SIDEPS_23CATFINAField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3322,7 +3322,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_06CATESTC SIDEPS_06CATESTC {
+        public SIDEPS.WCFCasos.SIDEPS_06CATESTC SIDEPS_06CATESTC {
             get {
                 return this.SIDEPS_06CATESTCField;
             }
@@ -3335,7 +3335,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_09CATNEDU SIDEPS_09CATNEDU {
+        public SIDEPS.WCFCasos.SIDEPS_09CATNEDU SIDEPS_09CATNEDU {
             get {
                 return this.SIDEPS_09CATNEDUField;
             }
@@ -3348,7 +3348,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_12CATPARE SIDEPS_12CATPARE {
+        public SIDEPS.WCFCasos.SIDEPS_12CATPARE SIDEPS_12CATPARE {
             get {
                 return this.SIDEPS_12CATPAREField;
             }
@@ -3361,7 +3361,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_15CATENFR SIDEPS_15CATENFR {
+        public SIDEPS.WCFCasos.SIDEPS_15CATENFR SIDEPS_15CATENFR {
             get {
                 return this.SIDEPS_15CATENFRField;
             }
@@ -3374,7 +3374,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_21CATORGS SIDEPS_21CATORGS {
+        public SIDEPS.WCFCasos.SIDEPS_21CATORGS SIDEPS_21CATORGS {
             get {
                 return this.SIDEPS_21CATORGSField;
             }
@@ -3387,7 +3387,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_23CATFINA[] SIDEPS_23CATFINA {
+        public SIDEPS.WCFCasos.SIDEPS_23CATFINA[] SIDEPS_23CATFINA {
             get {
                 return this.SIDEPS_23CATFINAField;
             }
@@ -3425,7 +3425,7 @@ namespace SIDEPS.WCFServices {
         private string DESPARE12Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_22REGFAML[] SIDEPS_22REGFAMLField;
+        private SIDEPS.WCFCasos.SIDEPS_22REGFAML[] SIDEPS_22REGFAMLField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3464,7 +3464,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_22REGFAML[] SIDEPS_22REGFAML {
+        public SIDEPS.WCFCasos.SIDEPS_22REGFAML[] SIDEPS_22REGFAML {
             get {
                 return this.SIDEPS_22REGFAMLField;
             }
@@ -3502,10 +3502,10 @@ namespace SIDEPS.WCFServices {
         private string DESENFR15Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_16REGASPS[] SIDEPS_16REGASPSField;
+        private SIDEPS.WCFCasos.SIDEPS_16REGASPS[] SIDEPS_16REGASPSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_22REGFAML[] SIDEPS_22REGFAMLField;
+        private SIDEPS.WCFCasos.SIDEPS_22REGFAML[] SIDEPS_22REGFAMLField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3544,7 +3544,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_16REGASPS[] SIDEPS_16REGASPS {
+        public SIDEPS.WCFCasos.SIDEPS_16REGASPS[] SIDEPS_16REGASPS {
             get {
                 return this.SIDEPS_16REGASPSField;
             }
@@ -3557,7 +3557,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_22REGFAML[] SIDEPS_22REGFAML {
+        public SIDEPS.WCFCasos.SIDEPS_22REGFAML[] SIDEPS_22REGFAML {
             get {
                 return this.SIDEPS_22REGFAMLField;
             }
@@ -3595,7 +3595,7 @@ namespace SIDEPS.WCFServices {
         private string DESORGS21Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_22REGFAML[] SIDEPS_22REGFAMLField;
+        private SIDEPS.WCFCasos.SIDEPS_22REGFAML[] SIDEPS_22REGFAMLField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3634,7 +3634,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_22REGFAML[] SIDEPS_22REGFAML {
+        public SIDEPS.WCFCasos.SIDEPS_22REGFAML[] SIDEPS_22REGFAML {
             get {
                 return this.SIDEPS_22REGFAMLField;
             }
@@ -3672,7 +3672,7 @@ namespace SIDEPS.WCFServices {
         private string DESSEGU14Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_16REGASPS[] SIDEPS_16REGASPSField;
+        private SIDEPS.WCFCasos.SIDEPS_16REGASPS[] SIDEPS_16REGASPSField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3711,7 +3711,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_16REGASPS[] SIDEPS_16REGASPS {
+        public SIDEPS.WCFCasos.SIDEPS_16REGASPS[] SIDEPS_16REGASPS {
             get {
                 return this.SIDEPS_16REGASPSField;
             }
@@ -3749,7 +3749,7 @@ namespace SIDEPS.WCFServices {
         private string DESMATE17Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_20REGVIVI[] SIDEPS_20REGVIVIField;
+        private SIDEPS.WCFCasos.SIDEPS_20REGVIVI[] SIDEPS_20REGVIVIField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3788,7 +3788,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_20REGVIVI[] SIDEPS_20REGVIVI {
+        public SIDEPS.WCFCasos.SIDEPS_20REGVIVI[] SIDEPS_20REGVIVI {
             get {
                 return this.SIDEPS_20REGVIVIField;
             }
@@ -3826,7 +3826,7 @@ namespace SIDEPS.WCFServices {
         private string DESTIPV18Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_20REGVIVI[] SIDEPS_20REGVIVIField;
+        private SIDEPS.WCFCasos.SIDEPS_20REGVIVI[] SIDEPS_20REGVIVIField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3865,7 +3865,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_20REGVIVI[] SIDEPS_20REGVIVI {
+        public SIDEPS.WCFCasos.SIDEPS_20REGVIVI[] SIDEPS_20REGVIVI {
             get {
                 return this.SIDEPS_20REGVIVIField;
             }
@@ -3903,7 +3903,7 @@ namespace SIDEPS.WCFServices {
         private string DESESTV19Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_20REGVIVI[] SIDEPS_20REGVIVIField;
+        private SIDEPS.WCFCasos.SIDEPS_20REGVIVI[] SIDEPS_20REGVIVIField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3942,7 +3942,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_20REGVIVI[] SIDEPS_20REGVIVI {
+        public SIDEPS.WCFCasos.SIDEPS_20REGVIVI[] SIDEPS_20REGVIVI {
             get {
                 return this.SIDEPS_20REGVIVIField;
             }
@@ -3980,7 +3980,7 @@ namespace SIDEPS.WCFServices {
         private string DESAYUD26Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFServices.SIDEPS_27TIPAYUD[] SIDEPS_27TIPAYUDField;
+        private SIDEPS.WCFCasos.SIDEPS_27TIPAYUD[] SIDEPS_27TIPAYUDField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -4019,7 +4019,7 @@ namespace SIDEPS.WCFServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFServices.SIDEPS_27TIPAYUD[] SIDEPS_27TIPAYUD {
+        public SIDEPS.WCFCasos.SIDEPS_27TIPAYUD[] SIDEPS_27TIPAYUD {
             get {
                 return this.SIDEPS_27TIPAYUDField;
             }
@@ -4042,23 +4042,23 @@ namespace SIDEPS.WCFServices {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WCFServices.ICasosSvc")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WCFCasos.ICasosSvc")]
     public interface ICasosSvc {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_Caso", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_CasoResponse")]
-        int SP_Ins_Caso(SIDEPS.WCFServices.SIDEPS_25REGCASO caso);
+        bool SP_Ins_Caso(SIDEPS.WCFCasos.SIDEPS_25REGCASO caso);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_Caso", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_CasoResponse")]
-        System.Threading.Tasks.Task<int> SP_Ins_CasoAsync(SIDEPS.WCFServices.SIDEPS_25REGCASO caso);
+        System.Threading.Tasks.Task<bool> SP_Ins_CasoAsync(SIDEPS.WCFCasos.SIDEPS_25REGCASO caso);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICasosSvcChannel : SIDEPS.WCFServices.ICasosSvc, System.ServiceModel.IClientChannel {
+    public interface ICasosSvcChannel : SIDEPS.WCFCasos.ICasosSvc, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CasosSvcClient : System.ServiceModel.ClientBase<SIDEPS.WCFServices.ICasosSvc>, SIDEPS.WCFServices.ICasosSvc {
+    public partial class CasosSvcClient : System.ServiceModel.ClientBase<SIDEPS.WCFCasos.ICasosSvc>, SIDEPS.WCFCasos.ICasosSvc {
         
         public CasosSvcClient() {
         }
@@ -4079,11 +4079,11 @@ namespace SIDEPS.WCFServices {
                 base(binding, remoteAddress) {
         }
         
-        public int SP_Ins_Caso(SIDEPS.WCFServices.SIDEPS_25REGCASO caso) {
+        public bool SP_Ins_Caso(SIDEPS.WCFCasos.SIDEPS_25REGCASO caso) {
             return base.Channel.SP_Ins_Caso(caso);
         }
         
-        public System.Threading.Tasks.Task<int> SP_Ins_CasoAsync(SIDEPS.WCFServices.SIDEPS_25REGCASO caso) {
+        public System.Threading.Tasks.Task<bool> SP_Ins_CasoAsync(SIDEPS.WCFCasos.SIDEPS_25REGCASO caso) {
             return base.Channel.SP_Ins_CasoAsync(caso);
         }
     }

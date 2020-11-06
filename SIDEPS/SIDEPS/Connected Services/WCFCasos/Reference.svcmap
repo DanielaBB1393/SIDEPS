@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3f2ee39b-2e04-4a9b-a630-79f7e00da473" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b5175608-bd43-4f4d-b011-90d971c6e2d9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:62295/CasosSvc.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CasosSvc.disco" MetadataType="Disco" ID="6d8aeae7-2559-45cb-857d-1acbbabc4037" SourceId="1" SourceUrl="http://localhost:62295/CasosSvc.svc?disco" />
-    <MetadataFile FileName="CasosSvc.wsdl" MetadataType="Wsdl" ID="84f8d003-76ba-4c49-8e64-ecc1d62d085f" SourceId="1" SourceUrl="http://localhost:62295/CasosSvc.svc?wsdl" />
-    <MetadataFile FileName="CasosSvc.xsd" MetadataType="Schema" ID="554e5ab3-b5fc-4070-a3b2-3299292a1329" SourceId="1" SourceUrl="http://localhost:62295/CasosSvc.svc?xsd=xsd2" />
-    <MetadataFile FileName="CasosSvc1.xsd" MetadataType="Schema" ID="a392defb-b92c-4d71-8352-898e654a781f" SourceId="1" SourceUrl="http://localhost:62295/CasosSvc.svc?xsd=xsd0" />
-    <MetadataFile FileName="CasosSvc2.xsd" MetadataType="Schema" ID="25165d7b-b277-41d1-aab4-a6a61b50e760" SourceId="1" SourceUrl="http://localhost:62295/CasosSvc.svc?xsd=xsd1" />
+    <MetadataFile FileName="CasosSvc.disco" MetadataType="Disco" ID="6d755812-dec5-4e60-a839-f0fd62158c99" SourceId="1" SourceUrl="http://localhost:62295/CasosSvc.svc?disco" />
+    <MetadataFile FileName="CasosSvc.wsdl" MetadataType="Wsdl" ID="2e42a885-f952-4a94-89b7-581a69af46c9" SourceId="1" SourceUrl="http://localhost:62295/CasosSvc.svc?wsdl" />
+    <MetadataFile FileName="CasosSvc.xsd" MetadataType="Schema" ID="aecfd9cf-3f57-4e7c-9934-2950ce6bdf32" SourceId="1" SourceUrl="http://localhost:62295/CasosSvc.svc?xsd=xsd2" />
+    <MetadataFile FileName="CasosSvc1.xsd" MetadataType="Schema" ID="15ce4388-853f-455d-a384-ab74f0203f48" SourceId="1" SourceUrl="http://localhost:62295/CasosSvc.svc?xsd=xsd0" />
+    <MetadataFile FileName="CasosSvc2.xsd" MetadataType="Schema" ID="ee08f0f4-e59c-42e9-8d50-fb7aa23a51c6" SourceId="1" SourceUrl="http://localhost:62295/CasosSvc.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

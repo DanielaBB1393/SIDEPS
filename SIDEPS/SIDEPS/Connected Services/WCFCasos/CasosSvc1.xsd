@@ -11,7 +11,7 @@
   <xs:element name="SP_Ins_CasoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="SP_Ins_CasoResult" type="xs:int" />
+        <xs:element minOccurs="0" name="SP_Ins_CasoResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

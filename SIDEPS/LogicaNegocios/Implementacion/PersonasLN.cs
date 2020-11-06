@@ -5,16 +5,15 @@ using LogicaNegocios.Interfaces;
 
 namespace LogicaNegocios.Implementacion
 {
-    public class CasosLN : ICasosLN
+    public class PersonasLN : IPersonasLN
     {
-        private readonly ICasosAD accesoDatos = new CasosAD();
+        private readonly IPersonasAD registroPersonaAD = new PersonasAD();
 
-
-        public bool SP_Ins_Caso(SIDEPS_25REGCASO caso)
+        public bool SP_Ins_RegistroPersona(SIDEPS_13REGPERS persona)
         {
             try
             {
-                return accesoDatos.SP_Ins_Caso(caso);
+                return registroPersonaAD.SP_Ins_RegistroPersona(persona);
             }
             catch
             {

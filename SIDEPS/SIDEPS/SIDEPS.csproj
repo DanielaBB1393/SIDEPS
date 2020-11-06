@@ -122,24 +122,58 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Connected Services\WCFServices\Reference.cs">
+    <Compile Include="Connected Services\WCFCasos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\WCFPersonas\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Controllers\CasosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PersonasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Caso_M.cs" />
+    <Compile Include="Models\Persona_M.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\WCFServices\CasosSvc.disco" />
-    <None Include="Connected Services\WCFServices\configuration91.svcinfo" />
-    <None Include="Connected Services\WCFServices\configuration.svcinfo" />
-    <None Include="Connected Services\WCFServices\Reference.svcmap">
+    <None Include="Connected Services\WCFCasos\CasosSvc.wsdl" />
+    <None Include="Connected Services\WCFCasos\CasosSvc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCFCasos\CasosSvc1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCFCasos\CasosSvc2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCFPersonas\PersonasSvc.wsdl" />
+    <None Include="Connected Services\WCFPersonas\PersonasSvc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCFPersonas\PersonasSvc1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCFPersonas\PersonasSvc2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCFPersonas\PersonasSvc.disco" />
+    <None Include="Connected Services\WCFPersonas\configuration91.svcinfo" />
+    <None Include="Connected Services\WCFPersonas\configuration.svcinfo" />
+    <None Include="Connected Services\WCFPersonas\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\WCFCasos\CasosSvc.disco" />
+    <None Include="Connected Services\WCFCasos\configuration91.svcinfo" />
+    <None Include="Connected Services\WCFCasos\configuration.svcinfo" />
+    <None Include="Connected Services\WCFCasos\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -153,16 +187,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Connected Services\WCFServices\CasosSvc.wsdl" />
-    <None Include="Connected Services\WCFServices\CasosSvc.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\WCFServices\CasosSvc1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\WCFServices\CasosSvc2.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -188,10 +212,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Casos\Insertar.cshtml" />
+    <Content Include="Views\Personas\Insertar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Casos\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -210,7 +235,8 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\WCFServices\" />
+    <WCFMetadataStorage Include="Connected Services\WCFCasos\" />
+    <WCFMetadataStorage Include="Connected Services\WCFPersonas\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

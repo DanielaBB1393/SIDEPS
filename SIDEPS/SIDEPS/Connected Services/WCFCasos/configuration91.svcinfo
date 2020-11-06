@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="GzlgVvtlo5Cr0QxUWTQh0E1zvwvgqU9fLIOpcdiwP/s=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="0zQjEOiuY5mHRgcQBwnan7Z4xggWku3rNQLUj9SO3no=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ICasosSvc">
       <properties>
@@ -112,7 +112,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_ICasosSvc" contract="WCFServices.ICasosSvc" bindingType="basicHttpBinding" address="http://localhost:62295/CasosSvc.svc" bindingConfiguration="BasicHttpBinding_ICasosSvc">
+    <endpoint name="BasicHttpBinding_ICasosSvc" contract="WCFCasos.ICasosSvc" bindingType="basicHttpBinding" address="http://localhost:62295/CasosSvc.svc" bindingConfiguration="BasicHttpBinding_ICasosSvc">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://localhost:62295/CasosSvc.svc</serializedValue>
@@ -127,7 +127,7 @@
           <serializedValue>BasicHttpBinding_ICasosSvc</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WCFServices.ICasosSvc</serializedValue>
+          <serializedValue>WCFCasos.ICasosSvc</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>

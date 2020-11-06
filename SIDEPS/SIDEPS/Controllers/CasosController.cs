@@ -1,4 +1,4 @@
-﻿using SIDEPS.WCFServices;
+﻿using SIDEPS.WCFCasos;
 using System.Web.Mvc;
 
 namespace SIDEPS.Controllers
@@ -14,13 +14,13 @@ namespace SIDEPS.Controllers
             return View();
         }
 
-        public ActionResult InsertarCaso()
+        public ActionResult Insertar()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult ActionResult(SIDEPS_25REGCASO caso)
+        public ActionResult Insertar(SIDEPS_25REGCASO caso)
         {
             return View();
         }

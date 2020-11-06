@@ -6,7 +6,7 @@ public class CasosSvc : ICasosSvc
 {
     private readonly ICasosLN casosLN = new CasosLN();
 
-    public int SP_Ins_Caso(SIDEPS_25REGCASO caso)
+    public bool SP_Ins_Caso(SIDEPS_25REGCASO caso)
     {
         try
         {

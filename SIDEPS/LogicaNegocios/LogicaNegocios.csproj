@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Implementacion\CasosLN.cs" />
+    <Compile Include="Implementacion\PersonasLN.cs" />
     <Compile Include="Interfaces\ICasosLN.cs" />
+    <Compile Include="Interfaces\IPersonasLN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

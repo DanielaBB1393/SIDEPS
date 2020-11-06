@@ -5,5 +5,5 @@ using Entidades;
 public interface ICasosSvc
 {
     [OperationContract]
-    int SP_Ins_Caso(SIDEPS_25REGCASO caso);
+    bool SP_Ins_Caso(SIDEPS_25REGCASO caso);
 }
