@@ -25,9 +25,12 @@ namespace SIDEPS.Controllers
             var resultado = this.personasSvc.SP_Ins_RegistroPersona(persona.ConvertirEntidad());
             if (resultado)
             {
-                Redirect("~/");
+                return Redirect("~/");
             }
-            return View(persona);
+            else
+            {
+                return View(persona);
+            }
         }
     }
 }

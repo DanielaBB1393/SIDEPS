@@ -8,6 +8,7 @@ namespace SIDEPS.Models
     {
         [DisplayName("Cedula")]
         public string CEDPERS13 { get; set; }
+        [DisplayName("Estado Civil")]
         public Nullable<int> CODESTC06 { get; set; }
         [DisplayName("Educacion")]
         public Nullable<int> CODNEDU09 { get; set; }
