@@ -4050,6 +4050,18 @@ namespace SIDEPS.WCFCasos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_Caso", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_CasoResponse")]
         System.Threading.Tasks.Task<bool> SP_Ins_CasoAsync(SIDEPS.WCFCasos.SIDEPS_25REGCASO caso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_Persona", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_PersonaResponse")]
+        bool SP_Ins_Persona(SIDEPS.WCFCasos.SIDEPS_13REGPERS persona);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_Persona", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_PersonaResponse")]
+        System.Threading.Tasks.Task<bool> SP_Ins_PersonaAsync(SIDEPS.WCFCasos.SIDEPS_13REGPERS persona);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_AspectoSalud", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_AspectoSaludResponse")]
+        bool SP_Ins_AspectoSalud(SIDEPS.WCFCasos.SIDEPS_16REGASPS aspecto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_AspectoSalud", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_AspectoSaludResponse")]
+        System.Threading.Tasks.Task<bool> SP_Ins_AspectoSaludAsync(SIDEPS.WCFCasos.SIDEPS_16REGASPS aspecto);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -4085,6 +4097,22 @@ namespace SIDEPS.WCFCasos {
         
         public System.Threading.Tasks.Task<bool> SP_Ins_CasoAsync(SIDEPS.WCFCasos.SIDEPS_25REGCASO caso) {
             return base.Channel.SP_Ins_CasoAsync(caso);
+        }
+        
+        public bool SP_Ins_Persona(SIDEPS.WCFCasos.SIDEPS_13REGPERS persona) {
+            return base.Channel.SP_Ins_Persona(persona);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SP_Ins_PersonaAsync(SIDEPS.WCFCasos.SIDEPS_13REGPERS persona) {
+            return base.Channel.SP_Ins_PersonaAsync(persona);
+        }
+        
+        public bool SP_Ins_AspectoSalud(SIDEPS.WCFCasos.SIDEPS_16REGASPS aspecto) {
+            return base.Channel.SP_Ins_AspectoSalud(aspecto);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SP_Ins_AspectoSaludAsync(SIDEPS.WCFCasos.SIDEPS_16REGASPS aspecto) {
+            return base.Channel.SP_Ins_AspectoSaludAsync(aspecto);
         }
     }
 }

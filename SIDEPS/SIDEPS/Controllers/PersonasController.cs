@@ -22,7 +22,7 @@ namespace SIDEPS.Controllers
         [HttpPost]
         public ActionResult Insertar(Persona_M persona)
         {
-            var resultado = this.personasSvc.SP_Ins_RegistroPersona(persona.ConvertirEntidad());
+            var resultado = this.personasSvc.SP_Ins_RegistroPersona(persona.ConvertirEntidadP());
             if (resultado)
             {
                 return Redirect("~/");

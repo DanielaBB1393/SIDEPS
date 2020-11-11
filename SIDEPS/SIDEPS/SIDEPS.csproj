@@ -138,8 +138,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AspectoSalud_M.cs" />
     <Compile Include="Models\Caso_M.cs" />
+    <Compile Include="Models\EgresosMensuales_M.cs" />
+    <Compile Include="Models\MiembroGrupoFamiliar.cs" />
+    <Compile Include="Models\MotivoSolicitud_M.cs" />
     <Compile Include="Models\Persona_M.cs" />
+    <Compile Include="Models\ProblemasSociales_M.cs" />
+    <Compile Include="Models\SituacionFinanciera_M.cs" />
+    <Compile Include="Models\Vivienda_M.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -214,6 +221,14 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Casos\Insertar.cshtml" />
     <Content Include="Views\Personas\Insertar.cshtml" />
+    <Content Include="Views\Casos\AspectoSalud.cshtml" />
+    <Content Include="Views\Casos\DatosPersonales.cshtml" />
+    <Content Include="Views\Casos\Index.cshtml" />
+    <Content Include="Views\Casos\Vivienda.cshtml" />
+    <Content Include="Views\Casos\ProblemasSociales.cshtml" />
+    <Content Include="Views\Casos\SituacionFinanciera.cshtml" />
+    <Content Include="Views\Casos\EgresosMensuales.cshtml" />
+    <Content Include="Views\Casos\MotivoSolicitud.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

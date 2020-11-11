@@ -13,16 +13,54 @@
   <wsdl:message name="ICasosSvc_SP_Ins_Caso_OutputMessage">
     <wsdl:part name="parameters" element="tns:SP_Ins_CasoResponse" />
   </wsdl:message>
+  <wsdl:message name="ICasosSvc_SP_Ins_Persona_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Ins_Persona" />
+  </wsdl:message>
+  <wsdl:message name="ICasosSvc_SP_Ins_Persona_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Ins_PersonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICasosSvc_SP_Ins_AspectoSalud_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Ins_AspectoSalud" />
+  </wsdl:message>
+  <wsdl:message name="ICasosSvc_SP_Ins_AspectoSalud_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Ins_AspectoSaludResponse" />
+  </wsdl:message>
   <wsdl:portType name="ICasosSvc">
     <wsdl:operation name="SP_Ins_Caso">
       <wsdl:input wsaw:Action="http://tempuri.org/ICasosSvc/SP_Ins_Caso" message="tns:ICasosSvc_SP_Ins_Caso_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICasosSvc/SP_Ins_CasoResponse" message="tns:ICasosSvc_SP_Ins_Caso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Ins_Persona">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICasosSvc/SP_Ins_Persona" message="tns:ICasosSvc_SP_Ins_Persona_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICasosSvc/SP_Ins_PersonaResponse" message="tns:ICasosSvc_SP_Ins_Persona_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Ins_AspectoSalud">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICasosSvc/SP_Ins_AspectoSalud" message="tns:ICasosSvc_SP_Ins_AspectoSalud_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICasosSvc/SP_Ins_AspectoSaludResponse" message="tns:ICasosSvc_SP_Ins_AspectoSalud_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ICasosSvc" type="tns:ICasosSvc">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="SP_Ins_Caso">
       <soap:operation soapAction="http://tempuri.org/ICasosSvc/SP_Ins_Caso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Ins_Persona">
+      <soap:operation soapAction="http://tempuri.org/ICasosSvc/SP_Ins_Persona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Ins_AspectoSalud">
+      <soap:operation soapAction="http://tempuri.org/ICasosSvc/SP_Ins_AspectoSalud" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
