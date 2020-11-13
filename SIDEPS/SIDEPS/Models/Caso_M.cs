@@ -1,5 +1,6 @@
 ﻿using SIDEPS.WCFCasos;
 using System;
+using System.ComponentModel;
 
 namespace SIDEPS.Models
 {
@@ -11,11 +12,17 @@ namespace SIDEPS.Models
         public string CEDUSRO07 { get; set; }
         public Nullable<int> CODVIVI20 { get; set; }
         public Nullable<int> CODEGRF24 { get; set; }
-        public Nullable<DateTime> FEICASO25 { get; set; }
+        //public Nullable<DateTime> FEICASO25 { get; set; }
+        [DisplayName("Fecha finalización")]
         public Nullable<DateTime> FEFCASO25 { get; set; }
+        [DisplayName("Motivo solicitud")]
         public string DESCASO25 { get; set; }
+        [DisplayName("Observaciones")]
         public string OPICASO25 { get; set; }
-        public string ESTCASO25 { get; set; }
+        [DisplayName("Motivo de la desición")]
+        public string ESTDESC25 { get; set; }
+        [DisplayName("Estado del caso")]
+        public string ESTCASO25 { get; set; } = "Pendiente";
 
         public Caso_M()
         {
@@ -29,7 +36,7 @@ namespace SIDEPS.Models
             this.CEDUSRO07 = caso.CEDUSRO07;
             this.CODVIVI20 = caso.CODVIVI20;
             this.CODEGRF24 = caso.CODEGRF24;
-            this.FEICASO25 = caso.FEICASO25;
+            //this.FEICASO25 = caso.FEICASO25;
             this.FEFCASO25 = caso.FEFCASO25;
             this.DESCASO25 = caso.DESCASO25;
             this.OPICASO25 = caso.OPICASO25;
@@ -46,7 +53,7 @@ namespace SIDEPS.Models
                 CEDUSRO07 = this.CEDUSRO07,
                 CODVIVI20 = this.CODVIVI20,
                 CODEGRF24 = this.CODEGRF24,
-                FEICASO25 = this.FEICASO25,
+                //FEICASO25 = this.FEICASO25,
                 FEFCASO25 = this.FEFCASO25,
                 DESCASO25 = this.DESCASO25,
                 OPICASO25 = this.OPICASO25,
