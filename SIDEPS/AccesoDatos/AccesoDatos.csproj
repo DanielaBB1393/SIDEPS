@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementacion\UsuariosAD.cs" />
     <Compile Include="Implementacion\AspectoSaludAD.cs" />
     <Compile Include="Implementacion\CasosAD.cs" />
     <Compile Include="Implementacion\PersonasAD.cs" />
@@ -97,6 +98,12 @@
       <LastGenOutput>SIDEPS.Context.cs</LastGenOutput>
       <DependentUpon>SIDEPS.edmx</DependentUpon>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
