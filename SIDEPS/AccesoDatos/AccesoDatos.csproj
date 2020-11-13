@@ -80,11 +80,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
+    <None Include="packages.config" />
     <EntityDeploy Include="SIDEPS.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SIDEPS.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="packages.config" />
     <None Include="SIDEPS.edmx.diagram">
       <DependentUpon>SIDEPS.edmx</DependentUpon>
     </None>
