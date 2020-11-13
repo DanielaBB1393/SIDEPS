@@ -12,14 +12,6 @@ namespace AccesoDatos.Implementacion
         {
             try
             {
-                using (var contexto = new SIDEPSEntities())
-                {
-                    var result = contexto.SIDEPS_25REGCASO.Add(caso);
-                    contexto.SaveChanges();
-                    //result.codigo contiene el codigo que se genero en BD
-                    return true;
-                }
-
                 return contexto.SP_INS_REGCASO(
                     caso.CEDPERS13,
                     caso.CODASPS16,

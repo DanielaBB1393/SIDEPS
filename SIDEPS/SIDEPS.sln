@@ -14,9 +14,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Enti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicaNegocios", "LogicaNegocios\LogicaNegocios.csproj", "{33D2A6AD-35D4-466A-9D20-FCCDBE44BFFD}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WCFSIDEPS", "WCFSIDEPS\", "{C87E3E8C-5946-48CA-9817-61F0EAABC33D}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WCFSIDEPS(1)", "WCFSIDEPS\", "{653EAB0A-447B-4800-8ED2-EC675C2814CD}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		ProjectReferences = "{89fc7324-9041-4046-9625-b3c7da9888bd}|AccesoDatos.dll;{A717D319-698E-4874-BB4E-9EB026B1FCBB}|Entidades.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_50087"
 		Debug.AspNetCompiler.PhysicalPath = "WCFSIDEPS\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50087\"
@@ -32,6 +33,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WCFSIDEPS", "WCFSIDEPS\", "
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "50087"
+		SlnRelativePath = "WCFSIDEPS\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
@@ -57,10 +59,10 @@ Global
 		{33D2A6AD-35D4-466A-9D20-FCCDBE44BFFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33D2A6AD-35D4-466A-9D20-FCCDBE44BFFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33D2A6AD-35D4-466A-9D20-FCCDBE44BFFD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C87E3E8C-5946-48CA-9817-61F0EAABC33D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C87E3E8C-5946-48CA-9817-61F0EAABC33D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C87E3E8C-5946-48CA-9817-61F0EAABC33D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{C87E3E8C-5946-48CA-9817-61F0EAABC33D}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{653EAB0A-447B-4800-8ED2-EC675C2814CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{653EAB0A-447B-4800-8ED2-EC675C2814CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{653EAB0A-447B-4800-8ED2-EC675C2814CD}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{653EAB0A-447B-4800-8ED2-EC675C2814CD}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
