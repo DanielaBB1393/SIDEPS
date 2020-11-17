@@ -1,4 +1,4 @@
-﻿@model SIDEPS.Models.MotivoSolicitud_M
+﻿@model SIDEPS.Models.Caso_M
 
 @{
     ViewBag.Title = "Motivo Solicitud";
@@ -16,18 +16,18 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.MotivoSolicitud, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.DESCASO25, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MotivoSolicitud, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MotivoSolicitud, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.DESCASO25, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DESCASO25, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Observaciones, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.OPICASO25, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Observaciones, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Observaciones, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.OPICASO25, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.OPICASO25, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -38,10 +38,6 @@
         </div>
     </div>
 }
-
-@*<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>*@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

@@ -183,13 +183,13 @@
           <Property Name="CODESTV19" Type="int" />
           <Property Name="CODMATE17" Type="int" />
           <Property Name="MTOVIVI20" Type="decimal" Precision="18" Scale="4" />
-          <Property Name="NAPVIVI20" Type="varchar" MaxLength="20" />
-          <Property Name="SRCVIVI20" Type="varchar" MaxLength="2" />
-          <Property Name="SRIVIVI20" Type="varchar" MaxLength="2" />
-          <Property Name="SRLVIVI20" Type="varchar" MaxLength="2" />
-          <Property Name="SRMVIVI20" Type="varchar" MaxLength="2" />
-          <Property Name="SRBVIVI20" Type="varchar" MaxLength="2" />
-          <Property Name="SREVIVI20" Type="varchar" MaxLength="2" />
+          <Property Name="NAPVIVI20" Type="int" />
+          <Property Name="SRCVIVI20" Type="bit" />
+          <Property Name="SRIVIVI20" Type="bit" />
+          <Property Name="SRLVIVI20" Type="bit" />
+          <Property Name="SRMVIVI20" Type="bit" />
+          <Property Name="SRBVIVI20" Type="bit" />
+          <Property Name="SREVIVI20" Type="bit" />
         </EntityType>
         <EntityType Name="SIDEPS_21CATORGS">
           <Key>
@@ -1200,13 +1200,13 @@
           <Property Name="CODESTV19" Type="Int32" />
           <Property Name="CODMATE17" Type="Int32" />
           <Property Name="MTOVIVI20" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="NAPVIVI20" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="SRCVIVI20" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="SRIVIVI20" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="SRLVIVI20" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="SRMVIVI20" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="SRBVIVI20" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="SREVIVI20" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="NAPVIVI20" Type="Int32" />
+          <Property Name="SRCVIVI20" Type="Boolean" />
+          <Property Name="SRIVIVI20" Type="Boolean" />
+          <Property Name="SRLVIVI20" Type="Boolean" />
+          <Property Name="SRMVIVI20" Type="Boolean" />
+          <Property Name="SRBVIVI20" Type="Boolean" />
+          <Property Name="SREVIVI20" Type="Boolean" />
           <NavigationProperty Name="SIDEPS_17CATMATE" Relationship="Self.FK__SIDEPS_CODMATE17" FromRole="SIDEPS_20REGVIVI" ToRole="SIDEPS_17CATMATE" />
           <NavigationProperty Name="SIDEPS_18TIPVIVI" Relationship="Self.FK__SIDEPS_CODTIPV18" FromRole="SIDEPS_20REGVIVI" ToRole="SIDEPS_18TIPVIVI" />
           <NavigationProperty Name="SIDEPS_19ESTVIVI" Relationship="Self.FK__SIDEPS_CODESTV19" FromRole="SIDEPS_20REGVIVI" ToRole="SIDEPS_19ESTVIVI" />
@@ -1727,7 +1727,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SIDEPSEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="SIDEPS_01CATPAIS" EntityType="Self.SIDEPS_01CATPAIS" />
           <EntitySet Name="SIDEPS_02CATPROV" EntityType="Self.SIDEPS_02CATPROV" />
           <EntitySet Name="SIDEPS_03CATCANT" EntityType="Self.SIDEPS_03CATCANT" />
@@ -2067,404 +2067,375 @@
           <Property Type="DateTime" Name="FEFUSRO07" Nullable="true" Precision="23" />
           <Property Type="DateTime" Name="FENUSRO07" Nullable="true" Precision="23" />
         </ComplexType>
+        <ComplexType Name="SP_CON_REGDIAC1_Result">
+          <Property Type="Int32" Name="CODDIAC04" Nullable="false" />
+          <Property Type="String" Name="NOMDIAC04" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LUGDIAC04" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TELDIAC04" Nullable="true" MaxLength="12" />
+          <Property Type="String" Name="ESTDIAC04" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="CODCANT03" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_CON_REGUSRO1_Result">
+          <Property Type="String" Name="CEDUSRO07" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="NOMUSRO07" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PAPUSRO07" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SAPUSRO07" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="CODCANT03" Nullable="true" />
+          <Property Type="Int32" Name="CODDIAC04" Nullable="true" />
+          <Property Type="Int32" Name="CODUSRO05" Nullable="true" />
+          <Property Type="String" Name="ESTUSRO07" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="DIRUSRO07" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="NACUSRO07" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="CNTUSRO07" Nullable="true" MaxLength="30" />
+          <Property Type="DateTime" Name="FEIUSRO07" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="FEFUSRO07" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="FENUSRO07" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="SP_CONXID_REGDIAC1_Result">
+          <Property Type="Int32" Name="CODDIAC04" Nullable="false" />
+          <Property Type="String" Name="NOMDIAC04" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LUGDIAC04" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TELDIAC04" Nullable="true" MaxLength="12" />
+          <Property Type="String" Name="ESTDIAC04" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="CODCANT03" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_CONXID_REGUSRO1_Result">
+          <Property Type="String" Name="CEDUSRO07" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="NOMUSRO07" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PAPUSRO07" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SAPUSRO07" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="CODCANT03" Nullable="true" />
+          <Property Type="Int32" Name="CODDIAC04" Nullable="true" />
+          <Property Type="Int32" Name="CODUSRO05" Nullable="true" />
+          <Property Type="String" Name="ESTUSRO07" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="DIRUSRO07" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="NACUSRO07" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="CNTUSRO07" Nullable="true" MaxLength="30" />
+          <Property Type="DateTime" Name="FEIUSRO07" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="FEFUSRO07" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="FENUSRO07" Nullable="true" Precision="23" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SIDEPSStoreContainer" CdmEntityContainer="Entities">
-          <EntitySetMapping Name="SIDEPS_01CATPAIS">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_01CATPAIS">
-              <MappingFragment StoreEntitySet="SIDEPS_01CATPAIS">
-                <ScalarProperty Name="CODPAIS01" ColumnName="CODPAIS01" />
-                <ScalarProperty Name="NOMPAIS01" ColumnName="NOMPAIS01" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_02CATPROV">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_02CATPROV">
-              <MappingFragment StoreEntitySet="SIDEPS_02CATPROV">
-                <ScalarProperty Name="CODPROV02" ColumnName="CODPROV02" />
-                <ScalarProperty Name="NOMPROV02" ColumnName="NOMPROV02" />
-                <ScalarProperty Name="CODPAIS01" ColumnName="CODPAIS01" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_03CATCANT">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_03CATCANT">
-              <MappingFragment StoreEntitySet="SIDEPS_03CATCANT">
-                <ScalarProperty Name="CODCANT03" ColumnName="CODCANT03" />
-                <ScalarProperty Name="NOMCANT03" ColumnName="NOMCANT03" />
-                <ScalarProperty Name="CODPROV02" ColumnName="CODPROV02" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_04REGDIAC">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_04REGDIAC">
-              <MappingFragment StoreEntitySet="SIDEPS_04REGDIAC">
-                <ScalarProperty Name="CODDIAC04" ColumnName="CODDIAC04" />
-                <ScalarProperty Name="NOMDIAC04" ColumnName="NOMDIAC04" />
-                <ScalarProperty Name="LUGDIAC04" ColumnName="LUGDIAC04" />
-                <ScalarProperty Name="TELDIAC04" ColumnName="TELDIAC04" />
-                <ScalarProperty Name="ESTDIAC04" ColumnName="ESTDIAC04" />
-                <ScalarProperty Name="CODCANT03" ColumnName="CODCANT03" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_05TIPUSRO">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_05TIPUSRO">
-              <MappingFragment StoreEntitySet="SIDEPS_05TIPUSRO">
-                <ScalarProperty Name="CODUSRO05" ColumnName="CODUSRO05" />
-                <ScalarProperty Name="DESUSRO05" ColumnName="DESUSRO05" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_06CATESTC">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_06CATESTC">
-              <MappingFragment StoreEntitySet="SIDEPS_06CATESTC">
-                <ScalarProperty Name="CODESTC06" ColumnName="CODESTC06" />
-                <ScalarProperty Name="DESESTC06" ColumnName="DESESTC06" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_07REGUSRO">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_07REGUSRO">
-              <MappingFragment StoreEntitySet="SIDEPS_07REGUSRO">
-                <ScalarProperty Name="CEDUSRO07" ColumnName="CEDUSRO07" />
-                <ScalarProperty Name="NOMUSRO07" ColumnName="NOMUSRO07" />
-                <ScalarProperty Name="PAPUSRO07" ColumnName="PAPUSRO07" />
-                <ScalarProperty Name="SAPUSRO07" ColumnName="SAPUSRO07" />
-                <ScalarProperty Name="CODCANT03" ColumnName="CODCANT03" />
-                <ScalarProperty Name="CODDIAC04" ColumnName="CODDIAC04" />
-                <ScalarProperty Name="CODUSRO05" ColumnName="CODUSRO05" />
-                <ScalarProperty Name="ESTUSRO07" ColumnName="ESTUSRO07" />
-                <ScalarProperty Name="DIRUSRO07" ColumnName="DIRUSRO07" />
-                <ScalarProperty Name="NACUSRO07" ColumnName="NACUSRO07" />
-                <ScalarProperty Name="CNTUSRO07" ColumnName="CNTUSRO07" />
-                <ScalarProperty Name="FEIUSRO07" ColumnName="FEIUSRO07" />
-                <ScalarProperty Name="FEFUSRO07" ColumnName="FEFUSRO07" />
-                <ScalarProperty Name="FENUSRO07" ColumnName="FENUSRO07" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_08REGTELF">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_08REGTELF">
-              <MappingFragment StoreEntitySet="SIDEPS_08REGTELF">
-                <ScalarProperty Name="CODTELF08" ColumnName="CODTELF08" />
-                <ScalarProperty Name="CEDUSRO07" ColumnName="CEDUSRO07" />
-                <ScalarProperty Name="NUMTELF08" ColumnName="NUMTELF08" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_09CATNEDU">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_09CATNEDU">
-              <MappingFragment StoreEntitySet="SIDEPS_09CATNEDU">
-                <ScalarProperty Name="CODNEDU09" ColumnName="CODNEDU09" />
-                <ScalarProperty Name="DESNEDU09" ColumnName="DESNEDU09" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_10CATSOLI">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_10CATSOLI">
-              <MappingFragment StoreEntitySet="SIDEPS_10CATSOLI">
-                <ScalarProperty Name="CODSOLI10" ColumnName="CODSOLI10" />
-                <ScalarProperty Name="DESSOLI10" ColumnName="DESSOLI10" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_11CATRELG">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_11CATRELG">
-              <MappingFragment StoreEntitySet="SIDEPS_11CATRELG">
-                <ScalarProperty Name="CODRELG11" ColumnName="CODRELG11" />
-                <ScalarProperty Name="DESRELG11" ColumnName="DESRELG11" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_12CATPARE">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_12CATPARE">
-              <MappingFragment StoreEntitySet="SIDEPS_12CATPARE">
-                <ScalarProperty Name="CODPARE12" ColumnName="CODPARE12" />
-                <ScalarProperty Name="DESPARE12" ColumnName="DESPARE12" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_13REGPERS">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_13REGPERS">
-              <MappingFragment StoreEntitySet="SIDEPS_13REGPERS">
-                <ScalarProperty Name="CEDPERS13" ColumnName="CEDPERS13" />
-                <ScalarProperty Name="CODESTC06" ColumnName="CODESTC06" />
-                <ScalarProperty Name="CODNEDU09" ColumnName="CODNEDU09" />
-                <ScalarProperty Name="CODCANT03" ColumnName="CODCANT03" />
-                <ScalarProperty Name="CODSOLI10" ColumnName="CODSOLI10" />
-                <ScalarProperty Name="CODRELG11" ColumnName="CODRELG11" />
-                <ScalarProperty Name="NOMPERS13" ColumnName="NOMPERS13" />
-                <ScalarProperty Name="PAPPERS13" ColumnName="PAPPERS13" />
-                <ScalarProperty Name="SAPPERS13" ColumnName="SAPPERS13" />
-                <ScalarProperty Name="NACPERS13" ColumnName="NACPERS13" />
-                <ScalarProperty Name="DIRPERS13" ColumnName="DIRPERS13" />
-                <ScalarProperty Name="OACPERS13" ColumnName="OACPERS13" />
-                <ScalarProperty Name="OANPERS13" ColumnName="OANPERS13" />
-                <ScalarProperty Name="FENPERS13" ColumnName="FENPERS13" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_14CATSEGU">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_14CATSEGU">
-              <MappingFragment StoreEntitySet="SIDEPS_14CATSEGU">
-                <ScalarProperty Name="CODSEGU14" ColumnName="CODSEGU14" />
-                <ScalarProperty Name="DESSEGU14" ColumnName="DESSEGU14" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_15CATENFR">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_15CATENFR">
-              <MappingFragment StoreEntitySet="SIDEPS_15CATENFR">
-                <ScalarProperty Name="CODENFR15" ColumnName="CODENFR15" />
-                <ScalarProperty Name="DESENFR15" ColumnName="DESENFR15" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_16REGASPS">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_16REGASPS">
-              <MappingFragment StoreEntitySet="SIDEPS_16REGASPS">
-                <ScalarProperty Name="CODASPS16" ColumnName="CODASPS16" />
-                <ScalarProperty Name="CEDPERS13" ColumnName="CEDPERS13" />
-                <ScalarProperty Name="CODSEGU14" ColumnName="CODSEGU14" />
-                <ScalarProperty Name="CODENFR15" ColumnName="CODENFR15" />
-                <ScalarProperty Name="DESENFR16" ColumnName="DESENFR16" />
-                <ScalarProperty Name="RECTRAT16" ColumnName="RECTRAT16" />
-                <ScalarProperty Name="DESTRAT16" ColumnName="DESTRAT16" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_17CATMATE">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_17CATMATE">
-              <MappingFragment StoreEntitySet="SIDEPS_17CATMATE">
-                <ScalarProperty Name="CODMATE17" ColumnName="CODMATE17" />
-                <ScalarProperty Name="DESMATE17" ColumnName="DESMATE17" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_18TIPVIVI">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_18TIPVIVI">
-              <MappingFragment StoreEntitySet="SIDEPS_18TIPVIVI">
-                <ScalarProperty Name="CODTIPV18" ColumnName="CODTIPV18" />
-                <ScalarProperty Name="DESTIPV18" ColumnName="DESTIPV18" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_19ESTVIVI">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_19ESTVIVI">
-              <MappingFragment StoreEntitySet="SIDEPS_19ESTVIVI">
-                <ScalarProperty Name="CODESTV19" ColumnName="CODESTV19" />
-                <ScalarProperty Name="DESESTV19" ColumnName="DESESTV19" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_20REGVIVI">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_20REGVIVI">
-              <MappingFragment StoreEntitySet="SIDEPS_20REGVIVI">
-                <ScalarProperty Name="CODVIVI20" ColumnName="CODVIVI20" />
-                <ScalarProperty Name="CODTIPV18" ColumnName="CODTIPV18" />
-                <ScalarProperty Name="CODESTV19" ColumnName="CODESTV19" />
-                <ScalarProperty Name="CODMATE17" ColumnName="CODMATE17" />
-                <ScalarProperty Name="MTOVIVI20" ColumnName="MTOVIVI20" />
-                <ScalarProperty Name="NAPVIVI20" ColumnName="NAPVIVI20" />
-                <ScalarProperty Name="SRCVIVI20" ColumnName="SRCVIVI20" />
-                <ScalarProperty Name="SRIVIVI20" ColumnName="SRIVIVI20" />
-                <ScalarProperty Name="SRLVIVI20" ColumnName="SRLVIVI20" />
-                <ScalarProperty Name="SRMVIVI20" ColumnName="SRMVIVI20" />
-                <ScalarProperty Name="SRBVIVI20" ColumnName="SRBVIVI20" />
-                <ScalarProperty Name="SREVIVI20" ColumnName="SREVIVI20" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_21CATORGS">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_21CATORGS">
-              <MappingFragment StoreEntitySet="SIDEPS_21CATORGS">
-                <ScalarProperty Name="CODORGS21" ColumnName="CODORGS21" />
-                <ScalarProperty Name="DESORGS21" ColumnName="DESORGS21" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_22REGFAML">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_22REGFAML">
-              <MappingFragment StoreEntitySet="SIDEPS_22REGFAML">
-                <ScalarProperty Name="CEDFAML22" ColumnName="CEDFAML22" />
-                <ScalarProperty Name="NOMFAML22" ColumnName="NOMFAML22" />
-                <ScalarProperty Name="EDAFAML22" ColumnName="EDAFAML22" />
-                <ScalarProperty Name="CODESTC06" ColumnName="CODESTC06" />
-                <ScalarProperty Name="CODNEDU09" ColumnName="CODNEDU09" />
-                <ScalarProperty Name="OACFAML22" ColumnName="OACFAML22" />
-                <ScalarProperty Name="INGFAML22" ColumnName="INGFAML22" />
-                <ScalarProperty Name="DESFAML22" ColumnName="DESFAML22" />
-                <ScalarProperty Name="CODORGS21" ColumnName="CODORGS21" />
-                <ScalarProperty Name="CODENFR15" ColumnName="CODENFR15" />
-                <ScalarProperty Name="CODPARE12" ColumnName="CODPARE12" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_23CATFINA">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_23CATFINA">
-              <MappingFragment StoreEntitySet="SIDEPS_23CATFINA">
-                <ScalarProperty Name="CODFINA23" ColumnName="CODFINA23" />
-                <ScalarProperty Name="CEDFAML22" ColumnName="CEDFAML22" />
-                <ScalarProperty Name="CEDPERS13" ColumnName="CEDPERS13" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_24REGEGRF">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_24REGEGRF">
-              <MappingFragment StoreEntitySet="SIDEPS_24REGEGRF">
-                <ScalarProperty Name="CODEGRF24" ColumnName="CODEGRF24" />
-                <ScalarProperty Name="MTOALQU24" ColumnName="MTOALQU24" />
-                <ScalarProperty Name="MTOALIM24" ColumnName="MTOALIM24" />
-                <ScalarProperty Name="MTOELEC24" ColumnName="MTOELEC24" />
-                <ScalarProperty Name="MTOGAST24" ColumnName="MTOGAST24" />
-                <ScalarProperty Name="MTCAGUA24" ColumnName="MTCAGUA24" />
-                <ScalarProperty Name="MTOCABL24" ColumnName="MTOCABL24" />
-                <ScalarProperty Name="MTOTELF24" ColumnName="MTOTELF24" />
-                <ScalarProperty Name="MTOINTE24" ColumnName="MTOINTE24" />
-                <ScalarProperty Name="MTOEDUC24" ColumnName="MTOEDUC24" />
-                <ScalarProperty Name="MTOSEGU24" ColumnName="MTOSEGU24" />
-                <ScalarProperty Name="MTOOTRO24" ColumnName="MTOOTRO24" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_25REGCASO">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_25REGCASO">
-              <MappingFragment StoreEntitySet="SIDEPS_25REGCASO">
-                <ScalarProperty Name="CODCASO25" ColumnName="CODCASO25" />
-                <ScalarProperty Name="CEDPERS13" ColumnName="CEDPERS13" />
-                <ScalarProperty Name="CODASPS16" ColumnName="CODASPS16" />
-                <ScalarProperty Name="CEDUSRO07" ColumnName="CEDUSRO07" />
-                <ScalarProperty Name="CODVIVI20" ColumnName="CODVIVI20" />
-                <ScalarProperty Name="CODEGRF24" ColumnName="CODEGRF24" />
-                <ScalarProperty Name="FEICASO25" ColumnName="FEICASO25" />
-                <ScalarProperty Name="FEFCASO25" ColumnName="FEFCASO25" />
-                <ScalarProperty Name="DESCASO25" ColumnName="DESCASO25" />
-                <ScalarProperty Name="OPICASO25" ColumnName="OPICASO25" />
-                <ScalarProperty Name="ESTCASO25" ColumnName="ESTCASO25" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_26CATAYUD">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_26CATAYUD">
-              <MappingFragment StoreEntitySet="SIDEPS_26CATAYUD">
-                <ScalarProperty Name="CODAYUD26" ColumnName="CODAYUD26" />
-                <ScalarProperty Name="DESAYUD26" ColumnName="DESAYUD26" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_27TIPAYUD">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_27TIPAYUD">
-              <MappingFragment StoreEntitySet="SIDEPS_27TIPAYUD">
-                <ScalarProperty Name="CODTIPA27" ColumnName="CODTIPA27" />
-                <ScalarProperty Name="CODAYUD26" ColumnName="CODAYUD26" />
-                <ScalarProperty Name="CODCASO25" ColumnName="CODCASO25" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_28REGHIS">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_28REGHIS">
-              <MappingFragment StoreEntitySet="SIDEPS_28REGHIS">
-                <ScalarProperty Name="CODHIST28" ColumnName="CODHIST28" />
-                <ScalarProperty Name="CODCASO25" ColumnName="CODCASO25" />
-                <ScalarProperty Name="DESCASO28" ColumnName="DESCASO28" />
-                <ScalarProperty Name="ESTCASO28" ColumnName="ESTCASO28" />
-                <ScalarProperty Name="FECCASO28" ColumnName="FECCASO28" />
-                <ScalarProperty Name="FECACTU28" ColumnName="FECACTU28" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_29REGCNTR">
-            <EntityTypeMapping TypeName="SIDEPS.SIDEPS_29REGCNTR">
-              <MappingFragment StoreEntitySet="SIDEPS_29REGCNTR">
-                <ScalarProperty Name="CODCASO" ColumnName="CODCASO" />
-                <ScalarProperty Name="ESTCASO" ColumnName="ESTCASO" />
-                <ScalarProperty Name="CODCNTR" ColumnName="CODCNTR" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="SP_CON_REGDIAC" FunctionName="SIDEPS.Store.SP_CON_REGDIAC">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="SIDEPS.SP_CON_REGDIAC_Result">
-                <ScalarProperty Name="CODDIAC04" ColumnName="CODDIAC04" />
-                <ScalarProperty Name="NOMDIAC04" ColumnName="NOMDIAC04" />
-                <ScalarProperty Name="LUGDIAC04" ColumnName="LUGDIAC04" />
-                <ScalarProperty Name="TELDIAC04" ColumnName="TELDIAC04" />
-                <ScalarProperty Name="ESTDIAC04" ColumnName="ESTDIAC04" />
-                <ScalarProperty Name="CODCANT03" ColumnName="CODCANT03" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SP_CON_REGUSRO" FunctionName="SIDEPS.Store.SP_CON_REGUSRO">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="SIDEPS.SP_CON_REGUSRO_Result">
-                <ScalarProperty Name="CEDUSRO07" ColumnName="CEDUSRO07" />
-                <ScalarProperty Name="NOMUSRO07" ColumnName="NOMUSRO07" />
-                <ScalarProperty Name="PAPUSRO07" ColumnName="PAPUSRO07" />
-                <ScalarProperty Name="SAPUSRO07" ColumnName="SAPUSRO07" />
-                <ScalarProperty Name="CODCANT03" ColumnName="CODCANT03" />
-                <ScalarProperty Name="CODDIAC04" ColumnName="CODDIAC04" />
-                <ScalarProperty Name="CODUSRO05" ColumnName="CODUSRO05" />
-                <ScalarProperty Name="ESTUSRO07" ColumnName="ESTUSRO07" />
-                <ScalarProperty Name="DIRUSRO07" ColumnName="DIRUSRO07" />
-                <ScalarProperty Name="NACUSRO07" ColumnName="NACUSRO07" />
-                <ScalarProperty Name="CNTUSRO07" ColumnName="CNTUSRO07" />
-                <ScalarProperty Name="FEIUSRO07" ColumnName="FEIUSRO07" />
-                <ScalarProperty Name="FEFUSRO07" ColumnName="FEFUSRO07" />
-                <ScalarProperty Name="FENUSRO07" ColumnName="FENUSRO07" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SP_CONXID_REGDIAC" FunctionName="SIDEPS.Store.SP_CONXID_REGDIAC">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="SIDEPS.SP_CONXID_REGDIAC_Result">
-                <ScalarProperty Name="CODDIAC04" ColumnName="CODDIAC04" />
-                <ScalarProperty Name="NOMDIAC04" ColumnName="NOMDIAC04" />
-                <ScalarProperty Name="LUGDIAC04" ColumnName="LUGDIAC04" />
-                <ScalarProperty Name="TELDIAC04" ColumnName="TELDIAC04" />
-                <ScalarProperty Name="ESTDIAC04" ColumnName="ESTDIAC04" />
-                <ScalarProperty Name="CODCANT03" ColumnName="CODCANT03" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SP_CONXID_REGUSRO" FunctionName="SIDEPS.Store.SP_CONXID_REGUSRO">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="SIDEPS.SP_CONXID_REGUSRO_Result">
-                <ScalarProperty Name="CEDUSRO07" ColumnName="CEDUSRO07" />
-                <ScalarProperty Name="NOMUSRO07" ColumnName="NOMUSRO07" />
-                <ScalarProperty Name="PAPUSRO07" ColumnName="PAPUSRO07" />
-                <ScalarProperty Name="SAPUSRO07" ColumnName="SAPUSRO07" />
-                <ScalarProperty Name="CODCANT03" ColumnName="CODCANT03" />
-                <ScalarProperty Name="CODDIAC04" ColumnName="CODDIAC04" />
-                <ScalarProperty Name="CODUSRO05" ColumnName="CODUSRO05" />
-                <ScalarProperty Name="ESTUSRO07" ColumnName="ESTUSRO07" />
-                <ScalarProperty Name="DIRUSRO07" ColumnName="DIRUSRO07" />
-                <ScalarProperty Name="NACUSRO07" ColumnName="NACUSRO07" />
-                <ScalarProperty Name="CNTUSRO07" ColumnName="CNTUSRO07" />
-                <ScalarProperty Name="FEIUSRO07" ColumnName="FEIUSRO07" />
-                <ScalarProperty Name="FEFUSRO07" ColumnName="FEFUSRO07" />
-                <ScalarProperty Name="FENUSRO07" ColumnName="FENUSRO07" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SP_DEL_REGDIAC" FunctionName="SIDEPS.Store.SP_DEL_REGDIAC" />
-          <FunctionImportMapping FunctionImportName="SP_DEL_REGUSRO" FunctionName="SIDEPS.Store.SP_DEL_REGUSRO" />
-          <FunctionImportMapping FunctionImportName="SP_INS_REGASPS" FunctionName="SIDEPS.Store.SP_INS_REGASPS" />
-          <FunctionImportMapping FunctionImportName="SP_INS_REGCASO" FunctionName="SIDEPS.Store.SP_INS_REGCASO" />
-          <FunctionImportMapping FunctionImportName="SP_INS_REGDIAC" FunctionName="SIDEPS.Store.SP_INS_REGDIAC" />
-          <FunctionImportMapping FunctionImportName="SP_INS_REGEGRF" FunctionName="SIDEPS.Store.SP_INS_REGEGRF" />
-          <FunctionImportMapping FunctionImportName="SP_INS_REGFAML" FunctionName="SIDEPS.Store.SP_INS_REGFAML" />
-          <FunctionImportMapping FunctionImportName="SP_INS_REGPERS" FunctionName="SIDEPS.Store.SP_INS_REGPERS" />
-          <FunctionImportMapping FunctionImportName="SP_INS_REGUSRO" FunctionName="SIDEPS.Store.SP_INS_REGUSRO" />
-          <FunctionImportMapping FunctionImportName="SP_INS_REGVIVI" FunctionName="SIDEPS.Store.SP_INS_REGVIVI" />
-          <FunctionImportMapping FunctionImportName="SP_MOD_REGDIAC" FunctionName="SIDEPS.Store.SP_MOD_REGDIAC" />
-          <FunctionImportMapping FunctionImportName="SP_MOD_REGUSRO" FunctionName="SIDEPS.Store.SP_MOD_REGUSRO" />
-        </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SIDEPSStoreContainer" CdmEntityContainer="SIDEPSEntities">
+    <EntitySetMapping Name="SIDEPS_01CATPAIS">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_01CATPAIS)">
+        <MappingFragment StoreEntitySet="SIDEPS_01CATPAIS">
+          <ScalarProperty Name="CODPAIS01" ColumnName="CODPAIS01" />
+          <ScalarProperty Name="NOMPAIS01" ColumnName="NOMPAIS01" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_02CATPROV">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_02CATPROV)">
+        <MappingFragment StoreEntitySet="SIDEPS_02CATPROV">
+          <ScalarProperty Name="CODPROV02" ColumnName="CODPROV02" />
+          <ScalarProperty Name="NOMPROV02" ColumnName="NOMPROV02" />
+          <ScalarProperty Name="CODPAIS01" ColumnName="CODPAIS01" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_03CATCANT">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_03CATCANT)">
+        <MappingFragment StoreEntitySet="SIDEPS_03CATCANT">
+          <ScalarProperty Name="CODCANT03" ColumnName="CODCANT03" />
+          <ScalarProperty Name="NOMCANT03" ColumnName="NOMCANT03" />
+          <ScalarProperty Name="CODPROV02" ColumnName="CODPROV02" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_04REGDIAC">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_04REGDIAC)">
+        <MappingFragment StoreEntitySet="SIDEPS_04REGDIAC">
+          <ScalarProperty Name="CODDIAC04" ColumnName="CODDIAC04" />
+          <ScalarProperty Name="NOMDIAC04" ColumnName="NOMDIAC04" />
+          <ScalarProperty Name="LUGDIAC04" ColumnName="LUGDIAC04" />
+          <ScalarProperty Name="TELDIAC04" ColumnName="TELDIAC04" />
+          <ScalarProperty Name="ESTDIAC04" ColumnName="ESTDIAC04" />
+          <ScalarProperty Name="CODCANT03" ColumnName="CODCANT03" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_05TIPUSRO">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_05TIPUSRO)">
+        <MappingFragment StoreEntitySet="SIDEPS_05TIPUSRO">
+          <ScalarProperty Name="CODUSRO05" ColumnName="CODUSRO05" />
+          <ScalarProperty Name="DESUSRO05" ColumnName="DESUSRO05" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_06CATESTC">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_06CATESTC)">
+        <MappingFragment StoreEntitySet="SIDEPS_06CATESTC">
+          <ScalarProperty Name="CODESTC06" ColumnName="CODESTC06" />
+          <ScalarProperty Name="DESESTC06" ColumnName="DESESTC06" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_07REGUSRO">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_07REGUSRO)">
+        <MappingFragment StoreEntitySet="SIDEPS_07REGUSRO">
+          <ScalarProperty Name="CEDUSRO07" ColumnName="CEDUSRO07" />
+          <ScalarProperty Name="NOMUSRO07" ColumnName="NOMUSRO07" />
+          <ScalarProperty Name="PAPUSRO07" ColumnName="PAPUSRO07" />
+          <ScalarProperty Name="SAPUSRO07" ColumnName="SAPUSRO07" />
+          <ScalarProperty Name="CODCANT03" ColumnName="CODCANT03" />
+          <ScalarProperty Name="CODDIAC04" ColumnName="CODDIAC04" />
+          <ScalarProperty Name="CODUSRO05" ColumnName="CODUSRO05" />
+          <ScalarProperty Name="ESTUSRO07" ColumnName="ESTUSRO07" />
+          <ScalarProperty Name="DIRUSRO07" ColumnName="DIRUSRO07" />
+          <ScalarProperty Name="NACUSRO07" ColumnName="NACUSRO07" />
+          <ScalarProperty Name="CNTUSRO07" ColumnName="CNTUSRO07" />
+          <ScalarProperty Name="FEIUSRO07" ColumnName="FEIUSRO07" />
+          <ScalarProperty Name="FEFUSRO07" ColumnName="FEFUSRO07" />
+          <ScalarProperty Name="FENUSRO07" ColumnName="FENUSRO07" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_08REGTELF">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_08REGTELF)">
+        <MappingFragment StoreEntitySet="SIDEPS_08REGTELF">
+          <ScalarProperty Name="CODTELF08" ColumnName="CODTELF08" />
+          <ScalarProperty Name="CEDUSRO07" ColumnName="CEDUSRO07" />
+          <ScalarProperty Name="NUMTELF08" ColumnName="NUMTELF08" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_09CATNEDU">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_09CATNEDU)">
+        <MappingFragment StoreEntitySet="SIDEPS_09CATNEDU">
+          <ScalarProperty Name="CODNEDU09" ColumnName="CODNEDU09" />
+          <ScalarProperty Name="DESNEDU09" ColumnName="DESNEDU09" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_10CATSOLI">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_10CATSOLI)">
+        <MappingFragment StoreEntitySet="SIDEPS_10CATSOLI">
+          <ScalarProperty Name="CODSOLI10" ColumnName="CODSOLI10" />
+          <ScalarProperty Name="DESSOLI10" ColumnName="DESSOLI10" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_11CATRELG">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_11CATRELG)">
+        <MappingFragment StoreEntitySet="SIDEPS_11CATRELG">
+          <ScalarProperty Name="CODRELG11" ColumnName="CODRELG11" />
+          <ScalarProperty Name="DESRELG11" ColumnName="DESRELG11" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_12CATPARE">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_12CATPARE)">
+        <MappingFragment StoreEntitySet="SIDEPS_12CATPARE">
+          <ScalarProperty Name="CODPARE12" ColumnName="CODPARE12" />
+          <ScalarProperty Name="DESPARE12" ColumnName="DESPARE12" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_13REGPERS">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_13REGPERS)">
+        <MappingFragment StoreEntitySet="SIDEPS_13REGPERS">
+          <ScalarProperty Name="CEDPERS13" ColumnName="CEDPERS13" />
+          <ScalarProperty Name="CODESTC06" ColumnName="CODESTC06" />
+          <ScalarProperty Name="CODNEDU09" ColumnName="CODNEDU09" />
+          <ScalarProperty Name="CODCANT03" ColumnName="CODCANT03" />
+          <ScalarProperty Name="CODSOLI10" ColumnName="CODSOLI10" />
+          <ScalarProperty Name="CODRELG11" ColumnName="CODRELG11" />
+          <ScalarProperty Name="NOMPERS13" ColumnName="NOMPERS13" />
+          <ScalarProperty Name="PAPPERS13" ColumnName="PAPPERS13" />
+          <ScalarProperty Name="SAPPERS13" ColumnName="SAPPERS13" />
+          <ScalarProperty Name="NACPERS13" ColumnName="NACPERS13" />
+          <ScalarProperty Name="DIRPERS13" ColumnName="DIRPERS13" />
+          <ScalarProperty Name="OACPERS13" ColumnName="OACPERS13" />
+          <ScalarProperty Name="OANPERS13" ColumnName="OANPERS13" />
+          <ScalarProperty Name="FENPERS13" ColumnName="FENPERS13" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_14CATSEGU">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_14CATSEGU)">
+        <MappingFragment StoreEntitySet="SIDEPS_14CATSEGU">
+          <ScalarProperty Name="CODSEGU14" ColumnName="CODSEGU14" />
+          <ScalarProperty Name="DESSEGU14" ColumnName="DESSEGU14" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_15CATENFR">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_15CATENFR)">
+        <MappingFragment StoreEntitySet="SIDEPS_15CATENFR">
+          <ScalarProperty Name="CODENFR15" ColumnName="CODENFR15" />
+          <ScalarProperty Name="DESENFR15" ColumnName="DESENFR15" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_16REGASPS">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_16REGASPS)">
+        <MappingFragment StoreEntitySet="SIDEPS_16REGASPS">
+          <ScalarProperty Name="CODASPS16" ColumnName="CODASPS16" />
+          <ScalarProperty Name="CEDPERS13" ColumnName="CEDPERS13" />
+          <ScalarProperty Name="CODSEGU14" ColumnName="CODSEGU14" />
+          <ScalarProperty Name="CODENFR15" ColumnName="CODENFR15" />
+          <ScalarProperty Name="DESENFR16" ColumnName="DESENFR16" />
+          <ScalarProperty Name="RECTRAT16" ColumnName="RECTRAT16" />
+          <ScalarProperty Name="DESTRAT16" ColumnName="DESTRAT16" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_17CATMATE">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_17CATMATE)">
+        <MappingFragment StoreEntitySet="SIDEPS_17CATMATE">
+          <ScalarProperty Name="CODMATE17" ColumnName="CODMATE17" />
+          <ScalarProperty Name="DESMATE17" ColumnName="DESMATE17" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_18TIPVIVI">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_18TIPVIVI)">
+        <MappingFragment StoreEntitySet="SIDEPS_18TIPVIVI">
+          <ScalarProperty Name="CODTIPV18" ColumnName="CODTIPV18" />
+          <ScalarProperty Name="DESTIPV18" ColumnName="DESTIPV18" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_19ESTVIVI">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_19ESTVIVI)">
+        <MappingFragment StoreEntitySet="SIDEPS_19ESTVIVI">
+          <ScalarProperty Name="CODESTV19" ColumnName="CODESTV19" />
+          <ScalarProperty Name="DESESTV19" ColumnName="DESESTV19" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_20REGVIVI">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_20REGVIVI)">
+        <MappingFragment StoreEntitySet="SIDEPS_20REGVIVI">
+          <ScalarProperty Name="CODVIVI20" ColumnName="CODVIVI20" />
+          <ScalarProperty Name="CODTIPV18" ColumnName="CODTIPV18" />
+          <ScalarProperty Name="CODESTV19" ColumnName="CODESTV19" />
+          <ScalarProperty Name="CODMATE17" ColumnName="CODMATE17" />
+          <ScalarProperty Name="MTOVIVI20" ColumnName="MTOVIVI20" />
+          <ScalarProperty Name="NAPVIVI20" ColumnName="NAPVIVI20" />
+          <ScalarProperty Name="SRCVIVI20" ColumnName="SRCVIVI20" />
+          <ScalarProperty Name="SRIVIVI20" ColumnName="SRIVIVI20" />
+          <ScalarProperty Name="SRLVIVI20" ColumnName="SRLVIVI20" />
+          <ScalarProperty Name="SRMVIVI20" ColumnName="SRMVIVI20" />
+          <ScalarProperty Name="SRBVIVI20" ColumnName="SRBVIVI20" />
+          <ScalarProperty Name="SREVIVI20" ColumnName="SREVIVI20" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_21CATORGS">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_21CATORGS)">
+        <MappingFragment StoreEntitySet="SIDEPS_21CATORGS">
+          <ScalarProperty Name="CODORGS21" ColumnName="CODORGS21" />
+          <ScalarProperty Name="DESORGS21" ColumnName="DESORGS21" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_22REGFAML">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_22REGFAML)">
+        <MappingFragment StoreEntitySet="SIDEPS_22REGFAML">
+          <ScalarProperty Name="CEDFAML22" ColumnName="CEDFAML22" />
+          <ScalarProperty Name="NOMFAML22" ColumnName="NOMFAML22" />
+          <ScalarProperty Name="EDAFAML22" ColumnName="EDAFAML22" />
+          <ScalarProperty Name="CODESTC06" ColumnName="CODESTC06" />
+          <ScalarProperty Name="CODNEDU09" ColumnName="CODNEDU09" />
+          <ScalarProperty Name="OACFAML22" ColumnName="OACFAML22" />
+          <ScalarProperty Name="INGFAML22" ColumnName="INGFAML22" />
+          <ScalarProperty Name="DESFAML22" ColumnName="DESFAML22" />
+          <ScalarProperty Name="CODORGS21" ColumnName="CODORGS21" />
+          <ScalarProperty Name="CODENFR15" ColumnName="CODENFR15" />
+          <ScalarProperty Name="CODPARE12" ColumnName="CODPARE12" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_23CATFINA">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_23CATFINA)">
+        <MappingFragment StoreEntitySet="SIDEPS_23CATFINA">
+          <ScalarProperty Name="CODFINA23" ColumnName="CODFINA23" />
+          <ScalarProperty Name="CEDFAML22" ColumnName="CEDFAML22" />
+          <ScalarProperty Name="CEDPERS13" ColumnName="CEDPERS13" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_24REGEGRF">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_24REGEGRF)">
+        <MappingFragment StoreEntitySet="SIDEPS_24REGEGRF">
+          <ScalarProperty Name="CODEGRF24" ColumnName="CODEGRF24" />
+          <ScalarProperty Name="MTOALQU24" ColumnName="MTOALQU24" />
+          <ScalarProperty Name="MTOALIM24" ColumnName="MTOALIM24" />
+          <ScalarProperty Name="MTOELEC24" ColumnName="MTOELEC24" />
+          <ScalarProperty Name="MTOGAST24" ColumnName="MTOGAST24" />
+          <ScalarProperty Name="MTCAGUA24" ColumnName="MTCAGUA24" />
+          <ScalarProperty Name="MTOCABL24" ColumnName="MTOCABL24" />
+          <ScalarProperty Name="MTOTELF24" ColumnName="MTOTELF24" />
+          <ScalarProperty Name="MTOINTE24" ColumnName="MTOINTE24" />
+          <ScalarProperty Name="MTOEDUC24" ColumnName="MTOEDUC24" />
+          <ScalarProperty Name="MTOSEGU24" ColumnName="MTOSEGU24" />
+          <ScalarProperty Name="MTOOTRO24" ColumnName="MTOOTRO24" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_25REGCASO">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_25REGCASO)">
+        <MappingFragment StoreEntitySet="SIDEPS_25REGCASO">
+          <ScalarProperty Name="CODCASO25" ColumnName="CODCASO25" />
+          <ScalarProperty Name="CEDPERS13" ColumnName="CEDPERS13" />
+          <ScalarProperty Name="CODASPS16" ColumnName="CODASPS16" />
+          <ScalarProperty Name="CEDUSRO07" ColumnName="CEDUSRO07" />
+          <ScalarProperty Name="CODVIVI20" ColumnName="CODVIVI20" />
+          <ScalarProperty Name="CODEGRF24" ColumnName="CODEGRF24" />
+          <ScalarProperty Name="FEICASO25" ColumnName="FEICASO25" />
+          <ScalarProperty Name="FEFCASO25" ColumnName="FEFCASO25" />
+          <ScalarProperty Name="DESCASO25" ColumnName="DESCASO25" />
+          <ScalarProperty Name="OPICASO25" ColumnName="OPICASO25" />
+          <ScalarProperty Name="ESTCASO25" ColumnName="ESTCASO25" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_26CATAYUD">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_26CATAYUD)">
+        <MappingFragment StoreEntitySet="SIDEPS_26CATAYUD">
+          <ScalarProperty Name="CODAYUD26" ColumnName="CODAYUD26" />
+          <ScalarProperty Name="DESAYUD26" ColumnName="DESAYUD26" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_27TIPAYUD">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_27TIPAYUD)">
+        <MappingFragment StoreEntitySet="SIDEPS_27TIPAYUD">
+          <ScalarProperty Name="CODTIPA27" ColumnName="CODTIPA27" />
+          <ScalarProperty Name="CODAYUD26" ColumnName="CODAYUD26" />
+          <ScalarProperty Name="CODCASO25" ColumnName="CODCASO25" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_28REGHIS">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_28REGHIS)">
+        <MappingFragment StoreEntitySet="SIDEPS_28REGHIS">
+          <ScalarProperty Name="CODHIST28" ColumnName="CODHIST28" />
+          <ScalarProperty Name="CODCASO25" ColumnName="CODCASO25" />
+          <ScalarProperty Name="DESCASO28" ColumnName="DESCASO28" />
+          <ScalarProperty Name="ESTCASO28" ColumnName="ESTCASO28" />
+          <ScalarProperty Name="FECCASO28" ColumnName="FECCASO28" />
+          <ScalarProperty Name="FECACTU28" ColumnName="FECACTU28" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_29REGCNTR">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_29REGCNTR)">
+        <MappingFragment StoreEntitySet="SIDEPS_29REGCNTR">
+          <ScalarProperty Name="CODCNTR" ColumnName="CODCNTR" />
+          <ScalarProperty Name="CODCASO" ColumnName="CODCASO" />
+          <ScalarProperty Name="ESTCASO" ColumnName="ESTCASO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -2478,7 +2449,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>

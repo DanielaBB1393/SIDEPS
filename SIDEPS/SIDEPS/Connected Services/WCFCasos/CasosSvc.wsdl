@@ -13,6 +13,12 @@
   <wsdl:message name="ICasosSvc_SP_Ins_Caso_OutputMessage">
     <wsdl:part name="parameters" element="tns:SP_Ins_CasoResponse" />
   </wsdl:message>
+  <wsdl:message name="ICasosSvc_SP_Mod_Caso_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Mod_Caso" />
+  </wsdl:message>
+  <wsdl:message name="ICasosSvc_SP_Mod_Caso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Mod_CasoResponse" />
+  </wsdl:message>
   <wsdl:message name="ICasosSvc_SP_Ins_Persona_InputMessage">
     <wsdl:part name="parameters" element="tns:SP_Ins_Persona" />
   </wsdl:message>
@@ -25,10 +31,32 @@
   <wsdl:message name="ICasosSvc_SP_Ins_AspectoSalud_OutputMessage">
     <wsdl:part name="parameters" element="tns:SP_Ins_AspectoSaludResponse" />
   </wsdl:message>
+  <wsdl:message name="ICasosSvc_SP_Ins_Vivienda_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Ins_Vivienda" />
+  </wsdl:message>
+  <wsdl:message name="ICasosSvc_SP_Ins_Vivienda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Ins_ViviendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICasosSvc_SP_Ins_GrupoFamiliar_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Ins_GrupoFamiliar" />
+  </wsdl:message>
+  <wsdl:message name="ICasosSvc_SP_Ins_GrupoFamiliar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Ins_GrupoFamiliarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICasosSvc_SP_Ins_Egresos_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Ins_Egresos" />
+  </wsdl:message>
+  <wsdl:message name="ICasosSvc_SP_Ins_Egresos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Ins_EgresosResponse" />
+  </wsdl:message>
   <wsdl:portType name="ICasosSvc">
     <wsdl:operation name="SP_Ins_Caso">
       <wsdl:input wsaw:Action="http://tempuri.org/ICasosSvc/SP_Ins_Caso" message="tns:ICasosSvc_SP_Ins_Caso_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICasosSvc/SP_Ins_CasoResponse" message="tns:ICasosSvc_SP_Ins_Caso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Mod_Caso">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICasosSvc/SP_Mod_Caso" message="tns:ICasosSvc_SP_Mod_Caso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICasosSvc/SP_Mod_CasoResponse" message="tns:ICasosSvc_SP_Mod_Caso_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="SP_Ins_Persona">
       <wsdl:input wsaw:Action="http://tempuri.org/ICasosSvc/SP_Ins_Persona" message="tns:ICasosSvc_SP_Ins_Persona_InputMessage" />
@@ -38,11 +66,32 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ICasosSvc/SP_Ins_AspectoSalud" message="tns:ICasosSvc_SP_Ins_AspectoSalud_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICasosSvc/SP_Ins_AspectoSaludResponse" message="tns:ICasosSvc_SP_Ins_AspectoSalud_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="SP_Ins_Vivienda">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICasosSvc/SP_Ins_Vivienda" message="tns:ICasosSvc_SP_Ins_Vivienda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICasosSvc/SP_Ins_ViviendaResponse" message="tns:ICasosSvc_SP_Ins_Vivienda_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Ins_GrupoFamiliar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICasosSvc/SP_Ins_GrupoFamiliar" message="tns:ICasosSvc_SP_Ins_GrupoFamiliar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICasosSvc/SP_Ins_GrupoFamiliarResponse" message="tns:ICasosSvc_SP_Ins_GrupoFamiliar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Ins_Egresos">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICasosSvc/SP_Ins_Egresos" message="tns:ICasosSvc_SP_Ins_Egresos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICasosSvc/SP_Ins_EgresosResponse" message="tns:ICasosSvc_SP_Ins_Egresos_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ICasosSvc" type="tns:ICasosSvc">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="SP_Ins_Caso">
       <soap:operation soapAction="http://tempuri.org/ICasosSvc/SP_Ins_Caso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Mod_Caso">
+      <soap:operation soapAction="http://tempuri.org/ICasosSvc/SP_Mod_Caso" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -61,6 +110,33 @@
     </wsdl:operation>
     <wsdl:operation name="SP_Ins_AspectoSalud">
       <soap:operation soapAction="http://tempuri.org/ICasosSvc/SP_Ins_AspectoSalud" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Ins_Vivienda">
+      <soap:operation soapAction="http://tempuri.org/ICasosSvc/SP_Ins_Vivienda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Ins_GrupoFamiliar">
+      <soap:operation soapAction="http://tempuri.org/ICasosSvc/SP_Ins_GrupoFamiliar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Ins_Egresos">
+      <soap:operation soapAction="http://tempuri.org/ICasosSvc/SP_Ins_Egresos" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

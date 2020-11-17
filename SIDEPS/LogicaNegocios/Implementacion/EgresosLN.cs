@@ -5,15 +5,15 @@ using LogicaNegocios.Interfaces;
 
 namespace LogicaNegocios.Implementacion
 {
-    public class AspectoSaludLN : IAspectoSaludLN
+    public class EgresosLN : IEgresosLN
     {
-        private readonly IAspectoSaludAD aspectoSaludAD = new AspectoSaludAD();
+        private readonly IEgresosAD egresosAD = new EgresosAD();
 
-        public int SP_Ins_AspectoSalud(SIDEPS_16REGASPS aspecto, int codigoCaso)
+        public int SP_Ins_Egresos(SIDEPS_24REGEGRF egresos, int codigoCaso)
         {
             try
             {
-                return this.aspectoSaludAD.SP_Ins_AspectoSalud(aspecto, codigoCaso);
+                return this.egresosAD.SP_Ins_Egresos(egresos, codigoCaso);
             }
             catch
             {

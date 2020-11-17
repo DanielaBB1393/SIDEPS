@@ -4,22 +4,22 @@ using System;
 
 namespace AccesoDatos.Implementacion
 {
-    public class AspectoSaludAD : IAspectoSaludAD
+    public class ViviendaAD : IViviendaAD
     {
         private readonly SIDEPSEntities contexto = new SIDEPSEntities();
 
-        public int SP_Ins_AspectoSalud(SIDEPS_16REGASPS aspecto, int codigoCaso)
+        public int SP_Ins_Vivienda(SIDEPS_20REGVIVI vivienda, int codigoCaso)
         {
             try
             {
-                var resultado = this.contexto.SIDEPS_16REGASPS.Add(aspecto);
+                var resultado = this.contexto.SIDEPS_20REGVIVI.Add(vivienda);
                 this.contexto.SaveChanges();
 
                 SIDEPS_25REGCASO caso = this.contexto.SIDEPS_25REGCASO.Find(codigoCaso);
-                caso.CODASPS16 = resultado.CODASPS16;
+                caso.CODVIVI20 = resultado.CODVIVI20;
                 this.contexto.SaveChanges();
 
-                return resultado.CODASPS16;
+                return resultado.CODVIVI20;
             }
             catch (Exception ex)
             {

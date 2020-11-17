@@ -5,15 +5,15 @@ using LogicaNegocios.Interfaces;
 
 namespace LogicaNegocios.Implementacion
 {
-    public class AspectoSaludLN : IAspectoSaludLN
+    public class GrupoFamiliarLN : IGrupoFamiliarLN
     {
-        private readonly IAspectoSaludAD aspectoSaludAD = new AspectoSaludAD();
+        private readonly IGrupoFamiliarAD grupoFamiliarLN = new GrupoFamiliarAD();
 
-        public int SP_Ins_AspectoSalud(SIDEPS_16REGASPS aspecto, int codigoCaso)
+        public bool SP_Ins_GrupoFamiliar(SIDEPS_22REGFAML grupoFamiliar)
         {
             try
             {
-                return this.aspectoSaludAD.SP_Ins_AspectoSalud(aspecto, codigoCaso);
+                return this.grupoFamiliarLN.SP_Ins_GrupoFamiliar(grupoFamiliar);
             }
             catch
             {

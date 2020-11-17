@@ -53,13 +53,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementacion\EgresosAD.cs" />
+    <Compile Include="Implementacion\GrupoFamiliarAD.cs" />
     <Compile Include="Implementacion\UsuariosAD.cs" />
     <Compile Include="Implementacion\AspectoSaludAD.cs" />
     <Compile Include="Implementacion\CasosAD.cs" />
     <Compile Include="Implementacion\PersonasAD.cs" />
+    <Compile Include="Implementacion\ViviendaAD.cs" />
     <Compile Include="Interfaces\IAspectoSaludAD.cs" />
     <Compile Include="Interfaces\ICasosAD.cs" />
+    <Compile Include="Interfaces\IEgresosAD.cs" />
     <Compile Include="Interfaces\IPersonasAD.cs" />
+    <Compile Include="Interfaces\IGrupoFamiliarAD.cs" />
+    <Compile Include="Interfaces\IViviendaAD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SIDEPS.Context.cs">
       <AutoGen>True</AutoGen>

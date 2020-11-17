@@ -4,6 +4,7 @@ namespace LogicaNegocios.Interfaces
 {
     public interface ICasosLN
     {
-        bool SP_Ins_Caso(SIDEPS_25REGCASO caso);
+        int SP_Ins_Caso(SIDEPS_25REGCASO caso);
+        bool SP_Mod_Caso(SIDEPS_25REGCASO caso);
     }
 }

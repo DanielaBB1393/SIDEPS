@@ -8,25 +8,42 @@ namespace AccesoDatos.Implementacion
     {
         SIDEPSEntities contexto = new SIDEPSEntities();
 
-        public bool SP_Ins_Caso(SIDEPS_25REGCASO caso)
+        public int SP_Ins_Caso(SIDEPS_25REGCASO caso)
         {
             try
             {
-                return contexto.SP_INS_REGCASO(
-                    caso.CEDPERS13,
-                    caso.CODASPS16,
-                    caso.CEDUSRO07,
-                    caso.CODVIVI20,
-                    caso.CODEGRF24,
-                    caso.FEICASO25,
-                    caso.FEFCASO25,
-                    caso.DESCASO25,
-                    caso.OPICASO25,
-                    caso.ESTCASO25) > 0;
+                var resultado = this.contexto.SIDEPS_25REGCASO.Add(caso);
+                this.contexto.SaveChanges();
+
+                return resultado.CODCASO25;
             }
             catch (Exception ex)
             {
+                throw ex;
+            }
+        }
 
+        public bool SP_Mod_Caso(SIDEPS_25REGCASO caso)
+        {
+            try
+            {
+                var resultado = this.contexto.SIDEPS_25REGCASO.Find(caso.CODCASO25);
+
+                resultado.CEDPERS13 = caso.CEDPERS13 ?? resultado.CEDPERS13;
+                resultado.CODASPS16 = caso.CODASPS16 ?? resultado.CODASPS16;
+                resultado.CEDUSRO07 = caso.CEDUSRO07 ?? resultado.CEDUSRO07;
+                resultado.CODVIVI20 = caso.CODVIVI20 ?? resultado.CODVIVI20;
+                resultado.CODEGRF24 = caso.CODEGRF24 ?? resultado.CODEGRF24;
+                resultado.FEICASO25 = caso.FEICASO25 ?? resultado.FEICASO25;
+                resultado.FEFCASO25 = caso.FEFCASO25 ?? resultado.FEFCASO25;
+                resultado.DESCASO25 = caso.DESCASO25 ?? resultado.DESCASO25;
+                resultado.OPICASO25 = caso.OPICASO25 ?? resultado.OPICASO25;
+                resultado.ESTCASO25 = caso.ESTCASO25 ?? resultado.ESTCASO25;
+
+                return this.contexto.SaveChanges() > 0;
+            }
+            catch (Exception ex)
+            {
                 throw ex;
             }
         }

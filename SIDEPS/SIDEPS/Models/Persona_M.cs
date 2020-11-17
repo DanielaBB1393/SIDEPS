@@ -10,7 +10,7 @@ namespace SIDEPS.Models
         public string CEDPERS13 { get; set; }
         [DisplayName("Estado Civil")]
         public Nullable<int> CODESTC06 { get; set; }
-        [DisplayName("Educación")]
+        [DisplayName("Escolaridad")]
         public Nullable<int> CODNEDU09 { get; set; }
         [DisplayName("Cantón")]
         public Nullable<int> CODCANT03 { get; set; }

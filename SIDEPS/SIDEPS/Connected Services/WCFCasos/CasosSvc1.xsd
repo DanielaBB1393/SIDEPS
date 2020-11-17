@@ -11,14 +11,28 @@
   <xs:element name="SP_Ins_CasoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="SP_Ins_CasoResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="SP_Ins_CasoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Mod_Caso">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="caso" nillable="true" type="q2:SIDEPS_25REGCASO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Mod_CasoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SP_Mod_CasoResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SP_Ins_Persona">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="persona" nillable="true" type="q2:SIDEPS_13REGPERS" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="persona" nillable="true" type="q3:SIDEPS_13REGPERS" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -32,14 +46,59 @@
   <xs:element name="SP_Ins_AspectoSalud">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="aspecto" nillable="true" type="q3:SIDEPS_16REGASPS" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="aspecto" nillable="true" type="q4:SIDEPS_16REGASPS" />
+        <xs:element minOccurs="0" name="codigoCaso" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SP_Ins_AspectoSaludResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="SP_Ins_AspectoSaludResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="SP_Ins_AspectoSaludResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Ins_Vivienda">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="vivienda" nillable="true" type="q5:SIDEPS_20REGVIVI" />
+        <xs:element minOccurs="0" name="codigoCaso" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Ins_ViviendaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SP_Ins_ViviendaResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Ins_GrupoFamiliar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="grupoFamiliar" nillable="true" type="q6:SIDEPS_22REGFAML" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Ins_GrupoFamiliarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SP_Ins_GrupoFamiliarResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Ins_Egresos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="egresos" nillable="true" type="q7:SIDEPS_24REGEGRF" />
+        <xs:element minOccurs="0" name="codigoCaso" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Ins_EgresosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SP_Ins_EgresosResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
