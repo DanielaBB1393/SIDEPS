@@ -133,6 +133,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Diaconia_M.cs" />
+    <Compile Include="Models\Combos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -200,9 +201,7 @@
     <Content Include="Views\Diaconia\listarDiaconias.cshtml" />
     <Content Include="Views\Diaconia\AgregarDiaconia.cshtml" />
     <Content Include="Views\Diaconia\DetalleDiaconias.cshtml" />
-    <Content Include="Views\Diaconia\EliminarDiaconias.cshtml" />
     <Content Include="Views\Diaconia\ModificarDiaconias.cshtml" />
-    <Content Include="Views\Diaconia\ElimDiaconias.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
