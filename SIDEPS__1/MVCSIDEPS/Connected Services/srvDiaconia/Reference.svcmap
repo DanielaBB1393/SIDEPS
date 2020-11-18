@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5c83981c-6e5b-4b90-ab8f-3cf7688f1861" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:51032/srvDiaconia.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="srvDiaconia.xsd" MetadataType="Schema" ID="1e92ebfc-704f-4ec0-93e8-be9203cba357" SourceId="1" SourceUrl="http://localhost:51032/srvDiaconia.svc?xsd=xsd0" />
+    <MetadataFile FileName="srvDiaconia.disco" MetadataType="Disco" ID="c5b74cf5-a986-4574-b21c-5b8c46d8b5c7" SourceId="1" SourceUrl="http://localhost:51032/srvDiaconia.svc?disco" />
+    <MetadataFile FileName="srvDiaconia1.xsd" MetadataType="Schema" ID="c45da87a-8801-4358-96ec-7b2c5cd09e64" SourceId="1" SourceUrl="http://localhost:51032/srvDiaconia.svc?xsd=xsd1" />
+    <MetadataFile FileName="srvDiaconia.wsdl" MetadataType="Wsdl" ID="f8666971-e146-45eb-ac36-6ce8a3a72da2" SourceId="1" SourceUrl="http://localhost:51032/srvDiaconia.svc?wsdl" />
+    <MetadataFile FileName="srvDiaconia2.xsd" MetadataType="Schema" ID="555ea219-cf30-4928-bc93-17e47ddfe270" SourceId="1" SourceUrl="http://localhost:51032/srvDiaconia.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

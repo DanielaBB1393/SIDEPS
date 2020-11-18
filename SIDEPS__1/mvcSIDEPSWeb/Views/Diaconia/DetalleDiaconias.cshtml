@@ -1,0 +1,66 @@
+﻿@model mvcSIDEPSWeb.Models.Diaconia_M
+
+@{
+    ViewBag.Title = "DetalleDiaconias";
+}
+
+<h2>Detalle Diaconia</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CODDIAC04)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODDIAC04)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMDIAC04)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMDIAC04)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LUGDIAC04)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LUGDIAC04)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TELDIAC04)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TELDIAC04)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ESTDIAC04)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ESTDIAC04)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODCANT03)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODCANT03)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Modificar", "ModificarDiaconias", new { id = Model.CODDIAC04 }) |
+    @Html.ActionLink("Volver a la Lista", "listarDiaconias")
+</p>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b52299385b6b49e79429f0829d6695a6" Name="Diagram1">
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_01CATPAIS" Width="1.5" PointX="1.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_02CATPROV" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_03CATCANT" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_04REGDIAC" Width="1.5" PointX="9" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_05TIPUSRO" Width="1.5" PointX="9" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_06CATESTC" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_07REGUSRO" Width="1.5" PointX="11.25" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_08REGTELF" Width="1.5" PointX="13.5" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_09CATNEDU" Width="1.5" PointX="0.75" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_10CATSOLI" Width="1.5" PointX="0.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_11CATRELG" Width="1.5" PointX="0.75" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_12CATPARE" Width="1.5" PointX="3.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_13REGPERS" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_14CATSEGU" Width="1.5" PointX="6" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_15CATENFR" Width="1.5" PointX="6" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_16REGASPS" Width="1.5" PointX="8.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_17CATMATE" Width="1.5" PointX="9" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_18TIPVIVI" Width="1.5" PointX="9" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_19ESTVIVI" Width="1.5" PointX="9" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_20REGVIVI" Width="1.5" PointX="11.25" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_21CATORGS" Width="1.5" PointX="3.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_22REGFAML" Width="1.5" PointX="6" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_23CATFINA" Width="1.5" PointX="11.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_24REGEGRF" Width="1.5" PointX="11.25" PointY="26.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_25REGCASO" Width="1.5" PointX="13.5" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_26CATAYUD" Width="1.5" PointX="13.5" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_27TIPAYUD" Width="1.5" PointX="15.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_28REGHIS" Width="1.5" PointX="15.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.SIDEPS_29REGCNTR" Width="1.5" PointX="8.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIDEPSModel.sysdiagrams" Width="1.5" PointX="10.75" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODPAIS01" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODPROV02" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODCANT03" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODCANT03_02" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODCANT03_3" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODDIAC04" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODUSRO05" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODESTC06" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODESTC06_02" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CEDUSRO07" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CEDUSRO07_03" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODNEDU09" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODNEDU09_02" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODSOLI10" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODRELG11" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODPARE12" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CEDPERS13" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CEDPERS13_02" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CEDPERS13_03" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODSEGU14" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODENFR15" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODENFR15_02" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODASPS16" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODMATE17" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODTIPV18" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODESTV19" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODVIVI20" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODORGS21" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CEDFAML22" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODEGRF24" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODCASO25" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODCASO25_02" ManuallyRouted="false" />
+        <AssociationConnector Association="SIDEPSModel.FK__SIDEPS_CODAYUD26" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
