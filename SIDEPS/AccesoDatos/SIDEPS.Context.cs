@@ -57,28 +57,6 @@ namespace AccesoDatos
         public virtual DbSet<SIDEPS_27TIPAYUD> SIDEPS_27TIPAYUD { get; set; }
         public virtual DbSet<SIDEPS_28REGHIS> SIDEPS_28REGHIS { get; set; }
         public virtual DbSet<SIDEPS_29REGCNTR> SIDEPS_29REGCNTR { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-    
-        public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            var versionParameter = version.HasValue ?
-                new ObjectParameter("version", version) :
-                new ObjectParameter("version", typeof(int));
-    
-            var definitionParameter = definition != null ?
-                new ObjectParameter("definition", definition) :
-                new ObjectParameter("definition", typeof(byte[]));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_alterdiagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
-        }
     
         public virtual ObjectResult<SP_CON_REGDIAC_Result> SP_CON_REGDIAC()
         {
@@ -108,27 +86,6 @@ namespace AccesoDatos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONXID_REGUSRO_Result>("SP_CONXID_REGUSRO", cEDUSRO07Parameter);
         }
     
-        public virtual int sp_creatediagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            var versionParameter = version.HasValue ?
-                new ObjectParameter("version", version) :
-                new ObjectParameter("version", typeof(int));
-    
-            var definitionParameter = definition != null ?
-                new ObjectParameter("definition", definition) :
-                new ObjectParameter("definition", typeof(byte[]));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_creatediagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
-        }
-    
         public virtual int SP_DEL_REGDIAC(Nullable<int> cODDIAC04)
         {
             var cODDIAC04Parameter = cODDIAC04.HasValue ?
@@ -145,219 +102,6 @@ namespace AccesoDatos
                 new ObjectParameter("CEDUSRO07", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_DEL_REGUSRO", cEDUSRO07Parameter);
-        }
-    
-        public virtual int sp_dropdiagram(string diagramname, Nullable<int> owner_id)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
-        }
-    
-        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
-        }
-    
-        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
-        }
-    
-        public virtual int SP_INS_REGDIAC(string nOMDIAC04, string lUGDIAC04, string tELDIAC04, Nullable<int> cODCANT03)
-        {
-            var nOMDIAC04Parameter = nOMDIAC04 != null ?
-                new ObjectParameter("NOMDIAC04", nOMDIAC04) :
-                new ObjectParameter("NOMDIAC04", typeof(string));
-    
-            var lUGDIAC04Parameter = lUGDIAC04 != null ?
-                new ObjectParameter("LUGDIAC04", lUGDIAC04) :
-                new ObjectParameter("LUGDIAC04", typeof(string));
-    
-            var tELDIAC04Parameter = tELDIAC04 != null ?
-                new ObjectParameter("TELDIAC04", tELDIAC04) :
-                new ObjectParameter("TELDIAC04", typeof(string));
-    
-            var cODCANT03Parameter = cODCANT03.HasValue ?
-                new ObjectParameter("CODCANT03", cODCANT03) :
-                new ObjectParameter("CODCANT03", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_INS_REGDIAC", nOMDIAC04Parameter, lUGDIAC04Parameter, tELDIAC04Parameter, cODCANT03Parameter);
-        }
-    
-        public virtual int SP_INS_REGUSRO(string cEDUSRO07, string nOMUSRO07, string pAPUSRO07, string sAPUSRO07, Nullable<int> cODCANT03, Nullable<int> cODDIAC04, Nullable<int> cODUSRO05, string dIRUSRO07, string nACUSRO07, string cNTUSRO07, Nullable<System.DateTime> fENUSRO07)
-        {
-            var cEDUSRO07Parameter = cEDUSRO07 != null ?
-                new ObjectParameter("CEDUSRO07", cEDUSRO07) :
-                new ObjectParameter("CEDUSRO07", typeof(string));
-    
-            var nOMUSRO07Parameter = nOMUSRO07 != null ?
-                new ObjectParameter("NOMUSRO07", nOMUSRO07) :
-                new ObjectParameter("NOMUSRO07", typeof(string));
-    
-            var pAPUSRO07Parameter = pAPUSRO07 != null ?
-                new ObjectParameter("PAPUSRO07", pAPUSRO07) :
-                new ObjectParameter("PAPUSRO07", typeof(string));
-    
-            var sAPUSRO07Parameter = sAPUSRO07 != null ?
-                new ObjectParameter("SAPUSRO07", sAPUSRO07) :
-                new ObjectParameter("SAPUSRO07", typeof(string));
-    
-            var cODCANT03Parameter = cODCANT03.HasValue ?
-                new ObjectParameter("CODCANT03", cODCANT03) :
-                new ObjectParameter("CODCANT03", typeof(int));
-    
-            var cODDIAC04Parameter = cODDIAC04.HasValue ?
-                new ObjectParameter("CODDIAC04", cODDIAC04) :
-                new ObjectParameter("CODDIAC04", typeof(int));
-    
-            var cODUSRO05Parameter = cODUSRO05.HasValue ?
-                new ObjectParameter("CODUSRO05", cODUSRO05) :
-                new ObjectParameter("CODUSRO05", typeof(int));
-    
-            var dIRUSRO07Parameter = dIRUSRO07 != null ?
-                new ObjectParameter("DIRUSRO07", dIRUSRO07) :
-                new ObjectParameter("DIRUSRO07", typeof(string));
-    
-            var nACUSRO07Parameter = nACUSRO07 != null ?
-                new ObjectParameter("NACUSRO07", nACUSRO07) :
-                new ObjectParameter("NACUSRO07", typeof(string));
-    
-            var cNTUSRO07Parameter = cNTUSRO07 != null ?
-                new ObjectParameter("CNTUSRO07", cNTUSRO07) :
-                new ObjectParameter("CNTUSRO07", typeof(string));
-    
-            var fENUSRO07Parameter = fENUSRO07.HasValue ?
-                new ObjectParameter("FENUSRO07", fENUSRO07) :
-                new ObjectParameter("FENUSRO07", typeof(System.DateTime));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_INS_REGUSRO", cEDUSRO07Parameter, nOMUSRO07Parameter, pAPUSRO07Parameter, sAPUSRO07Parameter, cODCANT03Parameter, cODDIAC04Parameter, cODUSRO05Parameter, dIRUSRO07Parameter, nACUSRO07Parameter, cNTUSRO07Parameter, fENUSRO07Parameter);
-        }
-    
-        public virtual int SP_MOD_REGDIAC(Nullable<int> cODDIAC04, string nOMDIAC04, string lUGDIAC04, string tELDIAC04, string eSTDIAC04, Nullable<int> cODCANT03)
-        {
-            var cODDIAC04Parameter = cODDIAC04.HasValue ?
-                new ObjectParameter("CODDIAC04", cODDIAC04) :
-                new ObjectParameter("CODDIAC04", typeof(int));
-    
-            var nOMDIAC04Parameter = nOMDIAC04 != null ?
-                new ObjectParameter("NOMDIAC04", nOMDIAC04) :
-                new ObjectParameter("NOMDIAC04", typeof(string));
-    
-            var lUGDIAC04Parameter = lUGDIAC04 != null ?
-                new ObjectParameter("LUGDIAC04", lUGDIAC04) :
-                new ObjectParameter("LUGDIAC04", typeof(string));
-    
-            var tELDIAC04Parameter = tELDIAC04 != null ?
-                new ObjectParameter("TELDIAC04", tELDIAC04) :
-                new ObjectParameter("TELDIAC04", typeof(string));
-    
-            var eSTDIAC04Parameter = eSTDIAC04 != null ?
-                new ObjectParameter("ESTDIAC04", eSTDIAC04) :
-                new ObjectParameter("ESTDIAC04", typeof(string));
-    
-            var cODCANT03Parameter = cODCANT03.HasValue ?
-                new ObjectParameter("CODCANT03", cODCANT03) :
-                new ObjectParameter("CODCANT03", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_MOD_REGDIAC", cODDIAC04Parameter, nOMDIAC04Parameter, lUGDIAC04Parameter, tELDIAC04Parameter, eSTDIAC04Parameter, cODCANT03Parameter);
-        }
-    
-        public virtual int SP_MOD_REGUSRO(string cEDUSRO07, string nOMUSRO07, string pAPUSRO07, string sAPUSRO07, Nullable<int> cODCANT03, Nullable<int> cODDIAC04, Nullable<int> cODUSRO05, string eSTUSRO07, string dIRUSRO07, string nACUSRO07, string cNTUSRO07, Nullable<System.DateTime> fENUSRO07)
-        {
-            var cEDUSRO07Parameter = cEDUSRO07 != null ?
-                new ObjectParameter("CEDUSRO07", cEDUSRO07) :
-                new ObjectParameter("CEDUSRO07", typeof(string));
-    
-            var nOMUSRO07Parameter = nOMUSRO07 != null ?
-                new ObjectParameter("NOMUSRO07", nOMUSRO07) :
-                new ObjectParameter("NOMUSRO07", typeof(string));
-    
-            var pAPUSRO07Parameter = pAPUSRO07 != null ?
-                new ObjectParameter("PAPUSRO07", pAPUSRO07) :
-                new ObjectParameter("PAPUSRO07", typeof(string));
-    
-            var sAPUSRO07Parameter = sAPUSRO07 != null ?
-                new ObjectParameter("SAPUSRO07", sAPUSRO07) :
-                new ObjectParameter("SAPUSRO07", typeof(string));
-    
-            var cODCANT03Parameter = cODCANT03.HasValue ?
-                new ObjectParameter("CODCANT03", cODCANT03) :
-                new ObjectParameter("CODCANT03", typeof(int));
-    
-            var cODDIAC04Parameter = cODDIAC04.HasValue ?
-                new ObjectParameter("CODDIAC04", cODDIAC04) :
-                new ObjectParameter("CODDIAC04", typeof(int));
-    
-            var cODUSRO05Parameter = cODUSRO05.HasValue ?
-                new ObjectParameter("CODUSRO05", cODUSRO05) :
-                new ObjectParameter("CODUSRO05", typeof(int));
-    
-            var eSTUSRO07Parameter = eSTUSRO07 != null ?
-                new ObjectParameter("ESTUSRO07", eSTUSRO07) :
-                new ObjectParameter("ESTUSRO07", typeof(string));
-    
-            var dIRUSRO07Parameter = dIRUSRO07 != null ?
-                new ObjectParameter("DIRUSRO07", dIRUSRO07) :
-                new ObjectParameter("DIRUSRO07", typeof(string));
-    
-            var nACUSRO07Parameter = nACUSRO07 != null ?
-                new ObjectParameter("NACUSRO07", nACUSRO07) :
-                new ObjectParameter("NACUSRO07", typeof(string));
-    
-            var cNTUSRO07Parameter = cNTUSRO07 != null ?
-                new ObjectParameter("CNTUSRO07", cNTUSRO07) :
-                new ObjectParameter("CNTUSRO07", typeof(string));
-    
-            var fENUSRO07Parameter = fENUSRO07.HasValue ?
-                new ObjectParameter("FENUSRO07", fENUSRO07) :
-                new ObjectParameter("FENUSRO07", typeof(System.DateTime));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_MOD_REGUSRO", cEDUSRO07Parameter, nOMUSRO07Parameter, pAPUSRO07Parameter, sAPUSRO07Parameter, cODCANT03Parameter, cODDIAC04Parameter, cODUSRO05Parameter, eSTUSRO07Parameter, dIRUSRO07Parameter, nACUSRO07Parameter, cNTUSRO07Parameter, fENUSRO07Parameter);
-        }
-    
-        public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            var new_diagramnameParameter = new_diagramname != null ?
-                new ObjectParameter("new_diagramname", new_diagramname) :
-                new ObjectParameter("new_diagramname", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
-        }
-    
-        public virtual int sp_upgraddiagrams()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
     
         public virtual int SP_INS_REGASPS(string cEDPERS13, Nullable<int> cODSEGU14, Nullable<int> cODENFR15, string dESENFR16, string rECTRAT16, string dESTRAT16)
@@ -432,6 +176,27 @@ namespace AccesoDatos
                 new ObjectParameter("ESTCASO25", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_INS_REGCASO", cEDPERS13Parameter, cODASPS16Parameter, cEDUSRO07Parameter, cODVIVI20Parameter, cODEGRF24Parameter, fEICASO25Parameter, fEFCASO25Parameter, dESCASO25Parameter, oPICASO25Parameter, eSTCASO25Parameter);
+        }
+    
+        public virtual int SP_INS_REGDIAC(string nOMDIAC04, string lUGDIAC04, string tELDIAC04, Nullable<int> cODCANT03)
+        {
+            var nOMDIAC04Parameter = nOMDIAC04 != null ?
+                new ObjectParameter("NOMDIAC04", nOMDIAC04) :
+                new ObjectParameter("NOMDIAC04", typeof(string));
+    
+            var lUGDIAC04Parameter = lUGDIAC04 != null ?
+                new ObjectParameter("LUGDIAC04", lUGDIAC04) :
+                new ObjectParameter("LUGDIAC04", typeof(string));
+    
+            var tELDIAC04Parameter = tELDIAC04 != null ?
+                new ObjectParameter("TELDIAC04", tELDIAC04) :
+                new ObjectParameter("TELDIAC04", typeof(string));
+    
+            var cODCANT03Parameter = cODCANT03.HasValue ?
+                new ObjectParameter("CODCANT03", cODCANT03) :
+                new ObjectParameter("CODCANT03", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_INS_REGDIAC", nOMDIAC04Parameter, lUGDIAC04Parameter, tELDIAC04Parameter, cODCANT03Parameter);
         }
     
         public virtual int SP_INS_REGEGRF(Nullable<decimal> mTOALQU24, Nullable<decimal> mTOALIM24, Nullable<decimal> mTOELEC24, Nullable<decimal> mTOGAST24, Nullable<decimal> mTCAGUA24, Nullable<decimal> mTOCABL24, Nullable<decimal> mTOTELF24, Nullable<decimal> mTOINTE24, Nullable<decimal> mTOEDUC24, Nullable<decimal> mTOSEGU24, Nullable<decimal> mTOOTRO24)
@@ -589,6 +354,55 @@ namespace AccesoDatos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_INS_REGPERS", cEDPERS13Parameter, cODESTC06Parameter, cODNEDU09Parameter, cODCANT03Parameter, cODSOLI10Parameter, cODRELG11Parameter, nOMPERS13Parameter, pAPPERS13Parameter, sAPPERS13Parameter, nACPERS13Parameter, dIRPERS13Parameter, oACPERS13Parameter, oANPERS13Parameter);
         }
     
+        public virtual int SP_INS_REGUSRO(string cEDUSRO07, string nOMUSRO07, string pAPUSRO07, string sAPUSRO07, Nullable<int> cODCANT03, Nullable<int> cODDIAC04, Nullable<int> cODUSRO05, string dIRUSRO07, string nACUSRO07, string cNTUSRO07, Nullable<System.DateTime> fENUSRO07)
+        {
+            var cEDUSRO07Parameter = cEDUSRO07 != null ?
+                new ObjectParameter("CEDUSRO07", cEDUSRO07) :
+                new ObjectParameter("CEDUSRO07", typeof(string));
+    
+            var nOMUSRO07Parameter = nOMUSRO07 != null ?
+                new ObjectParameter("NOMUSRO07", nOMUSRO07) :
+                new ObjectParameter("NOMUSRO07", typeof(string));
+    
+            var pAPUSRO07Parameter = pAPUSRO07 != null ?
+                new ObjectParameter("PAPUSRO07", pAPUSRO07) :
+                new ObjectParameter("PAPUSRO07", typeof(string));
+    
+            var sAPUSRO07Parameter = sAPUSRO07 != null ?
+                new ObjectParameter("SAPUSRO07", sAPUSRO07) :
+                new ObjectParameter("SAPUSRO07", typeof(string));
+    
+            var cODCANT03Parameter = cODCANT03.HasValue ?
+                new ObjectParameter("CODCANT03", cODCANT03) :
+                new ObjectParameter("CODCANT03", typeof(int));
+    
+            var cODDIAC04Parameter = cODDIAC04.HasValue ?
+                new ObjectParameter("CODDIAC04", cODDIAC04) :
+                new ObjectParameter("CODDIAC04", typeof(int));
+    
+            var cODUSRO05Parameter = cODUSRO05.HasValue ?
+                new ObjectParameter("CODUSRO05", cODUSRO05) :
+                new ObjectParameter("CODUSRO05", typeof(int));
+    
+            var dIRUSRO07Parameter = dIRUSRO07 != null ?
+                new ObjectParameter("DIRUSRO07", dIRUSRO07) :
+                new ObjectParameter("DIRUSRO07", typeof(string));
+    
+            var nACUSRO07Parameter = nACUSRO07 != null ?
+                new ObjectParameter("NACUSRO07", nACUSRO07) :
+                new ObjectParameter("NACUSRO07", typeof(string));
+    
+            var cNTUSRO07Parameter = cNTUSRO07 != null ?
+                new ObjectParameter("CNTUSRO07", cNTUSRO07) :
+                new ObjectParameter("CNTUSRO07", typeof(string));
+    
+            var fENUSRO07Parameter = fENUSRO07.HasValue ?
+                new ObjectParameter("FENUSRO07", fENUSRO07) :
+                new ObjectParameter("FENUSRO07", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_INS_REGUSRO", cEDUSRO07Parameter, nOMUSRO07Parameter, pAPUSRO07Parameter, sAPUSRO07Parameter, cODCANT03Parameter, cODDIAC04Parameter, cODUSRO05Parameter, dIRUSRO07Parameter, nACUSRO07Parameter, cNTUSRO07Parameter, fENUSRO07Parameter);
+        }
+    
         public virtual int SP_INS_REGVIVI(Nullable<int> cODTIPV18, Nullable<int> cODESTV19, Nullable<int> cODMATE17, Nullable<decimal> mTOVIVI20, string nAPVIVI20, string sRCVIVI20, string sRIVIVI20, string sRLVIVI20, string sRMVIVI20, string sRBVIVI20, string sREVIVI20)
         {
             var cODTIPV18Parameter = cODTIPV18.HasValue ?
@@ -636,6 +450,88 @@ namespace AccesoDatos
                 new ObjectParameter("SREVIVI20", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_INS_REGVIVI", cODTIPV18Parameter, cODESTV19Parameter, cODMATE17Parameter, mTOVIVI20Parameter, nAPVIVI20Parameter, sRCVIVI20Parameter, sRIVIVI20Parameter, sRLVIVI20Parameter, sRMVIVI20Parameter, sRBVIVI20Parameter, sREVIVI20Parameter);
+        }
+    
+        public virtual int SP_MOD_REGDIAC(Nullable<int> cODDIAC04, string nOMDIAC04, string lUGDIAC04, string tELDIAC04, string eSTDIAC04, Nullable<int> cODCANT03)
+        {
+            var cODDIAC04Parameter = cODDIAC04.HasValue ?
+                new ObjectParameter("CODDIAC04", cODDIAC04) :
+                new ObjectParameter("CODDIAC04", typeof(int));
+    
+            var nOMDIAC04Parameter = nOMDIAC04 != null ?
+                new ObjectParameter("NOMDIAC04", nOMDIAC04) :
+                new ObjectParameter("NOMDIAC04", typeof(string));
+    
+            var lUGDIAC04Parameter = lUGDIAC04 != null ?
+                new ObjectParameter("LUGDIAC04", lUGDIAC04) :
+                new ObjectParameter("LUGDIAC04", typeof(string));
+    
+            var tELDIAC04Parameter = tELDIAC04 != null ?
+                new ObjectParameter("TELDIAC04", tELDIAC04) :
+                new ObjectParameter("TELDIAC04", typeof(string));
+    
+            var eSTDIAC04Parameter = eSTDIAC04 != null ?
+                new ObjectParameter("ESTDIAC04", eSTDIAC04) :
+                new ObjectParameter("ESTDIAC04", typeof(string));
+    
+            var cODCANT03Parameter = cODCANT03.HasValue ?
+                new ObjectParameter("CODCANT03", cODCANT03) :
+                new ObjectParameter("CODCANT03", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_MOD_REGDIAC", cODDIAC04Parameter, nOMDIAC04Parameter, lUGDIAC04Parameter, tELDIAC04Parameter, eSTDIAC04Parameter, cODCANT03Parameter);
+        }
+    
+        public virtual int SP_MOD_REGUSRO(string cEDUSRO07, string nOMUSRO07, string pAPUSRO07, string sAPUSRO07, Nullable<int> cODCANT03, Nullable<int> cODDIAC04, Nullable<int> cODUSRO05, string eSTUSRO07, string dIRUSRO07, string nACUSRO07, string cNTUSRO07, Nullable<System.DateTime> fENUSRO07)
+        {
+            var cEDUSRO07Parameter = cEDUSRO07 != null ?
+                new ObjectParameter("CEDUSRO07", cEDUSRO07) :
+                new ObjectParameter("CEDUSRO07", typeof(string));
+    
+            var nOMUSRO07Parameter = nOMUSRO07 != null ?
+                new ObjectParameter("NOMUSRO07", nOMUSRO07) :
+                new ObjectParameter("NOMUSRO07", typeof(string));
+    
+            var pAPUSRO07Parameter = pAPUSRO07 != null ?
+                new ObjectParameter("PAPUSRO07", pAPUSRO07) :
+                new ObjectParameter("PAPUSRO07", typeof(string));
+    
+            var sAPUSRO07Parameter = sAPUSRO07 != null ?
+                new ObjectParameter("SAPUSRO07", sAPUSRO07) :
+                new ObjectParameter("SAPUSRO07", typeof(string));
+    
+            var cODCANT03Parameter = cODCANT03.HasValue ?
+                new ObjectParameter("CODCANT03", cODCANT03) :
+                new ObjectParameter("CODCANT03", typeof(int));
+    
+            var cODDIAC04Parameter = cODDIAC04.HasValue ?
+                new ObjectParameter("CODDIAC04", cODDIAC04) :
+                new ObjectParameter("CODDIAC04", typeof(int));
+    
+            var cODUSRO05Parameter = cODUSRO05.HasValue ?
+                new ObjectParameter("CODUSRO05", cODUSRO05) :
+                new ObjectParameter("CODUSRO05", typeof(int));
+    
+            var eSTUSRO07Parameter = eSTUSRO07 != null ?
+                new ObjectParameter("ESTUSRO07", eSTUSRO07) :
+                new ObjectParameter("ESTUSRO07", typeof(string));
+    
+            var dIRUSRO07Parameter = dIRUSRO07 != null ?
+                new ObjectParameter("DIRUSRO07", dIRUSRO07) :
+                new ObjectParameter("DIRUSRO07", typeof(string));
+    
+            var nACUSRO07Parameter = nACUSRO07 != null ?
+                new ObjectParameter("NACUSRO07", nACUSRO07) :
+                new ObjectParameter("NACUSRO07", typeof(string));
+    
+            var cNTUSRO07Parameter = cNTUSRO07 != null ?
+                new ObjectParameter("CNTUSRO07", cNTUSRO07) :
+                new ObjectParameter("CNTUSRO07", typeof(string));
+    
+            var fENUSRO07Parameter = fENUSRO07.HasValue ?
+                new ObjectParameter("FENUSRO07", fENUSRO07) :
+                new ObjectParameter("FENUSRO07", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_MOD_REGUSRO", cEDUSRO07Parameter, nOMUSRO07Parameter, pAPUSRO07Parameter, sAPUSRO07Parameter, cODCANT03Parameter, cODDIAC04Parameter, cODUSRO05Parameter, eSTUSRO07Parameter, dIRUSRO07Parameter, nACUSRO07Parameter, cNTUSRO07Parameter, fENUSRO07Parameter);
         }
     }
 }

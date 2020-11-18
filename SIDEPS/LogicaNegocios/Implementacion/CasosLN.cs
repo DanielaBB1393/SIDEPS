@@ -10,11 +10,23 @@ namespace LogicaNegocios.Implementacion
         private readonly ICasosAD accesoDatos = new CasosAD();
 
 
-        public bool SP_Ins_Caso(SIDEPS_25REGCASO caso)
+        public int SP_Ins_Caso(SIDEPS_25REGCASO caso)
         {
             try
             {
                 return accesoDatos.SP_Ins_Caso(caso);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public bool SP_Mod_Caso(SIDEPS_25REGCASO caso)
+        {
+            try
+            {
+                return accesoDatos.SP_Mod_Caso(caso);
             }
             catch
             {

@@ -6,11 +6,17 @@ namespace SIDEPS.Models
 {
     public class Caso_M
     {
+        [DisplayName("Código caso")]
         public int CODCASO25 { get; set; }
+        [DisplayName("Cédula persona")]
         public string CEDPERS13 { get; set; }
+        [DisplayName("Aspecto salud")]
         public Nullable<int> CODASPS16 { get; set; }
+        [DisplayName("Cédula usuario")]
         public string CEDUSRO07 { get; set; }
+        [DisplayName("Vivienda")]
         public Nullable<int> CODVIVI20 { get; set; }
+        [DisplayName("Egresos")]
         public Nullable<int> CODEGRF24 { get; set; }
         //public Nullable<DateTime> FEICASO25 { get; set; }
         [DisplayName("Fecha finalización")]

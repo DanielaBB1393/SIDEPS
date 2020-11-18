@@ -4,15 +4,15 @@ using System;
 
 namespace AccesoDatos.Implementacion
 {
-    public class PersonasAD : IPersonasAD
+    public class GrupoFamiliarAD : IGrupoFamiliarAD
     {
         private readonly SIDEPSEntities contexto = new SIDEPSEntities();
 
-        public bool SP_Ins_RegistroPersona(SIDEPS_13REGPERS persona)
+        public bool SP_Ins_GrupoFamiliar(SIDEPS_22REGFAML grupoFamiliar)
         {
             try
             {
-                var resultado = this.contexto.SIDEPS_13REGPERS.Add(persona);
+                this.contexto.SIDEPS_22REGFAML.Add(grupoFamiliar);
                 return this.contexto.SaveChanges() > 0;
             }
             catch (Exception ex)

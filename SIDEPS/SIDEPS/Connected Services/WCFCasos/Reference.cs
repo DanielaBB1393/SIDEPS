@@ -694,6 +694,9 @@ namespace SIDEPS.WCFCasos {
         private string DIRPERS13Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> FENPERS13Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NACPERS13Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -832,6 +835,19 @@ namespace SIDEPS.WCFCasos {
                 if ((object.ReferenceEquals(this.DIRPERS13Field, value) != true)) {
                     this.DIRPERS13Field = value;
                     this.RaisePropertyChanged("DIRPERS13");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> FENPERS13 {
+            get {
+                return this.FENPERS13Field;
+            }
+            set {
+                if ((this.FENPERS13Field.Equals(value) != true)) {
+                    this.FENPERS13Field = value;
+                    this.RaisePropertyChanged("FENPERS13");
                 }
             }
         }
@@ -1258,7 +1274,7 @@ namespace SIDEPS.WCFCasos {
         private System.Nullable<decimal> MTOVIVI20Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NAPVIVI20Field;
+        private int NAPVIVI20Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private SIDEPS.WCFCasos.SIDEPS_17CATMATE SIDEPS_17CATMATEField;
@@ -1273,22 +1289,22 @@ namespace SIDEPS.WCFCasos {
         private SIDEPS.WCFCasos.SIDEPS_25REGCASO[] SIDEPS_25REGCASOField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SRBVIVI20Field;
+        private bool SRBVIVI20Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SRCVIVI20Field;
+        private bool SRCVIVI20Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SREVIVI20Field;
+        private bool SREVIVI20Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SRIVIVI20Field;
+        private bool SRIVIVI20Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SRLVIVI20Field;
+        private bool SRLVIVI20Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SRMVIVI20Field;
+        private bool SRMVIVI20Field;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1366,12 +1382,12 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NAPVIVI20 {
+        public int NAPVIVI20 {
             get {
                 return this.NAPVIVI20Field;
             }
             set {
-                if ((object.ReferenceEquals(this.NAPVIVI20Field, value) != true)) {
+                if ((this.NAPVIVI20Field.Equals(value) != true)) {
                     this.NAPVIVI20Field = value;
                     this.RaisePropertyChanged("NAPVIVI20");
                 }
@@ -1431,12 +1447,12 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SRBVIVI20 {
+        public bool SRBVIVI20 {
             get {
                 return this.SRBVIVI20Field;
             }
             set {
-                if ((object.ReferenceEquals(this.SRBVIVI20Field, value) != true)) {
+                if ((this.SRBVIVI20Field.Equals(value) != true)) {
                     this.SRBVIVI20Field = value;
                     this.RaisePropertyChanged("SRBVIVI20");
                 }
@@ -1444,12 +1460,12 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SRCVIVI20 {
+        public bool SRCVIVI20 {
             get {
                 return this.SRCVIVI20Field;
             }
             set {
-                if ((object.ReferenceEquals(this.SRCVIVI20Field, value) != true)) {
+                if ((this.SRCVIVI20Field.Equals(value) != true)) {
                     this.SRCVIVI20Field = value;
                     this.RaisePropertyChanged("SRCVIVI20");
                 }
@@ -1457,12 +1473,12 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SREVIVI20 {
+        public bool SREVIVI20 {
             get {
                 return this.SREVIVI20Field;
             }
             set {
-                if ((object.ReferenceEquals(this.SREVIVI20Field, value) != true)) {
+                if ((this.SREVIVI20Field.Equals(value) != true)) {
                     this.SREVIVI20Field = value;
                     this.RaisePropertyChanged("SREVIVI20");
                 }
@@ -1470,12 +1486,12 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SRIVIVI20 {
+        public bool SRIVIVI20 {
             get {
                 return this.SRIVIVI20Field;
             }
             set {
-                if ((object.ReferenceEquals(this.SRIVIVI20Field, value) != true)) {
+                if ((this.SRIVIVI20Field.Equals(value) != true)) {
                     this.SRIVIVI20Field = value;
                     this.RaisePropertyChanged("SRIVIVI20");
                 }
@@ -1483,12 +1499,12 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SRLVIVI20 {
+        public bool SRLVIVI20 {
             get {
                 return this.SRLVIVI20Field;
             }
             set {
-                if ((object.ReferenceEquals(this.SRLVIVI20Field, value) != true)) {
+                if ((this.SRLVIVI20Field.Equals(value) != true)) {
                     this.SRLVIVI20Field = value;
                     this.RaisePropertyChanged("SRLVIVI20");
                 }
@@ -1496,12 +1512,12 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SRMVIVI20 {
+        public bool SRMVIVI20 {
             get {
                 return this.SRMVIVI20Field;
             }
             set {
-                if ((object.ReferenceEquals(this.SRMVIVI20Field, value) != true)) {
+                if ((this.SRMVIVI20Field.Equals(value) != true)) {
                     this.SRMVIVI20Field = value;
                     this.RaisePropertyChanged("SRMVIVI20");
                 }
@@ -4046,10 +4062,16 @@ namespace SIDEPS.WCFCasos {
     public interface ICasosSvc {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_Caso", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_CasoResponse")]
-        bool SP_Ins_Caso(SIDEPS.WCFCasos.SIDEPS_25REGCASO caso);
+        int SP_Ins_Caso(SIDEPS.WCFCasos.SIDEPS_25REGCASO caso);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_Caso", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_CasoResponse")]
-        System.Threading.Tasks.Task<bool> SP_Ins_CasoAsync(SIDEPS.WCFCasos.SIDEPS_25REGCASO caso);
+        System.Threading.Tasks.Task<int> SP_Ins_CasoAsync(SIDEPS.WCFCasos.SIDEPS_25REGCASO caso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Mod_Caso", ReplyAction="http://tempuri.org/ICasosSvc/SP_Mod_CasoResponse")]
+        bool SP_Mod_Caso(SIDEPS.WCFCasos.SIDEPS_25REGCASO caso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Mod_Caso", ReplyAction="http://tempuri.org/ICasosSvc/SP_Mod_CasoResponse")]
+        System.Threading.Tasks.Task<bool> SP_Mod_CasoAsync(SIDEPS.WCFCasos.SIDEPS_25REGCASO caso);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_Persona", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_PersonaResponse")]
         bool SP_Ins_Persona(SIDEPS.WCFCasos.SIDEPS_13REGPERS persona);
@@ -4058,10 +4080,28 @@ namespace SIDEPS.WCFCasos {
         System.Threading.Tasks.Task<bool> SP_Ins_PersonaAsync(SIDEPS.WCFCasos.SIDEPS_13REGPERS persona);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_AspectoSalud", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_AspectoSaludResponse")]
-        bool SP_Ins_AspectoSalud(SIDEPS.WCFCasos.SIDEPS_16REGASPS aspecto);
+        int SP_Ins_AspectoSalud(SIDEPS.WCFCasos.SIDEPS_16REGASPS aspecto, int codigoCaso);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_AspectoSalud", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_AspectoSaludResponse")]
-        System.Threading.Tasks.Task<bool> SP_Ins_AspectoSaludAsync(SIDEPS.WCFCasos.SIDEPS_16REGASPS aspecto);
+        System.Threading.Tasks.Task<int> SP_Ins_AspectoSaludAsync(SIDEPS.WCFCasos.SIDEPS_16REGASPS aspecto, int codigoCaso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_Vivienda", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_ViviendaResponse")]
+        int SP_Ins_Vivienda(SIDEPS.WCFCasos.SIDEPS_20REGVIVI vivienda, int codigoCaso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_Vivienda", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_ViviendaResponse")]
+        System.Threading.Tasks.Task<int> SP_Ins_ViviendaAsync(SIDEPS.WCFCasos.SIDEPS_20REGVIVI vivienda, int codigoCaso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_GrupoFamiliar", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_GrupoFamiliarResponse")]
+        bool SP_Ins_GrupoFamiliar(SIDEPS.WCFCasos.SIDEPS_22REGFAML grupoFamiliar);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_GrupoFamiliar", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_GrupoFamiliarResponse")]
+        System.Threading.Tasks.Task<bool> SP_Ins_GrupoFamiliarAsync(SIDEPS.WCFCasos.SIDEPS_22REGFAML grupoFamiliar);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_Egresos", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_EgresosResponse")]
+        int SP_Ins_Egresos(SIDEPS.WCFCasos.SIDEPS_24REGEGRF egresos, int codigoCaso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_Egresos", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_EgresosResponse")]
+        System.Threading.Tasks.Task<int> SP_Ins_EgresosAsync(SIDEPS.WCFCasos.SIDEPS_24REGEGRF egresos, int codigoCaso);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -4091,12 +4131,20 @@ namespace SIDEPS.WCFCasos {
                 base(binding, remoteAddress) {
         }
         
-        public bool SP_Ins_Caso(SIDEPS.WCFCasos.SIDEPS_25REGCASO caso) {
+        public int SP_Ins_Caso(SIDEPS.WCFCasos.SIDEPS_25REGCASO caso) {
             return base.Channel.SP_Ins_Caso(caso);
         }
         
-        public System.Threading.Tasks.Task<bool> SP_Ins_CasoAsync(SIDEPS.WCFCasos.SIDEPS_25REGCASO caso) {
+        public System.Threading.Tasks.Task<int> SP_Ins_CasoAsync(SIDEPS.WCFCasos.SIDEPS_25REGCASO caso) {
             return base.Channel.SP_Ins_CasoAsync(caso);
+        }
+        
+        public bool SP_Mod_Caso(SIDEPS.WCFCasos.SIDEPS_25REGCASO caso) {
+            return base.Channel.SP_Mod_Caso(caso);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SP_Mod_CasoAsync(SIDEPS.WCFCasos.SIDEPS_25REGCASO caso) {
+            return base.Channel.SP_Mod_CasoAsync(caso);
         }
         
         public bool SP_Ins_Persona(SIDEPS.WCFCasos.SIDEPS_13REGPERS persona) {
@@ -4107,12 +4155,36 @@ namespace SIDEPS.WCFCasos {
             return base.Channel.SP_Ins_PersonaAsync(persona);
         }
         
-        public bool SP_Ins_AspectoSalud(SIDEPS.WCFCasos.SIDEPS_16REGASPS aspecto) {
-            return base.Channel.SP_Ins_AspectoSalud(aspecto);
+        public int SP_Ins_AspectoSalud(SIDEPS.WCFCasos.SIDEPS_16REGASPS aspecto, int codigoCaso) {
+            return base.Channel.SP_Ins_AspectoSalud(aspecto, codigoCaso);
         }
         
-        public System.Threading.Tasks.Task<bool> SP_Ins_AspectoSaludAsync(SIDEPS.WCFCasos.SIDEPS_16REGASPS aspecto) {
-            return base.Channel.SP_Ins_AspectoSaludAsync(aspecto);
+        public System.Threading.Tasks.Task<int> SP_Ins_AspectoSaludAsync(SIDEPS.WCFCasos.SIDEPS_16REGASPS aspecto, int codigoCaso) {
+            return base.Channel.SP_Ins_AspectoSaludAsync(aspecto, codigoCaso);
+        }
+        
+        public int SP_Ins_Vivienda(SIDEPS.WCFCasos.SIDEPS_20REGVIVI vivienda, int codigoCaso) {
+            return base.Channel.SP_Ins_Vivienda(vivienda, codigoCaso);
+        }
+        
+        public System.Threading.Tasks.Task<int> SP_Ins_ViviendaAsync(SIDEPS.WCFCasos.SIDEPS_20REGVIVI vivienda, int codigoCaso) {
+            return base.Channel.SP_Ins_ViviendaAsync(vivienda, codigoCaso);
+        }
+        
+        public bool SP_Ins_GrupoFamiliar(SIDEPS.WCFCasos.SIDEPS_22REGFAML grupoFamiliar) {
+            return base.Channel.SP_Ins_GrupoFamiliar(grupoFamiliar);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SP_Ins_GrupoFamiliarAsync(SIDEPS.WCFCasos.SIDEPS_22REGFAML grupoFamiliar) {
+            return base.Channel.SP_Ins_GrupoFamiliarAsync(grupoFamiliar);
+        }
+        
+        public int SP_Ins_Egresos(SIDEPS.WCFCasos.SIDEPS_24REGEGRF egresos, int codigoCaso) {
+            return base.Channel.SP_Ins_Egresos(egresos, codigoCaso);
+        }
+        
+        public System.Threading.Tasks.Task<int> SP_Ins_EgresosAsync(SIDEPS.WCFCasos.SIDEPS_24REGEGRF egresos, int codigoCaso) {
+            return base.Channel.SP_Ins_EgresosAsync(egresos, codigoCaso);
         }
     }
 }

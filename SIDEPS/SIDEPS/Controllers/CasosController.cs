@@ -1,16 +1,17 @@
 ﻿using SIDEPS.Models;
 using SIDEPS.WCFCasos;
+using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace SIDEPS.Controllers
 {
-
     public class CasosController : Controller
     {
-        private const string _CEDULAPERSONA = "cedulaPersona";
         private const string _CODIGOCASO = "codigoCaso";
+        private const string _CEDULAPERSONA = "cedulaPersona";
+        private const string _CODIGOVIVIENDA = "codigoVivienda";
 
         private readonly ICasosSvc casosSvc = new CasosSvcClient();
 
@@ -20,17 +21,9 @@ namespace SIDEPS.Controllers
             return View(new List<Caso_M>());
         }
 
-        public ActionResult Insertar()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult Insertar(SIDEPS_25REGCASO caso)
-        {
-            return RedirectToAction("Index");
-        }
-
+        //-------
+        // Paso 1
+        //-------
         public ActionResult DatosPersonales()
         {
             return View();
@@ -48,9 +41,10 @@ namespace SIDEPS.Controllers
                 };
 
                 var resultadoC = this.casosSvc.SP_Ins_Caso(caso.ConvertirEntidad());
-                if (resultadoC)
+                if (resultadoC > 0)
                 {
                     TempData[_CEDULAPERSONA] = persona.CEDPERS13;
+                    TempData[_CODIGOCASO] = resultadoC;
 
                     return RedirectToAction("AspectoSalud");
                 }
@@ -58,6 +52,9 @@ namespace SIDEPS.Controllers
             return View(persona);
         }
 
+        //-------
+        // Paso 2
+        //-------
         public ActionResult AspectoSalud()
         {
             TempData.Keep();
@@ -69,10 +66,11 @@ namespace SIDEPS.Controllers
         public ActionResult AspectoSalud(AspectoSalud_M aspecto)
         {
             aspecto.CEDPERS13 = TempData[_CEDULAPERSONA].ToString();
+            int codigoCaso = Convert.ToInt32(TempData[_CODIGOCASO].ToString());
             TempData.Keep();
 
-            var resultado = this.casosSvc.SP_Ins_AspectoSalud(aspecto.ConvertirEntidad());
-            if (resultado)
+            var resultado = this.casosSvc.SP_Ins_AspectoSalud(aspecto.ConvertirEntidad(), codigoCaso);
+            if (resultado > 0)
             {
                 return RedirectToAction("Vivienda");
             }
@@ -82,6 +80,9 @@ namespace SIDEPS.Controllers
             }
         }
 
+        //-------
+        // Paso 3
+        //-------
         public ActionResult Vivienda()
         {
             TempData.Keep();
@@ -92,14 +93,57 @@ namespace SIDEPS.Controllers
         [HttpPost]
         public ActionResult Vivienda(Vivienda_M vivienda)
         {
+            int codigoCaso = Convert.ToInt32(TempData[_CODIGOCASO].ToString());
             TempData.Keep();
 
-            return RedirectToAction("ProblemasSociales");
+            var resultado = this.casosSvc.SP_Ins_Vivienda(vivienda.ConvertirEntidad(), codigoCaso);
+
+            if (resultado > 0)
+            {
+                TempData[_CODIGOVIVIENDA] = resultado;
+                return RedirectToAction("GrupoFamiliar");
+            }
 
             return View(vivienda);
         }
 
-        public ActionResult ProblemasSociales()
+        //-------
+        // Paso 4
+        //-------
+        public ActionResult GrupoFamiliar()
+        {
+            TempData.Keep();
+
+            var model = new GrupoFamiliar_M
+            {
+                GrupoFamiliar = new List<MiembroFamiliar_M> { new MiembroFamiliar_M() }
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult GrupoFamiliar(GrupoFamiliar_M model)
+        {
+            var cedulaSolicitante = TempData[_CEDULAPERSONA].ToString();
+            TempData.Keep();
+
+            var nuevoFamiliar = model.GrupoFamiliar.Last();
+            nuevoFamiliar.CEDPERS13 = cedulaSolicitante;
+            var resultado = this.casosSvc.SP_Ins_GrupoFamiliar(nuevoFamiliar.ConvertirEntidad());
+            if (!resultado)
+            {
+                ViewData["mensaje"] = "Ocurrió un error agregando a " + nuevoFamiliar.NOMFAML22;
+            }
+            model.GrupoFamiliar.Add(new MiembroFamiliar_M());
+
+            return View(model);
+        }
+
+        //-------
+        // Paso 5
+        //-------
+        public ActionResult Egresos()
         {
             TempData.Keep();
 
@@ -107,49 +151,24 @@ namespace SIDEPS.Controllers
         }
 
         [HttpPost]
-        public ActionResult ProblemasSociales(ProblemasSociales_M problemasSociales)
+        public ActionResult Egresos(Egresos_M egresosMensuales)
         {
+            int codigoCaso = Convert.ToInt32(TempData[_CODIGOCASO].ToString());
             TempData.Keep();
 
-            return RedirectToAction("SituacionFinanciera");
+            var resultado = this.casosSvc.SP_Ins_Egresos(egresosMensuales.ConvertirEntidad(), codigoCaso);
 
-            return View(problemasSociales);
-        }
-
-        public ActionResult SituacionFinanciera()
-        {
-            TempData.Keep();
-
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult SituacionFinanciera(SituacionFinanciera_M situacionFinanciera)
-        {
-            TempData.Keep();
-
-            return RedirectToAction("EgresosMensuales");
-
-            return View(situacionFinanciera);
-        }
-
-        public ActionResult EgresosMensuales()
-        {
-            TempData.Keep();
-
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult EgresosMensuales(EgresosMensuales_M egresosMensuales)
-        {
-            TempData.Keep();
-
-            return RedirectToAction("MotivoSolicitud");
+            if (resultado > 0)
+            {
+                return RedirectToAction("MotivoSolicitud");
+            }
 
             return View(egresosMensuales);
         }
 
+        //-------
+        // Paso 6
+        //-------
         public ActionResult MotivoSolicitud()
         {
             TempData.Keep();
@@ -158,11 +177,18 @@ namespace SIDEPS.Controllers
         }
 
         [HttpPost]
-        public ActionResult MotivoSolicitud(MotivoSolicitud_M motivoSolicitud)
+        public ActionResult MotivoSolicitud(Caso_M motivoSolicitud)
         {
+            int codigoCaso = Convert.ToInt32(TempData[_CODIGOCASO].ToString());
             TempData.Keep();
 
-            return RedirectToAction("Index", "Home");
+            motivoSolicitud.CODCASO25 = codigoCaso;
+            var resultado = this.casosSvc.SP_Mod_Caso(motivoSolicitud.ConvertirEntidad());
+
+            if (resultado)
+            {
+                return RedirectToAction("Index", "Home");
+            }
 
             return View(motivoSolicitud);
         }

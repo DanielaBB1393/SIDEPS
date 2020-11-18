@@ -35,6 +35,7 @@ namespace Entidades
         public string DIRPERS13 { get; set; }
         public string OACPERS13 { get; set; }
         public string OANPERS13 { get; set; }
+        public Nullable<System.DateTime> FENPERS13 { get; set; }
     
         public virtual SIDEPS_03CATCANT SIDEPS_03CATCANT { get; set; }
         public virtual SIDEPS_06CATESTC SIDEPS_06CATESTC { get; set; }

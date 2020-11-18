@@ -4,20 +4,20 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="SIDEPSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="SIDEPS.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="SIDEPS_01CATPAIS">
           <Key>
             <PropertyRef Name="CODPAIS01" />
           </Key>
           <Property Name="CODPAIS01" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NOMPAIS01" Type="varchar" MaxLength="50" />
+          <Property Name="NOMPAIS01" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="SIDEPS_02CATPROV">
           <Key>
             <PropertyRef Name="CODPROV02" />
           </Key>
           <Property Name="CODPROV02" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NOMPROV02" Type="varchar" MaxLength="50" />
+          <Property Name="NOMPROV02" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CODPAIS01" Type="int" />
         </EntityType>
         <EntityType Name="SIDEPS_03CATCANT">
@@ -125,6 +125,7 @@
           <Property Name="DIRPERS13" Type="varchar" MaxLength="200" />
           <Property Name="OACPERS13" Type="varchar" MaxLength="100" />
           <Property Name="OANPERS13" Type="varchar" MaxLength="100" />
+          <Property Name="FENPERS13" Type="datetime" />
         </EntityType>
         <EntityType Name="SIDEPS_14CATSEGU">
           <Key>
@@ -182,13 +183,13 @@
           <Property Name="CODESTV19" Type="int" />
           <Property Name="CODMATE17" Type="int" />
           <Property Name="MTOVIVI20" Type="decimal" Precision="18" Scale="4" />
-          <Property Name="NAPVIVI20" Type="varchar" MaxLength="20" />
-          <Property Name="SRCVIVI20" Type="varchar" MaxLength="2" />
-          <Property Name="SRIVIVI20" Type="varchar" MaxLength="2" />
-          <Property Name="SRLVIVI20" Type="varchar" MaxLength="2" />
-          <Property Name="SRMVIVI20" Type="varchar" MaxLength="2" />
-          <Property Name="SRBVIVI20" Type="varchar" MaxLength="2" />
-          <Property Name="SREVIVI20" Type="varchar" MaxLength="2" />
+          <Property Name="NAPVIVI20" Type="int" />
+          <Property Name="SRCVIVI20" Type="bit" />
+          <Property Name="SRIVIVI20" Type="bit" />
+          <Property Name="SRLVIVI20" Type="bit" />
+          <Property Name="SRMVIVI20" Type="bit" />
+          <Property Name="SRBVIVI20" Type="bit" />
+          <Property Name="SREVIVI20" Type="bit" />
         </EntityType>
         <EntityType Name="SIDEPS_21CATORGS">
           <Key>
@@ -288,293 +289,7 @@
           <Property Name="ESTCASO" Type="varchar" MaxLength="2" />
           <Property Name="CODCNTR" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
-        <Association Name="FK__SIDEPS_02__CODPA__4BAC3F29">
-          <End Role="SIDEPS_01CATPAIS" Type="Self.SIDEPS_01CATPAIS" Multiplicity="0..1" />
-          <End Role="SIDEPS_02CATPROV" Type="Self.SIDEPS_02CATPROV" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIDEPS_01CATPAIS">
-              <PropertyRef Name="CODPAIS01" />
-            </Principal>
-            <Dependent Role="SIDEPS_02CATPROV">
-              <PropertyRef Name="CODPAIS01" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SIDEPS_03__CODPR__4E88ABD4">
-          <End Role="SIDEPS_02CATPROV" Type="Self.SIDEPS_02CATPROV" Multiplicity="0..1" />
-          <End Role="SIDEPS_03CATCANT" Type="Self.SIDEPS_03CATCANT" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIDEPS_02CATPROV">
-              <PropertyRef Name="CODPROV02" />
-            </Principal>
-            <Dependent Role="SIDEPS_03CATCANT">
-              <PropertyRef Name="CODPROV02" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SIDEPS_04__CODCA__5165187F">
-          <End Role="SIDEPS_03CATCANT" Type="Self.SIDEPS_03CATCANT" Multiplicity="0..1" />
-          <End Role="SIDEPS_04REGDIAC" Type="Self.SIDEPS_04REGDIAC" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIDEPS_03CATCANT">
-              <PropertyRef Name="CODCANT03" />
-            </Principal>
-            <Dependent Role="SIDEPS_04REGDIAC">
-              <PropertyRef Name="CODCANT03" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SIDEPS_07__CODCA__5812160E">
-          <End Role="SIDEPS_03CATCANT" Type="Self.SIDEPS_03CATCANT" Multiplicity="0..1" />
-          <End Role="SIDEPS_07REGUSRO" Type="Self.SIDEPS_07REGUSRO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIDEPS_03CATCANT">
-              <PropertyRef Name="CODCANT03" />
-            </Principal>
-            <Dependent Role="SIDEPS_07REGUSRO">
-              <PropertyRef Name="CODCANT03" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SIDEPS_07__CODDI__59063A47">
-          <End Role="SIDEPS_04REGDIAC" Type="Self.SIDEPS_04REGDIAC" Multiplicity="0..1" />
-          <End Role="SIDEPS_07REGUSRO" Type="Self.SIDEPS_07REGUSRO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIDEPS_04REGDIAC">
-              <PropertyRef Name="CODDIAC04" />
-            </Principal>
-            <Dependent Role="SIDEPS_07REGUSRO">
-              <PropertyRef Name="CODDIAC04" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SIDEPS_07__CODUS__59FA5E80">
-          <End Role="SIDEPS_05TIPUSRO" Type="Self.SIDEPS_05TIPUSRO" Multiplicity="0..1" />
-          <End Role="SIDEPS_07REGUSRO" Type="Self.SIDEPS_07REGUSRO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIDEPS_05TIPUSRO">
-              <PropertyRef Name="CODUSRO05" />
-            </Principal>
-            <Dependent Role="SIDEPS_07REGUSRO">
-              <PropertyRef Name="CODUSRO05" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SIDEPS_08__CEDUS__5CD6CB2B">
-          <End Role="SIDEPS_07REGUSRO" Type="Self.SIDEPS_07REGUSRO" Multiplicity="0..1" />
-          <End Role="SIDEPS_08REGTELF" Type="Self.SIDEPS_08REGTELF" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIDEPS_07REGUSRO">
-              <PropertyRef Name="CEDUSRO07" />
-            </Principal>
-            <Dependent Role="SIDEPS_08REGTELF">
-              <PropertyRef Name="CEDUSRO07" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SIDEPS_13__CODCA__693CA210">
-          <End Role="SIDEPS_03CATCANT" Type="Self.SIDEPS_03CATCANT" Multiplicity="0..1" />
-          <End Role="SIDEPS_13REGPERS" Type="Self.SIDEPS_13REGPERS" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIDEPS_03CATCANT">
-              <PropertyRef Name="CODCANT03" />
-            </Principal>
-            <Dependent Role="SIDEPS_13REGPERS">
-              <PropertyRef Name="CODCANT03" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SIDEPS_13__CODES__6754599E">
-          <End Role="SIDEPS_06CATESTC" Type="Self.SIDEPS_06CATESTC" Multiplicity="0..1" />
-          <End Role="SIDEPS_13REGPERS" Type="Self.SIDEPS_13REGPERS" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIDEPS_06CATESTC">
-              <PropertyRef Name="CODESTC06" />
-            </Principal>
-            <Dependent Role="SIDEPS_13REGPERS">
-              <PropertyRef Name="CODESTC06" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SIDEPS_13__CODNE__68487DD7">
-          <End Role="SIDEPS_09CATNEDU" Type="Self.SIDEPS_09CATNEDU" Multiplicity="0..1" />
-          <End Role="SIDEPS_13REGPERS" Type="Self.SIDEPS_13REGPERS" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIDEPS_09CATNEDU">
-              <PropertyRef Name="CODNEDU09" />
-            </Principal>
-            <Dependent Role="SIDEPS_13REGPERS">
-              <PropertyRef Name="CODNEDU09" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SIDEPS_13__CODRE__6B24EA82">
-          <End Role="SIDEPS_11CATRELG" Type="Self.SIDEPS_11CATRELG" Multiplicity="0..1" />
-          <End Role="SIDEPS_13REGPERS" Type="Self.SIDEPS_13REGPERS" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIDEPS_11CATRELG">
-              <PropertyRef Name="CODRELG11" />
-            </Principal>
-            <Dependent Role="SIDEPS_13REGPERS">
-              <PropertyRef Name="CODRELG11" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SIDEPS_13__CODSO__6A30C649">
-          <End Role="SIDEPS_10CATSOLI" Type="Self.SIDEPS_10CATSOLI" Multiplicity="0..1" />
-          <End Role="SIDEPS_13REGPERS" Type="Self.SIDEPS_13REGPERS" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIDEPS_10CATSOLI">
-              <PropertyRef Name="CODSOLI10" />
-            </Principal>
-            <Dependent Role="SIDEPS_13REGPERS">
-              <PropertyRef Name="CODSOLI10" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SIDEPS_16__CEDPE__72C60C4A">
-          <End Role="SIDEPS_13REGPERS" Type="Self.SIDEPS_13REGPERS" Multiplicity="0..1" />
-          <End Role="SIDEPS_16REGASPS" Type="Self.SIDEPS_16REGASPS" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIDEPS_13REGPERS">
-              <PropertyRef Name="CEDPERS13" />
-            </Principal>
-            <Dependent Role="SIDEPS_16REGASPS">
-              <PropertyRef Name="CEDPERS13" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SIDEPS_16__CODEN__73BA3083">
-          <End Role="SIDEPS_15CATENFR" Type="Self.SIDEPS_15CATENFR" Multiplicity="0..1" />
-          <End Role="SIDEPS_16REGASPS" Type="Self.SIDEPS_16REGASPS" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIDEPS_15CATENFR">
-              <PropertyRef Name="CODENFR15" />
-            </Principal>
-            <Dependent Role="SIDEPS_16REGASPS">
-              <PropertyRef Name="CODENFR15" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SIDEPS_16__CODSE__71D1E811">
-          <End Role="SIDEPS_14CATSEGU" Type="Self.SIDEPS_14CATSEGU" Multiplicity="0..1" />
-          <End Role="SIDEPS_16REGASPS" Type="Self.SIDEPS_16REGASPS" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIDEPS_14CATSEGU">
-              <PropertyRef Name="CODSEGU14" />
-            </Principal>
-            <Dependent Role="SIDEPS_16REGASPS">
-              <PropertyRef Name="CODSEGU14" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SIDEPS_20__CODES__7E37BEF6">
-          <End Role="SIDEPS_19ESTVIVI" Type="Self.SIDEPS_19ESTVIVI" Multiplicity="0..1" />
-          <End Role="SIDEPS_20REGVIVI" Type="Self.SIDEPS_20REGVIVI" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIDEPS_19ESTVIVI">
-              <PropertyRef Name="CODESTV19" />
-            </Principal>
-            <Dependent Role="SIDEPS_20REGVIVI">
-              <PropertyRef Name="CODESTV19" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SIDEPS_20__CODMA__7F2BE32F">
-          <End Role="SIDEPS_17CATMATE" Type="Self.SIDEPS_17CATMATE" Multiplicity="0..1" />
-          <End Role="SIDEPS_20REGVIVI" Type="Self.SIDEPS_20REGVIVI" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIDEPS_17CATMATE">
-              <PropertyRef Name="CODMATE17" />
-            </Principal>
-            <Dependent Role="SIDEPS_20REGVIVI">
-              <PropertyRef Name="CODMATE17" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SIDEPS_20__CODTI__7D439ABD">
-          <End Role="SIDEPS_18TIPVIVI" Type="Self.SIDEPS_18TIPVIVI" Multiplicity="0..1" />
-          <End Role="SIDEPS_20REGVIVI" Type="Self.SIDEPS_20REGVIVI" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIDEPS_18TIPVIVI">
-              <PropertyRef Name="CODTIPV18" />
-            </Principal>
-            <Dependent Role="SIDEPS_20REGVIVI">
-              <PropertyRef Name="CODTIPV18" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SIDEPS_22__CODEN__06CD04F7">
-          <End Role="SIDEPS_15CATENFR" Type="Self.SIDEPS_15CATENFR" Multiplicity="0..1" />
-          <End Role="SIDEPS_22REGFAML" Type="Self.SIDEPS_22REGFAML" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIDEPS_15CATENFR">
-              <PropertyRef Name="CODENFR15" />
-            </Principal>
-            <Dependent Role="SIDEPS_22REGFAML">
-              <PropertyRef Name="CODENFR15" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SIDEPS_22__CODES__03F0984C">
-          <End Role="SIDEPS_06CATESTC" Type="Self.SIDEPS_06CATESTC" Multiplicity="0..1" />
-          <End Role="SIDEPS_22REGFAML" Type="Self.SIDEPS_22REGFAML" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIDEPS_06CATESTC">
-              <PropertyRef Name="CODESTC06" />
-            </Principal>
-            <Dependent Role="SIDEPS_22REGFAML">
-              <PropertyRef Name="CODESTC06" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SIDEPS_22__CODNE__04E4BC85">
-          <End Role="SIDEPS_09CATNEDU" Type="Self.SIDEPS_09CATNEDU" Multiplicity="0..1" />
-          <End Role="SIDEPS_22REGFAML" Type="Self.SIDEPS_22REGFAML" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIDEPS_09CATNEDU">
-              <PropertyRef Name="CODNEDU09" />
-            </Principal>
-            <Dependent Role="SIDEPS_22REGFAML">
-              <PropertyRef Name="CODNEDU09" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SIDEPS_22__CODOR__05D8E0BE">
-          <End Role="SIDEPS_21CATORGS" Type="Self.SIDEPS_21CATORGS" Multiplicity="0..1" />
-          <End Role="SIDEPS_22REGFAML" Type="Self.SIDEPS_22REGFAML" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIDEPS_21CATORGS">
-              <PropertyRef Name="CODORGS21" />
-            </Principal>
-            <Dependent Role="SIDEPS_22REGFAML">
-              <PropertyRef Name="CODORGS21" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SIDEPS_22__CODPA__07C12930">
-          <End Role="SIDEPS_12CATPARE" Type="Self.SIDEPS_12CATPARE" Multiplicity="0..1" />
-          <End Role="SIDEPS_22REGFAML" Type="Self.SIDEPS_22REGFAML" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIDEPS_12CATPARE">
-              <PropertyRef Name="CODPARE12" />
-            </Principal>
-            <Dependent Role="SIDEPS_22REGFAML">
-              <PropertyRef Name="CODPARE12" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SIDEPS_23__CEDFA__0A9D95DB">
+        <Association Name="FK__SIDEPS_CEDFAML22">
           <End Role="SIDEPS_22REGFAML" Type="Self.SIDEPS_22REGFAML" Multiplicity="0..1" />
           <End Role="SIDEPS_23CATFINA" Type="Self.SIDEPS_23CATFINA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -586,7 +301,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_23__CEDPE__0B91BA14">
+        <Association Name="FK__SIDEPS_CEDPERS13">
+          <End Role="SIDEPS_13REGPERS" Type="Self.SIDEPS_13REGPERS" Multiplicity="0..1" />
+          <End Role="SIDEPS_16REGASPS" Type="Self.SIDEPS_16REGASPS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIDEPS_13REGPERS">
+              <PropertyRef Name="CEDPERS13" />
+            </Principal>
+            <Dependent Role="SIDEPS_16REGASPS">
+              <PropertyRef Name="CEDPERS13" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SIDEPS_CEDPERS13_02">
           <End Role="SIDEPS_13REGPERS" Type="Self.SIDEPS_13REGPERS" Multiplicity="0..1" />
           <End Role="SIDEPS_23CATFINA" Type="Self.SIDEPS_23CATFINA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -598,7 +325,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_25__CEDPE__10566F31">
+        <Association Name="FK__SIDEPS_CEDPERS13_03">
           <End Role="SIDEPS_13REGPERS" Type="Self.SIDEPS_13REGPERS" Multiplicity="0..1" />
           <End Role="SIDEPS_25REGCASO" Type="Self.SIDEPS_25REGCASO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -610,7 +337,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_25__CEDUS__114A936A">
+        <Association Name="FK__SIDEPS_CEDUSRO07">
+          <End Role="SIDEPS_07REGUSRO" Type="Self.SIDEPS_07REGUSRO" Multiplicity="0..1" />
+          <End Role="SIDEPS_08REGTELF" Type="Self.SIDEPS_08REGTELF" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIDEPS_07REGUSRO">
+              <PropertyRef Name="CEDUSRO07" />
+            </Principal>
+            <Dependent Role="SIDEPS_08REGTELF">
+              <PropertyRef Name="CEDUSRO07" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SIDEPS_CEDUSRO07_03">
           <End Role="SIDEPS_07REGUSRO" Type="Self.SIDEPS_07REGUSRO" Multiplicity="0..1" />
           <End Role="SIDEPS_25REGCASO" Type="Self.SIDEPS_25REGCASO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -622,7 +361,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_25__CODAS__1332DBDC">
+        <Association Name="FK__SIDEPS_CODASPS16">
           <End Role="SIDEPS_16REGASPS" Type="Self.SIDEPS_16REGASPS" Multiplicity="0..1" />
           <End Role="SIDEPS_25REGCASO" Type="Self.SIDEPS_25REGCASO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -634,31 +373,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_25__CODEG__14270015">
-          <End Role="SIDEPS_24REGEGRF" Type="Self.SIDEPS_24REGEGRF" Multiplicity="0..1" />
-          <End Role="SIDEPS_25REGCASO" Type="Self.SIDEPS_25REGCASO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIDEPS_24REGEGRF">
-              <PropertyRef Name="CODEGRF24" />
-            </Principal>
-            <Dependent Role="SIDEPS_25REGCASO">
-              <PropertyRef Name="CODEGRF24" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SIDEPS_25__CODVI__123EB7A3">
-          <End Role="SIDEPS_20REGVIVI" Type="Self.SIDEPS_20REGVIVI" Multiplicity="0..1" />
-          <End Role="SIDEPS_25REGCASO" Type="Self.SIDEPS_25REGCASO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SIDEPS_20REGVIVI">
-              <PropertyRef Name="CODVIVI20" />
-            </Principal>
-            <Dependent Role="SIDEPS_25REGCASO">
-              <PropertyRef Name="CODVIVI20" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SIDEPS_27__CODAY__18EBB532">
+        <Association Name="FK__SIDEPS_CODAYUD26">
           <End Role="SIDEPS_26CATAYUD" Type="Self.SIDEPS_26CATAYUD" Multiplicity="0..1" />
           <End Role="SIDEPS_27TIPAYUD" Type="Self.SIDEPS_27TIPAYUD" Multiplicity="*" />
           <ReferentialConstraint>
@@ -670,7 +385,43 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_27__CODCA__19DFD96B">
+        <Association Name="FK__SIDEPS_CODCANT03">
+          <End Role="SIDEPS_03CATCANT" Type="Self.SIDEPS_03CATCANT" Multiplicity="0..1" />
+          <End Role="SIDEPS_04REGDIAC" Type="Self.SIDEPS_04REGDIAC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIDEPS_03CATCANT">
+              <PropertyRef Name="CODCANT03" />
+            </Principal>
+            <Dependent Role="SIDEPS_04REGDIAC">
+              <PropertyRef Name="CODCANT03" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SIDEPS_CODCANT03_02">
+          <End Role="SIDEPS_03CATCANT" Type="Self.SIDEPS_03CATCANT" Multiplicity="0..1" />
+          <End Role="SIDEPS_07REGUSRO" Type="Self.SIDEPS_07REGUSRO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIDEPS_03CATCANT">
+              <PropertyRef Name="CODCANT03" />
+            </Principal>
+            <Dependent Role="SIDEPS_07REGUSRO">
+              <PropertyRef Name="CODCANT03" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SIDEPS_CODCANT03_3">
+          <End Role="SIDEPS_03CATCANT" Type="Self.SIDEPS_03CATCANT" Multiplicity="0..1" />
+          <End Role="SIDEPS_13REGPERS" Type="Self.SIDEPS_13REGPERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIDEPS_03CATCANT">
+              <PropertyRef Name="CODCANT03" />
+            </Principal>
+            <Dependent Role="SIDEPS_13REGPERS">
+              <PropertyRef Name="CODCANT03" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SIDEPS_CODCASO25">
           <End Role="SIDEPS_25REGCASO" Type="Self.SIDEPS_25REGCASO" Multiplicity="0..1" />
           <End Role="SIDEPS_27TIPAYUD" Type="Self.SIDEPS_27TIPAYUD" Multiplicity="*" />
           <ReferentialConstraint>
@@ -682,7 +433,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_28__CODCA__3E1D39E1">
+        <Association Name="FK__SIDEPS_CODCASO25_02">
           <End Role="SIDEPS_25REGCASO" Type="Self.SIDEPS_25REGCASO" Multiplicity="0..1" />
           <End Role="SIDEPS_28REGHIS" Type="Self.SIDEPS_28REGHIS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -694,6 +445,260 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__SIDEPS_CODDIAC04">
+          <End Role="SIDEPS_04REGDIAC" Type="Self.SIDEPS_04REGDIAC" Multiplicity="0..1" />
+          <End Role="SIDEPS_07REGUSRO" Type="Self.SIDEPS_07REGUSRO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIDEPS_04REGDIAC">
+              <PropertyRef Name="CODDIAC04" />
+            </Principal>
+            <Dependent Role="SIDEPS_07REGUSRO">
+              <PropertyRef Name="CODDIAC04" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SIDEPS_CODEGRF24">
+          <End Role="SIDEPS_24REGEGRF" Type="Self.SIDEPS_24REGEGRF" Multiplicity="0..1" />
+          <End Role="SIDEPS_25REGCASO" Type="Self.SIDEPS_25REGCASO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIDEPS_24REGEGRF">
+              <PropertyRef Name="CODEGRF24" />
+            </Principal>
+            <Dependent Role="SIDEPS_25REGCASO">
+              <PropertyRef Name="CODEGRF24" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SIDEPS_CODENFR15">
+          <End Role="SIDEPS_15CATENFR" Type="Self.SIDEPS_15CATENFR" Multiplicity="0..1" />
+          <End Role="SIDEPS_16REGASPS" Type="Self.SIDEPS_16REGASPS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIDEPS_15CATENFR">
+              <PropertyRef Name="CODENFR15" />
+            </Principal>
+            <Dependent Role="SIDEPS_16REGASPS">
+              <PropertyRef Name="CODENFR15" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SIDEPS_CODENFR15_02">
+          <End Role="SIDEPS_15CATENFR" Type="Self.SIDEPS_15CATENFR" Multiplicity="0..1" />
+          <End Role="SIDEPS_22REGFAML" Type="Self.SIDEPS_22REGFAML" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIDEPS_15CATENFR">
+              <PropertyRef Name="CODENFR15" />
+            </Principal>
+            <Dependent Role="SIDEPS_22REGFAML">
+              <PropertyRef Name="CODENFR15" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SIDEPS_CODESTC06">
+          <End Role="SIDEPS_06CATESTC" Type="Self.SIDEPS_06CATESTC" Multiplicity="0..1" />
+          <End Role="SIDEPS_13REGPERS" Type="Self.SIDEPS_13REGPERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIDEPS_06CATESTC">
+              <PropertyRef Name="CODESTC06" />
+            </Principal>
+            <Dependent Role="SIDEPS_13REGPERS">
+              <PropertyRef Name="CODESTC06" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SIDEPS_CODESTC06_02">
+          <End Role="SIDEPS_06CATESTC" Type="Self.SIDEPS_06CATESTC" Multiplicity="0..1" />
+          <End Role="SIDEPS_22REGFAML" Type="Self.SIDEPS_22REGFAML" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIDEPS_06CATESTC">
+              <PropertyRef Name="CODESTC06" />
+            </Principal>
+            <Dependent Role="SIDEPS_22REGFAML">
+              <PropertyRef Name="CODESTC06" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SIDEPS_CODESTV19">
+          <End Role="SIDEPS_19ESTVIVI" Type="Self.SIDEPS_19ESTVIVI" Multiplicity="0..1" />
+          <End Role="SIDEPS_20REGVIVI" Type="Self.SIDEPS_20REGVIVI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIDEPS_19ESTVIVI">
+              <PropertyRef Name="CODESTV19" />
+            </Principal>
+            <Dependent Role="SIDEPS_20REGVIVI">
+              <PropertyRef Name="CODESTV19" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SIDEPS_CODMATE17">
+          <End Role="SIDEPS_17CATMATE" Type="Self.SIDEPS_17CATMATE" Multiplicity="0..1" />
+          <End Role="SIDEPS_20REGVIVI" Type="Self.SIDEPS_20REGVIVI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIDEPS_17CATMATE">
+              <PropertyRef Name="CODMATE17" />
+            </Principal>
+            <Dependent Role="SIDEPS_20REGVIVI">
+              <PropertyRef Name="CODMATE17" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SIDEPS_CODNEDU09">
+          <End Role="SIDEPS_09CATNEDU" Type="Self.SIDEPS_09CATNEDU" Multiplicity="0..1" />
+          <End Role="SIDEPS_13REGPERS" Type="Self.SIDEPS_13REGPERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIDEPS_09CATNEDU">
+              <PropertyRef Name="CODNEDU09" />
+            </Principal>
+            <Dependent Role="SIDEPS_13REGPERS">
+              <PropertyRef Name="CODNEDU09" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SIDEPS_CODNEDU09_02">
+          <End Role="SIDEPS_09CATNEDU" Type="Self.SIDEPS_09CATNEDU" Multiplicity="0..1" />
+          <End Role="SIDEPS_22REGFAML" Type="Self.SIDEPS_22REGFAML" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIDEPS_09CATNEDU">
+              <PropertyRef Name="CODNEDU09" />
+            </Principal>
+            <Dependent Role="SIDEPS_22REGFAML">
+              <PropertyRef Name="CODNEDU09" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SIDEPS_CODORGS21">
+          <End Role="SIDEPS_21CATORGS" Type="Self.SIDEPS_21CATORGS" Multiplicity="0..1" />
+          <End Role="SIDEPS_22REGFAML" Type="Self.SIDEPS_22REGFAML" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIDEPS_21CATORGS">
+              <PropertyRef Name="CODORGS21" />
+            </Principal>
+            <Dependent Role="SIDEPS_22REGFAML">
+              <PropertyRef Name="CODORGS21" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SIDEPS_CODPAIS01">
+          <End Role="SIDEPS_01CATPAIS" Type="Self.SIDEPS_01CATPAIS" Multiplicity="0..1" />
+          <End Role="SIDEPS_02CATPROV" Type="Self.SIDEPS_02CATPROV" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIDEPS_01CATPAIS">
+              <PropertyRef Name="CODPAIS01" />
+            </Principal>
+            <Dependent Role="SIDEPS_02CATPROV">
+              <PropertyRef Name="CODPAIS01" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SIDEPS_CODPARE12">
+          <End Role="SIDEPS_12CATPARE" Type="Self.SIDEPS_12CATPARE" Multiplicity="0..1" />
+          <End Role="SIDEPS_22REGFAML" Type="Self.SIDEPS_22REGFAML" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIDEPS_12CATPARE">
+              <PropertyRef Name="CODPARE12" />
+            </Principal>
+            <Dependent Role="SIDEPS_22REGFAML">
+              <PropertyRef Name="CODPARE12" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SIDEPS_CODPROV02">
+          <End Role="SIDEPS_02CATPROV" Type="Self.SIDEPS_02CATPROV" Multiplicity="0..1" />
+          <End Role="SIDEPS_03CATCANT" Type="Self.SIDEPS_03CATCANT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIDEPS_02CATPROV">
+              <PropertyRef Name="CODPROV02" />
+            </Principal>
+            <Dependent Role="SIDEPS_03CATCANT">
+              <PropertyRef Name="CODPROV02" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SIDEPS_CODRELG11">
+          <End Role="SIDEPS_11CATRELG" Type="Self.SIDEPS_11CATRELG" Multiplicity="0..1" />
+          <End Role="SIDEPS_13REGPERS" Type="Self.SIDEPS_13REGPERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIDEPS_11CATRELG">
+              <PropertyRef Name="CODRELG11" />
+            </Principal>
+            <Dependent Role="SIDEPS_13REGPERS">
+              <PropertyRef Name="CODRELG11" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SIDEPS_CODSEGU14">
+          <End Role="SIDEPS_14CATSEGU" Type="Self.SIDEPS_14CATSEGU" Multiplicity="0..1" />
+          <End Role="SIDEPS_16REGASPS" Type="Self.SIDEPS_16REGASPS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIDEPS_14CATSEGU">
+              <PropertyRef Name="CODSEGU14" />
+            </Principal>
+            <Dependent Role="SIDEPS_16REGASPS">
+              <PropertyRef Name="CODSEGU14" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SIDEPS_CODSOLI10">
+          <End Role="SIDEPS_10CATSOLI" Type="Self.SIDEPS_10CATSOLI" Multiplicity="0..1" />
+          <End Role="SIDEPS_13REGPERS" Type="Self.SIDEPS_13REGPERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIDEPS_10CATSOLI">
+              <PropertyRef Name="CODSOLI10" />
+            </Principal>
+            <Dependent Role="SIDEPS_13REGPERS">
+              <PropertyRef Name="CODSOLI10" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SIDEPS_CODTIPV18">
+          <End Role="SIDEPS_18TIPVIVI" Type="Self.SIDEPS_18TIPVIVI" Multiplicity="0..1" />
+          <End Role="SIDEPS_20REGVIVI" Type="Self.SIDEPS_20REGVIVI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIDEPS_18TIPVIVI">
+              <PropertyRef Name="CODTIPV18" />
+            </Principal>
+            <Dependent Role="SIDEPS_20REGVIVI">
+              <PropertyRef Name="CODTIPV18" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SIDEPS_CODUSRO05">
+          <End Role="SIDEPS_05TIPUSRO" Type="Self.SIDEPS_05TIPUSRO" Multiplicity="0..1" />
+          <End Role="SIDEPS_07REGUSRO" Type="Self.SIDEPS_07REGUSRO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIDEPS_05TIPUSRO">
+              <PropertyRef Name="CODUSRO05" />
+            </Principal>
+            <Dependent Role="SIDEPS_07REGUSRO">
+              <PropertyRef Name="CODUSRO05" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SIDEPS_CODVIVI20">
+          <End Role="SIDEPS_20REGVIVI" Type="Self.SIDEPS_20REGVIVI" Multiplicity="0..1" />
+          <End Role="SIDEPS_25REGCASO" Type="Self.SIDEPS_25REGCASO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIDEPS_20REGVIVI">
+              <PropertyRef Name="CODVIVI20" />
+            </Principal>
+            <Dependent Role="SIDEPS_25REGCASO">
+              <PropertyRef Name="CODVIVI20" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="SP_CON_REGDIAC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_CON_REGUSRO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_CONXID_REGDIAC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODDIAC04" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_CONXID_REGUSRO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CEDUSRO07" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_DEL_REGDIAC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODDIAC04" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_DEL_REGUSRO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CEDUSRO07" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="SP_INS_REGASPS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CEDPERS13" Type="varchar" Mode="In" />
           <Parameter Name="CODSEGU14" Type="int" Mode="In" />
@@ -713,6 +718,12 @@
           <Parameter Name="DESCASO25" Type="varchar" Mode="In" />
           <Parameter Name="OPICASO25" Type="varchar" Mode="In" />
           <Parameter Name="ESTCASO25" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SP_INS_REGDIAC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NOMDIAC04" Type="varchar" Mode="In" />
+          <Parameter Name="LUGDIAC04" Type="varchar" Mode="In" />
+          <Parameter Name="TELDIAC04" Type="varchar" Mode="In" />
+          <Parameter Name="CODCANT03" Type="int" Mode="In" />
         </Function>
         <Function Name="SP_INS_REGEGRF" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="MTOALQU24" Type="decimal" Mode="In" />
@@ -755,6 +766,19 @@
           <Parameter Name="OACPERS13" Type="varchar" Mode="In" />
           <Parameter Name="OANPERS13" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="SP_INS_REGUSRO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CEDUSRO07" Type="varchar" Mode="In" />
+          <Parameter Name="NOMUSRO07" Type="varchar" Mode="In" />
+          <Parameter Name="PAPUSRO07" Type="varchar" Mode="In" />
+          <Parameter Name="SAPUSRO07" Type="varchar" Mode="In" />
+          <Parameter Name="CODCANT03" Type="int" Mode="In" />
+          <Parameter Name="CODDIAC04" Type="int" Mode="In" />
+          <Parameter Name="CODUSRO05" Type="int" Mode="In" />
+          <Parameter Name="DIRUSRO07" Type="varchar" Mode="In" />
+          <Parameter Name="NACUSRO07" Type="varchar" Mode="In" />
+          <Parameter Name="CNTUSRO07" Type="varchar" Mode="In" />
+          <Parameter Name="FENUSRO07" Type="datetime" Mode="In" />
+        </Function>
         <Function Name="SP_INS_REGVIVI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CODTIPV18" Type="int" Mode="In" />
           <Parameter Name="CODESTV19" Type="int" Mode="In" />
@@ -768,7 +792,29 @@
           <Parameter Name="SRBVIVI20" Type="varchar" Mode="In" />
           <Parameter Name="SREVIVI20" Type="varchar" Mode="In" />
         </Function>
-        <EntityContainer Name="SIDEPSModelStoreContainer">
+        <Function Name="SP_MOD_REGDIAC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODDIAC04" Type="int" Mode="In" />
+          <Parameter Name="NOMDIAC04" Type="varchar" Mode="In" />
+          <Parameter Name="LUGDIAC04" Type="varchar" Mode="In" />
+          <Parameter Name="TELDIAC04" Type="varchar" Mode="In" />
+          <Parameter Name="ESTDIAC04" Type="varchar" Mode="In" />
+          <Parameter Name="CODCANT03" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_MOD_REGUSRO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CEDUSRO07" Type="varchar" Mode="In" />
+          <Parameter Name="NOMUSRO07" Type="varchar" Mode="In" />
+          <Parameter Name="PAPUSRO07" Type="varchar" Mode="In" />
+          <Parameter Name="SAPUSRO07" Type="varchar" Mode="In" />
+          <Parameter Name="CODCANT03" Type="int" Mode="In" />
+          <Parameter Name="CODDIAC04" Type="int" Mode="In" />
+          <Parameter Name="CODUSRO05" Type="int" Mode="In" />
+          <Parameter Name="ESTUSRO07" Type="varchar" Mode="In" />
+          <Parameter Name="DIRUSRO07" Type="varchar" Mode="In" />
+          <Parameter Name="NACUSRO07" Type="varchar" Mode="In" />
+          <Parameter Name="CNTUSRO07" Type="varchar" Mode="In" />
+          <Parameter Name="FENUSRO07" Type="datetime" Mode="In" />
+        </Function>
+        <EntityContainer Name="SIDEPSStoreContainer">
           <EntitySet Name="SIDEPS_01CATPAIS" EntityType="Self.SIDEPS_01CATPAIS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SIDEPS_02CATPROV" EntityType="Self.SIDEPS_02CATPROV" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SIDEPS_03CATCANT" EntityType="Self.SIDEPS_03CATCANT" Schema="dbo" store:Type="Tables" />
@@ -798,161 +844,160 @@
           <EntitySet Name="SIDEPS_27TIPAYUD" EntityType="Self.SIDEPS_27TIPAYUD" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SIDEPS_28REGHIS" EntityType="Self.SIDEPS_28REGHIS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SIDEPS_29REGCNTR" EntityType="Self.SIDEPS_29REGCNTR" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__SIDEPS_02__CODPA__4BAC3F29" Association="Self.FK__SIDEPS_02__CODPA__4BAC3F29">
-            <End Role="SIDEPS_01CATPAIS" EntitySet="SIDEPS_01CATPAIS" />
-            <End Role="SIDEPS_02CATPROV" EntitySet="SIDEPS_02CATPROV" />
+          <AssociationSet Name="FK__SIDEPS_CEDFAML22" Association="Self.FK__SIDEPS_CEDFAML22">
+            <End Role="SIDEPS_22REGFAML" EntitySet="SIDEPS_22REGFAML" />
+            <End Role="SIDEPS_23CATFINA" EntitySet="SIDEPS_23CATFINA" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_03__CODPR__4E88ABD4" Association="Self.FK__SIDEPS_03__CODPR__4E88ABD4">
-            <End Role="SIDEPS_02CATPROV" EntitySet="SIDEPS_02CATPROV" />
-            <End Role="SIDEPS_03CATCANT" EntitySet="SIDEPS_03CATCANT" />
+          <AssociationSet Name="FK__SIDEPS_CEDPERS13" Association="Self.FK__SIDEPS_CEDPERS13">
+            <End Role="SIDEPS_13REGPERS" EntitySet="SIDEPS_13REGPERS" />
+            <End Role="SIDEPS_16REGASPS" EntitySet="SIDEPS_16REGASPS" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_04__CODCA__5165187F" Association="Self.FK__SIDEPS_04__CODCA__5165187F">
-            <End Role="SIDEPS_03CATCANT" EntitySet="SIDEPS_03CATCANT" />
-            <End Role="SIDEPS_04REGDIAC" EntitySet="SIDEPS_04REGDIAC" />
+          <AssociationSet Name="FK__SIDEPS_CEDPERS13_02" Association="Self.FK__SIDEPS_CEDPERS13_02">
+            <End Role="SIDEPS_13REGPERS" EntitySet="SIDEPS_13REGPERS" />
+            <End Role="SIDEPS_23CATFINA" EntitySet="SIDEPS_23CATFINA" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_07__CODCA__5812160E" Association="Self.FK__SIDEPS_07__CODCA__5812160E">
-            <End Role="SIDEPS_03CATCANT" EntitySet="SIDEPS_03CATCANT" />
-            <End Role="SIDEPS_07REGUSRO" EntitySet="SIDEPS_07REGUSRO" />
+          <AssociationSet Name="FK__SIDEPS_CEDPERS13_03" Association="Self.FK__SIDEPS_CEDPERS13_03">
+            <End Role="SIDEPS_13REGPERS" EntitySet="SIDEPS_13REGPERS" />
+            <End Role="SIDEPS_25REGCASO" EntitySet="SIDEPS_25REGCASO" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_07__CODDI__59063A47" Association="Self.FK__SIDEPS_07__CODDI__59063A47">
-            <End Role="SIDEPS_04REGDIAC" EntitySet="SIDEPS_04REGDIAC" />
-            <End Role="SIDEPS_07REGUSRO" EntitySet="SIDEPS_07REGUSRO" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_07__CODUS__59FA5E80" Association="Self.FK__SIDEPS_07__CODUS__59FA5E80">
-            <End Role="SIDEPS_05TIPUSRO" EntitySet="SIDEPS_05TIPUSRO" />
-            <End Role="SIDEPS_07REGUSRO" EntitySet="SIDEPS_07REGUSRO" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_08__CEDUS__5CD6CB2B" Association="Self.FK__SIDEPS_08__CEDUS__5CD6CB2B">
+          <AssociationSet Name="FK__SIDEPS_CEDUSRO07" Association="Self.FK__SIDEPS_CEDUSRO07">
             <End Role="SIDEPS_07REGUSRO" EntitySet="SIDEPS_07REGUSRO" />
             <End Role="SIDEPS_08REGTELF" EntitySet="SIDEPS_08REGTELF" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_13__CODCA__693CA210" Association="Self.FK__SIDEPS_13__CODCA__693CA210">
-            <End Role="SIDEPS_03CATCANT" EntitySet="SIDEPS_03CATCANT" />
-            <End Role="SIDEPS_13REGPERS" EntitySet="SIDEPS_13REGPERS" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_13__CODES__6754599E" Association="Self.FK__SIDEPS_13__CODES__6754599E">
-            <End Role="SIDEPS_06CATESTC" EntitySet="SIDEPS_06CATESTC" />
-            <End Role="SIDEPS_13REGPERS" EntitySet="SIDEPS_13REGPERS" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_13__CODNE__68487DD7" Association="Self.FK__SIDEPS_13__CODNE__68487DD7">
-            <End Role="SIDEPS_09CATNEDU" EntitySet="SIDEPS_09CATNEDU" />
-            <End Role="SIDEPS_13REGPERS" EntitySet="SIDEPS_13REGPERS" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_13__CODRE__6B24EA82" Association="Self.FK__SIDEPS_13__CODRE__6B24EA82">
-            <End Role="SIDEPS_11CATRELG" EntitySet="SIDEPS_11CATRELG" />
-            <End Role="SIDEPS_13REGPERS" EntitySet="SIDEPS_13REGPERS" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_13__CODSO__6A30C649" Association="Self.FK__SIDEPS_13__CODSO__6A30C649">
-            <End Role="SIDEPS_10CATSOLI" EntitySet="SIDEPS_10CATSOLI" />
-            <End Role="SIDEPS_13REGPERS" EntitySet="SIDEPS_13REGPERS" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_16__CEDPE__72C60C4A" Association="Self.FK__SIDEPS_16__CEDPE__72C60C4A">
-            <End Role="SIDEPS_13REGPERS" EntitySet="SIDEPS_13REGPERS" />
-            <End Role="SIDEPS_16REGASPS" EntitySet="SIDEPS_16REGASPS" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_16__CODEN__73BA3083" Association="Self.FK__SIDEPS_16__CODEN__73BA3083">
-            <End Role="SIDEPS_15CATENFR" EntitySet="SIDEPS_15CATENFR" />
-            <End Role="SIDEPS_16REGASPS" EntitySet="SIDEPS_16REGASPS" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_16__CODSE__71D1E811" Association="Self.FK__SIDEPS_16__CODSE__71D1E811">
-            <End Role="SIDEPS_14CATSEGU" EntitySet="SIDEPS_14CATSEGU" />
-            <End Role="SIDEPS_16REGASPS" EntitySet="SIDEPS_16REGASPS" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_20__CODES__7E37BEF6" Association="Self.FK__SIDEPS_20__CODES__7E37BEF6">
-            <End Role="SIDEPS_19ESTVIVI" EntitySet="SIDEPS_19ESTVIVI" />
-            <End Role="SIDEPS_20REGVIVI" EntitySet="SIDEPS_20REGVIVI" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_20__CODMA__7F2BE32F" Association="Self.FK__SIDEPS_20__CODMA__7F2BE32F">
-            <End Role="SIDEPS_17CATMATE" EntitySet="SIDEPS_17CATMATE" />
-            <End Role="SIDEPS_20REGVIVI" EntitySet="SIDEPS_20REGVIVI" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_20__CODTI__7D439ABD" Association="Self.FK__SIDEPS_20__CODTI__7D439ABD">
-            <End Role="SIDEPS_18TIPVIVI" EntitySet="SIDEPS_18TIPVIVI" />
-            <End Role="SIDEPS_20REGVIVI" EntitySet="SIDEPS_20REGVIVI" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_22__CODEN__06CD04F7" Association="Self.FK__SIDEPS_22__CODEN__06CD04F7">
-            <End Role="SIDEPS_15CATENFR" EntitySet="SIDEPS_15CATENFR" />
-            <End Role="SIDEPS_22REGFAML" EntitySet="SIDEPS_22REGFAML" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_22__CODES__03F0984C" Association="Self.FK__SIDEPS_22__CODES__03F0984C">
-            <End Role="SIDEPS_06CATESTC" EntitySet="SIDEPS_06CATESTC" />
-            <End Role="SIDEPS_22REGFAML" EntitySet="SIDEPS_22REGFAML" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_22__CODNE__04E4BC85" Association="Self.FK__SIDEPS_22__CODNE__04E4BC85">
-            <End Role="SIDEPS_09CATNEDU" EntitySet="SIDEPS_09CATNEDU" />
-            <End Role="SIDEPS_22REGFAML" EntitySet="SIDEPS_22REGFAML" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_22__CODOR__05D8E0BE" Association="Self.FK__SIDEPS_22__CODOR__05D8E0BE">
-            <End Role="SIDEPS_21CATORGS" EntitySet="SIDEPS_21CATORGS" />
-            <End Role="SIDEPS_22REGFAML" EntitySet="SIDEPS_22REGFAML" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_22__CODPA__07C12930" Association="Self.FK__SIDEPS_22__CODPA__07C12930">
-            <End Role="SIDEPS_12CATPARE" EntitySet="SIDEPS_12CATPARE" />
-            <End Role="SIDEPS_22REGFAML" EntitySet="SIDEPS_22REGFAML" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_23__CEDFA__0A9D95DB" Association="Self.FK__SIDEPS_23__CEDFA__0A9D95DB">
-            <End Role="SIDEPS_22REGFAML" EntitySet="SIDEPS_22REGFAML" />
-            <End Role="SIDEPS_23CATFINA" EntitySet="SIDEPS_23CATFINA" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_23__CEDPE__0B91BA14" Association="Self.FK__SIDEPS_23__CEDPE__0B91BA14">
-            <End Role="SIDEPS_13REGPERS" EntitySet="SIDEPS_13REGPERS" />
-            <End Role="SIDEPS_23CATFINA" EntitySet="SIDEPS_23CATFINA" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_25__CEDPE__10566F31" Association="Self.FK__SIDEPS_25__CEDPE__10566F31">
-            <End Role="SIDEPS_13REGPERS" EntitySet="SIDEPS_13REGPERS" />
-            <End Role="SIDEPS_25REGCASO" EntitySet="SIDEPS_25REGCASO" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_25__CEDUS__114A936A" Association="Self.FK__SIDEPS_25__CEDUS__114A936A">
+          <AssociationSet Name="FK__SIDEPS_CEDUSRO07_03" Association="Self.FK__SIDEPS_CEDUSRO07_03">
             <End Role="SIDEPS_07REGUSRO" EntitySet="SIDEPS_07REGUSRO" />
             <End Role="SIDEPS_25REGCASO" EntitySet="SIDEPS_25REGCASO" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_25__CODAS__1332DBDC" Association="Self.FK__SIDEPS_25__CODAS__1332DBDC">
+          <AssociationSet Name="FK__SIDEPS_CODASPS16" Association="Self.FK__SIDEPS_CODASPS16">
             <End Role="SIDEPS_16REGASPS" EntitySet="SIDEPS_16REGASPS" />
             <End Role="SIDEPS_25REGCASO" EntitySet="SIDEPS_25REGCASO" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_25__CODEG__14270015" Association="Self.FK__SIDEPS_25__CODEG__14270015">
-            <End Role="SIDEPS_24REGEGRF" EntitySet="SIDEPS_24REGEGRF" />
-            <End Role="SIDEPS_25REGCASO" EntitySet="SIDEPS_25REGCASO" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_25__CODVI__123EB7A3" Association="Self.FK__SIDEPS_25__CODVI__123EB7A3">
-            <End Role="SIDEPS_20REGVIVI" EntitySet="SIDEPS_20REGVIVI" />
-            <End Role="SIDEPS_25REGCASO" EntitySet="SIDEPS_25REGCASO" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_27__CODAY__18EBB532" Association="Self.FK__SIDEPS_27__CODAY__18EBB532">
+          <AssociationSet Name="FK__SIDEPS_CODAYUD26" Association="Self.FK__SIDEPS_CODAYUD26">
             <End Role="SIDEPS_26CATAYUD" EntitySet="SIDEPS_26CATAYUD" />
             <End Role="SIDEPS_27TIPAYUD" EntitySet="SIDEPS_27TIPAYUD" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_27__CODCA__19DFD96B" Association="Self.FK__SIDEPS_27__CODCA__19DFD96B">
+          <AssociationSet Name="FK__SIDEPS_CODCANT03" Association="Self.FK__SIDEPS_CODCANT03">
+            <End Role="SIDEPS_03CATCANT" EntitySet="SIDEPS_03CATCANT" />
+            <End Role="SIDEPS_04REGDIAC" EntitySet="SIDEPS_04REGDIAC" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SIDEPS_CODCANT03_02" Association="Self.FK__SIDEPS_CODCANT03_02">
+            <End Role="SIDEPS_03CATCANT" EntitySet="SIDEPS_03CATCANT" />
+            <End Role="SIDEPS_07REGUSRO" EntitySet="SIDEPS_07REGUSRO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SIDEPS_CODCANT03_3" Association="Self.FK__SIDEPS_CODCANT03_3">
+            <End Role="SIDEPS_03CATCANT" EntitySet="SIDEPS_03CATCANT" />
+            <End Role="SIDEPS_13REGPERS" EntitySet="SIDEPS_13REGPERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SIDEPS_CODCASO25" Association="Self.FK__SIDEPS_CODCASO25">
             <End Role="SIDEPS_25REGCASO" EntitySet="SIDEPS_25REGCASO" />
             <End Role="SIDEPS_27TIPAYUD" EntitySet="SIDEPS_27TIPAYUD" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_28__CODCA__3E1D39E1" Association="Self.FK__SIDEPS_28__CODCA__3E1D39E1">
+          <AssociationSet Name="FK__SIDEPS_CODCASO25_02" Association="Self.FK__SIDEPS_CODCASO25_02">
             <End Role="SIDEPS_25REGCASO" EntitySet="SIDEPS_25REGCASO" />
             <End Role="SIDEPS_28REGHIS" EntitySet="SIDEPS_28REGHIS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SIDEPS_CODDIAC04" Association="Self.FK__SIDEPS_CODDIAC04">
+            <End Role="SIDEPS_04REGDIAC" EntitySet="SIDEPS_04REGDIAC" />
+            <End Role="SIDEPS_07REGUSRO" EntitySet="SIDEPS_07REGUSRO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SIDEPS_CODEGRF24" Association="Self.FK__SIDEPS_CODEGRF24">
+            <End Role="SIDEPS_24REGEGRF" EntitySet="SIDEPS_24REGEGRF" />
+            <End Role="SIDEPS_25REGCASO" EntitySet="SIDEPS_25REGCASO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SIDEPS_CODENFR15" Association="Self.FK__SIDEPS_CODENFR15">
+            <End Role="SIDEPS_15CATENFR" EntitySet="SIDEPS_15CATENFR" />
+            <End Role="SIDEPS_16REGASPS" EntitySet="SIDEPS_16REGASPS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SIDEPS_CODENFR15_02" Association="Self.FK__SIDEPS_CODENFR15_02">
+            <End Role="SIDEPS_15CATENFR" EntitySet="SIDEPS_15CATENFR" />
+            <End Role="SIDEPS_22REGFAML" EntitySet="SIDEPS_22REGFAML" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SIDEPS_CODESTC06" Association="Self.FK__SIDEPS_CODESTC06">
+            <End Role="SIDEPS_06CATESTC" EntitySet="SIDEPS_06CATESTC" />
+            <End Role="SIDEPS_13REGPERS" EntitySet="SIDEPS_13REGPERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SIDEPS_CODESTC06_02" Association="Self.FK__SIDEPS_CODESTC06_02">
+            <End Role="SIDEPS_06CATESTC" EntitySet="SIDEPS_06CATESTC" />
+            <End Role="SIDEPS_22REGFAML" EntitySet="SIDEPS_22REGFAML" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SIDEPS_CODESTV19" Association="Self.FK__SIDEPS_CODESTV19">
+            <End Role="SIDEPS_19ESTVIVI" EntitySet="SIDEPS_19ESTVIVI" />
+            <End Role="SIDEPS_20REGVIVI" EntitySet="SIDEPS_20REGVIVI" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SIDEPS_CODMATE17" Association="Self.FK__SIDEPS_CODMATE17">
+            <End Role="SIDEPS_17CATMATE" EntitySet="SIDEPS_17CATMATE" />
+            <End Role="SIDEPS_20REGVIVI" EntitySet="SIDEPS_20REGVIVI" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SIDEPS_CODNEDU09" Association="Self.FK__SIDEPS_CODNEDU09">
+            <End Role="SIDEPS_09CATNEDU" EntitySet="SIDEPS_09CATNEDU" />
+            <End Role="SIDEPS_13REGPERS" EntitySet="SIDEPS_13REGPERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SIDEPS_CODNEDU09_02" Association="Self.FK__SIDEPS_CODNEDU09_02">
+            <End Role="SIDEPS_09CATNEDU" EntitySet="SIDEPS_09CATNEDU" />
+            <End Role="SIDEPS_22REGFAML" EntitySet="SIDEPS_22REGFAML" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SIDEPS_CODORGS21" Association="Self.FK__SIDEPS_CODORGS21">
+            <End Role="SIDEPS_21CATORGS" EntitySet="SIDEPS_21CATORGS" />
+            <End Role="SIDEPS_22REGFAML" EntitySet="SIDEPS_22REGFAML" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SIDEPS_CODPAIS01" Association="Self.FK__SIDEPS_CODPAIS01">
+            <End Role="SIDEPS_01CATPAIS" EntitySet="SIDEPS_01CATPAIS" />
+            <End Role="SIDEPS_02CATPROV" EntitySet="SIDEPS_02CATPROV" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SIDEPS_CODPARE12" Association="Self.FK__SIDEPS_CODPARE12">
+            <End Role="SIDEPS_12CATPARE" EntitySet="SIDEPS_12CATPARE" />
+            <End Role="SIDEPS_22REGFAML" EntitySet="SIDEPS_22REGFAML" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SIDEPS_CODPROV02" Association="Self.FK__SIDEPS_CODPROV02">
+            <End Role="SIDEPS_02CATPROV" EntitySet="SIDEPS_02CATPROV" />
+            <End Role="SIDEPS_03CATCANT" EntitySet="SIDEPS_03CATCANT" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SIDEPS_CODRELG11" Association="Self.FK__SIDEPS_CODRELG11">
+            <End Role="SIDEPS_11CATRELG" EntitySet="SIDEPS_11CATRELG" />
+            <End Role="SIDEPS_13REGPERS" EntitySet="SIDEPS_13REGPERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SIDEPS_CODSEGU14" Association="Self.FK__SIDEPS_CODSEGU14">
+            <End Role="SIDEPS_14CATSEGU" EntitySet="SIDEPS_14CATSEGU" />
+            <End Role="SIDEPS_16REGASPS" EntitySet="SIDEPS_16REGASPS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SIDEPS_CODSOLI10" Association="Self.FK__SIDEPS_CODSOLI10">
+            <End Role="SIDEPS_10CATSOLI" EntitySet="SIDEPS_10CATSOLI" />
+            <End Role="SIDEPS_13REGPERS" EntitySet="SIDEPS_13REGPERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SIDEPS_CODTIPV18" Association="Self.FK__SIDEPS_CODTIPV18">
+            <End Role="SIDEPS_18TIPVIVI" EntitySet="SIDEPS_18TIPVIVI" />
+            <End Role="SIDEPS_20REGVIVI" EntitySet="SIDEPS_20REGVIVI" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SIDEPS_CODUSRO05" Association="Self.FK__SIDEPS_CODUSRO05">
+            <End Role="SIDEPS_05TIPUSRO" EntitySet="SIDEPS_05TIPUSRO" />
+            <End Role="SIDEPS_07REGUSRO" EntitySet="SIDEPS_07REGUSRO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SIDEPS_CODVIVI20" Association="Self.FK__SIDEPS_CODVIVI20">
+            <End Role="SIDEPS_20REGVIVI" EntitySet="SIDEPS_20REGVIVI" />
+            <End Role="SIDEPS_25REGCASO" EntitySet="SIDEPS_25REGCASO" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="SIDEPSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="SIDEPS" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="SIDEPS_01CATPAIS">
           <Key>
             <PropertyRef Name="CODPAIS01" />
           </Key>
           <Property Name="CODPAIS01" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NOMPAIS01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="SIDEPS_02CATPROV" Relationship="Self.FK__SIDEPS_02__CODPA__4BAC3F29" FromRole="SIDEPS_01CATPAIS" ToRole="SIDEPS_02CATPROV" />
+          <Property Name="NOMPAIS01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="SIDEPS_02CATPROV" Relationship="Self.FK__SIDEPS_CODPAIS01" FromRole="SIDEPS_01CATPAIS" ToRole="SIDEPS_02CATPROV" />
         </EntityType>
         <EntityType Name="SIDEPS_02CATPROV">
           <Key>
             <PropertyRef Name="CODPROV02" />
           </Key>
           <Property Name="CODPROV02" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NOMPROV02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NOMPROV02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CODPAIS01" Type="Int32" />
-          <NavigationProperty Name="SIDEPS_01CATPAIS" Relationship="Self.FK__SIDEPS_02__CODPA__4BAC3F29" FromRole="SIDEPS_02CATPROV" ToRole="SIDEPS_01CATPAIS" />
-          <NavigationProperty Name="SIDEPS_03CATCANT" Relationship="Self.FK__SIDEPS_03__CODPR__4E88ABD4" FromRole="SIDEPS_02CATPROV" ToRole="SIDEPS_03CATCANT" />
+          <NavigationProperty Name="SIDEPS_01CATPAIS" Relationship="Self.FK__SIDEPS_CODPAIS01" FromRole="SIDEPS_02CATPROV" ToRole="SIDEPS_01CATPAIS" />
+          <NavigationProperty Name="SIDEPS_03CATCANT" Relationship="Self.FK__SIDEPS_CODPROV02" FromRole="SIDEPS_02CATPROV" ToRole="SIDEPS_03CATCANT" />
         </EntityType>
         <EntityType Name="SIDEPS_03CATCANT">
           <Key>
@@ -961,10 +1006,10 @@
           <Property Name="CODCANT03" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NOMCANT03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CODPROV02" Type="Int32" />
-          <NavigationProperty Name="SIDEPS_02CATPROV" Relationship="Self.FK__SIDEPS_03__CODPR__4E88ABD4" FromRole="SIDEPS_03CATCANT" ToRole="SIDEPS_02CATPROV" />
-          <NavigationProperty Name="SIDEPS_04REGDIAC" Relationship="Self.FK__SIDEPS_04__CODCA__5165187F" FromRole="SIDEPS_03CATCANT" ToRole="SIDEPS_04REGDIAC" />
-          <NavigationProperty Name="SIDEPS_07REGUSRO" Relationship="Self.FK__SIDEPS_07__CODCA__5812160E" FromRole="SIDEPS_03CATCANT" ToRole="SIDEPS_07REGUSRO" />
-          <NavigationProperty Name="SIDEPS_13REGPERS" Relationship="Self.FK__SIDEPS_13__CODCA__693CA210" FromRole="SIDEPS_03CATCANT" ToRole="SIDEPS_13REGPERS" />
+          <NavigationProperty Name="SIDEPS_02CATPROV" Relationship="Self.FK__SIDEPS_CODPROV02" FromRole="SIDEPS_03CATCANT" ToRole="SIDEPS_02CATPROV" />
+          <NavigationProperty Name="SIDEPS_04REGDIAC" Relationship="Self.FK__SIDEPS_CODCANT03" FromRole="SIDEPS_03CATCANT" ToRole="SIDEPS_04REGDIAC" />
+          <NavigationProperty Name="SIDEPS_07REGUSRO" Relationship="Self.FK__SIDEPS_CODCANT03_02" FromRole="SIDEPS_03CATCANT" ToRole="SIDEPS_07REGUSRO" />
+          <NavigationProperty Name="SIDEPS_13REGPERS" Relationship="Self.FK__SIDEPS_CODCANT03_3" FromRole="SIDEPS_03CATCANT" ToRole="SIDEPS_13REGPERS" />
         </EntityType>
         <EntityType Name="SIDEPS_04REGDIAC">
           <Key>
@@ -976,8 +1021,8 @@
           <Property Name="TELDIAC04" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Name="ESTDIAC04" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="CODCANT03" Type="Int32" />
-          <NavigationProperty Name="SIDEPS_03CATCANT" Relationship="Self.FK__SIDEPS_04__CODCA__5165187F" FromRole="SIDEPS_04REGDIAC" ToRole="SIDEPS_03CATCANT" />
-          <NavigationProperty Name="SIDEPS_07REGUSRO" Relationship="Self.FK__SIDEPS_07__CODDI__59063A47" FromRole="SIDEPS_04REGDIAC" ToRole="SIDEPS_07REGUSRO" />
+          <NavigationProperty Name="SIDEPS_03CATCANT" Relationship="Self.FK__SIDEPS_CODCANT03" FromRole="SIDEPS_04REGDIAC" ToRole="SIDEPS_03CATCANT" />
+          <NavigationProperty Name="SIDEPS_07REGUSRO" Relationship="Self.FK__SIDEPS_CODDIAC04" FromRole="SIDEPS_04REGDIAC" ToRole="SIDEPS_07REGUSRO" />
         </EntityType>
         <EntityType Name="SIDEPS_05TIPUSRO">
           <Key>
@@ -985,7 +1030,7 @@
           </Key>
           <Property Name="CODUSRO05" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DESUSRO05" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="SIDEPS_07REGUSRO" Relationship="Self.FK__SIDEPS_07__CODUS__59FA5E80" FromRole="SIDEPS_05TIPUSRO" ToRole="SIDEPS_07REGUSRO" />
+          <NavigationProperty Name="SIDEPS_07REGUSRO" Relationship="Self.FK__SIDEPS_CODUSRO05" FromRole="SIDEPS_05TIPUSRO" ToRole="SIDEPS_07REGUSRO" />
         </EntityType>
         <EntityType Name="SIDEPS_06CATESTC">
           <Key>
@@ -993,8 +1038,8 @@
           </Key>
           <Property Name="CODESTC06" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DESESTC06" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="SIDEPS_13REGPERS" Relationship="Self.FK__SIDEPS_13__CODES__6754599E" FromRole="SIDEPS_06CATESTC" ToRole="SIDEPS_13REGPERS" />
-          <NavigationProperty Name="SIDEPS_22REGFAML" Relationship="Self.FK__SIDEPS_22__CODES__03F0984C" FromRole="SIDEPS_06CATESTC" ToRole="SIDEPS_22REGFAML" />
+          <NavigationProperty Name="SIDEPS_13REGPERS" Relationship="Self.FK__SIDEPS_CODESTC06" FromRole="SIDEPS_06CATESTC" ToRole="SIDEPS_13REGPERS" />
+          <NavigationProperty Name="SIDEPS_22REGFAML" Relationship="Self.FK__SIDEPS_CODESTC06_02" FromRole="SIDEPS_06CATESTC" ToRole="SIDEPS_22REGFAML" />
         </EntityType>
         <EntityType Name="SIDEPS_07REGUSRO">
           <Key>
@@ -1014,11 +1059,11 @@
           <Property Name="FEIUSRO07" Type="DateTime" Precision="3" />
           <Property Name="FEFUSRO07" Type="DateTime" Precision="3" />
           <Property Name="FENUSRO07" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="SIDEPS_03CATCANT" Relationship="Self.FK__SIDEPS_07__CODCA__5812160E" FromRole="SIDEPS_07REGUSRO" ToRole="SIDEPS_03CATCANT" />
-          <NavigationProperty Name="SIDEPS_04REGDIAC" Relationship="Self.FK__SIDEPS_07__CODDI__59063A47" FromRole="SIDEPS_07REGUSRO" ToRole="SIDEPS_04REGDIAC" />
-          <NavigationProperty Name="SIDEPS_05TIPUSRO" Relationship="Self.FK__SIDEPS_07__CODUS__59FA5E80" FromRole="SIDEPS_07REGUSRO" ToRole="SIDEPS_05TIPUSRO" />
-          <NavigationProperty Name="SIDEPS_08REGTELF" Relationship="Self.FK__SIDEPS_08__CEDUS__5CD6CB2B" FromRole="SIDEPS_07REGUSRO" ToRole="SIDEPS_08REGTELF" />
-          <NavigationProperty Name="SIDEPS_25REGCASO" Relationship="Self.FK__SIDEPS_25__CEDUS__114A936A" FromRole="SIDEPS_07REGUSRO" ToRole="SIDEPS_25REGCASO" />
+          <NavigationProperty Name="SIDEPS_03CATCANT" Relationship="Self.FK__SIDEPS_CODCANT03_02" FromRole="SIDEPS_07REGUSRO" ToRole="SIDEPS_03CATCANT" />
+          <NavigationProperty Name="SIDEPS_04REGDIAC" Relationship="Self.FK__SIDEPS_CODDIAC04" FromRole="SIDEPS_07REGUSRO" ToRole="SIDEPS_04REGDIAC" />
+          <NavigationProperty Name="SIDEPS_05TIPUSRO" Relationship="Self.FK__SIDEPS_CODUSRO05" FromRole="SIDEPS_07REGUSRO" ToRole="SIDEPS_05TIPUSRO" />
+          <NavigationProperty Name="SIDEPS_08REGTELF" Relationship="Self.FK__SIDEPS_CEDUSRO07" FromRole="SIDEPS_07REGUSRO" ToRole="SIDEPS_08REGTELF" />
+          <NavigationProperty Name="SIDEPS_25REGCASO" Relationship="Self.FK__SIDEPS_CEDUSRO07_03" FromRole="SIDEPS_07REGUSRO" ToRole="SIDEPS_25REGCASO" />
         </EntityType>
         <EntityType Name="SIDEPS_08REGTELF">
           <Key>
@@ -1027,7 +1072,7 @@
           <Property Name="CODTELF08" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CEDUSRO07" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="NUMTELF08" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="SIDEPS_07REGUSRO" Relationship="Self.FK__SIDEPS_08__CEDUS__5CD6CB2B" FromRole="SIDEPS_08REGTELF" ToRole="SIDEPS_07REGUSRO" />
+          <NavigationProperty Name="SIDEPS_07REGUSRO" Relationship="Self.FK__SIDEPS_CEDUSRO07" FromRole="SIDEPS_08REGTELF" ToRole="SIDEPS_07REGUSRO" />
         </EntityType>
         <EntityType Name="SIDEPS_09CATNEDU">
           <Key>
@@ -1035,8 +1080,8 @@
           </Key>
           <Property Name="CODNEDU09" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DESNEDU09" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="SIDEPS_13REGPERS" Relationship="Self.FK__SIDEPS_13__CODNE__68487DD7" FromRole="SIDEPS_09CATNEDU" ToRole="SIDEPS_13REGPERS" />
-          <NavigationProperty Name="SIDEPS_22REGFAML" Relationship="Self.FK__SIDEPS_22__CODNE__04E4BC85" FromRole="SIDEPS_09CATNEDU" ToRole="SIDEPS_22REGFAML" />
+          <NavigationProperty Name="SIDEPS_13REGPERS" Relationship="Self.FK__SIDEPS_CODNEDU09" FromRole="SIDEPS_09CATNEDU" ToRole="SIDEPS_13REGPERS" />
+          <NavigationProperty Name="SIDEPS_22REGFAML" Relationship="Self.FK__SIDEPS_CODNEDU09_02" FromRole="SIDEPS_09CATNEDU" ToRole="SIDEPS_22REGFAML" />
         </EntityType>
         <EntityType Name="SIDEPS_10CATSOLI">
           <Key>
@@ -1044,7 +1089,7 @@
           </Key>
           <Property Name="CODSOLI10" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DESSOLI10" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="SIDEPS_13REGPERS" Relationship="Self.FK__SIDEPS_13__CODSO__6A30C649" FromRole="SIDEPS_10CATSOLI" ToRole="SIDEPS_13REGPERS" />
+          <NavigationProperty Name="SIDEPS_13REGPERS" Relationship="Self.FK__SIDEPS_CODSOLI10" FromRole="SIDEPS_10CATSOLI" ToRole="SIDEPS_13REGPERS" />
         </EntityType>
         <EntityType Name="SIDEPS_11CATRELG">
           <Key>
@@ -1052,7 +1097,7 @@
           </Key>
           <Property Name="CODRELG11" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DESRELG11" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="SIDEPS_13REGPERS" Relationship="Self.FK__SIDEPS_13__CODRE__6B24EA82" FromRole="SIDEPS_11CATRELG" ToRole="SIDEPS_13REGPERS" />
+          <NavigationProperty Name="SIDEPS_13REGPERS" Relationship="Self.FK__SIDEPS_CODRELG11" FromRole="SIDEPS_11CATRELG" ToRole="SIDEPS_13REGPERS" />
         </EntityType>
         <EntityType Name="SIDEPS_12CATPARE">
           <Key>
@@ -1060,7 +1105,7 @@
           </Key>
           <Property Name="CODPARE12" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DESPARE12" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="SIDEPS_22REGFAML" Relationship="Self.FK__SIDEPS_22__CODPA__07C12930" FromRole="SIDEPS_12CATPARE" ToRole="SIDEPS_22REGFAML" />
+          <NavigationProperty Name="SIDEPS_22REGFAML" Relationship="Self.FK__SIDEPS_CODPARE12" FromRole="SIDEPS_12CATPARE" ToRole="SIDEPS_22REGFAML" />
         </EntityType>
         <EntityType Name="SIDEPS_13REGPERS">
           <Key>
@@ -1079,14 +1124,15 @@
           <Property Name="DIRPERS13" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="OACPERS13" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="OANPERS13" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="SIDEPS_03CATCANT" Relationship="Self.FK__SIDEPS_13__CODCA__693CA210" FromRole="SIDEPS_13REGPERS" ToRole="SIDEPS_03CATCANT" />
-          <NavigationProperty Name="SIDEPS_06CATESTC" Relationship="Self.FK__SIDEPS_13__CODES__6754599E" FromRole="SIDEPS_13REGPERS" ToRole="SIDEPS_06CATESTC" />
-          <NavigationProperty Name="SIDEPS_09CATNEDU" Relationship="Self.FK__SIDEPS_13__CODNE__68487DD7" FromRole="SIDEPS_13REGPERS" ToRole="SIDEPS_09CATNEDU" />
-          <NavigationProperty Name="SIDEPS_10CATSOLI" Relationship="Self.FK__SIDEPS_13__CODSO__6A30C649" FromRole="SIDEPS_13REGPERS" ToRole="SIDEPS_10CATSOLI" />
-          <NavigationProperty Name="SIDEPS_11CATRELG" Relationship="Self.FK__SIDEPS_13__CODRE__6B24EA82" FromRole="SIDEPS_13REGPERS" ToRole="SIDEPS_11CATRELG" />
-          <NavigationProperty Name="SIDEPS_16REGASPS" Relationship="Self.FK__SIDEPS_16__CEDPE__72C60C4A" FromRole="SIDEPS_13REGPERS" ToRole="SIDEPS_16REGASPS" />
-          <NavigationProperty Name="SIDEPS_23CATFINA" Relationship="Self.FK__SIDEPS_23__CEDPE__0B91BA14" FromRole="SIDEPS_13REGPERS" ToRole="SIDEPS_23CATFINA" />
-          <NavigationProperty Name="SIDEPS_25REGCASO" Relationship="Self.FK__SIDEPS_25__CEDPE__10566F31" FromRole="SIDEPS_13REGPERS" ToRole="SIDEPS_25REGCASO" />
+          <Property Name="FENPERS13" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="SIDEPS_03CATCANT" Relationship="Self.FK__SIDEPS_CODCANT03_3" FromRole="SIDEPS_13REGPERS" ToRole="SIDEPS_03CATCANT" />
+          <NavigationProperty Name="SIDEPS_06CATESTC" Relationship="Self.FK__SIDEPS_CODESTC06" FromRole="SIDEPS_13REGPERS" ToRole="SIDEPS_06CATESTC" />
+          <NavigationProperty Name="SIDEPS_09CATNEDU" Relationship="Self.FK__SIDEPS_CODNEDU09" FromRole="SIDEPS_13REGPERS" ToRole="SIDEPS_09CATNEDU" />
+          <NavigationProperty Name="SIDEPS_10CATSOLI" Relationship="Self.FK__SIDEPS_CODSOLI10" FromRole="SIDEPS_13REGPERS" ToRole="SIDEPS_10CATSOLI" />
+          <NavigationProperty Name="SIDEPS_11CATRELG" Relationship="Self.FK__SIDEPS_CODRELG11" FromRole="SIDEPS_13REGPERS" ToRole="SIDEPS_11CATRELG" />
+          <NavigationProperty Name="SIDEPS_16REGASPS" Relationship="Self.FK__SIDEPS_CEDPERS13" FromRole="SIDEPS_13REGPERS" ToRole="SIDEPS_16REGASPS" />
+          <NavigationProperty Name="SIDEPS_23CATFINA" Relationship="Self.FK__SIDEPS_CEDPERS13_02" FromRole="SIDEPS_13REGPERS" ToRole="SIDEPS_23CATFINA" />
+          <NavigationProperty Name="SIDEPS_25REGCASO" Relationship="Self.FK__SIDEPS_CEDPERS13_03" FromRole="SIDEPS_13REGPERS" ToRole="SIDEPS_25REGCASO" />
         </EntityType>
         <EntityType Name="SIDEPS_14CATSEGU">
           <Key>
@@ -1094,7 +1140,7 @@
           </Key>
           <Property Name="CODSEGU14" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DESSEGU14" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="SIDEPS_16REGASPS" Relationship="Self.FK__SIDEPS_16__CODSE__71D1E811" FromRole="SIDEPS_14CATSEGU" ToRole="SIDEPS_16REGASPS" />
+          <NavigationProperty Name="SIDEPS_16REGASPS" Relationship="Self.FK__SIDEPS_CODSEGU14" FromRole="SIDEPS_14CATSEGU" ToRole="SIDEPS_16REGASPS" />
         </EntityType>
         <EntityType Name="SIDEPS_15CATENFR">
           <Key>
@@ -1102,8 +1148,8 @@
           </Key>
           <Property Name="CODENFR15" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DESENFR15" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="SIDEPS_16REGASPS" Relationship="Self.FK__SIDEPS_16__CODEN__73BA3083" FromRole="SIDEPS_15CATENFR" ToRole="SIDEPS_16REGASPS" />
-          <NavigationProperty Name="SIDEPS_22REGFAML" Relationship="Self.FK__SIDEPS_22__CODEN__06CD04F7" FromRole="SIDEPS_15CATENFR" ToRole="SIDEPS_22REGFAML" />
+          <NavigationProperty Name="SIDEPS_16REGASPS" Relationship="Self.FK__SIDEPS_CODENFR15" FromRole="SIDEPS_15CATENFR" ToRole="SIDEPS_16REGASPS" />
+          <NavigationProperty Name="SIDEPS_22REGFAML" Relationship="Self.FK__SIDEPS_CODENFR15_02" FromRole="SIDEPS_15CATENFR" ToRole="SIDEPS_22REGFAML" />
         </EntityType>
         <EntityType Name="SIDEPS_16REGASPS">
           <Key>
@@ -1116,10 +1162,10 @@
           <Property Name="DESENFR16" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="RECTRAT16" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
           <Property Name="DESTRAT16" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="SIDEPS_13REGPERS" Relationship="Self.FK__SIDEPS_16__CEDPE__72C60C4A" FromRole="SIDEPS_16REGASPS" ToRole="SIDEPS_13REGPERS" />
-          <NavigationProperty Name="SIDEPS_14CATSEGU" Relationship="Self.FK__SIDEPS_16__CODSE__71D1E811" FromRole="SIDEPS_16REGASPS" ToRole="SIDEPS_14CATSEGU" />
-          <NavigationProperty Name="SIDEPS_15CATENFR" Relationship="Self.FK__SIDEPS_16__CODEN__73BA3083" FromRole="SIDEPS_16REGASPS" ToRole="SIDEPS_15CATENFR" />
-          <NavigationProperty Name="SIDEPS_25REGCASO" Relationship="Self.FK__SIDEPS_25__CODAS__1332DBDC" FromRole="SIDEPS_16REGASPS" ToRole="SIDEPS_25REGCASO" />
+          <NavigationProperty Name="SIDEPS_13REGPERS" Relationship="Self.FK__SIDEPS_CEDPERS13" FromRole="SIDEPS_16REGASPS" ToRole="SIDEPS_13REGPERS" />
+          <NavigationProperty Name="SIDEPS_14CATSEGU" Relationship="Self.FK__SIDEPS_CODSEGU14" FromRole="SIDEPS_16REGASPS" ToRole="SIDEPS_14CATSEGU" />
+          <NavigationProperty Name="SIDEPS_15CATENFR" Relationship="Self.FK__SIDEPS_CODENFR15" FromRole="SIDEPS_16REGASPS" ToRole="SIDEPS_15CATENFR" />
+          <NavigationProperty Name="SIDEPS_25REGCASO" Relationship="Self.FK__SIDEPS_CODASPS16" FromRole="SIDEPS_16REGASPS" ToRole="SIDEPS_25REGCASO" />
         </EntityType>
         <EntityType Name="SIDEPS_17CATMATE">
           <Key>
@@ -1127,7 +1173,7 @@
           </Key>
           <Property Name="CODMATE17" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DESMATE17" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="SIDEPS_20REGVIVI" Relationship="Self.FK__SIDEPS_20__CODMA__7F2BE32F" FromRole="SIDEPS_17CATMATE" ToRole="SIDEPS_20REGVIVI" />
+          <NavigationProperty Name="SIDEPS_20REGVIVI" Relationship="Self.FK__SIDEPS_CODMATE17" FromRole="SIDEPS_17CATMATE" ToRole="SIDEPS_20REGVIVI" />
         </EntityType>
         <EntityType Name="SIDEPS_18TIPVIVI">
           <Key>
@@ -1135,7 +1181,7 @@
           </Key>
           <Property Name="CODTIPV18" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DESTIPV18" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="SIDEPS_20REGVIVI" Relationship="Self.FK__SIDEPS_20__CODTI__7D439ABD" FromRole="SIDEPS_18TIPVIVI" ToRole="SIDEPS_20REGVIVI" />
+          <NavigationProperty Name="SIDEPS_20REGVIVI" Relationship="Self.FK__SIDEPS_CODTIPV18" FromRole="SIDEPS_18TIPVIVI" ToRole="SIDEPS_20REGVIVI" />
         </EntityType>
         <EntityType Name="SIDEPS_19ESTVIVI">
           <Key>
@@ -1143,7 +1189,7 @@
           </Key>
           <Property Name="CODESTV19" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DESESTV19" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="SIDEPS_20REGVIVI" Relationship="Self.FK__SIDEPS_20__CODES__7E37BEF6" FromRole="SIDEPS_19ESTVIVI" ToRole="SIDEPS_20REGVIVI" />
+          <NavigationProperty Name="SIDEPS_20REGVIVI" Relationship="Self.FK__SIDEPS_CODESTV19" FromRole="SIDEPS_19ESTVIVI" ToRole="SIDEPS_20REGVIVI" />
         </EntityType>
         <EntityType Name="SIDEPS_20REGVIVI">
           <Key>
@@ -1154,17 +1200,17 @@
           <Property Name="CODESTV19" Type="Int32" />
           <Property Name="CODMATE17" Type="Int32" />
           <Property Name="MTOVIVI20" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="NAPVIVI20" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="SRCVIVI20" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="SRIVIVI20" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="SRLVIVI20" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="SRMVIVI20" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="SRBVIVI20" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="SREVIVI20" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="SIDEPS_17CATMATE" Relationship="Self.FK__SIDEPS_20__CODMA__7F2BE32F" FromRole="SIDEPS_20REGVIVI" ToRole="SIDEPS_17CATMATE" />
-          <NavigationProperty Name="SIDEPS_18TIPVIVI" Relationship="Self.FK__SIDEPS_20__CODTI__7D439ABD" FromRole="SIDEPS_20REGVIVI" ToRole="SIDEPS_18TIPVIVI" />
-          <NavigationProperty Name="SIDEPS_19ESTVIVI" Relationship="Self.FK__SIDEPS_20__CODES__7E37BEF6" FromRole="SIDEPS_20REGVIVI" ToRole="SIDEPS_19ESTVIVI" />
-          <NavigationProperty Name="SIDEPS_25REGCASO" Relationship="Self.FK__SIDEPS_25__CODVI__123EB7A3" FromRole="SIDEPS_20REGVIVI" ToRole="SIDEPS_25REGCASO" />
+          <Property Name="NAPVIVI20" Type="Int32" />
+          <Property Name="SRCVIVI20" Type="Boolean" />
+          <Property Name="SRIVIVI20" Type="Boolean" />
+          <Property Name="SRLVIVI20" Type="Boolean" />
+          <Property Name="SRMVIVI20" Type="Boolean" />
+          <Property Name="SRBVIVI20" Type="Boolean" />
+          <Property Name="SREVIVI20" Type="Boolean" />
+          <NavigationProperty Name="SIDEPS_17CATMATE" Relationship="Self.FK__SIDEPS_CODMATE17" FromRole="SIDEPS_20REGVIVI" ToRole="SIDEPS_17CATMATE" />
+          <NavigationProperty Name="SIDEPS_18TIPVIVI" Relationship="Self.FK__SIDEPS_CODTIPV18" FromRole="SIDEPS_20REGVIVI" ToRole="SIDEPS_18TIPVIVI" />
+          <NavigationProperty Name="SIDEPS_19ESTVIVI" Relationship="Self.FK__SIDEPS_CODESTV19" FromRole="SIDEPS_20REGVIVI" ToRole="SIDEPS_19ESTVIVI" />
+          <NavigationProperty Name="SIDEPS_25REGCASO" Relationship="Self.FK__SIDEPS_CODVIVI20" FromRole="SIDEPS_20REGVIVI" ToRole="SIDEPS_25REGCASO" />
         </EntityType>
         <EntityType Name="SIDEPS_21CATORGS">
           <Key>
@@ -1172,7 +1218,7 @@
           </Key>
           <Property Name="CODORGS21" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DESORGS21" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="SIDEPS_22REGFAML" Relationship="Self.FK__SIDEPS_22__CODOR__05D8E0BE" FromRole="SIDEPS_21CATORGS" ToRole="SIDEPS_22REGFAML" />
+          <NavigationProperty Name="SIDEPS_22REGFAML" Relationship="Self.FK__SIDEPS_CODORGS21" FromRole="SIDEPS_21CATORGS" ToRole="SIDEPS_22REGFAML" />
         </EntityType>
         <EntityType Name="SIDEPS_22REGFAML">
           <Key>
@@ -1189,12 +1235,12 @@
           <Property Name="CODORGS21" Type="Int32" />
           <Property Name="CODENFR15" Type="Int32" />
           <Property Name="CODPARE12" Type="Int32" />
-          <NavigationProperty Name="SIDEPS_06CATESTC" Relationship="Self.FK__SIDEPS_22__CODES__03F0984C" FromRole="SIDEPS_22REGFAML" ToRole="SIDEPS_06CATESTC" />
-          <NavigationProperty Name="SIDEPS_09CATNEDU" Relationship="Self.FK__SIDEPS_22__CODNE__04E4BC85" FromRole="SIDEPS_22REGFAML" ToRole="SIDEPS_09CATNEDU" />
-          <NavigationProperty Name="SIDEPS_12CATPARE" Relationship="Self.FK__SIDEPS_22__CODPA__07C12930" FromRole="SIDEPS_22REGFAML" ToRole="SIDEPS_12CATPARE" />
-          <NavigationProperty Name="SIDEPS_15CATENFR" Relationship="Self.FK__SIDEPS_22__CODEN__06CD04F7" FromRole="SIDEPS_22REGFAML" ToRole="SIDEPS_15CATENFR" />
-          <NavigationProperty Name="SIDEPS_21CATORGS" Relationship="Self.FK__SIDEPS_22__CODOR__05D8E0BE" FromRole="SIDEPS_22REGFAML" ToRole="SIDEPS_21CATORGS" />
-          <NavigationProperty Name="SIDEPS_23CATFINA" Relationship="Self.FK__SIDEPS_23__CEDFA__0A9D95DB" FromRole="SIDEPS_22REGFAML" ToRole="SIDEPS_23CATFINA" />
+          <NavigationProperty Name="SIDEPS_06CATESTC" Relationship="Self.FK__SIDEPS_CODESTC06_02" FromRole="SIDEPS_22REGFAML" ToRole="SIDEPS_06CATESTC" />
+          <NavigationProperty Name="SIDEPS_09CATNEDU" Relationship="Self.FK__SIDEPS_CODNEDU09_02" FromRole="SIDEPS_22REGFAML" ToRole="SIDEPS_09CATNEDU" />
+          <NavigationProperty Name="SIDEPS_12CATPARE" Relationship="Self.FK__SIDEPS_CODPARE12" FromRole="SIDEPS_22REGFAML" ToRole="SIDEPS_12CATPARE" />
+          <NavigationProperty Name="SIDEPS_15CATENFR" Relationship="Self.FK__SIDEPS_CODENFR15_02" FromRole="SIDEPS_22REGFAML" ToRole="SIDEPS_15CATENFR" />
+          <NavigationProperty Name="SIDEPS_21CATORGS" Relationship="Self.FK__SIDEPS_CODORGS21" FromRole="SIDEPS_22REGFAML" ToRole="SIDEPS_21CATORGS" />
+          <NavigationProperty Name="SIDEPS_23CATFINA" Relationship="Self.FK__SIDEPS_CEDFAML22" FromRole="SIDEPS_22REGFAML" ToRole="SIDEPS_23CATFINA" />
         </EntityType>
         <EntityType Name="SIDEPS_23CATFINA">
           <Key>
@@ -1203,8 +1249,8 @@
           <Property Name="CODFINA23" Type="Int32" Nullable="false" />
           <Property Name="CEDFAML22" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="CEDPERS13" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="SIDEPS_13REGPERS" Relationship="Self.FK__SIDEPS_23__CEDPE__0B91BA14" FromRole="SIDEPS_23CATFINA" ToRole="SIDEPS_13REGPERS" />
-          <NavigationProperty Name="SIDEPS_22REGFAML" Relationship="Self.FK__SIDEPS_23__CEDFA__0A9D95DB" FromRole="SIDEPS_23CATFINA" ToRole="SIDEPS_22REGFAML" />
+          <NavigationProperty Name="SIDEPS_13REGPERS" Relationship="Self.FK__SIDEPS_CEDPERS13_02" FromRole="SIDEPS_23CATFINA" ToRole="SIDEPS_13REGPERS" />
+          <NavigationProperty Name="SIDEPS_22REGFAML" Relationship="Self.FK__SIDEPS_CEDFAML22" FromRole="SIDEPS_23CATFINA" ToRole="SIDEPS_22REGFAML" />
         </EntityType>
         <EntityType Name="SIDEPS_24REGEGRF">
           <Key>
@@ -1222,7 +1268,7 @@
           <Property Name="MTOEDUC24" Type="Decimal" Precision="18" Scale="4" />
           <Property Name="MTOSEGU24" Type="Decimal" Precision="18" Scale="4" />
           <Property Name="MTOOTRO24" Type="Decimal" Precision="18" Scale="4" />
-          <NavigationProperty Name="SIDEPS_25REGCASO" Relationship="Self.FK__SIDEPS_25__CODEG__14270015" FromRole="SIDEPS_24REGEGRF" ToRole="SIDEPS_25REGCASO" />
+          <NavigationProperty Name="SIDEPS_25REGCASO" Relationship="Self.FK__SIDEPS_CODEGRF24" FromRole="SIDEPS_24REGEGRF" ToRole="SIDEPS_25REGCASO" />
         </EntityType>
         <EntityType Name="SIDEPS_25REGCASO">
           <Key>
@@ -1239,13 +1285,13 @@
           <Property Name="DESCASO25" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="OPICASO25" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="ESTCASO25" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="SIDEPS_07REGUSRO" Relationship="Self.FK__SIDEPS_25__CEDUS__114A936A" FromRole="SIDEPS_25REGCASO" ToRole="SIDEPS_07REGUSRO" />
-          <NavigationProperty Name="SIDEPS_13REGPERS" Relationship="Self.FK__SIDEPS_25__CEDPE__10566F31" FromRole="SIDEPS_25REGCASO" ToRole="SIDEPS_13REGPERS" />
-          <NavigationProperty Name="SIDEPS_16REGASPS" Relationship="Self.FK__SIDEPS_25__CODAS__1332DBDC" FromRole="SIDEPS_25REGCASO" ToRole="SIDEPS_16REGASPS" />
-          <NavigationProperty Name="SIDEPS_20REGVIVI" Relationship="Self.FK__SIDEPS_25__CODVI__123EB7A3" FromRole="SIDEPS_25REGCASO" ToRole="SIDEPS_20REGVIVI" />
-          <NavigationProperty Name="SIDEPS_24REGEGRF" Relationship="Self.FK__SIDEPS_25__CODEG__14270015" FromRole="SIDEPS_25REGCASO" ToRole="SIDEPS_24REGEGRF" />
-          <NavigationProperty Name="SIDEPS_27TIPAYUD" Relationship="Self.FK__SIDEPS_27__CODCA__19DFD96B" FromRole="SIDEPS_25REGCASO" ToRole="SIDEPS_27TIPAYUD" />
-          <NavigationProperty Name="SIDEPS_28REGHIS" Relationship="Self.FK__SIDEPS_28__CODCA__3E1D39E1" FromRole="SIDEPS_25REGCASO" ToRole="SIDEPS_28REGHIS" />
+          <NavigationProperty Name="SIDEPS_07REGUSRO" Relationship="Self.FK__SIDEPS_CEDUSRO07_03" FromRole="SIDEPS_25REGCASO" ToRole="SIDEPS_07REGUSRO" />
+          <NavigationProperty Name="SIDEPS_13REGPERS" Relationship="Self.FK__SIDEPS_CEDPERS13_03" FromRole="SIDEPS_25REGCASO" ToRole="SIDEPS_13REGPERS" />
+          <NavigationProperty Name="SIDEPS_16REGASPS" Relationship="Self.FK__SIDEPS_CODASPS16" FromRole="SIDEPS_25REGCASO" ToRole="SIDEPS_16REGASPS" />
+          <NavigationProperty Name="SIDEPS_20REGVIVI" Relationship="Self.FK__SIDEPS_CODVIVI20" FromRole="SIDEPS_25REGCASO" ToRole="SIDEPS_20REGVIVI" />
+          <NavigationProperty Name="SIDEPS_24REGEGRF" Relationship="Self.FK__SIDEPS_CODEGRF24" FromRole="SIDEPS_25REGCASO" ToRole="SIDEPS_24REGEGRF" />
+          <NavigationProperty Name="SIDEPS_27TIPAYUD" Relationship="Self.FK__SIDEPS_CODCASO25" FromRole="SIDEPS_25REGCASO" ToRole="SIDEPS_27TIPAYUD" />
+          <NavigationProperty Name="SIDEPS_28REGHIS" Relationship="Self.FK__SIDEPS_CODCASO25_02" FromRole="SIDEPS_25REGCASO" ToRole="SIDEPS_28REGHIS" />
         </EntityType>
         <EntityType Name="SIDEPS_26CATAYUD">
           <Key>
@@ -1253,7 +1299,7 @@
           </Key>
           <Property Name="CODAYUD26" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DESAYUD26" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="SIDEPS_27TIPAYUD" Relationship="Self.FK__SIDEPS_27__CODAY__18EBB532" FromRole="SIDEPS_26CATAYUD" ToRole="SIDEPS_27TIPAYUD" />
+          <NavigationProperty Name="SIDEPS_27TIPAYUD" Relationship="Self.FK__SIDEPS_CODAYUD26" FromRole="SIDEPS_26CATAYUD" ToRole="SIDEPS_27TIPAYUD" />
         </EntityType>
         <EntityType Name="SIDEPS_27TIPAYUD">
           <Key>
@@ -1262,8 +1308,8 @@
           <Property Name="CODTIPA27" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CODAYUD26" Type="Int32" />
           <Property Name="CODCASO25" Type="Int32" />
-          <NavigationProperty Name="SIDEPS_25REGCASO" Relationship="Self.FK__SIDEPS_27__CODCA__19DFD96B" FromRole="SIDEPS_27TIPAYUD" ToRole="SIDEPS_25REGCASO" />
-          <NavigationProperty Name="SIDEPS_26CATAYUD" Relationship="Self.FK__SIDEPS_27__CODAY__18EBB532" FromRole="SIDEPS_27TIPAYUD" ToRole="SIDEPS_26CATAYUD" />
+          <NavigationProperty Name="SIDEPS_25REGCASO" Relationship="Self.FK__SIDEPS_CODCASO25" FromRole="SIDEPS_27TIPAYUD" ToRole="SIDEPS_25REGCASO" />
+          <NavigationProperty Name="SIDEPS_26CATAYUD" Relationship="Self.FK__SIDEPS_CODAYUD26" FromRole="SIDEPS_27TIPAYUD" ToRole="SIDEPS_26CATAYUD" />
         </EntityType>
         <EntityType Name="SIDEPS_28REGHIS">
           <Key>
@@ -1275,7 +1321,7 @@
           <Property Name="ESTCASO28" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="FECCASO28" Type="DateTime" Precision="3" />
           <Property Name="FECACTU28" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="SIDEPS_25REGCASO" Relationship="Self.FK__SIDEPS_28__CODCA__3E1D39E1" FromRole="SIDEPS_28REGHIS" ToRole="SIDEPS_25REGCASO" />
+          <NavigationProperty Name="SIDEPS_25REGCASO" Relationship="Self.FK__SIDEPS_CODCASO25_02" FromRole="SIDEPS_28REGHIS" ToRole="SIDEPS_25REGCASO" />
         </EntityType>
         <EntityType Name="SIDEPS_29REGCNTR">
           <Key>
@@ -1285,17 +1331,7 @@
           <Property Name="ESTCASO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
           <Property Name="CODCNTR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
-        <Association Name="FK__SIDEPS_02__CODPA__4BAC3F29">
+        <Association Name="FK__SIDEPS_CODPAIS01">
           <End Role="SIDEPS_01CATPAIS" Type="Self.SIDEPS_01CATPAIS" Multiplicity="0..1" />
           <End Role="SIDEPS_02CATPROV" Type="Self.SIDEPS_02CATPROV" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1307,7 +1343,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_03__CODPR__4E88ABD4">
+        <Association Name="FK__SIDEPS_CODPROV02">
           <End Role="SIDEPS_02CATPROV" Type="Self.SIDEPS_02CATPROV" Multiplicity="0..1" />
           <End Role="SIDEPS_03CATCANT" Type="Self.SIDEPS_03CATCANT" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1319,7 +1355,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_04__CODCA__5165187F">
+        <Association Name="FK__SIDEPS_CODCANT03">
           <End Role="SIDEPS_03CATCANT" Type="Self.SIDEPS_03CATCANT" Multiplicity="0..1" />
           <End Role="SIDEPS_04REGDIAC" Type="Self.SIDEPS_04REGDIAC" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1331,7 +1367,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_07__CODCA__5812160E">
+        <Association Name="FK__SIDEPS_CODCANT03_02">
           <End Role="SIDEPS_03CATCANT" Type="Self.SIDEPS_03CATCANT" Multiplicity="0..1" />
           <End Role="SIDEPS_07REGUSRO" Type="Self.SIDEPS_07REGUSRO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1343,7 +1379,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_13__CODCA__693CA210">
+        <Association Name="FK__SIDEPS_CODCANT03_3">
           <End Role="SIDEPS_03CATCANT" Type="Self.SIDEPS_03CATCANT" Multiplicity="0..1" />
           <End Role="SIDEPS_13REGPERS" Type="Self.SIDEPS_13REGPERS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1355,7 +1391,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_07__CODDI__59063A47">
+        <Association Name="FK__SIDEPS_CODDIAC04">
           <End Role="SIDEPS_04REGDIAC" Type="Self.SIDEPS_04REGDIAC" Multiplicity="0..1" />
           <End Role="SIDEPS_07REGUSRO" Type="Self.SIDEPS_07REGUSRO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1367,7 +1403,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_07__CODUS__59FA5E80">
+        <Association Name="FK__SIDEPS_CODUSRO05">
           <End Role="SIDEPS_05TIPUSRO" Type="Self.SIDEPS_05TIPUSRO" Multiplicity="0..1" />
           <End Role="SIDEPS_07REGUSRO" Type="Self.SIDEPS_07REGUSRO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1379,7 +1415,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_13__CODES__6754599E">
+        <Association Name="FK__SIDEPS_CODESTC06">
           <End Role="SIDEPS_06CATESTC" Type="Self.SIDEPS_06CATESTC" Multiplicity="0..1" />
           <End Role="SIDEPS_13REGPERS" Type="Self.SIDEPS_13REGPERS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1391,7 +1427,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_22__CODES__03F0984C">
+        <Association Name="FK__SIDEPS_CODESTC06_02">
           <End Role="SIDEPS_06CATESTC" Type="Self.SIDEPS_06CATESTC" Multiplicity="0..1" />
           <End Role="SIDEPS_22REGFAML" Type="Self.SIDEPS_22REGFAML" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1403,7 +1439,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_08__CEDUS__5CD6CB2B">
+        <Association Name="FK__SIDEPS_CEDUSRO07">
           <End Role="SIDEPS_07REGUSRO" Type="Self.SIDEPS_07REGUSRO" Multiplicity="0..1" />
           <End Role="SIDEPS_08REGTELF" Type="Self.SIDEPS_08REGTELF" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1415,7 +1451,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_25__CEDUS__114A936A">
+        <Association Name="FK__SIDEPS_CEDUSRO07_03">
           <End Role="SIDEPS_07REGUSRO" Type="Self.SIDEPS_07REGUSRO" Multiplicity="0..1" />
           <End Role="SIDEPS_25REGCASO" Type="Self.SIDEPS_25REGCASO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1427,7 +1463,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_13__CODNE__68487DD7">
+        <Association Name="FK__SIDEPS_CODNEDU09">
           <End Role="SIDEPS_09CATNEDU" Type="Self.SIDEPS_09CATNEDU" Multiplicity="0..1" />
           <End Role="SIDEPS_13REGPERS" Type="Self.SIDEPS_13REGPERS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1439,7 +1475,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_22__CODNE__04E4BC85">
+        <Association Name="FK__SIDEPS_CODNEDU09_02">
           <End Role="SIDEPS_09CATNEDU" Type="Self.SIDEPS_09CATNEDU" Multiplicity="0..1" />
           <End Role="SIDEPS_22REGFAML" Type="Self.SIDEPS_22REGFAML" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1451,7 +1487,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_13__CODSO__6A30C649">
+        <Association Name="FK__SIDEPS_CODSOLI10">
           <End Role="SIDEPS_10CATSOLI" Type="Self.SIDEPS_10CATSOLI" Multiplicity="0..1" />
           <End Role="SIDEPS_13REGPERS" Type="Self.SIDEPS_13REGPERS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1463,7 +1499,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_13__CODRE__6B24EA82">
+        <Association Name="FK__SIDEPS_CODRELG11">
           <End Role="SIDEPS_11CATRELG" Type="Self.SIDEPS_11CATRELG" Multiplicity="0..1" />
           <End Role="SIDEPS_13REGPERS" Type="Self.SIDEPS_13REGPERS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1475,7 +1511,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_22__CODPA__07C12930">
+        <Association Name="FK__SIDEPS_CODPARE12">
           <End Role="SIDEPS_12CATPARE" Type="Self.SIDEPS_12CATPARE" Multiplicity="0..1" />
           <End Role="SIDEPS_22REGFAML" Type="Self.SIDEPS_22REGFAML" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1487,7 +1523,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_16__CEDPE__72C60C4A">
+        <Association Name="FK__SIDEPS_CEDPERS13">
           <End Role="SIDEPS_13REGPERS" Type="Self.SIDEPS_13REGPERS" Multiplicity="0..1" />
           <End Role="SIDEPS_16REGASPS" Type="Self.SIDEPS_16REGASPS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1499,7 +1535,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_23__CEDPE__0B91BA14">
+        <Association Name="FK__SIDEPS_CEDPERS13_02">
           <End Role="SIDEPS_13REGPERS" Type="Self.SIDEPS_13REGPERS" Multiplicity="0..1" />
           <End Role="SIDEPS_23CATFINA" Type="Self.SIDEPS_23CATFINA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1511,7 +1547,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_25__CEDPE__10566F31">
+        <Association Name="FK__SIDEPS_CEDPERS13_03">
           <End Role="SIDEPS_13REGPERS" Type="Self.SIDEPS_13REGPERS" Multiplicity="0..1" />
           <End Role="SIDEPS_25REGCASO" Type="Self.SIDEPS_25REGCASO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1523,7 +1559,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_16__CODSE__71D1E811">
+        <Association Name="FK__SIDEPS_CODSEGU14">
           <End Role="SIDEPS_14CATSEGU" Type="Self.SIDEPS_14CATSEGU" Multiplicity="0..1" />
           <End Role="SIDEPS_16REGASPS" Type="Self.SIDEPS_16REGASPS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1535,7 +1571,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_16__CODEN__73BA3083">
+        <Association Name="FK__SIDEPS_CODENFR15">
           <End Role="SIDEPS_15CATENFR" Type="Self.SIDEPS_15CATENFR" Multiplicity="0..1" />
           <End Role="SIDEPS_16REGASPS" Type="Self.SIDEPS_16REGASPS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1547,7 +1583,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_22__CODEN__06CD04F7">
+        <Association Name="FK__SIDEPS_CODENFR15_02">
           <End Role="SIDEPS_15CATENFR" Type="Self.SIDEPS_15CATENFR" Multiplicity="0..1" />
           <End Role="SIDEPS_22REGFAML" Type="Self.SIDEPS_22REGFAML" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1559,7 +1595,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_25__CODAS__1332DBDC">
+        <Association Name="FK__SIDEPS_CODASPS16">
           <End Role="SIDEPS_16REGASPS" Type="Self.SIDEPS_16REGASPS" Multiplicity="0..1" />
           <End Role="SIDEPS_25REGCASO" Type="Self.SIDEPS_25REGCASO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1571,7 +1607,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_20__CODMA__7F2BE32F">
+        <Association Name="FK__SIDEPS_CODMATE17">
           <End Role="SIDEPS_17CATMATE" Type="Self.SIDEPS_17CATMATE" Multiplicity="0..1" />
           <End Role="SIDEPS_20REGVIVI" Type="Self.SIDEPS_20REGVIVI" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1583,7 +1619,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_20__CODTI__7D439ABD">
+        <Association Name="FK__SIDEPS_CODTIPV18">
           <End Role="SIDEPS_18TIPVIVI" Type="Self.SIDEPS_18TIPVIVI" Multiplicity="0..1" />
           <End Role="SIDEPS_20REGVIVI" Type="Self.SIDEPS_20REGVIVI" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1595,7 +1631,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_20__CODES__7E37BEF6">
+        <Association Name="FK__SIDEPS_CODESTV19">
           <End Role="SIDEPS_19ESTVIVI" Type="Self.SIDEPS_19ESTVIVI" Multiplicity="0..1" />
           <End Role="SIDEPS_20REGVIVI" Type="Self.SIDEPS_20REGVIVI" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1607,7 +1643,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_25__CODVI__123EB7A3">
+        <Association Name="FK__SIDEPS_CODVIVI20">
           <End Role="SIDEPS_20REGVIVI" Type="Self.SIDEPS_20REGVIVI" Multiplicity="0..1" />
           <End Role="SIDEPS_25REGCASO" Type="Self.SIDEPS_25REGCASO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1619,7 +1655,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_22__CODOR__05D8E0BE">
+        <Association Name="FK__SIDEPS_CODORGS21">
           <End Role="SIDEPS_21CATORGS" Type="Self.SIDEPS_21CATORGS" Multiplicity="0..1" />
           <End Role="SIDEPS_22REGFAML" Type="Self.SIDEPS_22REGFAML" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1631,7 +1667,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_23__CEDFA__0A9D95DB">
+        <Association Name="FK__SIDEPS_CEDFAML22">
           <End Role="SIDEPS_22REGFAML" Type="Self.SIDEPS_22REGFAML" Multiplicity="0..1" />
           <End Role="SIDEPS_23CATFINA" Type="Self.SIDEPS_23CATFINA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1643,7 +1679,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_25__CODEG__14270015">
+        <Association Name="FK__SIDEPS_CODEGRF24">
           <End Role="SIDEPS_24REGEGRF" Type="Self.SIDEPS_24REGEGRF" Multiplicity="0..1" />
           <End Role="SIDEPS_25REGCASO" Type="Self.SIDEPS_25REGCASO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1655,7 +1691,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_27__CODCA__19DFD96B">
+        <Association Name="FK__SIDEPS_CODCASO25">
           <End Role="SIDEPS_25REGCASO" Type="Self.SIDEPS_25REGCASO" Multiplicity="0..1" />
           <End Role="SIDEPS_27TIPAYUD" Type="Self.SIDEPS_27TIPAYUD" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1667,7 +1703,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_28__CODCA__3E1D39E1">
+        <Association Name="FK__SIDEPS_CODCASO25_02">
           <End Role="SIDEPS_25REGCASO" Type="Self.SIDEPS_25REGCASO" Multiplicity="0..1" />
           <End Role="SIDEPS_28REGHIS" Type="Self.SIDEPS_28REGHIS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1679,7 +1715,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SIDEPS_27__CODAY__18EBB532">
+        <Association Name="FK__SIDEPS_CODAYUD26">
           <End Role="SIDEPS_26CATAYUD" Type="Self.SIDEPS_26CATAYUD" Multiplicity="0..1" />
           <End Role="SIDEPS_27TIPAYUD" Type="Self.SIDEPS_27TIPAYUD" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1721,224 +1757,152 @@
           <EntitySet Name="SIDEPS_27TIPAYUD" EntityType="Self.SIDEPS_27TIPAYUD" />
           <EntitySet Name="SIDEPS_28REGHIS" EntityType="Self.SIDEPS_28REGHIS" />
           <EntitySet Name="SIDEPS_29REGCNTR" EntityType="Self.SIDEPS_29REGCNTR" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-          <AssociationSet Name="FK__SIDEPS_02__CODPA__4BAC3F29" Association="Self.FK__SIDEPS_02__CODPA__4BAC3F29">
+          <AssociationSet Name="FK__SIDEPS_CODPAIS01" Association="Self.FK__SIDEPS_CODPAIS01">
             <End Role="SIDEPS_01CATPAIS" EntitySet="SIDEPS_01CATPAIS" />
             <End Role="SIDEPS_02CATPROV" EntitySet="SIDEPS_02CATPROV" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_03__CODPR__4E88ABD4" Association="Self.FK__SIDEPS_03__CODPR__4E88ABD4">
+          <AssociationSet Name="FK__SIDEPS_CODPROV02" Association="Self.FK__SIDEPS_CODPROV02">
             <End Role="SIDEPS_02CATPROV" EntitySet="SIDEPS_02CATPROV" />
             <End Role="SIDEPS_03CATCANT" EntitySet="SIDEPS_03CATCANT" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_04__CODCA__5165187F" Association="Self.FK__SIDEPS_04__CODCA__5165187F">
+          <AssociationSet Name="FK__SIDEPS_CODCANT03" Association="Self.FK__SIDEPS_CODCANT03">
             <End Role="SIDEPS_03CATCANT" EntitySet="SIDEPS_03CATCANT" />
             <End Role="SIDEPS_04REGDIAC" EntitySet="SIDEPS_04REGDIAC" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_07__CODCA__5812160E" Association="Self.FK__SIDEPS_07__CODCA__5812160E">
+          <AssociationSet Name="FK__SIDEPS_CODCANT03_02" Association="Self.FK__SIDEPS_CODCANT03_02">
             <End Role="SIDEPS_03CATCANT" EntitySet="SIDEPS_03CATCANT" />
             <End Role="SIDEPS_07REGUSRO" EntitySet="SIDEPS_07REGUSRO" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_13__CODCA__693CA210" Association="Self.FK__SIDEPS_13__CODCA__693CA210">
+          <AssociationSet Name="FK__SIDEPS_CODCANT03_3" Association="Self.FK__SIDEPS_CODCANT03_3">
             <End Role="SIDEPS_03CATCANT" EntitySet="SIDEPS_03CATCANT" />
             <End Role="SIDEPS_13REGPERS" EntitySet="SIDEPS_13REGPERS" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_07__CODDI__59063A47" Association="Self.FK__SIDEPS_07__CODDI__59063A47">
+          <AssociationSet Name="FK__SIDEPS_CODDIAC04" Association="Self.FK__SIDEPS_CODDIAC04">
             <End Role="SIDEPS_04REGDIAC" EntitySet="SIDEPS_04REGDIAC" />
             <End Role="SIDEPS_07REGUSRO" EntitySet="SIDEPS_07REGUSRO" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_07__CODUS__59FA5E80" Association="Self.FK__SIDEPS_07__CODUS__59FA5E80">
+          <AssociationSet Name="FK__SIDEPS_CODUSRO05" Association="Self.FK__SIDEPS_CODUSRO05">
             <End Role="SIDEPS_05TIPUSRO" EntitySet="SIDEPS_05TIPUSRO" />
             <End Role="SIDEPS_07REGUSRO" EntitySet="SIDEPS_07REGUSRO" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_13__CODES__6754599E" Association="Self.FK__SIDEPS_13__CODES__6754599E">
+          <AssociationSet Name="FK__SIDEPS_CODESTC06" Association="Self.FK__SIDEPS_CODESTC06">
             <End Role="SIDEPS_06CATESTC" EntitySet="SIDEPS_06CATESTC" />
             <End Role="SIDEPS_13REGPERS" EntitySet="SIDEPS_13REGPERS" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_22__CODES__03F0984C" Association="Self.FK__SIDEPS_22__CODES__03F0984C">
+          <AssociationSet Name="FK__SIDEPS_CODESTC06_02" Association="Self.FK__SIDEPS_CODESTC06_02">
             <End Role="SIDEPS_06CATESTC" EntitySet="SIDEPS_06CATESTC" />
             <End Role="SIDEPS_22REGFAML" EntitySet="SIDEPS_22REGFAML" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_08__CEDUS__5CD6CB2B" Association="Self.FK__SIDEPS_08__CEDUS__5CD6CB2B">
+          <AssociationSet Name="FK__SIDEPS_CEDUSRO07" Association="Self.FK__SIDEPS_CEDUSRO07">
             <End Role="SIDEPS_07REGUSRO" EntitySet="SIDEPS_07REGUSRO" />
             <End Role="SIDEPS_08REGTELF" EntitySet="SIDEPS_08REGTELF" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_25__CEDUS__114A936A" Association="Self.FK__SIDEPS_25__CEDUS__114A936A">
+          <AssociationSet Name="FK__SIDEPS_CEDUSRO07_03" Association="Self.FK__SIDEPS_CEDUSRO07_03">
             <End Role="SIDEPS_07REGUSRO" EntitySet="SIDEPS_07REGUSRO" />
             <End Role="SIDEPS_25REGCASO" EntitySet="SIDEPS_25REGCASO" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_13__CODNE__68487DD7" Association="Self.FK__SIDEPS_13__CODNE__68487DD7">
+          <AssociationSet Name="FK__SIDEPS_CODNEDU09" Association="Self.FK__SIDEPS_CODNEDU09">
             <End Role="SIDEPS_09CATNEDU" EntitySet="SIDEPS_09CATNEDU" />
             <End Role="SIDEPS_13REGPERS" EntitySet="SIDEPS_13REGPERS" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_22__CODNE__04E4BC85" Association="Self.FK__SIDEPS_22__CODNE__04E4BC85">
+          <AssociationSet Name="FK__SIDEPS_CODNEDU09_02" Association="Self.FK__SIDEPS_CODNEDU09_02">
             <End Role="SIDEPS_09CATNEDU" EntitySet="SIDEPS_09CATNEDU" />
             <End Role="SIDEPS_22REGFAML" EntitySet="SIDEPS_22REGFAML" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_13__CODSO__6A30C649" Association="Self.FK__SIDEPS_13__CODSO__6A30C649">
+          <AssociationSet Name="FK__SIDEPS_CODSOLI10" Association="Self.FK__SIDEPS_CODSOLI10">
             <End Role="SIDEPS_10CATSOLI" EntitySet="SIDEPS_10CATSOLI" />
             <End Role="SIDEPS_13REGPERS" EntitySet="SIDEPS_13REGPERS" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_13__CODRE__6B24EA82" Association="Self.FK__SIDEPS_13__CODRE__6B24EA82">
+          <AssociationSet Name="FK__SIDEPS_CODRELG11" Association="Self.FK__SIDEPS_CODRELG11">
             <End Role="SIDEPS_11CATRELG" EntitySet="SIDEPS_11CATRELG" />
             <End Role="SIDEPS_13REGPERS" EntitySet="SIDEPS_13REGPERS" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_22__CODPA__07C12930" Association="Self.FK__SIDEPS_22__CODPA__07C12930">
+          <AssociationSet Name="FK__SIDEPS_CODPARE12" Association="Self.FK__SIDEPS_CODPARE12">
             <End Role="SIDEPS_12CATPARE" EntitySet="SIDEPS_12CATPARE" />
             <End Role="SIDEPS_22REGFAML" EntitySet="SIDEPS_22REGFAML" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_16__CEDPE__72C60C4A" Association="Self.FK__SIDEPS_16__CEDPE__72C60C4A">
+          <AssociationSet Name="FK__SIDEPS_CEDPERS13" Association="Self.FK__SIDEPS_CEDPERS13">
             <End Role="SIDEPS_13REGPERS" EntitySet="SIDEPS_13REGPERS" />
             <End Role="SIDEPS_16REGASPS" EntitySet="SIDEPS_16REGASPS" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_23__CEDPE__0B91BA14" Association="Self.FK__SIDEPS_23__CEDPE__0B91BA14">
+          <AssociationSet Name="FK__SIDEPS_CEDPERS13_02" Association="Self.FK__SIDEPS_CEDPERS13_02">
             <End Role="SIDEPS_13REGPERS" EntitySet="SIDEPS_13REGPERS" />
             <End Role="SIDEPS_23CATFINA" EntitySet="SIDEPS_23CATFINA" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_25__CEDPE__10566F31" Association="Self.FK__SIDEPS_25__CEDPE__10566F31">
+          <AssociationSet Name="FK__SIDEPS_CEDPERS13_03" Association="Self.FK__SIDEPS_CEDPERS13_03">
             <End Role="SIDEPS_13REGPERS" EntitySet="SIDEPS_13REGPERS" />
             <End Role="SIDEPS_25REGCASO" EntitySet="SIDEPS_25REGCASO" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_16__CODSE__71D1E811" Association="Self.FK__SIDEPS_16__CODSE__71D1E811">
+          <AssociationSet Name="FK__SIDEPS_CODSEGU14" Association="Self.FK__SIDEPS_CODSEGU14">
             <End Role="SIDEPS_14CATSEGU" EntitySet="SIDEPS_14CATSEGU" />
             <End Role="SIDEPS_16REGASPS" EntitySet="SIDEPS_16REGASPS" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_16__CODEN__73BA3083" Association="Self.FK__SIDEPS_16__CODEN__73BA3083">
+          <AssociationSet Name="FK__SIDEPS_CODENFR15" Association="Self.FK__SIDEPS_CODENFR15">
             <End Role="SIDEPS_15CATENFR" EntitySet="SIDEPS_15CATENFR" />
             <End Role="SIDEPS_16REGASPS" EntitySet="SIDEPS_16REGASPS" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_22__CODEN__06CD04F7" Association="Self.FK__SIDEPS_22__CODEN__06CD04F7">
+          <AssociationSet Name="FK__SIDEPS_CODENFR15_02" Association="Self.FK__SIDEPS_CODENFR15_02">
             <End Role="SIDEPS_15CATENFR" EntitySet="SIDEPS_15CATENFR" />
             <End Role="SIDEPS_22REGFAML" EntitySet="SIDEPS_22REGFAML" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_25__CODAS__1332DBDC" Association="Self.FK__SIDEPS_25__CODAS__1332DBDC">
+          <AssociationSet Name="FK__SIDEPS_CODASPS16" Association="Self.FK__SIDEPS_CODASPS16">
             <End Role="SIDEPS_16REGASPS" EntitySet="SIDEPS_16REGASPS" />
             <End Role="SIDEPS_25REGCASO" EntitySet="SIDEPS_25REGCASO" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_20__CODMA__7F2BE32F" Association="Self.FK__SIDEPS_20__CODMA__7F2BE32F">
+          <AssociationSet Name="FK__SIDEPS_CODMATE17" Association="Self.FK__SIDEPS_CODMATE17">
             <End Role="SIDEPS_17CATMATE" EntitySet="SIDEPS_17CATMATE" />
             <End Role="SIDEPS_20REGVIVI" EntitySet="SIDEPS_20REGVIVI" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_20__CODTI__7D439ABD" Association="Self.FK__SIDEPS_20__CODTI__7D439ABD">
+          <AssociationSet Name="FK__SIDEPS_CODTIPV18" Association="Self.FK__SIDEPS_CODTIPV18">
             <End Role="SIDEPS_18TIPVIVI" EntitySet="SIDEPS_18TIPVIVI" />
             <End Role="SIDEPS_20REGVIVI" EntitySet="SIDEPS_20REGVIVI" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_20__CODES__7E37BEF6" Association="Self.FK__SIDEPS_20__CODES__7E37BEF6">
+          <AssociationSet Name="FK__SIDEPS_CODESTV19" Association="Self.FK__SIDEPS_CODESTV19">
             <End Role="SIDEPS_19ESTVIVI" EntitySet="SIDEPS_19ESTVIVI" />
             <End Role="SIDEPS_20REGVIVI" EntitySet="SIDEPS_20REGVIVI" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_25__CODVI__123EB7A3" Association="Self.FK__SIDEPS_25__CODVI__123EB7A3">
+          <AssociationSet Name="FK__SIDEPS_CODVIVI20" Association="Self.FK__SIDEPS_CODVIVI20">
             <End Role="SIDEPS_20REGVIVI" EntitySet="SIDEPS_20REGVIVI" />
             <End Role="SIDEPS_25REGCASO" EntitySet="SIDEPS_25REGCASO" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_22__CODOR__05D8E0BE" Association="Self.FK__SIDEPS_22__CODOR__05D8E0BE">
+          <AssociationSet Name="FK__SIDEPS_CODORGS21" Association="Self.FK__SIDEPS_CODORGS21">
             <End Role="SIDEPS_21CATORGS" EntitySet="SIDEPS_21CATORGS" />
             <End Role="SIDEPS_22REGFAML" EntitySet="SIDEPS_22REGFAML" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_23__CEDFA__0A9D95DB" Association="Self.FK__SIDEPS_23__CEDFA__0A9D95DB">
+          <AssociationSet Name="FK__SIDEPS_CEDFAML22" Association="Self.FK__SIDEPS_CEDFAML22">
             <End Role="SIDEPS_22REGFAML" EntitySet="SIDEPS_22REGFAML" />
             <End Role="SIDEPS_23CATFINA" EntitySet="SIDEPS_23CATFINA" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_25__CODEG__14270015" Association="Self.FK__SIDEPS_25__CODEG__14270015">
+          <AssociationSet Name="FK__SIDEPS_CODEGRF24" Association="Self.FK__SIDEPS_CODEGRF24">
             <End Role="SIDEPS_24REGEGRF" EntitySet="SIDEPS_24REGEGRF" />
             <End Role="SIDEPS_25REGCASO" EntitySet="SIDEPS_25REGCASO" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_27__CODCA__19DFD96B" Association="Self.FK__SIDEPS_27__CODCA__19DFD96B">
+          <AssociationSet Name="FK__SIDEPS_CODCASO25" Association="Self.FK__SIDEPS_CODCASO25">
             <End Role="SIDEPS_25REGCASO" EntitySet="SIDEPS_25REGCASO" />
             <End Role="SIDEPS_27TIPAYUD" EntitySet="SIDEPS_27TIPAYUD" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_28__CODCA__3E1D39E1" Association="Self.FK__SIDEPS_28__CODCA__3E1D39E1">
+          <AssociationSet Name="FK__SIDEPS_CODCASO25_02" Association="Self.FK__SIDEPS_CODCASO25_02">
             <End Role="SIDEPS_25REGCASO" EntitySet="SIDEPS_25REGCASO" />
             <End Role="SIDEPS_28REGHIS" EntitySet="SIDEPS_28REGHIS" />
           </AssociationSet>
-          <AssociationSet Name="FK__SIDEPS_27__CODAY__18EBB532" Association="Self.FK__SIDEPS_27__CODAY__18EBB532">
+          <AssociationSet Name="FK__SIDEPS_CODAYUD26" Association="Self.FK__SIDEPS_CODAYUD26">
             <End Role="SIDEPS_26CATAYUD" EntitySet="SIDEPS_26CATAYUD" />
             <End Role="SIDEPS_27TIPAYUD" EntitySet="SIDEPS_27TIPAYUD" />
           </AssociationSet>
-          <FunctionImport Name="sp_alterdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
+          <FunctionImport Name="SP_CON_REGDIAC" ReturnType="Collection(SIDEPS.SP_CON_REGDIAC_Result)" />
+          <FunctionImport Name="SP_CON_REGUSRO" ReturnType="Collection(SIDEPS.SP_CON_REGUSRO_Result)" />
+          <FunctionImport Name="SP_CONXID_REGDIAC" ReturnType="Collection(SIDEPS.SP_CONXID_REGDIAC_Result)">
+          <Parameter Name="CODDIAC04" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="SP_CON_REGDIAC" ReturnType="Collection(SIDEPSModel.SP_CON_REGDIAC_Result)" />
-          <FunctionImport Name="SP_CON_REGUSRO" ReturnType="Collection(SIDEPSModel.SP_CON_REGUSRO_Result)" />
-          <FunctionImport Name="SP_CONXID_REGDIAC" ReturnType="Collection(SIDEPSModel.SP_CONXID_REGDIAC_Result)">
-            <Parameter Name="CODDIAC04" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="SP_CONXID_REGUSRO" ReturnType="Collection(SIDEPSModel.SP_CONXID_REGUSRO_Result)">
-            <Parameter Name="CEDUSRO07" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_creatediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
+          <FunctionImport Name="SP_CONXID_REGUSRO" ReturnType="Collection(SIDEPS.SP_CONXID_REGUSRO_Result)">
+          <Parameter Name="CEDUSRO07" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SP_DEL_REGDIAC">
-            <Parameter Name="CODDIAC04" Mode="In" Type="Int32" />
+          <Parameter Name="CODDIAC04" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SP_DEL_REGUSRO">
-            <Parameter Name="CEDUSRO07" Mode="In" Type="String" />
+          <Parameter Name="CEDUSRO07" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="sp_dropdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(SIDEPSModel.sp_helpdiagramdefinition_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(SIDEPSModel.sp_helpdiagrams_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="SP_INS_REGDIAC">
-            <Parameter Name="NOMDIAC04" Mode="In" Type="String" />
-            <Parameter Name="LUGDIAC04" Mode="In" Type="String" />
-            <Parameter Name="TELDIAC04" Mode="In" Type="String" />
-            <Parameter Name="CODCANT03" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="SP_INS_REGUSRO">
-            <Parameter Name="CEDUSRO07" Mode="In" Type="String" />
-            <Parameter Name="NOMUSRO07" Mode="In" Type="String" />
-            <Parameter Name="PAPUSRO07" Mode="In" Type="String" />
-            <Parameter Name="SAPUSRO07" Mode="In" Type="String" />
-            <Parameter Name="CODCANT03" Mode="In" Type="Int32" />
-            <Parameter Name="CODDIAC04" Mode="In" Type="Int32" />
-            <Parameter Name="CODUSRO05" Mode="In" Type="Int32" />
-            <Parameter Name="DIRUSRO07" Mode="In" Type="String" />
-            <Parameter Name="NACUSRO07" Mode="In" Type="String" />
-            <Parameter Name="CNTUSRO07" Mode="In" Type="String" />
-            <Parameter Name="FENUSRO07" Mode="In" Type="DateTime" />
-          </FunctionImport>
-          <FunctionImport Name="SP_MOD_REGDIAC">
-            <Parameter Name="CODDIAC04" Mode="In" Type="Int32" />
-            <Parameter Name="NOMDIAC04" Mode="In" Type="String" />
-            <Parameter Name="LUGDIAC04" Mode="In" Type="String" />
-            <Parameter Name="TELDIAC04" Mode="In" Type="String" />
-            <Parameter Name="ESTDIAC04" Mode="In" Type="String" />
-            <Parameter Name="CODCANT03" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="SP_MOD_REGUSRO">
-            <Parameter Name="CEDUSRO07" Mode="In" Type="String" />
-            <Parameter Name="NOMUSRO07" Mode="In" Type="String" />
-            <Parameter Name="PAPUSRO07" Mode="In" Type="String" />
-            <Parameter Name="SAPUSRO07" Mode="In" Type="String" />
-            <Parameter Name="CODCANT03" Mode="In" Type="Int32" />
-            <Parameter Name="CODDIAC04" Mode="In" Type="Int32" />
-            <Parameter Name="CODUSRO05" Mode="In" Type="Int32" />
-            <Parameter Name="ESTUSRO07" Mode="In" Type="String" />
-            <Parameter Name="DIRUSRO07" Mode="In" Type="String" />
-            <Parameter Name="NACUSRO07" Mode="In" Type="String" />
-            <Parameter Name="CNTUSRO07" Mode="In" Type="String" />
-            <Parameter Name="FENUSRO07" Mode="In" Type="DateTime" />
-          </FunctionImport>
-          <FunctionImport Name="sp_renamediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="new_diagramname" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_upgraddiagrams" />
           <FunctionImport Name="SP_INS_REGASPS">
             <Parameter Name="CEDPERS13" Mode="In" Type="String" />
             <Parameter Name="CODSEGU14" Mode="In" Type="Int32" />
@@ -1958,6 +1922,12 @@
             <Parameter Name="DESCASO25" Mode="In" Type="String" />
             <Parameter Name="OPICASO25" Mode="In" Type="String" />
             <Parameter Name="ESTCASO25" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_INS_REGDIAC">
+            <Parameter Name="NOMDIAC04" Mode="In" Type="String" />
+            <Parameter Name="LUGDIAC04" Mode="In" Type="String" />
+            <Parameter Name="TELDIAC04" Mode="In" Type="String" />
+            <Parameter Name="CODCANT03" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SP_INS_REGEGRF">
             <Parameter Name="MTOALQU24" Mode="In" Type="Decimal" />
@@ -2000,6 +1970,19 @@
             <Parameter Name="OACPERS13" Mode="In" Type="String" />
             <Parameter Name="OANPERS13" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="SP_INS_REGUSRO">
+            <Parameter Name="CEDUSRO07" Mode="In" Type="String" />
+            <Parameter Name="NOMUSRO07" Mode="In" Type="String" />
+            <Parameter Name="PAPUSRO07" Mode="In" Type="String" />
+            <Parameter Name="SAPUSRO07" Mode="In" Type="String" />
+            <Parameter Name="CODCANT03" Mode="In" Type="Int32" />
+            <Parameter Name="CODDIAC04" Mode="In" Type="Int32" />
+            <Parameter Name="CODUSRO05" Mode="In" Type="Int32" />
+            <Parameter Name="DIRUSRO07" Mode="In" Type="String" />
+            <Parameter Name="NACUSRO07" Mode="In" Type="String" />
+            <Parameter Name="CNTUSRO07" Mode="In" Type="String" />
+            <Parameter Name="FENUSRO07" Mode="In" Type="DateTime" />
+          </FunctionImport>
           <FunctionImport Name="SP_INS_REGVIVI">
             <Parameter Name="CODTIPV18" Mode="In" Type="Int32" />
             <Parameter Name="CODESTV19" Mode="In" Type="Int32" />
@@ -2012,6 +1995,28 @@
             <Parameter Name="SRMVIVI20" Mode="In" Type="String" />
             <Parameter Name="SRBVIVI20" Mode="In" Type="String" />
             <Parameter Name="SREVIVI20" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_MOD_REGDIAC">
+            <Parameter Name="CODDIAC04" Mode="In" Type="Int32" />
+            <Parameter Name="NOMDIAC04" Mode="In" Type="String" />
+            <Parameter Name="LUGDIAC04" Mode="In" Type="String" />
+            <Parameter Name="TELDIAC04" Mode="In" Type="String" />
+            <Parameter Name="ESTDIAC04" Mode="In" Type="String" />
+            <Parameter Name="CODCANT03" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_MOD_REGUSRO">
+            <Parameter Name="CEDUSRO07" Mode="In" Type="String" />
+            <Parameter Name="NOMUSRO07" Mode="In" Type="String" />
+            <Parameter Name="PAPUSRO07" Mode="In" Type="String" />
+            <Parameter Name="SAPUSRO07" Mode="In" Type="String" />
+            <Parameter Name="CODCANT03" Mode="In" Type="Int32" />
+            <Parameter Name="CODDIAC04" Mode="In" Type="Int32" />
+            <Parameter Name="CODUSRO05" Mode="In" Type="Int32" />
+            <Parameter Name="ESTUSRO07" Mode="In" Type="String" />
+            <Parameter Name="DIRUSRO07" Mode="In" Type="String" />
+            <Parameter Name="NACUSRO07" Mode="In" Type="String" />
+            <Parameter Name="CNTUSRO07" Mode="In" Type="String" />
+            <Parameter Name="FENUSRO07" Mode="In" Type="DateTime" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="SP_CON_REGDIAC_Result">
@@ -2034,9 +2039,9 @@
           <Property Type="String" Name="DIRUSRO07" Nullable="true" MaxLength="200" />
           <Property Type="String" Name="NACUSRO07" Nullable="true" MaxLength="15" />
           <Property Type="String" Name="CNTUSRO07" Nullable="true" MaxLength="30" />
-          <Property Type="DateTime" Name="FEIUSRO07" Nullable="true" />
-          <Property Type="DateTime" Name="FEFUSRO07" Nullable="true" />
-          <Property Type="DateTime" Name="FENUSRO07" Nullable="true" />
+          <Property Type="DateTime" Name="FEIUSRO07" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="FEFUSRO07" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="FENUSRO07" Nullable="true" Precision="23" />
         </ComplexType>
         <ComplexType Name="SP_CONXID_REGDIAC_Result">
           <Property Type="Int32" Name="CODDIAC04" Nullable="false" />
@@ -2058,359 +2063,379 @@
           <Property Type="String" Name="DIRUSRO07" Nullable="true" MaxLength="200" />
           <Property Type="String" Name="NACUSRO07" Nullable="true" MaxLength="15" />
           <Property Type="String" Name="CNTUSRO07" Nullable="true" MaxLength="30" />
-          <Property Type="DateTime" Name="FEIUSRO07" Nullable="true" />
-          <Property Type="DateTime" Name="FEFUSRO07" Nullable="true" />
-          <Property Type="DateTime" Name="FENUSRO07" Nullable="true" />
+          <Property Type="DateTime" Name="FEIUSRO07" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="FEFUSRO07" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="FENUSRO07" Nullable="true" Precision="23" />
         </ComplexType>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
+        <ComplexType Name="SP_CON_REGDIAC1_Result">
+          <Property Type="Int32" Name="CODDIAC04" Nullable="false" />
+          <Property Type="String" Name="NOMDIAC04" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LUGDIAC04" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TELDIAC04" Nullable="true" MaxLength="12" />
+          <Property Type="String" Name="ESTDIAC04" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="CODCANT03" Nullable="true" />
         </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        <ComplexType Name="SP_CON_REGUSRO1_Result">
+          <Property Type="String" Name="CEDUSRO07" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="NOMUSRO07" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PAPUSRO07" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SAPUSRO07" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="CODCANT03" Nullable="true" />
+          <Property Type="Int32" Name="CODDIAC04" Nullable="true" />
+          <Property Type="Int32" Name="CODUSRO05" Nullable="true" />
+          <Property Type="String" Name="ESTUSRO07" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="DIRUSRO07" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="NACUSRO07" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="CNTUSRO07" Nullable="true" MaxLength="30" />
+          <Property Type="DateTime" Name="FEIUSRO07" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="FEFUSRO07" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="FENUSRO07" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="SP_CONXID_REGDIAC1_Result">
+          <Property Type="Int32" Name="CODDIAC04" Nullable="false" />
+          <Property Type="String" Name="NOMDIAC04" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LUGDIAC04" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TELDIAC04" Nullable="true" MaxLength="12" />
+          <Property Type="String" Name="ESTDIAC04" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="CODCANT03" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_CONXID_REGUSRO1_Result">
+          <Property Type="String" Name="CEDUSRO07" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="NOMUSRO07" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PAPUSRO07" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SAPUSRO07" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="CODCANT03" Nullable="true" />
+          <Property Type="Int32" Name="CODDIAC04" Nullable="true" />
+          <Property Type="Int32" Name="CODUSRO05" Nullable="true" />
+          <Property Type="String" Name="ESTUSRO07" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="DIRUSRO07" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="NACUSRO07" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="CNTUSRO07" Nullable="true" MaxLength="30" />
+          <Property Type="DateTime" Name="FEIUSRO07" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="FEFUSRO07" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="FENUSRO07" Nullable="true" Precision="23" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SIDEPSModelStoreContainer" CdmEntityContainer="SIDEPSEntities">
-          <EntitySetMapping Name="SIDEPS_01CATPAIS">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_01CATPAIS">
-              <MappingFragment StoreEntitySet="SIDEPS_01CATPAIS">
-                <ScalarProperty Name="CODPAIS01" ColumnName="CODPAIS01" />
-                <ScalarProperty Name="NOMPAIS01" ColumnName="NOMPAIS01" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_02CATPROV">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_02CATPROV">
-              <MappingFragment StoreEntitySet="SIDEPS_02CATPROV">
-                <ScalarProperty Name="CODPROV02" ColumnName="CODPROV02" />
-                <ScalarProperty Name="NOMPROV02" ColumnName="NOMPROV02" />
-                <ScalarProperty Name="CODPAIS01" ColumnName="CODPAIS01" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_03CATCANT">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_03CATCANT">
-              <MappingFragment StoreEntitySet="SIDEPS_03CATCANT">
-                <ScalarProperty Name="CODCANT03" ColumnName="CODCANT03" />
-                <ScalarProperty Name="NOMCANT03" ColumnName="NOMCANT03" />
-                <ScalarProperty Name="CODPROV02" ColumnName="CODPROV02" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_04REGDIAC">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_04REGDIAC">
-              <MappingFragment StoreEntitySet="SIDEPS_04REGDIAC">
-                <ScalarProperty Name="CODDIAC04" ColumnName="CODDIAC04" />
-                <ScalarProperty Name="NOMDIAC04" ColumnName="NOMDIAC04" />
-                <ScalarProperty Name="LUGDIAC04" ColumnName="LUGDIAC04" />
-                <ScalarProperty Name="TELDIAC04" ColumnName="TELDIAC04" />
-                <ScalarProperty Name="ESTDIAC04" ColumnName="ESTDIAC04" />
-                <ScalarProperty Name="CODCANT03" ColumnName="CODCANT03" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_05TIPUSRO">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_05TIPUSRO">
-              <MappingFragment StoreEntitySet="SIDEPS_05TIPUSRO">
-                <ScalarProperty Name="CODUSRO05" ColumnName="CODUSRO05" />
-                <ScalarProperty Name="DESUSRO05" ColumnName="DESUSRO05" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_06CATESTC">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_06CATESTC">
-              <MappingFragment StoreEntitySet="SIDEPS_06CATESTC">
-                <ScalarProperty Name="CODESTC06" ColumnName="CODESTC06" />
-                <ScalarProperty Name="DESESTC06" ColumnName="DESESTC06" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_07REGUSRO">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_07REGUSRO">
-              <MappingFragment StoreEntitySet="SIDEPS_07REGUSRO">
-                <ScalarProperty Name="CEDUSRO07" ColumnName="CEDUSRO07" />
-                <ScalarProperty Name="NOMUSRO07" ColumnName="NOMUSRO07" />
-                <ScalarProperty Name="PAPUSRO07" ColumnName="PAPUSRO07" />
-                <ScalarProperty Name="SAPUSRO07" ColumnName="SAPUSRO07" />
-                <ScalarProperty Name="CODCANT03" ColumnName="CODCANT03" />
-                <ScalarProperty Name="CODDIAC04" ColumnName="CODDIAC04" />
-                <ScalarProperty Name="CODUSRO05" ColumnName="CODUSRO05" />
-                <ScalarProperty Name="ESTUSRO07" ColumnName="ESTUSRO07" />
-                <ScalarProperty Name="DIRUSRO07" ColumnName="DIRUSRO07" />
-                <ScalarProperty Name="NACUSRO07" ColumnName="NACUSRO07" />
-                <ScalarProperty Name="CNTUSRO07" ColumnName="CNTUSRO07" />
-                <ScalarProperty Name="FEIUSRO07" ColumnName="FEIUSRO07" />
-                <ScalarProperty Name="FEFUSRO07" ColumnName="FEFUSRO07" />
-                <ScalarProperty Name="FENUSRO07" ColumnName="FENUSRO07" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_08REGTELF">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_08REGTELF">
-              <MappingFragment StoreEntitySet="SIDEPS_08REGTELF">
-                <ScalarProperty Name="CODTELF08" ColumnName="CODTELF08" />
-                <ScalarProperty Name="CEDUSRO07" ColumnName="CEDUSRO07" />
-                <ScalarProperty Name="NUMTELF08" ColumnName="NUMTELF08" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_09CATNEDU">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_09CATNEDU">
-              <MappingFragment StoreEntitySet="SIDEPS_09CATNEDU">
-                <ScalarProperty Name="CODNEDU09" ColumnName="CODNEDU09" />
-                <ScalarProperty Name="DESNEDU09" ColumnName="DESNEDU09" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_10CATSOLI">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_10CATSOLI">
-              <MappingFragment StoreEntitySet="SIDEPS_10CATSOLI">
-                <ScalarProperty Name="CODSOLI10" ColumnName="CODSOLI10" />
-                <ScalarProperty Name="DESSOLI10" ColumnName="DESSOLI10" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_11CATRELG">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_11CATRELG">
-              <MappingFragment StoreEntitySet="SIDEPS_11CATRELG">
-                <ScalarProperty Name="CODRELG11" ColumnName="CODRELG11" />
-                <ScalarProperty Name="DESRELG11" ColumnName="DESRELG11" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_12CATPARE">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_12CATPARE">
-              <MappingFragment StoreEntitySet="SIDEPS_12CATPARE">
-                <ScalarProperty Name="CODPARE12" ColumnName="CODPARE12" />
-                <ScalarProperty Name="DESPARE12" ColumnName="DESPARE12" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_13REGPERS">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_13REGPERS">
-              <MappingFragment StoreEntitySet="SIDEPS_13REGPERS">
-                <ScalarProperty Name="CEDPERS13" ColumnName="CEDPERS13" />
-                <ScalarProperty Name="CODESTC06" ColumnName="CODESTC06" />
-                <ScalarProperty Name="CODNEDU09" ColumnName="CODNEDU09" />
-                <ScalarProperty Name="CODCANT03" ColumnName="CODCANT03" />
-                <ScalarProperty Name="CODSOLI10" ColumnName="CODSOLI10" />
-                <ScalarProperty Name="CODRELG11" ColumnName="CODRELG11" />
-                <ScalarProperty Name="NOMPERS13" ColumnName="NOMPERS13" />
-                <ScalarProperty Name="PAPPERS13" ColumnName="PAPPERS13" />
-                <ScalarProperty Name="SAPPERS13" ColumnName="SAPPERS13" />
-                <ScalarProperty Name="NACPERS13" ColumnName="NACPERS13" />
-                <ScalarProperty Name="DIRPERS13" ColumnName="DIRPERS13" />
-                <ScalarProperty Name="OACPERS13" ColumnName="OACPERS13" />
-                <ScalarProperty Name="OANPERS13" ColumnName="OANPERS13" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_14CATSEGU">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_14CATSEGU">
-              <MappingFragment StoreEntitySet="SIDEPS_14CATSEGU">
-                <ScalarProperty Name="CODSEGU14" ColumnName="CODSEGU14" />
-                <ScalarProperty Name="DESSEGU14" ColumnName="DESSEGU14" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_15CATENFR">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_15CATENFR">
-              <MappingFragment StoreEntitySet="SIDEPS_15CATENFR">
-                <ScalarProperty Name="CODENFR15" ColumnName="CODENFR15" />
-                <ScalarProperty Name="DESENFR15" ColumnName="DESENFR15" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_16REGASPS">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_16REGASPS">
-              <MappingFragment StoreEntitySet="SIDEPS_16REGASPS">
-                <ScalarProperty Name="CODASPS16" ColumnName="CODASPS16" />
-                <ScalarProperty Name="CEDPERS13" ColumnName="CEDPERS13" />
-                <ScalarProperty Name="CODSEGU14" ColumnName="CODSEGU14" />
-                <ScalarProperty Name="CODENFR15" ColumnName="CODENFR15" />
-                <ScalarProperty Name="DESENFR16" ColumnName="DESENFR16" />
-                <ScalarProperty Name="RECTRAT16" ColumnName="RECTRAT16" />
-                <ScalarProperty Name="DESTRAT16" ColumnName="DESTRAT16" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_17CATMATE">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_17CATMATE">
-              <MappingFragment StoreEntitySet="SIDEPS_17CATMATE">
-                <ScalarProperty Name="CODMATE17" ColumnName="CODMATE17" />
-                <ScalarProperty Name="DESMATE17" ColumnName="DESMATE17" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_18TIPVIVI">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_18TIPVIVI">
-              <MappingFragment StoreEntitySet="SIDEPS_18TIPVIVI">
-                <ScalarProperty Name="CODTIPV18" ColumnName="CODTIPV18" />
-                <ScalarProperty Name="DESTIPV18" ColumnName="DESTIPV18" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_19ESTVIVI">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_19ESTVIVI">
-              <MappingFragment StoreEntitySet="SIDEPS_19ESTVIVI">
-                <ScalarProperty Name="CODESTV19" ColumnName="CODESTV19" />
-                <ScalarProperty Name="DESESTV19" ColumnName="DESESTV19" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_20REGVIVI">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_20REGVIVI">
-              <MappingFragment StoreEntitySet="SIDEPS_20REGVIVI">
-                <ScalarProperty Name="CODVIVI20" ColumnName="CODVIVI20" />
-                <ScalarProperty Name="CODTIPV18" ColumnName="CODTIPV18" />
-                <ScalarProperty Name="CODESTV19" ColumnName="CODESTV19" />
-                <ScalarProperty Name="CODMATE17" ColumnName="CODMATE17" />
-                <ScalarProperty Name="MTOVIVI20" ColumnName="MTOVIVI20" />
-                <ScalarProperty Name="NAPVIVI20" ColumnName="NAPVIVI20" />
-                <ScalarProperty Name="SRCVIVI20" ColumnName="SRCVIVI20" />
-                <ScalarProperty Name="SRIVIVI20" ColumnName="SRIVIVI20" />
-                <ScalarProperty Name="SRLVIVI20" ColumnName="SRLVIVI20" />
-                <ScalarProperty Name="SRMVIVI20" ColumnName="SRMVIVI20" />
-                <ScalarProperty Name="SRBVIVI20" ColumnName="SRBVIVI20" />
-                <ScalarProperty Name="SREVIVI20" ColumnName="SREVIVI20" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_21CATORGS">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_21CATORGS">
-              <MappingFragment StoreEntitySet="SIDEPS_21CATORGS">
-                <ScalarProperty Name="CODORGS21" ColumnName="CODORGS21" />
-                <ScalarProperty Name="DESORGS21" ColumnName="DESORGS21" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_22REGFAML">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_22REGFAML">
-              <MappingFragment StoreEntitySet="SIDEPS_22REGFAML">
-                <ScalarProperty Name="CEDFAML22" ColumnName="CEDFAML22" />
-                <ScalarProperty Name="NOMFAML22" ColumnName="NOMFAML22" />
-                <ScalarProperty Name="EDAFAML22" ColumnName="EDAFAML22" />
-                <ScalarProperty Name="CODESTC06" ColumnName="CODESTC06" />
-                <ScalarProperty Name="CODNEDU09" ColumnName="CODNEDU09" />
-                <ScalarProperty Name="OACFAML22" ColumnName="OACFAML22" />
-                <ScalarProperty Name="INGFAML22" ColumnName="INGFAML22" />
-                <ScalarProperty Name="DESFAML22" ColumnName="DESFAML22" />
-                <ScalarProperty Name="CODORGS21" ColumnName="CODORGS21" />
-                <ScalarProperty Name="CODENFR15" ColumnName="CODENFR15" />
-                <ScalarProperty Name="CODPARE12" ColumnName="CODPARE12" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_23CATFINA">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_23CATFINA">
-              <MappingFragment StoreEntitySet="SIDEPS_23CATFINA">
-                <ScalarProperty Name="CODFINA23" ColumnName="CODFINA23" />
-                <ScalarProperty Name="CEDFAML22" ColumnName="CEDFAML22" />
-                <ScalarProperty Name="CEDPERS13" ColumnName="CEDPERS13" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_24REGEGRF">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_24REGEGRF">
-              <MappingFragment StoreEntitySet="SIDEPS_24REGEGRF">
-                <ScalarProperty Name="CODEGRF24" ColumnName="CODEGRF24" />
-                <ScalarProperty Name="MTOALQU24" ColumnName="MTOALQU24" />
-                <ScalarProperty Name="MTOALIM24" ColumnName="MTOALIM24" />
-                <ScalarProperty Name="MTOELEC24" ColumnName="MTOELEC24" />
-                <ScalarProperty Name="MTOGAST24" ColumnName="MTOGAST24" />
-                <ScalarProperty Name="MTCAGUA24" ColumnName="MTCAGUA24" />
-                <ScalarProperty Name="MTOCABL24" ColumnName="MTOCABL24" />
-                <ScalarProperty Name="MTOTELF24" ColumnName="MTOTELF24" />
-                <ScalarProperty Name="MTOINTE24" ColumnName="MTOINTE24" />
-                <ScalarProperty Name="MTOEDUC24" ColumnName="MTOEDUC24" />
-                <ScalarProperty Name="MTOSEGU24" ColumnName="MTOSEGU24" />
-                <ScalarProperty Name="MTOOTRO24" ColumnName="MTOOTRO24" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_25REGCASO">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_25REGCASO">
-              <MappingFragment StoreEntitySet="SIDEPS_25REGCASO">
-                <ScalarProperty Name="CODCASO25" ColumnName="CODCASO25" />
-                <ScalarProperty Name="CEDPERS13" ColumnName="CEDPERS13" />
-                <ScalarProperty Name="CODASPS16" ColumnName="CODASPS16" />
-                <ScalarProperty Name="CEDUSRO07" ColumnName="CEDUSRO07" />
-                <ScalarProperty Name="CODVIVI20" ColumnName="CODVIVI20" />
-                <ScalarProperty Name="CODEGRF24" ColumnName="CODEGRF24" />
-                <ScalarProperty Name="FEICASO25" ColumnName="FEICASO25" />
-                <ScalarProperty Name="FEFCASO25" ColumnName="FEFCASO25" />
-                <ScalarProperty Name="DESCASO25" ColumnName="DESCASO25" />
-                <ScalarProperty Name="OPICASO25" ColumnName="OPICASO25" />
-                <ScalarProperty Name="ESTCASO25" ColumnName="ESTCASO25" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_26CATAYUD">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_26CATAYUD">
-              <MappingFragment StoreEntitySet="SIDEPS_26CATAYUD">
-                <ScalarProperty Name="CODAYUD26" ColumnName="CODAYUD26" />
-                <ScalarProperty Name="DESAYUD26" ColumnName="DESAYUD26" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_27TIPAYUD">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_27TIPAYUD">
-              <MappingFragment StoreEntitySet="SIDEPS_27TIPAYUD">
-                <ScalarProperty Name="CODTIPA27" ColumnName="CODTIPA27" />
-                <ScalarProperty Name="CODAYUD26" ColumnName="CODAYUD26" />
-                <ScalarProperty Name="CODCASO25" ColumnName="CODCASO25" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_28REGHIS">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_28REGHIS">
-              <MappingFragment StoreEntitySet="SIDEPS_28REGHIS">
-                <ScalarProperty Name="CODHIST28" ColumnName="CODHIST28" />
-                <ScalarProperty Name="CODCASO25" ColumnName="CODCASO25" />
-                <ScalarProperty Name="DESCASO28" ColumnName="DESCASO28" />
-                <ScalarProperty Name="ESTCASO28" ColumnName="ESTCASO28" />
-                <ScalarProperty Name="FECCASO28" ColumnName="FECCASO28" />
-                <ScalarProperty Name="FECACTU28" ColumnName="FECACTU28" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SIDEPS_29REGCNTR">
-            <EntityTypeMapping TypeName="SIDEPSModel.SIDEPS_29REGCNTR">
-              <MappingFragment StoreEntitySet="SIDEPS_29REGCNTR">
-                <ScalarProperty Name="CODCASO" ColumnName="CODCASO" />
-                <ScalarProperty Name="ESTCASO" ColumnName="ESTCASO" />
-                <ScalarProperty Name="CODCNTR" ColumnName="CODCNTR" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="SIDEPSModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="SP_INS_REGASPS" FunctionName="SIDEPSModel.Store.SP_INS_REGASPS" />
-          <FunctionImportMapping FunctionImportName="SP_INS_REGCASO" FunctionName="SIDEPSModel.Store.SP_INS_REGCASO" />
-          <FunctionImportMapping FunctionImportName="SP_INS_REGEGRF" FunctionName="SIDEPSModel.Store.SP_INS_REGEGRF" />
-          <FunctionImportMapping FunctionImportName="SP_INS_REGFAML" FunctionName="SIDEPSModel.Store.SP_INS_REGFAML" />
-          <FunctionImportMapping FunctionImportName="SP_INS_REGPERS" FunctionName="SIDEPSModel.Store.SP_INS_REGPERS" />
-          <FunctionImportMapping FunctionImportName="SP_INS_REGVIVI" FunctionName="SIDEPSModel.Store.SP_INS_REGVIVI" />
-          </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SIDEPSStoreContainer" CdmEntityContainer="SIDEPSEntities">
+    <EntitySetMapping Name="SIDEPS_01CATPAIS">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_01CATPAIS)">
+        <MappingFragment StoreEntitySet="SIDEPS_01CATPAIS">
+          <ScalarProperty Name="CODPAIS01" ColumnName="CODPAIS01" />
+          <ScalarProperty Name="NOMPAIS01" ColumnName="NOMPAIS01" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_02CATPROV">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_02CATPROV)">
+        <MappingFragment StoreEntitySet="SIDEPS_02CATPROV">
+          <ScalarProperty Name="CODPROV02" ColumnName="CODPROV02" />
+          <ScalarProperty Name="NOMPROV02" ColumnName="NOMPROV02" />
+          <ScalarProperty Name="CODPAIS01" ColumnName="CODPAIS01" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_03CATCANT">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_03CATCANT)">
+        <MappingFragment StoreEntitySet="SIDEPS_03CATCANT">
+          <ScalarProperty Name="CODCANT03" ColumnName="CODCANT03" />
+          <ScalarProperty Name="NOMCANT03" ColumnName="NOMCANT03" />
+          <ScalarProperty Name="CODPROV02" ColumnName="CODPROV02" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_04REGDIAC">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_04REGDIAC)">
+        <MappingFragment StoreEntitySet="SIDEPS_04REGDIAC">
+          <ScalarProperty Name="CODDIAC04" ColumnName="CODDIAC04" />
+          <ScalarProperty Name="NOMDIAC04" ColumnName="NOMDIAC04" />
+          <ScalarProperty Name="LUGDIAC04" ColumnName="LUGDIAC04" />
+          <ScalarProperty Name="TELDIAC04" ColumnName="TELDIAC04" />
+          <ScalarProperty Name="ESTDIAC04" ColumnName="ESTDIAC04" />
+          <ScalarProperty Name="CODCANT03" ColumnName="CODCANT03" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_05TIPUSRO">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_05TIPUSRO)">
+        <MappingFragment StoreEntitySet="SIDEPS_05TIPUSRO">
+          <ScalarProperty Name="CODUSRO05" ColumnName="CODUSRO05" />
+          <ScalarProperty Name="DESUSRO05" ColumnName="DESUSRO05" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_06CATESTC">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_06CATESTC)">
+        <MappingFragment StoreEntitySet="SIDEPS_06CATESTC">
+          <ScalarProperty Name="CODESTC06" ColumnName="CODESTC06" />
+          <ScalarProperty Name="DESESTC06" ColumnName="DESESTC06" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_07REGUSRO">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_07REGUSRO)">
+        <MappingFragment StoreEntitySet="SIDEPS_07REGUSRO">
+          <ScalarProperty Name="CEDUSRO07" ColumnName="CEDUSRO07" />
+          <ScalarProperty Name="NOMUSRO07" ColumnName="NOMUSRO07" />
+          <ScalarProperty Name="PAPUSRO07" ColumnName="PAPUSRO07" />
+          <ScalarProperty Name="SAPUSRO07" ColumnName="SAPUSRO07" />
+          <ScalarProperty Name="CODCANT03" ColumnName="CODCANT03" />
+          <ScalarProperty Name="CODDIAC04" ColumnName="CODDIAC04" />
+          <ScalarProperty Name="CODUSRO05" ColumnName="CODUSRO05" />
+          <ScalarProperty Name="ESTUSRO07" ColumnName="ESTUSRO07" />
+          <ScalarProperty Name="DIRUSRO07" ColumnName="DIRUSRO07" />
+          <ScalarProperty Name="NACUSRO07" ColumnName="NACUSRO07" />
+          <ScalarProperty Name="CNTUSRO07" ColumnName="CNTUSRO07" />
+          <ScalarProperty Name="FEIUSRO07" ColumnName="FEIUSRO07" />
+          <ScalarProperty Name="FEFUSRO07" ColumnName="FEFUSRO07" />
+          <ScalarProperty Name="FENUSRO07" ColumnName="FENUSRO07" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_08REGTELF">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_08REGTELF)">
+        <MappingFragment StoreEntitySet="SIDEPS_08REGTELF">
+          <ScalarProperty Name="CODTELF08" ColumnName="CODTELF08" />
+          <ScalarProperty Name="CEDUSRO07" ColumnName="CEDUSRO07" />
+          <ScalarProperty Name="NUMTELF08" ColumnName="NUMTELF08" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_09CATNEDU">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_09CATNEDU)">
+        <MappingFragment StoreEntitySet="SIDEPS_09CATNEDU">
+          <ScalarProperty Name="CODNEDU09" ColumnName="CODNEDU09" />
+          <ScalarProperty Name="DESNEDU09" ColumnName="DESNEDU09" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_10CATSOLI">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_10CATSOLI)">
+        <MappingFragment StoreEntitySet="SIDEPS_10CATSOLI">
+          <ScalarProperty Name="CODSOLI10" ColumnName="CODSOLI10" />
+          <ScalarProperty Name="DESSOLI10" ColumnName="DESSOLI10" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_11CATRELG">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_11CATRELG)">
+        <MappingFragment StoreEntitySet="SIDEPS_11CATRELG">
+          <ScalarProperty Name="CODRELG11" ColumnName="CODRELG11" />
+          <ScalarProperty Name="DESRELG11" ColumnName="DESRELG11" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_12CATPARE">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_12CATPARE)">
+        <MappingFragment StoreEntitySet="SIDEPS_12CATPARE">
+          <ScalarProperty Name="CODPARE12" ColumnName="CODPARE12" />
+          <ScalarProperty Name="DESPARE12" ColumnName="DESPARE12" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_13REGPERS">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_13REGPERS)">
+        <MappingFragment StoreEntitySet="SIDEPS_13REGPERS">
+          <ScalarProperty Name="CEDPERS13" ColumnName="CEDPERS13" />
+          <ScalarProperty Name="CODESTC06" ColumnName="CODESTC06" />
+          <ScalarProperty Name="CODNEDU09" ColumnName="CODNEDU09" />
+          <ScalarProperty Name="CODCANT03" ColumnName="CODCANT03" />
+          <ScalarProperty Name="CODSOLI10" ColumnName="CODSOLI10" />
+          <ScalarProperty Name="CODRELG11" ColumnName="CODRELG11" />
+          <ScalarProperty Name="NOMPERS13" ColumnName="NOMPERS13" />
+          <ScalarProperty Name="PAPPERS13" ColumnName="PAPPERS13" />
+          <ScalarProperty Name="SAPPERS13" ColumnName="SAPPERS13" />
+          <ScalarProperty Name="NACPERS13" ColumnName="NACPERS13" />
+          <ScalarProperty Name="DIRPERS13" ColumnName="DIRPERS13" />
+          <ScalarProperty Name="OACPERS13" ColumnName="OACPERS13" />
+          <ScalarProperty Name="OANPERS13" ColumnName="OANPERS13" />
+          <ScalarProperty Name="FENPERS13" ColumnName="FENPERS13" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_14CATSEGU">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_14CATSEGU)">
+        <MappingFragment StoreEntitySet="SIDEPS_14CATSEGU">
+          <ScalarProperty Name="CODSEGU14" ColumnName="CODSEGU14" />
+          <ScalarProperty Name="DESSEGU14" ColumnName="DESSEGU14" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_15CATENFR">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_15CATENFR)">
+        <MappingFragment StoreEntitySet="SIDEPS_15CATENFR">
+          <ScalarProperty Name="CODENFR15" ColumnName="CODENFR15" />
+          <ScalarProperty Name="DESENFR15" ColumnName="DESENFR15" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_16REGASPS">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_16REGASPS)">
+        <MappingFragment StoreEntitySet="SIDEPS_16REGASPS">
+          <ScalarProperty Name="CODASPS16" ColumnName="CODASPS16" />
+          <ScalarProperty Name="CEDPERS13" ColumnName="CEDPERS13" />
+          <ScalarProperty Name="CODSEGU14" ColumnName="CODSEGU14" />
+          <ScalarProperty Name="CODENFR15" ColumnName="CODENFR15" />
+          <ScalarProperty Name="DESENFR16" ColumnName="DESENFR16" />
+          <ScalarProperty Name="RECTRAT16" ColumnName="RECTRAT16" />
+          <ScalarProperty Name="DESTRAT16" ColumnName="DESTRAT16" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_17CATMATE">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_17CATMATE)">
+        <MappingFragment StoreEntitySet="SIDEPS_17CATMATE">
+          <ScalarProperty Name="CODMATE17" ColumnName="CODMATE17" />
+          <ScalarProperty Name="DESMATE17" ColumnName="DESMATE17" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_18TIPVIVI">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_18TIPVIVI)">
+        <MappingFragment StoreEntitySet="SIDEPS_18TIPVIVI">
+          <ScalarProperty Name="CODTIPV18" ColumnName="CODTIPV18" />
+          <ScalarProperty Name="DESTIPV18" ColumnName="DESTIPV18" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_19ESTVIVI">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_19ESTVIVI)">
+        <MappingFragment StoreEntitySet="SIDEPS_19ESTVIVI">
+          <ScalarProperty Name="CODESTV19" ColumnName="CODESTV19" />
+          <ScalarProperty Name="DESESTV19" ColumnName="DESESTV19" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_20REGVIVI">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_20REGVIVI)">
+        <MappingFragment StoreEntitySet="SIDEPS_20REGVIVI">
+          <ScalarProperty Name="CODVIVI20" ColumnName="CODVIVI20" />
+          <ScalarProperty Name="CODTIPV18" ColumnName="CODTIPV18" />
+          <ScalarProperty Name="CODESTV19" ColumnName="CODESTV19" />
+          <ScalarProperty Name="CODMATE17" ColumnName="CODMATE17" />
+          <ScalarProperty Name="MTOVIVI20" ColumnName="MTOVIVI20" />
+          <ScalarProperty Name="NAPVIVI20" ColumnName="NAPVIVI20" />
+          <ScalarProperty Name="SRCVIVI20" ColumnName="SRCVIVI20" />
+          <ScalarProperty Name="SRIVIVI20" ColumnName="SRIVIVI20" />
+          <ScalarProperty Name="SRLVIVI20" ColumnName="SRLVIVI20" />
+          <ScalarProperty Name="SRMVIVI20" ColumnName="SRMVIVI20" />
+          <ScalarProperty Name="SRBVIVI20" ColumnName="SRBVIVI20" />
+          <ScalarProperty Name="SREVIVI20" ColumnName="SREVIVI20" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_21CATORGS">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_21CATORGS)">
+        <MappingFragment StoreEntitySet="SIDEPS_21CATORGS">
+          <ScalarProperty Name="CODORGS21" ColumnName="CODORGS21" />
+          <ScalarProperty Name="DESORGS21" ColumnName="DESORGS21" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_22REGFAML">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_22REGFAML)">
+        <MappingFragment StoreEntitySet="SIDEPS_22REGFAML">
+          <ScalarProperty Name="CEDFAML22" ColumnName="CEDFAML22" />
+          <ScalarProperty Name="NOMFAML22" ColumnName="NOMFAML22" />
+          <ScalarProperty Name="EDAFAML22" ColumnName="EDAFAML22" />
+          <ScalarProperty Name="CODESTC06" ColumnName="CODESTC06" />
+          <ScalarProperty Name="CODNEDU09" ColumnName="CODNEDU09" />
+          <ScalarProperty Name="OACFAML22" ColumnName="OACFAML22" />
+          <ScalarProperty Name="INGFAML22" ColumnName="INGFAML22" />
+          <ScalarProperty Name="DESFAML22" ColumnName="DESFAML22" />
+          <ScalarProperty Name="CODORGS21" ColumnName="CODORGS21" />
+          <ScalarProperty Name="CODENFR15" ColumnName="CODENFR15" />
+          <ScalarProperty Name="CODPARE12" ColumnName="CODPARE12" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_23CATFINA">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_23CATFINA)">
+        <MappingFragment StoreEntitySet="SIDEPS_23CATFINA">
+          <ScalarProperty Name="CODFINA23" ColumnName="CODFINA23" />
+          <ScalarProperty Name="CEDFAML22" ColumnName="CEDFAML22" />
+          <ScalarProperty Name="CEDPERS13" ColumnName="CEDPERS13" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_24REGEGRF">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_24REGEGRF)">
+        <MappingFragment StoreEntitySet="SIDEPS_24REGEGRF">
+          <ScalarProperty Name="CODEGRF24" ColumnName="CODEGRF24" />
+          <ScalarProperty Name="MTOALQU24" ColumnName="MTOALQU24" />
+          <ScalarProperty Name="MTOALIM24" ColumnName="MTOALIM24" />
+          <ScalarProperty Name="MTOELEC24" ColumnName="MTOELEC24" />
+          <ScalarProperty Name="MTOGAST24" ColumnName="MTOGAST24" />
+          <ScalarProperty Name="MTCAGUA24" ColumnName="MTCAGUA24" />
+          <ScalarProperty Name="MTOCABL24" ColumnName="MTOCABL24" />
+          <ScalarProperty Name="MTOTELF24" ColumnName="MTOTELF24" />
+          <ScalarProperty Name="MTOINTE24" ColumnName="MTOINTE24" />
+          <ScalarProperty Name="MTOEDUC24" ColumnName="MTOEDUC24" />
+          <ScalarProperty Name="MTOSEGU24" ColumnName="MTOSEGU24" />
+          <ScalarProperty Name="MTOOTRO24" ColumnName="MTOOTRO24" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_25REGCASO">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_25REGCASO)">
+        <MappingFragment StoreEntitySet="SIDEPS_25REGCASO">
+          <ScalarProperty Name="CODCASO25" ColumnName="CODCASO25" />
+          <ScalarProperty Name="CEDPERS13" ColumnName="CEDPERS13" />
+          <ScalarProperty Name="CODASPS16" ColumnName="CODASPS16" />
+          <ScalarProperty Name="CEDUSRO07" ColumnName="CEDUSRO07" />
+          <ScalarProperty Name="CODVIVI20" ColumnName="CODVIVI20" />
+          <ScalarProperty Name="CODEGRF24" ColumnName="CODEGRF24" />
+          <ScalarProperty Name="FEICASO25" ColumnName="FEICASO25" />
+          <ScalarProperty Name="FEFCASO25" ColumnName="FEFCASO25" />
+          <ScalarProperty Name="DESCASO25" ColumnName="DESCASO25" />
+          <ScalarProperty Name="OPICASO25" ColumnName="OPICASO25" />
+          <ScalarProperty Name="ESTCASO25" ColumnName="ESTCASO25" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_26CATAYUD">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_26CATAYUD)">
+        <MappingFragment StoreEntitySet="SIDEPS_26CATAYUD">
+          <ScalarProperty Name="CODAYUD26" ColumnName="CODAYUD26" />
+          <ScalarProperty Name="DESAYUD26" ColumnName="DESAYUD26" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_27TIPAYUD">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_27TIPAYUD)">
+        <MappingFragment StoreEntitySet="SIDEPS_27TIPAYUD">
+          <ScalarProperty Name="CODTIPA27" ColumnName="CODTIPA27" />
+          <ScalarProperty Name="CODAYUD26" ColumnName="CODAYUD26" />
+          <ScalarProperty Name="CODCASO25" ColumnName="CODCASO25" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_28REGHIS">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_28REGHIS)">
+        <MappingFragment StoreEntitySet="SIDEPS_28REGHIS">
+          <ScalarProperty Name="CODHIST28" ColumnName="CODHIST28" />
+          <ScalarProperty Name="CODCASO25" ColumnName="CODCASO25" />
+          <ScalarProperty Name="DESCASO28" ColumnName="DESCASO28" />
+          <ScalarProperty Name="ESTCASO28" ColumnName="ESTCASO28" />
+          <ScalarProperty Name="FECCASO28" ColumnName="FECCASO28" />
+          <ScalarProperty Name="FECACTU28" ColumnName="FECACTU28" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIDEPS_29REGCNTR">
+      <EntityTypeMapping TypeName="IsTypeOf(SIDEPS.SIDEPS_29REGCNTR)">
+        <MappingFragment StoreEntitySet="SIDEPS_29REGCNTR">
+          <ScalarProperty Name="CODCNTR" ColumnName="CODCNTR" />
+          <ScalarProperty Name="CODCASO" ColumnName="CODCASO" />
+          <ScalarProperty Name="ESTCASO" ColumnName="ESTCASO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -2424,7 +2449,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>

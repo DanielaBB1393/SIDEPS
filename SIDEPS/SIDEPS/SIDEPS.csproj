@@ -127,56 +127,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\WCFPersonas\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\CasosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PersonasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AspectoSalud_M.cs" />
     <Compile Include="Models\Caso_M.cs" />
-    <Compile Include="Models\EgresosMensuales_M.cs" />
-    <Compile Include="Models\MiembroGrupoFamiliar.cs" />
+    <Compile Include="Models\Egresos_M.cs" />
+    <Compile Include="Models\MiembroFamiliar_M.cs" />
     <Compile Include="Models\MotivoSolicitud_M.cs" />
     <Compile Include="Models\Persona_M.cs" />
     <Compile Include="Models\ProblemasSociales_M.cs" />
-    <Compile Include="Models\SituacionFinanciera_M.cs" />
+    <Compile Include="Models\GrupoFamiliar_M.cs" />
     <Compile Include="Models\Vivienda_M.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\WCFCasos\CasosSvc.wsdl" />
-    <None Include="Connected Services\WCFCasos\CasosSvc.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\WCFCasos\CasosSvc1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\WCFCasos\CasosSvc2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\WCFPersonas\PersonasSvc.wsdl" />
-    <None Include="Connected Services\WCFPersonas\PersonasSvc.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\WCFPersonas\PersonasSvc1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\WCFPersonas\PersonasSvc2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\WCFPersonas\PersonasSvc.disco" />
-    <None Include="Connected Services\WCFPersonas\configuration91.svcinfo" />
-    <None Include="Connected Services\WCFPersonas\configuration.svcinfo" />
-    <None Include="Connected Services\WCFPersonas\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Connected Services\WCFCasos\CasosSvc.disco" />
     <None Include="Connected Services\WCFCasos\configuration91.svcinfo" />
     <None Include="Connected Services\WCFCasos\configuration.svcinfo" />
@@ -194,6 +161,16 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Connected Services\WCFCasos\CasosSvc.wsdl" />
+    <None Include="Connected Services\WCFCasos\CasosSvc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCFCasos\CasosSvc1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCFCasos\CasosSvc2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -226,8 +203,8 @@
     <Content Include="Views\Casos\Index.cshtml" />
     <Content Include="Views\Casos\Vivienda.cshtml" />
     <Content Include="Views\Casos\ProblemasSociales.cshtml" />
-    <Content Include="Views\Casos\SituacionFinanciera.cshtml" />
-    <Content Include="Views\Casos\EgresosMensuales.cshtml" />
+    <Content Include="Views\Casos\GrupoFamiliar.cshtml" />
+    <Content Include="Views\Casos\Egresos.cshtml" />
     <Content Include="Views\Casos\MotivoSolicitud.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -251,7 +228,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\WCFCasos\" />
-    <WCFMetadataStorage Include="Connected Services\WCFPersonas\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
