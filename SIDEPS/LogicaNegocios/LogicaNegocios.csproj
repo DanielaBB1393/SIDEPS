@@ -44,6 +44,7 @@
     <Compile Include="Implementacion\AspectoSaludLN.cs" />
     <Compile Include="Implementacion\CasosLN.cs" />
     <Compile Include="Implementacion\CategoriasLN.cs" />
+    <Compile Include="Implementacion\DiaconiaLN.cs" />
     <Compile Include="Implementacion\EgresosLN.cs" />
     <Compile Include="Implementacion\PersonasLN.cs" />
     <Compile Include="Implementacion\GrupoFamiliarLN.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="Interfaces\IAspectoSaludLN.cs" />
     <Compile Include="Interfaces\ICasosLN.cs" />
     <Compile Include="Interfaces\ICategoriasLN.cs" />
+    <Compile Include="Interfaces\IDiaconiaLN.cs" />
     <Compile Include="Interfaces\IEgresosLN.cs" />
     <Compile Include="Interfaces\IPersonasLN.cs" />
     <Compile Include="Interfaces\IGrupoFamiliarLN.cs" />

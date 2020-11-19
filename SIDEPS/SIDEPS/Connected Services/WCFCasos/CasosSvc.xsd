@@ -447,4 +447,32 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SP_CON_CATCANT_Result" nillable="true" type="tns:SP_CON_CATCANT_Result" />
+  <xs:complexType name="ArrayOfSP_CON_REGDIAC_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SP_CON_REGDIAC_Result" nillable="true" type="tns:SP_CON_REGDIAC_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSP_CON_REGDIAC_Result" nillable="true" type="tns:ArrayOfSP_CON_REGDIAC_Result" />
+  <xs:complexType name="SP_CON_REGDIAC_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODCANT03" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CODDIAC04" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTDIAC04" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LUGDIAC04" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMDIAC04" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TELDIAC04" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SP_CON_REGDIAC_Result" nillable="true" type="tns:SP_CON_REGDIAC_Result" />
+  <xs:complexType name="SP_CONXID_REGDIAC_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODCANT03" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CODDIAC04" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTDIAC04" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LUGDIAC04" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMDIAC04" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TELDIAC04" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SP_CONXID_REGDIAC_Result" nillable="true" type="tns:SP_CONXID_REGDIAC_Result" />
 </xs:schema>

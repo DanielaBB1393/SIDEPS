@@ -67,7 +67,6 @@
         <AssociationConnector Association="SIDEPS.FK__SIDEPS_CODCASO25" ManuallyRouted="false" />
         <AssociationConnector Association="SIDEPS.FK__SIDEPS_CODCASO25_02" ManuallyRouted="false" />
         <AssociationConnector Association="SIDEPS.FK__SIDEPS_CODAYUD26" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="SIDEPS.sysdiagrams" Width="1.5" PointX="8.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<SIDEPS.Models.Diaconia_M>
+
+@{
+    ViewBag.Title = "listarDiaconias";
+}
+
+<h2>Diaconias</h2>
+
+<p>
+    @Html.ActionLink("Agregar Nueva", "AgregarDiaconia")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CODDIAC04)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOMDIAC04)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LUGDIAC04)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TELDIAC04)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ESTDIAC04)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CODCANT03)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CODDIAC04)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOMDIAC04)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LUGDIAC04)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TELDIAC04)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ESTDIAC04)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CODCANT03)
+        </td>
+        <td>
+            @Html.ActionLink("Modificar", "ModificarDiaconias", new {  id=item.CODDIAC04}) |
+            @Html.ActionLink("Detalle", "DetalleDiaconias", new { id = item.CODDIAC04 }) 
+           
+        </td>
+    </tr>
+}
+
+</table>

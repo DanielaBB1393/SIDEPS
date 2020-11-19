@@ -71,10 +71,10 @@ namespace SIDEPS.WCFCasos {
         private SIDEPS.WCFCasos.SIDEPS_24REGEGRF SIDEPS_24REGEGRFField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_27TIPAYUD[] SIDEPS_27TIPAYUDField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_27TIPAYUD> SIDEPS_27TIPAYUDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_28REGHIS[] SIDEPS_28REGHISField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_28REGHIS> SIDEPS_28REGHISField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -295,7 +295,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_27TIPAYUD[] SIDEPS_27TIPAYUD {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_27TIPAYUD> SIDEPS_27TIPAYUD {
             get {
                 return this.SIDEPS_27TIPAYUDField;
             }
@@ -308,7 +308,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_28REGHIS[] SIDEPS_28REGHIS {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_28REGHIS> SIDEPS_28REGHIS {
             get {
                 return this.SIDEPS_28REGHISField;
             }
@@ -391,10 +391,10 @@ namespace SIDEPS.WCFCasos {
         private SIDEPS.WCFCasos.SIDEPS_05TIPUSRO SIDEPS_05TIPUSROField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_08REGTELF[] SIDEPS_08REGTELFField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_08REGTELF> SIDEPS_08REGTELFField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_25REGCASO[] SIDEPS_25REGCASOField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_25REGCASO> SIDEPS_25REGCASOField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -628,7 +628,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_08REGTELF[] SIDEPS_08REGTELF {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_08REGTELF> SIDEPS_08REGTELF {
             get {
                 return this.SIDEPS_08REGTELFField;
             }
@@ -641,7 +641,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_25REGCASO[] SIDEPS_25REGCASO {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_25REGCASO> SIDEPS_25REGCASO {
             get {
                 return this.SIDEPS_25REGCASOField;
             }
@@ -730,13 +730,13 @@ namespace SIDEPS.WCFCasos {
         private SIDEPS.WCFCasos.SIDEPS_11CATRELG SIDEPS_11CATRELGField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_16REGASPS[] SIDEPS_16REGASPSField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_16REGASPS> SIDEPS_16REGASPSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_23CATFINA[] SIDEPS_23CATFINAField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_23CATFINA> SIDEPS_23CATFINAField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_25REGCASO[] SIDEPS_25REGCASOField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_25REGCASO> SIDEPS_25REGCASOField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -996,7 +996,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_16REGASPS[] SIDEPS_16REGASPS {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_16REGASPS> SIDEPS_16REGASPS {
             get {
                 return this.SIDEPS_16REGASPSField;
             }
@@ -1009,7 +1009,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_23CATFINA[] SIDEPS_23CATFINA {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_23CATFINA> SIDEPS_23CATFINA {
             get {
                 return this.SIDEPS_23CATFINAField;
             }
@@ -1022,7 +1022,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_25REGCASO[] SIDEPS_25REGCASO {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_25REGCASO> SIDEPS_25REGCASO {
             get {
                 return this.SIDEPS_25REGCASOField;
             }
@@ -1084,7 +1084,7 @@ namespace SIDEPS.WCFCasos {
         private SIDEPS.WCFCasos.SIDEPS_15CATENFR SIDEPS_15CATENFRField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_25REGCASO[] SIDEPS_25REGCASOField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_25REGCASO> SIDEPS_25REGCASOField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1227,7 +1227,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_25REGCASO[] SIDEPS_25REGCASO {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_25REGCASO> SIDEPS_25REGCASO {
             get {
                 return this.SIDEPS_25REGCASOField;
             }
@@ -1286,7 +1286,7 @@ namespace SIDEPS.WCFCasos {
         private SIDEPS.WCFCasos.SIDEPS_19ESTVIVI SIDEPS_19ESTVIVIField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_25REGCASO[] SIDEPS_25REGCASOField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_25REGCASO> SIDEPS_25REGCASOField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<bool> SRBVIVI20Field;
@@ -1434,7 +1434,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_25REGCASO[] SIDEPS_25REGCASO {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_25REGCASO> SIDEPS_25REGCASO {
             get {
                 return this.SIDEPS_25REGCASOField;
             }
@@ -1580,7 +1580,7 @@ namespace SIDEPS.WCFCasos {
         private System.Nullable<decimal> MTOTELF24Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_25REGCASO[] SIDEPS_25REGCASOField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_25REGCASO> SIDEPS_25REGCASOField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1749,7 +1749,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_25REGCASO[] SIDEPS_25REGCASO {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_25REGCASO> SIDEPS_25REGCASO {
             get {
                 return this.SIDEPS_25REGCASOField;
             }
@@ -2043,13 +2043,13 @@ namespace SIDEPS.WCFCasos {
         private SIDEPS.WCFCasos.SIDEPS_02CATPROV SIDEPS_02CATPROVField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_04REGDIAC[] SIDEPS_04REGDIACField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_04REGDIAC> SIDEPS_04REGDIACField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_07REGUSRO[] SIDEPS_07REGUSROField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_07REGUSRO> SIDEPS_07REGUSROField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_13REGPERS[] SIDEPS_13REGPERSField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_13REGPERS> SIDEPS_13REGPERSField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2114,7 +2114,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_04REGDIAC[] SIDEPS_04REGDIAC {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_04REGDIAC> SIDEPS_04REGDIAC {
             get {
                 return this.SIDEPS_04REGDIACField;
             }
@@ -2127,7 +2127,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_07REGUSRO[] SIDEPS_07REGUSRO {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_07REGUSRO> SIDEPS_07REGUSRO {
             get {
                 return this.SIDEPS_07REGUSROField;
             }
@@ -2140,7 +2140,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_13REGPERS[] SIDEPS_13REGPERS {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_13REGPERS> SIDEPS_13REGPERS {
             get {
                 return this.SIDEPS_13REGPERSField;
             }
@@ -2190,7 +2190,7 @@ namespace SIDEPS.WCFCasos {
         private SIDEPS.WCFCasos.SIDEPS_03CATCANT SIDEPS_03CATCANTField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_07REGUSRO[] SIDEPS_07REGUSROField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_07REGUSRO> SIDEPS_07REGUSROField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TELDIAC04Field;
@@ -2284,7 +2284,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_07REGUSRO[] SIDEPS_07REGUSRO {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_07REGUSRO> SIDEPS_07REGUSRO {
             get {
                 return this.SIDEPS_07REGUSROField;
             }
@@ -2335,7 +2335,7 @@ namespace SIDEPS.WCFCasos {
         private string DESUSRO05Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_07REGUSRO[] SIDEPS_07REGUSROField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_07REGUSRO> SIDEPS_07REGUSROField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2374,7 +2374,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_07REGUSRO[] SIDEPS_07REGUSRO {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_07REGUSRO> SIDEPS_07REGUSRO {
             get {
                 return this.SIDEPS_07REGUSROField;
             }
@@ -2511,7 +2511,7 @@ namespace SIDEPS.WCFCasos {
         private SIDEPS.WCFCasos.SIDEPS_01CATPAIS SIDEPS_01CATPAISField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_03CATCANT[] SIDEPS_03CATCANTField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_03CATCANT> SIDEPS_03CATCANTField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2576,7 +2576,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_03CATCANT[] SIDEPS_03CATCANT {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_03CATCANT> SIDEPS_03CATCANT {
             get {
                 return this.SIDEPS_03CATCANTField;
             }
@@ -2614,7 +2614,7 @@ namespace SIDEPS.WCFCasos {
         private string NOMPAIS01Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_02CATPROV[] SIDEPS_02CATPROVField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_02CATPROV> SIDEPS_02CATPROVField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2653,7 +2653,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_02CATPROV[] SIDEPS_02CATPROV {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_02CATPROV> SIDEPS_02CATPROV {
             get {
                 return this.SIDEPS_02CATPROVField;
             }
@@ -2691,10 +2691,10 @@ namespace SIDEPS.WCFCasos {
         private string DESESTC06Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_13REGPERS[] SIDEPS_13REGPERSField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_13REGPERS> SIDEPS_13REGPERSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_22REGFAML[] SIDEPS_22REGFAMLField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_22REGFAML> SIDEPS_22REGFAMLField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2733,7 +2733,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_13REGPERS[] SIDEPS_13REGPERS {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_13REGPERS> SIDEPS_13REGPERS {
             get {
                 return this.SIDEPS_13REGPERSField;
             }
@@ -2746,7 +2746,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_22REGFAML[] SIDEPS_22REGFAML {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_22REGFAML> SIDEPS_22REGFAML {
             get {
                 return this.SIDEPS_22REGFAMLField;
             }
@@ -2784,10 +2784,10 @@ namespace SIDEPS.WCFCasos {
         private string DESNEDU09Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_13REGPERS[] SIDEPS_13REGPERSField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_13REGPERS> SIDEPS_13REGPERSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_22REGFAML[] SIDEPS_22REGFAMLField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_22REGFAML> SIDEPS_22REGFAMLField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2826,7 +2826,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_13REGPERS[] SIDEPS_13REGPERS {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_13REGPERS> SIDEPS_13REGPERS {
             get {
                 return this.SIDEPS_13REGPERSField;
             }
@@ -2839,7 +2839,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_22REGFAML[] SIDEPS_22REGFAML {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_22REGFAML> SIDEPS_22REGFAML {
             get {
                 return this.SIDEPS_22REGFAMLField;
             }
@@ -2877,7 +2877,7 @@ namespace SIDEPS.WCFCasos {
         private string DESSOLI10Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_13REGPERS[] SIDEPS_13REGPERSField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_13REGPERS> SIDEPS_13REGPERSField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2916,7 +2916,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_13REGPERS[] SIDEPS_13REGPERS {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_13REGPERS> SIDEPS_13REGPERS {
             get {
                 return this.SIDEPS_13REGPERSField;
             }
@@ -2954,7 +2954,7 @@ namespace SIDEPS.WCFCasos {
         private string DESRELG11Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_13REGPERS[] SIDEPS_13REGPERSField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_13REGPERS> SIDEPS_13REGPERSField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2993,7 +2993,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_13REGPERS[] SIDEPS_13REGPERS {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_13REGPERS> SIDEPS_13REGPERS {
             get {
                 return this.SIDEPS_13REGPERSField;
             }
@@ -3182,7 +3182,7 @@ namespace SIDEPS.WCFCasos {
         private SIDEPS.WCFCasos.SIDEPS_21CATORGS SIDEPS_21CATORGSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_23CATFINA[] SIDEPS_23CATFINAField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_23CATFINA> SIDEPS_23CATFINAField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3403,7 +3403,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_23CATFINA[] SIDEPS_23CATFINA {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_23CATFINA> SIDEPS_23CATFINA {
             get {
                 return this.SIDEPS_23CATFINAField;
             }
@@ -3441,7 +3441,7 @@ namespace SIDEPS.WCFCasos {
         private string DESPARE12Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_22REGFAML[] SIDEPS_22REGFAMLField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_22REGFAML> SIDEPS_22REGFAMLField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3480,7 +3480,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_22REGFAML[] SIDEPS_22REGFAML {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_22REGFAML> SIDEPS_22REGFAML {
             get {
                 return this.SIDEPS_22REGFAMLField;
             }
@@ -3518,10 +3518,10 @@ namespace SIDEPS.WCFCasos {
         private string DESENFR15Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_16REGASPS[] SIDEPS_16REGASPSField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_16REGASPS> SIDEPS_16REGASPSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_22REGFAML[] SIDEPS_22REGFAMLField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_22REGFAML> SIDEPS_22REGFAMLField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3560,7 +3560,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_16REGASPS[] SIDEPS_16REGASPS {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_16REGASPS> SIDEPS_16REGASPS {
             get {
                 return this.SIDEPS_16REGASPSField;
             }
@@ -3573,7 +3573,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_22REGFAML[] SIDEPS_22REGFAML {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_22REGFAML> SIDEPS_22REGFAML {
             get {
                 return this.SIDEPS_22REGFAMLField;
             }
@@ -3611,7 +3611,7 @@ namespace SIDEPS.WCFCasos {
         private string DESORGS21Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_22REGFAML[] SIDEPS_22REGFAMLField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_22REGFAML> SIDEPS_22REGFAMLField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3650,7 +3650,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_22REGFAML[] SIDEPS_22REGFAML {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_22REGFAML> SIDEPS_22REGFAML {
             get {
                 return this.SIDEPS_22REGFAMLField;
             }
@@ -3688,7 +3688,7 @@ namespace SIDEPS.WCFCasos {
         private string DESSEGU14Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_16REGASPS[] SIDEPS_16REGASPSField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_16REGASPS> SIDEPS_16REGASPSField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3727,7 +3727,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_16REGASPS[] SIDEPS_16REGASPS {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_16REGASPS> SIDEPS_16REGASPS {
             get {
                 return this.SIDEPS_16REGASPSField;
             }
@@ -3765,7 +3765,7 @@ namespace SIDEPS.WCFCasos {
         private string DESMATE17Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_20REGVIVI[] SIDEPS_20REGVIVIField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_20REGVIVI> SIDEPS_20REGVIVIField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3804,7 +3804,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_20REGVIVI[] SIDEPS_20REGVIVI {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_20REGVIVI> SIDEPS_20REGVIVI {
             get {
                 return this.SIDEPS_20REGVIVIField;
             }
@@ -3842,7 +3842,7 @@ namespace SIDEPS.WCFCasos {
         private string DESTIPV18Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_20REGVIVI[] SIDEPS_20REGVIVIField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_20REGVIVI> SIDEPS_20REGVIVIField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3881,7 +3881,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_20REGVIVI[] SIDEPS_20REGVIVI {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_20REGVIVI> SIDEPS_20REGVIVI {
             get {
                 return this.SIDEPS_20REGVIVIField;
             }
@@ -3919,7 +3919,7 @@ namespace SIDEPS.WCFCasos {
         private string DESESTV19Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_20REGVIVI[] SIDEPS_20REGVIVIField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_20REGVIVI> SIDEPS_20REGVIVIField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3958,7 +3958,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_20REGVIVI[] SIDEPS_20REGVIVI {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_20REGVIVI> SIDEPS_20REGVIVI {
             get {
                 return this.SIDEPS_20REGVIVIField;
             }
@@ -3996,7 +3996,7 @@ namespace SIDEPS.WCFCasos {
         private string DESAYUD26Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_27TIPAYUD[] SIDEPS_27TIPAYUDField;
+        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_27TIPAYUD> SIDEPS_27TIPAYUDField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -4035,7 +4035,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_27TIPAYUD[] SIDEPS_27TIPAYUD {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_27TIPAYUD> SIDEPS_27TIPAYUD {
             get {
                 return this.SIDEPS_27TIPAYUDField;
             }
@@ -4195,6 +4195,256 @@ namespace SIDEPS.WCFCasos {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SP_CON_REGDIAC_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class SP_CON_REGDIAC_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CODCANT03Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CODDIAC04Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ESTDIAC04Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LUGDIAC04Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NOMDIAC04Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TELDIAC04Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CODCANT03 {
+            get {
+                return this.CODCANT03Field;
+            }
+            set {
+                if ((this.CODCANT03Field.Equals(value) != true)) {
+                    this.CODCANT03Field = value;
+                    this.RaisePropertyChanged("CODCANT03");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CODDIAC04 {
+            get {
+                return this.CODDIAC04Field;
+            }
+            set {
+                if ((this.CODDIAC04Field.Equals(value) != true)) {
+                    this.CODDIAC04Field = value;
+                    this.RaisePropertyChanged("CODDIAC04");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ESTDIAC04 {
+            get {
+                return this.ESTDIAC04Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ESTDIAC04Field, value) != true)) {
+                    this.ESTDIAC04Field = value;
+                    this.RaisePropertyChanged("ESTDIAC04");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LUGDIAC04 {
+            get {
+                return this.LUGDIAC04Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LUGDIAC04Field, value) != true)) {
+                    this.LUGDIAC04Field = value;
+                    this.RaisePropertyChanged("LUGDIAC04");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NOMDIAC04 {
+            get {
+                return this.NOMDIAC04Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NOMDIAC04Field, value) != true)) {
+                    this.NOMDIAC04Field = value;
+                    this.RaisePropertyChanged("NOMDIAC04");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TELDIAC04 {
+            get {
+                return this.TELDIAC04Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TELDIAC04Field, value) != true)) {
+                    this.TELDIAC04Field = value;
+                    this.RaisePropertyChanged("TELDIAC04");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SP_CONXID_REGDIAC_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class SP_CONXID_REGDIAC_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CODCANT03Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CODDIAC04Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ESTDIAC04Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LUGDIAC04Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NOMDIAC04Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TELDIAC04Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CODCANT03 {
+            get {
+                return this.CODCANT03Field;
+            }
+            set {
+                if ((this.CODCANT03Field.Equals(value) != true)) {
+                    this.CODCANT03Field = value;
+                    this.RaisePropertyChanged("CODCANT03");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CODDIAC04 {
+            get {
+                return this.CODDIAC04Field;
+            }
+            set {
+                if ((this.CODDIAC04Field.Equals(value) != true)) {
+                    this.CODDIAC04Field = value;
+                    this.RaisePropertyChanged("CODDIAC04");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ESTDIAC04 {
+            get {
+                return this.ESTDIAC04Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ESTDIAC04Field, value) != true)) {
+                    this.ESTDIAC04Field = value;
+                    this.RaisePropertyChanged("ESTDIAC04");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LUGDIAC04 {
+            get {
+                return this.LUGDIAC04Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LUGDIAC04Field, value) != true)) {
+                    this.LUGDIAC04Field = value;
+                    this.RaisePropertyChanged("LUGDIAC04");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NOMDIAC04 {
+            get {
+                return this.NOMDIAC04Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NOMDIAC04Field, value) != true)) {
+                    this.NOMDIAC04Field = value;
+                    this.RaisePropertyChanged("NOMDIAC04");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TELDIAC04 {
+            get {
+                return this.TELDIAC04Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TELDIAC04Field, value) != true)) {
+                    this.TELDIAC04Field = value;
+                    this.RaisePropertyChanged("TELDIAC04");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WCFCasos.ICasosSvc")]
     public interface ICasosSvc {
@@ -4242,16 +4492,52 @@ namespace SIDEPS.WCFCasos {
         System.Threading.Tasks.Task<int> SP_Ins_EgresosAsync(SIDEPS.WCFCasos.SIDEPS_24REGEGRF egresos, int codigoCaso);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Con_Religiones", ReplyAction="http://tempuri.org/ICasosSvc/SP_Con_ReligionesResponse")]
-        SIDEPS.WCFCasos.SP_CON_CATRELG_Result[] SP_Con_Religiones();
+        System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_CATRELG_Result> SP_Con_Religiones();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Con_Religiones", ReplyAction="http://tempuri.org/ICasosSvc/SP_Con_ReligionesResponse")]
-        System.Threading.Tasks.Task<SIDEPS.WCFCasos.SP_CON_CATRELG_Result[]> SP_Con_ReligionesAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_CATRELG_Result>> SP_Con_ReligionesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Con_Cantones", ReplyAction="http://tempuri.org/ICasosSvc/SP_Con_CantonesResponse")]
-        SIDEPS.WCFCasos.SP_CON_CATCANT_Result[] SP_Con_Cantones();
+        System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_CATCANT_Result> SP_Con_Cantones();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Con_Cantones", ReplyAction="http://tempuri.org/ICasosSvc/SP_Con_CantonesResponse")]
-        System.Threading.Tasks.Task<SIDEPS.WCFCasos.SP_CON_CATCANT_Result[]> SP_Con_CantonesAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_CATCANT_Result>> SP_Con_CantonesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/Diaconia", ReplyAction="http://tempuri.org/ICasosSvc/DiaconiaResponse")]
+        System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_04REGDIAC> Diaconia();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/Diaconia", ReplyAction="http://tempuri.org/ICasosSvc/DiaconiaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_04REGDIAC>> DiaconiaAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/conDiaconias", ReplyAction="http://tempuri.org/ICasosSvc/conDiaconiasResponse")]
+        System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_REGDIAC_Result> conDiaconias();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/conDiaconias", ReplyAction="http://tempuri.org/ICasosSvc/conDiaconiasResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_REGDIAC_Result>> conDiaconiasAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/conDiaconiasXId", ReplyAction="http://tempuri.org/ICasosSvc/conDiaconiasXIdResponse")]
+        SIDEPS.WCFCasos.SP_CONXID_REGDIAC_Result conDiaconiasXId(int pid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/conDiaconiasXId", ReplyAction="http://tempuri.org/ICasosSvc/conDiaconiasXIdResponse")]
+        System.Threading.Tasks.Task<SIDEPS.WCFCasos.SP_CONXID_REGDIAC_Result> conDiaconiasXIdAsync(int pid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/insDiaconia", ReplyAction="http://tempuri.org/ICasosSvc/insDiaconiaResponse")]
+        bool insDiaconia(SIDEPS.WCFCasos.SIDEPS_04REGDIAC pobjDiac);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/insDiaconia", ReplyAction="http://tempuri.org/ICasosSvc/insDiaconiaResponse")]
+        System.Threading.Tasks.Task<bool> insDiaconiaAsync(SIDEPS.WCFCasos.SIDEPS_04REGDIAC pobjDiac);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/modDiaconia", ReplyAction="http://tempuri.org/ICasosSvc/modDiaconiaResponse")]
+        bool modDiaconia(SIDEPS.WCFCasos.SIDEPS_04REGDIAC pobjDiac);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/modDiaconia", ReplyAction="http://tempuri.org/ICasosSvc/modDiaconiaResponse")]
+        System.Threading.Tasks.Task<bool> modDiaconiaAsync(SIDEPS.WCFCasos.SIDEPS_04REGDIAC pobjDiac);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/delDiaconia", ReplyAction="http://tempuri.org/ICasosSvc/delDiaconiaResponse")]
+        bool delDiaconia(SIDEPS.WCFCasos.SIDEPS_04REGDIAC pobjDiac);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/delDiaconia", ReplyAction="http://tempuri.org/ICasosSvc/delDiaconiaResponse")]
+        System.Threading.Tasks.Task<bool> delDiaconiaAsync(SIDEPS.WCFCasos.SIDEPS_04REGDIAC pobjDiac);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -4337,20 +4623,68 @@ namespace SIDEPS.WCFCasos {
             return base.Channel.SP_Ins_EgresosAsync(egresos, codigoCaso);
         }
         
-        public SIDEPS.WCFCasos.SP_CON_CATRELG_Result[] SP_Con_Religiones() {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_CATRELG_Result> SP_Con_Religiones() {
             return base.Channel.SP_Con_Religiones();
         }
         
-        public System.Threading.Tasks.Task<SIDEPS.WCFCasos.SP_CON_CATRELG_Result[]> SP_Con_ReligionesAsync() {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_CATRELG_Result>> SP_Con_ReligionesAsync() {
             return base.Channel.SP_Con_ReligionesAsync();
         }
         
-        public SIDEPS.WCFCasos.SP_CON_CATCANT_Result[] SP_Con_Cantones() {
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_CATCANT_Result> SP_Con_Cantones() {
             return base.Channel.SP_Con_Cantones();
         }
         
-        public System.Threading.Tasks.Task<SIDEPS.WCFCasos.SP_CON_CATCANT_Result[]> SP_Con_CantonesAsync() {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_CATCANT_Result>> SP_Con_CantonesAsync() {
             return base.Channel.SP_Con_CantonesAsync();
+        }
+        
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_04REGDIAC> Diaconia() {
+            return base.Channel.Diaconia();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_04REGDIAC>> DiaconiaAsync() {
+            return base.Channel.DiaconiaAsync();
+        }
+        
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_REGDIAC_Result> conDiaconias() {
+            return base.Channel.conDiaconias();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_REGDIAC_Result>> conDiaconiasAsync() {
+            return base.Channel.conDiaconiasAsync();
+        }
+        
+        public SIDEPS.WCFCasos.SP_CONXID_REGDIAC_Result conDiaconiasXId(int pid) {
+            return base.Channel.conDiaconiasXId(pid);
+        }
+        
+        public System.Threading.Tasks.Task<SIDEPS.WCFCasos.SP_CONXID_REGDIAC_Result> conDiaconiasXIdAsync(int pid) {
+            return base.Channel.conDiaconiasXIdAsync(pid);
+        }
+        
+        public bool insDiaconia(SIDEPS.WCFCasos.SIDEPS_04REGDIAC pobjDiac) {
+            return base.Channel.insDiaconia(pobjDiac);
+        }
+        
+        public System.Threading.Tasks.Task<bool> insDiaconiaAsync(SIDEPS.WCFCasos.SIDEPS_04REGDIAC pobjDiac) {
+            return base.Channel.insDiaconiaAsync(pobjDiac);
+        }
+        
+        public bool modDiaconia(SIDEPS.WCFCasos.SIDEPS_04REGDIAC pobjDiac) {
+            return base.Channel.modDiaconia(pobjDiac);
+        }
+        
+        public System.Threading.Tasks.Task<bool> modDiaconiaAsync(SIDEPS.WCFCasos.SIDEPS_04REGDIAC pobjDiac) {
+            return base.Channel.modDiaconiaAsync(pobjDiac);
+        }
+        
+        public bool delDiaconia(SIDEPS.WCFCasos.SIDEPS_04REGDIAC pobjDiac) {
+            return base.Channel.delDiaconia(pobjDiac);
+        }
+        
+        public System.Threading.Tasks.Task<bool> delDiaconiaAsync(SIDEPS.WCFCasos.SIDEPS_04REGDIAC pobjDiac) {
+            return base.Channel.delDiaconiaAsync(pobjDiac);
         }
     }
 }

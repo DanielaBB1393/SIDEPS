@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Implementacion\CategoriasAD.cs" />
+    <Compile Include="Implementacion\DiaconiasAD.cs" />
     <Compile Include="Implementacion\EgresosAD.cs" />
     <Compile Include="Implementacion\GrupoFamiliarAD.cs" />
     <Compile Include="Implementacion\UsuariosAD.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Interfaces\IAspectoSaludAD.cs" />
     <Compile Include="Interfaces\ICasosAD.cs" />
     <Compile Include="Interfaces\ICategoriasAD.cs" />
+    <Compile Include="Interfaces\IDiaconiaAD.cs" />
     <Compile Include="Interfaces\IEgresosAD.cs" />
     <Compile Include="Interfaces\IPersonasAD.cs" />
     <Compile Include="Interfaces\IGrupoFamiliarAD.cs" />

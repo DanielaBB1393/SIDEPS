@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Entidades;
+using System.Collections.Generic;
 using System.ServiceModel;
-using Entidades;
 
 [ServiceContract]
 public interface ICasosSvc
@@ -31,4 +31,22 @@ public interface ICasosSvc
 
     [OperationContract]
     List<SP_CON_CATCANT_Result> SP_Con_Cantones();
+
+    [OperationContract]
+    List<SIDEPS_04REGDIAC> Diaconia();
+
+    [OperationContract]
+    List<SP_CON_REGDIAC_Result> conDiaconias();
+
+    [OperationContract]
+    SP_CONXID_REGDIAC_Result conDiaconiasXId(int pid);
+
+    [OperationContract]
+    bool insDiaconia(SIDEPS_04REGDIAC pobjDiac);
+
+    [OperationContract]
+    bool modDiaconia(SIDEPS_04REGDIAC pobjDiac);
+
+    [OperationContract]
+    bool delDiaconia(SIDEPS_04REGDIAC pobjDiac);
 }

@@ -128,6 +128,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Controllers\CasosController.cs" />
+    <Compile Include="Controllers\DiaconiaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -135,6 +136,8 @@
     <Compile Include="Models\AspectoSalud_M.cs" />
     <Compile Include="Models\Caso_M.cs" />
     <Compile Include="Models\Categoria.cs" />
+    <Compile Include="Models\Combos.cs" />
+    <Compile Include="Models\Diaconia_M.cs" />
     <Compile Include="Models\Egresos_M.cs" />
     <Compile Include="Models\MiembroFamiliar_M.cs" />
     <Compile Include="Models\MotivoSolicitud_M.cs" />
@@ -172,10 +175,19 @@
     <None Include="Connected Services\WCFCasos\CasosSvc2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Connected Services\WCFCasos\SIDEPS.WCFCasos.SP_CON_CATRELG_Result.datasource">
+    <Content Include="Connected Services\WCFCasos\SIDEPS.WCFCasos.SIDEPS_04REGDIAC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WCFCasos\SIDEPS.WCFCasos.SP_CONXID_REGDIAC_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\WCFCasos\SIDEPS.WCFCasos.SP_CON_CATCANT_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WCFCasos\SIDEPS.WCFCasos.SP_CON_CATRELG_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WCFCasos\SIDEPS.WCFCasos.SP_CON_REGDIAC_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -213,6 +225,10 @@
     <Content Include="Views\Casos\GrupoFamiliar.cshtml" />
     <Content Include="Views\Casos\Egresos.cshtml" />
     <Content Include="Views\Casos\MotivoSolicitud.cshtml" />
+    <Content Include="Views\Diaconia\AgregarDiaconia.cshtml" />
+    <Content Include="Views\Diaconia\DetalleDiaconias.cshtml" />
+    <Content Include="Views\Diaconia\listarDiaconias.cshtml" />
+    <Content Include="Views\Diaconia\ModificarDiaconias.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

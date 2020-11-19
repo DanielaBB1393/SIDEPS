@@ -126,4 +126,84 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Diaconia">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiaconiaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="DiaconiaResult" nillable="true" type="q10:ArrayOfSIDEPS_04REGDIAC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="conDiaconias">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="conDiaconiasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="conDiaconiasResult" nillable="true" type="q11:ArrayOfSP_CON_REGDIAC_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="conDiaconiasXId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="conDiaconiasXIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="conDiaconiasXIdResult" nillable="true" type="q12:SP_CONXID_REGDIAC_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insDiaconia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="pobjDiac" nillable="true" type="q13:SIDEPS_04REGDIAC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insDiaconiaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insDiaconiaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="modDiaconia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="pobjDiac" nillable="true" type="q14:SIDEPS_04REGDIAC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="modDiaconiaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="modDiaconiaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delDiaconia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="pobjDiac" nillable="true" type="q15:SIDEPS_04REGDIAC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delDiaconiaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="delDiaconiaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

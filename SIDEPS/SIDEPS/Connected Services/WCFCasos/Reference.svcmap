@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="46880006-f900-4b8a-bafa-56d61e3e33b4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2dc869f4-04f6-448b-9994-e60edecb97bb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -9,7 +9,9 @@
     <GenerateInternalTypes>false</GenerateInternalTypes>
     <GenerateMessageContracts>false</GenerateMessageContracts>
     <NamespaceMappings />
-    <CollectionMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
     <GenerateSerializableTypes>true</GenerateSerializableTypes>
     <Serializer>Auto</Serializer>
     <UseSerializerForFaults>true</UseSerializerForFaults>
@@ -22,11 +24,11 @@
     <MetadataSource Address="http://localhost:50087/CasosSvc.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CasosSvc.xsd" MetadataType="Schema" ID="e6d87f39-00a8-4a2f-a5aa-0fb08a20ff92" SourceId="1" SourceUrl="http://localhost:50087/CasosSvc.svc?xsd=xsd2" />
-    <MetadataFile FileName="CasosSvc1.xsd" MetadataType="Schema" ID="5ee7c55a-9bd2-4bc2-9f3c-92818d510145" SourceId="1" SourceUrl="http://localhost:50087/CasosSvc.svc?xsd=xsd0" />
-    <MetadataFile FileName="CasosSvc.wsdl" MetadataType="Wsdl" ID="2764c7e2-d4e4-4882-beef-299ce4156b1b" SourceId="1" SourceUrl="http://localhost:50087/CasosSvc.svc?wsdl" />
-    <MetadataFile FileName="CasosSvc.disco" MetadataType="Disco" ID="4f42b925-2a06-4da9-9930-3b42d14e5aa7" SourceId="1" SourceUrl="http://localhost:50087/CasosSvc.svc?disco" />
-    <MetadataFile FileName="CasosSvc2.xsd" MetadataType="Schema" ID="8cc27d30-c622-4d60-a86f-6f009ca62e14" SourceId="1" SourceUrl="http://localhost:50087/CasosSvc.svc?xsd=xsd1" />
+    <MetadataFile FileName="CasosSvc.xsd" MetadataType="Schema" ID="e4cd4a0d-5c57-4040-a2d6-7cfce2332329" SourceId="1" SourceUrl="http://localhost:50087/CasosSvc.svc?xsd=xsd2" />
+    <MetadataFile FileName="CasosSvc1.xsd" MetadataType="Schema" ID="98aba717-74b6-4648-88bd-57dabc224992" SourceId="1" SourceUrl="http://localhost:50087/CasosSvc.svc?xsd=xsd0" />
+    <MetadataFile FileName="CasosSvc.wsdl" MetadataType="Wsdl" ID="2284ac2e-8745-4e13-a32b-983ef6949acf" SourceId="1" SourceUrl="http://localhost:50087/CasosSvc.svc?wsdl" />
+    <MetadataFile FileName="CasosSvc.disco" MetadataType="Disco" ID="93bcfd0d-8acc-4ba4-b0ef-8bce230fdfff" SourceId="1" SourceUrl="http://localhost:50087/CasosSvc.svc?disco" />
+    <MetadataFile FileName="CasosSvc2.xsd" MetadataType="Schema" ID="7b049346-cda0-4210-abc2-7769c5276473" SourceId="1" SourceUrl="http://localhost:50087/CasosSvc.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
