@@ -1,10 +1,11 @@
 ﻿using SIDEPS.WCFCasos;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace SIDEPS.Models
 {
-    public class Persona_M
+    public class DatosPersonales_M
     {
         [DisplayName("Cédula")]
         public string CEDPERS13 { get; set; }
@@ -33,11 +34,15 @@ namespace SIDEPS.Models
         [DisplayName("Opinion 2")]
         public string OANPERS13 { get; set; }
 
-        public Persona_M()
+        public List<Categoria> Religiones { get; set; } = new List<Categoria>();
+        public List<Categoria> Cantones { get; set; } = new List<Categoria>();
+        public List<Categoria> EstadosCiviles { get; set; } = new List<Categoria>();
+
+        public DatosPersonales_M()
         {
         }
 
-        public Persona_M(SIDEPS_13REGPERS persona)
+        public DatosPersonales_M(SIDEPS_13REGPERS persona)
         {
             this.CEDPERS13 = persona.CEDPERS13;
             this.CODESTC06 = persona.CODESTC06;

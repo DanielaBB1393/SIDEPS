@@ -17,19 +17,19 @@ namespace SIDEPS.Models
         [DisplayName("Monto vivienda")]
         public Nullable<decimal> MTOVIVI20 { get; set; }
         [DisplayName("Numero aposentos")]
-        public int NAPVIVI20 { get; set; }
+        public int? NAPVIVI20 { get; set; }
         [DisplayName("Servicio cable")]
-        public bool SRCVIVI20 { get; set; }
+        public bool? SRCVIVI20 { get; set; }
         [DisplayName("Servicio internet")]
-        public bool SRIVIVI20 { get; set; }
+        public bool? SRIVIVI20 { get; set; }
         [DisplayName("Letrina")]
-        public bool SRLVIVI20 { get; set; }
+        public bool? SRLVIVI20 { get; set; }
         [DisplayName("Servicio municipalidad")]
-        public bool SRMVIVI20 { get; set; }
+        public bool? SRMVIVI20 { get; set; }
         [DisplayName("Recolección basura")]
-        public bool SRBVIVI20 { get; set; }
+        public bool? SRBVIVI20 { get; set; }
         [DisplayName("Electricidad")]
-        public bool SREVIVI20 { get; set; }
+        public bool? SREVIVI20 { get; set; }
 
         public Vivienda_M()
         {

@@ -533,5 +533,25 @@ namespace AccesoDatos
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_MOD_REGUSRO", cEDUSRO07Parameter, nOMUSRO07Parameter, pAPUSRO07Parameter, sAPUSRO07Parameter, cODCANT03Parameter, cODDIAC04Parameter, cODUSRO05Parameter, eSTUSRO07Parameter, dIRUSRO07Parameter, nACUSRO07Parameter, cNTUSRO07Parameter, fENUSRO07Parameter);
         }
+    
+        public virtual ObjectResult<SP_CON_CATRELG_Result> SP_CON_CATRELG()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATRELG_Result>("SP_CON_CATRELG");
+        }
+    
+        public virtual ObjectResult<SP_CON_CATCANT_Result> SP_CON_CATCANT()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATCANT_Result>("SP_CON_CATCANT");
+        }
+    
+        public virtual ObjectResult<SP_CON_CATESTC_Result> SP_CON_CATESTC()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATESTC_Result>("SP_CON_CATESTC");
+        }
+    
+        public virtual ObjectResult<SP_CON_CATNEDU_Result> SP_CON_CATNEDU()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATNEDU_Result>("SP_CON_CATNEDU");
+        }
     }
 }

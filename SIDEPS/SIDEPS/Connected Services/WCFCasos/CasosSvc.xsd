@@ -316,17 +316,17 @@
       <xs:element minOccurs="0" name="CODTIPV18" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="CODVIVI20" type="xs:int" />
       <xs:element minOccurs="0" name="MTOVIVI20" nillable="true" type="xs:decimal" />
-      <xs:element minOccurs="0" name="NAPVIVI20" type="xs:int" />
+      <xs:element minOccurs="0" name="NAPVIVI20" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="SIDEPS_17CATMATE" nillable="true" type="tns:SIDEPS_17CATMATE" />
       <xs:element minOccurs="0" name="SIDEPS_18TIPVIVI" nillable="true" type="tns:SIDEPS_18TIPVIVI" />
       <xs:element minOccurs="0" name="SIDEPS_19ESTVIVI" nillable="true" type="tns:SIDEPS_19ESTVIVI" />
       <xs:element minOccurs="0" name="SIDEPS_25REGCASO" nillable="true" type="tns:ArrayOfSIDEPS_25REGCASO" />
-      <xs:element minOccurs="0" name="SRBVIVI20" type="xs:boolean" />
-      <xs:element minOccurs="0" name="SRCVIVI20" type="xs:boolean" />
-      <xs:element minOccurs="0" name="SREVIVI20" type="xs:boolean" />
-      <xs:element minOccurs="0" name="SRIVIVI20" type="xs:boolean" />
-      <xs:element minOccurs="0" name="SRLVIVI20" type="xs:boolean" />
-      <xs:element minOccurs="0" name="SRMVIVI20" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SRBVIVI20" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SRCVIVI20" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SREVIVI20" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SRIVIVI20" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SRLVIVI20" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SRMVIVI20" nillable="true" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SIDEPS_20REGVIVI" nillable="true" type="tns:SIDEPS_20REGVIVI" />
@@ -420,4 +420,31 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SIDEPS_28REGHIS" nillable="true" type="tns:SIDEPS_28REGHIS" />
+  <xs:complexType name="ArrayOfSP_CON_CATRELG_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SP_CON_CATRELG_Result" nillable="true" type="tns:SP_CON_CATRELG_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSP_CON_CATRELG_Result" nillable="true" type="tns:ArrayOfSP_CON_CATRELG_Result" />
+  <xs:complexType name="SP_CON_CATRELG_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODRELG11" type="xs:int" />
+      <xs:element minOccurs="0" name="DESRELG11" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SP_CON_CATRELG_Result" nillable="true" type="tns:SP_CON_CATRELG_Result" />
+  <xs:complexType name="ArrayOfSP_CON_CATCANT_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SP_CON_CATCANT_Result" nillable="true" type="tns:SP_CON_CATCANT_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSP_CON_CATCANT_Result" nillable="true" type="tns:ArrayOfSP_CON_CATCANT_Result" />
+  <xs:complexType name="SP_CON_CATCANT_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODCANT03" type="xs:int" />
+      <xs:element minOccurs="0" name="CODPROV02" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NOMCANT03" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SP_CON_CATCANT_Result" nillable="true" type="tns:SP_CON_CATCANT_Result" />
 </xs:schema>

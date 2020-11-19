@@ -134,10 +134,11 @@
     </Compile>
     <Compile Include="Models\AspectoSalud_M.cs" />
     <Compile Include="Models\Caso_M.cs" />
+    <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Egresos_M.cs" />
     <Compile Include="Models\MiembroFamiliar_M.cs" />
     <Compile Include="Models\MotivoSolicitud_M.cs" />
-    <Compile Include="Models\Persona_M.cs" />
+    <Compile Include="Models\DatosPersonales_M.cs" />
     <Compile Include="Models\ProblemasSociales_M.cs" />
     <Compile Include="Models\GrupoFamiliar_M.cs" />
     <Compile Include="Models\Vivienda_M.cs" />
@@ -171,6 +172,12 @@
     <None Include="Connected Services\WCFCasos\CasosSvc2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Connected Services\WCFCasos\SIDEPS.WCFCasos.SP_CON_CATRELG_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WCFCasos\SIDEPS.WCFCasos.SP_CON_CATCANT_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

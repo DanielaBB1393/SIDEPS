@@ -1,4 +1,4 @@
-﻿@model SIDEPS.Models.Persona_M
+﻿@model SIDEPS.Models.DatosPersonales_M
 
 @{
     ViewBag.Title = "Datos Personales";
@@ -66,7 +66,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.CODNEDU09, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.CODNEDU09, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.CODNEDU09, new SelectList(Model.EstadosCiviles, "Codigo", "Descripcion"), new { @class = "form-control" } )
             @Html.ValidationMessageFor(model => model.CODNEDU09, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -74,7 +74,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.CODRELG11, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.CODRELG11, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.DropDownListFor(model => model.CODRELG11, new SelectList(Model.Religiones, "Codigo", "Descripcion"), new { @class = "form-control" } )
             @Html.ValidationMessageFor(model => model.CODRELG11, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -82,7 +82,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.CODCANT03, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.CODCANT03, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.DropDownListFor(model => model.CODCANT03, new SelectList(Model.Cantones, "Codigo", "Descripcion"), new { @class = "form-control" } )
             @Html.ValidationMessageFor(model => model.CODCANT03, "", new { @class = "text-danger" })
         </div>
     </div>

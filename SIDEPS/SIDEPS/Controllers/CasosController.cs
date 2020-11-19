@@ -26,11 +26,16 @@ namespace SIDEPS.Controllers
         //-------
         public ActionResult DatosPersonales()
         {
-            return View();
+            DatosPersonales_M modelo = new DatosPersonales_M
+            {
+                Religiones = this.casosSvc.SP_Con_Religiones().Select(r => new Categoria { Codigo = r.CODRELG11, Descripcion = r.DESRELG11 }).ToList(),
+                Cantones = this.casosSvc.SP_Con_Cantones().Select(r => new Categoria { Codigo = r.CODCANT03, Descripcion = r.NOMCANT03 }).ToList(),
+            };
+            return View(modelo);
         }
 
         [HttpPost]
-        public ActionResult DatosPersonales(Persona_M persona)
+        public ActionResult DatosPersonales(DatosPersonales_M persona)
         {
             var resultadoP = this.casosSvc.SP_Ins_Persona(persona.ConvertirEntidad());
             if (resultadoP)

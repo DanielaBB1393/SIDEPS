@@ -1,6 +1,7 @@
-﻿using LogicaNegocios.Implementacion;
+﻿using Entidades;
+using LogicaNegocios.Implementacion;
 using LogicaNegocios.Interfaces;
-using Entidades;
+using System.Collections.Generic;
 
 public class CasosSvc : ICasosSvc
 {
@@ -10,6 +11,7 @@ public class CasosSvc : ICasosSvc
     private readonly IViviendaLN viviendaLN = new ViviendaLN();
     private readonly IGrupoFamiliarLN situacionFinancieraLN = new GrupoFamiliarLN();
     private readonly IEgresosLN egresosLN = new EgresosLN();
+    private readonly ICategoriasLN categoriasLN = new CategoriasLN();
 
     public int SP_Ins_Caso(SIDEPS_25REGCASO caso)
     {
@@ -46,6 +48,7 @@ public class CasosSvc : ICasosSvc
             throw;
         }
     }
+
     public int SP_Ins_AspectoSalud(SIDEPS_16REGASPS aspecto, int codigoCaso)
     {
         try
@@ -87,6 +90,30 @@ public class CasosSvc : ICasosSvc
         try
         {
             return this.egresosLN.SP_Ins_Egresos(egresos, codigoCaso);
+        }
+        catch
+        {
+            throw;
+        }
+    }
+
+    public List<SP_CON_CATRELG_Result> SP_Con_Religiones()
+    {
+        try
+        {
+            return this.categoriasLN.SP_Con_Religiones();
+        }
+        catch
+        {
+            throw;
+        }
+    }
+
+    public List<SP_CON_CATCANT_Result> SP_Con_Cantones()
+    {
+        try
+        {
+            return this.categoriasLN.SP_Con_Cantones();
         }
         catch
         {

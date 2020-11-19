@@ -1,4 +1,5 @@
-﻿using System.ServiceModel;
+﻿using System.Collections.Generic;
+using System.ServiceModel;
 using Entidades;
 
 [ServiceContract]
@@ -24,4 +25,10 @@ public interface ICasosSvc
 
     [OperationContract]
     int SP_Ins_Egresos(SIDEPS_24REGEGRF egresos, int codigoCaso);
+
+    [OperationContract]
+    List<SP_CON_CATRELG_Result> SP_Con_Religiones();
+
+    [OperationContract]
+    List<SP_CON_CATCANT_Result> SP_Con_Cantones();
 }

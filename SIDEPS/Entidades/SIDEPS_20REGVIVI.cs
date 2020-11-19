@@ -25,13 +25,13 @@ namespace Entidades
         public Nullable<int> CODESTV19 { get; set; }
         public Nullable<int> CODMATE17 { get; set; }
         public Nullable<decimal> MTOVIVI20 { get; set; }
-        public int NAPVIVI20 { get; set; }
-        public bool SRCVIVI20 { get; set; }
-        public bool SRIVIVI20 { get; set; }
-        public bool SRLVIVI20 { get; set; }
-        public bool SRMVIVI20 { get; set; }
-        public bool SRBVIVI20 { get; set; }
-        public bool SREVIVI20 { get; set; }
+        public Nullable<int> NAPVIVI20 { get; set; }
+        public Nullable<bool> SRCVIVI20 { get; set; }
+        public Nullable<bool> SRIVIVI20 { get; set; }
+        public Nullable<bool> SRLVIVI20 { get; set; }
+        public Nullable<bool> SRMVIVI20 { get; set; }
+        public Nullable<bool> SRBVIVI20 { get; set; }
+        public Nullable<bool> SREVIVI20 { get; set; }
     
         public virtual SIDEPS_17CATMATE SIDEPS_17CATMATE { get; set; }
         public virtual SIDEPS_18TIPVIVI SIDEPS_18TIPVIVI { get; set; }

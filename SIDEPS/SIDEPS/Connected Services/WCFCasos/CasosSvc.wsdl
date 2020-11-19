@@ -49,6 +49,18 @@
   <wsdl:message name="ICasosSvc_SP_Ins_Egresos_OutputMessage">
     <wsdl:part name="parameters" element="tns:SP_Ins_EgresosResponse" />
   </wsdl:message>
+  <wsdl:message name="ICasosSvc_SP_Con_Religiones_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_Religiones" />
+  </wsdl:message>
+  <wsdl:message name="ICasosSvc_SP_Con_Religiones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_ReligionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICasosSvc_SP_Con_Cantones_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_Cantones" />
+  </wsdl:message>
+  <wsdl:message name="ICasosSvc_SP_Con_Cantones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_CantonesResponse" />
+  </wsdl:message>
   <wsdl:portType name="ICasosSvc">
     <wsdl:operation name="SP_Ins_Caso">
       <wsdl:input wsaw:Action="http://tempuri.org/ICasosSvc/SP_Ins_Caso" message="tns:ICasosSvc_SP_Ins_Caso_InputMessage" />
@@ -77,6 +89,14 @@
     <wsdl:operation name="SP_Ins_Egresos">
       <wsdl:input wsaw:Action="http://tempuri.org/ICasosSvc/SP_Ins_Egresos" message="tns:ICasosSvc_SP_Ins_Egresos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICasosSvc/SP_Ins_EgresosResponse" message="tns:ICasosSvc_SP_Ins_Egresos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_Religiones">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICasosSvc/SP_Con_Religiones" message="tns:ICasosSvc_SP_Con_Religiones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICasosSvc/SP_Con_ReligionesResponse" message="tns:ICasosSvc_SP_Con_Religiones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_Cantones">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICasosSvc/SP_Con_Cantones" message="tns:ICasosSvc_SP_Con_Cantones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICasosSvc/SP_Con_CantonesResponse" message="tns:ICasosSvc_SP_Con_Cantones_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ICasosSvc" type="tns:ICasosSvc">
@@ -137,6 +157,24 @@
     </wsdl:operation>
     <wsdl:operation name="SP_Ins_Egresos">
       <soap:operation soapAction="http://tempuri.org/ICasosSvc/SP_Ins_Egresos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_Religiones">
+      <soap:operation soapAction="http://tempuri.org/ICasosSvc/SP_Con_Religiones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_Cantones">
+      <soap:operation soapAction="http://tempuri.org/ICasosSvc/SP_Con_Cantones" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -1274,7 +1274,7 @@ namespace SIDEPS.WCFCasos {
         private System.Nullable<decimal> MTOVIVI20Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int NAPVIVI20Field;
+        private System.Nullable<int> NAPVIVI20Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private SIDEPS.WCFCasos.SIDEPS_17CATMATE SIDEPS_17CATMATEField;
@@ -1289,22 +1289,22 @@ namespace SIDEPS.WCFCasos {
         private SIDEPS.WCFCasos.SIDEPS_25REGCASO[] SIDEPS_25REGCASOField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool SRBVIVI20Field;
+        private System.Nullable<bool> SRBVIVI20Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool SRCVIVI20Field;
+        private System.Nullable<bool> SRCVIVI20Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool SREVIVI20Field;
+        private System.Nullable<bool> SREVIVI20Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool SRIVIVI20Field;
+        private System.Nullable<bool> SRIVIVI20Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool SRLVIVI20Field;
+        private System.Nullable<bool> SRLVIVI20Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool SRMVIVI20Field;
+        private System.Nullable<bool> SRMVIVI20Field;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1382,7 +1382,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int NAPVIVI20 {
+        public System.Nullable<int> NAPVIVI20 {
             get {
                 return this.NAPVIVI20Field;
             }
@@ -1447,7 +1447,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool SRBVIVI20 {
+        public System.Nullable<bool> SRBVIVI20 {
             get {
                 return this.SRBVIVI20Field;
             }
@@ -1460,7 +1460,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool SRCVIVI20 {
+        public System.Nullable<bool> SRCVIVI20 {
             get {
                 return this.SRCVIVI20Field;
             }
@@ -1473,7 +1473,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool SREVIVI20 {
+        public System.Nullable<bool> SREVIVI20 {
             get {
                 return this.SREVIVI20Field;
             }
@@ -1486,7 +1486,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool SRIVIVI20 {
+        public System.Nullable<bool> SRIVIVI20 {
             get {
                 return this.SRIVIVI20Field;
             }
@@ -1499,7 +1499,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool SRLVIVI20 {
+        public System.Nullable<bool> SRLVIVI20 {
             get {
                 return this.SRLVIVI20Field;
             }
@@ -1512,7 +1512,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool SRMVIVI20 {
+        public System.Nullable<bool> SRMVIVI20 {
             get {
                 return this.SRMVIVI20Field;
             }
@@ -4057,6 +4057,144 @@ namespace SIDEPS.WCFCasos {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SP_CON_CATRELG_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class SP_CON_CATRELG_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CODRELG11Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESRELG11Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CODRELG11 {
+            get {
+                return this.CODRELG11Field;
+            }
+            set {
+                if ((this.CODRELG11Field.Equals(value) != true)) {
+                    this.CODRELG11Field = value;
+                    this.RaisePropertyChanged("CODRELG11");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESRELG11 {
+            get {
+                return this.DESRELG11Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESRELG11Field, value) != true)) {
+                    this.DESRELG11Field = value;
+                    this.RaisePropertyChanged("DESRELG11");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SP_CON_CATCANT_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class SP_CON_CATCANT_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CODCANT03Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CODPROV02Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NOMCANT03Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CODCANT03 {
+            get {
+                return this.CODCANT03Field;
+            }
+            set {
+                if ((this.CODCANT03Field.Equals(value) != true)) {
+                    this.CODCANT03Field = value;
+                    this.RaisePropertyChanged("CODCANT03");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CODPROV02 {
+            get {
+                return this.CODPROV02Field;
+            }
+            set {
+                if ((this.CODPROV02Field.Equals(value) != true)) {
+                    this.CODPROV02Field = value;
+                    this.RaisePropertyChanged("CODPROV02");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NOMCANT03 {
+            get {
+                return this.NOMCANT03Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NOMCANT03Field, value) != true)) {
+                    this.NOMCANT03Field = value;
+                    this.RaisePropertyChanged("NOMCANT03");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WCFCasos.ICasosSvc")]
     public interface ICasosSvc {
@@ -4102,6 +4240,18 @@ namespace SIDEPS.WCFCasos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_Egresos", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_EgresosResponse")]
         System.Threading.Tasks.Task<int> SP_Ins_EgresosAsync(SIDEPS.WCFCasos.SIDEPS_24REGEGRF egresos, int codigoCaso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Con_Religiones", ReplyAction="http://tempuri.org/ICasosSvc/SP_Con_ReligionesResponse")]
+        SIDEPS.WCFCasos.SP_CON_CATRELG_Result[] SP_Con_Religiones();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Con_Religiones", ReplyAction="http://tempuri.org/ICasosSvc/SP_Con_ReligionesResponse")]
+        System.Threading.Tasks.Task<SIDEPS.WCFCasos.SP_CON_CATRELG_Result[]> SP_Con_ReligionesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Con_Cantones", ReplyAction="http://tempuri.org/ICasosSvc/SP_Con_CantonesResponse")]
+        SIDEPS.WCFCasos.SP_CON_CATCANT_Result[] SP_Con_Cantones();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Con_Cantones", ReplyAction="http://tempuri.org/ICasosSvc/SP_Con_CantonesResponse")]
+        System.Threading.Tasks.Task<SIDEPS.WCFCasos.SP_CON_CATCANT_Result[]> SP_Con_CantonesAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -4185,6 +4335,22 @@ namespace SIDEPS.WCFCasos {
         
         public System.Threading.Tasks.Task<int> SP_Ins_EgresosAsync(SIDEPS.WCFCasos.SIDEPS_24REGEGRF egresos, int codigoCaso) {
             return base.Channel.SP_Ins_EgresosAsync(egresos, codigoCaso);
+        }
+        
+        public SIDEPS.WCFCasos.SP_CON_CATRELG_Result[] SP_Con_Religiones() {
+            return base.Channel.SP_Con_Religiones();
+        }
+        
+        public System.Threading.Tasks.Task<SIDEPS.WCFCasos.SP_CON_CATRELG_Result[]> SP_Con_ReligionesAsync() {
+            return base.Channel.SP_Con_ReligionesAsync();
+        }
+        
+        public SIDEPS.WCFCasos.SP_CON_CATCANT_Result[] SP_Con_Cantones() {
+            return base.Channel.SP_Con_Cantones();
+        }
+        
+        public System.Threading.Tasks.Task<SIDEPS.WCFCasos.SP_CON_CATCANT_Result[]> SP_Con_CantonesAsync() {
+            return base.Channel.SP_Con_CantonesAsync();
         }
     }
 }

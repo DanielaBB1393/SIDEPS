@@ -150,6 +150,18 @@
     <Compile Include="SP_CONXID_REGUSRO_Result.cs">
       <DependentUpon>SIDEPS.tt</DependentUpon>
     </Compile>
+    <Compile Include="SP_CON_CATCANT_Result.cs">
+      <DependentUpon>SIDEPS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_CON_CATESTC_Result.cs">
+      <DependentUpon>SIDEPS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_CON_CATNEDU_Result.cs">
+      <DependentUpon>SIDEPS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_CON_CATRELG_Result.cs">
+      <DependentUpon>SIDEPS.tt</DependentUpon>
+    </Compile>
     <Compile Include="SP_CON_REGDIAC_Result.cs">
       <DependentUpon>SIDEPS.tt</DependentUpon>
     </Compile>
