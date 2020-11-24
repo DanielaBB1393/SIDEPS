@@ -75,11 +75,11 @@ public class CasosSvc : ICasosSvc
         }
     }
 
-    public bool SP_Ins_GrupoFamiliar(SIDEPS_22REGFAML grupoFamiliar)
+    public bool SP_Ins_GrupoFamiliar(SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona)
     {
         try
         {
-            return this.situacionFinancieraLN.SP_Ins_GrupoFamiliar(grupoFamiliar);
+            return this.situacionFinancieraLN.SP_Ins_GrupoFamiliar(grupoFamiliar, cedulaPersona);
         }
         catch
         {

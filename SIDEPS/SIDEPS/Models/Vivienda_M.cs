@@ -19,17 +19,17 @@ namespace SIDEPS.Models
         [DisplayName("Numero aposentos")]
         public int? NAPVIVI20 { get; set; }
         [DisplayName("Servicio cable")]
-        public bool? SRCVIVI20 { get; set; }
+        public bool SRCVIVI20 { get; set; }
         [DisplayName("Servicio internet")]
-        public bool? SRIVIVI20 { get; set; }
+        public bool SRIVIVI20 { get; set; }
         [DisplayName("Letrina")]
-        public bool? SRLVIVI20 { get; set; }
+        public bool SRLVIVI20 { get; set; }
         [DisplayName("Servicio municipalidad")]
-        public bool? SRMVIVI20 { get; set; }
+        public bool SRMVIVI20 { get; set; }
         [DisplayName("Recolección basura")]
-        public bool? SRBVIVI20 { get; set; }
+        public bool SRBVIVI20 { get; set; }
         [DisplayName("Electricidad")]
-        public bool? SREVIVI20 { get; set; }
+        public bool SREVIVI20 { get; set; }
 
         public Vivienda_M()
         {
@@ -43,12 +43,12 @@ namespace SIDEPS.Models
             this.CODMATE17 = vivienda.CODMATE17;
             this.MTOVIVI20 = vivienda.MTOVIVI20;
             this.NAPVIVI20 = vivienda.NAPVIVI20;
-            this.SRCVIVI20 = vivienda.SRCVIVI20;
-            this.SRIVIVI20 = vivienda.SRIVIVI20;
-            this.SRLVIVI20 = vivienda.SRLVIVI20;
-            this.SRMVIVI20 = vivienda.SRMVIVI20;
-            this.SRBVIVI20 = vivienda.SRBVIVI20;
-            this.SREVIVI20 = vivienda.SREVIVI20;
+            this.SRCVIVI20 = vivienda.SRCVIVI20.GetValueOrDefault();
+            this.SRIVIVI20 = vivienda.SRIVIVI20.GetValueOrDefault();
+            this.SRLVIVI20 = vivienda.SRLVIVI20.GetValueOrDefault();
+            this.SRMVIVI20 = vivienda.SRMVIVI20.GetValueOrDefault();
+            this.SRBVIVI20 = vivienda.SRBVIVI20.GetValueOrDefault();
+            this.SREVIVI20 = vivienda.SREVIVI20.GetValueOrDefault();
         }
 
         public SIDEPS_20REGVIVI ConvertirEntidad()

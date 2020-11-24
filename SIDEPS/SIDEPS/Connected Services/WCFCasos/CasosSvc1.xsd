@@ -77,6 +77,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="grupoFamiliar" nillable="true" type="q6:SIDEPS_22REGFAML" />
+        <xs:element minOccurs="0" name="cedulaPersona" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

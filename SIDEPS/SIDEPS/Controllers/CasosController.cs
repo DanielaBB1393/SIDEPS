@@ -134,8 +134,7 @@ namespace SIDEPS.Controllers
             TempData.Keep();
 
             var nuevoFamiliar = model.GrupoFamiliar.Last();
-            nuevoFamiliar.CEDPERS13 = cedulaSolicitante;
-            var resultado = this.casosSvc.SP_Ins_GrupoFamiliar(nuevoFamiliar.ConvertirEntidad());
+            var resultado = this.casosSvc.SP_Ins_GrupoFamiliar(nuevoFamiliar.ConvertirEntidad(), cedulaSolicitante);
             if (!resultado)
             {
                 ViewData["mensaje"] = "Ocurrió un error agregando a " + nuevoFamiliar.NOMFAML22;

@@ -9,11 +9,11 @@ namespace LogicaNegocios.Implementacion
     {
         private readonly IGrupoFamiliarAD grupoFamiliarLN = new GrupoFamiliarAD();
 
-        public bool SP_Ins_GrupoFamiliar(SIDEPS_22REGFAML grupoFamiliar)
+        public bool SP_Ins_GrupoFamiliar(SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona)
         {
             try
             {
-                return this.grupoFamiliarLN.SP_Ins_GrupoFamiliar(grupoFamiliar);
+                return this.grupoFamiliarLN.SP_Ins_GrupoFamiliar(grupoFamiliar, cedulaPersona);
             }
             catch
             {

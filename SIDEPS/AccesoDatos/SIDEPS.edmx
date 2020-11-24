@@ -218,7 +218,7 @@
           <Key>
             <PropertyRef Name="CODFINA23" />
           </Key>
-          <Property Name="CODFINA23" Type="int" Nullable="false" />
+          <Property Name="CODFINA23" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CEDFAML22" Type="varchar" MaxLength="20" />
           <Property Name="CEDPERS13" Type="varchar" MaxLength="20" />
         </EntityType>
@@ -1250,7 +1250,7 @@
           <Key>
             <PropertyRef Name="CODFINA23" />
           </Key>
-          <Property Name="CODFINA23" Type="Int32" Nullable="false" />
+          <Property Name="CODFINA23" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CEDFAML22" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="CEDPERS13" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="SIDEPS_13REGPERS" Relationship="Self.FK__SIDEPS_CEDPERS13_02" FromRole="SIDEPS_23CATFINA" ToRole="SIDEPS_13REGPERS" />
@@ -1893,19 +1893,23 @@
             <End Role="SIDEPS_26CATAYUD" EntitySet="SIDEPS_26CATAYUD" />
             <End Role="SIDEPS_27TIPAYUD" EntitySet="SIDEPS_27TIPAYUD" />
           </AssociationSet>
+          <FunctionImport Name="SP_CON_CATCANT" ReturnType="Collection(SIDEPS.SP_CON_CATCANT_Result)" />
+          <FunctionImport Name="SP_CON_CATESTC" ReturnType="Collection(SIDEPS.SP_CON_CATESTC_Result)" />
+          <FunctionImport Name="SP_CON_CATNEDU" ReturnType="Collection(SIDEPS.SP_CON_CATNEDU_Result)" />
+          <FunctionImport Name="SP_CON_CATRELG" ReturnType="Collection(SIDEPS.SP_CON_CATRELG_Result)" />
           <FunctionImport Name="SP_CON_REGDIAC" ReturnType="Collection(SIDEPS.SP_CON_REGDIAC_Result)" />
           <FunctionImport Name="SP_CON_REGUSRO" ReturnType="Collection(SIDEPS.SP_CON_REGUSRO_Result)" />
           <FunctionImport Name="SP_CONXID_REGDIAC" ReturnType="Collection(SIDEPS.SP_CONXID_REGDIAC_Result)">
-          <Parameter Name="CODDIAC04" Mode="In" Type="Int32" />
+            <Parameter Name="CODDIAC04" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SP_CONXID_REGUSRO" ReturnType="Collection(SIDEPS.SP_CONXID_REGUSRO_Result)">
-          <Parameter Name="CEDUSRO07" Mode="In" Type="Int32" />
+            <Parameter Name="CEDUSRO07" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SP_DEL_REGDIAC">
-          <Parameter Name="CODDIAC04" Mode="In" Type="Int32" />
+            <Parameter Name="CODDIAC04" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SP_DEL_REGUSRO">
-          <Parameter Name="CEDUSRO07" Mode="In" Type="String" />
+            <Parameter Name="CEDUSRO07" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_INS_REGASPS">
             <Parameter Name="CEDPERS13" Mode="In" Type="String" />
@@ -2022,11 +2026,24 @@
             <Parameter Name="CNTUSRO07" Mode="In" Type="String" />
             <Parameter Name="FENUSRO07" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="SP_CON_CATRELG" ReturnType="Collection(SIDEPS.SP_CON_CATRELG_Result)" />
-          <FunctionImport Name="SP_CON_CATCANT" ReturnType="Collection(SIDEPS.SP_CON_CATCANT_Result)" />
-          <FunctionImport Name="SP_CON_CATESTC" ReturnType="Collection(SIDEPS.SP_CON_CATESTC_Result)" />
-          <FunctionImport Name="SP_CON_CATNEDU" ReturnType="Collection(SIDEPS.SP_CON_CATNEDU_Result)" />
         </EntityContainer>
+        <ComplexType Name="SP_CON_CATCANT_Result">
+          <Property Type="Int32" Name="CODCANT03" Nullable="false" />
+          <Property Type="String" Name="NOMCANT03" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="CODPROV02" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_CON_CATESTC_Result">
+          <Property Type="Int32" Name="CODESTC06" Nullable="false" />
+          <Property Type="String" Name="DESESTC06" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SP_CON_CATNEDU_Result">
+          <Property Type="Int32" Name="CODNEDU09" Nullable="false" />
+          <Property Type="String" Name="DESNEDU09" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="SP_CON_CATRELG_Result">
+          <Property Type="Int32" Name="CODRELG11" Nullable="false" />
+          <Property Type="String" Name="DESRELG11" Nullable="true" MaxLength="50" />
+        </ComplexType>
         <ComplexType Name="SP_CON_REGDIAC_Result">
           <Property Type="Int32" Name="CODDIAC04" Nullable="false" />
           <Property Type="String" Name="NOMDIAC04" Nullable="true" MaxLength="50" />
@@ -2074,71 +2091,6 @@
           <Property Type="DateTime" Name="FEIUSRO07" Nullable="true" Precision="23" />
           <Property Type="DateTime" Name="FEFUSRO07" Nullable="true" Precision="23" />
           <Property Type="DateTime" Name="FENUSRO07" Nullable="true" Precision="23" />
-        </ComplexType>
-        <ComplexType Name="SP_CON_REGDIAC1_Result">
-          <Property Type="Int32" Name="CODDIAC04" Nullable="false" />
-          <Property Type="String" Name="NOMDIAC04" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="LUGDIAC04" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="TELDIAC04" Nullable="true" MaxLength="12" />
-          <Property Type="String" Name="ESTDIAC04" Nullable="true" MaxLength="20" />
-          <Property Type="Int32" Name="CODCANT03" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="SP_CON_REGUSRO1_Result">
-          <Property Type="String" Name="CEDUSRO07" Nullable="false" MaxLength="20" />
-          <Property Type="String" Name="NOMUSRO07" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="PAPUSRO07" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="SAPUSRO07" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="CODCANT03" Nullable="true" />
-          <Property Type="Int32" Name="CODDIAC04" Nullable="true" />
-          <Property Type="Int32" Name="CODUSRO05" Nullable="true" />
-          <Property Type="String" Name="ESTUSRO07" Nullable="true" MaxLength="20" />
-          <Property Type="String" Name="DIRUSRO07" Nullable="true" MaxLength="200" />
-          <Property Type="String" Name="NACUSRO07" Nullable="true" MaxLength="15" />
-          <Property Type="String" Name="CNTUSRO07" Nullable="true" MaxLength="30" />
-          <Property Type="DateTime" Name="FEIUSRO07" Nullable="true" Precision="23" />
-          <Property Type="DateTime" Name="FEFUSRO07" Nullable="true" Precision="23" />
-          <Property Type="DateTime" Name="FENUSRO07" Nullable="true" Precision="23" />
-        </ComplexType>
-        <ComplexType Name="SP_CONXID_REGDIAC1_Result">
-          <Property Type="Int32" Name="CODDIAC04" Nullable="false" />
-          <Property Type="String" Name="NOMDIAC04" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="LUGDIAC04" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="TELDIAC04" Nullable="true" MaxLength="12" />
-          <Property Type="String" Name="ESTDIAC04" Nullable="true" MaxLength="20" />
-          <Property Type="Int32" Name="CODCANT03" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="SP_CONXID_REGUSRO1_Result">
-          <Property Type="String" Name="CEDUSRO07" Nullable="false" MaxLength="20" />
-          <Property Type="String" Name="NOMUSRO07" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="PAPUSRO07" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="SAPUSRO07" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="CODCANT03" Nullable="true" />
-          <Property Type="Int32" Name="CODDIAC04" Nullable="true" />
-          <Property Type="Int32" Name="CODUSRO05" Nullable="true" />
-          <Property Type="String" Name="ESTUSRO07" Nullable="true" MaxLength="20" />
-          <Property Type="String" Name="DIRUSRO07" Nullable="true" MaxLength="200" />
-          <Property Type="String" Name="NACUSRO07" Nullable="true" MaxLength="15" />
-          <Property Type="String" Name="CNTUSRO07" Nullable="true" MaxLength="30" />
-          <Property Type="DateTime" Name="FEIUSRO07" Nullable="true" Precision="23" />
-          <Property Type="DateTime" Name="FEFUSRO07" Nullable="true" Precision="23" />
-          <Property Type="DateTime" Name="FENUSRO07" Nullable="true" Precision="23" />
-        </ComplexType>
-        <ComplexType Name="SP_CON_CATRELG_Result">
-          <Property Type="Int32" Name="CODRELG11" Nullable="false" />
-          <Property Type="String" Name="DESRELG11" Nullable="true" MaxLength="50" />
-        </ComplexType>
-        <ComplexType Name="SP_CON_CATCANT_Result">
-          <Property Type="Int32" Name="CODCANT03" Nullable="false" />
-          <Property Type="String" Name="NOMCANT03" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="CODPROV02" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="SP_CON_CATESTC_Result">
-          <Property Type="Int32" Name="CODESTC06" Nullable="false" />
-          <Property Type="String" Name="DESESTC06" Nullable="true" MaxLength="50" />
-        </ComplexType>
-        <ComplexType Name="SP_CON_CATNEDU_Result">
-          <Property Type="Int32" Name="CODNEDU09" Nullable="false" />
-          <Property Type="String" Name="DESNEDU09" Nullable="true" MaxLength="20" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2459,14 +2411,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="SP_CON_CATRELG" FunctionName="SIDEPS.Store.SP_CON_CATRELG">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="SIDEPS.SP_CON_CATRELG_Result">
-                <ScalarProperty Name="CODRELG11" ColumnName="CODRELG11" />
-                <ScalarProperty Name="DESRELG11" ColumnName="DESRELG11" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_CON_CATCANT" FunctionName="SIDEPS.Store.SP_CON_CATCANT">
             <ResultMapping>
               <ComplexTypeMapping TypeName="SIDEPS.SP_CON_CATCANT_Result">
@@ -2489,6 +2433,14 @@
               <ComplexTypeMapping TypeName="SIDEPS.SP_CON_CATNEDU_Result">
                 <ScalarProperty Name="CODNEDU09" ColumnName="CODNEDU09" />
                 <ScalarProperty Name="DESNEDU09" ColumnName="DESNEDU09" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CON_CATRELG" FunctionName="SIDEPS.Store.SP_CON_CATRELG">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIDEPS.SP_CON_CATRELG_Result">
+                <ScalarProperty Name="CODRELG11" ColumnName="CODRELG11" />
+                <ScalarProperty Name="DESRELG11" ColumnName="DESRELG11" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

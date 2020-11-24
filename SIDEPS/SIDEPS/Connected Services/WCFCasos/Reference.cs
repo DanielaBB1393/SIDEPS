@@ -4480,10 +4480,10 @@ namespace SIDEPS.WCFCasos {
         System.Threading.Tasks.Task<int> SP_Ins_ViviendaAsync(SIDEPS.WCFCasos.SIDEPS_20REGVIVI vivienda, int codigoCaso);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_GrupoFamiliar", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_GrupoFamiliarResponse")]
-        bool SP_Ins_GrupoFamiliar(SIDEPS.WCFCasos.SIDEPS_22REGFAML grupoFamiliar);
+        bool SP_Ins_GrupoFamiliar(SIDEPS.WCFCasos.SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_GrupoFamiliar", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_GrupoFamiliarResponse")]
-        System.Threading.Tasks.Task<bool> SP_Ins_GrupoFamiliarAsync(SIDEPS.WCFCasos.SIDEPS_22REGFAML grupoFamiliar);
+        System.Threading.Tasks.Task<bool> SP_Ins_GrupoFamiliarAsync(SIDEPS.WCFCasos.SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_Egresos", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_EgresosResponse")]
         int SP_Ins_Egresos(SIDEPS.WCFCasos.SIDEPS_24REGEGRF egresos, int codigoCaso);
@@ -4607,12 +4607,12 @@ namespace SIDEPS.WCFCasos {
             return base.Channel.SP_Ins_ViviendaAsync(vivienda, codigoCaso);
         }
         
-        public bool SP_Ins_GrupoFamiliar(SIDEPS.WCFCasos.SIDEPS_22REGFAML grupoFamiliar) {
-            return base.Channel.SP_Ins_GrupoFamiliar(grupoFamiliar);
+        public bool SP_Ins_GrupoFamiliar(SIDEPS.WCFCasos.SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona) {
+            return base.Channel.SP_Ins_GrupoFamiliar(grupoFamiliar, cedulaPersona);
         }
         
-        public System.Threading.Tasks.Task<bool> SP_Ins_GrupoFamiliarAsync(SIDEPS.WCFCasos.SIDEPS_22REGFAML grupoFamiliar) {
-            return base.Channel.SP_Ins_GrupoFamiliarAsync(grupoFamiliar);
+        public System.Threading.Tasks.Task<bool> SP_Ins_GrupoFamiliarAsync(SIDEPS.WCFCasos.SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona) {
+            return base.Channel.SP_Ins_GrupoFamiliarAsync(grupoFamiliar, cedulaPersona);
         }
         
         public int SP_Ins_Egresos(SIDEPS.WCFCasos.SIDEPS_24REGEGRF egresos, int codigoCaso) {

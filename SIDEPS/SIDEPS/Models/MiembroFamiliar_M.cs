@@ -6,8 +6,6 @@ namespace SIDEPS.Models
 {
     public class MiembroFamiliar_M
     {
-        [DisplayName("Cédula solicitante")]
-        public string CEDPERS13 { get; set; }
         [DisplayName("Cédula")]
         public string CEDFAML22 { get; set; }
 
@@ -47,7 +45,6 @@ namespace SIDEPS.Models
 
         public MiembroFamiliar_M(SIDEPS_22REGFAML familiar)
         {
-            //this.CEDPERS13 = familiar.CEDPERS13;
             this.CEDFAML22 = familiar.CEDFAML22;
             this.NOMFAML22 = familiar.NOMFAML22;
             this.EDAFAML22 = familiar.EDAFAML22;
@@ -65,7 +62,6 @@ namespace SIDEPS.Models
         {
             return new SIDEPS_22REGFAML
             {
-                //CEDPERS13 = this.CEDPERS13,
                 CEDFAML22 = this.CEDFAML22,
                 NOMFAML22 = this.NOMFAML22,
                 EDAFAML22 = this.EDAFAML22,

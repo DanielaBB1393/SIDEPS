@@ -2,9 +2,6 @@ bin/
 obj/
 packages/
 *.dll
-
 *.cache
-
-SIDEPS/.vs/SIDEPS/config/
-
-SIDEPS/.vs/SIDEPS/v16/
+SIDEPS/.vs/*
+SIDEPS__1/.vs/*

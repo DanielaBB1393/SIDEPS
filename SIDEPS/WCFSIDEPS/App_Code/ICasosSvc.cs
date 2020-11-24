@@ -21,7 +21,7 @@ public interface ICasosSvc
     int SP_Ins_Vivienda(SIDEPS_20REGVIVI vivienda, int codigoCaso);
 
     [OperationContract]
-    bool SP_Ins_GrupoFamiliar(SIDEPS_22REGFAML grupoFamiliar);
+    bool SP_Ins_GrupoFamiliar(SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona);
 
     [OperationContract]
     int SP_Ins_Egresos(SIDEPS_24REGEGRF egresos, int codigoCaso);
