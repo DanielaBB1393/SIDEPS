@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30709.132
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccesoDatos", "AccesoDatos\AccesoDatos.csproj", "{CDA55879-EFB6-4D68-8202-CE6785611F5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{DAE2FC2C-131C-4974-A039-C93922A440D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicaNegocio", "LogicaNegocio\LogicaNegocio.csproj", "{10DF5262-C249-4FB8-8B0F-0D91D5C2117B}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WCFSIDEPS_2", "WCFSIDEPS_2\", "{C4258103-D329-45FD-A521-D29A95EDB5BE}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		ProjectReferences = "{10df5262-c249-4fb8-8b0f-0d91d5c2117b}|LogicaNegocio.dll;{dae2fc2c-131c-4974-a039-c93922a440d9}|Entidades.dll;{cda55879-efb6-4d68-8202-ce6785611f5a}|AccesoDatos.dll;{cdfaa377-9343-4822-ab29-c452f84b0d0f}|mvcWebSIDEPS_2.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_50596"
+		Debug.AspNetCompiler.PhysicalPath = "WCFSIDEPS_2\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50596\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_50596"
+		Release.AspNetCompiler.PhysicalPath = "WCFSIDEPS_2\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50596\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50596"
+		SlnRelativePath = "WCFSIDEPS_2\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mvcWebSIDEPS_2", "mvcWebSIDEPS_2\mvcWebSIDEPS_2.csproj", "{CDFAA377-9343-4822-AB29-C452F84B0D0F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C4258103-D329-45FD-A521-D29A95EDB5BE} = {C4258103-D329-45FD-A521-D29A95EDB5BE}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDA55879-EFB6-4D68-8202-CE6785611F5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDA55879-EFB6-4D68-8202-CE6785611F5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDA55879-EFB6-4D68-8202-CE6785611F5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDA55879-EFB6-4D68-8202-CE6785611F5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAE2FC2C-131C-4974-A039-C93922A440D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAE2FC2C-131C-4974-A039-C93922A440D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAE2FC2C-131C-4974-A039-C93922A440D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAE2FC2C-131C-4974-A039-C93922A440D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10DF5262-C249-4FB8-8B0F-0D91D5C2117B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10DF5262-C249-4FB8-8B0F-0D91D5C2117B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10DF5262-C249-4FB8-8B0F-0D91D5C2117B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10DF5262-C249-4FB8-8B0F-0D91D5C2117B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4258103-D329-45FD-A521-D29A95EDB5BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4258103-D329-45FD-A521-D29A95EDB5BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4258103-D329-45FD-A521-D29A95EDB5BE}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4258103-D329-45FD-A521-D29A95EDB5BE}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{CDFAA377-9343-4822-AB29-C452F84B0D0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDFAA377-9343-4822-AB29-C452F84B0D0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDFAA377-9343-4822-AB29-C452F84B0D0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDFAA377-9343-4822-AB29-C452F84B0D0F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1DBF46F-A047-48C3-82A8-BE8F4A0A5693}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,110 @@
+﻿@model IEnumerable<mvcWebSIDEPS_2.Models.M_Usuarios>
+
+@{
+    ViewBag.Title = "listarUsuario";
+}
+
+<h2>listar Usuario</h2>
+
+<p>
+    @Html.ActionLink("Agregar Nueva", "AgregarUsuario")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CEDUSRO07)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOMUSRO07)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PAPUSRO07)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SAPUSRO07)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CODCANT03)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CODDIAC04)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CODUSRO05)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ESTUSRO07)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DIRUSRO07)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NACUSRO07)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CNTUSRO07)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FEIUSRO07)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FEFUSRO07)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FENUSRO07)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CEDUSRO07)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOMUSRO07)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PAPUSRO07)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SAPUSRO07)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CODCANT03)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CODDIAC04)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CODUSRO05)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ESTUSRO07)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DIRUSRO07)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NACUSRO07)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CNTUSRO07)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FEIUSRO07)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FEFUSRO07)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FENUSRO07)
+        </td>
+        <td>
+            @Html.ActionLink("Modificar", "ModificarUsuario", new {  id=item.CEDUSRO07 }) |
+            @Html.ActionLink("Detalle", "DetalleUsuario", new {  id=item.CEDUSRO07 }) 
+        </td>
+    </tr>
+}
+
+</table>

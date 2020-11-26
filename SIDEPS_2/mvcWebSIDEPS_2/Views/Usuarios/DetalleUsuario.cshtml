@@ -1,0 +1,130 @@
+﻿@model mvcWebSIDEPS_2.Models.M_Usuarios
+
+@{
+    ViewBag.Title = "DetalleUsuario";
+}
+
+<h2>Detalle Usuario</h2>
+
+<div>
+    <h4>M_Usuarios</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CEDUSRO07)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CEDUSRO07)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMUSRO07)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMUSRO07)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PAPUSRO07)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PAPUSRO07)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SAPUSRO07)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SAPUSRO07)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODCANT03)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODCANT03)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODDIAC04)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODDIAC04)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODUSRO05)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODUSRO05)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ESTUSRO07)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ESTUSRO07)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIRUSRO07)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIRUSRO07)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NACUSRO07)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NACUSRO07)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CNTUSRO07)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CNTUSRO07)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FEIUSRO07)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FEIUSRO07)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FEFUSRO07)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FEFUSRO07)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FENUSRO07)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FENUSRO07)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Modificar", "ModificarUsuarios", new { id = Model.CEDUSRO07 }) |
+    @Html.ActionLink("Volver a la lista", "Volver")
+</p>

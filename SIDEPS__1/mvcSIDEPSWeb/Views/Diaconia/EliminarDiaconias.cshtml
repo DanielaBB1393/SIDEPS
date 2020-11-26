@@ -1,0 +1,90 @@
+﻿@model mvcSIDEPSWeb.Models.Diaconia_M
+
+@{
+    ViewBag.Title = "EliminarDiaconias";
+}
+
+<h2>Eliminar Diaconia</h2>
+
+<h3>Desea Eliminar?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CODDIAC04)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODDIAC04)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMDIAC04)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMDIAC04)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LUGDIAC04)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LUGDIAC04)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TELDIAC04)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TELDIAC04)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ESTDIAC04)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ESTDIAC04)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODCANT03)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODCANT03)
+        </dd>
+
+    </dl>
+
+
+    @using (Html.BeginForm("Acciones", "Diaconia", FormMethod.Post, new { enctype = "multipart/form-data", @id = "frmDepartamento" }))
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.HiddenFor(Model => Model.CODDIAC04, new { @id = "hdnID" })
+        @Html.HiddenFor(Model => Model.NOMDIAC04, new { @id = "hdnID" })
+        @Html.HiddenFor(Model => Model.LUGDIAC04, new { @id = "hdnID" })
+        @Html.HiddenFor(Model => Model.TELDIAC04, new { @id = "hdnID" })
+        @Html.HiddenFor(Model => Model.ESTDIAC04, new { @id = "hdnID" })
+        @Html.HiddenFor(Model => Model.CODCANT03, new { @id = "hdnID" })
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" id="btnEliminar"
+                        name="submitButton" value="Eliminar"
+                        class="btn btn-primary" title="Eliminar"
+                        data-toggle="tooltip" data-container="body"
+                        data-placement="right">
+                    Eliminar
+                </button> |
+                @Html.ActionLink("Volver", "listarDiaconias")
+            </div>
+        </div>
+    }
+</div>
+

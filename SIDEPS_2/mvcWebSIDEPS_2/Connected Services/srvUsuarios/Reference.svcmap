@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d5ba5eba-43fd-478b-bedb-f9ee28d84d37" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50596/srvUsuarios.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="srvUsuarios.xsd" MetadataType="Schema" ID="093fd729-21d6-4cb7-a907-eba0e32b9234" SourceId="1" SourceUrl="http://localhost:50596/srvUsuarios.svc?xsd=xsd2" />
+    <MetadataFile FileName="srvUsuarios.disco" MetadataType="Disco" ID="25c5e80d-3477-4545-b59c-a566851ec936" SourceId="1" SourceUrl="http://localhost:50596/srvUsuarios.svc?disco" />
+    <MetadataFile FileName="srvUsuarios1.xsd" MetadataType="Schema" ID="8bcad216-a756-4a17-812e-2c1fa035fa4e" SourceId="1" SourceUrl="http://localhost:50596/srvUsuarios.svc?xsd=xsd1" />
+    <MetadataFile FileName="srvUsuarios2.xsd" MetadataType="Schema" ID="6870d88d-1e24-4dea-9d75-6c79662c686d" SourceId="1" SourceUrl="http://localhost:50596/srvUsuarios.svc?xsd=xsd0" />
+    <MetadataFile FileName="srvUsuarios.wsdl" MetadataType="Wsdl" ID="ba112df7-da54-4eec-bd28-01340e055948" SourceId="1" SourceUrl="http://localhost:50596/srvUsuarios.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
