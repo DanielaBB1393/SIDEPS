@@ -4445,6 +4445,512 @@ namespace SIDEPS.WCFCasos {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SP_CON_REGUSRO_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class SP_CON_REGUSRO_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CEDUSRO07Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CNTUSRO07Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CODCANT03Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CODDIAC04Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CODUSRO05Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DIRUSRO07Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ESTUSRO07Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> FEFUSRO07Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> FEIUSRO07Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> FENUSRO07Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NACUSRO07Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NOMUSRO07Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PAPUSRO07Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SAPUSRO07Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CEDUSRO07 {
+            get {
+                return this.CEDUSRO07Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CEDUSRO07Field, value) != true)) {
+                    this.CEDUSRO07Field = value;
+                    this.RaisePropertyChanged("CEDUSRO07");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CNTUSRO07 {
+            get {
+                return this.CNTUSRO07Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CNTUSRO07Field, value) != true)) {
+                    this.CNTUSRO07Field = value;
+                    this.RaisePropertyChanged("CNTUSRO07");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CODCANT03 {
+            get {
+                return this.CODCANT03Field;
+            }
+            set {
+                if ((this.CODCANT03Field.Equals(value) != true)) {
+                    this.CODCANT03Field = value;
+                    this.RaisePropertyChanged("CODCANT03");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CODDIAC04 {
+            get {
+                return this.CODDIAC04Field;
+            }
+            set {
+                if ((this.CODDIAC04Field.Equals(value) != true)) {
+                    this.CODDIAC04Field = value;
+                    this.RaisePropertyChanged("CODDIAC04");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CODUSRO05 {
+            get {
+                return this.CODUSRO05Field;
+            }
+            set {
+                if ((this.CODUSRO05Field.Equals(value) != true)) {
+                    this.CODUSRO05Field = value;
+                    this.RaisePropertyChanged("CODUSRO05");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DIRUSRO07 {
+            get {
+                return this.DIRUSRO07Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DIRUSRO07Field, value) != true)) {
+                    this.DIRUSRO07Field = value;
+                    this.RaisePropertyChanged("DIRUSRO07");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ESTUSRO07 {
+            get {
+                return this.ESTUSRO07Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ESTUSRO07Field, value) != true)) {
+                    this.ESTUSRO07Field = value;
+                    this.RaisePropertyChanged("ESTUSRO07");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> FEFUSRO07 {
+            get {
+                return this.FEFUSRO07Field;
+            }
+            set {
+                if ((this.FEFUSRO07Field.Equals(value) != true)) {
+                    this.FEFUSRO07Field = value;
+                    this.RaisePropertyChanged("FEFUSRO07");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> FEIUSRO07 {
+            get {
+                return this.FEIUSRO07Field;
+            }
+            set {
+                if ((this.FEIUSRO07Field.Equals(value) != true)) {
+                    this.FEIUSRO07Field = value;
+                    this.RaisePropertyChanged("FEIUSRO07");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> FENUSRO07 {
+            get {
+                return this.FENUSRO07Field;
+            }
+            set {
+                if ((this.FENUSRO07Field.Equals(value) != true)) {
+                    this.FENUSRO07Field = value;
+                    this.RaisePropertyChanged("FENUSRO07");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NACUSRO07 {
+            get {
+                return this.NACUSRO07Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NACUSRO07Field, value) != true)) {
+                    this.NACUSRO07Field = value;
+                    this.RaisePropertyChanged("NACUSRO07");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NOMUSRO07 {
+            get {
+                return this.NOMUSRO07Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NOMUSRO07Field, value) != true)) {
+                    this.NOMUSRO07Field = value;
+                    this.RaisePropertyChanged("NOMUSRO07");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PAPUSRO07 {
+            get {
+                return this.PAPUSRO07Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PAPUSRO07Field, value) != true)) {
+                    this.PAPUSRO07Field = value;
+                    this.RaisePropertyChanged("PAPUSRO07");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SAPUSRO07 {
+            get {
+                return this.SAPUSRO07Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SAPUSRO07Field, value) != true)) {
+                    this.SAPUSRO07Field = value;
+                    this.RaisePropertyChanged("SAPUSRO07");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SP_CONXID_REGUSRO_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class SP_CONXID_REGUSRO_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CEDUSRO07Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CNTUSRO07Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CODCANT03Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CODDIAC04Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CODUSRO05Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DIRUSRO07Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ESTUSRO07Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> FEFUSRO07Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> FEIUSRO07Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> FENUSRO07Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NACUSRO07Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NOMUSRO07Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PAPUSRO07Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SAPUSRO07Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CEDUSRO07 {
+            get {
+                return this.CEDUSRO07Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CEDUSRO07Field, value) != true)) {
+                    this.CEDUSRO07Field = value;
+                    this.RaisePropertyChanged("CEDUSRO07");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CNTUSRO07 {
+            get {
+                return this.CNTUSRO07Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CNTUSRO07Field, value) != true)) {
+                    this.CNTUSRO07Field = value;
+                    this.RaisePropertyChanged("CNTUSRO07");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CODCANT03 {
+            get {
+                return this.CODCANT03Field;
+            }
+            set {
+                if ((this.CODCANT03Field.Equals(value) != true)) {
+                    this.CODCANT03Field = value;
+                    this.RaisePropertyChanged("CODCANT03");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CODDIAC04 {
+            get {
+                return this.CODDIAC04Field;
+            }
+            set {
+                if ((this.CODDIAC04Field.Equals(value) != true)) {
+                    this.CODDIAC04Field = value;
+                    this.RaisePropertyChanged("CODDIAC04");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CODUSRO05 {
+            get {
+                return this.CODUSRO05Field;
+            }
+            set {
+                if ((this.CODUSRO05Field.Equals(value) != true)) {
+                    this.CODUSRO05Field = value;
+                    this.RaisePropertyChanged("CODUSRO05");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DIRUSRO07 {
+            get {
+                return this.DIRUSRO07Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DIRUSRO07Field, value) != true)) {
+                    this.DIRUSRO07Field = value;
+                    this.RaisePropertyChanged("DIRUSRO07");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ESTUSRO07 {
+            get {
+                return this.ESTUSRO07Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ESTUSRO07Field, value) != true)) {
+                    this.ESTUSRO07Field = value;
+                    this.RaisePropertyChanged("ESTUSRO07");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> FEFUSRO07 {
+            get {
+                return this.FEFUSRO07Field;
+            }
+            set {
+                if ((this.FEFUSRO07Field.Equals(value) != true)) {
+                    this.FEFUSRO07Field = value;
+                    this.RaisePropertyChanged("FEFUSRO07");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> FEIUSRO07 {
+            get {
+                return this.FEIUSRO07Field;
+            }
+            set {
+                if ((this.FEIUSRO07Field.Equals(value) != true)) {
+                    this.FEIUSRO07Field = value;
+                    this.RaisePropertyChanged("FEIUSRO07");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> FENUSRO07 {
+            get {
+                return this.FENUSRO07Field;
+            }
+            set {
+                if ((this.FENUSRO07Field.Equals(value) != true)) {
+                    this.FENUSRO07Field = value;
+                    this.RaisePropertyChanged("FENUSRO07");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NACUSRO07 {
+            get {
+                return this.NACUSRO07Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NACUSRO07Field, value) != true)) {
+                    this.NACUSRO07Field = value;
+                    this.RaisePropertyChanged("NACUSRO07");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NOMUSRO07 {
+            get {
+                return this.NOMUSRO07Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NOMUSRO07Field, value) != true)) {
+                    this.NOMUSRO07Field = value;
+                    this.RaisePropertyChanged("NOMUSRO07");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PAPUSRO07 {
+            get {
+                return this.PAPUSRO07Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PAPUSRO07Field, value) != true)) {
+                    this.PAPUSRO07Field = value;
+                    this.RaisePropertyChanged("PAPUSRO07");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SAPUSRO07 {
+            get {
+                return this.SAPUSRO07Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SAPUSRO07Field, value) != true)) {
+                    this.SAPUSRO07Field = value;
+                    this.RaisePropertyChanged("SAPUSRO07");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WCFCasos.ICasosSvc")]
     public interface ICasosSvc {
@@ -4538,6 +5044,42 @@ namespace SIDEPS.WCFCasos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/delDiaconia", ReplyAction="http://tempuri.org/ICasosSvc/delDiaconiaResponse")]
         System.Threading.Tasks.Task<bool> delDiaconiaAsync(SIDEPS.WCFCasos.SIDEPS_04REGDIAC pobjDiac);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/Usuario", ReplyAction="http://tempuri.org/ICasosSvc/UsuarioResponse")]
+        System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_07REGUSRO> Usuario();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/Usuario", ReplyAction="http://tempuri.org/ICasosSvc/UsuarioResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_07REGUSRO>> UsuarioAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/conUsuario", ReplyAction="http://tempuri.org/ICasosSvc/conUsuarioResponse")]
+        System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_REGUSRO_Result> conUsuario();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/conUsuario", ReplyAction="http://tempuri.org/ICasosSvc/conUsuarioResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_REGUSRO_Result>> conUsuarioAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/conUsuarioXId", ReplyAction="http://tempuri.org/ICasosSvc/conUsuarioXIdResponse")]
+        SIDEPS.WCFCasos.SP_CONXID_REGUSRO_Result conUsuarioXId(int pid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/conUsuarioXId", ReplyAction="http://tempuri.org/ICasosSvc/conUsuarioXIdResponse")]
+        System.Threading.Tasks.Task<SIDEPS.WCFCasos.SP_CONXID_REGUSRO_Result> conUsuarioXIdAsync(int pid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/insUsuario", ReplyAction="http://tempuri.org/ICasosSvc/insUsuarioResponse")]
+        bool insUsuario(SIDEPS.WCFCasos.SIDEPS_07REGUSRO pobjUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/insUsuario", ReplyAction="http://tempuri.org/ICasosSvc/insUsuarioResponse")]
+        System.Threading.Tasks.Task<bool> insUsuarioAsync(SIDEPS.WCFCasos.SIDEPS_07REGUSRO pobjUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/modUsuario", ReplyAction="http://tempuri.org/ICasosSvc/modUsuarioResponse")]
+        bool modUsuario(SIDEPS.WCFCasos.SIDEPS_07REGUSRO pobjUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/modUsuario", ReplyAction="http://tempuri.org/ICasosSvc/modUsuarioResponse")]
+        System.Threading.Tasks.Task<bool> modUsuarioAsync(SIDEPS.WCFCasos.SIDEPS_07REGUSRO pobjUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/delUsuario", ReplyAction="http://tempuri.org/ICasosSvc/delUsuarioResponse")]
+        bool delUsuario(SIDEPS.WCFCasos.SIDEPS_07REGUSRO pobjUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/delUsuario", ReplyAction="http://tempuri.org/ICasosSvc/delUsuarioResponse")]
+        System.Threading.Tasks.Task<bool> delUsuarioAsync(SIDEPS.WCFCasos.SIDEPS_07REGUSRO pobjUsuario);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -4685,6 +5227,54 @@ namespace SIDEPS.WCFCasos {
         
         public System.Threading.Tasks.Task<bool> delDiaconiaAsync(SIDEPS.WCFCasos.SIDEPS_04REGDIAC pobjDiac) {
             return base.Channel.delDiaconiaAsync(pobjDiac);
+        }
+        
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_07REGUSRO> Usuario() {
+            return base.Channel.Usuario();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_07REGUSRO>> UsuarioAsync() {
+            return base.Channel.UsuarioAsync();
+        }
+        
+        public System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_REGUSRO_Result> conUsuario() {
+            return base.Channel.conUsuario();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_REGUSRO_Result>> conUsuarioAsync() {
+            return base.Channel.conUsuarioAsync();
+        }
+        
+        public SIDEPS.WCFCasos.SP_CONXID_REGUSRO_Result conUsuarioXId(int pid) {
+            return base.Channel.conUsuarioXId(pid);
+        }
+        
+        public System.Threading.Tasks.Task<SIDEPS.WCFCasos.SP_CONXID_REGUSRO_Result> conUsuarioXIdAsync(int pid) {
+            return base.Channel.conUsuarioXIdAsync(pid);
+        }
+        
+        public bool insUsuario(SIDEPS.WCFCasos.SIDEPS_07REGUSRO pobjUsuario) {
+            return base.Channel.insUsuario(pobjUsuario);
+        }
+        
+        public System.Threading.Tasks.Task<bool> insUsuarioAsync(SIDEPS.WCFCasos.SIDEPS_07REGUSRO pobjUsuario) {
+            return base.Channel.insUsuarioAsync(pobjUsuario);
+        }
+        
+        public bool modUsuario(SIDEPS.WCFCasos.SIDEPS_07REGUSRO pobjUsuario) {
+            return base.Channel.modUsuario(pobjUsuario);
+        }
+        
+        public System.Threading.Tasks.Task<bool> modUsuarioAsync(SIDEPS.WCFCasos.SIDEPS_07REGUSRO pobjUsuario) {
+            return base.Channel.modUsuarioAsync(pobjUsuario);
+        }
+        
+        public bool delUsuario(SIDEPS.WCFCasos.SIDEPS_07REGUSRO pobjUsuario) {
+            return base.Channel.delUsuario(pobjUsuario);
+        }
+        
+        public System.Threading.Tasks.Task<bool> delUsuarioAsync(SIDEPS.WCFCasos.SIDEPS_07REGUSRO pobjUsuario) {
+            return base.Channel.delUsuarioAsync(pobjUsuario);
         }
     }
 }

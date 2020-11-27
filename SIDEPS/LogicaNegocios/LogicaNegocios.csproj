@@ -48,6 +48,7 @@
     <Compile Include="Implementacion\EgresosLN.cs" />
     <Compile Include="Implementacion\PersonasLN.cs" />
     <Compile Include="Implementacion\GrupoFamiliarLN.cs" />
+    <Compile Include="Implementacion\UsuariosLN.cs" />
     <Compile Include="Implementacion\ViviendaLN.cs" />
     <Compile Include="Interfaces\IAspectoSaludLN.cs" />
     <Compile Include="Interfaces\ICasosLN.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Interfaces\IEgresosLN.cs" />
     <Compile Include="Interfaces\IPersonasLN.cs" />
     <Compile Include="Interfaces\IGrupoFamiliarLN.cs" />
+    <Compile Include="Interfaces\IUsuariosLN.cs" />
     <Compile Include="Interfaces\IViviendaLN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

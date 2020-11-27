@@ -207,4 +207,84 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Usuario">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="UsuarioResult" nillable="true" type="q16:ArrayOfSIDEPS_07REGUSRO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="conUsuario">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="conUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="conUsuarioResult" nillable="true" type="q17:ArrayOfSP_CON_REGUSRO_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="conUsuarioXId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="conUsuarioXIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="conUsuarioXIdResult" nillable="true" type="q18:SP_CONXID_REGUSRO_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="pobjUsuario" nillable="true" type="q19:SIDEPS_07REGUSRO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insUsuarioResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="modUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="pobjUsuario" nillable="true" type="q20:SIDEPS_07REGUSRO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="modUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="modUsuarioResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="pobjUsuario" nillable="true" type="q21:SIDEPS_07REGUSRO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="delUsuarioResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

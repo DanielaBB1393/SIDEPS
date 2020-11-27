@@ -475,4 +475,48 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SP_CONXID_REGDIAC_Result" nillable="true" type="tns:SP_CONXID_REGDIAC_Result" />
+  <xs:complexType name="ArrayOfSP_CON_REGUSRO_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SP_CON_REGUSRO_Result" nillable="true" type="tns:SP_CON_REGUSRO_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSP_CON_REGUSRO_Result" nillable="true" type="tns:ArrayOfSP_CON_REGUSRO_Result" />
+  <xs:complexType name="SP_CON_REGUSRO_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CEDUSRO07" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CNTUSRO07" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODCANT03" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CODDIAC04" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CODUSRO05" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DIRUSRO07" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTUSRO07" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FEFUSRO07" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FEIUSRO07" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FENUSRO07" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NACUSRO07" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMUSRO07" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PAPUSRO07" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SAPUSRO07" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SP_CON_REGUSRO_Result" nillable="true" type="tns:SP_CON_REGUSRO_Result" />
+  <xs:complexType name="SP_CONXID_REGUSRO_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CEDUSRO07" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CNTUSRO07" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODCANT03" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CODDIAC04" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CODUSRO05" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DIRUSRO07" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTUSRO07" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FEFUSRO07" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FEIUSRO07" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FENUSRO07" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NACUSRO07" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMUSRO07" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PAPUSRO07" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SAPUSRO07" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SP_CONXID_REGUSRO_Result" nillable="true" type="tns:SP_CONXID_REGUSRO_Result" />
 </xs:schema>

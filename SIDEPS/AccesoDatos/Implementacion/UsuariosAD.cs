@@ -1,28 +1,27 @@
-﻿using Entidades;
+﻿using AccesoDatos.Interfaces;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AccesoDatos.Implementacion
 {
-    public class UsuariosAD
+    public class UsuariosAD : IUsuariosAD
     {
-        private SIDEPSEntities gobjContextoSIDEPS;
-        public UsuariosAD(SIDEPSEntities _objContextoSIDEPS)
+        private SIDEPSEntities gobjContextoSP;
+
+        public UsuariosAD(SIDEPSEntities _gobjContextoPS)
         {
-            this.gobjContextoSIDEPS = _objContextoSIDEPS;
+            this.gobjContextoSP = _gobjContextoPS;
         }
-        public List<SIDEPS_07REGUSRO> ListaUsuarios()
+
+        public List<SIDEPS_07REGUSRO> Usuario()
         {
             List<SIDEPS_07REGUSRO> lobjRespuesta = new List<SIDEPS_07REGUSRO>();
-
             try
             {
-                lobjRespuesta = gobjContextoSIDEPS.SIDEPS_07REGUSRO.ToList();
-
-        }
+                lobjRespuesta = gobjContextoSP.SIDEPS_07REGUSRO.ToList();
+            }
             catch (Exception ex)
             {
                 throw ex;
@@ -30,5 +29,98 @@ namespace AccesoDatos.Implementacion
             return lobjRespuesta;
         }
 
+        public List<SP_CON_REGUSRO_Result> conUsuario()
+        {
+            List<SP_CON_REGUSRO_Result> lobjRespuesta = new List<SP_CON_REGUSRO_Result>();
+            try
+            {
+                lobjRespuesta = gobjContextoSP.SP_CON_REGUSRO().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return lobjRespuesta;
+        }
+
+        public SP_CONXID_REGUSRO_Result conUsuarioXId(int pid)
+        {
+            SP_CONXID_REGUSRO_Result lobjRespuesta = new SP_CONXID_REGUSRO_Result();
+            try
+            {
+                lobjRespuesta = gobjContextoSP.SP_CONXID_REGUSRO(pid).Single();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return lobjRespuesta;
+        }
+
+        public bool insUsuario(SIDEPS_07REGUSRO pobjUsuario)
+        {
+            bool lobjRespuesta = new bool();
+            try
+            {
+                lobjRespuesta = false;
+                int intVal = 0;
+                intVal = gobjContextoSP.SP_INS_REGUSRO(pobjUsuario.CEDUSRO07, pobjUsuario.NOMUSRO07,
+                    pobjUsuario.PAPUSRO07, pobjUsuario.SAPUSRO07, pobjUsuario.CODCANT03,
+                    pobjUsuario.CODDIAC04, pobjUsuario.CODUSRO05, pobjUsuario.DIRUSRO07,
+                    pobjUsuario.NACUSRO07, pobjUsuario.CNTUSRO07, pobjUsuario.FENUSRO07);
+                if (intVal == 1)
+                {
+                    lobjRespuesta = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return lobjRespuesta;
+        }
+
+        public bool modUsuario(SIDEPS_07REGUSRO pobjUsuario)
+        {
+            bool lobjRespuesta = new bool();
+            try
+            {
+                lobjRespuesta = false;
+                int intVal = 0;
+                intVal = gobjContextoSP.SP_MOD_REGUSRO(pobjUsuario.CEDUSRO07, pobjUsuario.NOMUSRO07,
+                    pobjUsuario.PAPUSRO07, pobjUsuario.SAPUSRO07, pobjUsuario.CODCANT03, pobjUsuario.CODDIAC04,
+                    pobjUsuario.CODUSRO05, pobjUsuario.ESTUSRO07, pobjUsuario.DIRUSRO07, pobjUsuario.NACUSRO07,
+                    pobjUsuario.CNTUSRO07, pobjUsuario.FEFUSRO07);
+                if (intVal == 1)
+                {
+                    lobjRespuesta = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return lobjRespuesta;
+        }
+
+        public bool delUsuario(SIDEPS_07REGUSRO pobjUsuario)
+        {
+            bool lobjRespuesta = new bool();
+            try
+            {
+                lobjRespuesta = false;
+                int intVal = 0;
+                intVal = gobjContextoSP.SP_DEL_REGUSRO(pobjUsuario.CEDUSRO07);
+                if (intVal == 1)
+                {
+                    lobjRespuesta = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return lobjRespuesta;
+        }
     }
 }

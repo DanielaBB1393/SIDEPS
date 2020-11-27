@@ -130,6 +130,7 @@
     <Compile Include="Controllers\CasosController.cs" />
     <Compile Include="Controllers\DiaconiaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -142,6 +143,7 @@
     <Compile Include="Models\MiembroFamiliar_M.cs" />
     <Compile Include="Models\MotivoSolicitud_M.cs" />
     <Compile Include="Models\DatosPersonales_M.cs" />
+    <Compile Include="Models\M_Usuarios.cs" />
     <Compile Include="Models\ProblemasSociales_M.cs" />
     <Compile Include="Models\GrupoFamiliar_M.cs" />
     <Compile Include="Models\Vivienda_M.cs" />
@@ -190,6 +192,15 @@
     <Content Include="Connected Services\WCFCasos\SIDEPS.WCFCasos.SP_CON_REGDIAC_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\WCFCasos\SIDEPS.WCFCasos.SIDEPS_07REGUSRO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WCFCasos\SIDEPS.WCFCasos.SP_CONXID_REGUSRO_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WCFCasos\SIDEPS.WCFCasos.SP_CON_REGUSRO_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -229,6 +240,10 @@
     <Content Include="Views\Diaconia\DetalleDiaconias.cshtml" />
     <Content Include="Views\Diaconia\listarDiaconias.cshtml" />
     <Content Include="Views\Diaconia\ModificarDiaconias.cshtml" />
+    <Content Include="Views\Usuarios\AgregarUsuario.cshtml" />
+    <Content Include="Views\Usuarios\DetalleUsuario.cshtml" />
+    <Content Include="Views\Usuarios\listarUsuario.cshtml" />
+    <Content Include="Views\Usuarios\ModificarUsuario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
