@@ -1,62 +1,103 @@
-﻿@model SIDEPS.Models.GrupoFamiliar_M
+﻿@model IEnumerable<SIDEPS.Models.MiembroFamiliar_M>
 
 @{
     ViewBag.Title = "Situacion Financiera";
 }
 
-<h2>Paso 5</h2>
+<h2>Paso 4</h2>
 
+<p>
+    @Html.ActionLink("Agregar", "AgregarFamiliar")
+</p>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CEDFAML22)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOMFAML22)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EDAFAML22)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CODESTC06)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CODNEDU09)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OACFAML22)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INGFAML22)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESFAML22)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CODORGS21)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CODENFR15)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CODPARE12)
+        </th>
+        <th></th>
+    </tr>
 
-    <div class="form-horizontal">
-        <h4>Situacion Financiera</h4>
-        <hr />
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CEDFAML22)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOMFAML22)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EDAFAML22)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CODESTC06)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CODNEDU09)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OACFAML22)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.INGFAML22)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DESFAML22)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CODORGS21)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CODENFR15)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CODPARE12)
+            </td>
+            <td>
+                @Html.ActionLink("Modificar", "ModificarFamiliar", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Detalles", "DetallesFamiliar", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Eliminar", "EliminarFamiliar", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+</table>
 
-        <table class="table table-striped table-bordered">
-            <thead>
-                <tr>
-                    <td>@Html.DisplayName("Cédula")</td>
-                    <td>@Html.DisplayName("Nombre")</td>
-                    <td>@Html.DisplayName("Edad")</td>
-                    <td>@Html.DisplayName("Parentesco")</td>
-                    <td>@Html.DisplayName("Estado Civil")</td>
-                    <td>@Html.DisplayName("Escolaridad")</td>
-                    <td>@Html.DisplayName("Ocupación")</td>
-                    <td>@Html.DisplayName("Ingresos")</td>
-                </tr>
-            </thead>
-            <tbody>
-                @for (int i = 0; i< Model.GrupoFamiliar.Count; i++)
-                {
-                    <tr>
-                        <td>@Html.EditorFor(m => m.GrupoFamiliar[i].CEDFAML22, new { htmlAttributes = new { @class = "form-control" } })</td>
-                        <td>@Html.EditorFor(m => m.GrupoFamiliar[i].NOMFAML22, new { htmlAttributes = new { @class = "form-control" } })</td>
-                        <td>@Html.EditorFor(m => m.GrupoFamiliar[i].EDAFAML22, new { htmlAttributes = new { @class = "form-control" } })</td>
-                        <td>@Html.EditorFor(m => m.GrupoFamiliar[i].CODPARE12, new { htmlAttributes = new { @class = "form-control" } })</td>
-                        <td>@Html.EditorFor(m => m.GrupoFamiliar[i].CODESTC06, new { htmlAttributes = new { @class = "form-control" } })</td>
-                        <td>@Html.EditorFor(m => m.GrupoFamiliar[i].CODNEDU09, new { htmlAttributes = new { @class = "form-control" } })</td>
-                        <td>@Html.EditorFor(m => m.GrupoFamiliar[i].OACFAML22, new { htmlAttributes = new { @class = "form-control" } })</td>
-                        <td>@Html.EditorFor(m => m.GrupoFamiliar[i].INGFAML22, new { htmlAttributes = new { @class = "form-control" } })</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-
-        @Html.ValidationSummary(true, (ViewData["Mensaje"] ?? "").ToString(), new { @class = "text-danger" })
-        <div class="form-group form-inline">
-            <div class="col-md-1">
-                <input type="submit" value="Agregar" class="btn btn-default" />
-            </div>
-            <div class="col-md-1">
-                @Html.ActionLink("Siguiente", "Egresos", null, new { @class = "btn btn-default" })
-            </div>
+<p>
+    <div class="form-group form-inline">
+        <div class="col-md-1">
+            @Html.ActionLink("Siguiente", "Egresos", null, new { @class = "btn btn-default" })
         </div>
     </div>
-}
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+</p>
 }

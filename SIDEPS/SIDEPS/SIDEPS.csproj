@@ -233,7 +233,7 @@
     <Content Include="Views\Casos\Index.cshtml" />
     <Content Include="Views\Casos\Vivienda.cshtml" />
     <Content Include="Views\Casos\ProblemasSociales.cshtml" />
-    <Content Include="Views\Casos\GrupoFamiliar.cshtml" />
+    <Content Include="Views\Casos\GrupoFamiliar1.cshtml" />
     <Content Include="Views\Casos\Egresos.cshtml" />
     <Content Include="Views\Casos\MotivoSolicitud.cshtml" />
     <Content Include="Views\Diaconia\AgregarDiaconia.cshtml" />
@@ -248,6 +248,10 @@
     <Content Include="Views\Home\MenuAdministradorDiaconia.cshtml" />
     <Content Include="Views\Home\MenuColaboradorDiaconia.cshtml" />
     <Content Include="Views\Home\MenuAdministradorParroquial.cshtml" />
+    <Content Include="Views\Casos\GrupoFamiliar.cshtml" />
+    <Content Include="Views\Casos\AgregarFamiliar.cshtml" />
+    <Content Include="Views\Casos\DetallesFamiliar.cshtml" />
+    <Content Include="Views\Casos\ModificarFamiliar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace SIDEPS.Models
@@ -65,5 +66,8 @@ namespace SIDEPS.Models
         [Required(ErrorMessage = "Fecha de Nacimiento del Usuario Requerido.")]
         [Display(Name = "Fecha de Nacimiento del Usuario")]
         public Nullable<System.DateTime> FENUSRO07 { get; set; }
+
+        public List<Categoria> Cantones { get; set; } = new List<Categoria>();
+        public List<Categoria> Diaconias { get; set; } = new List<Categoria>();
     }
 }

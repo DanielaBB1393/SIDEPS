@@ -106,7 +106,7 @@ namespace SIDEPS.Controllers
             if (resultado > 0)
             {
                 TempData[_CODIGOVIVIENDA] = resultado;
-                return RedirectToAction("GrupoFamiliar");
+                return RedirectToAction("GrupoFamiliar1");
             }
 
             return View(vivienda);
@@ -116,6 +116,49 @@ namespace SIDEPS.Controllers
         // Paso 4
         //-------
         public ActionResult GrupoFamiliar()
+        {
+            var grupoFamiliar = new List<MiembroFamiliar_M>();
+            return View(grupoFamiliar);
+        }
+
+        public ActionResult AgregarFamiliar()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AgregarFamiliar(MiembroFamiliar_M modelo)
+        {
+            var cedulaSolicitante = TempData[_CEDULAPERSONA].ToString();
+            TempData.Keep();
+
+            var resultado = this.casosSvc.SP_Ins_GrupoFamiliar(modelo.ConvertirEntidad(), cedulaSolicitante);
+            if (!resultado)
+            {
+                ViewData["mensaje"] = "Ocurrió un error agregando a " + modelo.NOMFAML22;
+                return View(modelo);
+            }
+            return RedirectToAction("GrupoFamiliar");
+        }
+
+        public ActionResult DetallesFamiliar()
+        {
+            return View();
+        }
+
+        public ActionResult EliminarFamiliar()
+        {
+            return View();
+        }
+
+        public ActionResult ModificarFamiliar()
+        {
+            return View();
+        }
+
+
+
+        public ActionResult GrupoFamiliar1()
         {
             TempData.Keep();
 
@@ -128,7 +171,7 @@ namespace SIDEPS.Controllers
         }
 
         [HttpPost]
-        public ActionResult GrupoFamiliar(GrupoFamiliar_M model)
+        public ActionResult GrupoFamiliar1(GrupoFamiliar_M model)
         {
             var cedulaSolicitante = TempData[_CEDULAPERSONA].ToString();
             TempData.Keep();

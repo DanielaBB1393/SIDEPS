@@ -2,6 +2,7 @@
 using SIDEPS.ServiciosWCF;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace SIDEPS.Controllers
@@ -48,7 +49,14 @@ namespace SIDEPS.Controllers
 
         public ActionResult AgregarUsuario()
         {
-            return View();
+            M_Usuarios modelo = new M_Usuarios();
+
+            using (ServiciosWCFClient svc = new ServiciosWCFClient())
+            {
+                modelo.Cantones = svc.SP_Con_Cantones().Select(r => new Categoria { Codigo = r.CODCANT03, Descripcion = r.NOMCANT03 }).ToList();
+                modelo.Diaconias = svc.conDiaconias().Select(r => new Categoria { Codigo = r.CODDIAC04, Descripcion = r.NOMDIAC04 }).ToList();
+            }
+            return View(modelo);
         }
 
         public ActionResult DetalleUsuario(short id)
