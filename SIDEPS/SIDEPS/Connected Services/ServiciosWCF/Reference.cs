@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SIDEPS.WCFCasos {
+namespace SIDEPS.ServiciosWCF {
     using System.Runtime.Serialization;
     using System;
     
@@ -56,25 +56,25 @@ namespace SIDEPS.WCFCasos {
         private string OPICASO25Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_07REGUSRO SIDEPS_07REGUSROField;
+        private SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO SIDEPS_07REGUSROField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_13REGPERS SIDEPS_13REGPERSField;
+        private SIDEPS.ServiciosWCF.SIDEPS_13REGPERS SIDEPS_13REGPERSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_16REGASPS SIDEPS_16REGASPSField;
+        private SIDEPS.ServiciosWCF.SIDEPS_16REGASPS SIDEPS_16REGASPSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_20REGVIVI SIDEPS_20REGVIVIField;
+        private SIDEPS.ServiciosWCF.SIDEPS_20REGVIVI SIDEPS_20REGVIVIField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_24REGEGRF SIDEPS_24REGEGRFField;
+        private SIDEPS.ServiciosWCF.SIDEPS_24REGEGRF SIDEPS_24REGEGRFField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_27TIPAYUD> SIDEPS_27TIPAYUDField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_27TIPAYUD> SIDEPS_27TIPAYUDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_28REGHIS> SIDEPS_28REGHISField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_28REGHIS> SIDEPS_28REGHISField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -230,7 +230,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_07REGUSRO SIDEPS_07REGUSRO {
+        public SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO SIDEPS_07REGUSRO {
             get {
                 return this.SIDEPS_07REGUSROField;
             }
@@ -243,7 +243,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_13REGPERS SIDEPS_13REGPERS {
+        public SIDEPS.ServiciosWCF.SIDEPS_13REGPERS SIDEPS_13REGPERS {
             get {
                 return this.SIDEPS_13REGPERSField;
             }
@@ -256,7 +256,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_16REGASPS SIDEPS_16REGASPS {
+        public SIDEPS.ServiciosWCF.SIDEPS_16REGASPS SIDEPS_16REGASPS {
             get {
                 return this.SIDEPS_16REGASPSField;
             }
@@ -269,7 +269,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_20REGVIVI SIDEPS_20REGVIVI {
+        public SIDEPS.ServiciosWCF.SIDEPS_20REGVIVI SIDEPS_20REGVIVI {
             get {
                 return this.SIDEPS_20REGVIVIField;
             }
@@ -282,7 +282,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_24REGEGRF SIDEPS_24REGEGRF {
+        public SIDEPS.ServiciosWCF.SIDEPS_24REGEGRF SIDEPS_24REGEGRF {
             get {
                 return this.SIDEPS_24REGEGRFField;
             }
@@ -295,7 +295,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_27TIPAYUD> SIDEPS_27TIPAYUD {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_27TIPAYUD> SIDEPS_27TIPAYUD {
             get {
                 return this.SIDEPS_27TIPAYUDField;
             }
@@ -308,7 +308,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_28REGHIS> SIDEPS_28REGHIS {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_28REGHIS> SIDEPS_28REGHIS {
             get {
                 return this.SIDEPS_28REGHISField;
             }
@@ -382,19 +382,19 @@ namespace SIDEPS.WCFCasos {
         private string SAPUSRO07Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_03CATCANT SIDEPS_03CATCANTField;
+        private SIDEPS.ServiciosWCF.SIDEPS_03CATCANT SIDEPS_03CATCANTField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_04REGDIAC SIDEPS_04REGDIACField;
+        private SIDEPS.ServiciosWCF.SIDEPS_04REGDIAC SIDEPS_04REGDIACField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_05TIPUSRO SIDEPS_05TIPUSROField;
+        private SIDEPS.ServiciosWCF.SIDEPS_05TIPUSRO SIDEPS_05TIPUSROField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_08REGTELF> SIDEPS_08REGTELFField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_08REGTELF> SIDEPS_08REGTELFField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_25REGCASO> SIDEPS_25REGCASOField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_25REGCASO> SIDEPS_25REGCASOField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -589,7 +589,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_03CATCANT SIDEPS_03CATCANT {
+        public SIDEPS.ServiciosWCF.SIDEPS_03CATCANT SIDEPS_03CATCANT {
             get {
                 return this.SIDEPS_03CATCANTField;
             }
@@ -602,7 +602,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_04REGDIAC SIDEPS_04REGDIAC {
+        public SIDEPS.ServiciosWCF.SIDEPS_04REGDIAC SIDEPS_04REGDIAC {
             get {
                 return this.SIDEPS_04REGDIACField;
             }
@@ -615,7 +615,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_05TIPUSRO SIDEPS_05TIPUSRO {
+        public SIDEPS.ServiciosWCF.SIDEPS_05TIPUSRO SIDEPS_05TIPUSRO {
             get {
                 return this.SIDEPS_05TIPUSROField;
             }
@@ -628,7 +628,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_08REGTELF> SIDEPS_08REGTELF {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_08REGTELF> SIDEPS_08REGTELF {
             get {
                 return this.SIDEPS_08REGTELFField;
             }
@@ -641,7 +641,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_25REGCASO> SIDEPS_25REGCASO {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_25REGCASO> SIDEPS_25REGCASO {
             get {
                 return this.SIDEPS_25REGCASOField;
             }
@@ -715,28 +715,28 @@ namespace SIDEPS.WCFCasos {
         private string SAPPERS13Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_03CATCANT SIDEPS_03CATCANTField;
+        private SIDEPS.ServiciosWCF.SIDEPS_03CATCANT SIDEPS_03CATCANTField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_06CATESTC SIDEPS_06CATESTCField;
+        private SIDEPS.ServiciosWCF.SIDEPS_06CATESTC SIDEPS_06CATESTCField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_09CATNEDU SIDEPS_09CATNEDUField;
+        private SIDEPS.ServiciosWCF.SIDEPS_09CATNEDU SIDEPS_09CATNEDUField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_10CATSOLI SIDEPS_10CATSOLIField;
+        private SIDEPS.ServiciosWCF.SIDEPS_10CATSOLI SIDEPS_10CATSOLIField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_11CATRELG SIDEPS_11CATRELGField;
+        private SIDEPS.ServiciosWCF.SIDEPS_11CATRELG SIDEPS_11CATRELGField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_16REGASPS> SIDEPS_16REGASPSField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_16REGASPS> SIDEPS_16REGASPSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_23CATFINA> SIDEPS_23CATFINAField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_23CATFINA> SIDEPS_23CATFINAField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_25REGCASO> SIDEPS_25REGCASOField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_25REGCASO> SIDEPS_25REGCASOField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -931,7 +931,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_03CATCANT SIDEPS_03CATCANT {
+        public SIDEPS.ServiciosWCF.SIDEPS_03CATCANT SIDEPS_03CATCANT {
             get {
                 return this.SIDEPS_03CATCANTField;
             }
@@ -944,7 +944,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_06CATESTC SIDEPS_06CATESTC {
+        public SIDEPS.ServiciosWCF.SIDEPS_06CATESTC SIDEPS_06CATESTC {
             get {
                 return this.SIDEPS_06CATESTCField;
             }
@@ -957,7 +957,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_09CATNEDU SIDEPS_09CATNEDU {
+        public SIDEPS.ServiciosWCF.SIDEPS_09CATNEDU SIDEPS_09CATNEDU {
             get {
                 return this.SIDEPS_09CATNEDUField;
             }
@@ -970,7 +970,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_10CATSOLI SIDEPS_10CATSOLI {
+        public SIDEPS.ServiciosWCF.SIDEPS_10CATSOLI SIDEPS_10CATSOLI {
             get {
                 return this.SIDEPS_10CATSOLIField;
             }
@@ -983,7 +983,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_11CATRELG SIDEPS_11CATRELG {
+        public SIDEPS.ServiciosWCF.SIDEPS_11CATRELG SIDEPS_11CATRELG {
             get {
                 return this.SIDEPS_11CATRELGField;
             }
@@ -996,7 +996,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_16REGASPS> SIDEPS_16REGASPS {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_16REGASPS> SIDEPS_16REGASPS {
             get {
                 return this.SIDEPS_16REGASPSField;
             }
@@ -1009,7 +1009,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_23CATFINA> SIDEPS_23CATFINA {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_23CATFINA> SIDEPS_23CATFINA {
             get {
                 return this.SIDEPS_23CATFINAField;
             }
@@ -1022,7 +1022,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_25REGCASO> SIDEPS_25REGCASO {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_25REGCASO> SIDEPS_25REGCASO {
             get {
                 return this.SIDEPS_25REGCASOField;
             }
@@ -1075,16 +1075,16 @@ namespace SIDEPS.WCFCasos {
         private string RECTRAT16Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_13REGPERS SIDEPS_13REGPERSField;
+        private SIDEPS.ServiciosWCF.SIDEPS_13REGPERS SIDEPS_13REGPERSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_14CATSEGU SIDEPS_14CATSEGUField;
+        private SIDEPS.ServiciosWCF.SIDEPS_14CATSEGU SIDEPS_14CATSEGUField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_15CATENFR SIDEPS_15CATENFRField;
+        private SIDEPS.ServiciosWCF.SIDEPS_15CATENFR SIDEPS_15CATENFRField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_25REGCASO> SIDEPS_25REGCASOField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_25REGCASO> SIDEPS_25REGCASOField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1188,7 +1188,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_13REGPERS SIDEPS_13REGPERS {
+        public SIDEPS.ServiciosWCF.SIDEPS_13REGPERS SIDEPS_13REGPERS {
             get {
                 return this.SIDEPS_13REGPERSField;
             }
@@ -1201,7 +1201,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_14CATSEGU SIDEPS_14CATSEGU {
+        public SIDEPS.ServiciosWCF.SIDEPS_14CATSEGU SIDEPS_14CATSEGU {
             get {
                 return this.SIDEPS_14CATSEGUField;
             }
@@ -1214,7 +1214,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_15CATENFR SIDEPS_15CATENFR {
+        public SIDEPS.ServiciosWCF.SIDEPS_15CATENFR SIDEPS_15CATENFR {
             get {
                 return this.SIDEPS_15CATENFRField;
             }
@@ -1227,7 +1227,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_25REGCASO> SIDEPS_25REGCASO {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_25REGCASO> SIDEPS_25REGCASO {
             get {
                 return this.SIDEPS_25REGCASOField;
             }
@@ -1277,16 +1277,16 @@ namespace SIDEPS.WCFCasos {
         private System.Nullable<int> NAPVIVI20Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_17CATMATE SIDEPS_17CATMATEField;
+        private SIDEPS.ServiciosWCF.SIDEPS_17CATMATE SIDEPS_17CATMATEField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_18TIPVIVI SIDEPS_18TIPVIVIField;
+        private SIDEPS.ServiciosWCF.SIDEPS_18TIPVIVI SIDEPS_18TIPVIVIField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_19ESTVIVI SIDEPS_19ESTVIVIField;
+        private SIDEPS.ServiciosWCF.SIDEPS_19ESTVIVI SIDEPS_19ESTVIVIField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_25REGCASO> SIDEPS_25REGCASOField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_25REGCASO> SIDEPS_25REGCASOField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<bool> SRBVIVI20Field;
@@ -1395,7 +1395,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_17CATMATE SIDEPS_17CATMATE {
+        public SIDEPS.ServiciosWCF.SIDEPS_17CATMATE SIDEPS_17CATMATE {
             get {
                 return this.SIDEPS_17CATMATEField;
             }
@@ -1408,7 +1408,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_18TIPVIVI SIDEPS_18TIPVIVI {
+        public SIDEPS.ServiciosWCF.SIDEPS_18TIPVIVI SIDEPS_18TIPVIVI {
             get {
                 return this.SIDEPS_18TIPVIVIField;
             }
@@ -1421,7 +1421,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_19ESTVIVI SIDEPS_19ESTVIVI {
+        public SIDEPS.ServiciosWCF.SIDEPS_19ESTVIVI SIDEPS_19ESTVIVI {
             get {
                 return this.SIDEPS_19ESTVIVIField;
             }
@@ -1434,7 +1434,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_25REGCASO> SIDEPS_25REGCASO {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_25REGCASO> SIDEPS_25REGCASO {
             get {
                 return this.SIDEPS_25REGCASOField;
             }
@@ -1580,7 +1580,7 @@ namespace SIDEPS.WCFCasos {
         private System.Nullable<decimal> MTOTELF24Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_25REGCASO> SIDEPS_25REGCASOField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_25REGCASO> SIDEPS_25REGCASOField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1749,7 +1749,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_25REGCASO> SIDEPS_25REGCASO {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_25REGCASO> SIDEPS_25REGCASO {
             get {
                 return this.SIDEPS_25REGCASOField;
             }
@@ -1790,10 +1790,10 @@ namespace SIDEPS.WCFCasos {
         private int CODTIPA27Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_25REGCASO SIDEPS_25REGCASOField;
+        private SIDEPS.ServiciosWCF.SIDEPS_25REGCASO SIDEPS_25REGCASOField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_26CATAYUD SIDEPS_26CATAYUDField;
+        private SIDEPS.ServiciosWCF.SIDEPS_26CATAYUD SIDEPS_26CATAYUDField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1845,7 +1845,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_25REGCASO SIDEPS_25REGCASO {
+        public SIDEPS.ServiciosWCF.SIDEPS_25REGCASO SIDEPS_25REGCASO {
             get {
                 return this.SIDEPS_25REGCASOField;
             }
@@ -1858,7 +1858,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_26CATAYUD SIDEPS_26CATAYUD {
+        public SIDEPS.ServiciosWCF.SIDEPS_26CATAYUD SIDEPS_26CATAYUD {
             get {
                 return this.SIDEPS_26CATAYUDField;
             }
@@ -1908,7 +1908,7 @@ namespace SIDEPS.WCFCasos {
         private System.Nullable<System.DateTime> FECCASO28Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_25REGCASO SIDEPS_25REGCASOField;
+        private SIDEPS.ServiciosWCF.SIDEPS_25REGCASO SIDEPS_25REGCASOField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1999,7 +1999,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_25REGCASO SIDEPS_25REGCASO {
+        public SIDEPS.ServiciosWCF.SIDEPS_25REGCASO SIDEPS_25REGCASO {
             get {
                 return this.SIDEPS_25REGCASOField;
             }
@@ -2040,16 +2040,16 @@ namespace SIDEPS.WCFCasos {
         private string NOMCANT03Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_02CATPROV SIDEPS_02CATPROVField;
+        private SIDEPS.ServiciosWCF.SIDEPS_02CATPROV SIDEPS_02CATPROVField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_04REGDIAC> SIDEPS_04REGDIACField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_04REGDIAC> SIDEPS_04REGDIACField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_07REGUSRO> SIDEPS_07REGUSROField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO> SIDEPS_07REGUSROField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_13REGPERS> SIDEPS_13REGPERSField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_13REGPERS> SIDEPS_13REGPERSField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2101,7 +2101,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_02CATPROV SIDEPS_02CATPROV {
+        public SIDEPS.ServiciosWCF.SIDEPS_02CATPROV SIDEPS_02CATPROV {
             get {
                 return this.SIDEPS_02CATPROVField;
             }
@@ -2114,7 +2114,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_04REGDIAC> SIDEPS_04REGDIAC {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_04REGDIAC> SIDEPS_04REGDIAC {
             get {
                 return this.SIDEPS_04REGDIACField;
             }
@@ -2127,7 +2127,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_07REGUSRO> SIDEPS_07REGUSRO {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO> SIDEPS_07REGUSRO {
             get {
                 return this.SIDEPS_07REGUSROField;
             }
@@ -2140,7 +2140,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_13REGPERS> SIDEPS_13REGPERS {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_13REGPERS> SIDEPS_13REGPERS {
             get {
                 return this.SIDEPS_13REGPERSField;
             }
@@ -2187,10 +2187,10 @@ namespace SIDEPS.WCFCasos {
         private string NOMDIAC04Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_03CATCANT SIDEPS_03CATCANTField;
+        private SIDEPS.ServiciosWCF.SIDEPS_03CATCANT SIDEPS_03CATCANTField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_07REGUSRO> SIDEPS_07REGUSROField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO> SIDEPS_07REGUSROField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TELDIAC04Field;
@@ -2271,7 +2271,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_03CATCANT SIDEPS_03CATCANT {
+        public SIDEPS.ServiciosWCF.SIDEPS_03CATCANT SIDEPS_03CATCANT {
             get {
                 return this.SIDEPS_03CATCANTField;
             }
@@ -2284,7 +2284,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_07REGUSRO> SIDEPS_07REGUSRO {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO> SIDEPS_07REGUSRO {
             get {
                 return this.SIDEPS_07REGUSROField;
             }
@@ -2335,7 +2335,7 @@ namespace SIDEPS.WCFCasos {
         private string DESUSRO05Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_07REGUSRO> SIDEPS_07REGUSROField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO> SIDEPS_07REGUSROField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2374,7 +2374,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_07REGUSRO> SIDEPS_07REGUSRO {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO> SIDEPS_07REGUSRO {
             get {
                 return this.SIDEPS_07REGUSROField;
             }
@@ -2415,7 +2415,7 @@ namespace SIDEPS.WCFCasos {
         private string NUMTELF08Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_07REGUSRO SIDEPS_07REGUSROField;
+        private SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO SIDEPS_07REGUSROField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2467,7 +2467,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_07REGUSRO SIDEPS_07REGUSRO {
+        public SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO SIDEPS_07REGUSRO {
             get {
                 return this.SIDEPS_07REGUSROField;
             }
@@ -2508,10 +2508,10 @@ namespace SIDEPS.WCFCasos {
         private string NOMPROV02Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_01CATPAIS SIDEPS_01CATPAISField;
+        private SIDEPS.ServiciosWCF.SIDEPS_01CATPAIS SIDEPS_01CATPAISField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_03CATCANT> SIDEPS_03CATCANTField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_03CATCANT> SIDEPS_03CATCANTField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2563,7 +2563,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_01CATPAIS SIDEPS_01CATPAIS {
+        public SIDEPS.ServiciosWCF.SIDEPS_01CATPAIS SIDEPS_01CATPAIS {
             get {
                 return this.SIDEPS_01CATPAISField;
             }
@@ -2576,7 +2576,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_03CATCANT> SIDEPS_03CATCANT {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_03CATCANT> SIDEPS_03CATCANT {
             get {
                 return this.SIDEPS_03CATCANTField;
             }
@@ -2614,7 +2614,7 @@ namespace SIDEPS.WCFCasos {
         private string NOMPAIS01Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_02CATPROV> SIDEPS_02CATPROVField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_02CATPROV> SIDEPS_02CATPROVField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2653,7 +2653,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_02CATPROV> SIDEPS_02CATPROV {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_02CATPROV> SIDEPS_02CATPROV {
             get {
                 return this.SIDEPS_02CATPROVField;
             }
@@ -2691,10 +2691,10 @@ namespace SIDEPS.WCFCasos {
         private string DESESTC06Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_13REGPERS> SIDEPS_13REGPERSField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_13REGPERS> SIDEPS_13REGPERSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_22REGFAML> SIDEPS_22REGFAMLField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_22REGFAML> SIDEPS_22REGFAMLField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2733,7 +2733,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_13REGPERS> SIDEPS_13REGPERS {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_13REGPERS> SIDEPS_13REGPERS {
             get {
                 return this.SIDEPS_13REGPERSField;
             }
@@ -2746,7 +2746,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_22REGFAML> SIDEPS_22REGFAML {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_22REGFAML> SIDEPS_22REGFAML {
             get {
                 return this.SIDEPS_22REGFAMLField;
             }
@@ -2784,10 +2784,10 @@ namespace SIDEPS.WCFCasos {
         private string DESNEDU09Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_13REGPERS> SIDEPS_13REGPERSField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_13REGPERS> SIDEPS_13REGPERSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_22REGFAML> SIDEPS_22REGFAMLField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_22REGFAML> SIDEPS_22REGFAMLField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2826,7 +2826,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_13REGPERS> SIDEPS_13REGPERS {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_13REGPERS> SIDEPS_13REGPERS {
             get {
                 return this.SIDEPS_13REGPERSField;
             }
@@ -2839,7 +2839,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_22REGFAML> SIDEPS_22REGFAML {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_22REGFAML> SIDEPS_22REGFAML {
             get {
                 return this.SIDEPS_22REGFAMLField;
             }
@@ -2877,7 +2877,7 @@ namespace SIDEPS.WCFCasos {
         private string DESSOLI10Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_13REGPERS> SIDEPS_13REGPERSField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_13REGPERS> SIDEPS_13REGPERSField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2916,7 +2916,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_13REGPERS> SIDEPS_13REGPERS {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_13REGPERS> SIDEPS_13REGPERS {
             get {
                 return this.SIDEPS_13REGPERSField;
             }
@@ -2954,7 +2954,7 @@ namespace SIDEPS.WCFCasos {
         private string DESRELG11Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_13REGPERS> SIDEPS_13REGPERSField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_13REGPERS> SIDEPS_13REGPERSField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2993,7 +2993,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_13REGPERS> SIDEPS_13REGPERS {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_13REGPERS> SIDEPS_13REGPERS {
             get {
                 return this.SIDEPS_13REGPERSField;
             }
@@ -3034,10 +3034,10 @@ namespace SIDEPS.WCFCasos {
         private int CODFINA23Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_13REGPERS SIDEPS_13REGPERSField;
+        private SIDEPS.ServiciosWCF.SIDEPS_13REGPERS SIDEPS_13REGPERSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_22REGFAML SIDEPS_22REGFAMLField;
+        private SIDEPS.ServiciosWCF.SIDEPS_22REGFAML SIDEPS_22REGFAMLField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3089,7 +3089,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_13REGPERS SIDEPS_13REGPERS {
+        public SIDEPS.ServiciosWCF.SIDEPS_13REGPERS SIDEPS_13REGPERS {
             get {
                 return this.SIDEPS_13REGPERSField;
             }
@@ -3102,7 +3102,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_22REGFAML SIDEPS_22REGFAML {
+        public SIDEPS.ServiciosWCF.SIDEPS_22REGFAML SIDEPS_22REGFAML {
             get {
                 return this.SIDEPS_22REGFAMLField;
             }
@@ -3167,22 +3167,22 @@ namespace SIDEPS.WCFCasos {
         private string OACFAML22Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_06CATESTC SIDEPS_06CATESTCField;
+        private SIDEPS.ServiciosWCF.SIDEPS_06CATESTC SIDEPS_06CATESTCField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_09CATNEDU SIDEPS_09CATNEDUField;
+        private SIDEPS.ServiciosWCF.SIDEPS_09CATNEDU SIDEPS_09CATNEDUField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_12CATPARE SIDEPS_12CATPAREField;
+        private SIDEPS.ServiciosWCF.SIDEPS_12CATPARE SIDEPS_12CATPAREField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_15CATENFR SIDEPS_15CATENFRField;
+        private SIDEPS.ServiciosWCF.SIDEPS_15CATENFR SIDEPS_15CATENFRField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SIDEPS.WCFCasos.SIDEPS_21CATORGS SIDEPS_21CATORGSField;
+        private SIDEPS.ServiciosWCF.SIDEPS_21CATORGS SIDEPS_21CATORGSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_23CATFINA> SIDEPS_23CATFINAField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_23CATFINA> SIDEPS_23CATFINAField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3338,7 +3338,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_06CATESTC SIDEPS_06CATESTC {
+        public SIDEPS.ServiciosWCF.SIDEPS_06CATESTC SIDEPS_06CATESTC {
             get {
                 return this.SIDEPS_06CATESTCField;
             }
@@ -3351,7 +3351,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_09CATNEDU SIDEPS_09CATNEDU {
+        public SIDEPS.ServiciosWCF.SIDEPS_09CATNEDU SIDEPS_09CATNEDU {
             get {
                 return this.SIDEPS_09CATNEDUField;
             }
@@ -3364,7 +3364,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_12CATPARE SIDEPS_12CATPARE {
+        public SIDEPS.ServiciosWCF.SIDEPS_12CATPARE SIDEPS_12CATPARE {
             get {
                 return this.SIDEPS_12CATPAREField;
             }
@@ -3377,7 +3377,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_15CATENFR SIDEPS_15CATENFR {
+        public SIDEPS.ServiciosWCF.SIDEPS_15CATENFR SIDEPS_15CATENFR {
             get {
                 return this.SIDEPS_15CATENFRField;
             }
@@ -3390,7 +3390,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SIDEPS.WCFCasos.SIDEPS_21CATORGS SIDEPS_21CATORGS {
+        public SIDEPS.ServiciosWCF.SIDEPS_21CATORGS SIDEPS_21CATORGS {
             get {
                 return this.SIDEPS_21CATORGSField;
             }
@@ -3403,7 +3403,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_23CATFINA> SIDEPS_23CATFINA {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_23CATFINA> SIDEPS_23CATFINA {
             get {
                 return this.SIDEPS_23CATFINAField;
             }
@@ -3441,7 +3441,7 @@ namespace SIDEPS.WCFCasos {
         private string DESPARE12Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_22REGFAML> SIDEPS_22REGFAMLField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_22REGFAML> SIDEPS_22REGFAMLField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3480,7 +3480,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_22REGFAML> SIDEPS_22REGFAML {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_22REGFAML> SIDEPS_22REGFAML {
             get {
                 return this.SIDEPS_22REGFAMLField;
             }
@@ -3518,10 +3518,10 @@ namespace SIDEPS.WCFCasos {
         private string DESENFR15Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_16REGASPS> SIDEPS_16REGASPSField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_16REGASPS> SIDEPS_16REGASPSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_22REGFAML> SIDEPS_22REGFAMLField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_22REGFAML> SIDEPS_22REGFAMLField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3560,7 +3560,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_16REGASPS> SIDEPS_16REGASPS {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_16REGASPS> SIDEPS_16REGASPS {
             get {
                 return this.SIDEPS_16REGASPSField;
             }
@@ -3573,7 +3573,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_22REGFAML> SIDEPS_22REGFAML {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_22REGFAML> SIDEPS_22REGFAML {
             get {
                 return this.SIDEPS_22REGFAMLField;
             }
@@ -3611,7 +3611,7 @@ namespace SIDEPS.WCFCasos {
         private string DESORGS21Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_22REGFAML> SIDEPS_22REGFAMLField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_22REGFAML> SIDEPS_22REGFAMLField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3650,7 +3650,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_22REGFAML> SIDEPS_22REGFAML {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_22REGFAML> SIDEPS_22REGFAML {
             get {
                 return this.SIDEPS_22REGFAMLField;
             }
@@ -3688,7 +3688,7 @@ namespace SIDEPS.WCFCasos {
         private string DESSEGU14Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_16REGASPS> SIDEPS_16REGASPSField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_16REGASPS> SIDEPS_16REGASPSField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3727,7 +3727,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_16REGASPS> SIDEPS_16REGASPS {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_16REGASPS> SIDEPS_16REGASPS {
             get {
                 return this.SIDEPS_16REGASPSField;
             }
@@ -3765,7 +3765,7 @@ namespace SIDEPS.WCFCasos {
         private string DESMATE17Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_20REGVIVI> SIDEPS_20REGVIVIField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_20REGVIVI> SIDEPS_20REGVIVIField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3804,7 +3804,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_20REGVIVI> SIDEPS_20REGVIVI {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_20REGVIVI> SIDEPS_20REGVIVI {
             get {
                 return this.SIDEPS_20REGVIVIField;
             }
@@ -3842,7 +3842,7 @@ namespace SIDEPS.WCFCasos {
         private string DESTIPV18Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_20REGVIVI> SIDEPS_20REGVIVIField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_20REGVIVI> SIDEPS_20REGVIVIField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3881,7 +3881,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_20REGVIVI> SIDEPS_20REGVIVI {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_20REGVIVI> SIDEPS_20REGVIVI {
             get {
                 return this.SIDEPS_20REGVIVIField;
             }
@@ -3919,7 +3919,7 @@ namespace SIDEPS.WCFCasos {
         private string DESESTV19Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_20REGVIVI> SIDEPS_20REGVIVIField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_20REGVIVI> SIDEPS_20REGVIVIField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3958,7 +3958,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_20REGVIVI> SIDEPS_20REGVIVI {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_20REGVIVI> SIDEPS_20REGVIVI {
             get {
                 return this.SIDEPS_20REGVIVIField;
             }
@@ -3996,7 +3996,7 @@ namespace SIDEPS.WCFCasos {
         private string DESAYUD26Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_27TIPAYUD> SIDEPS_27TIPAYUDField;
+        private System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_27TIPAYUD> SIDEPS_27TIPAYUDField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -4035,7 +4035,7 @@ namespace SIDEPS.WCFCasos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_27TIPAYUD> SIDEPS_27TIPAYUD {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_27TIPAYUD> SIDEPS_27TIPAYUD {
             get {
                 return this.SIDEPS_27TIPAYUDField;
             }
@@ -4952,329 +4952,343 @@ namespace SIDEPS.WCFCasos {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WCFCasos.ICasosSvc")]
-    public interface ICasosSvc {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiciosWCF.IServiciosWCF")]
+    public interface IServiciosWCF {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_Caso", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_CasoResponse")]
-        int SP_Ins_Caso(SIDEPS.WCFCasos.SIDEPS_25REGCASO caso);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Ins_Caso", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Ins_CasoResponse")]
+        int SP_Ins_Caso(SIDEPS.ServiciosWCF.SIDEPS_25REGCASO caso);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_Caso", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_CasoResponse")]
-        System.Threading.Tasks.Task<int> SP_Ins_CasoAsync(SIDEPS.WCFCasos.SIDEPS_25REGCASO caso);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Ins_Caso", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Ins_CasoResponse")]
+        System.Threading.Tasks.Task<int> SP_Ins_CasoAsync(SIDEPS.ServiciosWCF.SIDEPS_25REGCASO caso);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Mod_Caso", ReplyAction="http://tempuri.org/ICasosSvc/SP_Mod_CasoResponse")]
-        bool SP_Mod_Caso(SIDEPS.WCFCasos.SIDEPS_25REGCASO caso);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Mod_Caso", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Mod_CasoResponse")]
+        bool SP_Mod_Caso(SIDEPS.ServiciosWCF.SIDEPS_25REGCASO caso);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Mod_Caso", ReplyAction="http://tempuri.org/ICasosSvc/SP_Mod_CasoResponse")]
-        System.Threading.Tasks.Task<bool> SP_Mod_CasoAsync(SIDEPS.WCFCasos.SIDEPS_25REGCASO caso);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Mod_Caso", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Mod_CasoResponse")]
+        System.Threading.Tasks.Task<bool> SP_Mod_CasoAsync(SIDEPS.ServiciosWCF.SIDEPS_25REGCASO caso);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_Persona", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_PersonaResponse")]
-        bool SP_Ins_Persona(SIDEPS.WCFCasos.SIDEPS_13REGPERS persona);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Ins_Persona", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Ins_PersonaResponse")]
+        bool SP_Ins_Persona(SIDEPS.ServiciosWCF.SIDEPS_13REGPERS persona);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_Persona", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_PersonaResponse")]
-        System.Threading.Tasks.Task<bool> SP_Ins_PersonaAsync(SIDEPS.WCFCasos.SIDEPS_13REGPERS persona);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Ins_Persona", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Ins_PersonaResponse")]
+        System.Threading.Tasks.Task<bool> SP_Ins_PersonaAsync(SIDEPS.ServiciosWCF.SIDEPS_13REGPERS persona);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_AspectoSalud", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_AspectoSaludResponse")]
-        int SP_Ins_AspectoSalud(SIDEPS.WCFCasos.SIDEPS_16REGASPS aspecto, int codigoCaso);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Ins_AspectoSalud", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Ins_AspectoSaludResponse")]
+        int SP_Ins_AspectoSalud(SIDEPS.ServiciosWCF.SIDEPS_16REGASPS aspecto, int codigoCaso);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_AspectoSalud", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_AspectoSaludResponse")]
-        System.Threading.Tasks.Task<int> SP_Ins_AspectoSaludAsync(SIDEPS.WCFCasos.SIDEPS_16REGASPS aspecto, int codigoCaso);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Ins_AspectoSalud", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Ins_AspectoSaludResponse")]
+        System.Threading.Tasks.Task<int> SP_Ins_AspectoSaludAsync(SIDEPS.ServiciosWCF.SIDEPS_16REGASPS aspecto, int codigoCaso);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_Vivienda", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_ViviendaResponse")]
-        int SP_Ins_Vivienda(SIDEPS.WCFCasos.SIDEPS_20REGVIVI vivienda, int codigoCaso);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Ins_Vivienda", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Ins_ViviendaResponse")]
+        int SP_Ins_Vivienda(SIDEPS.ServiciosWCF.SIDEPS_20REGVIVI vivienda, int codigoCaso);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_Vivienda", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_ViviendaResponse")]
-        System.Threading.Tasks.Task<int> SP_Ins_ViviendaAsync(SIDEPS.WCFCasos.SIDEPS_20REGVIVI vivienda, int codigoCaso);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Ins_Vivienda", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Ins_ViviendaResponse")]
+        System.Threading.Tasks.Task<int> SP_Ins_ViviendaAsync(SIDEPS.ServiciosWCF.SIDEPS_20REGVIVI vivienda, int codigoCaso);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_GrupoFamiliar", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_GrupoFamiliarResponse")]
-        bool SP_Ins_GrupoFamiliar(SIDEPS.WCFCasos.SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Ins_GrupoFamiliar", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Ins_GrupoFamiliarResponse")]
+        bool SP_Ins_GrupoFamiliar(SIDEPS.ServiciosWCF.SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_GrupoFamiliar", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_GrupoFamiliarResponse")]
-        System.Threading.Tasks.Task<bool> SP_Ins_GrupoFamiliarAsync(SIDEPS.WCFCasos.SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Ins_GrupoFamiliar", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Ins_GrupoFamiliarResponse")]
+        System.Threading.Tasks.Task<bool> SP_Ins_GrupoFamiliarAsync(SIDEPS.ServiciosWCF.SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_Egresos", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_EgresosResponse")]
-        int SP_Ins_Egresos(SIDEPS.WCFCasos.SIDEPS_24REGEGRF egresos, int codigoCaso);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Ins_Egresos", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Ins_EgresosResponse")]
+        int SP_Ins_Egresos(SIDEPS.ServiciosWCF.SIDEPS_24REGEGRF egresos, int codigoCaso);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Ins_Egresos", ReplyAction="http://tempuri.org/ICasosSvc/SP_Ins_EgresosResponse")]
-        System.Threading.Tasks.Task<int> SP_Ins_EgresosAsync(SIDEPS.WCFCasos.SIDEPS_24REGEGRF egresos, int codigoCaso);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Ins_Egresos", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Ins_EgresosResponse")]
+        System.Threading.Tasks.Task<int> SP_Ins_EgresosAsync(SIDEPS.ServiciosWCF.SIDEPS_24REGEGRF egresos, int codigoCaso);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Con_Religiones", ReplyAction="http://tempuri.org/ICasosSvc/SP_Con_ReligionesResponse")]
-        System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_CATRELG_Result> SP_Con_Religiones();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_Religiones", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_ReligionesResponse")]
+        System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATRELG_Result> SP_Con_Religiones();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Con_Religiones", ReplyAction="http://tempuri.org/ICasosSvc/SP_Con_ReligionesResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_CATRELG_Result>> SP_Con_ReligionesAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_Religiones", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_ReligionesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATRELG_Result>> SP_Con_ReligionesAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Con_Cantones", ReplyAction="http://tempuri.org/ICasosSvc/SP_Con_CantonesResponse")]
-        System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_CATCANT_Result> SP_Con_Cantones();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_Cantones", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_CantonesResponse")]
+        System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATCANT_Result> SP_Con_Cantones();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/SP_Con_Cantones", ReplyAction="http://tempuri.org/ICasosSvc/SP_Con_CantonesResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_CATCANT_Result>> SP_Con_CantonesAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_Cantones", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_CantonesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATCANT_Result>> SP_Con_CantonesAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/Diaconia", ReplyAction="http://tempuri.org/ICasosSvc/DiaconiaResponse")]
-        System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_04REGDIAC> Diaconia();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/Diaconia", ReplyAction="http://tempuri.org/IServiciosWCF/DiaconiaResponse")]
+        System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_04REGDIAC> Diaconia();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/Diaconia", ReplyAction="http://tempuri.org/ICasosSvc/DiaconiaResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_04REGDIAC>> DiaconiaAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/Diaconia", ReplyAction="http://tempuri.org/IServiciosWCF/DiaconiaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_04REGDIAC>> DiaconiaAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/conDiaconias", ReplyAction="http://tempuri.org/ICasosSvc/conDiaconiasResponse")]
-        System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_REGDIAC_Result> conDiaconias();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/conDiaconias", ReplyAction="http://tempuri.org/IServiciosWCF/conDiaconiasResponse")]
+        System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_REGDIAC_Result> conDiaconias();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/conDiaconias", ReplyAction="http://tempuri.org/ICasosSvc/conDiaconiasResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_REGDIAC_Result>> conDiaconiasAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/conDiaconias", ReplyAction="http://tempuri.org/IServiciosWCF/conDiaconiasResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_REGDIAC_Result>> conDiaconiasAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/conDiaconiasXId", ReplyAction="http://tempuri.org/ICasosSvc/conDiaconiasXIdResponse")]
-        SIDEPS.WCFCasos.SP_CONXID_REGDIAC_Result conDiaconiasXId(int pid);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/conDiaconiasXId", ReplyAction="http://tempuri.org/IServiciosWCF/conDiaconiasXIdResponse")]
+        SIDEPS.ServiciosWCF.SP_CONXID_REGDIAC_Result conDiaconiasXId(int pid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/conDiaconiasXId", ReplyAction="http://tempuri.org/ICasosSvc/conDiaconiasXIdResponse")]
-        System.Threading.Tasks.Task<SIDEPS.WCFCasos.SP_CONXID_REGDIAC_Result> conDiaconiasXIdAsync(int pid);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/conDiaconiasXId", ReplyAction="http://tempuri.org/IServiciosWCF/conDiaconiasXIdResponse")]
+        System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.SP_CONXID_REGDIAC_Result> conDiaconiasXIdAsync(int pid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/insDiaconia", ReplyAction="http://tempuri.org/ICasosSvc/insDiaconiaResponse")]
-        bool insDiaconia(SIDEPS.WCFCasos.SIDEPS_04REGDIAC pobjDiac);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/insDiaconia", ReplyAction="http://tempuri.org/IServiciosWCF/insDiaconiaResponse")]
+        bool insDiaconia(SIDEPS.ServiciosWCF.SIDEPS_04REGDIAC pobjDiac);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/insDiaconia", ReplyAction="http://tempuri.org/ICasosSvc/insDiaconiaResponse")]
-        System.Threading.Tasks.Task<bool> insDiaconiaAsync(SIDEPS.WCFCasos.SIDEPS_04REGDIAC pobjDiac);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/insDiaconia", ReplyAction="http://tempuri.org/IServiciosWCF/insDiaconiaResponse")]
+        System.Threading.Tasks.Task<bool> insDiaconiaAsync(SIDEPS.ServiciosWCF.SIDEPS_04REGDIAC pobjDiac);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/modDiaconia", ReplyAction="http://tempuri.org/ICasosSvc/modDiaconiaResponse")]
-        bool modDiaconia(SIDEPS.WCFCasos.SIDEPS_04REGDIAC pobjDiac);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/modDiaconia", ReplyAction="http://tempuri.org/IServiciosWCF/modDiaconiaResponse")]
+        bool modDiaconia(SIDEPS.ServiciosWCF.SIDEPS_04REGDIAC pobjDiac);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/modDiaconia", ReplyAction="http://tempuri.org/ICasosSvc/modDiaconiaResponse")]
-        System.Threading.Tasks.Task<bool> modDiaconiaAsync(SIDEPS.WCFCasos.SIDEPS_04REGDIAC pobjDiac);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/modDiaconia", ReplyAction="http://tempuri.org/IServiciosWCF/modDiaconiaResponse")]
+        System.Threading.Tasks.Task<bool> modDiaconiaAsync(SIDEPS.ServiciosWCF.SIDEPS_04REGDIAC pobjDiac);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/delDiaconia", ReplyAction="http://tempuri.org/ICasosSvc/delDiaconiaResponse")]
-        bool delDiaconia(SIDEPS.WCFCasos.SIDEPS_04REGDIAC pobjDiac);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/delDiaconia", ReplyAction="http://tempuri.org/IServiciosWCF/delDiaconiaResponse")]
+        bool delDiaconia(SIDEPS.ServiciosWCF.SIDEPS_04REGDIAC pobjDiac);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/delDiaconia", ReplyAction="http://tempuri.org/ICasosSvc/delDiaconiaResponse")]
-        System.Threading.Tasks.Task<bool> delDiaconiaAsync(SIDEPS.WCFCasos.SIDEPS_04REGDIAC pobjDiac);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/delDiaconia", ReplyAction="http://tempuri.org/IServiciosWCF/delDiaconiaResponse")]
+        System.Threading.Tasks.Task<bool> delDiaconiaAsync(SIDEPS.ServiciosWCF.SIDEPS_04REGDIAC pobjDiac);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/Usuario", ReplyAction="http://tempuri.org/ICasosSvc/UsuarioResponse")]
-        System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_07REGUSRO> Usuario();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/Usuario", ReplyAction="http://tempuri.org/IServiciosWCF/UsuarioResponse")]
+        System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO> Usuario();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/Usuario", ReplyAction="http://tempuri.org/ICasosSvc/UsuarioResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_07REGUSRO>> UsuarioAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/Usuario", ReplyAction="http://tempuri.org/IServiciosWCF/UsuarioResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO>> UsuarioAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/conUsuario", ReplyAction="http://tempuri.org/ICasosSvc/conUsuarioResponse")]
-        System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_REGUSRO_Result> conUsuario();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/conUsuario", ReplyAction="http://tempuri.org/IServiciosWCF/conUsuarioResponse")]
+        System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_REGUSRO_Result> conUsuario();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/conUsuario", ReplyAction="http://tempuri.org/ICasosSvc/conUsuarioResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_REGUSRO_Result>> conUsuarioAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/conUsuario", ReplyAction="http://tempuri.org/IServiciosWCF/conUsuarioResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_REGUSRO_Result>> conUsuarioAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/conUsuarioXId", ReplyAction="http://tempuri.org/ICasosSvc/conUsuarioXIdResponse")]
-        SIDEPS.WCFCasos.SP_CONXID_REGUSRO_Result conUsuarioXId(int pid);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/conUsuarioXId", ReplyAction="http://tempuri.org/IServiciosWCF/conUsuarioXIdResponse")]
+        SIDEPS.ServiciosWCF.SP_CONXID_REGUSRO_Result conUsuarioXId(int pid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/conUsuarioXId", ReplyAction="http://tempuri.org/ICasosSvc/conUsuarioXIdResponse")]
-        System.Threading.Tasks.Task<SIDEPS.WCFCasos.SP_CONXID_REGUSRO_Result> conUsuarioXIdAsync(int pid);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/conUsuarioXId", ReplyAction="http://tempuri.org/IServiciosWCF/conUsuarioXIdResponse")]
+        System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.SP_CONXID_REGUSRO_Result> conUsuarioXIdAsync(int pid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/insUsuario", ReplyAction="http://tempuri.org/ICasosSvc/insUsuarioResponse")]
-        bool insUsuario(SIDEPS.WCFCasos.SIDEPS_07REGUSRO pobjUsuario);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/insUsuario", ReplyAction="http://tempuri.org/IServiciosWCF/insUsuarioResponse")]
+        bool insUsuario(SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO pobjUsuario);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/insUsuario", ReplyAction="http://tempuri.org/ICasosSvc/insUsuarioResponse")]
-        System.Threading.Tasks.Task<bool> insUsuarioAsync(SIDEPS.WCFCasos.SIDEPS_07REGUSRO pobjUsuario);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/insUsuario", ReplyAction="http://tempuri.org/IServiciosWCF/insUsuarioResponse")]
+        System.Threading.Tasks.Task<bool> insUsuarioAsync(SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO pobjUsuario);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/modUsuario", ReplyAction="http://tempuri.org/ICasosSvc/modUsuarioResponse")]
-        bool modUsuario(SIDEPS.WCFCasos.SIDEPS_07REGUSRO pobjUsuario);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/modUsuario", ReplyAction="http://tempuri.org/IServiciosWCF/modUsuarioResponse")]
+        bool modUsuario(SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO pobjUsuario);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/modUsuario", ReplyAction="http://tempuri.org/ICasosSvc/modUsuarioResponse")]
-        System.Threading.Tasks.Task<bool> modUsuarioAsync(SIDEPS.WCFCasos.SIDEPS_07REGUSRO pobjUsuario);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/modUsuario", ReplyAction="http://tempuri.org/IServiciosWCF/modUsuarioResponse")]
+        System.Threading.Tasks.Task<bool> modUsuarioAsync(SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO pobjUsuario);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/delUsuario", ReplyAction="http://tempuri.org/ICasosSvc/delUsuarioResponse")]
-        bool delUsuario(SIDEPS.WCFCasos.SIDEPS_07REGUSRO pobjUsuario);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/delUsuario", ReplyAction="http://tempuri.org/IServiciosWCF/delUsuarioResponse")]
+        bool delUsuario(SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO pobjUsuario);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosSvc/delUsuario", ReplyAction="http://tempuri.org/ICasosSvc/delUsuarioResponse")]
-        System.Threading.Tasks.Task<bool> delUsuarioAsync(SIDEPS.WCFCasos.SIDEPS_07REGUSRO pobjUsuario);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/delUsuario", ReplyAction="http://tempuri.org/IServiciosWCF/delUsuarioResponse")]
+        System.Threading.Tasks.Task<bool> delUsuarioAsync(SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO pobjUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/Login", ReplyAction="http://tempuri.org/IServiciosWCF/LoginResponse")]
+        SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO Login(string cedula, string contrasena);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/Login", ReplyAction="http://tempuri.org/IServiciosWCF/LoginResponse")]
+        System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO> LoginAsync(string cedula, string contrasena);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICasosSvcChannel : SIDEPS.WCFCasos.ICasosSvc, System.ServiceModel.IClientChannel {
+    public interface IServiciosWCFChannel : SIDEPS.ServiciosWCF.IServiciosWCF, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CasosSvcClient : System.ServiceModel.ClientBase<SIDEPS.WCFCasos.ICasosSvc>, SIDEPS.WCFCasos.ICasosSvc {
+    public partial class ServiciosWCFClient : System.ServiceModel.ClientBase<SIDEPS.ServiciosWCF.IServiciosWCF>, SIDEPS.ServiciosWCF.IServiciosWCF {
         
-        public CasosSvcClient() {
+        public ServiciosWCFClient() {
         }
         
-        public CasosSvcClient(string endpointConfigurationName) : 
+        public ServiciosWCFClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public CasosSvcClient(string endpointConfigurationName, string remoteAddress) : 
+        public ServiciosWCFClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public CasosSvcClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ServiciosWCFClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public CasosSvcClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ServiciosWCFClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public int SP_Ins_Caso(SIDEPS.WCFCasos.SIDEPS_25REGCASO caso) {
+        public int SP_Ins_Caso(SIDEPS.ServiciosWCF.SIDEPS_25REGCASO caso) {
             return base.Channel.SP_Ins_Caso(caso);
         }
         
-        public System.Threading.Tasks.Task<int> SP_Ins_CasoAsync(SIDEPS.WCFCasos.SIDEPS_25REGCASO caso) {
+        public System.Threading.Tasks.Task<int> SP_Ins_CasoAsync(SIDEPS.ServiciosWCF.SIDEPS_25REGCASO caso) {
             return base.Channel.SP_Ins_CasoAsync(caso);
         }
         
-        public bool SP_Mod_Caso(SIDEPS.WCFCasos.SIDEPS_25REGCASO caso) {
+        public bool SP_Mod_Caso(SIDEPS.ServiciosWCF.SIDEPS_25REGCASO caso) {
             return base.Channel.SP_Mod_Caso(caso);
         }
         
-        public System.Threading.Tasks.Task<bool> SP_Mod_CasoAsync(SIDEPS.WCFCasos.SIDEPS_25REGCASO caso) {
+        public System.Threading.Tasks.Task<bool> SP_Mod_CasoAsync(SIDEPS.ServiciosWCF.SIDEPS_25REGCASO caso) {
             return base.Channel.SP_Mod_CasoAsync(caso);
         }
         
-        public bool SP_Ins_Persona(SIDEPS.WCFCasos.SIDEPS_13REGPERS persona) {
+        public bool SP_Ins_Persona(SIDEPS.ServiciosWCF.SIDEPS_13REGPERS persona) {
             return base.Channel.SP_Ins_Persona(persona);
         }
         
-        public System.Threading.Tasks.Task<bool> SP_Ins_PersonaAsync(SIDEPS.WCFCasos.SIDEPS_13REGPERS persona) {
+        public System.Threading.Tasks.Task<bool> SP_Ins_PersonaAsync(SIDEPS.ServiciosWCF.SIDEPS_13REGPERS persona) {
             return base.Channel.SP_Ins_PersonaAsync(persona);
         }
         
-        public int SP_Ins_AspectoSalud(SIDEPS.WCFCasos.SIDEPS_16REGASPS aspecto, int codigoCaso) {
+        public int SP_Ins_AspectoSalud(SIDEPS.ServiciosWCF.SIDEPS_16REGASPS aspecto, int codigoCaso) {
             return base.Channel.SP_Ins_AspectoSalud(aspecto, codigoCaso);
         }
         
-        public System.Threading.Tasks.Task<int> SP_Ins_AspectoSaludAsync(SIDEPS.WCFCasos.SIDEPS_16REGASPS aspecto, int codigoCaso) {
+        public System.Threading.Tasks.Task<int> SP_Ins_AspectoSaludAsync(SIDEPS.ServiciosWCF.SIDEPS_16REGASPS aspecto, int codigoCaso) {
             return base.Channel.SP_Ins_AspectoSaludAsync(aspecto, codigoCaso);
         }
         
-        public int SP_Ins_Vivienda(SIDEPS.WCFCasos.SIDEPS_20REGVIVI vivienda, int codigoCaso) {
+        public int SP_Ins_Vivienda(SIDEPS.ServiciosWCF.SIDEPS_20REGVIVI vivienda, int codigoCaso) {
             return base.Channel.SP_Ins_Vivienda(vivienda, codigoCaso);
         }
         
-        public System.Threading.Tasks.Task<int> SP_Ins_ViviendaAsync(SIDEPS.WCFCasos.SIDEPS_20REGVIVI vivienda, int codigoCaso) {
+        public System.Threading.Tasks.Task<int> SP_Ins_ViviendaAsync(SIDEPS.ServiciosWCF.SIDEPS_20REGVIVI vivienda, int codigoCaso) {
             return base.Channel.SP_Ins_ViviendaAsync(vivienda, codigoCaso);
         }
         
-        public bool SP_Ins_GrupoFamiliar(SIDEPS.WCFCasos.SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona) {
+        public bool SP_Ins_GrupoFamiliar(SIDEPS.ServiciosWCF.SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona) {
             return base.Channel.SP_Ins_GrupoFamiliar(grupoFamiliar, cedulaPersona);
         }
         
-        public System.Threading.Tasks.Task<bool> SP_Ins_GrupoFamiliarAsync(SIDEPS.WCFCasos.SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona) {
+        public System.Threading.Tasks.Task<bool> SP_Ins_GrupoFamiliarAsync(SIDEPS.ServiciosWCF.SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona) {
             return base.Channel.SP_Ins_GrupoFamiliarAsync(grupoFamiliar, cedulaPersona);
         }
         
-        public int SP_Ins_Egresos(SIDEPS.WCFCasos.SIDEPS_24REGEGRF egresos, int codigoCaso) {
+        public int SP_Ins_Egresos(SIDEPS.ServiciosWCF.SIDEPS_24REGEGRF egresos, int codigoCaso) {
             return base.Channel.SP_Ins_Egresos(egresos, codigoCaso);
         }
         
-        public System.Threading.Tasks.Task<int> SP_Ins_EgresosAsync(SIDEPS.WCFCasos.SIDEPS_24REGEGRF egresos, int codigoCaso) {
+        public System.Threading.Tasks.Task<int> SP_Ins_EgresosAsync(SIDEPS.ServiciosWCF.SIDEPS_24REGEGRF egresos, int codigoCaso) {
             return base.Channel.SP_Ins_EgresosAsync(egresos, codigoCaso);
         }
         
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_CATRELG_Result> SP_Con_Religiones() {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATRELG_Result> SP_Con_Religiones() {
             return base.Channel.SP_Con_Religiones();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_CATRELG_Result>> SP_Con_ReligionesAsync() {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATRELG_Result>> SP_Con_ReligionesAsync() {
             return base.Channel.SP_Con_ReligionesAsync();
         }
         
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_CATCANT_Result> SP_Con_Cantones() {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATCANT_Result> SP_Con_Cantones() {
             return base.Channel.SP_Con_Cantones();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_CATCANT_Result>> SP_Con_CantonesAsync() {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATCANT_Result>> SP_Con_CantonesAsync() {
             return base.Channel.SP_Con_CantonesAsync();
         }
         
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_04REGDIAC> Diaconia() {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_04REGDIAC> Diaconia() {
             return base.Channel.Diaconia();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_04REGDIAC>> DiaconiaAsync() {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_04REGDIAC>> DiaconiaAsync() {
             return base.Channel.DiaconiaAsync();
         }
         
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_REGDIAC_Result> conDiaconias() {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_REGDIAC_Result> conDiaconias() {
             return base.Channel.conDiaconias();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_REGDIAC_Result>> conDiaconiasAsync() {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_REGDIAC_Result>> conDiaconiasAsync() {
             return base.Channel.conDiaconiasAsync();
         }
         
-        public SIDEPS.WCFCasos.SP_CONXID_REGDIAC_Result conDiaconiasXId(int pid) {
+        public SIDEPS.ServiciosWCF.SP_CONXID_REGDIAC_Result conDiaconiasXId(int pid) {
             return base.Channel.conDiaconiasXId(pid);
         }
         
-        public System.Threading.Tasks.Task<SIDEPS.WCFCasos.SP_CONXID_REGDIAC_Result> conDiaconiasXIdAsync(int pid) {
+        public System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.SP_CONXID_REGDIAC_Result> conDiaconiasXIdAsync(int pid) {
             return base.Channel.conDiaconiasXIdAsync(pid);
         }
         
-        public bool insDiaconia(SIDEPS.WCFCasos.SIDEPS_04REGDIAC pobjDiac) {
+        public bool insDiaconia(SIDEPS.ServiciosWCF.SIDEPS_04REGDIAC pobjDiac) {
             return base.Channel.insDiaconia(pobjDiac);
         }
         
-        public System.Threading.Tasks.Task<bool> insDiaconiaAsync(SIDEPS.WCFCasos.SIDEPS_04REGDIAC pobjDiac) {
+        public System.Threading.Tasks.Task<bool> insDiaconiaAsync(SIDEPS.ServiciosWCF.SIDEPS_04REGDIAC pobjDiac) {
             return base.Channel.insDiaconiaAsync(pobjDiac);
         }
         
-        public bool modDiaconia(SIDEPS.WCFCasos.SIDEPS_04REGDIAC pobjDiac) {
+        public bool modDiaconia(SIDEPS.ServiciosWCF.SIDEPS_04REGDIAC pobjDiac) {
             return base.Channel.modDiaconia(pobjDiac);
         }
         
-        public System.Threading.Tasks.Task<bool> modDiaconiaAsync(SIDEPS.WCFCasos.SIDEPS_04REGDIAC pobjDiac) {
+        public System.Threading.Tasks.Task<bool> modDiaconiaAsync(SIDEPS.ServiciosWCF.SIDEPS_04REGDIAC pobjDiac) {
             return base.Channel.modDiaconiaAsync(pobjDiac);
         }
         
-        public bool delDiaconia(SIDEPS.WCFCasos.SIDEPS_04REGDIAC pobjDiac) {
+        public bool delDiaconia(SIDEPS.ServiciosWCF.SIDEPS_04REGDIAC pobjDiac) {
             return base.Channel.delDiaconia(pobjDiac);
         }
         
-        public System.Threading.Tasks.Task<bool> delDiaconiaAsync(SIDEPS.WCFCasos.SIDEPS_04REGDIAC pobjDiac) {
+        public System.Threading.Tasks.Task<bool> delDiaconiaAsync(SIDEPS.ServiciosWCF.SIDEPS_04REGDIAC pobjDiac) {
             return base.Channel.delDiaconiaAsync(pobjDiac);
         }
         
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_07REGUSRO> Usuario() {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO> Usuario() {
             return base.Channel.Usuario();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.WCFCasos.SIDEPS_07REGUSRO>> UsuarioAsync() {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO>> UsuarioAsync() {
             return base.Channel.UsuarioAsync();
         }
         
-        public System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_REGUSRO_Result> conUsuario() {
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_REGUSRO_Result> conUsuario() {
             return base.Channel.conUsuario();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.WCFCasos.SP_CON_REGUSRO_Result>> conUsuarioAsync() {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_REGUSRO_Result>> conUsuarioAsync() {
             return base.Channel.conUsuarioAsync();
         }
         
-        public SIDEPS.WCFCasos.SP_CONXID_REGUSRO_Result conUsuarioXId(int pid) {
+        public SIDEPS.ServiciosWCF.SP_CONXID_REGUSRO_Result conUsuarioXId(int pid) {
             return base.Channel.conUsuarioXId(pid);
         }
         
-        public System.Threading.Tasks.Task<SIDEPS.WCFCasos.SP_CONXID_REGUSRO_Result> conUsuarioXIdAsync(int pid) {
+        public System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.SP_CONXID_REGUSRO_Result> conUsuarioXIdAsync(int pid) {
             return base.Channel.conUsuarioXIdAsync(pid);
         }
         
-        public bool insUsuario(SIDEPS.WCFCasos.SIDEPS_07REGUSRO pobjUsuario) {
+        public bool insUsuario(SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO pobjUsuario) {
             return base.Channel.insUsuario(pobjUsuario);
         }
         
-        public System.Threading.Tasks.Task<bool> insUsuarioAsync(SIDEPS.WCFCasos.SIDEPS_07REGUSRO pobjUsuario) {
+        public System.Threading.Tasks.Task<bool> insUsuarioAsync(SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO pobjUsuario) {
             return base.Channel.insUsuarioAsync(pobjUsuario);
         }
         
-        public bool modUsuario(SIDEPS.WCFCasos.SIDEPS_07REGUSRO pobjUsuario) {
+        public bool modUsuario(SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO pobjUsuario) {
             return base.Channel.modUsuario(pobjUsuario);
         }
         
-        public System.Threading.Tasks.Task<bool> modUsuarioAsync(SIDEPS.WCFCasos.SIDEPS_07REGUSRO pobjUsuario) {
+        public System.Threading.Tasks.Task<bool> modUsuarioAsync(SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO pobjUsuario) {
             return base.Channel.modUsuarioAsync(pobjUsuario);
         }
         
-        public bool delUsuario(SIDEPS.WCFCasos.SIDEPS_07REGUSRO pobjUsuario) {
+        public bool delUsuario(SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO pobjUsuario) {
             return base.Channel.delUsuario(pobjUsuario);
         }
         
-        public System.Threading.Tasks.Task<bool> delUsuarioAsync(SIDEPS.WCFCasos.SIDEPS_07REGUSRO pobjUsuario) {
+        public System.Threading.Tasks.Task<bool> delUsuarioAsync(SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO pobjUsuario) {
             return base.Channel.delUsuarioAsync(pobjUsuario);
+        }
+        
+        public SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO Login(string cedula, string contrasena) {
+            return base.Channel.Login(cedula, contrasena);
+        }
+        
+        public System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO> LoginAsync(string cedula, string contrasena) {
+            return base.Channel.LoginAsync(cedula, contrasena);
         }
     }
 }

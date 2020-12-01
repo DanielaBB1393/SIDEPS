@@ -122,5 +122,22 @@ namespace AccesoDatos.Implementacion
             }
             return lobjRespuesta;
         }
+
+        public SIDEPS_07REGUSRO Login(string cedula, string contrasena)
+        {
+            try
+            {
+                return gobjContextoSP.SIDEPS_07REGUSRO
+                    .Where(usr => 
+                        usr.CEDUSRO07.Equals(cedula, StringComparison.OrdinalIgnoreCase) && 
+                        usr.CNTUSRO07.Equals(contrasena))
+                    .FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

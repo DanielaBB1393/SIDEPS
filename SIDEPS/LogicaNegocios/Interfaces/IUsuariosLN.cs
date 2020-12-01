@@ -16,5 +16,6 @@ namespace LogicaNegocios.Interfaces
         bool modUsuario(SIDEPS_07REGUSRO pobjUsuario);
 
         bool delUsuario(SIDEPS_07REGUSRO pobjUsuario);
+        SIDEPS_07REGUSRO Login(string cedula, string contrasena);
     }
 }

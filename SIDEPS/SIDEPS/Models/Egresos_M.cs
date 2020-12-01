@@ -1,4 +1,4 @@
-﻿using SIDEPS.WCFCasos;
+﻿using SIDEPS.ServiciosWCF;
 using System;
 using System.ComponentModel;
 

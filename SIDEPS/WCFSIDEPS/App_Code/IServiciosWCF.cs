@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ServiceModel;
 
 [ServiceContract]
-public interface ICasosSvc
+public interface IServiciosWCF
 {
     [OperationContract]
     int SP_Ins_Caso(SIDEPS_25REGCASO caso);
@@ -67,4 +67,7 @@ public interface ICasosSvc
 
     [OperationContract]
     bool delUsuario(SIDEPS_07REGUSRO pobjUsuario);
+
+    [OperationContract]
+    SIDEPS_07REGUSRO Login(string cedula, string contrasena);
 }

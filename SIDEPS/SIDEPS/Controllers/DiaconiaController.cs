@@ -1,5 +1,5 @@
 ﻿using SIDEPS.Models;
-using SIDEPS.WCFCasos;
+using SIDEPS.ServiciosWCF;
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
@@ -14,7 +14,7 @@ namespace mvcSIDEPSWeb.Controllers
             List<Diaconia_M> lstModeloRespuesta = new List<Diaconia_M>();
             try
             {
-                using (SIDEPS.WCFCasos.CasosSvcClient srvDiac = new SIDEPS.WCFCasos.CasosSvcClient())
+                using (ServiciosWCFClient srvDiac = new ServiciosWCFClient())
                 {
                     lstRespuesta = srvDiac.conDiaconias();
                 }
@@ -48,7 +48,7 @@ namespace mvcSIDEPSWeb.Controllers
             Diaconia_M objDiaconia = new Diaconia_M();
             try
             {
-                using (SIDEPS.WCFCasos.CasosSvcClient srvDiac = new SIDEPS.WCFCasos.CasosSvcClient())
+                using (ServiciosWCFClient srvDiac = new ServiciosWCFClient())
                 {
                     objRespuesta = srvDiac.conDiaconiasXId(id);
                 }
@@ -72,7 +72,7 @@ namespace mvcSIDEPSWeb.Controllers
             Diaconia_M objDiaconia = new Diaconia_M();
             try
             {
-                using (SIDEPS.WCFCasos.CasosSvcClient srvDiac = new SIDEPS.WCFCasos.CasosSvcClient())
+                using (ServiciosWCFClient srvDiac = new ServiciosWCFClient())
                 {
                     objRespuesta = srvDiac.conDiaconiasXId(id);
                 }
@@ -96,7 +96,7 @@ namespace mvcSIDEPSWeb.Controllers
             Diaconia_M objDiaconia = new Diaconia_M();
             try
             {
-                using (SIDEPS.WCFCasos.CasosSvcClient srvDiac = new SIDEPS.WCFCasos.CasosSvcClient())
+                using (ServiciosWCFClient srvDiac = new ServiciosWCFClient())
                 {
                     objRespuesta = srvDiac.conDiaconiasXId(id);
                 }
@@ -120,7 +120,7 @@ namespace mvcSIDEPSWeb.Controllers
             List<Diaconia_M> lstModeloRespuesta = new List<Diaconia_M>();
             try
             {
-                using (SIDEPS.WCFCasos.CasosSvcClient srvDiac = new SIDEPS.WCFCasos.CasosSvcClient())
+                using (ServiciosWCFClient srvDiac = new ServiciosWCFClient())
                 {
                     if (srvDiac.insDiaconia(objDiac))
                     {
@@ -152,7 +152,7 @@ namespace mvcSIDEPSWeb.Controllers
             List<Diaconia_M> lstModeloRespuesta = new List<Diaconia_M>();
             try
             {
-                using (SIDEPS.WCFCasos.CasosSvcClient srvDiac = new SIDEPS.WCFCasos.CasosSvcClient())
+                using (ServiciosWCFClient srvDiac = new ServiciosWCFClient())
                 {
                     if (srvDiac.delDiaconia(objDiac))
                     {
@@ -184,7 +184,7 @@ namespace mvcSIDEPSWeb.Controllers
             List<Diaconia_M> lstModeloRespuesta = new List<Diaconia_M>();
             try
             {
-                using (SIDEPS.WCFCasos.CasosSvcClient srvDiac = new SIDEPS.WCFCasos.CasosSvcClient())
+                using (ServiciosWCFClient srvDiac = new ServiciosWCFClient())
                 {
                     if (srvDiac.modDiaconia(objDiac))
                     {

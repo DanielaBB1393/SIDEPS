@@ -122,7 +122,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Connected Services\WCFCasos\Reference.cs">
+    <Compile Include="Connected Services\ServiciosWCF\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -150,10 +150,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\WCFCasos\CasosSvc.disco" />
-    <None Include="Connected Services\WCFCasos\configuration91.svcinfo" />
-    <None Include="Connected Services\WCFCasos\configuration.svcinfo" />
-    <None Include="Connected Services\WCFCasos\Reference.svcmap">
+    <None Include="Connected Services\ServiciosWCF\ServiciosWCF.disco" />
+    <None Include="Connected Services\ServiciosWCF\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiciosWCF\configuration.svcinfo" />
+    <None Include="Connected Services\ServiciosWCF\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -167,38 +167,38 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Connected Services\WCFCasos\CasosSvc.wsdl" />
-    <None Include="Connected Services\WCFCasos\CasosSvc.xsd">
+    <None Include="Connected Services\ServiciosWCF\ServiciosWCF.wsdl" />
+    <None Include="Connected Services\ServiciosWCF\ServiciosWCF.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\WCFCasos\CasosSvc1.xsd">
+    <None Include="Connected Services\ServiciosWCF\ServiciosWCF1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\WCFCasos\CasosSvc2.xsd">
+    <None Include="Connected Services\ServiciosWCF\ServiciosWCF2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Connected Services\WCFCasos\SIDEPS.WCFCasos.SIDEPS_04REGDIAC.datasource">
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SIDEPS_04REGDIAC.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\WCFCasos\SIDEPS.WCFCasos.SP_CONXID_REGDIAC_Result.datasource">
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\WCFCasos\SIDEPS.WCFCasos.SP_CON_CATCANT_Result.datasource">
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CONXID_REGDIAC_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\WCFCasos\SIDEPS.WCFCasos.SP_CON_CATRELG_Result.datasource">
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CONXID_REGUSRO_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\WCFCasos\SIDEPS.WCFCasos.SP_CON_REGDIAC_Result.datasource">
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CON_CATCANT_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\WCFCasos\SIDEPS.WCFCasos.SIDEPS_07REGUSRO.datasource">
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CON_CATRELG_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\WCFCasos\SIDEPS.WCFCasos.SP_CONXID_REGUSRO_Result.datasource">
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CON_REGDIAC_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\WCFCasos\SIDEPS.WCFCasos.SP_CON_REGUSRO_Result.datasource">
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CON_REGUSRO_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -244,6 +244,10 @@
     <Content Include="Views\Usuarios\DetalleUsuario.cshtml" />
     <Content Include="Views\Usuarios\listarUsuario.cshtml" />
     <Content Include="Views\Usuarios\ModificarUsuario.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\MenuAdministradorDiaconia.cshtml" />
+    <Content Include="Views\Home\MenuColaboradorDiaconia.cshtml" />
+    <Content Include="Views\Home\MenuAdministradorParroquial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -265,7 +269,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\WCFCasos\" />
+    <WCFMetadataStorage Include="Connected Services\ServiciosWCF\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

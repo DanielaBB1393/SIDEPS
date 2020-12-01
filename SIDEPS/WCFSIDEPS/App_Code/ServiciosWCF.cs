@@ -4,7 +4,7 @@ using LogicaNegocios.Interfaces;
 using System;
 using System.Collections.Generic;
 
-public class CasosSvc : ICasosSvc
+public class ServiciosWCF : IServiciosWCF
 {
     private readonly ICasosLN casosLN = new CasosLN();
     private readonly IPersonasLN personasLN = new PersonasLN();
@@ -292,4 +292,16 @@ public class CasosSvc : ICasosSvc
         return objRespuesta;
     }
 
+    public SIDEPS_07REGUSRO Login(string cedula, string contrasena)
+    {
+        try
+        {
+            return objUsuario.Login(cedula, contrasena);
+        }
+        catch (Exception ex)
+        {
+
+            throw ex;
+        }
+    }
 }

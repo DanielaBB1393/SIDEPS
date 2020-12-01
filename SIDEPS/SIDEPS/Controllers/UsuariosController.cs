@@ -1,9 +1,7 @@
 ﻿using SIDEPS.Models;
-using SIDEPS.WCFCasos;
+using SIDEPS.ServiciosWCF;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace SIDEPS.Controllers
@@ -17,7 +15,7 @@ namespace SIDEPS.Controllers
             List<M_Usuarios> lstModeloRespuesta = new List<M_Usuarios>();
             try
             {
-                using (CasosSvcClient srvUsuario = new CasosSvcClient())
+                using (ServiciosWCFClient srvUsuario = new ServiciosWCFClient())
                 {
                     lstRespuesta = srvUsuario.conUsuario();
                 }
@@ -52,13 +50,14 @@ namespace SIDEPS.Controllers
         {
             return View();
         }
+
         public ActionResult DetalleUsuario(short id)
         {
             SP_CONXID_REGUSRO_Result objRespuesta = new SP_CONXID_REGUSRO_Result();
             M_Usuarios objUsuario = new M_Usuarios();
             try
             {
-                using (CasosSvcClient srvUsuarios = new CasosSvcClient())
+                using (ServiciosWCFClient srvUsuarios = new ServiciosWCFClient())
                 {
                     objRespuesta = srvUsuarios.conUsuarioXId(id);
                 }
@@ -76,7 +75,6 @@ namespace SIDEPS.Controllers
                 objUsuario.FEIUSRO07 = objRespuesta.FEIUSRO07;
                 objUsuario.FEFUSRO07 = objRespuesta.FEFUSRO07;
                 objUsuario.FENUSRO07 = objRespuesta.FENUSRO07;
-
             }
             catch (Exception ex)
             {
@@ -91,7 +89,7 @@ namespace SIDEPS.Controllers
             M_Usuarios objUsuario = new M_Usuarios();
             try
             {
-                using (CasosSvcClient srvUsuarios = new CasosSvcClient())
+                using (ServiciosWCFClient srvUsuarios = new ServiciosWCFClient())
                 {
                     objRespuesta = srvUsuarios.conUsuarioXId(id);
                 }
@@ -109,8 +107,6 @@ namespace SIDEPS.Controllers
                 objUsuario.FEIUSRO07 = objRespuesta.FEIUSRO07;
                 objUsuario.FEFUSRO07 = objRespuesta.FEFUSRO07;
                 objUsuario.FENUSRO07 = objRespuesta.FENUSRO07;
-
-
             }
             catch (Exception ex)
             {
@@ -118,14 +114,14 @@ namespace SIDEPS.Controllers
             }
             return View(objUsuario);
         }
+
         public ActionResult AgregarUsuarioC(SIDEPS_07REGUSRO objUsuario)
         {
-
             List<SP_CON_REGUSRO_Result> lstRespuesta = new List<SP_CON_REGUSRO_Result>();
             List<M_Usuarios> lstModeloRespuesta = new List<M_Usuarios>();
             try
             {
-                using (CasosSvcClient srvUsuarios = new CasosSvcClient())
+                using (ServiciosWCFClient srvUsuarios = new ServiciosWCFClient())
                 {
                     if (srvUsuarios.insUsuario(objUsuario))
                     {
@@ -148,7 +144,6 @@ namespace SIDEPS.Controllers
                         objModeloUsuario.FEIUSRO07 = Usuario.FEIUSRO07;
                         objModeloUsuario.FEFUSRO07 = Usuario.FEFUSRO07;
                         objModeloUsuario.FENUSRO07 = Usuario.FENUSRO07;
-
                     }
                 }
             }
@@ -158,14 +153,14 @@ namespace SIDEPS.Controllers
             }
             return View("listarUsuario", lstModeloRespuesta);
         }
+
         public ActionResult ModificarUsuarioC(SIDEPS_07REGUSRO objUsuario)
         {
-
             List<SP_CON_REGUSRO_Result> lstRespuesta = new List<SP_CON_REGUSRO_Result>();
             List<M_Usuarios> lstModeloRespuesta = new List<M_Usuarios>();
             try
             {
-                using (CasosSvcClient srvUsuarios = new CasosSvcClient())
+                using (ServiciosWCFClient srvUsuarios = new ServiciosWCFClient())
                 {
                     if (srvUsuarios.modUsuario(objUsuario))
                     {
@@ -188,7 +183,6 @@ namespace SIDEPS.Controllers
                         objModeloUsuario.FEIUSRO07 = Usuario.FEIUSRO07;
                         objModeloUsuario.FEFUSRO07 = Usuario.FEFUSRO07;
                         objModeloUsuario.FENUSRO07 = Usuario.FENUSRO07;
-
                     }
                 }
             }
@@ -198,6 +192,7 @@ namespace SIDEPS.Controllers
             }
             return View("listarUsuario", lstModeloRespuesta);
         }
+
         [HttpPost]
         public ActionResult Acciones(string submitButton, M_Usuarios pUsuario)
         {
@@ -219,13 +214,11 @@ namespace SIDEPS.Controllers
                 objUsuario.FEFUSRO07 = pUsuario.FEFUSRO07;
                 objUsuario.FENUSRO07 = pUsuario.FENUSRO07;
 
-
-
-
                 switch (submitButton)
                 {
                     case "Agregar":
                         return AgregarUsuarioC(objUsuario);
+
                     case "Actualizar":
                         return ModificarUsuarioC(objUsuario);
 
@@ -238,7 +231,5 @@ namespace SIDEPS.Controllers
                 throw ex;
             }
         }
-
-
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
-using SIDEPS.WCFCasos;
+using SIDEPS.ServiciosWCF;
 
 namespace SIDEPS.Models
 {

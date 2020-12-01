@@ -97,5 +97,18 @@ namespace LogicaNegocios.Implementacion
             }
             return objRespuesta;
         }
+
+        public SIDEPS_07REGUSRO Login(string cedula, string contrasena)
+        {
+            try
+            {
+                return objUsuarioAD.Login(cedula, contrasena);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using SIDEPS.Models;
-using SIDEPS.WCFCasos;
+using SIDEPS.ServiciosWCF;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +13,7 @@ namespace SIDEPS.Controllers
         private const string _CEDULAPERSONA = "cedulaPersona";
         private const string _CODIGOVIVIENDA = "codigoVivienda";
 
-        private readonly ICasosSvc casosSvc = new CasosSvcClient();
+        private readonly ServiciosWCFClient casosSvc = new ServiciosWCFClient();
 
         // GET: Casos
         public ActionResult Index()

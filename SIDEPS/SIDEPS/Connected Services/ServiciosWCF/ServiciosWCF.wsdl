@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiciosWCF" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:50087/ServiciosWCF.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:50087/ServiciosWCF.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50087/ServiciosWCF.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Entidades" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiciosWCF_SP_Ins_Caso_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Ins_Caso" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Ins_Caso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Ins_CasoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Mod_Caso_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Mod_Caso" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Mod_Caso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Mod_CasoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Ins_Persona_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Ins_Persona" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Ins_Persona_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Ins_PersonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Ins_AspectoSalud_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Ins_AspectoSalud" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Ins_AspectoSalud_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Ins_AspectoSaludResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Ins_Vivienda_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Ins_Vivienda" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Ins_Vivienda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Ins_ViviendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Ins_GrupoFamiliar_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Ins_GrupoFamiliar" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Ins_GrupoFamiliar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Ins_GrupoFamiliarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Ins_Egresos_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Ins_Egresos" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Ins_Egresos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Ins_EgresosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_Religiones_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_Religiones" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_Religiones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_ReligionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_Cantones_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_Cantones" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_Cantones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_CantonesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_Diaconia_InputMessage">
+    <wsdl:part name="parameters" element="tns:Diaconia" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_Diaconia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DiaconiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_conDiaconias_InputMessage">
+    <wsdl:part name="parameters" element="tns:conDiaconias" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_conDiaconias_OutputMessage">
+    <wsdl:part name="parameters" element="tns:conDiaconiasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_conDiaconiasXId_InputMessage">
+    <wsdl:part name="parameters" element="tns:conDiaconiasXId" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_conDiaconiasXId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:conDiaconiasXIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_insDiaconia_InputMessage">
+    <wsdl:part name="parameters" element="tns:insDiaconia" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_insDiaconia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insDiaconiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_modDiaconia_InputMessage">
+    <wsdl:part name="parameters" element="tns:modDiaconia" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_modDiaconia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:modDiaconiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_delDiaconia_InputMessage">
+    <wsdl:part name="parameters" element="tns:delDiaconia" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_delDiaconia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:delDiaconiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_Usuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:Usuario" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_Usuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_conUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:conUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_conUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:conUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_conUsuarioXId_InputMessage">
+    <wsdl:part name="parameters" element="tns:conUsuarioXId" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_conUsuarioXId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:conUsuarioXIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_insUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:insUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_insUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_modUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:modUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_modUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:modUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_delUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:delUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_delUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:delUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiciosWCF">
+    <wsdl:operation name="SP_Ins_Caso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_Caso" message="tns:IServiciosWCF_SP_Ins_Caso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_CasoResponse" message="tns:IServiciosWCF_SP_Ins_Caso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Mod_Caso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Mod_Caso" message="tns:IServiciosWCF_SP_Mod_Caso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Mod_CasoResponse" message="tns:IServiciosWCF_SP_Mod_Caso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Ins_Persona">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_Persona" message="tns:IServiciosWCF_SP_Ins_Persona_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_PersonaResponse" message="tns:IServiciosWCF_SP_Ins_Persona_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Ins_AspectoSalud">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_AspectoSalud" message="tns:IServiciosWCF_SP_Ins_AspectoSalud_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_AspectoSaludResponse" message="tns:IServiciosWCF_SP_Ins_AspectoSalud_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Ins_Vivienda">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_Vivienda" message="tns:IServiciosWCF_SP_Ins_Vivienda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_ViviendaResponse" message="tns:IServiciosWCF_SP_Ins_Vivienda_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Ins_GrupoFamiliar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_GrupoFamiliar" message="tns:IServiciosWCF_SP_Ins_GrupoFamiliar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_GrupoFamiliarResponse" message="tns:IServiciosWCF_SP_Ins_GrupoFamiliar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Ins_Egresos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_Egresos" message="tns:IServiciosWCF_SP_Ins_Egresos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_EgresosResponse" message="tns:IServiciosWCF_SP_Ins_Egresos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_Religiones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_Religiones" message="tns:IServiciosWCF_SP_Con_Religiones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_ReligionesResponse" message="tns:IServiciosWCF_SP_Con_Religiones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_Cantones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_Cantones" message="tns:IServiciosWCF_SP_Con_Cantones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_CantonesResponse" message="tns:IServiciosWCF_SP_Con_Cantones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Diaconia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/Diaconia" message="tns:IServiciosWCF_Diaconia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/DiaconiaResponse" message="tns:IServiciosWCF_Diaconia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="conDiaconias">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/conDiaconias" message="tns:IServiciosWCF_conDiaconias_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/conDiaconiasResponse" message="tns:IServiciosWCF_conDiaconias_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="conDiaconiasXId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/conDiaconiasXId" message="tns:IServiciosWCF_conDiaconiasXId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/conDiaconiasXIdResponse" message="tns:IServiciosWCF_conDiaconiasXId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insDiaconia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/insDiaconia" message="tns:IServiciosWCF_insDiaconia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/insDiaconiaResponse" message="tns:IServiciosWCF_insDiaconia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="modDiaconia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/modDiaconia" message="tns:IServiciosWCF_modDiaconia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/modDiaconiaResponse" message="tns:IServiciosWCF_modDiaconia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delDiaconia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/delDiaconia" message="tns:IServiciosWCF_delDiaconia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/delDiaconiaResponse" message="tns:IServiciosWCF_delDiaconia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Usuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/Usuario" message="tns:IServiciosWCF_Usuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/UsuarioResponse" message="tns:IServiciosWCF_Usuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="conUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/conUsuario" message="tns:IServiciosWCF_conUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/conUsuarioResponse" message="tns:IServiciosWCF_conUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="conUsuarioXId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/conUsuarioXId" message="tns:IServiciosWCF_conUsuarioXId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/conUsuarioXIdResponse" message="tns:IServiciosWCF_conUsuarioXId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/insUsuario" message="tns:IServiciosWCF_insUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/insUsuarioResponse" message="tns:IServiciosWCF_insUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="modUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/modUsuario" message="tns:IServiciosWCF_modUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/modUsuarioResponse" message="tns:IServiciosWCF_modUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/delUsuario" message="tns:IServiciosWCF_delUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/delUsuarioResponse" message="tns:IServiciosWCF_delUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/Login" message="tns:IServiciosWCF_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/LoginResponse" message="tns:IServiciosWCF_Login_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiciosWCF" type="tns:IServiciosWCF">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SP_Ins_Caso">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Ins_Caso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Mod_Caso">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Mod_Caso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Ins_Persona">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Ins_Persona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Ins_AspectoSalud">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Ins_AspectoSalud" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Ins_Vivienda">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Ins_Vivienda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Ins_GrupoFamiliar">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Ins_GrupoFamiliar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Ins_Egresos">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Ins_Egresos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_Religiones">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Con_Religiones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_Cantones">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Con_Cantones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Diaconia">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/Diaconia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="conDiaconias">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/conDiaconias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="conDiaconiasXId">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/conDiaconiasXId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insDiaconia">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/insDiaconia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modDiaconia">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/modDiaconia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delDiaconia">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/delDiaconia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Usuario">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/Usuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="conUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/conUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="conUsuarioXId">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/conUsuarioXId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/insUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/modUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/delUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosWCF">
+    <wsdl:port name="BasicHttpBinding_IServiciosWCF" binding="tns:BasicHttpBinding_IServiciosWCF">
+      <soap:address location="http://localhost:50087/ServiciosWCF.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
