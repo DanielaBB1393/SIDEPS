@@ -420,6 +420,44 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SIDEPS_28REGHIS" nillable="true" type="tns:SIDEPS_28REGHIS" />
+  <xs:complexType name="SP_CONXID_REGFAML_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CEDFAML22" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODENFR15" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CODESTC06" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CODNEDU09" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CODORGS21" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CODPARE12" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DESFAML22" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EDAFAML22" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="INGFAML22" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NOMFAML22" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OACFAML22" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SP_CONXID_REGFAML_Result" nillable="true" type="tns:SP_CONXID_REGFAML_Result" />
+  <xs:complexType name="ArrayOfSP_CON_REGFAML_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SP_CON_REGFAML_Result" nillable="true" type="tns:SP_CON_REGFAML_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSP_CON_REGFAML_Result" nillable="true" type="tns:ArrayOfSP_CON_REGFAML_Result" />
+  <xs:complexType name="SP_CON_REGFAML_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CEDFAML22" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODENFR15" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CODESTC06" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CODNEDU09" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CODORGS21" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CODPARE12" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DESFAML22" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EDAFAML22" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="INGFAML22" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NOMFAML22" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OACFAML22" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SP_CON_REGFAML_Result" nillable="true" type="tns:SP_CON_REGFAML_Result" />
   <xs:complexType name="ArrayOfSP_CON_CATRELG_Result">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="SP_CON_CATRELG_Result" nillable="true" type="tns:SP_CON_CATRELG_Result" />

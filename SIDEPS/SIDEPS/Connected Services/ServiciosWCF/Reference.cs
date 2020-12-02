@@ -4059,6 +4059,416 @@ namespace SIDEPS.ServiciosWCF {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SP_CONXID_REGFAML_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class SP_CONXID_REGFAML_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CEDFAML22Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CODENFR15Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CODESTC06Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CODNEDU09Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CODORGS21Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CODPARE12Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESFAML22Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> EDAFAML22Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> INGFAML22Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NOMFAML22Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OACFAML22Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CEDFAML22 {
+            get {
+                return this.CEDFAML22Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CEDFAML22Field, value) != true)) {
+                    this.CEDFAML22Field = value;
+                    this.RaisePropertyChanged("CEDFAML22");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CODENFR15 {
+            get {
+                return this.CODENFR15Field;
+            }
+            set {
+                if ((this.CODENFR15Field.Equals(value) != true)) {
+                    this.CODENFR15Field = value;
+                    this.RaisePropertyChanged("CODENFR15");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CODESTC06 {
+            get {
+                return this.CODESTC06Field;
+            }
+            set {
+                if ((this.CODESTC06Field.Equals(value) != true)) {
+                    this.CODESTC06Field = value;
+                    this.RaisePropertyChanged("CODESTC06");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CODNEDU09 {
+            get {
+                return this.CODNEDU09Field;
+            }
+            set {
+                if ((this.CODNEDU09Field.Equals(value) != true)) {
+                    this.CODNEDU09Field = value;
+                    this.RaisePropertyChanged("CODNEDU09");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CODORGS21 {
+            get {
+                return this.CODORGS21Field;
+            }
+            set {
+                if ((this.CODORGS21Field.Equals(value) != true)) {
+                    this.CODORGS21Field = value;
+                    this.RaisePropertyChanged("CODORGS21");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CODPARE12 {
+            get {
+                return this.CODPARE12Field;
+            }
+            set {
+                if ((this.CODPARE12Field.Equals(value) != true)) {
+                    this.CODPARE12Field = value;
+                    this.RaisePropertyChanged("CODPARE12");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESFAML22 {
+            get {
+                return this.DESFAML22Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESFAML22Field, value) != true)) {
+                    this.DESFAML22Field = value;
+                    this.RaisePropertyChanged("DESFAML22");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> EDAFAML22 {
+            get {
+                return this.EDAFAML22Field;
+            }
+            set {
+                if ((this.EDAFAML22Field.Equals(value) != true)) {
+                    this.EDAFAML22Field = value;
+                    this.RaisePropertyChanged("EDAFAML22");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> INGFAML22 {
+            get {
+                return this.INGFAML22Field;
+            }
+            set {
+                if ((this.INGFAML22Field.Equals(value) != true)) {
+                    this.INGFAML22Field = value;
+                    this.RaisePropertyChanged("INGFAML22");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NOMFAML22 {
+            get {
+                return this.NOMFAML22Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NOMFAML22Field, value) != true)) {
+                    this.NOMFAML22Field = value;
+                    this.RaisePropertyChanged("NOMFAML22");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OACFAML22 {
+            get {
+                return this.OACFAML22Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OACFAML22Field, value) != true)) {
+                    this.OACFAML22Field = value;
+                    this.RaisePropertyChanged("OACFAML22");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SP_CON_REGFAML_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class SP_CON_REGFAML_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CEDFAML22Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CODENFR15Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CODESTC06Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CODNEDU09Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CODORGS21Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CODPARE12Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESFAML22Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> EDAFAML22Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> INGFAML22Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NOMFAML22Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OACFAML22Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CEDFAML22 {
+            get {
+                return this.CEDFAML22Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CEDFAML22Field, value) != true)) {
+                    this.CEDFAML22Field = value;
+                    this.RaisePropertyChanged("CEDFAML22");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CODENFR15 {
+            get {
+                return this.CODENFR15Field;
+            }
+            set {
+                if ((this.CODENFR15Field.Equals(value) != true)) {
+                    this.CODENFR15Field = value;
+                    this.RaisePropertyChanged("CODENFR15");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CODESTC06 {
+            get {
+                return this.CODESTC06Field;
+            }
+            set {
+                if ((this.CODESTC06Field.Equals(value) != true)) {
+                    this.CODESTC06Field = value;
+                    this.RaisePropertyChanged("CODESTC06");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CODNEDU09 {
+            get {
+                return this.CODNEDU09Field;
+            }
+            set {
+                if ((this.CODNEDU09Field.Equals(value) != true)) {
+                    this.CODNEDU09Field = value;
+                    this.RaisePropertyChanged("CODNEDU09");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CODORGS21 {
+            get {
+                return this.CODORGS21Field;
+            }
+            set {
+                if ((this.CODORGS21Field.Equals(value) != true)) {
+                    this.CODORGS21Field = value;
+                    this.RaisePropertyChanged("CODORGS21");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CODPARE12 {
+            get {
+                return this.CODPARE12Field;
+            }
+            set {
+                if ((this.CODPARE12Field.Equals(value) != true)) {
+                    this.CODPARE12Field = value;
+                    this.RaisePropertyChanged("CODPARE12");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESFAML22 {
+            get {
+                return this.DESFAML22Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESFAML22Field, value) != true)) {
+                    this.DESFAML22Field = value;
+                    this.RaisePropertyChanged("DESFAML22");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> EDAFAML22 {
+            get {
+                return this.EDAFAML22Field;
+            }
+            set {
+                if ((this.EDAFAML22Field.Equals(value) != true)) {
+                    this.EDAFAML22Field = value;
+                    this.RaisePropertyChanged("EDAFAML22");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> INGFAML22 {
+            get {
+                return this.INGFAML22Field;
+            }
+            set {
+                if ((this.INGFAML22Field.Equals(value) != true)) {
+                    this.INGFAML22Field = value;
+                    this.RaisePropertyChanged("INGFAML22");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NOMFAML22 {
+            get {
+                return this.NOMFAML22Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NOMFAML22Field, value) != true)) {
+                    this.NOMFAML22Field = value;
+                    this.RaisePropertyChanged("NOMFAML22");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OACFAML22 {
+            get {
+                return this.OACFAML22Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OACFAML22Field, value) != true)) {
+                    this.OACFAML22Field = value;
+                    this.RaisePropertyChanged("OACFAML22");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SP_CON_CATRELG_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
     [System.SerializableAttribute()]
     public partial class SP_CON_CATRELG_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -4985,11 +5395,35 @@ namespace SIDEPS.ServiciosWCF {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Ins_Vivienda", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Ins_ViviendaResponse")]
         System.Threading.Tasks.Task<int> SP_Ins_ViviendaAsync(SIDEPS.ServiciosWCF.SIDEPS_20REGVIVI vivienda, int codigoCaso);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Ins_GrupoFamiliar", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Ins_GrupoFamiliarResponse")]
-        bool SP_Ins_GrupoFamiliar(SIDEPS.ServiciosWCF.SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Ins_MiembroFamiliar", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Ins_MiembroFamiliarResponse")]
+        bool SP_Ins_MiembroFamiliar(SIDEPS.ServiciosWCF.SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Ins_GrupoFamiliar", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Ins_GrupoFamiliarResponse")]
-        System.Threading.Tasks.Task<bool> SP_Ins_GrupoFamiliarAsync(SIDEPS.ServiciosWCF.SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Ins_MiembroFamiliar", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Ins_MiembroFamiliarResponse")]
+        System.Threading.Tasks.Task<bool> SP_Ins_MiembroFamiliarAsync(SIDEPS.ServiciosWCF.SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_MiembroFamiliarXid", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_MiembroFamiliarXidResponse")]
+        SIDEPS.ServiciosWCF.SP_CONXID_REGFAML_Result SP_Con_MiembroFamiliarXid(string cedFamiliar);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_MiembroFamiliarXid", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_MiembroFamiliarXidResponse")]
+        System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.SP_CONXID_REGFAML_Result> SP_Con_MiembroFamiliarXidAsync(string cedFamiliar);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Del_MiembroFamiliarXid", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Del_MiembroFamiliarXidResponse")]
+        void SP_Del_MiembroFamiliarXid(string cedFamiliar);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Del_MiembroFamiliarXid", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Del_MiembroFamiliarXidResponse")]
+        System.Threading.Tasks.Task SP_Del_MiembroFamiliarXidAsync(string cedFamiliar);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Mod_MiembroFamiliar", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Mod_MiembroFamiliarResponse")]
+        bool SP_Mod_MiembroFamiliar(SIDEPS.ServiciosWCF.SIDEPS_22REGFAML miembroFamiliar);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Mod_MiembroFamiliar", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Mod_MiembroFamiliarResponse")]
+        System.Threading.Tasks.Task<bool> SP_Mod_MiembroFamiliarAsync(SIDEPS.ServiciosWCF.SIDEPS_22REGFAML miembroFamiliar);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/ConGrupoFamiliarXId", ReplyAction="http://tempuri.org/IServiciosWCF/ConGrupoFamiliarXIdResponse")]
+        System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_REGFAML_Result> ConGrupoFamiliarXId(string cedulaSolicitante);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/ConGrupoFamiliarXId", ReplyAction="http://tempuri.org/IServiciosWCF/ConGrupoFamiliarXIdResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_REGFAML_Result>> ConGrupoFamiliarXIdAsync(string cedulaSolicitante);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Ins_Egresos", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Ins_EgresosResponse")]
         int SP_Ins_Egresos(SIDEPS.ServiciosWCF.SIDEPS_24REGEGRF egresos, int codigoCaso);
@@ -5155,12 +5589,44 @@ namespace SIDEPS.ServiciosWCF {
             return base.Channel.SP_Ins_ViviendaAsync(vivienda, codigoCaso);
         }
         
-        public bool SP_Ins_GrupoFamiliar(SIDEPS.ServiciosWCF.SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona) {
-            return base.Channel.SP_Ins_GrupoFamiliar(grupoFamiliar, cedulaPersona);
+        public bool SP_Ins_MiembroFamiliar(SIDEPS.ServiciosWCF.SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona) {
+            return base.Channel.SP_Ins_MiembroFamiliar(grupoFamiliar, cedulaPersona);
         }
         
-        public System.Threading.Tasks.Task<bool> SP_Ins_GrupoFamiliarAsync(SIDEPS.ServiciosWCF.SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona) {
-            return base.Channel.SP_Ins_GrupoFamiliarAsync(grupoFamiliar, cedulaPersona);
+        public System.Threading.Tasks.Task<bool> SP_Ins_MiembroFamiliarAsync(SIDEPS.ServiciosWCF.SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona) {
+            return base.Channel.SP_Ins_MiembroFamiliarAsync(grupoFamiliar, cedulaPersona);
+        }
+        
+        public SIDEPS.ServiciosWCF.SP_CONXID_REGFAML_Result SP_Con_MiembroFamiliarXid(string cedFamiliar) {
+            return base.Channel.SP_Con_MiembroFamiliarXid(cedFamiliar);
+        }
+        
+        public System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.SP_CONXID_REGFAML_Result> SP_Con_MiembroFamiliarXidAsync(string cedFamiliar) {
+            return base.Channel.SP_Con_MiembroFamiliarXidAsync(cedFamiliar);
+        }
+        
+        public void SP_Del_MiembroFamiliarXid(string cedFamiliar) {
+            base.Channel.SP_Del_MiembroFamiliarXid(cedFamiliar);
+        }
+        
+        public System.Threading.Tasks.Task SP_Del_MiembroFamiliarXidAsync(string cedFamiliar) {
+            return base.Channel.SP_Del_MiembroFamiliarXidAsync(cedFamiliar);
+        }
+        
+        public bool SP_Mod_MiembroFamiliar(SIDEPS.ServiciosWCF.SIDEPS_22REGFAML miembroFamiliar) {
+            return base.Channel.SP_Mod_MiembroFamiliar(miembroFamiliar);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SP_Mod_MiembroFamiliarAsync(SIDEPS.ServiciosWCF.SIDEPS_22REGFAML miembroFamiliar) {
+            return base.Channel.SP_Mod_MiembroFamiliarAsync(miembroFamiliar);
+        }
+        
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_REGFAML_Result> ConGrupoFamiliarXId(string cedulaSolicitante) {
+            return base.Channel.ConGrupoFamiliarXId(cedulaSolicitante);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_REGFAML_Result>> ConGrupoFamiliarXIdAsync(string cedulaSolicitante) {
+            return base.Channel.ConGrupoFamiliarXIdAsync(cedulaSolicitante);
         }
         
         public int SP_Ins_Egresos(SIDEPS.ServiciosWCF.SIDEPS_24REGEGRF egresos, int codigoCaso) {

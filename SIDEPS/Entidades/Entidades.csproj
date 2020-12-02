@@ -147,6 +147,9 @@
     <Compile Include="SP_CONXID_REGDIAC_Result.cs">
       <DependentUpon>SIDEPS.tt</DependentUpon>
     </Compile>
+    <Compile Include="SP_CONXID_REGFAML_Result.cs">
+      <DependentUpon>SIDEPS.tt</DependentUpon>
+    </Compile>
     <Compile Include="SP_CONXID_REGUSRO_Result.cs">
       <DependentUpon>SIDEPS.tt</DependentUpon>
     </Compile>
@@ -163,6 +166,9 @@
       <DependentUpon>SIDEPS.tt</DependentUpon>
     </Compile>
     <Compile Include="SP_CON_REGDIAC_Result.cs">
+      <DependentUpon>SIDEPS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_CON_REGFAML_Result.cs">
       <DependentUpon>SIDEPS.tt</DependentUpon>
     </Compile>
     <Compile Include="SP_CON_REGUSRO_Result.cs">

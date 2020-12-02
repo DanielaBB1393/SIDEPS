@@ -37,11 +37,35 @@
   <wsdl:message name="IServiciosWCF_SP_Ins_Vivienda_OutputMessage">
     <wsdl:part name="parameters" element="tns:SP_Ins_ViviendaResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiciosWCF_SP_Ins_GrupoFamiliar_InputMessage">
-    <wsdl:part name="parameters" element="tns:SP_Ins_GrupoFamiliar" />
+  <wsdl:message name="IServiciosWCF_SP_Ins_MiembroFamiliar_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Ins_MiembroFamiliar" />
   </wsdl:message>
-  <wsdl:message name="IServiciosWCF_SP_Ins_GrupoFamiliar_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SP_Ins_GrupoFamiliarResponse" />
+  <wsdl:message name="IServiciosWCF_SP_Ins_MiembroFamiliar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Ins_MiembroFamiliarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_MiembroFamiliarXid_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_MiembroFamiliarXid" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_MiembroFamiliarXid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_MiembroFamiliarXidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Del_MiembroFamiliarXid_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Del_MiembroFamiliarXid" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Del_MiembroFamiliarXid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Del_MiembroFamiliarXidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Mod_MiembroFamiliar_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Mod_MiembroFamiliar" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Mod_MiembroFamiliar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Mod_MiembroFamiliarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_ConGrupoFamiliarXId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConGrupoFamiliarXId" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_ConGrupoFamiliarXId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConGrupoFamiliarXIdResponse" />
   </wsdl:message>
   <wsdl:message name="IServiciosWCF_SP_Ins_Egresos_InputMessage">
     <wsdl:part name="parameters" element="tns:SP_Ins_Egresos" />
@@ -160,9 +184,25 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_Vivienda" message="tns:IServiciosWCF_SP_Ins_Vivienda_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_ViviendaResponse" message="tns:IServiciosWCF_SP_Ins_Vivienda_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="SP_Ins_GrupoFamiliar">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_GrupoFamiliar" message="tns:IServiciosWCF_SP_Ins_GrupoFamiliar_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_GrupoFamiliarResponse" message="tns:IServiciosWCF_SP_Ins_GrupoFamiliar_OutputMessage" />
+    <wsdl:operation name="SP_Ins_MiembroFamiliar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_MiembroFamiliar" message="tns:IServiciosWCF_SP_Ins_MiembroFamiliar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_MiembroFamiliarResponse" message="tns:IServiciosWCF_SP_Ins_MiembroFamiliar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_MiembroFamiliarXid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_MiembroFamiliarXid" message="tns:IServiciosWCF_SP_Con_MiembroFamiliarXid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_MiembroFamiliarXidResponse" message="tns:IServiciosWCF_SP_Con_MiembroFamiliarXid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Del_MiembroFamiliarXid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Del_MiembroFamiliarXid" message="tns:IServiciosWCF_SP_Del_MiembroFamiliarXid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Del_MiembroFamiliarXidResponse" message="tns:IServiciosWCF_SP_Del_MiembroFamiliarXid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Mod_MiembroFamiliar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Mod_MiembroFamiliar" message="tns:IServiciosWCF_SP_Mod_MiembroFamiliar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Mod_MiembroFamiliarResponse" message="tns:IServiciosWCF_SP_Mod_MiembroFamiliar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConGrupoFamiliarXId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/ConGrupoFamiliarXId" message="tns:IServiciosWCF_ConGrupoFamiliarXId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/ConGrupoFamiliarXIdResponse" message="tns:IServiciosWCF_ConGrupoFamiliarXId_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="SP_Ins_Egresos">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_Egresos" message="tns:IServiciosWCF_SP_Ins_Egresos_InputMessage" />
@@ -276,8 +316,44 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SP_Ins_GrupoFamiliar">
-      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Ins_GrupoFamiliar" style="document" />
+    <wsdl:operation name="SP_Ins_MiembroFamiliar">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Ins_MiembroFamiliar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_MiembroFamiliarXid">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Con_MiembroFamiliarXid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Del_MiembroFamiliarXid">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Del_MiembroFamiliarXid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Mod_MiembroFamiliar">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Mod_MiembroFamiliar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConGrupoFamiliarXId">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/ConGrupoFamiliarXId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -106,7 +106,7 @@ namespace SIDEPS.Controllers
             if (resultado > 0)
             {
                 TempData[_CODIGOVIVIENDA] = resultado;
-                return RedirectToAction("GrupoFamiliar1");
+                return RedirectToAction("GrupoFamiliar");
             }
 
             return View(vivienda);
@@ -117,12 +117,22 @@ namespace SIDEPS.Controllers
         //-------
         public ActionResult GrupoFamiliar()
         {
-            var grupoFamiliar = new List<MiembroFamiliar_M>();
+            string cedulaSolicitante = TempData[_CEDULAPERSONA].ToString();
+            TempData.Keep();
+
+            List<MiembroFamiliar_M> grupoFamiliar;
+            using (ServiciosWCFClient svc = new ServiciosWCFClient())
+            {
+                grupoFamiliar = svc.ConGrupoFamiliarXId(cedulaSolicitante).Select(familiar => new MiembroFamiliar_M(familiar)).ToList();
+            }
+
             return View(grupoFamiliar);
         }
 
         public ActionResult AgregarFamiliar()
         {
+            TempData.Keep();
+
             return View();
         }
 
@@ -132,7 +142,7 @@ namespace SIDEPS.Controllers
             var cedulaSolicitante = TempData[_CEDULAPERSONA].ToString();
             TempData.Keep();
 
-            var resultado = this.casosSvc.SP_Ins_GrupoFamiliar(modelo.ConvertirEntidad(), cedulaSolicitante);
+            var resultado = this.casosSvc.SP_Ins_MiembroFamiliar(modelo.ConvertirEntidad(), cedulaSolicitante);
             if (!resultado)
             {
                 ViewData["mensaje"] = "Ocurrió un error agregando a " + modelo.NOMFAML22;
@@ -141,50 +151,75 @@ namespace SIDEPS.Controllers
             return RedirectToAction("GrupoFamiliar");
         }
 
-        public ActionResult DetallesFamiliar()
-        {
-            return View();
-        }
-
-        public ActionResult EliminarFamiliar()
-        {
-            return View();
-        }
-
-        public ActionResult ModificarFamiliar()
-        {
-            return View();
-        }
-
-
-
-        public ActionResult GrupoFamiliar1()
+        public ActionResult DetallesFamiliar(string id)
         {
             TempData.Keep();
 
-            var model = new GrupoFamiliar_M
-            {
-                GrupoFamiliar = new List<MiembroFamiliar_M> { new MiembroFamiliar_M() }
-            };
+            MiembroFamiliar_M modelo;
 
-            return View(model);
+            using (ServiciosWCFClient svc = new ServiciosWCFClient())
+            {
+                var familiar = svc.SP_Con_MiembroFamiliarXid(id);
+                modelo = new MiembroFamiliar_M(familiar);
+            }
+
+            return View(modelo);
+        }
+
+        public ActionResult EliminarFamiliar(string id)
+        {
+            TempData.Keep();
+
+            MiembroFamiliar_M modelo;
+
+            using (ServiciosWCFClient svc = new ServiciosWCFClient())
+            {
+                var familiar = svc.SP_Con_MiembroFamiliarXid(id);
+                modelo = new MiembroFamiliar_M(familiar);
+            }
+
+            return View(modelo);
         }
 
         [HttpPost]
-        public ActionResult GrupoFamiliar1(GrupoFamiliar_M model)
+        public ActionResult EliminarFamiliar(MiembroFamiliar_M familiar)
         {
-            var cedulaSolicitante = TempData[_CEDULAPERSONA].ToString();
             TempData.Keep();
 
-            var nuevoFamiliar = model.GrupoFamiliar.Last();
-            var resultado = this.casosSvc.SP_Ins_GrupoFamiliar(nuevoFamiliar.ConvertirEntidad(), cedulaSolicitante);
-            if (!resultado)
+            using (ServiciosWCFClient svc = new ServiciosWCFClient())
             {
-                ViewData["mensaje"] = "Ocurrió un error agregando a " + nuevoFamiliar.NOMFAML22;
+                svc.SP_Del_MiembroFamiliarXid(familiar.CEDFAML22);
             }
-            model.GrupoFamiliar.Add(new MiembroFamiliar_M());
 
-            return View(model);
+            return RedirectToAction("GrupoFamiliar");
+        }
+
+        public ActionResult ModificarFamiliar(string id)
+        {
+            TempData.Keep();
+
+            MiembroFamiliar_M modelo;
+
+            using (ServiciosWCFClient svc = new ServiciosWCFClient())
+            {
+                var familiar = svc.SP_Con_MiembroFamiliarXid(id);
+                modelo = new MiembroFamiliar_M(familiar);
+            }
+
+            return View(modelo);
+        }
+
+        [HttpPost]
+        public ActionResult ModificarFamiliar(MiembroFamiliar_M familiar)
+        {
+            TempData.Keep();
+
+            using (ServiciosWCFClient svc = new ServiciosWCFClient())
+            {
+                svc.SP_Mod_MiembroFamiliar(familiar.ConvertirEntidad());
+            }
+
+            return RedirectToAction("GrupoFamiliar");
         }
 
         //-------

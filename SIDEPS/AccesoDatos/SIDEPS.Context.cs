@@ -656,5 +656,23 @@ namespace AccesoDatos
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
+    
+        public virtual ObjectResult<SP_CON_REGFAML_Result> SP_CON_REGFAML(string cedulaSolicitante)
+        {
+            var cedulaSolicitanteParameter = cedulaSolicitante != null ?
+                new ObjectParameter("cedulaSolicitante", cedulaSolicitante) :
+                new ObjectParameter("cedulaSolicitante", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_REGFAML_Result>("SP_CON_REGFAML", cedulaSolicitanteParameter);
+        }
+    
+        public virtual ObjectResult<SP_CONXID_REGFAML_Result> SP_CONXID_REGFAML(string cedula)
+        {
+            var cedulaParameter = cedula != null ?
+                new ObjectParameter("cedula", cedula) :
+                new ObjectParameter("cedula", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONXID_REGFAML_Result>("SP_CONXID_REGFAML", cedulaParameter);
+        }
     }
 }

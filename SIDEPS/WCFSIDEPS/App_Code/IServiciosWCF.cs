@@ -21,7 +21,19 @@ public interface IServiciosWCF
     int SP_Ins_Vivienda(SIDEPS_20REGVIVI vivienda, int codigoCaso);
 
     [OperationContract]
-    bool SP_Ins_GrupoFamiliar(SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona);
+    bool SP_Ins_MiembroFamiliar(SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona);
+
+    [OperationContract]
+    SP_CONXID_REGFAML_Result SP_Con_MiembroFamiliarXid(string cedFamiliar);
+
+    [OperationContract]
+    void SP_Del_MiembroFamiliarXid(string cedFamiliar);
+
+    [OperationContract]
+    bool SP_Mod_MiembroFamiliar(SIDEPS_22REGFAML miembroFamiliar);
+
+    [OperationContract]
+    List<SP_CON_REGFAML_Result> ConGrupoFamiliarXId(string cedulaSolicitante);
 
     [OperationContract]
     int SP_Ins_Egresos(SIDEPS_24REGEGRF egresos, int codigoCaso);

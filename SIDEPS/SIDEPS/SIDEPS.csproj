@@ -201,6 +201,12 @@
     <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CON_REGUSRO_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CON_REGFAML_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CONXID_REGFAML_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -252,6 +258,7 @@
     <Content Include="Views\Casos\AgregarFamiliar.cshtml" />
     <Content Include="Views\Casos\DetallesFamiliar.cshtml" />
     <Content Include="Views\Casos\ModificarFamiliar.cshtml" />
+    <Content Include="Views\Casos\EliminarFamiliar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

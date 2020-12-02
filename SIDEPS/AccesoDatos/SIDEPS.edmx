@@ -685,48 +685,29 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
         <Function Name="SP_CON_CATCANT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_CON_CATESTC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_CON_CATNEDU" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_CON_CATRELG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_CON_REGDIAC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_CON_REGFAML" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cedulaSolicitante" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="SP_CON_REGUSRO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_CONXID_REGDIAC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CODDIAC04" Type="int" Mode="In" />
         </Function>
+        <Function Name="SP_CONXID_REGFAML" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cedula" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="SP_CONXID_REGUSRO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CEDUSRO07" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
         </Function>
         <Function Name="SP_DEL_REGDIAC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CODDIAC04" Type="int" Mode="In" />
         </Function>
         <Function Name="SP_DEL_REGUSRO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CEDUSRO07" Type="varchar" Mode="In" />
-        </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
         </Function>
         <Function Name="SP_INS_REGASPS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CEDPERS13" Type="varchar" Mode="In" />
@@ -843,12 +824,6 @@
           <Parameter Name="CNTUSRO07" Type="varchar" Mode="In" />
           <Parameter Name="FENUSRO07" Type="datetime" Mode="In" />
         </Function>
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="SIDEPSStoreContainer">
           <EntitySet Name="SIDEPS_01CATPAIS" EntityType="Self.SIDEPS_01CATPAIS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SIDEPS_02CATPROV" EntityType="Self.SIDEPS_02CATPROV" Schema="dbo" store:Type="Tables" />
@@ -1937,10 +1912,10 @@
           <FunctionImport Name="SP_CON_REGDIAC" ReturnType="Collection(SIDEPS.SP_CON_REGDIAC_Result)" />
           <FunctionImport Name="SP_CON_REGUSRO" ReturnType="Collection(SIDEPS.SP_CON_REGUSRO_Result)" />
           <FunctionImport Name="SP_CONXID_REGDIAC" ReturnType="Collection(SIDEPS.SP_CONXID_REGDIAC_Result)">
-            <Parameter Name="CODDIAC04" Mode="In" Type="Int32" />
+          <Parameter Name="CODDIAC04" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SP_CONXID_REGUSRO" ReturnType="Collection(SIDEPS.SP_CONXID_REGUSRO_Result)">
-            <Parameter Name="CEDUSRO07" Mode="In" Type="Int32" />
+          <Parameter Name="CEDUSRO07" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_creatediagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -1949,10 +1924,10 @@
             <Parameter Name="definition" Mode="In" Type="Binary" />
           </FunctionImport>
           <FunctionImport Name="SP_DEL_REGDIAC">
-            <Parameter Name="CODDIAC04" Mode="In" Type="Int32" />
+          <Parameter Name="CODDIAC04" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SP_DEL_REGUSRO">
-            <Parameter Name="CEDUSRO07" Mode="In" Type="String" />
+          <Parameter Name="CEDUSRO07" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_dropdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -2087,6 +2062,12 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="SP_CON_REGFAML" ReturnType="Collection(SIDEPS.SP_CON_REGFAML_Result)">
+          <Parameter Name="cedulaSolicitante" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CONXID_REGFAML" ReturnType="Collection(SIDEPS.SP_CONXID_REGFAML_Result)">
+            <Parameter Name="cedula" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="SP_CON_CATCANT_Result">
           <Property Type="Int32" Name="CODCANT03" Nullable="false" />
@@ -2163,6 +2144,32 @@
           <Property Type="Int32" Name="ID" Nullable="false" />
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="SP_CON_REGFAML_Result">
+          <Property Type="String" Name="CEDFAML22" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="NOMFAML22" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="EDAFAML22" Nullable="true" />
+          <Property Type="Int32" Name="CODESTC06" Nullable="true" />
+          <Property Type="Int32" Name="CODNEDU09" Nullable="true" />
+          <Property Type="String" Name="OACFAML22" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="INGFAML22" Nullable="true" Precision="18" Scale="4" />
+          <Property Type="String" Name="DESFAML22" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="CODORGS21" Nullable="true" />
+          <Property Type="Int32" Name="CODENFR15" Nullable="true" />
+          <Property Type="Int32" Name="CODPARE12" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_CONXID_REGFAML_Result">
+          <Property Type="String" Name="CEDFAML22" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="NOMFAML22" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="EDAFAML22" Nullable="true" />
+          <Property Type="Int32" Name="CODESTC06" Nullable="true" />
+          <Property Type="Int32" Name="CODNEDU09" Nullable="true" />
+          <Property Type="String" Name="OACFAML22" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="INGFAML22" Nullable="true" Precision="18" Scale="4" />
+          <Property Type="String" Name="DESFAML22" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="CODORGS21" Nullable="true" />
+          <Property Type="Int32" Name="CODENFR15" Nullable="true" />
+          <Property Type="Int32" Name="CODPARE12" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2483,7 +2490,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="SIDEPS.Store.sp_alterdiagram" />
           <FunctionImportMapping FunctionImportName="SP_CON_CATCANT" FunctionName="SIDEPS.Store.SP_CON_CATCANT">
             <ResultMapping>
               <ComplexTypeMapping TypeName="SIDEPS.SP_CON_CATCANT_Result">
@@ -2581,29 +2587,8 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="SIDEPS.Store.sp_creatediagram" />
           <FunctionImportMapping FunctionImportName="SP_DEL_REGDIAC" FunctionName="SIDEPS.Store.SP_DEL_REGDIAC" />
           <FunctionImportMapping FunctionImportName="SP_DEL_REGUSRO" FunctionName="SIDEPS.Store.SP_DEL_REGUSRO" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="SIDEPS.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="SIDEPS.Store.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="SIDEPS.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="SIDEPS.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="SIDEPS.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_INS_REGASPS" FunctionName="SIDEPS.Store.SP_INS_REGASPS" />
           <FunctionImportMapping FunctionImportName="SP_INS_REGCASO" FunctionName="SIDEPS.Store.SP_INS_REGCASO" />
           <FunctionImportMapping FunctionImportName="SP_INS_REGDIAC" FunctionName="SIDEPS.Store.SP_INS_REGDIAC" />
@@ -2614,9 +2599,41 @@
           <FunctionImportMapping FunctionImportName="SP_INS_REGVIVI" FunctionName="SIDEPS.Store.SP_INS_REGVIVI" />
           <FunctionImportMapping FunctionImportName="SP_MOD_REGDIAC" FunctionName="SIDEPS.Store.SP_MOD_REGDIAC" />
           <FunctionImportMapping FunctionImportName="SP_MOD_REGUSRO" FunctionName="SIDEPS.Store.SP_MOD_REGUSRO" />
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="SIDEPS.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="SIDEPS.Store.sp_upgraddiagrams" />
-  </EntityContainerMapping>
+          <FunctionImportMapping FunctionImportName="SP_CON_REGFAML" FunctionName="SIDEPS.Store.SP_CON_REGFAML">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIDEPS.SP_CON_REGFAML_Result">
+                <ScalarProperty Name="CEDFAML22" ColumnName="CEDFAML22" />
+                <ScalarProperty Name="NOMFAML22" ColumnName="NOMFAML22" />
+                <ScalarProperty Name="EDAFAML22" ColumnName="EDAFAML22" />
+                <ScalarProperty Name="CODESTC06" ColumnName="CODESTC06" />
+                <ScalarProperty Name="CODNEDU09" ColumnName="CODNEDU09" />
+                <ScalarProperty Name="OACFAML22" ColumnName="OACFAML22" />
+                <ScalarProperty Name="INGFAML22" ColumnName="INGFAML22" />
+                <ScalarProperty Name="DESFAML22" ColumnName="DESFAML22" />
+                <ScalarProperty Name="CODORGS21" ColumnName="CODORGS21" />
+                <ScalarProperty Name="CODENFR15" ColumnName="CODENFR15" />
+                <ScalarProperty Name="CODPARE12" ColumnName="CODPARE12" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CONXID_REGFAML" FunctionName="SIDEPS.Store.SP_CONXID_REGFAML">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIDEPS.SP_CONXID_REGFAML_Result">
+                <ScalarProperty Name="CEDFAML22" ColumnName="CEDFAML22" />
+                <ScalarProperty Name="NOMFAML22" ColumnName="NOMFAML22" />
+                <ScalarProperty Name="EDAFAML22" ColumnName="EDAFAML22" />
+                <ScalarProperty Name="CODESTC06" ColumnName="CODESTC06" />
+                <ScalarProperty Name="CODNEDU09" ColumnName="CODNEDU09" />
+                <ScalarProperty Name="OACFAML22" ColumnName="OACFAML22" />
+                <ScalarProperty Name="INGFAML22" ColumnName="INGFAML22" />
+                <ScalarProperty Name="DESFAML22" ColumnName="DESFAML22" />
+                <ScalarProperty Name="CODORGS21" ColumnName="CODORGS21" />
+                <ScalarProperty Name="CODENFR15" ColumnName="CODENFR15" />
+                <ScalarProperty Name="CODPARE12" ColumnName="CODPARE12" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->

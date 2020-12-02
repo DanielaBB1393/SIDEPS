@@ -10,7 +10,7 @@ public class ServiciosWCF : IServiciosWCF
     private readonly IPersonasLN personasLN = new PersonasLN();
     private readonly IAspectoSaludLN aspectoSaludLN = new AspectoSaludLN();
     private readonly IViviendaLN viviendaLN = new ViviendaLN();
-    private readonly IGrupoFamiliarLN situacionFinancieraLN = new GrupoFamiliarLN();
+    private readonly IGrupoFamiliarLN grupoFamiliarLN = new GrupoFamiliarLN();
     private readonly IEgresosLN egresosLN = new EgresosLN();
     private readonly ICategoriasLN categoriasLN = new CategoriasLN();
     private readonly IDiaconiaLN diaconiaLN = new DiaconiaLN();
@@ -76,11 +76,59 @@ public class ServiciosWCF : IServiciosWCF
         }
     }
 
-    public bool SP_Ins_GrupoFamiliar(SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona)
+    public bool SP_Ins_MiembroFamiliar(SIDEPS_22REGFAML grupoFamiliar, string cedulaPersona)
     {
         try
         {
-            return this.situacionFinancieraLN.SP_Ins_GrupoFamiliar(grupoFamiliar, cedulaPersona);
+            return this.grupoFamiliarLN.SP_Ins_MiembroFamiliar(grupoFamiliar, cedulaPersona);
+        }
+        catch
+        {
+            throw;
+        }
+    }
+
+    public SP_CONXID_REGFAML_Result SP_Con_MiembroFamiliarXid(string cedFamiliar)
+    {
+        try
+        {
+            return this.grupoFamiliarLN.SP_Con_MiembroFamiliarXid(cedFamiliar);
+        }
+        catch
+        {
+            throw;
+        }
+    }
+
+    public void SP_Del_MiembroFamiliarXid(string cedFamiliar)
+    {
+        try
+        {
+            this.grupoFamiliarLN.SP_Del_MiembroFamiliarXid(cedFamiliar);
+        }
+        catch
+        {
+            throw;
+        }
+    }
+
+    public bool SP_Mod_MiembroFamiliar(SIDEPS_22REGFAML miembroFamiliar)
+    {
+        try
+        {
+            return this.grupoFamiliarLN.SP_Mod_MiembroFamiliar(miembroFamiliar);
+        }
+        catch
+        {
+            throw;
+        }
+    }
+
+    public List<SP_CON_REGFAML_Result> ConGrupoFamiliarXId(string cedulaSolicitante)
+    {
+        try
+        {
+            return this.grupoFamiliarLN.ConGrupoFamiliarXId(cedulaSolicitante);
         }
         catch
         {
@@ -165,13 +213,13 @@ public class ServiciosWCF : IServiciosWCF
         }
         return lstRespuesta;
     }
+
     public bool insDiaconia(SIDEPS_04REGDIAC pobjDiac)
     {
         bool objRespuesta = new bool();
         try
         {
             objRespuesta = diaconiaLN.insDiaconia(pobjDiac);
-
         }
         catch (Exception ex)
         {
@@ -179,13 +227,13 @@ public class ServiciosWCF : IServiciosWCF
         }
         return objRespuesta;
     }
+
     public bool modDiaconia(SIDEPS_04REGDIAC pobjDiac)
     {
         bool objRespuesta = new bool();
         try
         {
             objRespuesta = diaconiaLN.modDiaconia(pobjDiac);
-
         }
         catch (Exception ex)
         {
@@ -193,13 +241,13 @@ public class ServiciosWCF : IServiciosWCF
         }
         return objRespuesta;
     }
+
     public bool delDiaconia(SIDEPS_04REGDIAC pobjDiac)
     {
         bool objRespuesta = new bool();
         try
         {
             objRespuesta = diaconiaLN.delDiaconia(pobjDiac);
-
         }
         catch (Exception ex)
         {
@@ -249,13 +297,13 @@ public class ServiciosWCF : IServiciosWCF
         }
         return lstRespuesta;
     }
+
     public bool insUsuario(SIDEPS_07REGUSRO pobjUsuario)
     {
         bool objRespuesta = new bool();
         try
         {
             objRespuesta = objUsuario.insUsuario(pobjUsuario);
-
         }
         catch (Exception ex)
         {
@@ -263,13 +311,13 @@ public class ServiciosWCF : IServiciosWCF
         }
         return objRespuesta;
     }
+
     public bool modUsuario(SIDEPS_07REGUSRO pobjUsuario)
     {
         bool objRespuesta = new bool();
         try
         {
             objRespuesta = objUsuario.modUsuario(pobjUsuario);
-
         }
         catch (Exception ex)
         {
@@ -277,13 +325,13 @@ public class ServiciosWCF : IServiciosWCF
         }
         return objRespuesta;
     }
+
     public bool delUsuario(SIDEPS_07REGUSRO pobjUsuario)
     {
         bool objRespuesta = new bool();
         try
         {
             objRespuesta = objUsuario.delUsuario(pobjUsuario);
-
         }
         catch (Exception ex)
         {
@@ -300,7 +348,6 @@ public class ServiciosWCF : IServiciosWCF
         }
         catch (Exception ex)
         {
-
             throw ex;
         }
     }
