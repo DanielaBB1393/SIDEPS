@@ -42,7 +42,49 @@ public interface IServiciosWCF
     List<SP_CON_CATRELG_Result> SP_Con_Religiones();
 
     [OperationContract]
+    List<SP_CON_CATESTC_Result> SP_Con_EstadosCivil();
+
+    [OperationContract]
     List<SP_CON_CATCANT_Result> SP_Con_Cantones();
+    
+    [OperationContract]
+    List<SP_CON_CATNEDU_Result> SP_Con_NivelEducativo();
+    
+    [OperationContract]
+    List<SP_CON_CATPAIS_Result> SP_Con_Pais();
+    
+    [OperationContract]
+    List<SP_CON_CATPROV_Result> SP_Con_Provincia();
+    
+    [OperationContract]
+    List<SP_CON_TIPUSRO_Result> SP_Con_TipoUsuario();
+    
+    [OperationContract]
+    List<SP_CON_CATSOLI_Result> SP_Con_CategoriaSolicitud();
+    
+    [OperationContract]
+    List<SP_CON_CATPARE_Result> SP_Con_Parentescos();
+    
+    [OperationContract]
+    List<SP_CON_CATSEGU_Result> SP_Con_Seguros();
+    
+    [OperationContract]
+    List<SP_CON_CATENFR_Result> SP_Con_Enfermedades();
+    
+    [OperationContract]
+    List<SP_CON_CATMATE_Result> SP_Con_Materiales();
+    
+    [OperationContract]
+    List<SP_CON_TIPVIVI_Result> SP_Con_TipoVivienda();
+    
+    [OperationContract]
+    List<SP_CON_ESTVIVI_Result> SP_Con_EstadoVivienda();
+    
+    [OperationContract]
+    List<SP_CON_CATORGS_Result> SP_Con_Organizaciones();
+    
+    [OperationContract]
+    List<SP_CON_CATAYUD_Result> SP_Con_CategoriasAyudas();
 
     [OperationContract]
     List<SIDEPS_04REGDIAC> Diaconia();

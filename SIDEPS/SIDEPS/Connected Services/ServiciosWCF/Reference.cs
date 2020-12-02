@@ -4530,6 +4530,67 @@ namespace SIDEPS.ServiciosWCF {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SP_CON_CATESTC_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class SP_CON_CATESTC_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CODESTC06Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESESTC06Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CODESTC06 {
+            get {
+                return this.CODESTC06Field;
+            }
+            set {
+                if ((this.CODESTC06Field.Equals(value) != true)) {
+                    this.CODESTC06Field = value;
+                    this.RaisePropertyChanged("CODESTC06");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESESTC06 {
+            get {
+                return this.DESESTC06Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESESTC06Field, value) != true)) {
+                    this.DESESTC06Field = value;
+                    this.RaisePropertyChanged("DESESTC06");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SP_CON_CATCANT_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
     [System.SerializableAttribute()]
     public partial class SP_CON_CATCANT_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -4591,6 +4652,815 @@ namespace SIDEPS.ServiciosWCF {
                 if ((object.ReferenceEquals(this.NOMCANT03Field, value) != true)) {
                     this.NOMCANT03Field = value;
                     this.RaisePropertyChanged("NOMCANT03");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SP_CON_CATNEDU_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class SP_CON_CATNEDU_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CODNEDU09Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESNEDU09Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CODNEDU09 {
+            get {
+                return this.CODNEDU09Field;
+            }
+            set {
+                if ((this.CODNEDU09Field.Equals(value) != true)) {
+                    this.CODNEDU09Field = value;
+                    this.RaisePropertyChanged("CODNEDU09");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESNEDU09 {
+            get {
+                return this.DESNEDU09Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESNEDU09Field, value) != true)) {
+                    this.DESNEDU09Field = value;
+                    this.RaisePropertyChanged("DESNEDU09");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SP_CON_CATPAIS_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class SP_CON_CATPAIS_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CODPAIS01Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NOMPAIS01Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CODPAIS01 {
+            get {
+                return this.CODPAIS01Field;
+            }
+            set {
+                if ((this.CODPAIS01Field.Equals(value) != true)) {
+                    this.CODPAIS01Field = value;
+                    this.RaisePropertyChanged("CODPAIS01");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NOMPAIS01 {
+            get {
+                return this.NOMPAIS01Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NOMPAIS01Field, value) != true)) {
+                    this.NOMPAIS01Field = value;
+                    this.RaisePropertyChanged("NOMPAIS01");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SP_CON_CATPROV_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class SP_CON_CATPROV_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CODPAIS01Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CODPROV02Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NOMPROV02Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CODPAIS01 {
+            get {
+                return this.CODPAIS01Field;
+            }
+            set {
+                if ((this.CODPAIS01Field.Equals(value) != true)) {
+                    this.CODPAIS01Field = value;
+                    this.RaisePropertyChanged("CODPAIS01");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CODPROV02 {
+            get {
+                return this.CODPROV02Field;
+            }
+            set {
+                if ((this.CODPROV02Field.Equals(value) != true)) {
+                    this.CODPROV02Field = value;
+                    this.RaisePropertyChanged("CODPROV02");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NOMPROV02 {
+            get {
+                return this.NOMPROV02Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NOMPROV02Field, value) != true)) {
+                    this.NOMPROV02Field = value;
+                    this.RaisePropertyChanged("NOMPROV02");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SP_CON_TIPUSRO_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class SP_CON_TIPUSRO_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CODUSRO05Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESUSRO05Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CODUSRO05 {
+            get {
+                return this.CODUSRO05Field;
+            }
+            set {
+                if ((this.CODUSRO05Field.Equals(value) != true)) {
+                    this.CODUSRO05Field = value;
+                    this.RaisePropertyChanged("CODUSRO05");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESUSRO05 {
+            get {
+                return this.DESUSRO05Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESUSRO05Field, value) != true)) {
+                    this.DESUSRO05Field = value;
+                    this.RaisePropertyChanged("DESUSRO05");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SP_CON_CATSOLI_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class SP_CON_CATSOLI_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CODSOLI10Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESSOLI10Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CODSOLI10 {
+            get {
+                return this.CODSOLI10Field;
+            }
+            set {
+                if ((this.CODSOLI10Field.Equals(value) != true)) {
+                    this.CODSOLI10Field = value;
+                    this.RaisePropertyChanged("CODSOLI10");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESSOLI10 {
+            get {
+                return this.DESSOLI10Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESSOLI10Field, value) != true)) {
+                    this.DESSOLI10Field = value;
+                    this.RaisePropertyChanged("DESSOLI10");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SP_CON_CATPARE_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class SP_CON_CATPARE_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CODPARE12Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESPARE12Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CODPARE12 {
+            get {
+                return this.CODPARE12Field;
+            }
+            set {
+                if ((this.CODPARE12Field.Equals(value) != true)) {
+                    this.CODPARE12Field = value;
+                    this.RaisePropertyChanged("CODPARE12");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESPARE12 {
+            get {
+                return this.DESPARE12Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESPARE12Field, value) != true)) {
+                    this.DESPARE12Field = value;
+                    this.RaisePropertyChanged("DESPARE12");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SP_CON_CATSEGU_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class SP_CON_CATSEGU_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CODSEGU14Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESSEGU14Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CODSEGU14 {
+            get {
+                return this.CODSEGU14Field;
+            }
+            set {
+                if ((this.CODSEGU14Field.Equals(value) != true)) {
+                    this.CODSEGU14Field = value;
+                    this.RaisePropertyChanged("CODSEGU14");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESSEGU14 {
+            get {
+                return this.DESSEGU14Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESSEGU14Field, value) != true)) {
+                    this.DESSEGU14Field = value;
+                    this.RaisePropertyChanged("DESSEGU14");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SP_CON_CATENFR_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class SP_CON_CATENFR_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CODENFR15Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESENFR15Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CODENFR15 {
+            get {
+                return this.CODENFR15Field;
+            }
+            set {
+                if ((this.CODENFR15Field.Equals(value) != true)) {
+                    this.CODENFR15Field = value;
+                    this.RaisePropertyChanged("CODENFR15");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESENFR15 {
+            get {
+                return this.DESENFR15Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESENFR15Field, value) != true)) {
+                    this.DESENFR15Field = value;
+                    this.RaisePropertyChanged("DESENFR15");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SP_CON_CATMATE_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class SP_CON_CATMATE_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CODMATE17Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESMATE17Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CODMATE17 {
+            get {
+                return this.CODMATE17Field;
+            }
+            set {
+                if ((this.CODMATE17Field.Equals(value) != true)) {
+                    this.CODMATE17Field = value;
+                    this.RaisePropertyChanged("CODMATE17");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESMATE17 {
+            get {
+                return this.DESMATE17Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESMATE17Field, value) != true)) {
+                    this.DESMATE17Field = value;
+                    this.RaisePropertyChanged("DESMATE17");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SP_CON_TIPVIVI_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class SP_CON_TIPVIVI_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CODTIPV18Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESTIPV18Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CODTIPV18 {
+            get {
+                return this.CODTIPV18Field;
+            }
+            set {
+                if ((this.CODTIPV18Field.Equals(value) != true)) {
+                    this.CODTIPV18Field = value;
+                    this.RaisePropertyChanged("CODTIPV18");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESTIPV18 {
+            get {
+                return this.DESTIPV18Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESTIPV18Field, value) != true)) {
+                    this.DESTIPV18Field = value;
+                    this.RaisePropertyChanged("DESTIPV18");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SP_CON_ESTVIVI_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class SP_CON_ESTVIVI_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CODESTV19Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESESTV19Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CODESTV19 {
+            get {
+                return this.CODESTV19Field;
+            }
+            set {
+                if ((this.CODESTV19Field.Equals(value) != true)) {
+                    this.CODESTV19Field = value;
+                    this.RaisePropertyChanged("CODESTV19");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESESTV19 {
+            get {
+                return this.DESESTV19Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESESTV19Field, value) != true)) {
+                    this.DESESTV19Field = value;
+                    this.RaisePropertyChanged("DESESTV19");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SP_CON_CATORGS_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class SP_CON_CATORGS_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CODORGS21Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESORGS21Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CODORGS21 {
+            get {
+                return this.CODORGS21Field;
+            }
+            set {
+                if ((this.CODORGS21Field.Equals(value) != true)) {
+                    this.CODORGS21Field = value;
+                    this.RaisePropertyChanged("CODORGS21");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESORGS21 {
+            get {
+                return this.DESORGS21Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESORGS21Field, value) != true)) {
+                    this.DESORGS21Field = value;
+                    this.RaisePropertyChanged("DESORGS21");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SP_CON_CATAYUD_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class SP_CON_CATAYUD_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CODAYUD26Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESAYUD26Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CODAYUD26 {
+            get {
+                return this.CODAYUD26Field;
+            }
+            set {
+                if ((this.CODAYUD26Field.Equals(value) != true)) {
+                    this.CODAYUD26Field = value;
+                    this.RaisePropertyChanged("CODAYUD26");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESAYUD26 {
+            get {
+                return this.DESAYUD26Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESAYUD26Field, value) != true)) {
+                    this.DESAYUD26Field = value;
+                    this.RaisePropertyChanged("DESAYUD26");
                 }
             }
         }
@@ -5437,11 +6307,95 @@ namespace SIDEPS.ServiciosWCF {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_Religiones", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_ReligionesResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATRELG_Result>> SP_Con_ReligionesAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_EstadosCivil", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_EstadosCivilResponse")]
+        System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATESTC_Result> SP_Con_EstadosCivil();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_EstadosCivil", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_EstadosCivilResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATESTC_Result>> SP_Con_EstadosCivilAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_Cantones", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_CantonesResponse")]
         System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATCANT_Result> SP_Con_Cantones();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_Cantones", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_CantonesResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATCANT_Result>> SP_Con_CantonesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_NivelEducativo", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_NivelEducativoResponse")]
+        System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATNEDU_Result> SP_Con_NivelEducativo();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_NivelEducativo", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_NivelEducativoResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATNEDU_Result>> SP_Con_NivelEducativoAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_Pais", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_PaisResponse")]
+        System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATPAIS_Result> SP_Con_Pais();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_Pais", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_PaisResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATPAIS_Result>> SP_Con_PaisAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_Provincia", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_ProvinciaResponse")]
+        System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATPROV_Result> SP_Con_Provincia();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_Provincia", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_ProvinciaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATPROV_Result>> SP_Con_ProvinciaAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_TipoUsuario", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_TipoUsuarioResponse")]
+        System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_TIPUSRO_Result> SP_Con_TipoUsuario();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_TipoUsuario", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_TipoUsuarioResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_TIPUSRO_Result>> SP_Con_TipoUsuarioAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_CategoriaSolicitud", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_CategoriaSolicitudResponse")]
+        System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATSOLI_Result> SP_Con_CategoriaSolicitud();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_CategoriaSolicitud", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_CategoriaSolicitudResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATSOLI_Result>> SP_Con_CategoriaSolicitudAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_Parentescos", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_ParentescosResponse")]
+        System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATPARE_Result> SP_Con_Parentescos();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_Parentescos", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_ParentescosResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATPARE_Result>> SP_Con_ParentescosAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_Seguros", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_SegurosResponse")]
+        System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATSEGU_Result> SP_Con_Seguros();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_Seguros", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_SegurosResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATSEGU_Result>> SP_Con_SegurosAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_Enfermedades", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_EnfermedadesResponse")]
+        System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATENFR_Result> SP_Con_Enfermedades();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_Enfermedades", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_EnfermedadesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATENFR_Result>> SP_Con_EnfermedadesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_Materiales", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_MaterialesResponse")]
+        System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATMATE_Result> SP_Con_Materiales();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_Materiales", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_MaterialesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATMATE_Result>> SP_Con_MaterialesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_TipoVivienda", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_TipoViviendaResponse")]
+        System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_TIPVIVI_Result> SP_Con_TipoVivienda();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_TipoVivienda", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_TipoViviendaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_TIPVIVI_Result>> SP_Con_TipoViviendaAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_EstadoVivienda", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_EstadoViviendaResponse")]
+        System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_ESTVIVI_Result> SP_Con_EstadoVivienda();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_EstadoVivienda", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_EstadoViviendaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_ESTVIVI_Result>> SP_Con_EstadoViviendaAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_Organizaciones", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_OrganizacionesResponse")]
+        System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATORGS_Result> SP_Con_Organizaciones();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_Organizaciones", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_OrganizacionesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATORGS_Result>> SP_Con_OrganizacionesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_CategoriasAyudas", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_CategoriasAyudasResponse")]
+        System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATAYUD_Result> SP_Con_CategoriasAyudas();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_CategoriasAyudas", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_CategoriasAyudasResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATAYUD_Result>> SP_Con_CategoriasAyudasAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/Diaconia", ReplyAction="http://tempuri.org/IServiciosWCF/DiaconiaResponse")]
         System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_04REGDIAC> Diaconia();
@@ -5645,12 +6599,124 @@ namespace SIDEPS.ServiciosWCF {
             return base.Channel.SP_Con_ReligionesAsync();
         }
         
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATESTC_Result> SP_Con_EstadosCivil() {
+            return base.Channel.SP_Con_EstadosCivil();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATESTC_Result>> SP_Con_EstadosCivilAsync() {
+            return base.Channel.SP_Con_EstadosCivilAsync();
+        }
+        
         public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATCANT_Result> SP_Con_Cantones() {
             return base.Channel.SP_Con_Cantones();
         }
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATCANT_Result>> SP_Con_CantonesAsync() {
             return base.Channel.SP_Con_CantonesAsync();
+        }
+        
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATNEDU_Result> SP_Con_NivelEducativo() {
+            return base.Channel.SP_Con_NivelEducativo();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATNEDU_Result>> SP_Con_NivelEducativoAsync() {
+            return base.Channel.SP_Con_NivelEducativoAsync();
+        }
+        
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATPAIS_Result> SP_Con_Pais() {
+            return base.Channel.SP_Con_Pais();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATPAIS_Result>> SP_Con_PaisAsync() {
+            return base.Channel.SP_Con_PaisAsync();
+        }
+        
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATPROV_Result> SP_Con_Provincia() {
+            return base.Channel.SP_Con_Provincia();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATPROV_Result>> SP_Con_ProvinciaAsync() {
+            return base.Channel.SP_Con_ProvinciaAsync();
+        }
+        
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_TIPUSRO_Result> SP_Con_TipoUsuario() {
+            return base.Channel.SP_Con_TipoUsuario();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_TIPUSRO_Result>> SP_Con_TipoUsuarioAsync() {
+            return base.Channel.SP_Con_TipoUsuarioAsync();
+        }
+        
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATSOLI_Result> SP_Con_CategoriaSolicitud() {
+            return base.Channel.SP_Con_CategoriaSolicitud();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATSOLI_Result>> SP_Con_CategoriaSolicitudAsync() {
+            return base.Channel.SP_Con_CategoriaSolicitudAsync();
+        }
+        
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATPARE_Result> SP_Con_Parentescos() {
+            return base.Channel.SP_Con_Parentescos();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATPARE_Result>> SP_Con_ParentescosAsync() {
+            return base.Channel.SP_Con_ParentescosAsync();
+        }
+        
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATSEGU_Result> SP_Con_Seguros() {
+            return base.Channel.SP_Con_Seguros();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATSEGU_Result>> SP_Con_SegurosAsync() {
+            return base.Channel.SP_Con_SegurosAsync();
+        }
+        
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATENFR_Result> SP_Con_Enfermedades() {
+            return base.Channel.SP_Con_Enfermedades();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATENFR_Result>> SP_Con_EnfermedadesAsync() {
+            return base.Channel.SP_Con_EnfermedadesAsync();
+        }
+        
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATMATE_Result> SP_Con_Materiales() {
+            return base.Channel.SP_Con_Materiales();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATMATE_Result>> SP_Con_MaterialesAsync() {
+            return base.Channel.SP_Con_MaterialesAsync();
+        }
+        
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_TIPVIVI_Result> SP_Con_TipoVivienda() {
+            return base.Channel.SP_Con_TipoVivienda();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_TIPVIVI_Result>> SP_Con_TipoViviendaAsync() {
+            return base.Channel.SP_Con_TipoViviendaAsync();
+        }
+        
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_ESTVIVI_Result> SP_Con_EstadoVivienda() {
+            return base.Channel.SP_Con_EstadoVivienda();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_ESTVIVI_Result>> SP_Con_EstadoViviendaAsync() {
+            return base.Channel.SP_Con_EstadoViviendaAsync();
+        }
+        
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATORGS_Result> SP_Con_Organizaciones() {
+            return base.Channel.SP_Con_Organizaciones();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATORGS_Result>> SP_Con_OrganizacionesAsync() {
+            return base.Channel.SP_Con_OrganizacionesAsync();
+        }
+        
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATAYUD_Result> SP_Con_CategoriasAyudas() {
+            return base.Channel.SP_Con_CategoriasAyudas();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_CATAYUD_Result>> SP_Con_CategoriasAyudasAsync() {
+            return base.Channel.SP_Con_CategoriasAyudasAsync();
         }
         
         public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_04REGDIAC> Diaconia() {

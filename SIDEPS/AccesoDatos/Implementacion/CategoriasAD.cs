@@ -30,7 +30,6 @@ namespace AccesoDatos.Implementacion
             }
             catch (Exception ex)
             {
-
                 throw;
             }
         }
@@ -41,7 +40,7 @@ namespace AccesoDatos.Implementacion
             {
                 return this.contexto.SP_CON_CATRELG().ToList();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -202,6 +201,5 @@ namespace AccesoDatos.Implementacion
                 throw ex;
             }
         }
-
     }
 }

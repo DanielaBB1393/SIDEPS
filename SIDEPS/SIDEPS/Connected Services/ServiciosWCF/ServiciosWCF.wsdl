@@ -79,11 +79,95 @@
   <wsdl:message name="IServiciosWCF_SP_Con_Religiones_OutputMessage">
     <wsdl:part name="parameters" element="tns:SP_Con_ReligionesResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_EstadosCivil_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_EstadosCivil" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_EstadosCivil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_EstadosCivilResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiciosWCF_SP_Con_Cantones_InputMessage">
     <wsdl:part name="parameters" element="tns:SP_Con_Cantones" />
   </wsdl:message>
   <wsdl:message name="IServiciosWCF_SP_Con_Cantones_OutputMessage">
     <wsdl:part name="parameters" element="tns:SP_Con_CantonesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_NivelEducativo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_NivelEducativo" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_NivelEducativo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_NivelEducativoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_Pais_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_Pais" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_Pais_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_PaisResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_Provincia_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_Provincia" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_Provincia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_ProvinciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_TipoUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_TipoUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_TipoUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_TipoUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_CategoriaSolicitud_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_CategoriaSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_CategoriaSolicitud_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_CategoriaSolicitudResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_Parentescos_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_Parentescos" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_Parentescos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_ParentescosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_Seguros_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_Seguros" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_Seguros_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_SegurosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_Enfermedades_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_Enfermedades" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_Enfermedades_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_EnfermedadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_Materiales_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_Materiales" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_Materiales_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_MaterialesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_TipoVivienda_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_TipoVivienda" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_TipoVivienda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_TipoViviendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_EstadoVivienda_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_EstadoVivienda" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_EstadoVivienda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_EstadoViviendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_Organizaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_Organizaciones" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_Organizaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_OrganizacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_CategoriasAyudas_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_CategoriasAyudas" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_CategoriasAyudas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_CategoriasAyudasResponse" />
   </wsdl:message>
   <wsdl:message name="IServiciosWCF_Diaconia_InputMessage">
     <wsdl:part name="parameters" element="tns:Diaconia" />
@@ -212,9 +296,65 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_Religiones" message="tns:IServiciosWCF_SP_Con_Religiones_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_ReligionesResponse" message="tns:IServiciosWCF_SP_Con_Religiones_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="SP_Con_EstadosCivil">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_EstadosCivil" message="tns:IServiciosWCF_SP_Con_EstadosCivil_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_EstadosCivilResponse" message="tns:IServiciosWCF_SP_Con_EstadosCivil_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="SP_Con_Cantones">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_Cantones" message="tns:IServiciosWCF_SP_Con_Cantones_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_CantonesResponse" message="tns:IServiciosWCF_SP_Con_Cantones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_NivelEducativo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_NivelEducativo" message="tns:IServiciosWCF_SP_Con_NivelEducativo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_NivelEducativoResponse" message="tns:IServiciosWCF_SP_Con_NivelEducativo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_Pais">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_Pais" message="tns:IServiciosWCF_SP_Con_Pais_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_PaisResponse" message="tns:IServiciosWCF_SP_Con_Pais_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_Provincia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_Provincia" message="tns:IServiciosWCF_SP_Con_Provincia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_ProvinciaResponse" message="tns:IServiciosWCF_SP_Con_Provincia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_TipoUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_TipoUsuario" message="tns:IServiciosWCF_SP_Con_TipoUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_TipoUsuarioResponse" message="tns:IServiciosWCF_SP_Con_TipoUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_CategoriaSolicitud">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_CategoriaSolicitud" message="tns:IServiciosWCF_SP_Con_CategoriaSolicitud_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_CategoriaSolicitudResponse" message="tns:IServiciosWCF_SP_Con_CategoriaSolicitud_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_Parentescos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_Parentescos" message="tns:IServiciosWCF_SP_Con_Parentescos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_ParentescosResponse" message="tns:IServiciosWCF_SP_Con_Parentescos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_Seguros">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_Seguros" message="tns:IServiciosWCF_SP_Con_Seguros_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_SegurosResponse" message="tns:IServiciosWCF_SP_Con_Seguros_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_Enfermedades">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_Enfermedades" message="tns:IServiciosWCF_SP_Con_Enfermedades_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_EnfermedadesResponse" message="tns:IServiciosWCF_SP_Con_Enfermedades_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_Materiales">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_Materiales" message="tns:IServiciosWCF_SP_Con_Materiales_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_MaterialesResponse" message="tns:IServiciosWCF_SP_Con_Materiales_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_TipoVivienda">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_TipoVivienda" message="tns:IServiciosWCF_SP_Con_TipoVivienda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_TipoViviendaResponse" message="tns:IServiciosWCF_SP_Con_TipoVivienda_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_EstadoVivienda">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_EstadoVivienda" message="tns:IServiciosWCF_SP_Con_EstadoVivienda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_EstadoViviendaResponse" message="tns:IServiciosWCF_SP_Con_EstadoVivienda_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_Organizaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_Organizaciones" message="tns:IServiciosWCF_SP_Con_Organizaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_OrganizacionesResponse" message="tns:IServiciosWCF_SP_Con_Organizaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_CategoriasAyudas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_CategoriasAyudas" message="tns:IServiciosWCF_SP_Con_CategoriasAyudas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_CategoriasAyudasResponse" message="tns:IServiciosWCF_SP_Con_CategoriasAyudas_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Diaconia">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/Diaconia" message="tns:IServiciosWCF_Diaconia_InputMessage" />
@@ -379,8 +519,134 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SP_Con_EstadosCivil">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Con_EstadosCivil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SP_Con_Cantones">
       <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Con_Cantones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_NivelEducativo">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Con_NivelEducativo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_Pais">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Con_Pais" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_Provincia">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Con_Provincia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_TipoUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Con_TipoUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_CategoriaSolicitud">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Con_CategoriaSolicitud" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_Parentescos">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Con_Parentescos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_Seguros">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Con_Seguros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_Enfermedades">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Con_Enfermedades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_Materiales">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Con_Materiales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_TipoVivienda">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Con_TipoVivienda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_EstadoVivienda">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Con_EstadoVivienda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_Organizaciones">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Con_Organizaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Con_CategoriasAyudas">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Con_CategoriasAyudas" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

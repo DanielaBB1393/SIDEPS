@@ -37,6 +37,7 @@ namespace SIDEPS.Models
         public List<Categoria> Religiones { get; set; } = new List<Categoria>();
         public List<Categoria> Cantones { get; set; } = new List<Categoria>();
         public List<Categoria> EstadosCiviles { get; set; } = new List<Categoria>();
+        public List<Categoria> Escolaridades { get; set; } = new List<Categoria>();
 
         public DatosPersonales_M()
         {

@@ -207,6 +207,48 @@
     <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CONXID_REGFAML_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CON_CATAYUD_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CON_CATENFR_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CON_CATMATE_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CON_CATNEDU_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CON_CATORGS_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CON_CATPAIS_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CON_CATPARE_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CON_CATPROV_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CON_CATSEGU_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CON_CATSOLI_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CON_ESTVIVI_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CON_TIPUSRO_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CON_TIPVIVI_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CON_CATESTC_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

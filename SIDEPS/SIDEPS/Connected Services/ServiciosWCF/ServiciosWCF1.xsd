@@ -169,6 +169,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="SP_Con_EstadosCivil">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_EstadosCivilResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="SP_Con_EstadosCivilResult" nillable="true" type="q12:ArrayOfSP_CON_CATESTC_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="SP_Con_Cantones">
     <xs:complexType>
       <xs:sequence />
@@ -177,7 +189,163 @@
   <xs:element name="SP_Con_CantonesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="SP_Con_CantonesResult" nillable="true" type="q12:ArrayOfSP_CON_CATCANT_Result" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="SP_Con_CantonesResult" nillable="true" type="q13:ArrayOfSP_CON_CATCANT_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_NivelEducativo">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_NivelEducativoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="SP_Con_NivelEducativoResult" nillable="true" type="q14:ArrayOfSP_CON_CATNEDU_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_Pais">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_PaisResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="SP_Con_PaisResult" nillable="true" type="q15:ArrayOfSP_CON_CATPAIS_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_Provincia">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_ProvinciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="SP_Con_ProvinciaResult" nillable="true" type="q16:ArrayOfSP_CON_CATPROV_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_TipoUsuario">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_TipoUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="SP_Con_TipoUsuarioResult" nillable="true" type="q17:ArrayOfSP_CON_TIPUSRO_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_CategoriaSolicitud">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_CategoriaSolicitudResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="SP_Con_CategoriaSolicitudResult" nillable="true" type="q18:ArrayOfSP_CON_CATSOLI_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_Parentescos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_ParentescosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="SP_Con_ParentescosResult" nillable="true" type="q19:ArrayOfSP_CON_CATPARE_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_Seguros">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_SegurosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="SP_Con_SegurosResult" nillable="true" type="q20:ArrayOfSP_CON_CATSEGU_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_Enfermedades">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_EnfermedadesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="SP_Con_EnfermedadesResult" nillable="true" type="q21:ArrayOfSP_CON_CATENFR_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_Materiales">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_MaterialesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="SP_Con_MaterialesResult" nillable="true" type="q22:ArrayOfSP_CON_CATMATE_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_TipoVivienda">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_TipoViviendaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="SP_Con_TipoViviendaResult" nillable="true" type="q23:ArrayOfSP_CON_TIPVIVI_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_EstadoVivienda">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_EstadoViviendaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="SP_Con_EstadoViviendaResult" nillable="true" type="q24:ArrayOfSP_CON_ESTVIVI_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_Organizaciones">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_OrganizacionesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="SP_Con_OrganizacionesResult" nillable="true" type="q25:ArrayOfSP_CON_CATORGS_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_CategoriasAyudas">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_CategoriasAyudasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="SP_Con_CategoriasAyudasResult" nillable="true" type="q26:ArrayOfSP_CON_CATAYUD_Result" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -189,7 +357,7 @@
   <xs:element name="DiaconiaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="DiaconiaResult" nillable="true" type="q13:ArrayOfSIDEPS_04REGDIAC" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="DiaconiaResult" nillable="true" type="q27:ArrayOfSIDEPS_04REGDIAC" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -201,7 +369,7 @@
   <xs:element name="conDiaconiasResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="conDiaconiasResult" nillable="true" type="q14:ArrayOfSP_CON_REGDIAC_Result" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="conDiaconiasResult" nillable="true" type="q28:ArrayOfSP_CON_REGDIAC_Result" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -215,14 +383,14 @@
   <xs:element name="conDiaconiasXIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="conDiaconiasXIdResult" nillable="true" type="q15:SP_CONXID_REGDIAC_Result" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="conDiaconiasXIdResult" nillable="true" type="q29:SP_CONXID_REGDIAC_Result" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="insDiaconia">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="pobjDiac" nillable="true" type="q16:SIDEPS_04REGDIAC" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="pobjDiac" nillable="true" type="q30:SIDEPS_04REGDIAC" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -236,7 +404,7 @@
   <xs:element name="modDiaconia">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="pobjDiac" nillable="true" type="q17:SIDEPS_04REGDIAC" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="pobjDiac" nillable="true" type="q31:SIDEPS_04REGDIAC" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -250,7 +418,7 @@
   <xs:element name="delDiaconia">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="pobjDiac" nillable="true" type="q18:SIDEPS_04REGDIAC" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="pobjDiac" nillable="true" type="q32:SIDEPS_04REGDIAC" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -269,7 +437,7 @@
   <xs:element name="UsuarioResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="UsuarioResult" nillable="true" type="q19:ArrayOfSIDEPS_07REGUSRO" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="UsuarioResult" nillable="true" type="q33:ArrayOfSIDEPS_07REGUSRO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -281,7 +449,7 @@
   <xs:element name="conUsuarioResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="conUsuarioResult" nillable="true" type="q20:ArrayOfSP_CON_REGUSRO_Result" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="conUsuarioResult" nillable="true" type="q34:ArrayOfSP_CON_REGUSRO_Result" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -295,14 +463,14 @@
   <xs:element name="conUsuarioXIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="conUsuarioXIdResult" nillable="true" type="q21:SP_CONXID_REGUSRO_Result" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="conUsuarioXIdResult" nillable="true" type="q35:SP_CONXID_REGUSRO_Result" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="insUsuario">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="pobjUsuario" nillable="true" type="q22:SIDEPS_07REGUSRO" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="pobjUsuario" nillable="true" type="q36:SIDEPS_07REGUSRO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -316,7 +484,7 @@
   <xs:element name="modUsuario">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="pobjUsuario" nillable="true" type="q23:SIDEPS_07REGUSRO" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="pobjUsuario" nillable="true" type="q37:SIDEPS_07REGUSRO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -330,7 +498,7 @@
   <xs:element name="delUsuario">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="pobjUsuario" nillable="true" type="q24:SIDEPS_07REGUSRO" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="pobjUsuario" nillable="true" type="q38:SIDEPS_07REGUSRO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -352,7 +520,7 @@
   <xs:element name="LoginResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="LoginResult" nillable="true" type="q25:SIDEPS_07REGUSRO" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="LoginResult" nillable="true" type="q39:SIDEPS_07REGUSRO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

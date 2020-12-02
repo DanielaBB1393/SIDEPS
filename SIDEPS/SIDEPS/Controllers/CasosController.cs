@@ -26,11 +26,16 @@ namespace SIDEPS.Controllers
         //-------
         public ActionResult DatosPersonales()
         {
-            DatosPersonales_M modelo = new DatosPersonales_M
+            var modelo = new DatosPersonales_M();
+
+            using (ServiciosWCFClient svc = new ServiciosWCFClient())
             {
-                Religiones = this.casosSvc.SP_Con_Religiones().Select(r => new Categoria { Codigo = r.CODRELG11, Descripcion = r.DESRELG11 }).ToList(),
-                Cantones = this.casosSvc.SP_Con_Cantones().Select(r => new Categoria { Codigo = r.CODCANT03, Descripcion = r.NOMCANT03 }).ToList(),
-            };
+                modelo.Religiones = svc.SP_Con_Religiones().Select(r => new Categoria { Codigo = r.CODRELG11, Descripcion = r.DESRELG11 }).ToList();
+                modelo.Cantones = svc.SP_Con_Cantones().Select(r => new Categoria { Codigo = r.CODCANT03, Descripcion = r.NOMCANT03 }).ToList();
+                modelo.EstadosCiviles = svc.SP_Con_EstadosCivil().Select(r => new Categoria { Codigo = r.CODESTC06, Descripcion = r.DESESTC06 }).ToList();
+                modelo.Escolaridades = svc.SP_Con_NivelEducativo().Select(r => new Categoria { Codigo = r.CODNEDU09, Descripcion = r.DESNEDU09 }).ToList();
+            }
+
             return View(modelo);
         }
 
@@ -133,7 +138,9 @@ namespace SIDEPS.Controllers
         {
             TempData.Keep();
 
-            return View();
+            var model = new MiembroFamiliar_M();
+             
+            return View(model);
         }
 
         [HttpPost]
