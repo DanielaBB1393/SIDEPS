@@ -239,7 +239,6 @@
     <Content Include="Views\Casos\Index.cshtml" />
     <Content Include="Views\Casos\Vivienda.cshtml" />
     <Content Include="Views\Casos\ProblemasSociales.cshtml" />
-    <Content Include="Views\Casos\GrupoFamiliar1.cshtml" />
     <Content Include="Views\Casos\Egresos.cshtml" />
     <Content Include="Views\Casos\MotivoSolicitud.cshtml" />
     <Content Include="Views\Diaconia\AgregarDiaconia.cshtml" />

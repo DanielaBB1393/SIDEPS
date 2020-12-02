@@ -153,16 +153,46 @@
     <Compile Include="SP_CONXID_REGUSRO_Result.cs">
       <DependentUpon>SIDEPS.tt</DependentUpon>
     </Compile>
+    <Compile Include="SP_CON_CATAYUD_Result.cs">
+      <DependentUpon>SIDEPS.tt</DependentUpon>
+    </Compile>
     <Compile Include="SP_CON_CATCANT_Result.cs">
+      <DependentUpon>SIDEPS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_CON_CATENFR_Result.cs">
       <DependentUpon>SIDEPS.tt</DependentUpon>
     </Compile>
     <Compile Include="SP_CON_CATESTC_Result.cs">
       <DependentUpon>SIDEPS.tt</DependentUpon>
     </Compile>
+    <Compile Include="SP_CON_CATMATE_Result.cs">
+      <DependentUpon>SIDEPS.tt</DependentUpon>
+    </Compile>
     <Compile Include="SP_CON_CATNEDU_Result.cs">
       <DependentUpon>SIDEPS.tt</DependentUpon>
     </Compile>
+    <Compile Include="SP_CON_CATORGS_Result.cs">
+      <DependentUpon>SIDEPS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_CON_CATPAIS_Result.cs">
+      <DependentUpon>SIDEPS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_CON_CATPARE_Result.cs">
+      <DependentUpon>SIDEPS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_CON_CATPROV_Result.cs">
+      <DependentUpon>SIDEPS.tt</DependentUpon>
+    </Compile>
     <Compile Include="SP_CON_CATRELG_Result.cs">
+      <DependentUpon>SIDEPS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_CON_CATSEGU_Result.cs">
+      <DependentUpon>SIDEPS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_CON_CATSOLI_Result.cs">
+      <DependentUpon>SIDEPS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_CON_ESTVIVI_Result.cs">
       <DependentUpon>SIDEPS.tt</DependentUpon>
     </Compile>
     <Compile Include="SP_CON_REGDIAC_Result.cs">
@@ -172,6 +202,15 @@
       <DependentUpon>SIDEPS.tt</DependentUpon>
     </Compile>
     <Compile Include="SP_CON_REGUSRO_Result.cs">
+      <DependentUpon>SIDEPS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_CON_TIPAYUD_Result.cs">
+      <DependentUpon>SIDEPS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_CON_TIPUSRO_Result.cs">
+      <DependentUpon>SIDEPS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_CON_TIPVIVI_Result.cs">
       <DependentUpon>SIDEPS.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_helpdiagramdefinition_Result.cs">

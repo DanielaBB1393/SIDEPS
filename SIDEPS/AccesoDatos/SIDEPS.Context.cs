@@ -674,5 +674,70 @@ namespace AccesoDatos
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONXID_REGFAML_Result>("SP_CONXID_REGFAML", cedulaParameter);
         }
+    
+        public virtual ObjectResult<SP_CON_CATAYUD_Result> SP_CON_CATAYUD()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATAYUD_Result>("SP_CON_CATAYUD");
+        }
+    
+        public virtual ObjectResult<SP_CON_CATENFR_Result> SP_CON_CATENFR()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATENFR_Result>("SP_CON_CATENFR");
+        }
+    
+        public virtual ObjectResult<SP_CON_CATMATE_Result> SP_CON_CATMATE()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATMATE_Result>("SP_CON_CATMATE");
+        }
+    
+        public virtual ObjectResult<SP_CON_CATORGS_Result> SP_CON_CATORGS()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATORGS_Result>("SP_CON_CATORGS");
+        }
+    
+        public virtual ObjectResult<SP_CON_CATPAIS_Result> SP_CON_CATPAIS()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATPAIS_Result>("SP_CON_CATPAIS");
+        }
+    
+        public virtual ObjectResult<SP_CON_CATPARE_Result> SP_CON_CATPARE()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATPARE_Result>("SP_CON_CATPARE");
+        }
+    
+        public virtual ObjectResult<SP_CON_CATPROV_Result> SP_CON_CATPROV()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATPROV_Result>("SP_CON_CATPROV");
+        }
+    
+        public virtual ObjectResult<SP_CON_CATSEGU_Result> SP_CON_CATSEGU()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATSEGU_Result>("SP_CON_CATSEGU");
+        }
+    
+        public virtual ObjectResult<SP_CON_CATSOLI_Result> SP_CON_CATSOLI()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATSOLI_Result>("SP_CON_CATSOLI");
+        }
+    
+        public virtual ObjectResult<SP_CON_ESTVIVI_Result> SP_CON_ESTVIVI()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_ESTVIVI_Result>("SP_CON_ESTVIVI");
+        }
+    
+        public virtual ObjectResult<SP_CON_TIPAYUD_Result> SP_CON_TIPAYUD()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_TIPAYUD_Result>("SP_CON_TIPAYUD");
+        }
+    
+        public virtual ObjectResult<SP_CON_TIPUSRO_Result> SP_CON_TIPUSRO()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_TIPUSRO_Result>("SP_CON_TIPUSRO");
+        }
+    
+        public virtual ObjectResult<SP_CON_TIPVIVI_Result> SP_CON_TIPVIVI()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_TIPVIVI_Result>("SP_CON_TIPVIVI");
+        }
     }
 }

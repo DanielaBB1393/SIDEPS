@@ -685,15 +685,28 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="SP_CON_CATAYUD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_CON_CATCANT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_CON_CATENFR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_CON_CATESTC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_CON_CATMATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_CON_CATNEDU" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_CON_CATORGS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_CON_CATPAIS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_CON_CATPARE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_CON_CATPROV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_CON_CATRELG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_CON_CATSEGU" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_CON_CATSOLI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_CON_ESTVIVI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_CON_REGDIAC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_CON_REGFAML" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="cedulaSolicitante" Type="varchar" Mode="In" />
         </Function>
         <Function Name="SP_CON_REGUSRO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_CON_TIPAYUD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_CON_TIPUSRO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_CON_TIPVIVI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_CONXID_REGDIAC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CODDIAC04" Type="int" Mode="In" />
         </Function>
@@ -2066,8 +2079,21 @@
           <Parameter Name="cedulaSolicitante" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_CONXID_REGFAML" ReturnType="Collection(SIDEPS.SP_CONXID_REGFAML_Result)">
-            <Parameter Name="cedula" Mode="In" Type="String" />
+          <Parameter Name="cedula" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="SP_CON_CATAYUD" ReturnType="Collection(SIDEPS.SP_CON_CATAYUD_Result)" />
+          <FunctionImport Name="SP_CON_CATENFR" ReturnType="Collection(SIDEPS.SP_CON_CATENFR_Result)" />
+          <FunctionImport Name="SP_CON_CATMATE" ReturnType="Collection(SIDEPS.SP_CON_CATMATE_Result)" />
+          <FunctionImport Name="SP_CON_CATORGS" ReturnType="Collection(SIDEPS.SP_CON_CATORGS_Result)" />
+          <FunctionImport Name="SP_CON_CATPAIS" ReturnType="Collection(SIDEPS.SP_CON_CATPAIS_Result)" />
+          <FunctionImport Name="SP_CON_CATPARE" ReturnType="Collection(SIDEPS.SP_CON_CATPARE_Result)" />
+          <FunctionImport Name="SP_CON_CATPROV" ReturnType="Collection(SIDEPS.SP_CON_CATPROV_Result)" />
+          <FunctionImport Name="SP_CON_CATSEGU" ReturnType="Collection(SIDEPS.SP_CON_CATSEGU_Result)" />
+          <FunctionImport Name="SP_CON_CATSOLI" ReturnType="Collection(SIDEPS.SP_CON_CATSOLI_Result)" />
+          <FunctionImport Name="SP_CON_ESTVIVI" ReturnType="Collection(SIDEPS.SP_CON_ESTVIVI_Result)" />
+          <FunctionImport Name="SP_CON_TIPAYUD" ReturnType="Collection(SIDEPS.SP_CON_TIPAYUD_Result)" />
+          <FunctionImport Name="SP_CON_TIPUSRO" ReturnType="Collection(SIDEPS.SP_CON_TIPUSRO_Result)" />
+          <FunctionImport Name="SP_CON_TIPVIVI" ReturnType="Collection(SIDEPS.SP_CON_TIPVIVI_Result)" />
         </EntityContainer>
         <ComplexType Name="SP_CON_CATCANT_Result">
           <Property Type="Int32" Name="CODCANT03" Nullable="false" />
@@ -2170,6 +2196,60 @@
           <Property Type="Int32" Name="CODORGS21" Nullable="true" />
           <Property Type="Int32" Name="CODENFR15" Nullable="true" />
           <Property Type="Int32" Name="CODPARE12" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_CON_CATAYUD_Result">
+          <Property Type="Int32" Name="CODAYUD26" Nullable="false" />
+          <Property Type="String" Name="DESAYUD26" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SP_CON_CATENFR_Result">
+          <Property Type="Int32" Name="CODENFR15" Nullable="false" />
+          <Property Type="String" Name="DESENFR15" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SP_CON_CATMATE_Result">
+          <Property Type="Int32" Name="CODMATE17" Nullable="false" />
+          <Property Type="String" Name="DESMATE17" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SP_CON_CATORGS_Result">
+          <Property Type="Int32" Name="CODORGS21" Nullable="false" />
+          <Property Type="String" Name="DESORGS21" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SP_CON_CATPAIS_Result">
+          <Property Type="Int32" Name="CODPAIS01" Nullable="false" />
+          <Property Type="String" Name="NOMPAIS01" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SP_CON_CATPARE_Result">
+          <Property Type="Int32" Name="CODPARE12" Nullable="false" />
+          <Property Type="String" Name="DESPARE12" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SP_CON_CATPROV_Result">
+          <Property Type="Int32" Name="CODPROV02" Nullable="false" />
+          <Property Type="String" Name="NOMPROV02" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="CODPAIS01" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_CON_CATSEGU_Result">
+          <Property Type="Int32" Name="CODSEGU14" Nullable="false" />
+          <Property Type="String" Name="DESSEGU14" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SP_CON_CATSOLI_Result">
+          <Property Type="Int32" Name="CODSOLI10" Nullable="false" />
+          <Property Type="String" Name="DESSOLI10" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="SP_CON_ESTVIVI_Result">
+          <Property Type="Int32" Name="CODESTV19" Nullable="false" />
+          <Property Type="String" Name="DESESTV19" Nullable="true" MaxLength="60" />
+        </ComplexType>
+        <ComplexType Name="SP_CON_TIPAYUD_Result">
+          <Property Type="Int32" Name="CODTIPA27" Nullable="false" />
+          <Property Type="Int32" Name="CODAYUD26" Nullable="true" />
+          <Property Type="Int32" Name="CODCASO25" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_CON_TIPUSRO_Result">
+          <Property Type="Int32" Name="CODUSRO05" Nullable="false" />
+          <Property Type="String" Name="DESUSRO05" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SP_CON_TIPVIVI_Result">
+          <Property Type="Int32" Name="CODTIPV18" Nullable="false" />
+          <Property Type="String" Name="DESTIPV18" Nullable="true" MaxLength="60" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2630,6 +2710,112 @@
                 <ScalarProperty Name="CODORGS21" ColumnName="CODORGS21" />
                 <ScalarProperty Name="CODENFR15" ColumnName="CODENFR15" />
                 <ScalarProperty Name="CODPARE12" ColumnName="CODPARE12" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CON_CATAYUD" FunctionName="SIDEPS.Store.SP_CON_CATAYUD">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIDEPS.SP_CON_CATAYUD_Result">
+                <ScalarProperty Name="CODAYUD26" ColumnName="CODAYUD26" />
+                <ScalarProperty Name="DESAYUD26" ColumnName="DESAYUD26" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CON_CATENFR" FunctionName="SIDEPS.Store.SP_CON_CATENFR">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIDEPS.SP_CON_CATENFR_Result">
+                <ScalarProperty Name="CODENFR15" ColumnName="CODENFR15" />
+                <ScalarProperty Name="DESENFR15" ColumnName="DESENFR15" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CON_CATMATE" FunctionName="SIDEPS.Store.SP_CON_CATMATE">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIDEPS.SP_CON_CATMATE_Result">
+                <ScalarProperty Name="CODMATE17" ColumnName="CODMATE17" />
+                <ScalarProperty Name="DESMATE17" ColumnName="DESMATE17" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CON_CATORGS" FunctionName="SIDEPS.Store.SP_CON_CATORGS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIDEPS.SP_CON_CATORGS_Result">
+                <ScalarProperty Name="CODORGS21" ColumnName="CODORGS21" />
+                <ScalarProperty Name="DESORGS21" ColumnName="DESORGS21" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CON_CATPAIS" FunctionName="SIDEPS.Store.SP_CON_CATPAIS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIDEPS.SP_CON_CATPAIS_Result">
+                <ScalarProperty Name="CODPAIS01" ColumnName="CODPAIS01" />
+                <ScalarProperty Name="NOMPAIS01" ColumnName="NOMPAIS01" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CON_CATPARE" FunctionName="SIDEPS.Store.SP_CON_CATPARE">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIDEPS.SP_CON_CATPARE_Result">
+                <ScalarProperty Name="CODPARE12" ColumnName="CODPARE12" />
+                <ScalarProperty Name="DESPARE12" ColumnName="DESPARE12" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CON_CATPROV" FunctionName="SIDEPS.Store.SP_CON_CATPROV">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIDEPS.SP_CON_CATPROV_Result">
+                <ScalarProperty Name="CODPROV02" ColumnName="CODPROV02" />
+                <ScalarProperty Name="NOMPROV02" ColumnName="NOMPROV02" />
+                <ScalarProperty Name="CODPAIS01" ColumnName="CODPAIS01" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CON_CATSEGU" FunctionName="SIDEPS.Store.SP_CON_CATSEGU">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIDEPS.SP_CON_CATSEGU_Result">
+                <ScalarProperty Name="CODSEGU14" ColumnName="CODSEGU14" />
+                <ScalarProperty Name="DESSEGU14" ColumnName="DESSEGU14" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CON_CATSOLI" FunctionName="SIDEPS.Store.SP_CON_CATSOLI">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIDEPS.SP_CON_CATSOLI_Result">
+                <ScalarProperty Name="CODSOLI10" ColumnName="CODSOLI10" />
+                <ScalarProperty Name="DESSOLI10" ColumnName="DESSOLI10" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CON_ESTVIVI" FunctionName="SIDEPS.Store.SP_CON_ESTVIVI">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIDEPS.SP_CON_ESTVIVI_Result">
+                <ScalarProperty Name="CODESTV19" ColumnName="CODESTV19" />
+                <ScalarProperty Name="DESESTV19" ColumnName="DESESTV19" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CON_TIPAYUD" FunctionName="SIDEPS.Store.SP_CON_TIPAYUD">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIDEPS.SP_CON_TIPAYUD_Result">
+                <ScalarProperty Name="CODTIPA27" ColumnName="CODTIPA27" />
+                <ScalarProperty Name="CODAYUD26" ColumnName="CODAYUD26" />
+                <ScalarProperty Name="CODCASO25" ColumnName="CODCASO25" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CON_TIPUSRO" FunctionName="SIDEPS.Store.SP_CON_TIPUSRO">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIDEPS.SP_CON_TIPUSRO_Result">
+                <ScalarProperty Name="CODUSRO05" ColumnName="CODUSRO05" />
+                <ScalarProperty Name="DESUSRO05" ColumnName="DESUSRO05" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CON_TIPVIVI" FunctionName="SIDEPS.Store.SP_CON_TIPVIVI">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIDEPS.SP_CON_TIPVIVI_Result">
+                <ScalarProperty Name="CODTIPV18" ColumnName="CODTIPV18" />
+                <ScalarProperty Name="DESTIPV18" ColumnName="DESTIPV18" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
