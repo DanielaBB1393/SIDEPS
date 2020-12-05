@@ -123,134 +123,43 @@ namespace mvcSIDEPSWeb.Controllers
             return View(objDiaconia);
         }
 
-        public ActionResult AgregarDiaconiasC(SIDEPS_04REGDIAC objDiac)
+        [HttpPost]
+        public ActionResult AgregarDiaconias(SIDEPS_04REGDIAC objDiac)
         {
-            List<SP_CON_REGDIAC_Result> lstRespuesta = new List<SP_CON_REGDIAC_Result>();
-            List<Diaconia_M> lstModeloRespuesta = new List<Diaconia_M>();
+       
             try
             {
                 using (ServiciosWCFClient srvDiac = new ServiciosWCFClient())
                 {
-                    if (srvDiac.insDiaconia(objDiac))
-                    {
-                        lstRespuesta = srvDiac.conDiaconias();
-                    }
-                    foreach (var Diaconia in lstRespuesta)
-                    {
-                        Diaconia_M objModeloDiaconia = new Diaconia_M();
-                        objModeloDiaconia.CODDIAC04 = Diaconia.CODDIAC04;
-                        objModeloDiaconia.NOMDIAC04 = Diaconia.NOMDIAC04;
-                        objModeloDiaconia.LUGDIAC04 = Diaconia.LUGDIAC04;
-                        objModeloDiaconia.TELDIAC04 = Diaconia.TELDIAC04;
-                        objModeloDiaconia.ESTDIAC04 = Diaconia.ESTDIAC04;
-                        objModeloDiaconia.CODCANT03 = Diaconia.CODCANT03;
-                        lstModeloRespuesta.Add(objModeloDiaconia);
-                    }
+                    srvDiac.insDiaconia(objDiac);
+                 
                 }
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            return View("listarDiaconias", lstModeloRespuesta);
+            return RedirectToAction("listarDiaconias");
         }
 
-        public ActionResult EliminarDiaconiasC(SIDEPS_04REGDIAC objDiac)
-        {
-            List<SP_CON_REGDIAC_Result> lstRespuesta = new List<SP_CON_REGDIAC_Result>();
-            List<Diaconia_M> lstModeloRespuesta = new List<Diaconia_M>();
-            try
-            {
-                using (ServiciosWCFClient srvDiac = new ServiciosWCFClient())
-                {
-                    if (srvDiac.delDiaconia(objDiac))
-                    {
-                        lstRespuesta = srvDiac.conDiaconias();
-                    }
-                    foreach (var Diaconia in lstRespuesta)
-                    {
-                        Diaconia_M objModeloDiaconia = new Diaconia_M();
-                        objModeloDiaconia.CODDIAC04 = Diaconia.CODDIAC04;
-                        objModeloDiaconia.NOMDIAC04 = Diaconia.NOMDIAC04;
-                        objModeloDiaconia.LUGDIAC04 = Diaconia.LUGDIAC04;
-                        objModeloDiaconia.TELDIAC04 = Diaconia.TELDIAC04;
-                        objModeloDiaconia.ESTDIAC04 = Diaconia.ESTDIAC04;
-                        objModeloDiaconia.CODCANT03 = Diaconia.CODCANT03;
-                        lstModeloRespuesta.Add(objModeloDiaconia);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return View("listarDiaconias", lstModeloRespuesta);
-        }
-
-        public ActionResult ModificarDiaconiasC(SIDEPS_04REGDIAC objDiac)
-        {
-            List<SP_CON_REGDIAC_Result> lstRespuesta = new List<SP_CON_REGDIAC_Result>();
-            List<Diaconia_M> lstModeloRespuesta = new List<Diaconia_M>();
-            try
-            {
-                using (ServiciosWCFClient srvDiac = new ServiciosWCFClient())
-                {
-                    if (srvDiac.modDiaconia(objDiac))
-                    {
-                        lstRespuesta = srvDiac.conDiaconias();
-                    }
-                    foreach (var Diaconia in lstRespuesta)
-                    {
-                        Diaconia_M objModeloDiaconia = new Diaconia_M();
-                        objModeloDiaconia.CODDIAC04 = Diaconia.CODDIAC04;
-                        objModeloDiaconia.NOMDIAC04 = Diaconia.NOMDIAC04;
-                        objModeloDiaconia.LUGDIAC04 = Diaconia.LUGDIAC04;
-                        objModeloDiaconia.TELDIAC04 = Diaconia.TELDIAC04;
-                        objModeloDiaconia.ESTDIAC04 = Diaconia.ESTDIAC04;
-                        objModeloDiaconia.CODCANT03 = Diaconia.CODCANT03;
-                        lstModeloRespuesta.Add(objModeloDiaconia);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return View("listarDiaconias", lstModeloRespuesta);
-        }
 
         [HttpPost]
-        public ActionResult Acciones(string submitButton, Diaconia_M pDiac)
+        public ActionResult ModificarDiaconias(SIDEPS_04REGDIAC objDiac)
         {
             try
             {
-                SIDEPS_04REGDIAC objDiac = new SIDEPS_04REGDIAC();
-                objDiac.CODDIAC04 = pDiac.CODDIAC04;
-                objDiac.NOMDIAC04 = pDiac.NOMDIAC04;
-                objDiac.LUGDIAC04 = pDiac.LUGDIAC04;
-                objDiac.TELDIAC04 = pDiac.TELDIAC04;
-                objDiac.ESTDIAC04 = pDiac.ESTDIAC04;
-                objDiac.CODCANT03 = pDiac.CODCANT03;
-
-                switch (submitButton)
+                using (ServiciosWCFClient srvDiac = new ServiciosWCFClient())
                 {
-                    case "Agregar":
-                        return AgregarDiaconiasC(objDiac);
-
-                    case "Actualizar":
-                        return ModificarDiaconiasC(objDiac);
-
-                    case "Eliminar":
-                        return EliminarDiaconiasC(objDiac);
-
-                    default:
-                        return RedirectToAction("listarDiaconias");
+                    srvDiac.modDiaconia(objDiac);
                 }
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+
+            return RedirectToAction("listarDiaconias");
         }
+
     }
 }
