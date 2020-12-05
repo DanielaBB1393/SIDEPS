@@ -72,7 +72,11 @@ namespace SIDEPS.Controllers
                 using (ServiciosWCFClient srvUsuarios = new ServiciosWCFClient())
                 {
                     objRespuesta = srvUsuarios.conUsuarioXId(id);
+                    ViewData["cantones"] = srvUsuarios.SP_Con_Cantones().Select(par => new Categoria { Codigo = par.CODCANT03, Descripcion = par.NOMCANT03 }).ToDictionary(i => i.Codigo, i => i.Descripcion);
+                    ViewData["diaconias"] = srvUsuarios.conDiaconias().Select(par => new Categoria { Codigo = par.CODDIAC04, Descripcion = par.NOMDIAC04 }).ToDictionary(i => i.Codigo, i => i.Descripcion);
+                    ViewData["roles"] = srvUsuarios.SP_Con_TipoUsuario().Select(par => new Categoria { Codigo = par.CODUSRO05, Descripcion = par.DESUSRO05 }).ToDictionary(i => i.Codigo, i => i.Descripcion);
                 }
+
                 objUsuario.CEDUSRO07 = objRespuesta.CEDUSRO07;
                 objUsuario.NOMUSRO07 = objRespuesta.NOMUSRO07;
                 objUsuario.PAPUSRO07 = objRespuesta.PAPUSRO07;

@@ -12,6 +12,7 @@ namespace SIDEPS.Controllers
         private const string _CODIGOCASO = "codigoCaso";
         private const string _CEDULAPERSONA = "cedulaPersona";
         private const string _CODIGOVIVIENDA = "codigoVivienda";
+        private const string _CEDULAUSUARIO = "cedulaUsuario";
 
         private readonly ServiciosWCFClient casosSvc = new ServiciosWCFClient();
 
@@ -317,6 +318,9 @@ namespace SIDEPS.Controllers
         //---------------
         public ActionResult HistoricoDeCasos(string cedulaUsuario)
         {
+            TempData[_CEDULAUSUARIO] = cedulaUsuario;
+            TempData.Keep();
+
             var modelo = new List<HistoricoCaso_M>();
 
             using (var svc = new ServiciosWCFClient())
@@ -346,7 +350,10 @@ namespace SIDEPS.Controllers
 
         public ActionResult DetallesHistorico()
         {
-            var modelo = new DetallesHistoricoCaso_M();
+            string cedulaUsuario = TempData[_CEDULAUSUARIO].ToString();
+            TempData.Keep();
+
+            var modelo = new DetallesHistoricoCaso_M { CedulaUsuario = cedulaUsuario };
             return View(modelo);
         }
     }
