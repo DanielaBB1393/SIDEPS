@@ -11,7 +11,6 @@
     @Html.AntiForgeryToken()
 
 <div class="form-horizontal">
-    <h4>Diaconia_M</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
   
@@ -44,7 +43,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.CODCANT03, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.CODCANT03, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.DropDownListFor(model => model.CODCANT03, new SelectList(Model.Cantones, "Codigo", "Descripcion"), new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.CODCANT03, "", new { @class = "text-danger" })
         </div>
     </div>

@@ -138,8 +138,10 @@
     <Compile Include="Models\Caso_M.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Combos.cs" />
+    <Compile Include="Models\DetallesHistoricoCaso_M.cs" />
     <Compile Include="Models\Diaconia_M.cs" />
     <Compile Include="Models\Egresos_M.cs" />
+    <Compile Include="Models\HistoricoCaso_M.cs" />
     <Compile Include="Models\MiembroFamiliar_M.cs" />
     <Compile Include="Models\MotivoSolicitud_M.cs" />
     <Compile Include="Models\DatosPersonales_M.cs" />
@@ -249,6 +251,9 @@
     <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CON_CATESTC_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CON_HISTCASOS_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -275,7 +280,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Casos\Insertar.cshtml" />
-    <Content Include="Views\Personas\Insertar.cshtml" />
     <Content Include="Views\Casos\AspectoSalud.cshtml" />
     <Content Include="Views\Casos\DatosPersonales.cshtml" />
     <Content Include="Views\Casos\Index.cshtml" />
@@ -289,7 +293,7 @@
     <Content Include="Views\Diaconia\ModificarDiaconias.cshtml" />
     <Content Include="Views\Usuarios\AgregarUsuario.cshtml" />
     <Content Include="Views\Usuarios\DetalleUsuario.cshtml" />
-    <Content Include="Views\Usuarios\listarUsuario.cshtml" />
+    <Content Include="Views\Usuarios\listarUsuarios.cshtml" />
     <Content Include="Views\Usuarios\ModificarUsuario.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\MenuAdministradorDiaconia.cshtml" />
@@ -300,6 +304,8 @@
     <Content Include="Views\Casos\DetallesFamiliar.cshtml" />
     <Content Include="Views\Casos\ModificarFamiliar.cshtml" />
     <Content Include="Views\Casos\EliminarFamiliar.cshtml" />
+    <Content Include="Views\Casos\HistoricoDeCasos.cshtml" />
+    <Content Include="Views\Casos\DetallesHistorico.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

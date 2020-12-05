@@ -67,7 +67,8 @@ namespace SIDEPS.Models
         [Display(Name = "Fecha de Nacimiento del Usuario")]
         public Nullable<System.DateTime> FENUSRO07 { get; set; }
 
-        public List<Categoria> Cantones { get; set; } = new List<Categoria>();
-        public List<Categoria> Diaconias { get; set; } = new List<Categoria>();
+        public List<Categoria> Cantones { get; set; }
+        public List<Categoria> Diaconias { get; set; }
+        public List<Categoria> Roles { get; set; }
     }
 }

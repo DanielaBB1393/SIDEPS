@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using SIDEPS.ServiciosWCF;
 
@@ -30,6 +31,9 @@ namespace SIDEPS.Models
         public bool SRBVIVI20 { get; set; }
         [DisplayName("Electricidad")]
         public bool SREVIVI20 { get; set; }
+        public List<Categoria> Tipos { get; set; }
+        public List<Categoria> Estados { get; set; }
+        public List<Categoria> Materiales { get; set; }
 
         public Vivienda_M()
         {

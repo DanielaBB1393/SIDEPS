@@ -79,9 +79,19 @@ namespace AccesoDatos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_alterdiagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
         }
     
+        public virtual ObjectResult<SP_CON_CATAYUD_Result> SP_CON_CATAYUD()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATAYUD_Result>("SP_CON_CATAYUD");
+        }
+    
         public virtual ObjectResult<SP_CON_CATCANT_Result> SP_CON_CATCANT()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATCANT_Result>("SP_CON_CATCANT");
+        }
+    
+        public virtual ObjectResult<SP_CON_CATENFR_Result> SP_CON_CATENFR()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATENFR_Result>("SP_CON_CATENFR");
         }
     
         public virtual ObjectResult<SP_CON_CATESTC_Result> SP_CON_CATESTC()
@@ -89,9 +99,34 @@ namespace AccesoDatos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATESTC_Result>("SP_CON_CATESTC");
         }
     
+        public virtual ObjectResult<SP_CON_CATMATE_Result> SP_CON_CATMATE()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATMATE_Result>("SP_CON_CATMATE");
+        }
+    
         public virtual ObjectResult<SP_CON_CATNEDU_Result> SP_CON_CATNEDU()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATNEDU_Result>("SP_CON_CATNEDU");
+        }
+    
+        public virtual ObjectResult<SP_CON_CATORGS_Result> SP_CON_CATORGS()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATORGS_Result>("SP_CON_CATORGS");
+        }
+    
+        public virtual ObjectResult<SP_CON_CATPAIS_Result> SP_CON_CATPAIS()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATPAIS_Result>("SP_CON_CATPAIS");
+        }
+    
+        public virtual ObjectResult<SP_CON_CATPARE_Result> SP_CON_CATPARE()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATPARE_Result>("SP_CON_CATPARE");
+        }
+    
+        public virtual ObjectResult<SP_CON_CATPROV_Result> SP_CON_CATPROV()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATPROV_Result>("SP_CON_CATPROV");
         }
     
         public virtual ObjectResult<SP_CON_CATRELG_Result> SP_CON_CATRELG()
@@ -99,14 +134,53 @@ namespace AccesoDatos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATRELG_Result>("SP_CON_CATRELG");
         }
     
+        public virtual ObjectResult<SP_CON_CATSEGU_Result> SP_CON_CATSEGU()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATSEGU_Result>("SP_CON_CATSEGU");
+        }
+    
+        public virtual ObjectResult<SP_CON_CATSOLI_Result> SP_CON_CATSOLI()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATSOLI_Result>("SP_CON_CATSOLI");
+        }
+    
+        public virtual ObjectResult<SP_CON_ESTVIVI_Result> SP_CON_ESTVIVI()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_ESTVIVI_Result>("SP_CON_ESTVIVI");
+        }
+    
         public virtual ObjectResult<SP_CON_REGDIAC_Result> SP_CON_REGDIAC()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_REGDIAC_Result>("SP_CON_REGDIAC");
         }
     
+        public virtual ObjectResult<SP_CON_REGFAML_Result> SP_CON_REGFAML(string cedulaSolicitante)
+        {
+            var cedulaSolicitanteParameter = cedulaSolicitante != null ?
+                new ObjectParameter("cedulaSolicitante", cedulaSolicitante) :
+                new ObjectParameter("cedulaSolicitante", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_REGFAML_Result>("SP_CON_REGFAML", cedulaSolicitanteParameter);
+        }
+    
         public virtual ObjectResult<SP_CON_REGUSRO_Result> SP_CON_REGUSRO()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_REGUSRO_Result>("SP_CON_REGUSRO");
+        }
+    
+        public virtual ObjectResult<SP_CON_TIPAYUD_Result> SP_CON_TIPAYUD()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_TIPAYUD_Result>("SP_CON_TIPAYUD");
+        }
+    
+        public virtual ObjectResult<SP_CON_TIPUSRO_Result> SP_CON_TIPUSRO()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_TIPUSRO_Result>("SP_CON_TIPUSRO");
+        }
+    
+        public virtual ObjectResult<SP_CON_TIPVIVI_Result> SP_CON_TIPVIVI()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_TIPVIVI_Result>("SP_CON_TIPVIVI");
         }
     
         public virtual ObjectResult<SP_CONXID_REGDIAC_Result> SP_CONXID_REGDIAC(Nullable<int> cODDIAC04)
@@ -118,6 +192,15 @@ namespace AccesoDatos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONXID_REGDIAC_Result>("SP_CONXID_REGDIAC", cODDIAC04Parameter);
         }
     
+        public virtual ObjectResult<SP_CONXID_REGFAML_Result> SP_CONXID_REGFAML(string cedula)
+        {
+            var cedulaParameter = cedula != null ?
+                new ObjectParameter("cedula", cedula) :
+                new ObjectParameter("cedula", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONXID_REGFAML_Result>("SP_CONXID_REGFAML", cedulaParameter);
+        }
+    
         public virtual ObjectResult<SP_CONXID_REGUSRO_Result> SP_CONXID_REGUSRO(Nullable<int> cEDUSRO07)
         {
             var cEDUSRO07Parameter = cEDUSRO07.HasValue ?
@@ -125,27 +208,6 @@ namespace AccesoDatos
                 new ObjectParameter("CEDUSRO07", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONXID_REGUSRO_Result>("SP_CONXID_REGUSRO", cEDUSRO07Parameter);
-        }
-    
-        public virtual int sp_creatediagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            var versionParameter = version.HasValue ?
-                new ObjectParameter("version", version) :
-                new ObjectParameter("version", typeof(int));
-    
-            var definitionParameter = definition != null ?
-                new ObjectParameter("definition", definition) :
-                new ObjectParameter("definition", typeof(byte[]));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_creatediagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
         }
     
         public virtual int SP_DEL_REGDIAC(Nullable<int> cODDIAC04)
@@ -164,45 +226,6 @@ namespace AccesoDatos
                 new ObjectParameter("CEDUSRO07", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_DEL_REGUSRO", cEDUSRO07Parameter);
-        }
-    
-        public virtual int sp_dropdiagram(string diagramname, Nullable<int> owner_id)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
-        }
-    
-        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
-        }
-    
-        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
         }
     
         public virtual int SP_INS_REGASPS(string cEDPERS13, Nullable<int> cODSEGU14, Nullable<int> cODENFR15, string dESENFR16, string rECTRAT16, string dESTRAT16)
@@ -635,109 +658,13 @@ namespace AccesoDatos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_MOD_REGUSRO", cEDUSRO07Parameter, nOMUSRO07Parameter, pAPUSRO07Parameter, sAPUSRO07Parameter, cODCANT03Parameter, cODDIAC04Parameter, cODUSRO05Parameter, eSTUSRO07Parameter, dIRUSRO07Parameter, nACUSRO07Parameter, cNTUSRO07Parameter, fENUSRO07Parameter);
         }
     
-        public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)
+        public virtual ObjectResult<SP_CON_HISTCASOS_Result> SP_CON_HISTCASOS(string cedulaUsuario)
         {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
+            var cedulaUsuarioParameter = cedulaUsuario != null ?
+                new ObjectParameter("cedulaUsuario", cedulaUsuario) :
+                new ObjectParameter("cedulaUsuario", typeof(string));
     
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            var new_diagramnameParameter = new_diagramname != null ?
-                new ObjectParameter("new_diagramname", new_diagramname) :
-                new ObjectParameter("new_diagramname", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
-        }
-    
-        public virtual int sp_upgraddiagrams()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
-        }
-    
-        public virtual ObjectResult<SP_CON_REGFAML_Result> SP_CON_REGFAML(string cedulaSolicitante)
-        {
-            var cedulaSolicitanteParameter = cedulaSolicitante != null ?
-                new ObjectParameter("cedulaSolicitante", cedulaSolicitante) :
-                new ObjectParameter("cedulaSolicitante", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_REGFAML_Result>("SP_CON_REGFAML", cedulaSolicitanteParameter);
-        }
-    
-        public virtual ObjectResult<SP_CONXID_REGFAML_Result> SP_CONXID_REGFAML(string cedula)
-        {
-            var cedulaParameter = cedula != null ?
-                new ObjectParameter("cedula", cedula) :
-                new ObjectParameter("cedula", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONXID_REGFAML_Result>("SP_CONXID_REGFAML", cedulaParameter);
-        }
-    
-        public virtual ObjectResult<SP_CON_CATAYUD_Result> SP_CON_CATAYUD()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATAYUD_Result>("SP_CON_CATAYUD");
-        }
-    
-        public virtual ObjectResult<SP_CON_CATENFR_Result> SP_CON_CATENFR()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATENFR_Result>("SP_CON_CATENFR");
-        }
-    
-        public virtual ObjectResult<SP_CON_CATMATE_Result> SP_CON_CATMATE()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATMATE_Result>("SP_CON_CATMATE");
-        }
-    
-        public virtual ObjectResult<SP_CON_CATORGS_Result> SP_CON_CATORGS()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATORGS_Result>("SP_CON_CATORGS");
-        }
-    
-        public virtual ObjectResult<SP_CON_CATPAIS_Result> SP_CON_CATPAIS()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATPAIS_Result>("SP_CON_CATPAIS");
-        }
-    
-        public virtual ObjectResult<SP_CON_CATPARE_Result> SP_CON_CATPARE()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATPARE_Result>("SP_CON_CATPARE");
-        }
-    
-        public virtual ObjectResult<SP_CON_CATPROV_Result> SP_CON_CATPROV()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATPROV_Result>("SP_CON_CATPROV");
-        }
-    
-        public virtual ObjectResult<SP_CON_CATSEGU_Result> SP_CON_CATSEGU()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATSEGU_Result>("SP_CON_CATSEGU");
-        }
-    
-        public virtual ObjectResult<SP_CON_CATSOLI_Result> SP_CON_CATSOLI()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATSOLI_Result>("SP_CON_CATSOLI");
-        }
-    
-        public virtual ObjectResult<SP_CON_ESTVIVI_Result> SP_CON_ESTVIVI()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_ESTVIVI_Result>("SP_CON_ESTVIVI");
-        }
-    
-        public virtual ObjectResult<SP_CON_TIPAYUD_Result> SP_CON_TIPAYUD()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_TIPAYUD_Result>("SP_CON_TIPAYUD");
-        }
-    
-        public virtual ObjectResult<SP_CON_TIPUSRO_Result> SP_CON_TIPUSRO()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_TIPUSRO_Result>("SP_CON_TIPUSRO");
-        }
-    
-        public virtual ObjectResult<SP_CON_TIPVIVI_Result> SP_CON_TIPVIVI()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_TIPVIVI_Result>("SP_CON_TIPVIVI");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_HISTCASOS_Result>("SP_CON_HISTCASOS", cedulaUsuarioParameter);
         }
     }
 }

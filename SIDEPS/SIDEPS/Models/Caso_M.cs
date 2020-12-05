@@ -1,4 +1,5 @@
-﻿using SIDEPS.ServiciosWCF;
+﻿using SIDEPS.Models;
+using SIDEPS.ServiciosWCF;
 using System;
 using System.ComponentModel;
 
@@ -28,7 +29,7 @@ namespace SIDEPS.Models
         [DisplayName("Motivo de la desición")]
         public string ESTDESC25 { get; set; }
         [DisplayName("Estado del caso")]
-        public string ESTCASO25 { get; set; } = "Pendiente";
+        public string ESTCASO25 { get; set; } = Combos.CASO_INCOMPLETO;
 
         public Caso_M()
         {

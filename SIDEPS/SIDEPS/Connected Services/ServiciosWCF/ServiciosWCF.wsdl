@@ -7,6 +7,12 @@
       <xsd:import schemaLocation="http://localhost:50087/ServiciosWCF.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Entidades" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IServiciosWCF_SP_Con_HistoricoCasos_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_HistoricoCasos" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_SP_Con_HistoricoCasos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Con_HistoricoCasosResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiciosWCF_SP_Ins_Caso_InputMessage">
     <wsdl:part name="parameters" element="tns:SP_Ins_Caso" />
   </wsdl:message>
@@ -248,6 +254,10 @@
     <wsdl:part name="parameters" element="tns:LoginResponse" />
   </wsdl:message>
   <wsdl:portType name="IServiciosWCF">
+    <wsdl:operation name="SP_Con_HistoricoCasos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_HistoricoCasos" message="tns:IServiciosWCF_SP_Con_HistoricoCasos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_HistoricoCasosResponse" message="tns:IServiciosWCF_SP_Con_HistoricoCasos_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="SP_Ins_Caso">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_Caso" message="tns:IServiciosWCF_SP_Ins_Caso_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_CasoResponse" message="tns:IServiciosWCF_SP_Ins_Caso_OutputMessage" />
@@ -411,6 +421,15 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServiciosWCF" type="tns:IServiciosWCF">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SP_Con_HistoricoCasos">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Con_HistoricoCasos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SP_Ins_Caso">
       <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Ins_Caso" style="document" />
       <wsdl:input>

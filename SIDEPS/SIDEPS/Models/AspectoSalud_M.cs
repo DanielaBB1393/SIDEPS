@@ -1,5 +1,6 @@
 ﻿using SIDEPS.ServiciosWCF;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace SIDEPS.Models
@@ -20,6 +21,8 @@ namespace SIDEPS.Models
         public string RECTRAT16 { get; set; }
         [DisplayName("Descripción tratamiento")]
         public string DESTRAT16 { get; set; }
+        public List<Categoria> Enfermedades { get; set; }
+        public List<Categoria> TiposSeguro { get; set; }
 
         public AspectoSalud_M()
         {

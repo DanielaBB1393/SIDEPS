@@ -19,7 +19,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CODTIPV18, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CODTIPV18, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.CODTIPV18, new SelectList(Model.Tipos, "Codigo" , "Descripcion"), new { @class = "form-control" } )
                 @Html.ValidationMessageFor(model => model.CODTIPV18, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -27,7 +27,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CODESTV19, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CODESTV19, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.CODESTV19, new SelectList(Model.Estados, "Codigo", "Descripcion"), new { @class = "form-control" } )
                 @Html.ValidationMessageFor(model => model.CODESTV19, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -35,7 +35,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CODMATE17, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CODMATE17, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.CODMATE17, new SelectList(Model.Materiales, "Codigo", "Descripcion"), new { @class = "form-control" } )
                 @Html.ValidationMessageFor(model => model.CODMATE17, "", new { @class = "text-danger" })
             </div>
         </div>

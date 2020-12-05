@@ -69,7 +69,14 @@ namespace SIDEPS.Controllers
         {
             TempData.Keep();
 
-            return View();
+            var modelo = new AspectoSalud_M();
+            using (var svc = new ServiciosWCFClient())
+            {
+                modelo.Enfermedades = svc.SP_Con_Enfermedades().Select(enf => new Categoria { Codigo = enf.CODENFR15, Descripcion = enf.DESENFR15 }).ToList();
+                modelo.TiposSeguro = svc.SP_Con_Seguros().Select(seg => new Categoria { Codigo = seg.CODSEGU14, Descripcion = seg.DESSEGU14 }).ToList();
+            }
+
+            return View(modelo);
         }
 
         [HttpPost]
@@ -97,7 +104,15 @@ namespace SIDEPS.Controllers
         {
             TempData.Keep();
 
-            return View();
+            var modelo = new Vivienda_M();
+            using (var svc = new ServiciosWCFClient())
+            {
+                modelo.Tipos = svc.SP_Con_TipoVivienda().Select(tip => new Categoria { Codigo = tip.CODTIPV18, Descripcion = tip.DESTIPV18 }).ToList();
+                modelo.Estados = svc.SP_Con_EstadoVivienda().Select(est => new Categoria { Codigo = est.CODESTV19, Descripcion = est.DESESTV19 }).ToList();
+                modelo.Materiales = svc.SP_Con_Materiales().Select(mat => new Categoria { Codigo = mat.CODMATE17, Descripcion = mat.DESMATE17 }).ToList();
+            }
+
+            return View(modelo);
         }
 
         [HttpPost]
@@ -129,6 +144,11 @@ namespace SIDEPS.Controllers
             using (ServiciosWCFClient svc = new ServiciosWCFClient())
             {
                 grupoFamiliar = svc.ConGrupoFamiliarXId(cedulaSolicitante).Select(familiar => new MiembroFamiliar_M(familiar)).ToList();
+                ViewData["estadoCivil"] = svc.SP_Con_EstadosCivil().Select(ec => new Categoria { Codigo = ec.CODESTC06, Descripcion = ec.DESESTC06 }).ToDictionary(i => i.Codigo, i => i.Descripcion);
+                ViewData["escolaridad"] = svc.SP_Con_NivelEducativo().Select(edu => new Categoria { Codigo = edu.CODNEDU09, Descripcion = edu.DESNEDU09 }).ToDictionary(i => i.Codigo, i => i.Descripcion);
+                ViewData["organizaciones"] = svc.SP_Con_Organizaciones().Select(org => new Categoria { Codigo = org.CODORGS21, Descripcion = org.DESORGS21 }).ToDictionary(i => i.Codigo, i => i.Descripcion);
+                ViewData["enfermedades"] = svc.SP_Con_Enfermedades().Select(enf => new Categoria { Codigo = enf.CODENFR15, Descripcion = enf.DESENFR15 }).ToDictionary(i => i.Codigo, i => i.Descripcion);
+                ViewData["parentescos"] = svc.SP_Con_Parentescos().Select(par => new Categoria { Codigo = par.CODPARE12, Descripcion = par.DESPARE12 }).ToDictionary(i => i.Codigo, i => i.Descripcion);
             }
 
             return View(grupoFamiliar);
@@ -138,9 +158,17 @@ namespace SIDEPS.Controllers
         {
             TempData.Keep();
 
-            var model = new MiembroFamiliar_M();
-             
-            return View(model);
+            var modelo = new MiembroFamiliar_M();
+            using (var svc = new ServiciosWCFClient())
+            {
+                modelo.EstadosCiviles = svc.SP_Con_EstadosCivil().Select(ec => new Categoria { Codigo = ec.CODESTC06, Descripcion = ec.DESESTC06 }).ToList();
+                modelo.Escolaridad = svc.SP_Con_NivelEducativo().Select(edu => new Categoria { Codigo = edu.CODNEDU09, Descripcion = edu.DESNEDU09 }).ToList();
+                modelo.Organizaciones = svc.SP_Con_Organizaciones().Select(org => new Categoria { Codigo = org.CODORGS21, Descripcion = org.DESORGS21 }).ToList();
+                modelo.Enfermedades = svc.SP_Con_Enfermedades().Select(enf => new Categoria { Codigo = enf.CODENFR15, Descripcion = enf.DESENFR15 }).ToList();
+                modelo.Parentescos = svc.SP_Con_Parentescos().Select(par => new Categoria { Codigo = par.CODPARE12, Descripcion = par.DESPARE12 }).ToList();
+            }
+
+            return View(modelo);
         }
 
         [HttpPost]
@@ -272,6 +300,8 @@ namespace SIDEPS.Controllers
             TempData.Keep();
 
             motivoSolicitud.CODCASO25 = codigoCaso;
+            motivoSolicitud.ESTCASO25 = Combos.CASO_PENDIENTE;
+
             var resultado = this.casosSvc.SP_Mod_Caso(motivoSolicitud.ConvertirEntidad());
 
             if (resultado)
@@ -280,6 +310,44 @@ namespace SIDEPS.Controllers
             }
 
             return View(motivoSolicitud);
+        }
+
+        //---------------
+        // Mantenimientos
+        //---------------
+        public ActionResult HistoricoDeCasos(string cedulaUsuario)
+        {
+            var modelo = new List<HistoricoCaso_M>();
+
+            using (var svc = new ServiciosWCFClient())
+            {
+                var resultado = svc.SP_Con_HistoricoCasos(cedulaUsuario);
+                foreach (var item in resultado)
+                {
+                    var registro = new HistoricoCaso_M();
+                    registro.CODCASO25 = item.CODCASO25;
+                    registro.CEDPERS13 = item.CEDPERS13;
+                    registro.CEDUSRO07 = item.CEDUSRO07;
+                    registro.FEICASO25 = item.FEICASO25;
+                    registro.FEFCASO25 = item.FEFCASO25;
+                    registro.DESCASO25 = item.DESCASO25;
+                    registro.OPICASO25 = item.OPICASO25;
+                    registro.ESTCASO25 = item.ESTCASO25;
+                    registro.NOMUSRO07 = item.NOMUSRO07;
+                    registro.PAPUSRO07 = item.PAPUSRO07;
+                    registro.NOMPERS13 = item.NOMPERS13;
+                    registro.PAPPERS13 = item.PAPPERS13;
+                    modelo.Add(registro);
+                }
+            }
+
+            return View(modelo);
+        }
+
+        public ActionResult DetallesHistorico()
+        {
+            var modelo = new DetallesHistoricoCaso_M();
+            return View(modelo);
         }
     }
 }

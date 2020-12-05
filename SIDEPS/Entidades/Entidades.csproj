@@ -195,6 +195,9 @@
     <Compile Include="SP_CON_ESTVIVI_Result.cs">
       <DependentUpon>SIDEPS.tt</DependentUpon>
     </Compile>
+    <Compile Include="SP_CON_HISTCASOS_Result.cs">
+      <DependentUpon>SIDEPS.tt</DependentUpon>
+    </Compile>
     <Compile Include="SP_CON_REGDIAC_Result.cs">
       <DependentUpon>SIDEPS.tt</DependentUpon>
     </Compile>
@@ -211,12 +214,6 @@
       <DependentUpon>SIDEPS.tt</DependentUpon>
     </Compile>
     <Compile Include="SP_CON_TIPVIVI_Result.cs">
-      <DependentUpon>SIDEPS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>SIDEPS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagrams_Result.cs">
       <DependentUpon>SIDEPS.tt</DependentUpon>
     </Compile>
   </ItemGroup>

@@ -2,6 +2,7 @@
 using SIDEPS.ServiciosWCF;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace mvcSIDEPSWeb.Controllers
@@ -17,6 +18,7 @@ namespace mvcSIDEPSWeb.Controllers
                 using (ServiciosWCFClient srvDiac = new ServiciosWCFClient())
                 {
                     lstRespuesta = srvDiac.conDiaconias();
+                    ViewData["cantones"] = srvDiac.SP_Con_Cantones().Select(par => new Categoria { Codigo = par.CODCANT03, Descripcion = par.NOMCANT03 }).ToDictionary(i => i.Codigo, i => i.Descripcion);
                 }
                 foreach (var Diaconia in lstRespuesta)
                 {
@@ -39,10 +41,16 @@ namespace mvcSIDEPSWeb.Controllers
 
         public ActionResult AgregarDiaconia()
         {
-            return View();
+            var modelo = new Diaconia_M();
+            using(var svc = new ServiciosWCFClient())
+            {
+                modelo.Cantones = svc.SP_Con_Cantones().Select(r => new Categoria { Codigo = r.CODCANT03, Descripcion = r.NOMCANT03 }).ToList();
+            }
+
+            return View(modelo);
         }
 
-        public ActionResult DetalleDiaconias(short id)
+        public ActionResult DetalleDiaconias(int id)
         {
             SP_CONXID_REGDIAC_Result objRespuesta = new SP_CONXID_REGDIAC_Result();
             Diaconia_M objDiaconia = new Diaconia_M();
@@ -66,7 +74,7 @@ namespace mvcSIDEPSWeb.Controllers
             return View(objDiaconia);
         }
 
-        public ActionResult EliminarDiaconias(short id)
+        public ActionResult EliminarDiaconias(int id)
         {
             SP_CONXID_REGDIAC_Result objRespuesta = new SP_CONXID_REGDIAC_Result();
             Diaconia_M objDiaconia = new Diaconia_M();
@@ -90,7 +98,7 @@ namespace mvcSIDEPSWeb.Controllers
             return View(objDiaconia);
         }
 
-        public ActionResult ModificarDiaconias(short id)
+        public ActionResult ModificarDiaconias(int id)
         {
             SP_CONXID_REGDIAC_Result objRespuesta = new SP_CONXID_REGDIAC_Result();
             Diaconia_M objDiaconia = new Diaconia_M();
@@ -99,6 +107,7 @@ namespace mvcSIDEPSWeb.Controllers
                 using (ServiciosWCFClient srvDiac = new ServiciosWCFClient())
                 {
                     objRespuesta = srvDiac.conDiaconiasXId(id);
+                    objDiaconia.Cantones = srvDiac.SP_Con_Cantones().Select(r => new Categoria { Codigo = r.CODCANT03, Descripcion = r.NOMCANT03 }).ToList();
                 }
                 objDiaconia.CODDIAC04 = objRespuesta.CODDIAC04;
                 objDiaconia.NOMDIAC04 = objRespuesta.NOMDIAC04;
@@ -235,7 +244,7 @@ namespace mvcSIDEPSWeb.Controllers
                         return EliminarDiaconiasC(objDiac);
 
                     default:
-                        return RedirectToAction("listarDiaconias", "Diaconia");
+                        return RedirectToAction("listarDiaconias");
                 }
             }
             catch (Exception ex)

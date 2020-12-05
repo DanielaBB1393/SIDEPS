@@ -61,10 +61,10 @@
                 @Html.DisplayFor(modelItem => item.EDAFAML22)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CODESTC06)
+                @Html.DisplayFor(modelItem => (ViewData["estadoCivil"] as Dictionary<int, string>)[item.CODESTC06.GetValueOrDefault()])
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CODNEDU09)
+                @Html.DisplayFor(modelItem => (ViewData["escolaridad"] as Dictionary<int, string>)[item.CODNEDU09.GetValueOrDefault()])
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.OACFAML22)
@@ -76,13 +76,13 @@
                 @Html.DisplayFor(modelItem => item.DESFAML22)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CODORGS21)
+                @Html.DisplayFor(modelItem => (ViewData["escolaridad"] as Dictionary<int, string>)[item.CODORGS21.GetValueOrDefault()])
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CODENFR15)
+                @Html.DisplayFor(modelItem => (ViewData["enfermedades"] as Dictionary<int, string>)[item.CODENFR15.GetValueOrDefault()])
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CODPARE12)
+                @Html.DisplayFor(modelItem => (ViewData["parentescos"] as Dictionary<int, string>)[item.CODPARE12.GetValueOrDefault()])
             </td>
             <td>
                 @Html.ActionLink("Modificar", "ModificarFamiliar", new { id=item.CEDFAML22 }) |

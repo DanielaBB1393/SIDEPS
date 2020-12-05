@@ -1,25 +1,23 @@
 ﻿using System.Collections.Generic;
 
-namespace mvcSIDEPSWeb.Models
+namespace SIDEPS.Models
 {
     public static class Combos
     {
-        public static List<string> EstadosDiaconias = new List<string>()
+        public static List<string> ActivoInactivo = new List<string>()
         {
             "ACTIVO","INACTIVO"
-        };/*
+        };
 
-        public static List<Canton> Cantones = new List<Canton>()
+        public static List<string> ValidarCasos = new List<string>
         {
-            new Canton{id=1,nombre="Alajuela"},
-            new Canton{id=2,nombre="San Jose"},
-            new Canton{id=null,nombre=" "}
-        };*/
-    }
+            CASO_APROBADO,
+            CASO_RECHAZADO
+        };
 
-    /*public class Canton
-     {
-         public int ? id { get; set; }
-         public string  nombre { get; set; }
-     };*/
+        public static string CASO_INCOMPLETO = "INCOMPLETO";
+        public static string CASO_PENDIENTE = "PENDIENTE";
+        public static string CASO_APROBADO = "APROBADO";
+        public static string CASO_RECHAZADO = "RECHAZADO";
+    }
 }

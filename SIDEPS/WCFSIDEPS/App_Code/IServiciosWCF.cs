@@ -6,6 +6,9 @@ using System.ServiceModel;
 public interface IServiciosWCF
 {
     [OperationContract]
+    List<SP_CON_HISTCASOS_Result> SP_Con_HistoricoCasos(string cedulaUsuario);
+
+    [OperationContract]
     int SP_Ins_Caso(SIDEPS_25REGCASO caso);
 
     [OperationContract]

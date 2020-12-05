@@ -50,7 +50,7 @@
             @Html.DisplayFor(modelItem => item.ESTDIAC04)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CODCANT03)
+            @Html.DisplayFor(modelItem => (ViewData["cantones"] as Dictionary<int, string>)[item.CODCANT03.GetValueOrDefault()])
         </td>
         <td>
             @Html.ActionLink("Modificar", "ModificarDiaconias", new {  id=item.CODDIAC04}) |

@@ -9,7 +9,7 @@ namespace SIDEPS.Controllers
 {
     public class UsuariosController : Controller
     {
-        public ActionResult listarUsuario()
+        public ActionResult listarUsuarios()
 
         {
             List<SP_CON_REGUSRO_Result> lstRespuesta = new List<SP_CON_REGUSRO_Result>();
@@ -19,6 +19,9 @@ namespace SIDEPS.Controllers
                 using (ServiciosWCFClient srvUsuario = new ServiciosWCFClient())
                 {
                     lstRespuesta = srvUsuario.conUsuario();
+                    ViewData["cantones"] = srvUsuario.SP_Con_Cantones().Select(par => new Categoria { Codigo = par.CODCANT03, Descripcion = par.NOMCANT03 }).ToDictionary(i => i.Codigo, i => i.Descripcion);
+                    ViewData["diaconias"] = srvUsuario.conDiaconias().Select(par => new Categoria { Codigo = par.CODDIAC04, Descripcion = par.NOMDIAC04 }).ToDictionary(i => i.Codigo, i => i.Descripcion);
+                    ViewData["roles"] = srvUsuario.SP_Con_TipoUsuario().Select(par => new Categoria { Codigo = par.CODUSRO05, Descripcion = par.DESUSRO05 }).ToDictionary(i => i.Codigo, i => i.Descripcion);
                 }
                 foreach (var Usuario in lstRespuesta)
                 {
@@ -55,11 +58,12 @@ namespace SIDEPS.Controllers
             {
                 modelo.Cantones = svc.SP_Con_Cantones().Select(r => new Categoria { Codigo = r.CODCANT03, Descripcion = r.NOMCANT03 }).ToList();
                 modelo.Diaconias = svc.conDiaconias().Select(r => new Categoria { Codigo = r.CODDIAC04, Descripcion = r.NOMDIAC04 }).ToList();
+                modelo.Roles = svc.SP_Con_TipoUsuario().Select(r => new Categoria { Codigo = r.CODUSRO05, Descripcion = r.DESUSRO05 }).ToList();
             }
             return View(modelo);
         }
 
-        public ActionResult DetalleUsuario(short id)
+        public ActionResult DetalleUsuario(int id)
         {
             SP_CONXID_REGUSRO_Result objRespuesta = new SP_CONXID_REGUSRO_Result();
             M_Usuarios objUsuario = new M_Usuarios();
@@ -91,7 +95,7 @@ namespace SIDEPS.Controllers
             return View(objUsuario);
         }
 
-        public ActionResult ModificarUsuario(short id)
+        public ActionResult ModificarUsuario(int id)
         {
             SP_CONXID_REGUSRO_Result objRespuesta = new SP_CONXID_REGUSRO_Result();
             M_Usuarios objUsuario = new M_Usuarios();
@@ -100,6 +104,10 @@ namespace SIDEPS.Controllers
                 using (ServiciosWCFClient srvUsuarios = new ServiciosWCFClient())
                 {
                     objRespuesta = srvUsuarios.conUsuarioXId(id);
+
+                    objUsuario.Cantones = srvUsuarios.SP_Con_Cantones().Select(r => new Categoria { Codigo = r.CODCANT03, Descripcion = r.NOMCANT03 }).ToList();
+                    objUsuario.Diaconias = srvUsuarios.conDiaconias().Select(r => new Categoria { Codigo = r.CODDIAC04, Descripcion = r.NOMDIAC04 }).ToList();
+                    objUsuario.Roles = srvUsuarios.SP_Con_TipoUsuario().Select(r => new Categoria { Codigo = r.CODUSRO05, Descripcion = r.DESUSRO05 }).ToList();
                 }
                 objUsuario.CEDUSRO07 = objRespuesta.CEDUSRO07;
                 objUsuario.NOMUSRO07 = objRespuesta.NOMUSRO07;
@@ -121,123 +129,40 @@ namespace SIDEPS.Controllers
                 throw ex;
             }
             return View(objUsuario);
-        }
-
-        public ActionResult AgregarUsuarioC(SIDEPS_07REGUSRO objUsuario)
-        {
-            List<SP_CON_REGUSRO_Result> lstRespuesta = new List<SP_CON_REGUSRO_Result>();
-            List<M_Usuarios> lstModeloRespuesta = new List<M_Usuarios>();
-            try
-            {
-                using (ServiciosWCFClient srvUsuarios = new ServiciosWCFClient())
-                {
-                    if (srvUsuarios.insUsuario(objUsuario))
-                    {
-                        lstRespuesta = srvUsuarios.conUsuario();
-                    }
-                    foreach (var Usuario in lstRespuesta)
-                    {
-                        M_Usuarios objModeloUsuario = new M_Usuarios();
-                        objModeloUsuario.CEDUSRO07 = Usuario.CEDUSRO07;
-                        objModeloUsuario.NOMUSRO07 = Usuario.NOMUSRO07;
-                        objModeloUsuario.PAPUSRO07 = Usuario.PAPUSRO07;
-                        objModeloUsuario.SAPUSRO07 = Usuario.SAPUSRO07;
-                        objModeloUsuario.CODCANT03 = Usuario.CODCANT03;
-                        objModeloUsuario.CODDIAC04 = Usuario.CODDIAC04;
-                        objModeloUsuario.CODUSRO05 = Usuario.CODUSRO05;
-                        objModeloUsuario.ESTUSRO07 = Usuario.ESTUSRO07;
-                        objModeloUsuario.DIRUSRO07 = Usuario.DIRUSRO07;
-                        objModeloUsuario.NACUSRO07 = Usuario.NACUSRO07;
-                        objModeloUsuario.CNTUSRO07 = Usuario.CNTUSRO07;
-                        objModeloUsuario.FEIUSRO07 = Usuario.FEIUSRO07;
-                        objModeloUsuario.FEFUSRO07 = Usuario.FEFUSRO07;
-                        objModeloUsuario.FENUSRO07 = Usuario.FENUSRO07;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return View("listarUsuario", lstModeloRespuesta);
-        }
-
-        public ActionResult ModificarUsuarioC(SIDEPS_07REGUSRO objUsuario)
-        {
-            List<SP_CON_REGUSRO_Result> lstRespuesta = new List<SP_CON_REGUSRO_Result>();
-            List<M_Usuarios> lstModeloRespuesta = new List<M_Usuarios>();
-            try
-            {
-                using (ServiciosWCFClient srvUsuarios = new ServiciosWCFClient())
-                {
-                    if (srvUsuarios.modUsuario(objUsuario))
-                    {
-                        lstRespuesta = srvUsuarios.conUsuario();
-                    }
-                    foreach (var Usuario in lstRespuesta)
-                    {
-                        M_Usuarios objModeloUsuario = new M_Usuarios();
-                        objModeloUsuario.CEDUSRO07 = Usuario.CEDUSRO07;
-                        objModeloUsuario.NOMUSRO07 = Usuario.NOMUSRO07;
-                        objModeloUsuario.PAPUSRO07 = Usuario.PAPUSRO07;
-                        objModeloUsuario.SAPUSRO07 = Usuario.SAPUSRO07;
-                        objModeloUsuario.CODCANT03 = Usuario.CODCANT03;
-                        objModeloUsuario.CODDIAC04 = Usuario.CODDIAC04;
-                        objModeloUsuario.CODUSRO05 = Usuario.CODUSRO05;
-                        objModeloUsuario.ESTUSRO07 = Usuario.ESTUSRO07;
-                        objModeloUsuario.DIRUSRO07 = Usuario.DIRUSRO07;
-                        objModeloUsuario.NACUSRO07 = Usuario.NACUSRO07;
-                        objModeloUsuario.CNTUSRO07 = Usuario.CNTUSRO07;
-                        objModeloUsuario.FEIUSRO07 = Usuario.FEIUSRO07;
-                        objModeloUsuario.FEFUSRO07 = Usuario.FEFUSRO07;
-                        objModeloUsuario.FENUSRO07 = Usuario.FENUSRO07;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return View("listarUsuario", lstModeloRespuesta);
         }
 
         [HttpPost]
-        public ActionResult Acciones(string submitButton, M_Usuarios pUsuario)
+        public ActionResult AgregarUsuario(SIDEPS_07REGUSRO objUsuario)
         {
             try
             {
-                SIDEPS_07REGUSRO objUsuario = new SIDEPS_07REGUSRO();
-                objUsuario.CEDUSRO07 = pUsuario.CEDUSRO07;
-                objUsuario.NOMUSRO07 = pUsuario.NOMUSRO07;
-                objUsuario.PAPUSRO07 = pUsuario.PAPUSRO07;
-                objUsuario.SAPUSRO07 = pUsuario.SAPUSRO07;
-                objUsuario.CODCANT03 = pUsuario.CODCANT03;
-                objUsuario.CODDIAC04 = pUsuario.CODDIAC04;
-                objUsuario.CODUSRO05 = pUsuario.CODUSRO05;
-                objUsuario.ESTUSRO07 = pUsuario.ESTUSRO07;
-                objUsuario.DIRUSRO07 = pUsuario.DIRUSRO07;
-                objUsuario.NACUSRO07 = pUsuario.NACUSRO07;
-                objUsuario.CNTUSRO07 = pUsuario.CNTUSRO07;
-                objUsuario.FEIUSRO07 = pUsuario.FEIUSRO07;
-                objUsuario.FEFUSRO07 = pUsuario.FEFUSRO07;
-                objUsuario.FENUSRO07 = pUsuario.FENUSRO07;
-
-                switch (submitButton)
+                using (ServiciosWCFClient srvUsuarios = new ServiciosWCFClient())
                 {
-                    case "Agregar":
-                        return AgregarUsuarioC(objUsuario);
-
-                    case "Actualizar":
-                        return ModificarUsuarioC(objUsuario);
-
-                    default:
-                        return RedirectToAction("listarUsuario", "Usuario");
+                    srvUsuarios.insUsuario(objUsuario);
                 }
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+            return RedirectToAction("listarUsuarios");
+        }
+
+        [HttpPost]
+        public ActionResult ModificarUsuario(SIDEPS_07REGUSRO objUsuario)
+        {
+            try
+            {
+                using (ServiciosWCFClient srvUsuarios = new ServiciosWCFClient())
+                {
+                    srvUsuarios.modUsuario(objUsuario);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return RedirectToAction("listarUsuarios");
         }
     }
 }

@@ -7,12 +7,11 @@
 <h2>Agregar Usuario</h2>
 
 
-@using (Html.BeginForm("Acciones", "Usuario", FormMethod.Post, new { enctype = "multipart/form-data", @id = "frmUsuario" }))
+@using (Html.BeginForm("AgregarUsuario", "Usuarios", FormMethod.Post, new { enctype = "multipart/form-data", @id = "frmUsuario" }))
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>M_Usuarios</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -58,7 +57,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CODDIAC04, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CODDIAC04, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.CODDIAC04, new SelectList(Model.Diaconias, "Codigo", "Descripcion"), new { @class = "form-control" } )
                 @Html.ValidationMessageFor(model => model.CODDIAC04, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -66,7 +65,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CODUSRO05, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CODUSRO05, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.CODUSRO05, new SelectList(Model.Roles, "Codigo", "Descripcion"), new { @class = "form-control" } )
                 @Html.ValidationMessageFor(model => model.CODUSRO05, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -74,7 +73,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ESTUSRO07, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ESTUSRO07, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.ESTUSRO07, new SelectList(SIDEPS.Models.Combos.ActivoInactivo), new { @class = "form-control" } )
                 @Html.ValidationMessageFor(model => model.ESTUSRO07, "", new { @class = "text-danger" })
             </div>
         </div>

@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 11/24/2020 14:07:17
--- Generated from EDMX file: C:\Users\melag\OneDrive\Escritorio\UTC\A_Proyecto_Profesional\PROYECTO-PROFESIONAL\Repo\SIDEPS\SIDEPS\AccesoDatos\SIDEPS.edmx
+-- Date Created: 12/04/2020 14:15:13
+-- Generated from EDMX file: C:\source\SIDEPS\SIDEPS\AccesoDatos\SIDEPS.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -291,7 +291,7 @@ GO
 -- Creating table 'SIDEPS_09CATNEDU'
 CREATE TABLE [dbo].[SIDEPS_09CATNEDU] (
     [CODNEDU09] int IDENTITY(1,1) NOT NULL,
-    [DESNEDU09] varchar(20)  NULL
+    [DESNEDU09] varchar(30)  NULL
 );
 GO
 

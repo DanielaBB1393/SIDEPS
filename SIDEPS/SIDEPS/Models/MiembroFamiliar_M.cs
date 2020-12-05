@@ -1,5 +1,6 @@
 ﻿using SIDEPS.ServiciosWCF;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace SIDEPS.Models
@@ -38,6 +39,11 @@ namespace SIDEPS.Models
 
         [DisplayName("Parentesco")]
         public Nullable<int> CODPARE12 { get; set; }
+        public List<Categoria> EstadosCiviles { get; set; }
+        public List<Categoria> Escolaridad { get; set; }
+        public List<Categoria> Organizaciones { get; set; }
+        public List<Categoria> Enfermedades { get; set; }
+        public List<Categoria> Parentescos { get; set; }
 
         public MiembroFamiliar_M()
         {

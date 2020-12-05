@@ -1,12 +1,27 @@
 ﻿using AccesoDatos.Interfaces;
 using Entidades;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AccesoDatos.Implementacion
 {
     public class CasosAD : ICasosAD
     {
         SIDEPSEntities contexto = new SIDEPSEntities();
+
+        public List<SP_CON_HISTCASOS_Result> SP_Con_HistoricoCasos(string cedulaUsuario)
+        {
+            try
+            {
+                return this.contexto.SP_CON_HISTCASOS(cedulaUsuario).ToList();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
 
         public int SP_Ins_Caso(SIDEPS_25REGCASO caso)
         {

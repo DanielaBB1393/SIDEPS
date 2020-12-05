@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace SIDEPS.Models
@@ -30,5 +31,6 @@ namespace SIDEPS.Models
         [Required(ErrorMessage = "Numero de Canton Requerido.")]
         [Display(Name = "Numero de Canton")]
         public Nullable<int> CODCANT03 { get; set; }
+        public List<Categoria> Cantones { get; set; }
     }
 }

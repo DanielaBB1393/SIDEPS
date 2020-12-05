@@ -16,6 +16,18 @@ public class ServiciosWCF : IServiciosWCF
     private readonly IDiaconiaLN diaconiaLN = new DiaconiaLN();
     private readonly IUsuariosLN objUsuario = new UsuariosLN();
 
+    public List<SP_CON_HISTCASOS_Result> SP_Con_HistoricoCasos(string cedulaUsuario)
+    {
+        try
+        {
+            return this.casosLN.SP_Con_HistoricoCasos(cedulaUsuario);
+        }
+        catch
+        {
+            throw;
+        }
+    }
+
     public int SP_Ins_Caso(SIDEPS_25REGCASO caso)
     {
         try
