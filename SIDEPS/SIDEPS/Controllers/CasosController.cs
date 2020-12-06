@@ -378,5 +378,10 @@ namespace SIDEPS.Controllers
 
             return View(modelo);
         }
+
+        public ActionResult MenuCasos()
+        {
+            return View();
+        }
     }
 }

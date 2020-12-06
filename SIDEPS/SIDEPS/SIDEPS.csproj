@@ -132,7 +132,6 @@
     <Compile Include="Controllers\CasosController.cs" />
     <Compile Include="Controllers\DiaconiaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\MenuCasosController.cs" />
     <Compile Include="Controllers\MenuColaboradorController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
@@ -327,8 +326,10 @@
     <Content Include="Views\Casos\DetallesHistorico.cshtml" />
     <Content Include="Views\AdminParroquial\MenuParroquial.cshtml" />
     <Content Include="Views\MenuColaborador\MenuControlador.cshtml" />
-    <Content Include="Views\MenuCasos\MenuCasos.cshtml" />
     <Content Include="Views\AdminDiaconal\AdminDiaconal.cshtml" />
+    <Content Include="Views\Casos\MenuCasos.cshtml" />
+    <Content Include="Views\AdminParroquial\MenuMantenimiento.cshtml" />
+    <Content Include="Views\AdminParroquial\MenuHistorial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

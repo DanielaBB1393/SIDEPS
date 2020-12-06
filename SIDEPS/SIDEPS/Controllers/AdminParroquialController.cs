@@ -13,5 +13,13 @@ namespace SIDEPS.Controllers
         {
             return View();
         }
+        public ActionResult MenuMantenimiento()
+        {
+            return View();
+        }
+        public ActionResult MenuHistorial()
+        {
+            return View();
+        }
     }
 }
