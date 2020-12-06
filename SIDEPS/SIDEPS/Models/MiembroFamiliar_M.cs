@@ -31,6 +31,24 @@ namespace SIDEPS.Models
         [DisplayName("Descripción del familiar")]
         public string DESFAML22 { get; set; }
 
+        [DisplayName("Estado Civil")]
+        public string DESESTC06 { get; set; }
+
+        [DisplayName("Escolaridad")]
+        public string DESNEDU09 { get; set; }
+
+        [DisplayName("Organización")]
+        public string DESORGS21 { get; set; }
+
+        [DisplayName("Enfermedad")]
+        public string DESENFR15 { get; set; }
+
+        [DisplayName("Parentesco")]
+        public string DESPARE12 { get; set; }
+
+        [DisplayName("Solicitante")]
+        public string CEDPERS13 { get; set; }
+
         [DisplayName("Organización")]
         public Nullable<int> CODORGS21 { get; set; }
 
@@ -39,6 +57,7 @@ namespace SIDEPS.Models
 
         [DisplayName("Parentesco")]
         public Nullable<int> CODPARE12 { get; set; }
+
         public List<Categoria> EstadosCiviles { get; set; }
         public List<Categoria> Escolaridad { get; set; }
         public List<Categoria> Organizaciones { get; set; }
@@ -94,6 +113,21 @@ namespace SIDEPS.Models
             this.CODPARE12 = familiar.CODPARE12;
         }
 
+        public MiembroFamiliar_M(DETFAML_Result familiar)
+        {
+            this.CEDFAML22 = familiar.CEDFAML22;
+            this.NOMFAML22 = familiar.NOMFAML22;
+            this.EDAFAML22 = familiar.EDAFAML22;
+            this.OACFAML22 = familiar.OACFAML22;
+            this.INGFAML22 = familiar.INGFAML22;
+            this.DESFAML22 = familiar.DESFAML22;
+            this.DESESTC06 = familiar.DESESTC06;
+            this.DESNEDU09 = familiar.DESNEDU09;
+            this.DESORGS21 = familiar.DESORGS21;
+            this.DESENFR15 = familiar.DESENFR15;
+            this.DESPARE12 = familiar.DESPARE12;
+            this.CEDPERS13 = familiar.CEDPERS13;
+        }
 
         public SIDEPS_22REGFAML ConvertirEntidad()
         {

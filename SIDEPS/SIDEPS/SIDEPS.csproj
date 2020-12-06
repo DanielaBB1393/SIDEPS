@@ -254,6 +254,21 @@
     <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CON_HISTCASOS_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.DETASPS_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.DETEGRF_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.DETFAML_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.DETPERS_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.DETVIVI_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -293,7 +308,7 @@
     <Content Include="Views\Diaconia\ModificarDiaconias.cshtml" />
     <Content Include="Views\Usuarios\AgregarUsuario.cshtml" />
     <Content Include="Views\Usuarios\DetalleUsuario.cshtml" />
-    <Content Include="Views\Usuarios\listarUsuarios.cshtml" />
+    <Content Include="Views\Usuarios\ListarUsuarios.cshtml" />
     <Content Include="Views\Usuarios\ModificarUsuario.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\MenuAdministradorDiaconia.cshtml" />

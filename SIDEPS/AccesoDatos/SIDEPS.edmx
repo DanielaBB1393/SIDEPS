@@ -685,6 +685,24 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="DETASPS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODCASO25" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DETCASO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODCASO25" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DETEGRF" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODCASO25" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DETFAML" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODCASO25" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DETPERS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODCASO25" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DETVIVI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODCASO25" Type="int" Mode="In" />
+        </Function>
         <Function Name="SP_CON_CATAYUD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_CON_CATCANT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_CON_CATENFR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -2074,7 +2092,25 @@
             <Parameter Name="FENUSRO07" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="SP_CON_HISTCASOS" ReturnType="Collection(SIDEPS.SP_CON_HISTCASOS_Result)">
-            <Parameter Name="cedulaUsuario" Mode="In" Type="String" />
+          <Parameter Name="cedulaUsuario" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="DETASPS" ReturnType="Collection(SIDEPS.DETASPS_Result)">
+            <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DETCASO" ReturnType="Collection(String)">
+            <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DETEGRF" ReturnType="Collection(SIDEPS.DETEGRF_Result)">
+            <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DETFAML" ReturnType="Collection(SIDEPS.DETFAML_Result)">
+            <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DETPERS" ReturnType="Collection(SIDEPS.DETPERS_Result)">
+            <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DETVIVI" ReturnType="Collection(SIDEPS.DETVIVI_Result)">
+            <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="SP_CON_CATAYUD_Result">
@@ -2235,6 +2271,68 @@
           <Property Type="String" Name="PAPUSRO07" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="NOMPERS13" Nullable="true" MaxLength="20" />
           <Property Type="String" Name="PAPPERS13" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="DETASPS_Result">
+          <Property Type="String" Name="DESENFR16" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="RECTRAT16" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="DESTRAT16" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DESENFR15" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DESSEGU14" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="DETEGRF_Result">
+          <Property Type="Decimal" Name="MTOALQU24" Nullable="true" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="MTOALIM24" Nullable="true" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="MTOELEC24" Nullable="true" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="MTOGAST24" Nullable="true" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="MTCAGUA24" Nullable="true" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="MTOCABL24" Nullable="true" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="MTOTELF24" Nullable="true" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="MTOINTE24" Nullable="true" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="MTOEDUC24" Nullable="true" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="MTOSEGU24" Nullable="true" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="MTOOTRO24" Nullable="true" Precision="18" Scale="4" />
+        </ComplexType>
+        <ComplexType Name="DETFAML_Result">
+          <Property Type="String" Name="CEDFAML22" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="NOMFAML22" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="EDAFAML22" Nullable="true" />
+          <Property Type="String" Name="OACFAML22" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="INGFAML22" Nullable="true" Precision="18" Scale="4" />
+          <Property Type="String" Name="DESFAML22" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="DESESTC06" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DESNEDU09" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="DESORGS21" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DESENFR15" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DESPARE12" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CEDPERS13" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="DETPERS_Result">
+          <Property Type="String" Name="CEDPERS13" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="NOMPERS13" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="PAPPERS13" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="SAPPERS13" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="DESESTC06" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="NOMCANT03" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DESSOLI10" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="DESRELG11" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="NACPERS13" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DIRPERS13" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="OACPERS13" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="OANPERS13" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="FENPERS13" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="DETVIVI_Result">
+          <Property Type="Decimal" Name="MTOVIVI20" Nullable="true" Precision="18" Scale="4" />
+          <Property Type="Int32" Name="NAPVIVI20" Nullable="true" />
+          <Property Type="Boolean" Name="SRCVIVI20" Nullable="true" />
+          <Property Type="Boolean" Name="SRIVIVI20" Nullable="true" />
+          <Property Type="Boolean" Name="SRLVIVI20" Nullable="true" />
+          <Property Type="Boolean" Name="SRMVIVI20" Nullable="true" />
+          <Property Type="Boolean" Name="SRBVIVI20" Nullable="true" />
+          <Property Type="Boolean" Name="SREVIVI20" Nullable="true" />
+          <Property Type="String" Name="DESTIPV18" Nullable="true" MaxLength="60" />
+          <Property Type="String" Name="DESESTV19" Nullable="true" MaxLength="60" />
+          <Property Type="String" Name="DESMATE17" Nullable="true" MaxLength="50" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2819,6 +2917,89 @@
                 <ScalarProperty Name="PAPUSRO07" ColumnName="PAPUSRO07" />
                 <ScalarProperty Name="NOMPERS13" ColumnName="NOMPERS13" />
                 <ScalarProperty Name="PAPPERS13" ColumnName="PAPPERS13" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="DETASPS" FunctionName="SIDEPS.Store.DETASPS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIDEPS.DETASPS_Result">
+                <ScalarProperty Name="DESENFR16" ColumnName="DESENFR16" />
+                <ScalarProperty Name="RECTRAT16" ColumnName="RECTRAT16" />
+                <ScalarProperty Name="DESTRAT16" ColumnName="DESTRAT16" />
+                <ScalarProperty Name="DESENFR15" ColumnName="DESENFR15" />
+                <ScalarProperty Name="DESSEGU14" ColumnName="DESSEGU14" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="DETCASO" FunctionName="SIDEPS.Store.DETCASO" />
+          <FunctionImportMapping FunctionImportName="DETEGRF" FunctionName="SIDEPS.Store.DETEGRF">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIDEPS.DETEGRF_Result">
+                <ScalarProperty Name="MTOALQU24" ColumnName="MTOALQU24" />
+                <ScalarProperty Name="MTOALIM24" ColumnName="MTOALIM24" />
+                <ScalarProperty Name="MTOELEC24" ColumnName="MTOELEC24" />
+                <ScalarProperty Name="MTOGAST24" ColumnName="MTOGAST24" />
+                <ScalarProperty Name="MTCAGUA24" ColumnName="MTCAGUA24" />
+                <ScalarProperty Name="MTOCABL24" ColumnName="MTOCABL24" />
+                <ScalarProperty Name="MTOTELF24" ColumnName="MTOTELF24" />
+                <ScalarProperty Name="MTOINTE24" ColumnName="MTOINTE24" />
+                <ScalarProperty Name="MTOEDUC24" ColumnName="MTOEDUC24" />
+                <ScalarProperty Name="MTOSEGU24" ColumnName="MTOSEGU24" />
+                <ScalarProperty Name="MTOOTRO24" ColumnName="MTOOTRO24" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="DETFAML" FunctionName="SIDEPS.Store.DETFAML">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIDEPS.DETFAML_Result">
+                <ScalarProperty Name="CEDFAML22" ColumnName="CEDFAML22" />
+                <ScalarProperty Name="NOMFAML22" ColumnName="NOMFAML22" />
+                <ScalarProperty Name="EDAFAML22" ColumnName="EDAFAML22" />
+                <ScalarProperty Name="OACFAML22" ColumnName="OACFAML22" />
+                <ScalarProperty Name="INGFAML22" ColumnName="INGFAML22" />
+                <ScalarProperty Name="DESFAML22" ColumnName="DESFAML22" />
+                <ScalarProperty Name="DESESTC06" ColumnName="DESESTC06" />
+                <ScalarProperty Name="DESNEDU09" ColumnName="DESNEDU09" />
+                <ScalarProperty Name="DESORGS21" ColumnName="DESORGS21" />
+                <ScalarProperty Name="DESENFR15" ColumnName="DESENFR15" />
+                <ScalarProperty Name="DESPARE12" ColumnName="DESPARE12" />
+                <ScalarProperty Name="CEDPERS13" ColumnName="CEDPERS13" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="DETPERS" FunctionName="SIDEPS.Store.DETPERS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIDEPS.DETPERS_Result">
+                <ScalarProperty Name="CEDPERS13" ColumnName="CEDPERS13" />
+                <ScalarProperty Name="NOMPERS13" ColumnName="NOMPERS13" />
+                <ScalarProperty Name="PAPPERS13" ColumnName="PAPPERS13" />
+                <ScalarProperty Name="SAPPERS13" ColumnName="SAPPERS13" />
+                <ScalarProperty Name="DESESTC06" ColumnName="DESESTC06" />
+                <ScalarProperty Name="NOMCANT03" ColumnName="NOMCANT03" />
+                <ScalarProperty Name="DESSOLI10" ColumnName="DESSOLI10" />
+                <ScalarProperty Name="DESRELG11" ColumnName="DESRELG11" />
+                <ScalarProperty Name="NACPERS13" ColumnName="NACPERS13" />
+                <ScalarProperty Name="DIRPERS13" ColumnName="DIRPERS13" />
+                <ScalarProperty Name="OACPERS13" ColumnName="OACPERS13" />
+                <ScalarProperty Name="OANPERS13" ColumnName="OANPERS13" />
+                <ScalarProperty Name="FENPERS13" ColumnName="FENPERS13" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="DETVIVI" FunctionName="SIDEPS.Store.DETVIVI">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIDEPS.DETVIVI_Result">
+                <ScalarProperty Name="MTOVIVI20" ColumnName="MTOVIVI20" />
+                <ScalarProperty Name="NAPVIVI20" ColumnName="NAPVIVI20" />
+                <ScalarProperty Name="SRCVIVI20" ColumnName="SRCVIVI20" />
+                <ScalarProperty Name="SRIVIVI20" ColumnName="SRIVIVI20" />
+                <ScalarProperty Name="SRLVIVI20" ColumnName="SRLVIVI20" />
+                <ScalarProperty Name="SRMVIVI20" ColumnName="SRMVIVI20" />
+                <ScalarProperty Name="SRBVIVI20" ColumnName="SRBVIVI20" />
+                <ScalarProperty Name="SREVIVI20" ColumnName="SREVIVI20" />
+                <ScalarProperty Name="DESTIPV18" ColumnName="DESTIPV18" />
+                <ScalarProperty Name="DESESTV19" ColumnName="DESESTV19" />
+                <ScalarProperty Name="DESMATE17" ColumnName="DESMATE17" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

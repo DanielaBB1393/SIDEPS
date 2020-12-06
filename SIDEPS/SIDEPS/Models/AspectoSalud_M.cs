@@ -21,6 +21,10 @@ namespace SIDEPS.Models
         public string RECTRAT16 { get; set; }
         [DisplayName("Descripción tratamiento")]
         public string DESTRAT16 { get; set; }
+        [DisplayName("Enfermedad")]
+        public string DESENFR15 { get; set; }
+        [DisplayName("Seguro")]
+        public string DESSEGU14 { get; set; }
         public List<Categoria> Enfermedades { get; set; }
         public List<Categoria> TiposSeguro { get; set; }
 
@@ -37,6 +41,15 @@ namespace SIDEPS.Models
             this.DESENFR16 = aspecto.DESENFR16;
             this.RECTRAT16 = aspecto.RECTRAT16;
             this.DESTRAT16 = aspecto.DESTRAT16;
+        }
+
+        public AspectoSalud_M(DETASPS_Result aspecto)
+        {
+            this.DESENFR16 = aspecto.DESENFR16;
+            this.RECTRAT16 = aspecto.RECTRAT16;
+            this.DESTRAT16 = aspecto.DESTRAT16;
+            this.DESENFR15 = aspecto.DESENFR15;
+            this.DESSEGU14 = aspecto.DESSEGU14;
         }
 
         public SIDEPS_16REGASPS ConvertirEntidad()

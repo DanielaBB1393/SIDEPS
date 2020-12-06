@@ -9,6 +9,6 @@ namespace SIDEPS.Models
         public Vivienda_M Vivienda { get; set; }
         public List<MiembroFamiliar_M> GrupoFamiliar { get; set; }
         public Egresos_M Egresos { get; set; }
-        public Caso_M Caso { get; set; }
+        public string OpinionCaso { get; set; }
     }
 }
