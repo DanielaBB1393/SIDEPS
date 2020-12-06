@@ -520,7 +520,7 @@ public class ServiciosWCF : IServiciosWCF
         return objRespuesta;
     }
 
-    public SIDEPS_07REGUSRO Login(string cedula, string contrasena)
+    public string Login(string cedula, string contrasena)
     {
         try
         {

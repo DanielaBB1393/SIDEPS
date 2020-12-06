@@ -618,7 +618,7 @@
   <xs:element name="LoginResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="LoginResult" nillable="true" type="q45:SIDEPS_07REGUSRO" />
+        <xs:element minOccurs="0" name="LoginResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -56,9 +56,17 @@
     </div>
 
     <div class="form-group">
+        @Html.LabelFor(model => model.CODSOLI10, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.CODSOLI10, new SelectList(Model.CategoriaSolicitante, "Codigo", "Descripcion"), new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CODSOLI10, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
         @Html.LabelFor(model => model.CODESTC06, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownListFor(model => model.CODESTC06, new SelectList(Model.EstadosCiviles, "Codigo", "Descripcion"), new { @class = "form-control" } )
+            @Html.DropDownListFor(model => model.CODESTC06, new SelectList(Model.EstadosCiviles, "Codigo", "Descripcion"), new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.CODESTC06, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -66,7 +74,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.CODNEDU09, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownListFor(model => model.CODNEDU09, new SelectList(Model.Escolaridades, "Codigo", "Descripcion"), new { @class = "form-control" } )
+            @Html.DropDownListFor(model => model.CODNEDU09, new SelectList(Model.Escolaridades, "Codigo", "Descripcion"), new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.CODNEDU09, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -74,7 +82,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.CODRELG11, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownListFor(model => model.CODRELG11, new SelectList(Model.Religiones, "Codigo", "Descripcion"), new { @class = "form-control" } )
+            @Html.DropDownListFor(model => model.CODRELG11, new SelectList(Model.Religiones, "Codigo", "Descripcion"), new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.CODRELG11, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -82,7 +90,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.CODCANT03, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownListFor(model => model.CODCANT03, new SelectList(Model.Cantones, "Codigo", "Descripcion"), new { @class = "form-control" } )
+            @Html.DropDownListFor(model => model.CODCANT03, new SelectList(Model.Cantones, "Codigo", "Descripcion"), new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.CODCANT03, "", new { @class = "text-danger" })
         </div>
     </div>

@@ -7710,10 +7710,10 @@ namespace SIDEPS.ServiciosWCF {
         System.Threading.Tasks.Task<bool> delUsuarioAsync(SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO pobjUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/Login", ReplyAction="http://tempuri.org/IServiciosWCF/LoginResponse")]
-        SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO Login(string cedula, string contrasena);
+        string Login(string cedula, string contrasena);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/Login", ReplyAction="http://tempuri.org/IServiciosWCF/LoginResponse")]
-        System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO> LoginAsync(string cedula, string contrasena);
+        System.Threading.Tasks.Task<string> LoginAsync(string cedula, string contrasena);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -8111,11 +8111,11 @@ namespace SIDEPS.ServiciosWCF {
             return base.Channel.delUsuarioAsync(pobjUsuario);
         }
         
-        public SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO Login(string cedula, string contrasena) {
+        public string Login(string cedula, string contrasena) {
             return base.Channel.Login(cedula, contrasena);
         }
         
-        public System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO> LoginAsync(string cedula, string contrasena) {
+        public System.Threading.Tasks.Task<string> LoginAsync(string cedula, string contrasena) {
             return base.Channel.LoginAsync(cedula, contrasena);
         }
     }

@@ -123,15 +123,22 @@ namespace AccesoDatos.Implementacion
             return lobjRespuesta;
         }
 
-        public SIDEPS_07REGUSRO Login(string cedula, string contrasena)
+        public string Login(string cedula, string contrasena)
         {
             try
             {
-                return gobjContextoSP.SIDEPS_07REGUSRO
+                var rolUsuario = gobjContextoSP.SIDEPS_07REGUSRO
                     .Where(usr => 
                         usr.CEDUSRO07.Equals(cedula, StringComparison.OrdinalIgnoreCase) && 
                         usr.CNTUSRO07.Equals(contrasena))
-                    .FirstOrDefault();
+                    .FirstOrDefault()?.CODUSRO05;
+
+                if (rolUsuario.HasValue)
+                {
+                    return this.gobjContextoSP.SIDEPS_05TIPUSRO.Find(rolUsuario).DESUSRO05;
+                }
+
+                return null;
             }
             catch (Exception ex)
             {

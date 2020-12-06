@@ -12,12 +12,15 @@ namespace SIDEPS.Controllers
         private const string _CODIGOCASO = "codigoCaso";
         private const string _CEDULAPERSONA = "cedulaPersona";
         private const string _CODIGOVIVIENDA = "codigoVivienda";
+        private const string _CEDULAUSUARIO = "cedulaUsuario";
 
         private readonly ServiciosWCFClient casosSvc = new ServiciosWCFClient();
 
         // GET: Casos
         public ActionResult Index()
         {
+            TempData.Keep();
+
             return View(new List<Caso_M>());
         }
 
@@ -26,6 +29,8 @@ namespace SIDEPS.Controllers
         //-------
         public ActionResult DatosPersonales()
         {
+            TempData.Keep();
+
             var modelo = new DatosPersonales_M();
 
             using (ServiciosWCFClient svc = new ServiciosWCFClient())
@@ -34,6 +39,7 @@ namespace SIDEPS.Controllers
                 modelo.Cantones = svc.SP_Con_Cantones().Select(r => new Categoria { Codigo = r.CODCANT03, Descripcion = r.NOMCANT03 }).ToList();
                 modelo.EstadosCiviles = svc.SP_Con_EstadosCivil().Select(r => new Categoria { Codigo = r.CODESTC06, Descripcion = r.DESESTC06 }).ToList();
                 modelo.Escolaridades = svc.SP_Con_NivelEducativo().Select(r => new Categoria { Codigo = r.CODNEDU09, Descripcion = r.DESNEDU09 }).ToList();
+                modelo.CategoriaSolicitante = svc.SP_Con_CategoriaSolicitud().Select(r => new Categoria { Codigo = r.CODSOLI10, Descripcion = r.DESSOLI10 }).ToList();
             }
 
             return View(modelo);
@@ -42,12 +48,16 @@ namespace SIDEPS.Controllers
         [HttpPost]
         public ActionResult DatosPersonales(DatosPersonales_M persona)
         {
+            string cedulaUsuario = TempData[_CEDULAUSUARIO].ToString();
+            TempData.Keep();
+
             var resultadoP = this.casosSvc.SP_Ins_Persona(persona.ConvertirEntidad());
             if (resultadoP)
             {
                 var caso = new Caso_M
                 {
-                    CEDPERS13 = persona.CEDPERS13
+                    CEDPERS13 = persona.CEDPERS13,
+                    CEDUSRO07 = cedulaUsuario,
                 };
 
                 var resultadoC = this.casosSvc.SP_Ins_Caso(caso.ConvertirEntidad());
@@ -239,6 +249,11 @@ namespace SIDEPS.Controllers
             {
                 var familiar = svc.SP_Con_MiembroFamiliarXid(id);
                 modelo = new MiembroFamiliar_M(familiar);
+                modelo.EstadosCiviles = svc.SP_Con_EstadosCivil().Select(ec => new Categoria { Codigo = ec.CODESTC06, Descripcion = ec.DESESTC06 }).ToList();
+                modelo.Escolaridad = svc.SP_Con_NivelEducativo().Select(edu => new Categoria { Codigo = edu.CODNEDU09, Descripcion = edu.DESNEDU09 }).ToList();
+                modelo.Organizaciones = svc.SP_Con_Organizaciones().Select(org => new Categoria { Codigo = org.CODORGS21, Descripcion = org.DESORGS21 }).ToList();
+                modelo.Enfermedades = svc.SP_Con_Enfermedades().Select(enf => new Categoria { Codigo = enf.CODENFR15, Descripcion = enf.DESENFR15 }).ToList();
+                modelo.Parentescos = svc.SP_Con_Parentescos().Select(par => new Categoria { Codigo = par.CODPARE12, Descripcion = par.DESPARE12 }).ToList();
             }
 
             return View(modelo);
@@ -315,8 +330,11 @@ namespace SIDEPS.Controllers
         //---------------
         // Mantenimientos
         //---------------
-        public ActionResult HistoricoDeCasos(string cedulaUsuario)
+        public ActionResult HistoricoDeCasos()
         {
+            string cedulaUsuario = TempData[_CEDULAUSUARIO].ToString();
+            TempData.Keep();
+
             var modelo = new List<HistoricoCaso_M>();
 
             using (var svc = new ServiciosWCFClient())

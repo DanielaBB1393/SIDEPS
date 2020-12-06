@@ -144,5 +144,5 @@ public interface IServiciosWCF
     bool delUsuario(SIDEPS_07REGUSRO pobjUsuario);
 
     [OperationContract]
-    SIDEPS_07REGUSRO Login(string cedula, string contrasena);
+    string Login(string cedula, string contrasena);
 }

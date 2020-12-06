@@ -60,10 +60,11 @@ namespace SIDEPS.Models
 
         public DateTime? FENPERS13 { get; set; }
 
-        public List<Categoria> Religiones { get; set; } = new List<Categoria>();
-        public List<Categoria> Cantones { get; set; } = new List<Categoria>();
-        public List<Categoria> EstadosCiviles { get; set; } = new List<Categoria>();
-        public List<Categoria> Escolaridades { get; set; } = new List<Categoria>();
+        public List<Categoria> Religiones { get; set; }
+        public List<Categoria> Cantones { get; set; }
+        public List<Categoria> EstadosCiviles { get; set; }
+        public List<Categoria> Escolaridades { get; set; }
+        public List<Categoria> CategoriaSolicitante { get; set; }
 
         public DatosPersonales_M()
         {
@@ -100,7 +101,7 @@ namespace SIDEPS.Models
             this.DIRPERS13 = persona.DIRPERS13;
             this.OACPERS13 = persona.OACPERS13;
             this.OANPERS13 = persona.OANPERS13;
-            this.FENPERS13 = persona.FENPERS13; 
+            this.FENPERS13 = persona.FENPERS13;
         }
 
         public SIDEPS_13REGPERS ConvertirEntidad()
