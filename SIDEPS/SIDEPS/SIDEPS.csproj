@@ -127,6 +127,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\AdminDiaconalController.cs" />
     <Compile Include="Controllers\AdminParroquialController.cs" />
     <Compile Include="Controllers\CasosController.cs" />
     <Compile Include="Controllers\DiaconiaController.cs" />
@@ -327,6 +328,7 @@
     <Content Include="Views\AdminParroquial\MenuParroquial.cshtml" />
     <Content Include="Views\MenuColaborador\MenuControlador.cshtml" />
     <Content Include="Views\MenuCasos\MenuCasos.cshtml" />
+    <Content Include="Views\AdminDiaconal\AdminDiaconal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
