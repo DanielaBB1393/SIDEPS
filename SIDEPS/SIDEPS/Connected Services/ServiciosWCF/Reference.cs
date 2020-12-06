@@ -236,6 +236,983 @@ namespace SIDEPS.ServiciosWCF {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DETPERS_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class DETPERS_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CEDPERS13Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESESTC06Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESRELG11Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESSOLI10Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DIRPERS13Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> FENPERS13Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NACPERS13Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NOMCANT03Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NOMPERS13Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OACPERS13Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OANPERS13Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PAPPERS13Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SAPPERS13Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CEDPERS13 {
+            get {
+                return this.CEDPERS13Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CEDPERS13Field, value) != true)) {
+                    this.CEDPERS13Field = value;
+                    this.RaisePropertyChanged("CEDPERS13");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESESTC06 {
+            get {
+                return this.DESESTC06Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESESTC06Field, value) != true)) {
+                    this.DESESTC06Field = value;
+                    this.RaisePropertyChanged("DESESTC06");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESRELG11 {
+            get {
+                return this.DESRELG11Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESRELG11Field, value) != true)) {
+                    this.DESRELG11Field = value;
+                    this.RaisePropertyChanged("DESRELG11");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESSOLI10 {
+            get {
+                return this.DESSOLI10Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESSOLI10Field, value) != true)) {
+                    this.DESSOLI10Field = value;
+                    this.RaisePropertyChanged("DESSOLI10");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DIRPERS13 {
+            get {
+                return this.DIRPERS13Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DIRPERS13Field, value) != true)) {
+                    this.DIRPERS13Field = value;
+                    this.RaisePropertyChanged("DIRPERS13");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> FENPERS13 {
+            get {
+                return this.FENPERS13Field;
+            }
+            set {
+                if ((this.FENPERS13Field.Equals(value) != true)) {
+                    this.FENPERS13Field = value;
+                    this.RaisePropertyChanged("FENPERS13");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NACPERS13 {
+            get {
+                return this.NACPERS13Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NACPERS13Field, value) != true)) {
+                    this.NACPERS13Field = value;
+                    this.RaisePropertyChanged("NACPERS13");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NOMCANT03 {
+            get {
+                return this.NOMCANT03Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NOMCANT03Field, value) != true)) {
+                    this.NOMCANT03Field = value;
+                    this.RaisePropertyChanged("NOMCANT03");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NOMPERS13 {
+            get {
+                return this.NOMPERS13Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NOMPERS13Field, value) != true)) {
+                    this.NOMPERS13Field = value;
+                    this.RaisePropertyChanged("NOMPERS13");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OACPERS13 {
+            get {
+                return this.OACPERS13Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OACPERS13Field, value) != true)) {
+                    this.OACPERS13Field = value;
+                    this.RaisePropertyChanged("OACPERS13");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OANPERS13 {
+            get {
+                return this.OANPERS13Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OANPERS13Field, value) != true)) {
+                    this.OANPERS13Field = value;
+                    this.RaisePropertyChanged("OANPERS13");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PAPPERS13 {
+            get {
+                return this.PAPPERS13Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PAPPERS13Field, value) != true)) {
+                    this.PAPPERS13Field = value;
+                    this.RaisePropertyChanged("PAPPERS13");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SAPPERS13 {
+            get {
+                return this.SAPPERS13Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SAPPERS13Field, value) != true)) {
+                    this.SAPPERS13Field = value;
+                    this.RaisePropertyChanged("SAPPERS13");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DETASPS_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class DETASPS_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESENFR15Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESENFR16Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESSEGU14Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESTRAT16Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RECTRAT16Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESENFR15 {
+            get {
+                return this.DESENFR15Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESENFR15Field, value) != true)) {
+                    this.DESENFR15Field = value;
+                    this.RaisePropertyChanged("DESENFR15");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESENFR16 {
+            get {
+                return this.DESENFR16Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESENFR16Field, value) != true)) {
+                    this.DESENFR16Field = value;
+                    this.RaisePropertyChanged("DESENFR16");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESSEGU14 {
+            get {
+                return this.DESSEGU14Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESSEGU14Field, value) != true)) {
+                    this.DESSEGU14Field = value;
+                    this.RaisePropertyChanged("DESSEGU14");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESTRAT16 {
+            get {
+                return this.DESTRAT16Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESTRAT16Field, value) != true)) {
+                    this.DESTRAT16Field = value;
+                    this.RaisePropertyChanged("DESTRAT16");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RECTRAT16 {
+            get {
+                return this.RECTRAT16Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RECTRAT16Field, value) != true)) {
+                    this.RECTRAT16Field = value;
+                    this.RaisePropertyChanged("RECTRAT16");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DETVIVI_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class DETVIVI_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESESTV19Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESMATE17Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESTIPV18Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> MTOVIVI20Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> NAPVIVI20Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> SRBVIVI20Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> SRCVIVI20Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> SREVIVI20Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> SRIVIVI20Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> SRLVIVI20Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> SRMVIVI20Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESESTV19 {
+            get {
+                return this.DESESTV19Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESESTV19Field, value) != true)) {
+                    this.DESESTV19Field = value;
+                    this.RaisePropertyChanged("DESESTV19");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESMATE17 {
+            get {
+                return this.DESMATE17Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESMATE17Field, value) != true)) {
+                    this.DESMATE17Field = value;
+                    this.RaisePropertyChanged("DESMATE17");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESTIPV18 {
+            get {
+                return this.DESTIPV18Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESTIPV18Field, value) != true)) {
+                    this.DESTIPV18Field = value;
+                    this.RaisePropertyChanged("DESTIPV18");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> MTOVIVI20 {
+            get {
+                return this.MTOVIVI20Field;
+            }
+            set {
+                if ((this.MTOVIVI20Field.Equals(value) != true)) {
+                    this.MTOVIVI20Field = value;
+                    this.RaisePropertyChanged("MTOVIVI20");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> NAPVIVI20 {
+            get {
+                return this.NAPVIVI20Field;
+            }
+            set {
+                if ((this.NAPVIVI20Field.Equals(value) != true)) {
+                    this.NAPVIVI20Field = value;
+                    this.RaisePropertyChanged("NAPVIVI20");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> SRBVIVI20 {
+            get {
+                return this.SRBVIVI20Field;
+            }
+            set {
+                if ((this.SRBVIVI20Field.Equals(value) != true)) {
+                    this.SRBVIVI20Field = value;
+                    this.RaisePropertyChanged("SRBVIVI20");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> SRCVIVI20 {
+            get {
+                return this.SRCVIVI20Field;
+            }
+            set {
+                if ((this.SRCVIVI20Field.Equals(value) != true)) {
+                    this.SRCVIVI20Field = value;
+                    this.RaisePropertyChanged("SRCVIVI20");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> SREVIVI20 {
+            get {
+                return this.SREVIVI20Field;
+            }
+            set {
+                if ((this.SREVIVI20Field.Equals(value) != true)) {
+                    this.SREVIVI20Field = value;
+                    this.RaisePropertyChanged("SREVIVI20");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> SRIVIVI20 {
+            get {
+                return this.SRIVIVI20Field;
+            }
+            set {
+                if ((this.SRIVIVI20Field.Equals(value) != true)) {
+                    this.SRIVIVI20Field = value;
+                    this.RaisePropertyChanged("SRIVIVI20");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> SRLVIVI20 {
+            get {
+                return this.SRLVIVI20Field;
+            }
+            set {
+                if ((this.SRLVIVI20Field.Equals(value) != true)) {
+                    this.SRLVIVI20Field = value;
+                    this.RaisePropertyChanged("SRLVIVI20");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> SRMVIVI20 {
+            get {
+                return this.SRMVIVI20Field;
+            }
+            set {
+                if ((this.SRMVIVI20Field.Equals(value) != true)) {
+                    this.SRMVIVI20Field = value;
+                    this.RaisePropertyChanged("SRMVIVI20");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DETFAML_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class DETFAML_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CEDFAML22Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CEDPERS13Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESENFR15Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESESTC06Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESFAML22Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESNEDU09Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESORGS21Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESPARE12Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> EDAFAML22Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> INGFAML22Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NOMFAML22Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OACFAML22Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CEDFAML22 {
+            get {
+                return this.CEDFAML22Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CEDFAML22Field, value) != true)) {
+                    this.CEDFAML22Field = value;
+                    this.RaisePropertyChanged("CEDFAML22");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CEDPERS13 {
+            get {
+                return this.CEDPERS13Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CEDPERS13Field, value) != true)) {
+                    this.CEDPERS13Field = value;
+                    this.RaisePropertyChanged("CEDPERS13");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESENFR15 {
+            get {
+                return this.DESENFR15Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESENFR15Field, value) != true)) {
+                    this.DESENFR15Field = value;
+                    this.RaisePropertyChanged("DESENFR15");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESESTC06 {
+            get {
+                return this.DESESTC06Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESESTC06Field, value) != true)) {
+                    this.DESESTC06Field = value;
+                    this.RaisePropertyChanged("DESESTC06");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESFAML22 {
+            get {
+                return this.DESFAML22Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESFAML22Field, value) != true)) {
+                    this.DESFAML22Field = value;
+                    this.RaisePropertyChanged("DESFAML22");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESNEDU09 {
+            get {
+                return this.DESNEDU09Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESNEDU09Field, value) != true)) {
+                    this.DESNEDU09Field = value;
+                    this.RaisePropertyChanged("DESNEDU09");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESORGS21 {
+            get {
+                return this.DESORGS21Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESORGS21Field, value) != true)) {
+                    this.DESORGS21Field = value;
+                    this.RaisePropertyChanged("DESORGS21");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESPARE12 {
+            get {
+                return this.DESPARE12Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESPARE12Field, value) != true)) {
+                    this.DESPARE12Field = value;
+                    this.RaisePropertyChanged("DESPARE12");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> EDAFAML22 {
+            get {
+                return this.EDAFAML22Field;
+            }
+            set {
+                if ((this.EDAFAML22Field.Equals(value) != true)) {
+                    this.EDAFAML22Field = value;
+                    this.RaisePropertyChanged("EDAFAML22");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> INGFAML22 {
+            get {
+                return this.INGFAML22Field;
+            }
+            set {
+                if ((this.INGFAML22Field.Equals(value) != true)) {
+                    this.INGFAML22Field = value;
+                    this.RaisePropertyChanged("INGFAML22");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NOMFAML22 {
+            get {
+                return this.NOMFAML22Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NOMFAML22Field, value) != true)) {
+                    this.NOMFAML22Field = value;
+                    this.RaisePropertyChanged("NOMFAML22");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OACFAML22 {
+            get {
+                return this.OACFAML22Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OACFAML22Field, value) != true)) {
+                    this.OACFAML22Field = value;
+                    this.RaisePropertyChanged("OACFAML22");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DETEGRF_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class DETEGRF_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> MTCAGUA24Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> MTOALIM24Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> MTOALQU24Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> MTOCABL24Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> MTOEDUC24Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> MTOELEC24Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> MTOGAST24Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> MTOINTE24Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> MTOOTRO24Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> MTOSEGU24Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> MTOTELF24Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> MTCAGUA24 {
+            get {
+                return this.MTCAGUA24Field;
+            }
+            set {
+                if ((this.MTCAGUA24Field.Equals(value) != true)) {
+                    this.MTCAGUA24Field = value;
+                    this.RaisePropertyChanged("MTCAGUA24");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> MTOALIM24 {
+            get {
+                return this.MTOALIM24Field;
+            }
+            set {
+                if ((this.MTOALIM24Field.Equals(value) != true)) {
+                    this.MTOALIM24Field = value;
+                    this.RaisePropertyChanged("MTOALIM24");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> MTOALQU24 {
+            get {
+                return this.MTOALQU24Field;
+            }
+            set {
+                if ((this.MTOALQU24Field.Equals(value) != true)) {
+                    this.MTOALQU24Field = value;
+                    this.RaisePropertyChanged("MTOALQU24");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> MTOCABL24 {
+            get {
+                return this.MTOCABL24Field;
+            }
+            set {
+                if ((this.MTOCABL24Field.Equals(value) != true)) {
+                    this.MTOCABL24Field = value;
+                    this.RaisePropertyChanged("MTOCABL24");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> MTOEDUC24 {
+            get {
+                return this.MTOEDUC24Field;
+            }
+            set {
+                if ((this.MTOEDUC24Field.Equals(value) != true)) {
+                    this.MTOEDUC24Field = value;
+                    this.RaisePropertyChanged("MTOEDUC24");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> MTOELEC24 {
+            get {
+                return this.MTOELEC24Field;
+            }
+            set {
+                if ((this.MTOELEC24Field.Equals(value) != true)) {
+                    this.MTOELEC24Field = value;
+                    this.RaisePropertyChanged("MTOELEC24");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> MTOGAST24 {
+            get {
+                return this.MTOGAST24Field;
+            }
+            set {
+                if ((this.MTOGAST24Field.Equals(value) != true)) {
+                    this.MTOGAST24Field = value;
+                    this.RaisePropertyChanged("MTOGAST24");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> MTOINTE24 {
+            get {
+                return this.MTOINTE24Field;
+            }
+            set {
+                if ((this.MTOINTE24Field.Equals(value) != true)) {
+                    this.MTOINTE24Field = value;
+                    this.RaisePropertyChanged("MTOINTE24");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> MTOOTRO24 {
+            get {
+                return this.MTOOTRO24Field;
+            }
+            set {
+                if ((this.MTOOTRO24Field.Equals(value) != true)) {
+                    this.MTOOTRO24Field = value;
+                    this.RaisePropertyChanged("MTOOTRO24");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> MTOSEGU24 {
+            get {
+                return this.MTOSEGU24Field;
+            }
+            set {
+                if ((this.MTOSEGU24Field.Equals(value) != true)) {
+                    this.MTOSEGU24Field = value;
+                    this.RaisePropertyChanged("MTOSEGU24");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> MTOTELF24 {
+            get {
+                return this.MTOTELF24Field;
+            }
+            set {
+                if ((this.MTOTELF24Field.Equals(value) != true)) {
+                    this.MTOTELF24Field = value;
+                    this.RaisePropertyChanged("MTOTELF24");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SIDEPS_25REGCASO", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
     [System.SerializableAttribute()]
     public partial class SIDEPS_25REGCASO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -6462,6 +7439,42 @@ namespace SIDEPS.ServiciosWCF {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_HistoricoCasos", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_HistoricoCasosResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_HISTCASOS_Result>> SP_Con_HistoricoCasosAsync(string cedulaUsuario);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_DatosPersonales", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_DatosPersonalesResponse")]
+        SIDEPS.ServiciosWCF.DETPERS_Result SP_Con_DatosPersonales(int codigoCaso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_DatosPersonales", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_DatosPersonalesResponse")]
+        System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.DETPERS_Result> SP_Con_DatosPersonalesAsync(int codigoCaso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_AspectoSalud", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_AspectoSaludResponse")]
+        SIDEPS.ServiciosWCF.DETASPS_Result SP_Con_AspectoSalud(int codigoCaso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_AspectoSalud", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_AspectoSaludResponse")]
+        System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.DETASPS_Result> SP_Con_AspectoSaludAsync(int codigoCaso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_Vivienda", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_ViviendaResponse")]
+        SIDEPS.ServiciosWCF.DETVIVI_Result SP_Con_Vivienda(int codigoCaso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_Vivienda", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_ViviendaResponse")]
+        System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.DETVIVI_Result> SP_Con_ViviendaAsync(int codigoCaso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_GrupoFamiliar", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_GrupoFamiliarResponse")]
+        System.Collections.Generic.List<SIDEPS.ServiciosWCF.DETFAML_Result> SP_Con_GrupoFamiliar(int codigoCaso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_GrupoFamiliar", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_GrupoFamiliarResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.DETFAML_Result>> SP_Con_GrupoFamiliarAsync(int codigoCaso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_Egresos", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_EgresosResponse")]
+        SIDEPS.ServiciosWCF.DETEGRF_Result SP_Con_Egresos(int codigoCaso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_Egresos", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_EgresosResponse")]
+        System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.DETEGRF_Result> SP_Con_EgresosAsync(int codigoCaso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_ObservacionesCaso", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_ObservacionesCasoResponse")]
+        string SP_Con_ObservacionesCaso(int codigoCaso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_ObservacionesCaso", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_ObservacionesCasoResponse")]
+        System.Threading.Tasks.Task<string> SP_Con_ObservacionesCasoAsync(int codigoCaso);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Ins_Caso", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Ins_CasoResponse")]
         int SP_Ins_Caso(SIDEPS.ServiciosWCF.SIDEPS_25REGCASO caso);
         
@@ -6697,10 +7710,10 @@ namespace SIDEPS.ServiciosWCF {
         System.Threading.Tasks.Task<bool> delUsuarioAsync(SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO pobjUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/Login", ReplyAction="http://tempuri.org/IServiciosWCF/LoginResponse")]
-        SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO Login(string cedula, string contrasena);
+        string Login(string cedula, string contrasena);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/Login", ReplyAction="http://tempuri.org/IServiciosWCF/LoginResponse")]
-        System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO> LoginAsync(string cedula, string contrasena);
+        System.Threading.Tasks.Task<string> LoginAsync(string cedula, string contrasena);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -6736,6 +7749,54 @@ namespace SIDEPS.ServiciosWCF {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_HISTCASOS_Result>> SP_Con_HistoricoCasosAsync(string cedulaUsuario) {
             return base.Channel.SP_Con_HistoricoCasosAsync(cedulaUsuario);
+        }
+        
+        public SIDEPS.ServiciosWCF.DETPERS_Result SP_Con_DatosPersonales(int codigoCaso) {
+            return base.Channel.SP_Con_DatosPersonales(codigoCaso);
+        }
+        
+        public System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.DETPERS_Result> SP_Con_DatosPersonalesAsync(int codigoCaso) {
+            return base.Channel.SP_Con_DatosPersonalesAsync(codigoCaso);
+        }
+        
+        public SIDEPS.ServiciosWCF.DETASPS_Result SP_Con_AspectoSalud(int codigoCaso) {
+            return base.Channel.SP_Con_AspectoSalud(codigoCaso);
+        }
+        
+        public System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.DETASPS_Result> SP_Con_AspectoSaludAsync(int codigoCaso) {
+            return base.Channel.SP_Con_AspectoSaludAsync(codigoCaso);
+        }
+        
+        public SIDEPS.ServiciosWCF.DETVIVI_Result SP_Con_Vivienda(int codigoCaso) {
+            return base.Channel.SP_Con_Vivienda(codigoCaso);
+        }
+        
+        public System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.DETVIVI_Result> SP_Con_ViviendaAsync(int codigoCaso) {
+            return base.Channel.SP_Con_ViviendaAsync(codigoCaso);
+        }
+        
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.DETFAML_Result> SP_Con_GrupoFamiliar(int codigoCaso) {
+            return base.Channel.SP_Con_GrupoFamiliar(codigoCaso);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.DETFAML_Result>> SP_Con_GrupoFamiliarAsync(int codigoCaso) {
+            return base.Channel.SP_Con_GrupoFamiliarAsync(codigoCaso);
+        }
+        
+        public SIDEPS.ServiciosWCF.DETEGRF_Result SP_Con_Egresos(int codigoCaso) {
+            return base.Channel.SP_Con_Egresos(codigoCaso);
+        }
+        
+        public System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.DETEGRF_Result> SP_Con_EgresosAsync(int codigoCaso) {
+            return base.Channel.SP_Con_EgresosAsync(codigoCaso);
+        }
+        
+        public string SP_Con_ObservacionesCaso(int codigoCaso) {
+            return base.Channel.SP_Con_ObservacionesCaso(codigoCaso);
+        }
+        
+        public System.Threading.Tasks.Task<string> SP_Con_ObservacionesCasoAsync(int codigoCaso) {
+            return base.Channel.SP_Con_ObservacionesCasoAsync(codigoCaso);
         }
         
         public int SP_Ins_Caso(SIDEPS.ServiciosWCF.SIDEPS_25REGCASO caso) {
@@ -7050,11 +8111,11 @@ namespace SIDEPS.ServiciosWCF {
             return base.Channel.delUsuarioAsync(pobjUsuario);
         }
         
-        public SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO Login(string cedula, string contrasena) {
+        public string Login(string cedula, string contrasena) {
             return base.Channel.Login(cedula, contrasena);
         }
         
-        public System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO> LoginAsync(string cedula, string contrasena) {
+        public System.Threading.Tasks.Task<string> LoginAsync(string cedula, string contrasena) {
             return base.Channel.LoginAsync(cedula, contrasena);
         }
     }

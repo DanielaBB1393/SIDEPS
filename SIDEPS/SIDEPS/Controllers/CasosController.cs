@@ -19,6 +19,8 @@ namespace SIDEPS.Controllers
         // GET: Casos
         public ActionResult Index()
         {
+            TempData.Keep();
+
             return View(new List<Caso_M>());
         }
 
@@ -27,6 +29,8 @@ namespace SIDEPS.Controllers
         //-------
         public ActionResult DatosPersonales()
         {
+            TempData.Keep();
+
             var modelo = new DatosPersonales_M();
 
             using (ServiciosWCFClient svc = new ServiciosWCFClient())
@@ -35,6 +39,7 @@ namespace SIDEPS.Controllers
                 modelo.Cantones = svc.SP_Con_Cantones().Select(r => new Categoria { Codigo = r.CODCANT03, Descripcion = r.NOMCANT03 }).ToList();
                 modelo.EstadosCiviles = svc.SP_Con_EstadosCivil().Select(r => new Categoria { Codigo = r.CODESTC06, Descripcion = r.DESESTC06 }).ToList();
                 modelo.Escolaridades = svc.SP_Con_NivelEducativo().Select(r => new Categoria { Codigo = r.CODNEDU09, Descripcion = r.DESNEDU09 }).ToList();
+                modelo.CategoriaSolicitante = svc.SP_Con_CategoriaSolicitud().Select(r => new Categoria { Codigo = r.CODSOLI10, Descripcion = r.DESSOLI10 }).ToList();
             }
 
             return View(modelo);
@@ -43,12 +48,16 @@ namespace SIDEPS.Controllers
         [HttpPost]
         public ActionResult DatosPersonales(DatosPersonales_M persona)
         {
+            string cedulaUsuario = TempData[_CEDULAUSUARIO].ToString();
+            TempData.Keep();
+
             var resultadoP = this.casosSvc.SP_Ins_Persona(persona.ConvertirEntidad());
             if (resultadoP)
             {
                 var caso = new Caso_M
                 {
-                    CEDPERS13 = persona.CEDPERS13
+                    CEDPERS13 = persona.CEDPERS13,
+                    CEDUSRO07 = cedulaUsuario,
                 };
 
                 var resultadoC = this.casosSvc.SP_Ins_Caso(caso.ConvertirEntidad());
@@ -240,6 +249,11 @@ namespace SIDEPS.Controllers
             {
                 var familiar = svc.SP_Con_MiembroFamiliarXid(id);
                 modelo = new MiembroFamiliar_M(familiar);
+                modelo.EstadosCiviles = svc.SP_Con_EstadosCivil().Select(ec => new Categoria { Codigo = ec.CODESTC06, Descripcion = ec.DESESTC06 }).ToList();
+                modelo.Escolaridad = svc.SP_Con_NivelEducativo().Select(edu => new Categoria { Codigo = edu.CODNEDU09, Descripcion = edu.DESNEDU09 }).ToList();
+                modelo.Organizaciones = svc.SP_Con_Organizaciones().Select(org => new Categoria { Codigo = org.CODORGS21, Descripcion = org.DESORGS21 }).ToList();
+                modelo.Enfermedades = svc.SP_Con_Enfermedades().Select(enf => new Categoria { Codigo = enf.CODENFR15, Descripcion = enf.DESENFR15 }).ToList();
+                modelo.Parentescos = svc.SP_Con_Parentescos().Select(par => new Categoria { Codigo = par.CODPARE12, Descripcion = par.DESPARE12 }).ToList();
             }
 
             return View(modelo);
@@ -316,9 +330,9 @@ namespace SIDEPS.Controllers
         //---------------
         // Mantenimientos
         //---------------
-        public ActionResult HistoricoDeCasos(string cedulaUsuario)
+        public ActionResult HistoricoDeCasos()
         {
-            TempData[_CEDULAUSUARIO] = cedulaUsuario;
+            string cedulaUsuario = TempData[_CEDULAUSUARIO].ToString();
             TempData.Keep();
 
             var modelo = new List<HistoricoCaso_M>();
@@ -348,12 +362,20 @@ namespace SIDEPS.Controllers
             return View(modelo);
         }
 
-        public ActionResult DetallesHistorico()
+        public ActionResult DetallesHistorico(int codigoCaso)
         {
-            string cedulaUsuario = TempData[_CEDULAUSUARIO].ToString();
-            TempData.Keep();
+            var modelo = new DetallesHistoricoCaso_M();
 
-            var modelo = new DetallesHistoricoCaso_M { CedulaUsuario = cedulaUsuario };
+            using (var svc = new ServiciosWCFClient())
+            {
+                modelo.DatosPersonales = new DatosPersonales_M(svc.SP_Con_DatosPersonales(codigoCaso));
+                modelo.AspectoSalud = new AspectoSalud_M(svc.SP_Con_AspectoSalud(codigoCaso));
+                modelo.Vivienda = new Vivienda_M(svc.SP_Con_Vivienda(codigoCaso));
+                modelo.GrupoFamiliar = svc.SP_Con_GrupoFamiliar(codigoCaso).Select(familiar => new MiembroFamiliar_M(familiar)).ToList();
+                modelo.Egresos = new Egresos_M(svc.SP_Con_Egresos(codigoCaso));
+                modelo.OpinionCaso = svc.SP_Con_ObservacionesCaso(codigoCaso);
+            }
+
             return View(modelo);
         }
     }

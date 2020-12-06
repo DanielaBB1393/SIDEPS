@@ -352,7 +352,6 @@ public class ServiciosWCF : IServiciosWCF
         }
     }
 
-
     public List<SIDEPS_04REGDIAC> Diaconia()
     {
         List<SIDEPS_04REGDIAC> lstRespuesta = new List<SIDEPS_04REGDIAC>();
@@ -521,7 +520,7 @@ public class ServiciosWCF : IServiciosWCF
         return objRespuesta;
     }
 
-    public SIDEPS_07REGUSRO Login(string cedula, string contrasena)
+    public string Login(string cedula, string contrasena)
     {
         try
         {
@@ -533,5 +532,75 @@ public class ServiciosWCF : IServiciosWCF
         }
     }
 
+    public DETASPS_Result SP_Con_AspectoSalud(int codigoCaso)
+    {
+        try
+        {
+            return this.casosLN.SP_Con_AspectoSalud(codigoCaso);
+        }
+        catch
+        {
+            throw;
+        }
+    }
 
+    public DETPERS_Result SP_Con_DatosPersonales(int codigoCaso)
+    {
+        try
+        {
+            return this.casosLN.SP_Con_DatosPersonales(codigoCaso);
+        }
+        catch
+        {
+            throw;
+        }
+    }
+
+    public DETEGRF_Result SP_Con_Egresos(int codigoCaso)
+    {
+        try
+        {
+            return this.casosLN.SP_Con_Egresos(codigoCaso);
+        }
+        catch
+        {
+            throw;
+        }
+    }
+
+    public List<DETFAML_Result> SP_Con_GrupoFamiliar(int codigoCaso)
+    {
+        try
+        {
+            return this.casosLN.SP_Con_GrupoFamiliar(codigoCaso);
+        }
+        catch
+        {
+            throw;
+        }
+    }
+
+    public string SP_Con_ObservacionesCaso(int codigoCaso)
+    {
+        try
+        {
+            return this.casosLN.SP_Con_ObservacionesCaso(codigoCaso);
+        }
+        catch
+        {
+            throw;
+        }
+    }
+
+    public DETVIVI_Result SP_Con_Vivienda(int codigoCaso)
+    {
+        try
+        {
+            return this.casosLN.SP_Con_Vivienda(codigoCaso);
+        }
+        catch
+        {
+            throw;
+        }
+    }
 }

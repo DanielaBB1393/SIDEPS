@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 
-namespace mvcSIDEPSWeb.Controllers
+namespace SIDEPS.Controllers
 {
     public class DiaconiaController : Controller
     {

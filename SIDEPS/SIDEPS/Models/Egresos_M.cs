@@ -62,6 +62,21 @@ namespace SIDEPS.Models
             this.MTOOTRO24 = egresos.MTOOTRO24;
         }
 
+        public Egresos_M(DETEGRF_Result egresos)
+        {
+            this.MTOALQU24 = egresos.MTOALQU24;
+            this.MTOALIM24 = egresos.MTOALIM24;
+            this.MTOELEC24 = egresos.MTOELEC24;
+            this.MTOGAST24 = egresos.MTOGAST24;
+            this.MTCAGUA24 = egresos.MTCAGUA24;
+            this.MTOCABL24 = egresos.MTOCABL24;
+            this.MTOTELF24 = egresos.MTOTELF24;
+            this.MTOINTE24 = egresos.MTOINTE24;
+            this.MTOEDUC24 = egresos.MTOEDUC24;
+            this.MTOSEGU24 = egresos.MTOSEGU24;
+            this.MTOOTRO24 = egresos.MTOOTRO24;
+        }
+
         public SIDEPS_24REGEGRF ConvertirEntidad()
         {
             return new SIDEPS_24REGEGRF

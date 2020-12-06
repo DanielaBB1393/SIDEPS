@@ -9,6 +9,24 @@ public interface IServiciosWCF
     List<SP_CON_HISTCASOS_Result> SP_Con_HistoricoCasos(string cedulaUsuario);
 
     [OperationContract]
+    DETPERS_Result SP_Con_DatosPersonales(int codigoCaso);
+
+    [OperationContract]
+    DETASPS_Result SP_Con_AspectoSalud(int codigoCaso);
+
+    [OperationContract]
+    DETVIVI_Result SP_Con_Vivienda(int codigoCaso);
+
+    [OperationContract]
+    List<DETFAML_Result> SP_Con_GrupoFamiliar(int codigoCaso);
+
+    [OperationContract]
+    DETEGRF_Result SP_Con_Egresos(int codigoCaso);
+
+    [OperationContract]
+    string SP_Con_ObservacionesCaso(int codigoCaso);
+
+    [OperationContract]
     int SP_Ins_Caso(SIDEPS_25REGCASO caso);
 
     [OperationContract]
@@ -49,43 +67,43 @@ public interface IServiciosWCF
 
     [OperationContract]
     List<SP_CON_CATCANT_Result> SP_Con_Cantones();
-    
+
     [OperationContract]
     List<SP_CON_CATNEDU_Result> SP_Con_NivelEducativo();
-    
+
     [OperationContract]
     List<SP_CON_CATPAIS_Result> SP_Con_Pais();
-    
+
     [OperationContract]
     List<SP_CON_CATPROV_Result> SP_Con_Provincia();
-    
+
     [OperationContract]
     List<SP_CON_TIPUSRO_Result> SP_Con_TipoUsuario();
-    
+
     [OperationContract]
     List<SP_CON_CATSOLI_Result> SP_Con_CategoriaSolicitud();
-    
+
     [OperationContract]
     List<SP_CON_CATPARE_Result> SP_Con_Parentescos();
-    
+
     [OperationContract]
     List<SP_CON_CATSEGU_Result> SP_Con_Seguros();
-    
+
     [OperationContract]
     List<SP_CON_CATENFR_Result> SP_Con_Enfermedades();
-    
+
     [OperationContract]
     List<SP_CON_CATMATE_Result> SP_Con_Materiales();
-    
+
     [OperationContract]
     List<SP_CON_TIPVIVI_Result> SP_Con_TipoVivienda();
-    
+
     [OperationContract]
     List<SP_CON_ESTVIVI_Result> SP_Con_EstadoVivienda();
-    
+
     [OperationContract]
     List<SP_CON_CATORGS_Result> SP_Con_Organizaciones();
-    
+
     [OperationContract]
     List<SP_CON_CATAYUD_Result> SP_Con_CategoriasAyudas();
 
@@ -126,5 +144,5 @@ public interface IServiciosWCF
     bool delUsuario(SIDEPS_07REGUSRO pobjUsuario);
 
     [OperationContract]
-    SIDEPS_07REGUSRO Login(string cedula, string contrasena);
+    string Login(string cedula, string contrasena);
 }

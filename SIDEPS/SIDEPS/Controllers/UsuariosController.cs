@@ -9,7 +9,7 @@ namespace SIDEPS.Controllers
 {
     public class UsuariosController : Controller
     {
-        public ActionResult listarUsuarios()
+        public ActionResult ListarUsuarios()
 
         {
             List<SP_CON_REGUSRO_Result> lstRespuesta = new List<SP_CON_REGUSRO_Result>();
@@ -149,7 +149,7 @@ namespace SIDEPS.Controllers
             {
                 throw ex;
             }
-            return RedirectToAction("listarUsuarios");
+            return RedirectToAction("ListarUsuarios");
         }
 
         [HttpPost]
@@ -166,7 +166,7 @@ namespace SIDEPS.Controllers
             {
                 throw ex;
             }
-            return RedirectToAction("listarUsuarios");
+            return RedirectToAction("ListarUsuarios");
         }
     }
 }

@@ -10,6 +10,84 @@ namespace AccesoDatos.Implementacion
     {
         SIDEPSEntities contexto = new SIDEPSEntities();
 
+        public DETASPS_Result SP_Con_AspectoSalud(int codigoCaso)
+        {
+            try
+            {
+                return this.contexto.DETASPS(codigoCaso).First();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public DETPERS_Result SP_Con_DatosPersonales(int codigoCaso)
+        {
+            try
+            {
+                return this.contexto.DETPERS(codigoCaso).First();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public DETEGRF_Result SP_Con_Egresos(int codigoCaso)
+        {
+            try
+            {
+                return this.contexto.DETEGRF(codigoCaso).First();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public List<DETFAML_Result> SP_Con_GrupoFamiliar(int codigoCaso)
+        {
+            try
+            {
+                return this.contexto.DETFAML(codigoCaso).ToList();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public string SP_Con_ObservacionesCaso(int codigoCaso)
+        {
+            try
+            {
+                return this.contexto.DETCASO(codigoCaso).First();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public DETVIVI_Result SP_Con_Vivienda(int codigoCaso)
+        {
+            try
+            {
+                return this.contexto.DETVIVI(codigoCaso).First();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public List<SP_CON_HISTCASOS_Result> SP_Con_HistoricoCasos(string cedulaUsuario)
         {
             try

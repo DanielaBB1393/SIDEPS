@@ -9,35 +9,62 @@ namespace SIDEPS.Models
     {
         [DisplayName("Cédula")]
         public string CEDPERS13 { get; set; }
+
         [DisplayName("Estado Civil")]
         public Nullable<int> CODESTC06 { get; set; }
+
         [DisplayName("Escolaridad")]
         public Nullable<int> CODNEDU09 { get; set; }
+
         [DisplayName("Cantón")]
         public Nullable<int> CODCANT03 { get; set; }
+
         [DisplayName("Solicitud")]
         public Nullable<int> CODSOLI10 { get; set; }
+
         [DisplayName("Religión")]
         public Nullable<int> CODRELG11 { get; set; }
+
         [DisplayName("Nombre")]
         public string NOMPERS13 { get; set; }
+
         [DisplayName("Primer Apellido")]
         public string PAPPERS13 { get; set; }
+
         [DisplayName("Segundo Apellido")]
         public string SAPPERS13 { get; set; }
+
         [DisplayName("Nacionalidad")]
         public string NACPERS13 { get; set; }
+
         [DisplayName("Dirección")]
         public string DIRPERS13 { get; set; }
+
         [DisplayName("Opinion 1")]
         public string OACPERS13 { get; set; }
+
         [DisplayName("Opinion 2")]
         public string OANPERS13 { get; set; }
 
-        public List<Categoria> Religiones { get; set; } = new List<Categoria>();
-        public List<Categoria> Cantones { get; set; } = new List<Categoria>();
-        public List<Categoria> EstadosCiviles { get; set; } = new List<Categoria>();
-        public List<Categoria> Escolaridades { get; set; } = new List<Categoria>();
+        [DisplayName("Estado Civil")]
+        public string DESESTC06 { get; set; }
+
+        [DisplayName("Cantón")]
+        public string NOMCANT03 { get; set; }
+
+        [DisplayName("Solicitud")]
+        public string DESSOLI10 { get; set; }
+
+        [DisplayName("Religión")]
+        public string DESRELG11 { get; set; }
+
+        public DateTime? FENPERS13 { get; set; }
+
+        public List<Categoria> Religiones { get; set; }
+        public List<Categoria> Cantones { get; set; }
+        public List<Categoria> EstadosCiviles { get; set; }
+        public List<Categoria> Escolaridades { get; set; }
+        public List<Categoria> CategoriaSolicitante { get; set; }
 
         public DatosPersonales_M()
         {
@@ -58,6 +85,23 @@ namespace SIDEPS.Models
             this.DIRPERS13 = persona.DIRPERS13;
             this.OACPERS13 = persona.OACPERS13;
             this.OANPERS13 = persona.OANPERS13;
+        }
+
+        public DatosPersonales_M(DETPERS_Result persona)
+        {
+            this.CEDPERS13 = persona.CEDPERS13;
+            this.NOMPERS13 = persona.NOMPERS13;
+            this.PAPPERS13 = persona.PAPPERS13;
+            this.SAPPERS13 = persona.SAPPERS13;
+            this.DESESTC06 = persona.DESESTC06;
+            this.NOMCANT03 = persona.NOMCANT03;
+            this.DESSOLI10 = persona.DESSOLI10;
+            this.DESRELG11 = persona.DESRELG11;
+            this.NACPERS13 = persona.NACPERS13;
+            this.DIRPERS13 = persona.DIRPERS13;
+            this.OACPERS13 = persona.OACPERS13;
+            this.OANPERS13 = persona.OANPERS13;
+            this.FENPERS13 = persona.FENPERS13;
         }
 
         public SIDEPS_13REGPERS ConvertirEntidad()
