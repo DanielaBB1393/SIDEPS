@@ -615,4 +615,16 @@ public class ServiciosWCF : IServiciosWCF
             throw;
         }
     }
+
+    public bool SP_Ins_AyudasXCaso(List<SIDEPS_27TIPAYUD> ayudasAprobadas)
+    {
+        try
+        {
+            return this.casosLN.SP_Ins_AyudasXCaso(ayudasAprobadas);
+        }
+        catch
+        {
+            throw;
+        }
+    }
 }

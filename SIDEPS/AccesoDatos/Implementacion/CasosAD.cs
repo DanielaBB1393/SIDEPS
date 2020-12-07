@@ -152,5 +152,22 @@ namespace AccesoDatos.Implementacion
                 throw ex;
             }
         }
+
+        public bool SP_Ins_AyudasXCaso(List<SIDEPS_27TIPAYUD> ayudasAprobadas)
+        {
+            try
+            {
+                foreach (var ayuda in ayudasAprobadas)
+                {
+                    this.contexto.SIDEPS_27TIPAYUD.Add(ayuda);
+                }
+
+                return this.contexto.SaveChanges() > 0;
+            }
+            catch
+            {
+                throw;
+            }
+        }
     }
 }

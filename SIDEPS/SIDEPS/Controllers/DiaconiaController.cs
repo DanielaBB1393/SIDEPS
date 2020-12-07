@@ -11,6 +11,7 @@ namespace SIDEPS.Controllers
     {
         public ActionResult listarDiaconias()
         {
+            TempData.Keep();
             List<SP_CON_REGDIAC_Result> lstRespuesta = new List<SP_CON_REGDIAC_Result>();
             List<Diaconia_M> lstModeloRespuesta = new List<Diaconia_M>();
             try
@@ -41,6 +42,7 @@ namespace SIDEPS.Controllers
 
         public ActionResult AgregarDiaconia()
         {
+            TempData.Keep();
             var modelo = new Diaconia_M();
             using(var svc = new ServiciosWCFClient())
             {
@@ -52,6 +54,7 @@ namespace SIDEPS.Controllers
 
         public ActionResult DetalleDiaconias(int id)
         {
+            TempData.Keep();
             SP_CONXID_REGDIAC_Result objRespuesta = new SP_CONXID_REGDIAC_Result();
             Diaconia_M objDiaconia = new Diaconia_M();
             try
@@ -76,6 +79,7 @@ namespace SIDEPS.Controllers
 
         public ActionResult EliminarDiaconias(int id)
         {
+            TempData.Keep();
             SP_CONXID_REGDIAC_Result objRespuesta = new SP_CONXID_REGDIAC_Result();
             Diaconia_M objDiaconia = new Diaconia_M();
             try
@@ -100,6 +104,7 @@ namespace SIDEPS.Controllers
 
         public ActionResult ModificarDiaconias(int id)
         {
+            TempData.Keep();
             SP_CONXID_REGDIAC_Result objRespuesta = new SP_CONXID_REGDIAC_Result();
             Diaconia_M objDiaconia = new Diaconia_M();
             try
@@ -126,7 +131,7 @@ namespace SIDEPS.Controllers
         [HttpPost]
         public ActionResult AgregarDiaconias(SIDEPS_04REGDIAC objDiac)
         {
-       
+            TempData.Keep();
             try
             {
                 using (ServiciosWCFClient srvDiac = new ServiciosWCFClient())
@@ -146,6 +151,7 @@ namespace SIDEPS.Controllers
         [HttpPost]
         public ActionResult ModificarDiaconias(SIDEPS_04REGDIAC objDiac)
         {
+            TempData.Keep();
             try
             {
                 using (ServiciosWCFClient srvDiac = new ServiciosWCFClient())
@@ -163,6 +169,7 @@ namespace SIDEPS.Controllers
 
         public ActionResult HistoricoPorDiaconia()
         {
+            TempData.Keep();
             var modelo = new HistoricoCaso_M();
             using(var svc = new ServiciosWCFClient())
             {

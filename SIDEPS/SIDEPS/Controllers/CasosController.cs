@@ -321,7 +321,7 @@ namespace SIDEPS.Controllers
 
             if (resultado)
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("MenuCasos");
             }
 
             return View(motivoSolicitud);
@@ -422,17 +422,50 @@ namespace SIDEPS.Controllers
         {
             TempData.Keep();
 
-            return View();
+            var caso = this.casosSvc.ConCaso(id);
+            var modelo = new AprobarCaso_M()
+            {
+                CodigoCaso = caso.CODCASO25
+            };
+
+            var ayudas = this.casosSvc.SP_Con_CategoriasAyudas();
+
+            modelo.Ayudas = ayudas.Select(ayuda => new TipoAyuda_M
+            {
+                Codigo = ayuda.CODAYUD26,
+                Descripcion = ayuda.DESAYUD26
+            }).ToList();
+
+            return View(modelo);
         }
 
         [HttpPost]
-        public ActionResult AprobarCaso(Caso_M caso)
+        public ActionResult AprobarCaso(AprobarCaso_M model)
         {
-            caso.ESTCASO25 = Combos.CASO_APROBADO;
+            TempData.Keep();
+
+            var caso = new Caso_M
+            {
+                ESTCASO25 = Combos.CASO_APROBADO,
+                CODCASO25 = model.CodigoCaso,
+            };
 
             this.casosSvc.SP_Mod_Caso(caso.ConvertirEntidad());
-            
 
+            List<SIDEPS_27TIPAYUD> ayudasAprobadas = new List<SIDEPS_27TIPAYUD>();
+            
+            foreach(var ayuda in model.Ayudas.Where( ayuda => ayuda.Aprobado))
+            {
+                var ayudaBD = new SIDEPS_27TIPAYUD
+                {
+                    CODCASO25 = model.CodigoCaso,
+                    CODAYUD26 = ayuda.Codigo
+                };
+
+                ayudasAprobadas.Add(ayudaBD);
+            }
+
+            this.casosSvc.SP_Ins_AyudasXCaso(ayudasAprobadas);
 
             return RedirectToAction("MenuCasos");
         }
@@ -450,6 +483,8 @@ namespace SIDEPS.Controllers
         [HttpPost]
         public ActionResult RechazarCaso(Caso_M caso)
         {
+            TempData.Keep();
+
             caso.ESTCASO25 = Combos.CASO_RECHAZADO;
 
             this.casosSvc.SP_Mod_Caso(caso.ConvertirEntidad());

@@ -7925,6 +7925,12 @@ namespace SIDEPS.ServiciosWCF {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/ConCaso", ReplyAction="http://tempuri.org/IServiciosWCF/ConCasoResponse")]
         System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.SP_CON_CASOXID_Result> ConCasoAsync(int codigoCaso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Ins_AyudasXCaso", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Ins_AyudasXCasoResponse")]
+        bool SP_Ins_AyudasXCaso(System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_27TIPAYUD> ayudasAprobadas);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Ins_AyudasXCaso", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Ins_AyudasXCasoResponse")]
+        System.Threading.Tasks.Task<bool> SP_Ins_AyudasXCasoAsync(System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_27TIPAYUD> ayudasAprobadas);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -8336,6 +8342,14 @@ namespace SIDEPS.ServiciosWCF {
         
         public System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.SP_CON_CASOXID_Result> ConCasoAsync(int codigoCaso) {
             return base.Channel.ConCasoAsync(codigoCaso);
+        }
+        
+        public bool SP_Ins_AyudasXCaso(System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_27TIPAYUD> ayudasAprobadas) {
+            return base.Channel.SP_Ins_AyudasXCaso(ayudasAprobadas);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SP_Ins_AyudasXCasoAsync(System.Collections.Generic.List<SIDEPS.ServiciosWCF.SIDEPS_27TIPAYUD> ayudasAprobadas) {
+            return base.Channel.SP_Ins_AyudasXCasoAsync(ayudasAprobadas);
         }
     }
 }

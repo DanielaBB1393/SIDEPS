@@ -6,7 +6,9 @@ namespace LogicaNegocios.Interfaces
     public interface ICasosLN
     {
         int SP_Ins_Caso(SIDEPS_25REGCASO caso);
+
         bool SP_Mod_Caso(SIDEPS_25REGCASO caso);
+
         List<SP_CON_HISTCASOS_Result> SP_Con_HistoricoCasos(string cedulaUsuario);
 
         DETPERS_Result SP_Con_DatosPersonales(int codigoCaso);
@@ -20,6 +22,9 @@ namespace LogicaNegocios.Interfaces
         DETEGRF_Result SP_Con_Egresos(int codigoCaso);
 
         string SP_Con_ObservacionesCaso(int codigoCaso);
+
         SP_CON_CASOXID_Result ConCaso(int codigoCaso);
+
+        bool SP_Ins_AyudasXCaso(List<SIDEPS_27TIPAYUD> ayudasAprobadas);
     }
 }

@@ -24,5 +24,7 @@ namespace AccesoDatos.Interfaces
         string SP_Con_ObservacionesCaso(int codigoCaso);
 
         SP_CON_CASOXID_Result ConCaso(int codigoCaso);
+
+        bool SP_Ins_AyudasXCaso(List<SIDEPS_27TIPAYUD> ayudasAprobadas);
     }
 }

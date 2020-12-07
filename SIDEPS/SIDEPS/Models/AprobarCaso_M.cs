@@ -6,6 +6,6 @@ namespace SIDEPS.Models
     {
         public int CodigoCaso { get; set; }
 
-        public List<TipoAyuda_M> AyudasAprobadas { get; set; }
+        public List<TipoAyuda_M> Ayudas { get; set; }
     }
 }

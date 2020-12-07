@@ -148,4 +148,7 @@ public interface IServiciosWCF
 
     [OperationContract]
     SP_CON_CASOXID_Result ConCaso(int codigoCaso);
+
+    [OperationContract]
+    bool SP_Ins_AyudasXCaso(List<SIDEPS_27TIPAYUD> ayudasAprobadas);
 }

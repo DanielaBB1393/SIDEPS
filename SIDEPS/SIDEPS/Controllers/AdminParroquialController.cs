@@ -11,14 +11,17 @@ namespace SIDEPS.Controllers
         // GET: AdminParroquial
         public ActionResult MenuParroquial()
         {
+            TempData.Keep();
             return View();
         }
         public ActionResult MenuMantenimiento()
         {
+            TempData.Keep();
             return View();
         }
         public ActionResult MenuHistorial()
         {
+            TempData.Keep();
             return View();
         }
     }

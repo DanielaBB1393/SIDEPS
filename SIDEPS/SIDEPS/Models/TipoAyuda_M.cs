@@ -1,9 +1,7 @@
 ﻿namespace SIDEPS.Models
 {
-    public class TipoAyuda_M
+    public class TipoAyuda_M : Categoria
     {
-        public int Codigo { get; set; }
-        public string Detalle { get; set; }
         public bool Aprobado { get; set; }
     }
 }

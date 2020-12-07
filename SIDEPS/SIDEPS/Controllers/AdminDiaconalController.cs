@@ -7,6 +7,7 @@ namespace SIDEPS.Controllers
         // GET: AdminDiaconal
         public ActionResult AdminDiaconal()
         {
+            TempData.Keep();
             return View();
         }
     }
