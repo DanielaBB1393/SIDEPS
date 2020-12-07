@@ -1,5 +1,4 @@
-﻿using SIDEPS.Models;
-using SIDEPS.ServiciosWCF;
+﻿using SIDEPS.ServiciosWCF;
 using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -9,33 +8,40 @@ namespace SIDEPS.Models
     public class Caso_M
     {
         [DisplayName("Código caso")]
-
-
         public int CODCASO25 { get; set; }
+
         [DisplayName("Cédula persona")]
         public string CEDPERS13 { get; set; }
+
         [DisplayName("Aspecto salud")]
         public Nullable<int> CODASPS16 { get; set; }
+
         [DisplayName("Cédula usuario")]
         public string CEDUSRO07 { get; set; }
+
         [DisplayName("Vivienda")]
         public Nullable<int> CODVIVI20 { get; set; }
+
         [DisplayName("Egresos")]
         public Nullable<int> CODEGRF24 { get; set; }
-        //public Nullable<DateTime> FEICASO25 { get; set; }
-        [DisplayName("Fecha finalización")]
 
+        [DisplayName("Fecha inicio")]
+        public Nullable<DateTime> FEICASO25 { get; set; }
+
+        [DisplayName("Fecha finalización")]
         public Nullable<DateTime> FEFCASO25 { get; set; }
 
         [DisplayName("Motivo solicitud")]
         [Required(ErrorMessage = "El Motivo solicitud es Requerido.")]
-   
         public string DESCASO25 { get; set; }
+
         [DisplayName("Observaciones")]
         [Required(ErrorMessage = "Observaciones Requeridas.")]
         public string OPICASO25 { get; set; }
+
         [DisplayName("Motivo de la desición")]
         public string ESTDESC25 { get; set; }
+
         [DisplayName("Estado del caso")]
         public string ESTCASO25 { get; set; } = Combos.CASO_INCOMPLETO;
 
@@ -51,7 +57,7 @@ namespace SIDEPS.Models
             this.CEDUSRO07 = caso.CEDUSRO07;
             this.CODVIVI20 = caso.CODVIVI20;
             this.CODEGRF24 = caso.CODEGRF24;
-            //this.FEICASO25 = caso.FEICASO25;
+            this.FEICASO25 = caso.FEICASO25;
             this.FEFCASO25 = caso.FEFCASO25;
             this.DESCASO25 = caso.DESCASO25;
             this.OPICASO25 = caso.OPICASO25;
@@ -66,7 +72,7 @@ namespace SIDEPS.Models
             this.CEDUSRO07 = caso.CEDUSRO07;
             this.CODVIVI20 = caso.CODVIVI20;
             this.CODEGRF24 = caso.CODEGRF24;
-            //this.FEICASO25 = caso.FEICASO25;
+            this.FEICASO25 = caso.FEICASO25;
             this.FEFCASO25 = caso.FEFCASO25;
             this.DESCASO25 = caso.DESCASO25;
             this.OPICASO25 = caso.OPICASO25;

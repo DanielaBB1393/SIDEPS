@@ -474,8 +474,10 @@ namespace SIDEPS.Controllers
 
             var caso = new Caso_M
             {
+                FEICASO25 = DateTime.Now,
                 ESTCASO25 = Combos.CASO_APROBADO,
                 CODCASO25 = model.CodigoCaso,
+                
             };
 
             this.casosSvc.SP_Mod_Caso(caso.ConvertirEntidad());
@@ -514,6 +516,7 @@ namespace SIDEPS.Controllers
             TempData.Keep();
 
             caso.ESTCASO25 = Combos.CASO_RECHAZADO;
+            caso.FEFCASO25 = DateTime.Now;
 
             this.casosSvc.SP_Mod_Caso(caso.ConvertirEntidad());
 
