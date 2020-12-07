@@ -18,7 +18,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CODENFR15, htmlAttributes: new { @class = "control-label col-md-4" })
             <div class="col-md-8">
-                @Html.EditorFor(model => model.CODENFR15, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.CODENFR15, new SelectList(SIDEPS.Models.Combos.SiNo, "Codigo", "Descripcion"), new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.CODENFR15, "", new { @class = "text-danger" })
             </div>
         </div>
