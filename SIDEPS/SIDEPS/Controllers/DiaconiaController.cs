@@ -204,5 +204,21 @@ namespace SIDEPS.Controllers
             return View(modelo);
         }
 
+        public ActionResult DetallesHistorico(int codigoCaso)
+        {
+            var modelo = new DetallesHistoricoCaso_M();
+
+            using (var svc = new ServiciosWCFClient())
+            {
+                modelo.DatosPersonales = new DatosPersonales_M(svc.SP_Con_DatosPersonales(codigoCaso));
+                modelo.AspectoSalud = new AspectoSalud_M(svc.SP_Con_AspectoSalud(codigoCaso));
+                modelo.Vivienda = new Vivienda_M(svc.SP_Con_Vivienda(codigoCaso));
+                modelo.GrupoFamiliar = svc.SP_Con_GrupoFamiliar(codigoCaso).Select(familiar => new MiembroFamiliar_M(familiar)).ToList();
+                modelo.Egresos = new Egresos_M(svc.SP_Con_Egresos(codigoCaso));
+                modelo.OpinionCaso = svc.SP_Con_ObservacionesCaso(codigoCaso);
+            }
+
+            return View(modelo);
+        }
     }
 }

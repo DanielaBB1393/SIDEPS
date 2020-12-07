@@ -88,7 +88,8 @@
             </td>
             <td>
                 @Html.ActionLink("Aprobar", "AprobarCaso", new { id = item.CODCASO25 }) |
-                @Html.ActionLink("Rechazar", "RechazarCaso", new { id = item.CODCASO25 })
+                @Html.ActionLink("Rechazar", "RechazarCaso", new { id = item.CODCASO25 }) |
+                @Html.ActionLink("Detalles", "ValidarCasoDetalles", new { codigoCaso = item.CODCASO25 })
             </td>
         </tr>
     }
