@@ -137,6 +137,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AprobarCaso_M.cs" />
     <Compile Include="Models\AspectoSalud_M.cs" />
     <Compile Include="Models\Caso_M.cs" />
     <Compile Include="Models\Categoria.cs" />
@@ -151,6 +152,7 @@
     <Compile Include="Models\M_Usuarios.cs" />
     <Compile Include="Models\ProblemasSociales_M.cs" />
     <Compile Include="Models\GrupoFamiliar_M.cs" />
+    <Compile Include="Models\TipoAyuda_M.cs" />
     <Compile Include="Models\Vivienda_M.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -272,6 +274,9 @@
     <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.DETVIVI_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CON_CASOXID_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -313,7 +318,7 @@
     <Content Include="Views\Usuarios\DetalleUsuario.cshtml" />
     <Content Include="Views\Usuarios\ListarUsuarios.cshtml" />
     <Content Include="Views\Usuarios\ModificarUsuario.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Loginn.cshtml" />
     <Content Include="Views\Home\MenuAdministradorDiaconia.cshtml" />
     <Content Include="Views\Home\MenuColaboradorDiaconia.cshtml" />
     <Content Include="Views\Home\MenuAdministradorParroquial.cshtml" />
@@ -325,11 +330,16 @@
     <Content Include="Views\Casos\HistoricoDeCasos.cshtml" />
     <Content Include="Views\Casos\DetallesHistorico.cshtml" />
     <Content Include="Views\AdminParroquial\MenuParroquial.cshtml" />
-    <Content Include="Views\MenuColaborador\MenuControlador.cshtml" />
+    <Content Include="Views\MenuColaborador\MenuColaborador.cshtml" />
     <Content Include="Views\AdminDiaconal\AdminDiaconal.cshtml" />
     <Content Include="Views\Casos\MenuCasos.cshtml" />
     <Content Include="Views\AdminParroquial\MenuMantenimiento.cshtml" />
     <Content Include="Views\AdminParroquial\MenuHistorial.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Diaconia\HistoricoPorDiaconia.cshtml" />
+    <Content Include="Views\Casos\ValidarCaso.cshtml" />
+    <Content Include="Views\Casos\AprobarCaso.cshtml" />
+    <Content Include="Views\Casos\RechazarCaso.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

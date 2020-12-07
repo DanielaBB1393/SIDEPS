@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2019\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="16.0">
+ <Targets>
+  <Target Name="C:\Users\cnsc\AppData\Local\Temp\tmp31A4.tmp.cadir\bin\App_Code.dll">
+   <Modules>
+    <Module Name="app_code.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="ServiciosWCF" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#conDiaconias()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2020-12-07 02:21:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\source\SIDEPS\SIDEPS\WCFSIDEPS\App_Code" File="ServiciosWCF.cs" Line="376">'ServiciosWCF.conDiaconias()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#conDiaconiasXId(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2020-12-07 02:21:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\source\SIDEPS\SIDEPS\WCFSIDEPS\App_Code" File="ServiciosWCF.cs" Line="390">'ServiciosWCF.conDiaconiasXId(int)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#conUsuario()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2020-12-07 02:21:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\source\SIDEPS\SIDEPS\WCFSIDEPS\App_Code" File="ServiciosWCF.cs" Line="460">'ServiciosWCF.conUsuario()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#conUsuarioXId(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2020-12-07 02:21:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\source\SIDEPS\SIDEPS\WCFSIDEPS\App_Code" File="ServiciosWCF.cs" Line="474">'ServiciosWCF.conUsuarioXId(int)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#delDiaconia(Entidades.SIDEPS_04REGDIAC)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2020-12-07 02:21:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\source\SIDEPS\SIDEPS\WCFSIDEPS\App_Code" File="ServiciosWCF.cs" Line="432">'ServiciosWCF.delDiaconia(SIDEPS_04REGDIAC)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#delUsuario(Entidades.SIDEPS_07REGUSRO)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2020-12-07 02:21:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\source\SIDEPS\SIDEPS\WCFSIDEPS\App_Code" File="ServiciosWCF.cs" Line="516">'ServiciosWCF.delUsuario(SIDEPS_07REGUSRO)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Diaconia()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2020-12-07 02:21:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\source\SIDEPS\SIDEPS\WCFSIDEPS\App_Code" File="ServiciosWCF.cs" Line="362">'ServiciosWCF.Diaconia()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#insDiaconia(Entidades.SIDEPS_04REGDIAC)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2020-12-07 02:21:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\source\SIDEPS\SIDEPS\WCFSIDEPS\App_Code" File="ServiciosWCF.cs" Line="404">'ServiciosWCF.insDiaconia(SIDEPS_04REGDIAC)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#insUsuario(Entidades.SIDEPS_07REGUSRO)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2020-12-07 02:21:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\source\SIDEPS\SIDEPS\WCFSIDEPS\App_Code" File="ServiciosWCF.cs" Line="488">'ServiciosWCF.insUsuario(SIDEPS_07REGUSRO)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Login(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2020-12-07 02:21:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\source\SIDEPS\SIDEPS\WCFSIDEPS\App_Code" File="ServiciosWCF.cs" Line="529">'ServiciosWCF.Login(string, string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#modDiaconia(Entidades.SIDEPS_04REGDIAC)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2020-12-07 02:21:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\source\SIDEPS\SIDEPS\WCFSIDEPS\App_Code" File="ServiciosWCF.cs" Line="418">'ServiciosWCF.modDiaconia(SIDEPS_04REGDIAC)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#modUsuario(Entidades.SIDEPS_07REGUSRO)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2020-12-07 02:21:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\source\SIDEPS\SIDEPS\WCFSIDEPS\App_Code" File="ServiciosWCF.cs" Line="502">'ServiciosWCF.modUsuario(SIDEPS_07REGUSRO)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Usuario()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2020-12-07 02:21:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\source\SIDEPS\SIDEPS\WCFSIDEPS\App_Code" File="ServiciosWCF.cs" Line="446">'ServiciosWCF.Usuario()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200">
+   <Name>Rethrow to preserve stack details</Name>
+   <Description>Use the IL rethrow instruction to preserve original stack details when re-raising a caught exception.</Description>
+   <Resolution Name="Default">{0} rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182363.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="usagerules.dll" Version="16.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+ <Exceptions>
+  <Exception Keyword="CA0001" Kind="Engine">
+   <Type>Phx.FatalError</Type>
+   <ExceptionMessage>Exception of type 'Phx.FatalError' was thrown.</ExceptionMessage>
+   <StackTrace>   at Phx.FatalError.Dispatch()
+   at Phx.Logging.Diagnostics.DiagnosticMessage.LogMessage(Severity severity, DiagnosticInfo diagnosticInfo, SourceContext sourceContext, String descriptionString)
+   at Phx.PE.PEUtilities.UserError(String infoMessage)
+   at Phx.Pdb.ReaderImplementation.Open(Boolean loadTypeOnly)
+   at Phx.PEModuleUnit.LoadPdb()
+   at Phx.PE.ReaderPhase.CheckSymbolicInformation()
+   at Phx.PEModuleUnit.LoadGlobalSymbols()
+   at Phx.PEModuleUnit.LoadEncodedIRUnitList()
+   at Phx.PEModuleUnit.GetEnumerableContributionUnit(ContributionUnitEnumerationKind contributionUnitEnumerationKind)
+   at Phx.PEModuleUnit.GetEnumerableContributionUnit()
+   at Microsoft.FxCop.Engines.Phoenix.PreScanPass.GetFunctionUnits(PEModuleUnit peModuleUnit)
+   at Microsoft.FxCop.Engines.Phoenix.PreScanPass.Execute(ModuleUnit moduleUnit)
+   at Phx.Passes.Pass.DoPass(ModuleUnit moduleUnit)
+   at Phx.Passes.PassList.DoPassList(ModuleUnit moduleUnit)
+   at Microsoft.FxCop.Engines.Phoenix.PhoenixAnalysisEngine.Host.ExecutePasses(PEModuleUnit peModuleUnit)
+   at Microsoft.FxCop.Engines.Phoenix.PhoenixAnalysisEngine.AnalyzeInternal()
+   at Microsoft.FxCop.Engines.Phoenix.PhoenixAnalysisEngine.Analyze()
+   at Microsoft.FxCop.Common.EngineManager.Analyze(Project project, Boolean verboseOutput)</StackTrace>
+  </Exception>
+ </Exceptions>
+</FxCopReport>

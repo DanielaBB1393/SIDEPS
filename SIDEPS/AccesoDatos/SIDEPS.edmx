@@ -703,8 +703,14 @@
         <Function Name="DETVIVI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CODCASO25" Type="int" Mode="In" />
         </Function>
+        <Function Name="SP_CON_CASOXID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODCASO25" Type="int" Mode="In" />
+        </Function>
         <Function Name="SP_CON_CATAYUD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_CON_CATCANT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_CON_CATCASOAY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODCASO25" Type="int" Mode="In" />
+        </Function>
         <Function Name="SP_CON_CATENFR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_CON_CATESTC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_CON_CATMATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -2095,21 +2101,27 @@
           <Parameter Name="cedulaUsuario" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DETASPS" ReturnType="Collection(SIDEPS.DETASPS_Result)">
-            <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
+          <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DETCASO" ReturnType="Collection(String)">
-            <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
+          <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DETEGRF" ReturnType="Collection(SIDEPS.DETEGRF_Result)">
-            <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
+          <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DETFAML" ReturnType="Collection(SIDEPS.DETFAML_Result)">
-            <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
+          <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DETPERS" ReturnType="Collection(SIDEPS.DETPERS_Result)">
-            <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
+          <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DETVIVI" ReturnType="Collection(SIDEPS.DETVIVI_Result)">
+          <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CON_CATCASOAY" ReturnType="Collection(SIDEPS.SP_CON_CATCASOAY_Result)">
+          <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CON_CASOXID" ReturnType="Collection(SIDEPS.SP_CON_CASOXID_Result)">
             <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
@@ -2333,6 +2345,23 @@
           <Property Type="String" Name="DESTIPV18" Nullable="true" MaxLength="60" />
           <Property Type="String" Name="DESESTV19" Nullable="true" MaxLength="60" />
           <Property Type="String" Name="DESMATE17" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SP_CON_CATCASOAY_Result">
+          <Property Type="Int32" Name="CODAYUD26" Nullable="false" />
+          <Property Type="String" Name="DESAYUD26" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SP_CON_CASOXID_Result">
+          <Property Type="Int32" Name="CODCASO25" Nullable="false" />
+          <Property Type="String" Name="CEDPERS13" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="CODASPS16" Nullable="true" />
+          <Property Type="String" Name="CEDUSRO07" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="CODVIVI20" Nullable="true" />
+          <Property Type="Int32" Name="CODEGRF24" Nullable="true" />
+          <Property Type="DateTime" Name="FEICASO25" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="FEFCASO25" Nullable="true" Precision="23" />
+          <Property Type="String" Name="DESCASO25" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="OPICASO25" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ESTCASO25" Nullable="true" MaxLength="20" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -3000,6 +3029,31 @@
                 <ScalarProperty Name="DESTIPV18" ColumnName="DESTIPV18" />
                 <ScalarProperty Name="DESESTV19" ColumnName="DESESTV19" />
                 <ScalarProperty Name="DESMATE17" ColumnName="DESMATE17" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CON_CATCASOAY" FunctionName="SIDEPS.Store.SP_CON_CATCASOAY">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIDEPS.SP_CON_CATCASOAY_Result">
+                <ScalarProperty Name="CODAYUD26" ColumnName="CODAYUD26" />
+                <ScalarProperty Name="DESAYUD26" ColumnName="DESAYUD26" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CON_CASOXID" FunctionName="SIDEPS.Store.SP_CON_CASOXID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIDEPS.SP_CON_CASOXID_Result">
+                <ScalarProperty Name="CODCASO25" ColumnName="CODCASO25" />
+                <ScalarProperty Name="CEDPERS13" ColumnName="CEDPERS13" />
+                <ScalarProperty Name="CODASPS16" ColumnName="CODASPS16" />
+                <ScalarProperty Name="CEDUSRO07" ColumnName="CEDUSRO07" />
+                <ScalarProperty Name="CODVIVI20" ColumnName="CODVIVI20" />
+                <ScalarProperty Name="CODEGRF24" ColumnName="CODEGRF24" />
+                <ScalarProperty Name="FEICASO25" ColumnName="FEICASO25" />
+                <ScalarProperty Name="FEFCASO25" ColumnName="FEFCASO25" />
+                <ScalarProperty Name="DESCASO25" ColumnName="DESCASO25" />
+                <ScalarProperty Name="OPICASO25" ColumnName="OPICASO25" />
+                <ScalarProperty Name="ESTCASO25" ColumnName="ESTCASO25" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

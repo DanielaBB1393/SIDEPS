@@ -140,5 +140,17 @@ namespace AccesoDatos.Implementacion
                 throw ex;
             }
         }
+
+        public SP_CON_CASOXID_Result ConCaso(int codigoCaso)
+        {
+            try
+            {
+                return this.contexto.SP_CON_CASOXID(codigoCaso).First();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

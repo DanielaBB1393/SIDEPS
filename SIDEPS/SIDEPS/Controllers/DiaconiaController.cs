@@ -161,5 +161,15 @@ namespace SIDEPS.Controllers
             return RedirectToAction("listarDiaconias");
         }
 
+        public ActionResult HistoricoPorDiaconia()
+        {
+            var modelo = new HistoricoCaso_M();
+            using(var svc = new ServiciosWCFClient())
+            {
+
+            }
+            return View(modelo);
+        }
+
     }
 }

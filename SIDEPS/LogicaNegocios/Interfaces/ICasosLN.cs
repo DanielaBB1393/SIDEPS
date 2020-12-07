@@ -20,5 +20,6 @@ namespace LogicaNegocios.Interfaces
         DETEGRF_Result SP_Con_Egresos(int codigoCaso);
 
         string SP_Con_ObservacionesCaso(int codigoCaso);
+        SP_CON_CASOXID_Result ConCaso(int codigoCaso);
     }
 }

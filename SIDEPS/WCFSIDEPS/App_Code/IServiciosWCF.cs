@@ -145,4 +145,7 @@ public interface IServiciosWCF
 
     [OperationContract]
     string Login(string cedula, string contrasena);
+
+    [OperationContract]
+    SP_CON_CASOXID_Result ConCaso(int codigoCaso);
 }

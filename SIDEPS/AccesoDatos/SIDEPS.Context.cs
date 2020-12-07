@@ -720,5 +720,23 @@ namespace AccesoDatos
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DETVIVI_Result>("DETVIVI", cODCASO25Parameter);
         }
+    
+        public virtual ObjectResult<SP_CON_CATCASOAY_Result> SP_CON_CATCASOAY(Nullable<int> cODCASO25)
+        {
+            var cODCASO25Parameter = cODCASO25.HasValue ?
+                new ObjectParameter("CODCASO25", cODCASO25) :
+                new ObjectParameter("CODCASO25", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CATCASOAY_Result>("SP_CON_CATCASOAY", cODCASO25Parameter);
+        }
+    
+        public virtual ObjectResult<SP_CON_CASOXID_Result> SP_CON_CASOXID(Nullable<int> cODCASO25)
+        {
+            var cODCASO25Parameter = cODCASO25.HasValue ?
+                new ObjectParameter("CODCASO25", cODCASO25) :
+                new ObjectParameter("CODCASO25", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CASOXID_Result>("SP_CON_CASOXID", cODCASO25Parameter);
+        }
     }
 }

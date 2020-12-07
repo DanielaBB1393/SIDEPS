@@ -9,7 +9,7 @@ namespace SIDEPS.Controllers
     public class MenuColaboradorController : Controller
     {
         // GET: MenuColaborador
-        public ActionResult MenuControlador()
+        public ActionResult MenuColaborador()
         {
             return View();
         }

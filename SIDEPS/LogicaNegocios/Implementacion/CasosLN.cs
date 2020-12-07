@@ -10,6 +10,18 @@ namespace LogicaNegocios.Implementacion
     {
         private readonly ICasosAD accesoDatos = new CasosAD();
 
+        public SP_CON_CASOXID_Result ConCaso(int codigoCaso)
+        {
+            try
+            {
+                return this.accesoDatos.ConCaso(codigoCaso);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         public DETASPS_Result SP_Con_AspectoSalud(int codigoCaso)
         {
             try

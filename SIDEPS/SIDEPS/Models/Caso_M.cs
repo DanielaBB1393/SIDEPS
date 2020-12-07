@@ -50,6 +50,21 @@ namespace SIDEPS.Models
             this.ESTCASO25 = caso.ESTCASO25;
         }
 
+        public Caso_M(SP_CON_CASOXID_Result caso)
+        {
+            this.CODCASO25 = caso.CODCASO25;
+            this.CEDPERS13 = caso.CEDPERS13;
+            this.CODASPS16 = caso.CODASPS16;
+            this.CEDUSRO07 = caso.CEDUSRO07;
+            this.CODVIVI20 = caso.CODVIVI20;
+            this.CODEGRF24 = caso.CODEGRF24;
+            //this.FEICASO25 = caso.FEICASO25;
+            this.FEFCASO25 = caso.FEFCASO25;
+            this.DESCASO25 = caso.DESCASO25;
+            this.OPICASO25 = caso.OPICASO25;
+            this.ESTCASO25 = caso.ESTCASO25;
+        }
+
         public SIDEPS_25REGCASO ConvertirEntidad()
         {
             return new SIDEPS_25REGCASO

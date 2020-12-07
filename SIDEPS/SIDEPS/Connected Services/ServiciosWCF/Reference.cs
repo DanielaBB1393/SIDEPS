@@ -7429,6 +7429,211 @@ namespace SIDEPS.ServiciosWCF {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SP_CON_CASOXID_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class SP_CON_CASOXID_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CEDPERS13Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CEDUSRO07Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CODASPS16Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CODCASO25Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CODEGRF24Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CODVIVI20Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESCASO25Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ESTCASO25Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> FEFCASO25Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> FEICASO25Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OPICASO25Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CEDPERS13 {
+            get {
+                return this.CEDPERS13Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CEDPERS13Field, value) != true)) {
+                    this.CEDPERS13Field = value;
+                    this.RaisePropertyChanged("CEDPERS13");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CEDUSRO07 {
+            get {
+                return this.CEDUSRO07Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CEDUSRO07Field, value) != true)) {
+                    this.CEDUSRO07Field = value;
+                    this.RaisePropertyChanged("CEDUSRO07");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CODASPS16 {
+            get {
+                return this.CODASPS16Field;
+            }
+            set {
+                if ((this.CODASPS16Field.Equals(value) != true)) {
+                    this.CODASPS16Field = value;
+                    this.RaisePropertyChanged("CODASPS16");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CODCASO25 {
+            get {
+                return this.CODCASO25Field;
+            }
+            set {
+                if ((this.CODCASO25Field.Equals(value) != true)) {
+                    this.CODCASO25Field = value;
+                    this.RaisePropertyChanged("CODCASO25");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CODEGRF24 {
+            get {
+                return this.CODEGRF24Field;
+            }
+            set {
+                if ((this.CODEGRF24Field.Equals(value) != true)) {
+                    this.CODEGRF24Field = value;
+                    this.RaisePropertyChanged("CODEGRF24");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CODVIVI20 {
+            get {
+                return this.CODVIVI20Field;
+            }
+            set {
+                if ((this.CODVIVI20Field.Equals(value) != true)) {
+                    this.CODVIVI20Field = value;
+                    this.RaisePropertyChanged("CODVIVI20");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESCASO25 {
+            get {
+                return this.DESCASO25Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESCASO25Field, value) != true)) {
+                    this.DESCASO25Field = value;
+                    this.RaisePropertyChanged("DESCASO25");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ESTCASO25 {
+            get {
+                return this.ESTCASO25Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ESTCASO25Field, value) != true)) {
+                    this.ESTCASO25Field = value;
+                    this.RaisePropertyChanged("ESTCASO25");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> FEFCASO25 {
+            get {
+                return this.FEFCASO25Field;
+            }
+            set {
+                if ((this.FEFCASO25Field.Equals(value) != true)) {
+                    this.FEFCASO25Field = value;
+                    this.RaisePropertyChanged("FEFCASO25");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> FEICASO25 {
+            get {
+                return this.FEICASO25Field;
+            }
+            set {
+                if ((this.FEICASO25Field.Equals(value) != true)) {
+                    this.FEICASO25Field = value;
+                    this.RaisePropertyChanged("FEICASO25");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OPICASO25 {
+            get {
+                return this.OPICASO25Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OPICASO25Field, value) != true)) {
+                    this.OPICASO25Field = value;
+                    this.RaisePropertyChanged("OPICASO25");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiciosWCF.IServiciosWCF")]
     public interface IServiciosWCF {
@@ -7714,6 +7919,12 @@ namespace SIDEPS.ServiciosWCF {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/Login", ReplyAction="http://tempuri.org/IServiciosWCF/LoginResponse")]
         System.Threading.Tasks.Task<string> LoginAsync(string cedula, string contrasena);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/ConCaso", ReplyAction="http://tempuri.org/IServiciosWCF/ConCasoResponse")]
+        SIDEPS.ServiciosWCF.SP_CON_CASOXID_Result ConCaso(int codigoCaso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/ConCaso", ReplyAction="http://tempuri.org/IServiciosWCF/ConCasoResponse")]
+        System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.SP_CON_CASOXID_Result> ConCasoAsync(int codigoCaso);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -8117,6 +8328,14 @@ namespace SIDEPS.ServiciosWCF {
         
         public System.Threading.Tasks.Task<string> LoginAsync(string cedula, string contrasena) {
             return base.Channel.LoginAsync(cedula, contrasena);
+        }
+        
+        public SIDEPS.ServiciosWCF.SP_CON_CASOXID_Result ConCaso(int codigoCaso) {
+            return base.Channel.ConCaso(codigoCaso);
+        }
+        
+        public System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.SP_CON_CASOXID_Result> ConCasoAsync(int codigoCaso) {
+            return base.Channel.ConCasoAsync(codigoCaso);
         }
     }
 }

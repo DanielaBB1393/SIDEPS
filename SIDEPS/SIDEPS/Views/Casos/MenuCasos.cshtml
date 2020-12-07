@@ -14,32 +14,32 @@
     <center>
 
         <center>
-            <a href="" class="boton_1">Registro de Caso</a>
+            @Html.ActionLink("Registro de Caso", "DatosPersonales", "Casos", null, new { @class = "boton_1" })
             <br><br><br><br>
-            <center>
-                <a href="" class="boton_1">Validar Caso</a>
+                        <center>
+                            @Html.ActionLink("Validar Casos", "ValidarCaso", "Casos", null, new { @class = "boton_1" })
 
-                <style type="text/css">
-                    .boton_1 {
-                        text-decoration: none;
-                        padding: 3px;
-                        padding-left: 10px;
-                        padding-right: 10px;
-                        font-family: helvetica;
-                        font-weight: 300;
-                        font-size: 25px;
-                        font-style: italic;
-                        color: #FFFFFF;
-                        background-color: #39B411;
-                        border-radius: 15px;
-                        border: 3px double #006505;
-                    }
+                            <style type="text/css">
+                                .boton_1 {
+                                    text-decoration: none;
+                                    padding: 3px;
+                                    padding-left: 10px;
+                                    padding-right: 10px;
+                                    font-family: helvetica;
+                                    font-weight: 300;
+                                    font-size: 25px;
+                                    font-style: italic;
+                                    color: #FFFFFF;
+                                    background-color: #39B411;
+                                    border-radius: 15px;
+                                    border: 3px double #006505;
+                                }
 
-                        .boton_1:hover {
-                            opacity: 0.6;
-                            text-decoration: none;
-                        }
-                </style>
+                                    .boton_1:hover {
+                                        opacity: 0.6;
+                                        text-decoration: none;
+                                    }
+                            </style>
 </body>
 </html>
 

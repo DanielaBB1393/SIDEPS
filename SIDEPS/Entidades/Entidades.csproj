@@ -168,10 +168,16 @@
     <Compile Include="SP_CONXID_REGUSRO_Result.cs">
       <DependentUpon>SIDEPS.tt</DependentUpon>
     </Compile>
+    <Compile Include="SP_CON_CASOXID_Result.cs">
+      <DependentUpon>SIDEPS.tt</DependentUpon>
+    </Compile>
     <Compile Include="SP_CON_CATAYUD_Result.cs">
       <DependentUpon>SIDEPS.tt</DependentUpon>
     </Compile>
     <Compile Include="SP_CON_CATCANT_Result.cs">
+      <DependentUpon>SIDEPS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_CON_CATCASOAY_Result.cs">
       <DependentUpon>SIDEPS.tt</DependentUpon>
     </Compile>
     <Compile Include="SP_CON_CATENFR_Result.cs">

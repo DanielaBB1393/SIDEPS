@@ -289,6 +289,12 @@
   <wsdl:message name="IServiciosWCF_Login_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoginResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiciosWCF_ConCaso_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConCaso" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_ConCaso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConCasoResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServiciosWCF">
     <wsdl:operation name="SP_Con_HistoricoCasos">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_HistoricoCasos" message="tns:IServiciosWCF_SP_Con_HistoricoCasos_InputMessage" />
@@ -477,6 +483,10 @@
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/Login" message="tns:IServiciosWCF_Login_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/LoginResponse" message="tns:IServiciosWCF_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConCaso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/ConCaso" message="tns:IServiciosWCF_ConCaso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/ConCasoResponse" message="tns:IServiciosWCF_ConCaso_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServiciosWCF" type="tns:IServiciosWCF">
@@ -897,6 +907,15 @@
     </wsdl:operation>
     <wsdl:operation name="Login">
       <soap:operation soapAction="http://tempuri.org/IServiciosWCF/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConCaso">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/ConCaso" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

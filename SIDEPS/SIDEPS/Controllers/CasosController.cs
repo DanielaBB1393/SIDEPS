@@ -381,7 +381,80 @@ namespace SIDEPS.Controllers
 
         public ActionResult MenuCasos()
         {
+            TempData.Keep();
+
             return View();
+        }
+
+        public ActionResult ValidarCaso()
+        {
+            string cedulaUsuario = TempData[_CEDULAUSUARIO].ToString();
+            TempData.Keep();
+
+            var modelo = new List<HistoricoCaso_M>();
+
+            using (var svc = new ServiciosWCFClient())
+            {
+                var resultado = svc.SP_Con_HistoricoCasos(cedulaUsuario).Where(caso => caso.ESTCASO25.Equals(Combos.CASO_PENDIENTE, StringComparison.OrdinalIgnoreCase));
+                foreach (var item in resultado)
+                {
+                    var registro = new HistoricoCaso_M();
+                    registro.CODCASO25 = item.CODCASO25;
+                    registro.CEDPERS13 = item.CEDPERS13;
+                    registro.CEDUSRO07 = item.CEDUSRO07;
+                    registro.FEICASO25 = item.FEICASO25;
+                    registro.FEFCASO25 = item.FEFCASO25;
+                    registro.DESCASO25 = item.DESCASO25;
+                    registro.OPICASO25 = item.OPICASO25;
+                    registro.ESTCASO25 = item.ESTCASO25;
+                    registro.NOMUSRO07 = item.NOMUSRO07;
+                    registro.PAPUSRO07 = item.PAPUSRO07;
+                    registro.NOMPERS13 = item.NOMPERS13;
+                    registro.PAPPERS13 = item.PAPPERS13;
+                    modelo.Add(registro);
+                }
+            }
+
+            return View(modelo);
+        }
+
+        public ActionResult AprobarCaso(int id)
+        {
+            TempData.Keep();
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AprobarCaso(Caso_M caso)
+        {
+            caso.ESTCASO25 = Combos.CASO_APROBADO;
+
+            this.casosSvc.SP_Mod_Caso(caso.ConvertirEntidad());
+            
+
+
+            return RedirectToAction("MenuCasos");
+        }
+
+        public ActionResult RechazarCaso(int id)
+        {
+            TempData.Keep();
+
+            var resultado = this.casosSvc.ConCaso(id);
+            var modelo = new Caso_M(resultado);
+
+            return View(modelo);
+        }
+
+        [HttpPost]
+        public ActionResult RechazarCaso(Caso_M caso)
+        {
+            caso.ESTCASO25 = Combos.CASO_RECHAZADO;
+
+            this.casosSvc.SP_Mod_Caso(caso.ConvertirEntidad());
+
+            return RedirectToAction("MenuCasos");
         }
     }
 }

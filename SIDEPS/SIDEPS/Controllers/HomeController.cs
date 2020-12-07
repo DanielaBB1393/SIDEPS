@@ -49,12 +49,11 @@ namespace SIDEPS.Controllers
                     switch (resultado)
                     {
                         case "ADMIN PARROQUIAL":
-                            //return RedirectToAction("Action", "AdminParroquialController");
+                            return RedirectToAction("MenuParroquial", "AdminParroquial");
                         case "ADMIN DIACONAL":
-                            //return RedirectToAction("Action", "AdminDiaconiaController");
+                            return RedirectToAction("AdminDiaconal", "AdminDiaconal");
                         case "COLABORADOR":
-                            //return RedirectToAction("Action", "ColaboradorController");
-                            return RedirectToAction("Index");
+                            return RedirectToAction("MenuColaborador", "MenuColaborador");
                         default:
                             //Agrega mensaje de error en cedula
                             ModelState.AddModelError("CEDUSRO07", "Ocurrió un error con el tipo de usuario");
@@ -83,6 +82,14 @@ namespace SIDEPS.Controllers
         public ActionResult MenuAdministradorParroquial()
         {
             return View();
+        }
+
+        public ActionResult Salir()
+        {
+
+            TempData.Clear();
+
+            return RedirectToAction("Login");
         }
     }
 }

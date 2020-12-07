@@ -846,4 +846,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SP_CONXID_REGUSRO_Result" nillable="true" type="tns:SP_CONXID_REGUSRO_Result" />
+  <xs:complexType name="SP_CON_CASOXID_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CEDPERS13" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CEDUSRO07" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODASPS16" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CODCASO25" type="xs:int" />
+      <xs:element minOccurs="0" name="CODEGRF24" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CODVIVI20" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DESCASO25" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTCASO25" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FEFCASO25" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FEICASO25" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OPICASO25" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SP_CON_CASOXID_Result" nillable="true" type="tns:SP_CON_CASOXID_Result" />
 </xs:schema>

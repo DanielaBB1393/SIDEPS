@@ -1,0 +1,95 @@
+﻿@model IEnumerable<SIDEPS.Models.HistoricoCaso_M>
+
+@{
+    ViewBag.Title = "Validar Caso";
+}
+
+<h2>Validar Caso</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CODCASO25)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CEDPERS13)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOMPERS13)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PAPPERS13)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FEICASO25)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FEFCASO25)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CEDUSRO07)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOMUSRO07)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PAPUSRO07)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESCASO25)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OPICASO25)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ESTCASO25)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CODCASO25)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CEDPERS13)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOMPERS13)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PAPPERS13)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FEICASO25)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FEFCASO25)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CEDUSRO07)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOMUSRO07)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PAPUSRO07)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESCASO25)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OPICASO25)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ESTCASO25)
+        </td>
+        <td>
+            @Html.ActionLink("Aprobar", "AprobarCaso", new { id=item.CODCASO25 }) |
+            @Html.ActionLink("Rechazar", "RechazarCaso", new { id=item.CODCASO25 })
+        </td>
+    </tr>
+}
+
+</table>

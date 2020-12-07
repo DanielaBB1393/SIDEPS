@@ -603,4 +603,16 @@ public class ServiciosWCF : IServiciosWCF
             throw;
         }
     }
+
+    public SP_CON_CASOXID_Result ConCaso(int codigoCaso)
+    {
+        try
+        {
+            return this.casosLN.ConCaso(codigoCaso);
+        }
+        catch
+        {
+            throw;
+        }
+    }
 }
