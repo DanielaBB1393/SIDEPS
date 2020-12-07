@@ -658,15 +658,6 @@ namespace AccesoDatos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_MOD_REGUSRO", cEDUSRO07Parameter, nOMUSRO07Parameter, pAPUSRO07Parameter, sAPUSRO07Parameter, cODCANT03Parameter, cODDIAC04Parameter, cODUSRO05Parameter, eSTUSRO07Parameter, dIRUSRO07Parameter, nACUSRO07Parameter, cNTUSRO07Parameter, fENUSRO07Parameter);
         }
     
-        public virtual ObjectResult<SP_CON_HISTCASOS_Result> SP_CON_HISTCASOS(string cedulaUsuario)
-        {
-            var cedulaUsuarioParameter = cedulaUsuario != null ?
-                new ObjectParameter("cedulaUsuario", cedulaUsuario) :
-                new ObjectParameter("cedulaUsuario", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_HISTCASOS_Result>("SP_CON_HISTCASOS", cedulaUsuarioParameter);
-        }
-    
         public virtual ObjectResult<DETASPS_Result> DETASPS(Nullable<int> cODCASO25)
         {
             var cODCASO25Parameter = cODCASO25.HasValue ?
@@ -737,6 +728,24 @@ namespace AccesoDatos
                 new ObjectParameter("CODCASO25", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_CASOXID_Result>("SP_CON_CASOXID", cODCASO25Parameter);
+        }
+    
+        public virtual ObjectResult<SP_CON_HISTCASOS_Result> SP_CON_HISTCASOS(Nullable<int> diaconia)
+        {
+            var diaconiaParameter = diaconia.HasValue ?
+                new ObjectParameter("diaconia", diaconia) :
+                new ObjectParameter("diaconia", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CON_HISTCASOS_Result>("SP_CON_HISTCASOS", diaconiaParameter);
+        }
+    
+        public virtual ObjectResult<SP_CONXID_REGUSRO_Result> SP_CON_USROXCED(string cEDUSRO07)
+        {
+            var cEDUSRO07Parameter = cEDUSRO07 != null ?
+                new ObjectParameter("CEDUSRO07", cEDUSRO07) :
+                new ObjectParameter("CEDUSRO07", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONXID_REGUSRO_Result>("SP_CON_USROXCED", cEDUSRO07Parameter);
         }
     }
 }

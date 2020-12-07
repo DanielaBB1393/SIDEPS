@@ -265,6 +265,12 @@
   <wsdl:message name="IServiciosWCF_conUsuarioXId_OutputMessage">
     <wsdl:part name="parameters" element="tns:conUsuarioXIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiciosWCF_conUsuarioXCedula_InputMessage">
+    <wsdl:part name="parameters" element="tns:conUsuarioXCedula" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_conUsuarioXCedula_OutputMessage">
+    <wsdl:part name="parameters" element="tns:conUsuarioXCedulaResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiciosWCF_insUsuario_InputMessage">
     <wsdl:part name="parameters" element="tns:insUsuario" />
   </wsdl:message>
@@ -473,6 +479,10 @@
     <wsdl:operation name="conUsuarioXId">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/conUsuarioXId" message="tns:IServiciosWCF_conUsuarioXId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/conUsuarioXIdResponse" message="tns:IServiciosWCF_conUsuarioXId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="conUsuarioXCedula">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/conUsuarioXCedula" message="tns:IServiciosWCF_conUsuarioXCedula_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/conUsuarioXCedulaResponse" message="tns:IServiciosWCF_conUsuarioXCedula_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="insUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/insUsuario" message="tns:IServiciosWCF_insUsuario_InputMessage" />
@@ -881,6 +891,15 @@
     </wsdl:operation>
     <wsdl:operation name="conUsuarioXId">
       <soap:operation soapAction="http://tempuri.org/IServiciosWCF/conUsuarioXId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="conUsuarioXCedula">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/conUsuarioXCedula" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

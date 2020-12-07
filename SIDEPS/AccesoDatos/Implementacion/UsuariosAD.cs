@@ -57,6 +57,20 @@ namespace AccesoDatos.Implementacion
             return lobjRespuesta;
         }
 
+        public SP_CONXID_REGUSRO_Result conUsuarioXCedula(string cedulaUsuario)
+        {
+            SP_CONXID_REGUSRO_Result lobjRespuesta = new SP_CONXID_REGUSRO_Result();
+            try
+            {
+                lobjRespuesta = gobjContextoSP.SP_CON_USROXCED(cedulaUsuario).Single();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return lobjRespuesta;
+        }
+
         public bool insUsuario(SIDEPS_07REGUSRO pobjUsuario)
         {
             bool lobjRespuesta = new bool();

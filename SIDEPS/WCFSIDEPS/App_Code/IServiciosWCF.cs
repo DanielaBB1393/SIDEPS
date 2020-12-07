@@ -6,7 +6,7 @@ using System.ServiceModel;
 public interface IServiciosWCF
 {
     [OperationContract]
-    List<SP_CON_HISTCASOS_Result> SP_Con_HistoricoCasos(string cedulaUsuario);
+    List<SP_CON_HISTCASOS_Result> SP_Con_HistoricoCasos(int diaconia);
 
     [OperationContract]
     DETPERS_Result SP_Con_DatosPersonales(int codigoCaso);
@@ -133,6 +133,9 @@ public interface IServiciosWCF
 
     [OperationContract]
     SP_CONXID_REGUSRO_Result conUsuarioXId(int pid);
+
+    [OperationContract]
+    SP_CONXID_REGUSRO_Result conUsuarioXCedula(string cedulaUsuario);
 
     [OperationContract]
     bool insUsuario(SIDEPS_07REGUSRO pobjUsuario);

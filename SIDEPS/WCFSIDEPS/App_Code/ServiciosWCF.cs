@@ -16,11 +16,11 @@ public class ServiciosWCF : IServiciosWCF
     private readonly IDiaconiaLN diaconiaLN = new DiaconiaLN();
     private readonly IUsuariosLN objUsuario = new UsuariosLN();
 
-    public List<SP_CON_HISTCASOS_Result> SP_Con_HistoricoCasos(string cedulaUsuario)
+    public List<SP_CON_HISTCASOS_Result> SP_Con_HistoricoCasos(int diaconia)
     {
         try
         {
-            return this.casosLN.SP_Con_HistoricoCasos(cedulaUsuario);
+            return this.casosLN.SP_Con_HistoricoCasos(diaconia);
         }
         catch
         {
@@ -470,6 +470,20 @@ public class ServiciosWCF : IServiciosWCF
         try
         {
             lstRespuesta = objUsuario.conUsuarioXId(pid);
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        return lstRespuesta;
+    }
+
+    public SP_CONXID_REGUSRO_Result conUsuarioXCedula(string cedula)
+    {
+        SP_CONXID_REGUSRO_Result lstRespuesta = new SP_CONXID_REGUSRO_Result();
+        try
+        {
+            lstRespuesta = objUsuario.conUsuarioXCedula(cedula);
         }
         catch (Exception ex)
         {

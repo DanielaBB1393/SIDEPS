@@ -56,6 +56,21 @@ namespace LogicaNegocios.Implementacion
             return lstRespuesta;
         }
 
+        public SP_CONXID_REGUSRO_Result conUsuarioXCedula(string cedula)
+
+        {
+            SP_CONXID_REGUSRO_Result lstRespuesta = new SP_CONXID_REGUSRO_Result();
+            try
+            {
+                lstRespuesta = objUsuarioAD.conUsuarioXCedula(cedula);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return lstRespuesta;
+        }
+
         public bool insUsuario(SIDEPS_07REGUSRO pobjUsuario)
         {
             bool objRespuesta = new bool();

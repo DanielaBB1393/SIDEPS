@@ -88,11 +88,11 @@ namespace AccesoDatos.Implementacion
             }
         }
 
-        public List<SP_CON_HISTCASOS_Result> SP_Con_HistoricoCasos(string cedulaUsuario)
+        public List<SP_CON_HISTCASOS_Result> SP_Con_HistoricoCasos(int diaconia)
         {
             try
             {
-                return this.contexto.SP_CON_HISTCASOS(cedulaUsuario).ToList();
+                return this.contexto.SP_CON_HISTCASOS(diaconia).ToList();
             }
             catch (Exception ex)
             {

@@ -9,7 +9,7 @@ namespace AccesoDatos.Interfaces
 
         bool SP_Mod_Caso(SIDEPS_25REGCASO caso);
 
-        List<SP_CON_HISTCASOS_Result> SP_Con_HistoricoCasos(string cedulaUsuario);
+        List<SP_CON_HISTCASOS_Result> SP_Con_HistoricoCasos(int diaconia);
 
         DETPERS_Result SP_Con_DatosPersonales(int codigoCaso);
 

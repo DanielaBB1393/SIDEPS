@@ -330,7 +330,7 @@ namespace SIDEPS.Controllers
         //---------------
         // Mantenimientos
         //---------------
-        public ActionResult HistoricoDeCasos()
+        public ActionResult HistoricoDeCasos(int? diaconiaSeleccionada)
         {
             string cedulaUsuario = TempData[_CEDULAUSUARIO].ToString();
             TempData.Keep();
@@ -339,7 +339,16 @@ namespace SIDEPS.Controllers
 
             using (var svc = new ServiciosWCFClient())
             {
-                var resultado = svc.SP_Con_HistoricoCasos(cedulaUsuario);
+                if(diaconiaSeleccionada == null)
+                {
+                    // diaconia a la que el usuario pertenece
+                    diaconiaSeleccionada = svc.conUsuarioXCedula(cedulaUsuario).CODDIAC04;
+                }
+
+                var diaconias = svc.conDiaconias().Select(diaconia => new Categoria { Codigo = diaconia.CODDIAC04, Descripcion = diaconia.NOMDIAC04 }).ToList();
+                ViewData["diaconias"] = diaconias;
+
+                var resultado = svc.SP_Con_HistoricoCasos(diaconiaSeleccionada.GetValueOrDefault());
                 foreach (var item in resultado)
                 {
                     var registro = new HistoricoCaso_M();
@@ -395,7 +404,9 @@ namespace SIDEPS.Controllers
 
             using (var svc = new ServiciosWCFClient())
             {
-                var resultado = svc.SP_Con_HistoricoCasos(cedulaUsuario).Where(caso => caso.ESTCASO25.Equals(Combos.CASO_PENDIENTE, StringComparison.OrdinalIgnoreCase));
+                int diaconia = svc.conUsuarioXCedula(cedulaUsuario).CODDIAC04.GetValueOrDefault();
+
+                var resultado = svc.SP_Con_HistoricoCasos(diaconia).Where(caso => caso.ESTCASO25.Equals(Combos.CASO_PENDIENTE, StringComparison.OrdinalIgnoreCase));
                 foreach (var item in resultado)
                 {
                     var registro = new HistoricoCaso_M();

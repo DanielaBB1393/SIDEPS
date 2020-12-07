@@ -7639,10 +7639,10 @@ namespace SIDEPS.ServiciosWCF {
     public interface IServiciosWCF {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_HistoricoCasos", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_HistoricoCasosResponse")]
-        System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_HISTCASOS_Result> SP_Con_HistoricoCasos(string cedulaUsuario);
+        System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_HISTCASOS_Result> SP_Con_HistoricoCasos(int diaconia);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_HistoricoCasos", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_HistoricoCasosResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_HISTCASOS_Result>> SP_Con_HistoricoCasosAsync(string cedulaUsuario);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_HISTCASOS_Result>> SP_Con_HistoricoCasosAsync(int diaconia);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Con_DatosPersonales", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Con_DatosPersonalesResponse")]
         SIDEPS.ServiciosWCF.DETPERS_Result SP_Con_DatosPersonales(int codigoCaso);
@@ -7896,6 +7896,12 @@ namespace SIDEPS.ServiciosWCF {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/conUsuarioXId", ReplyAction="http://tempuri.org/IServiciosWCF/conUsuarioXIdResponse")]
         System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.SP_CONXID_REGUSRO_Result> conUsuarioXIdAsync(int pid);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/conUsuarioXCedula", ReplyAction="http://tempuri.org/IServiciosWCF/conUsuarioXCedulaResponse")]
+        SIDEPS.ServiciosWCF.SP_CONXID_REGUSRO_Result conUsuarioXCedula(string cedulaUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/conUsuarioXCedula", ReplyAction="http://tempuri.org/IServiciosWCF/conUsuarioXCedulaResponse")]
+        System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.SP_CONXID_REGUSRO_Result> conUsuarioXCedulaAsync(string cedulaUsuario);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/insUsuario", ReplyAction="http://tempuri.org/IServiciosWCF/insUsuarioResponse")]
         bool insUsuario(SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO pobjUsuario);
         
@@ -7960,12 +7966,12 @@ namespace SIDEPS.ServiciosWCF {
                 base(binding, remoteAddress) {
         }
         
-        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_HISTCASOS_Result> SP_Con_HistoricoCasos(string cedulaUsuario) {
-            return base.Channel.SP_Con_HistoricoCasos(cedulaUsuario);
+        public System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_HISTCASOS_Result> SP_Con_HistoricoCasos(int diaconia) {
+            return base.Channel.SP_Con_HistoricoCasos(diaconia);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_HISTCASOS_Result>> SP_Con_HistoricoCasosAsync(string cedulaUsuario) {
-            return base.Channel.SP_Con_HistoricoCasosAsync(cedulaUsuario);
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SIDEPS.ServiciosWCF.SP_CON_HISTCASOS_Result>> SP_Con_HistoricoCasosAsync(int diaconia) {
+            return base.Channel.SP_Con_HistoricoCasosAsync(diaconia);
         }
         
         public SIDEPS.ServiciosWCF.DETPERS_Result SP_Con_DatosPersonales(int codigoCaso) {
@@ -8302,6 +8308,14 @@ namespace SIDEPS.ServiciosWCF {
         
         public System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.SP_CONXID_REGUSRO_Result> conUsuarioXIdAsync(int pid) {
             return base.Channel.conUsuarioXIdAsync(pid);
+        }
+        
+        public SIDEPS.ServiciosWCF.SP_CONXID_REGUSRO_Result conUsuarioXCedula(string cedulaUsuario) {
+            return base.Channel.conUsuarioXCedula(cedulaUsuario);
+        }
+        
+        public System.Threading.Tasks.Task<SIDEPS.ServiciosWCF.SP_CONXID_REGUSRO_Result> conUsuarioXCedulaAsync(string cedulaUsuario) {
+            return base.Channel.conUsuarioXCedulaAsync(cedulaUsuario);
         }
         
         public bool insUsuario(SIDEPS.ServiciosWCF.SIDEPS_07REGUSRO pobjUsuario) {

@@ -5,6 +5,31 @@
 }
 
 <h2>Historico de Casos</h2>
+<hr />
+
+@using (Html.BeginForm("HistoricoDeCasos", "Casos", FormMethod.Get))
+{
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Label("Diaconia", htmlAttributes: new { @class = "control-label col-md-4" })
+        </dt>
+
+        <dd>
+            @Html.DropDownList("diaconiaSeleccionada", new SelectList((ViewData["diaconias"] as List<SIDEPS.Models.Categoria>), "Codigo", "Descripcion"), new { @class = "form-control" })
+        </dd>
+    </dl>
+
+    <div class="form-group">
+        <div class="col-md-2 col-md-10">
+            <input type="submit" value="Refrescar" class="btn btn-default" />
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+}
 
 <table class="table">
     <tr>

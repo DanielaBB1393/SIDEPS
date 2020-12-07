@@ -70,11 +70,11 @@ namespace LogicaNegocios.Implementacion
             }
         }
 
-        public List<SP_CON_HISTCASOS_Result> SP_Con_HistoricoCasos(string cedulaUsuario)
+        public List<SP_CON_HISTCASOS_Result> SP_Con_HistoricoCasos(int diaconia)
         {
             try
             {
-                return this.accesoDatos.SP_Con_HistoricoCasos(cedulaUsuario);
+                return this.accesoDatos.SP_Con_HistoricoCasos(diaconia);
             }
             catch
             {
