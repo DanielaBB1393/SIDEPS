@@ -406,7 +406,7 @@ namespace SIDEPS.Controllers
             {
                 int diaconia = svc.conUsuarioXCedula(cedulaUsuario).CODDIAC04.GetValueOrDefault();
 
-                var resultado = svc.SP_Con_HistoricoCasos(diaconia).Where(caso => caso.ESTCASO25.Equals(Combos.CASO_PENDIENTE, StringComparison.OrdinalIgnoreCase));
+                var resultado = svc.SP_Con_HistoricoCasos(diaconia);
                 foreach (var item in resultado)
                 {
                     var registro = new HistoricoCaso_M();
@@ -427,6 +427,30 @@ namespace SIDEPS.Controllers
             }
 
             return View(modelo);
+        }
+
+        public ActionResult ModificarCaso(int id)
+        {
+            SP_CON_CASOXID_Result resultado;
+
+            using (var svc = new ServiciosWCFClient())
+            {
+                resultado = svc.ConCaso(id);
+            }
+
+            var caso = new Caso_M(resultado);
+            return View(caso);
+        }
+
+        [HttpPost]
+        public ActionResult ModificarCaso(Caso_M caso)
+        {
+            using (var svc = new ServiciosWCFClient())
+            {
+                svc.SP_Mod_Caso(caso.ConvertirEntidad());
+            }
+
+            return RedirectToAction("ValidarCaso");
         }
 
         public ActionResult ValidarCasoDetalles(int codigoCaso)

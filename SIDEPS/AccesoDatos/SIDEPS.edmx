@@ -2128,7 +2128,7 @@
           <Parameter Name="diaconia" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SP_CON_USROXCED" ReturnType="Collection(SIDEPS.SP_CONXID_REGUSRO_Result)">
-            <Parameter Name="CEDUSRO07" Mode="In" Type="String" />
+          <Parameter Name="CEDUSRO07" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="SP_CON_CATAYUD_Result">

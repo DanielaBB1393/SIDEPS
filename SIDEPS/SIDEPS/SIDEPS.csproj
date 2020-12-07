@@ -344,6 +344,7 @@
     <Content Include="Views\Casos\RechazarCaso.cshtml" />
     <Content Include="Views\Casos\ValidarCasoDetalles.cshtml" />
     <Content Include="Views\Diaconia\DetallesHistorico.cshtml" />
+    <Content Include="Views\Casos\ModificarCaso.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

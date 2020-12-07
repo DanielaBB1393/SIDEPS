@@ -29,6 +29,14 @@ namespace SIDEPS.Models
             CASO_RECHAZADO
         };
 
+        public static List<string> EstadosCaso = new List<string>
+        {
+            "INCOMPLETO",
+            "PENDIENTE",
+            "APROBADO",
+            "RECHAZADO",
+        };
+
         public static string CASO_INCOMPLETO = "INCOMPLETO";
         public static string CASO_PENDIENTE = "PENDIENTE";
         public static string CASO_APROBADO = "APROBADO";

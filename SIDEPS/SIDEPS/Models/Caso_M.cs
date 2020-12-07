@@ -89,7 +89,7 @@ namespace SIDEPS.Models
                 CEDUSRO07 = this.CEDUSRO07,
                 CODVIVI20 = this.CODVIVI20,
                 CODEGRF24 = this.CODEGRF24,
-                //FEICASO25 = this.FEICASO25,
+                FEICASO25 = this.FEICASO25,
                 FEFCASO25 = this.FEFCASO25,
                 DESCASO25 = this.DESCASO25,
                 OPICASO25 = this.OPICASO25,
