@@ -10,10 +10,10 @@
     <h1><center> Menú Principal</h1>
     <br><br><br><br>
                 <center>
-                    <a href="" class="boton_1">Casos</a>
+                    @Html.ActionLink("Casos", "MenuCasos", "Casos", null, new { @class = "boton_1" })
                     <br><br><br><br>
                     <center>
-                        <a href="" class="boton_1">Salir de la Aplicación</a>
+                        @Html.ActionLink("Salir de la Aplicación", "Salir", "Home", null, new { @class = "boton_1" })
 
                         <style type="text/css">
                             .boton_1 {

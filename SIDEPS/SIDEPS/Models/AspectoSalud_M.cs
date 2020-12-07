@@ -2,26 +2,33 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace SIDEPS.Models
 {
     public class AspectoSalud_M
     {
+      
+        [Required(ErrorMessage = "El Nombre es Requerido.")]
         [DisplayName("Código Aspecto")]
         public int CODASPS16 { get; set; }
         [DisplayName("Cédula")]
+        [Required(ErrorMessage = "La Cédula es Requerida.")]
         public string CEDPERS13 { get; set; }
         [DisplayName("Tipo Seguro")]
+        [Required(ErrorMessage = "Tipo Seguro Requerido.")]
         public Nullable<int> CODSEGU14 { get; set; }
         [DisplayName("Sufre alguna enfermedad")]
         public Nullable<int> CODENFR15 { get; set; }
         [DisplayName("Descripción enfermedad")]
         public string DESENFR16 { get; set; }
         [DisplayName("Recibe algún tratamiento")]
+        [Required(ErrorMessage = "Recibe algún tratamiento Requerido.")]
         public string RECTRAT16 { get; set; }
         [DisplayName("Descripción tratamiento")]
         public string DESTRAT16 { get; set; }
         [DisplayName("Enfermedad")]
+
         public string DESENFR15 { get; set; }
         [DisplayName("Seguro")]
         public string DESSEGU14 { get; set; }

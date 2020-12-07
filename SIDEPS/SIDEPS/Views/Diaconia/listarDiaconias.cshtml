@@ -32,32 +32,55 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CODDIAC04)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NOMDIAC04)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LUGDIAC04)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TELDIAC04)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ESTDIAC04)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => (ViewData["cantones"] as Dictionary<int, string>)[item.CODCANT03.GetValueOrDefault()])
-        </td>
-        <td>
-            @Html.ActionLink("Modificar", "ModificarDiaconias", new {  id=item.CODDIAC04}) |
-            @Html.ActionLink("Detalle", "DetalleDiaconias", new { id = item.CODDIAC04 }) 
-           
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CODDIAC04)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOMDIAC04)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LUGDIAC04)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TELDIAC04)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ESTDIAC04)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => (ViewData["cantones"] as Dictionary<int, string>)[item.CODCANT03.GetValueOrDefault()])
+            </td>
+            <td>
+                @Html.ActionLink("Modificar", "ModificarDiaconias", new { id = item.CODDIAC04 }) |
+                @Html.ActionLink("Detalle", "DetalleDiaconias", new { id = item.CODDIAC04 })
+
+            </td>
+        </tr>
+    }
 
 </table>
+
+@Html.ActionLink("Volver", "MenuParroquial", "AdminParroquial", null, new { @class = "boton_1" })
+<style type="text/css">
+    .boton_1 {
+        text-decoration: none;
+        padding: 3px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-family: helvetica;
+        font-weight: 300;
+        font-size: 25px;
+        font-style: italic;
+        color: #FFFFFF;
+        background-color: #39B411;
+        border-radius: 15px;
+        border: 3px double #006505;
+    }
+
+        .boton_1:hover {
+            opacity: 0.6;
+            text-decoration: none;
+        }

@@ -56,55 +56,79 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CEDUSRO07)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NOMUSRO07)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PAPUSRO07)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SAPUSRO07)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => (ViewData["cantones"] as Dictionary<int, string>)[item.CODCANT03.GetValueOrDefault()])
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => (ViewData["diaconias"] as Dictionary<int, string>)[item.CODDIAC04.GetValueOrDefault()])
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => (ViewData["roles"] as Dictionary<int, string>)[item.CODUSRO05.GetValueOrDefault()])
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ESTUSRO07)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DIRUSRO07)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NACUSRO07)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CNTUSRO07)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FEIUSRO07)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FEFUSRO07)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FENUSRO07)
-        </td>
-        <td>
-            @Html.ActionLink("Modificar", "ModificarUsuario", new {  id=item.CEDUSRO07 }) |
-            @Html.ActionLink("Detalle", "DetalleUsuario", new {  id=item.CEDUSRO07 }) 
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CEDUSRO07)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOMUSRO07)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PAPUSRO07)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SAPUSRO07)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => (ViewData["cantones"] as Dictionary<int, string>)[item.CODCANT03.GetValueOrDefault()])
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => (ViewData["diaconias"] as Dictionary<int, string>)[item.CODDIAC04.GetValueOrDefault()])
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => (ViewData["roles"] as Dictionary<int, string>)[item.CODUSRO05.GetValueOrDefault()])
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ESTUSRO07)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DIRUSRO07)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NACUSRO07)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CNTUSRO07)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FEIUSRO07)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FEFUSRO07)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FENUSRO07)
+            </td>
+            <td>
+                @Html.ActionLink("Modificar", "ModificarUsuario", new { id = item.CEDUSRO07 }) |
+                @Html.ActionLink("Detalle", "DetalleUsuario", new { id = item.CEDUSRO07 })
+            </td>
+        </tr>
+    }
 
 </table>
+
+@Html.ActionLink("Volver", "MenuParroquial", "AdminParroquial", null, new { @class = "boton_1" })
+<style type="text/css">
+    .boton_1 {
+        text-decoration: none;
+        padding: 3px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-family: helvetica;
+        font-weight: 300;
+        font-size: 25px;
+        font-style: italic;
+        color: #FFFFFF;
+        background-color: #39B411;
+        border-radius: 15px;
+        border: 3px double #006505;
+    }
+
+        .boton_1:hover {
+            opacity: 0.6;
+            text-decoration: none;
+        }
+</style>

@@ -2,12 +2,15 @@
 using SIDEPS.ServiciosWCF;
 using System;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace SIDEPS.Models
 {
     public class Caso_M
     {
         [DisplayName("Código caso")]
+
+
         public int CODCASO25 { get; set; }
         [DisplayName("Cédula persona")]
         public string CEDPERS13 { get; set; }
@@ -21,10 +24,15 @@ namespace SIDEPS.Models
         public Nullable<int> CODEGRF24 { get; set; }
         //public Nullable<DateTime> FEICASO25 { get; set; }
         [DisplayName("Fecha finalización")]
+
         public Nullable<DateTime> FEFCASO25 { get; set; }
+
         [DisplayName("Motivo solicitud")]
+        [Required(ErrorMessage = "El Motivo solicitud es Requerido.")]
+   
         public string DESCASO25 { get; set; }
         [DisplayName("Observaciones")]
+        [Required(ErrorMessage = "Observaciones Requeridas.")]
         public string OPICASO25 { get; set; }
         [DisplayName("Motivo de la desición")]
         public string ESTDESC25 { get; set; }
