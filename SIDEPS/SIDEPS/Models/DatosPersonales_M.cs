@@ -2,11 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace SIDEPS.Models
 {
     public class DatosPersonales_M
     {
+
+        [Required(ErrorMessage = "La cedula es Requerida.")]
         [DisplayName("Cédula")]
         public string CEDPERS13 { get; set; }
 
@@ -25,17 +28,24 @@ namespace SIDEPS.Models
         [DisplayName("Religión")]
         public Nullable<int> CODRELG11 { get; set; }
 
+        [Required(ErrorMessage = "El Nombre es Requerido.")]
+
         [DisplayName("Nombre")]
         public string NOMPERS13 { get; set; }
 
+        [Required(ErrorMessage = "El Primer Apellido es Requerido.")]
+
         [DisplayName("Primer Apellido")]
         public string PAPPERS13 { get; set; }
+        [Required(ErrorMessage = "El Segundo Apellido es Requerido.")]
 
         [DisplayName("Segundo Apellido")]
         public string SAPPERS13 { get; set; }
+        [Required(ErrorMessage = "La nacionalidad es Requerida.")]
 
         [DisplayName("Nacionalidad")]
         public string NACPERS13 { get; set; }
+        [Required(ErrorMessage = "La Direccion es Requerida.")]
 
         [DisplayName("Dirección")]
         public string DIRPERS13 { get; set; }
