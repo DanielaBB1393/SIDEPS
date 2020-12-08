@@ -605,7 +605,7 @@ namespace AccesoDatos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_MOD_REGDIAC", cODDIAC04Parameter, nOMDIAC04Parameter, lUGDIAC04Parameter, tELDIAC04Parameter, eSTDIAC04Parameter, cODCANT03Parameter);
         }
     
-        public virtual int SP_MOD_REGUSRO(string cEDUSRO07, string nOMUSRO07, string pAPUSRO07, string sAPUSRO07, Nullable<int> cODCANT03, Nullable<int> cODDIAC04, Nullable<int> cODUSRO05, string eSTUSRO07, string dIRUSRO07, string nACUSRO07, string cNTUSRO07, Nullable<System.DateTime> fENUSRO07)
+        public virtual int SP_MOD_REGUSRO(string cEDUSRO07, string nOMUSRO07, string pAPUSRO07, string sAPUSRO07, Nullable<int> cODCANT03, Nullable<int> cODDIAC04, Nullable<int> cODUSRO05, string eSTUSRO07, string dIRUSRO07, string nACUSRO07, string cNTUSRO07, Nullable<System.DateTime> FEIUSRO07, Nullable<System.DateTime> FEFUSRO07, Nullable<System.DateTime> fENUSRO07)
         {
             var cEDUSRO07Parameter = cEDUSRO07 != null ?
                 new ObjectParameter("CEDUSRO07", cEDUSRO07) :
@@ -650,12 +650,21 @@ namespace AccesoDatos
             var cNTUSRO07Parameter = cNTUSRO07 != null ?
                 new ObjectParameter("CNTUSRO07", cNTUSRO07) :
                 new ObjectParameter("CNTUSRO07", typeof(string));
-    
+
+            var FEIUSRO07Parameter = FEIUSRO07.HasValue ?
+              new ObjectParameter("FEIUSRO07", FEIUSRO07) :
+              new ObjectParameter("FENUSRO07", typeof(System.DateTime));
+
+            var FEFUSRO07Parameter = FEFUSRO07.HasValue ?
+                new ObjectParameter("FEFUSRO07", FEFUSRO07) :
+                new ObjectParameter("FENUSRO07", typeof(System.DateTime));
+
             var fENUSRO07Parameter = fENUSRO07.HasValue ?
                 new ObjectParameter("FENUSRO07", fENUSRO07) :
                 new ObjectParameter("FENUSRO07", typeof(System.DateTime));
+          
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_MOD_REGUSRO", cEDUSRO07Parameter, nOMUSRO07Parameter, pAPUSRO07Parameter, sAPUSRO07Parameter, cODCANT03Parameter, cODDIAC04Parameter, cODUSRO05Parameter, eSTUSRO07Parameter, dIRUSRO07Parameter, nACUSRO07Parameter, cNTUSRO07Parameter, fENUSRO07Parameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_MOD_REGUSRO", cEDUSRO07Parameter, nOMUSRO07Parameter, pAPUSRO07Parameter, sAPUSRO07Parameter, cODCANT03Parameter, cODDIAC04Parameter, cODUSRO05Parameter, eSTUSRO07Parameter, dIRUSRO07Parameter, nACUSRO07Parameter, cNTUSRO07Parameter,FEIUSRO07Parameter,FEFUSRO07Parameter, fENUSRO07Parameter);
         }
     
         public virtual ObjectResult<DETASPS_Result> DETASPS(Nullable<int> cODCASO25)

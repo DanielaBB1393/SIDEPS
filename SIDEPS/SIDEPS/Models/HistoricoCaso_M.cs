@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace SIDEPS.Models
 {
@@ -17,9 +18,15 @@ namespace SIDEPS.Models
         [DisplayName("Apellido")]
         public string PAPPERS13 { get; set; }
 
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+
         [DisplayName("Inicio")]
         public Nullable<DateTime> FEICASO25 { get; set; }
 
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [DisplayName("Fin")]
         public Nullable<DateTime> FEFCASO25 { get; set; }
 

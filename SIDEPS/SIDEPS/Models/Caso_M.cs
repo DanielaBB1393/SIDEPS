@@ -24,10 +24,12 @@ namespace SIDEPS.Models
 
         [DisplayName("Egresos")]
         public Nullable<int> CODEGRF24 { get; set; }
-
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [DisplayName("Fecha inicio")]
         public Nullable<DateTime> FEICASO25 { get; set; }
-
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [DisplayName("Fecha finalización")]
         public Nullable<DateTime> FEFCASO25 { get; set; }
 

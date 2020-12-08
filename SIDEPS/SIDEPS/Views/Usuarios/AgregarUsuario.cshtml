@@ -70,13 +70,7 @@
         </div>
     </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.ESTUSRO07, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownListFor(model => model.ESTUSRO07, new SelectList(SIDEPS.Models.Combos.ActivoInactivo), new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.ESTUSRO07, "", new { @class = "text-danger" })
-        </div>
-    </div>
+  
 
     <div class="form-group">
         @Html.LabelFor(model => model.DIRUSRO07, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -102,21 +96,6 @@
         </div>
     </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.FEIUSRO07, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.FEIUSRO07, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.FEIUSRO07, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.FEFUSRO07, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.FEFUSRO07, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.FEFUSRO07, "", new { @class = "text-danger" })
-        </div>
-    </div>
 
     <div class="form-group">
         @Html.LabelFor(model => model.FENUSRO07, htmlAttributes: new { @class = "control-label col-md-2" })

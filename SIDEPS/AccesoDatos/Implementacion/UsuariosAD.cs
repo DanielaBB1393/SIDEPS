@@ -104,7 +104,7 @@ namespace AccesoDatos.Implementacion
                 intVal = gobjContextoSP.SP_MOD_REGUSRO(pobjUsuario.CEDUSRO07, pobjUsuario.NOMUSRO07,
                     pobjUsuario.PAPUSRO07, pobjUsuario.SAPUSRO07, pobjUsuario.CODCANT03, pobjUsuario.CODDIAC04,
                     pobjUsuario.CODUSRO05, pobjUsuario.ESTUSRO07, pobjUsuario.DIRUSRO07, pobjUsuario.NACUSRO07,
-                    pobjUsuario.CNTUSRO07, pobjUsuario.FEFUSRO07);
+                    pobjUsuario.CNTUSRO07, pobjUsuario.FEIUSRO07,pobjUsuario.FEFUSRO07,pobjUsuario.FENUSRO07);
                 if (intVal == 1)
                 {
                     lobjRespuesta = true;

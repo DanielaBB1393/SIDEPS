@@ -63,7 +63,7 @@ namespace SIDEPS.Controllers
                 else
                 {
                     //Agrega mensaje de error en cedula
-                    ModelState.AddModelError("CEDUSRO07", "Usuario no registrado");
+                    ModelState.AddModelError("CEDUSRO07", "Datos Incorrectos");
                 }
             }
             return View(credenciales);
