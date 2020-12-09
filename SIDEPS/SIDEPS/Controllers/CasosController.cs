@@ -533,7 +533,7 @@ namespace SIDEPS.Controllers
                 svc.SP_Mod_Caso(caso.ConvertirEntidad());
             }
 
-            return RedirectToAction("ValidarCaso");
+            return RedirectToAction("MenuCasos");
         }
 
         public ActionResult ValidarCasoDetalles(int codigoCaso)

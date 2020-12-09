@@ -320,9 +320,6 @@
     <Content Include="Views\Usuarios\DetalleUsuario.cshtml" />
     <Content Include="Views\Usuarios\ListarUsuarios.cshtml" />
     <Content Include="Views\Usuarios\ModificarUsuario.cshtml" />
-    <Content Include="Views\Home\MenuAdministradorDiaconia.cshtml" />
-    <Content Include="Views\Home\MenuColaboradorDiaconia.cshtml" />
-    <Content Include="Views\Home\MenuAdministradorParroquial.cshtml" />
     <Content Include="Views\Casos\GrupoFamiliar.cshtml" />
     <Content Include="Views\Casos\AgregarFamiliar.cshtml" />
     <Content Include="Views\Casos\DetallesFamiliar.cshtml" />
@@ -335,7 +332,6 @@
     <Content Include="Views\AdminDiaconal\AdminDiaconal.cshtml" />
     <Content Include="Views\Casos\MenuCasos.cshtml" />
     <Content Include="Views\AdminParroquial\MenuMantenimiento.cshtml" />
-    <Content Include="Views\AdminParroquial\MenuHistorial.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Diaconia\HistoricoPorDiaconia.cshtml" />
     <Content Include="Views\Casos\ValidarCaso.cshtml" />

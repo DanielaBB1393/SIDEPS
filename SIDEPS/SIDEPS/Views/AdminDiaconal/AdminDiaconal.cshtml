@@ -8,41 +8,42 @@
     <br>
     <h1><center> Menú Principal</h1>
     <br><br><br><br>
-    <center>
-        <a href="" class="boton_1">Mantenimientos</a>
-        <br>
-        <br><br>
-            <center>
-                @Html.ActionLink("Casos", "MenuCasos", "Casos", null, new { @class = "boton_1" })
-                <br><br>
-                <br>
                 <center>
-                    <a href="" class="boton_1">Históricos</a>
-                    <br><br>
+                    @Html.ActionLink("Mantanimientos", "listarUsuarios", "Usuarios", null, new { @class = "boton_1" })
                     <br>
+                    <br><br>
                     <center>
-                        @Html.ActionLink("Salir de la Aplicación", "Salir", "Home", null, new { @class = "boton_1" })
-                        <style type="text/css">
-                            .boton_1 {
-                                text-decoration: none;
-                                padding: 3px;
-                                padding-left: 10px;
-                                padding-right: 10px;
-                                font-family: helvetica;
-                                font-weight: 300;
-                                font-size: 25px;
-                                font-style: italic;
-                                color: #FFFFFF;
-                                background-color: #39B411;
-                                border-radius: 15px;
-                                border: 3px double #006505;
-                            }
+                        @Html.ActionLink("Casos", "MenuCasos", "Casos", null, new { @class = "boton_1" })
+                        <br><br>
+                        <br>
+                        <center>
+                            @Html.ActionLink("Históricos", "HistoricoPorDiaconia", "Diaconia", null, new { @class = "boton_1" })
+                         
+                            <br><br>
+                            <br>
+                            <center>
+                                @Html.ActionLink("Salir de la Aplicación", "Salir", "Home", null, new { @class = "boton_1" })
+                                <style type="text/css">
+                                    .boton_1 {
+                                        text-decoration: none;
+                                        padding: 3px;
+                                        padding-left: 10px;
+                                        padding-right: 10px;
+                                        font-family: helvetica;
+                                        font-weight: 300;
+                                        font-size: 25px;
+                                        font-style: italic;
+                                        color: #FFFFFF;
+                                        background-color: #39B411;
+                                        border-radius: 15px;
+                                        border: 3px double #006505;
+                                    }
 
-                                .boton_1:hover {
-                                    opacity: 0.6;
-                                    text-decoration: none;
-                                }
-                        </style>
+                                        .boton_1:hover {
+                                            opacity: 0.6;
+                                            text-decoration: none;
+                                        }
+                                </style>
 </body>
 </html>
 

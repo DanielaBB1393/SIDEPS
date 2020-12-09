@@ -58,19 +58,19 @@ namespace SIDEPS.Models
 
         [DataType(DataType.Date)]
   
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Fecha de Ingreso")]
         public Nullable<System.DateTime> FEIUSRO07 { get; set; }
 
         [DataType(DataType.Date)]
      
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Fecha de Salida")]
         public Nullable<System.DateTime> FEFUSRO07 { get; set; }
 
         [DataType(DataType.Date)]
 
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}",ApplyFormatInEditMode =true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode =true)]
         [Display(Name = "Fecha de Nacimiento")]
         public Nullable<System.DateTime> FENUSRO07 { get; set; }
 
