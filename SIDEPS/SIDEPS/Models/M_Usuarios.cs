@@ -57,19 +57,19 @@ namespace SIDEPS.Models
         public string CNTUSRO07 { get; set; }
 
         [DataType(DataType.Date)]
-        [Required(ErrorMessage = "Fecha de Inicio del Usuario Requerido.")]
+  
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Fecha de Ingreso")]
         public Nullable<System.DateTime> FEIUSRO07 { get; set; }
 
         [DataType(DataType.Date)]
-        [Required(ErrorMessage = "Fecha de Salida del Usuario Requerido.")]
+     
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Fecha de Salida")]
         public Nullable<System.DateTime> FEFUSRO07 { get; set; }
 
         [DataType(DataType.Date)]
-        [Required(ErrorMessage = "Fecha de Nacimiento del Usuario Requerido.")]
+
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}",ApplyFormatInEditMode =true)]
         [Display(Name = "Fecha de Nacimiento")]
         public Nullable<System.DateTime> FENUSRO07 { get; set; }

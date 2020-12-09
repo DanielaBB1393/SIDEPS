@@ -320,7 +320,6 @@
     <Content Include="Views\Usuarios\DetalleUsuario.cshtml" />
     <Content Include="Views\Usuarios\ListarUsuarios.cshtml" />
     <Content Include="Views\Usuarios\ModificarUsuario.cshtml" />
-    <Content Include="Views\Home\Loginn.cshtml" />
     <Content Include="Views\Home\MenuAdministradorDiaconia.cshtml" />
     <Content Include="Views\Home\MenuColaboradorDiaconia.cshtml" />
     <Content Include="Views\Home\MenuAdministradorParroquial.cshtml" />
@@ -345,6 +344,8 @@
     <Content Include="Views\Casos\ValidarCasoDetalles.cshtml" />
     <Content Include="Views\Diaconia\DetallesHistorico.cshtml" />
     <Content Include="Views\Casos\ModificarCaso.cshtml" />
+    <Content Include="Views\Casos\ValidarCasoMantenimiento.cshtml" />
+    <Content Include="Views\Casos\ValidarCasoAprobados.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

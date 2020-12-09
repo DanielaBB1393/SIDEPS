@@ -10,8 +10,6 @@ namespace SIDEPS.Controllers
 {
     public class HomeController : Controller
     {
-
-        private const string _CEDULAUSUARIO = "cedulaUsuario";
         public ActionResult Index()
         {
             return View();
@@ -44,16 +42,20 @@ namespace SIDEPS.Controllers
                 string resultado = svc.Login(credenciales.CEDUSRO07, credenciales.CNTUSRO07);
                 if (resultado != null)
                 {
-                    TempData[_CEDULAUSUARIO] = credenciales.CEDUSRO07;
+                    TempData[Combos._CEDULAUSUARIO] = credenciales.CEDUSRO07;
+                    TempData[Combos._TIPOUSUARIO] = resultado;
 
                     switch (resultado)
                     {
-                        case "ADMIN PARROQUIAL":
+                        case Combos.ADMIN_PARROQUIAL:
                             return RedirectToAction("MenuParroquial", "AdminParroquial");
-                        case "ADMIN DIACONAL":
+
+                        case Combos.ADMIN_DIACONAL:
                             return RedirectToAction("AdminDiaconal", "AdminDiaconal");
-                        case "COLABORADOR":
+
+                        case Combos.COLABORADOR:
                             return RedirectToAction("MenuColaborador", "MenuColaborador");
+
                         default:
                             //Agrega mensaje de error en cedula
                             ModelState.AddModelError("CEDUSRO07", "Ocurrió un error con el tipo de usuario");
@@ -86,7 +88,6 @@ namespace SIDEPS.Controllers
 
         public ActionResult Salir()
         {
-
             TempData.Clear();
 
             return RedirectToAction("Login");

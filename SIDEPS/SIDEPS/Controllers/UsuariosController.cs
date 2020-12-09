@@ -52,13 +52,34 @@ namespace SIDEPS.Controllers
 
         public ActionResult AgregarUsuario()
         {
+            string tipoUsuario = TempData[Combos._TIPOUSUARIO].ToString();
             M_Usuarios modelo = new M_Usuarios();
 
             using (ServiciosWCFClient svc = new ServiciosWCFClient())
             {
                 modelo.Cantones = svc.SP_Con_Cantones().Select(r => new Categoria { Codigo = r.CODCANT03, Descripcion = r.NOMCANT03 }).ToList();
                 modelo.Diaconias = svc.conDiaconias().Select(r => new Categoria { Codigo = r.CODDIAC04, Descripcion = r.NOMDIAC04 }).ToList();
-                modelo.Roles = svc.SP_Con_TipoUsuario().Select(r => new Categoria { Codigo = r.CODUSRO05, Descripcion = r.DESUSRO05 }).ToList();
+
+                // defino cuales codigos de roles puede agregar un usuario
+                List<int> codigosRoles;
+
+                switch (tipoUsuario)
+                {
+                    case Combos.ADMIN_PARROQUIAL:
+                        codigosRoles = new List<int> { 1, 2, 3 };
+                        break;
+                    case Combos.ADMIN_DIACONAL:
+                        codigosRoles = new List<int> { 3 };
+                        break;
+                    case Combos.COLABORADOR:
+                    default:
+                        codigosRoles = new List<int>();
+                        break;
+                }
+
+                modelo.Roles = svc.SP_Con_TipoUsuario()
+                .Where(r => codigosRoles.Contains(r.CODUSRO05))    
+                .Select(r => new Categoria { Codigo = r.CODUSRO05, Descripcion = r.DESUSRO05 }).ToList();
             }
             return View(modelo);
         }

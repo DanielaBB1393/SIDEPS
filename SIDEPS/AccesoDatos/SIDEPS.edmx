@@ -249,8 +249,8 @@
           <Property Name="CEDUSRO07" Type="varchar" MaxLength="20" />
           <Property Name="CODVIVI20" Type="int" />
           <Property Name="CODEGRF24" Type="int" />
-          <Property Name="FEICASO25" Type="datetime" />
-          <Property Name="FEFCASO25" Type="datetime" />
+          <Property Name="FEICASO25" Type="date" />
+          <Property Name="FEFCASO25" Type="date" />
           <Property Name="DESCASO25" Type="varchar" MaxLength="200" />
           <Property Name="OPICASO25" Type="varchar" MaxLength="200" />
           <Property Name="ESTCASO25" Type="varchar" MaxLength="20" />
@@ -865,6 +865,8 @@
           <Parameter Name="DIRUSRO07" Type="varchar" Mode="In" />
           <Parameter Name="NACUSRO07" Type="varchar" Mode="In" />
           <Parameter Name="CNTUSRO07" Type="varchar" Mode="In" />
+          <Parameter Name="FEIUSRO07" Type="datetime" Mode="In" />
+          <Parameter Name="FEFUSRO07" Type="datetime" Mode="In" />
           <Parameter Name="FENUSRO07" Type="datetime" Mode="In" />
         </Function>
         <EntityContainer Name="SIDEPSStoreContainer">
@@ -1333,8 +1335,8 @@
           <Property Name="CEDUSRO07" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="CODVIVI20" Type="Int32" />
           <Property Name="CODEGRF24" Type="Int32" />
-          <Property Name="FEICASO25" Type="DateTime" Precision="3" />
-          <Property Name="FEFCASO25" Type="DateTime" Precision="3" />
+          <Property Name="FEICASO25" Type="DateTime" Precision="0" />
+          <Property Name="FEFCASO25" Type="DateTime" Precision="0" />
           <Property Name="DESCASO25" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="OPICASO25" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="ESTCASO25" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
@@ -2098,6 +2100,8 @@
             <Parameter Name="DIRUSRO07" Mode="In" Type="String" />
             <Parameter Name="NACUSRO07" Mode="In" Type="String" />
             <Parameter Name="CNTUSRO07" Mode="In" Type="String" />
+            <Parameter Name="FEIUSRO07" Mode="In" Type="DateTime" />
+            <Parameter Name="FEFUSRO07" Mode="In" Type="DateTime" />
             <Parameter Name="FENUSRO07" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="DETASPS" ReturnType="Collection(SIDEPS.DETASPS_Result)">
@@ -2121,14 +2125,14 @@
           <FunctionImport Name="SP_CON_CATCASOAY" ReturnType="Collection(SIDEPS.SP_CON_CATCASOAY_Result)">
           <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="SP_CON_CASOXID" ReturnType="Collection(SIDEPS.SP_CON_CASOXID_Result)">
-          <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
-          </FunctionImport>
           <FunctionImport Name="SP_CON_HISTCASOS" ReturnType="Collection(SIDEPS.SP_CON_HISTCASOS_Result)">
           <Parameter Name="diaconia" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SP_CON_USROXCED" ReturnType="Collection(SIDEPS.SP_CONXID_REGUSRO_Result)">
           <Parameter Name="CEDUSRO07" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CON_CASOXID" ReturnType="Collection(SIDEPS.SP_CON_CASOXID_Result)">
+            <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="SP_CON_CATAYUD_Result">
@@ -2342,19 +2346,6 @@
           <Property Type="Int32" Name="CODAYUD26" Nullable="false" />
           <Property Type="String" Name="DESAYUD26" Nullable="true" MaxLength="50" />
         </ComplexType>
-        <ComplexType Name="SP_CON_CASOXID_Result">
-          <Property Type="Int32" Name="CODCASO25" Nullable="false" />
-          <Property Type="String" Name="CEDPERS13" Nullable="true" MaxLength="20" />
-          <Property Type="Int32" Name="CODASPS16" Nullable="true" />
-          <Property Type="String" Name="CEDUSRO07" Nullable="true" MaxLength="20" />
-          <Property Type="Int32" Name="CODVIVI20" Nullable="true" />
-          <Property Type="Int32" Name="CODEGRF24" Nullable="true" />
-          <Property Type="DateTime" Name="FEICASO25" Nullable="true" Precision="23" />
-          <Property Type="DateTime" Name="FEFCASO25" Nullable="true" Precision="23" />
-          <Property Type="String" Name="DESCASO25" Nullable="true" MaxLength="200" />
-          <Property Type="String" Name="OPICASO25" Nullable="true" MaxLength="200" />
-          <Property Type="String" Name="ESTCASO25" Nullable="true" MaxLength="20" />
-        </ComplexType>
         <ComplexType Name="SP_CON_HISTCASOS_Result">
           <Property Type="String" Name="CEDPERS13" Nullable="true" MaxLength="20" />
           <Property Type="String" Name="CEDUSRO07" Nullable="true" MaxLength="20" />
@@ -2368,6 +2359,19 @@
           <Property Type="String" Name="PAPUSRO07" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="NOMPERS13" Nullable="true" MaxLength="20" />
           <Property Type="String" Name="PAPPERS13" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="SP_CON_CASOXID_Result">
+          <Property Type="Int32" Name="CODCASO25" Nullable="false" />
+          <Property Type="String" Name="CEDPERS13" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="CODASPS16" Nullable="true" />
+          <Property Type="String" Name="CEDUSRO07" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="CODVIVI20" Nullable="true" />
+          <Property Type="Int32" Name="CODEGRF24" Nullable="true" />
+          <Property Type="DateTime" Name="FEICASO25" Nullable="true" />
+          <Property Type="DateTime" Name="FEFCASO25" Nullable="true" />
+          <Property Type="String" Name="DESCASO25" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="OPICASO25" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ESTCASO25" Nullable="true" MaxLength="20" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -3028,23 +3032,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SP_CON_CASOXID" FunctionName="SIDEPS.Store.SP_CON_CASOXID">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="SIDEPS.SP_CON_CASOXID_Result">
-                <ScalarProperty Name="CODCASO25" ColumnName="CODCASO25" />
-                <ScalarProperty Name="CEDPERS13" ColumnName="CEDPERS13" />
-                <ScalarProperty Name="CODASPS16" ColumnName="CODASPS16" />
-                <ScalarProperty Name="CEDUSRO07" ColumnName="CEDUSRO07" />
-                <ScalarProperty Name="CODVIVI20" ColumnName="CODVIVI20" />
-                <ScalarProperty Name="CODEGRF24" ColumnName="CODEGRF24" />
-                <ScalarProperty Name="FEICASO25" ColumnName="FEICASO25" />
-                <ScalarProperty Name="FEFCASO25" ColumnName="FEFCASO25" />
-                <ScalarProperty Name="DESCASO25" ColumnName="DESCASO25" />
-                <ScalarProperty Name="OPICASO25" ColumnName="OPICASO25" />
-                <ScalarProperty Name="ESTCASO25" ColumnName="ESTCASO25" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_CON_HISTCASOS" FunctionName="SIDEPS.Store.SP_CON_HISTCASOS">
             <ResultMapping>
               <ComplexTypeMapping TypeName="SIDEPS.SP_CON_HISTCASOS_Result">
@@ -3080,6 +3067,23 @@
                 <ScalarProperty Name="FEIUSRO07" ColumnName="FEIUSRO07" />
                 <ScalarProperty Name="FEFUSRO07" ColumnName="FEFUSRO07" />
                 <ScalarProperty Name="FENUSRO07" ColumnName="FENUSRO07" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CON_CASOXID" FunctionName="SIDEPS.Store.SP_CON_CASOXID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIDEPS.SP_CON_CASOXID_Result">
+                <ScalarProperty Name="CODCASO25" ColumnName="CODCASO25" />
+                <ScalarProperty Name="CEDPERS13" ColumnName="CEDPERS13" />
+                <ScalarProperty Name="CODASPS16" ColumnName="CODASPS16" />
+                <ScalarProperty Name="CEDUSRO07" ColumnName="CEDUSRO07" />
+                <ScalarProperty Name="CODVIVI20" ColumnName="CODVIVI20" />
+                <ScalarProperty Name="CODEGRF24" ColumnName="CODEGRF24" />
+                <ScalarProperty Name="FEICASO25" ColumnName="FEICASO25" />
+                <ScalarProperty Name="FEFCASO25" ColumnName="FEFCASO25" />
+                <ScalarProperty Name="DESCASO25" ColumnName="DESCASO25" />
+                <ScalarProperty Name="OPICASO25" ColumnName="OPICASO25" />
+                <ScalarProperty Name="ESTCASO25" ColumnName="ESTCASO25" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

@@ -20,11 +20,14 @@
                             @Html.ActionLink("Validar Casos", "ValidarCaso", "Casos", null, new { @class = "boton_1" })
                                            <br><br><br><br>
                                             <center>
-                            @Html.ActionLink("Modificar Caso", "ValidarCaso", "Casos", null, new { @class = "boton_1" })
+                            @Html.ActionLink("Modificar Caso", "ValidarCasoMantenimiento", "Casos", null, new { @class = "boton_1" })
                             <br><br><br><br>
                                         <center>
-                            @Html.ActionLink("Volver", "ValidarCaso", "Casos", null, new { @class = "boton_1" })
-                             
+                            @Html.ActionLink("Casos Aprobados", "ValidarCasoAprobados", "Casos", null, new { @class = "boton_1" })
+                                            <br><br><br><br>
+                                            <center>
+                            @Html.ActionLink("Volver", ViewData["menuPrevioMetodo"].ToString(), ViewData["menuPrevioControlador"].ToString(), null, new { @class = "boton_1" })
+
 
                                                 <style type="text/css">
                                                     .boton_1 {
