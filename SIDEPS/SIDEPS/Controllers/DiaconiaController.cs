@@ -13,6 +13,10 @@ namespace SIDEPS.Controllers
 
         public ActionResult listarDiaconias()
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             TempData.Keep();
             List<SP_CON_REGDIAC_Result> lstRespuesta = new List<SP_CON_REGDIAC_Result>();
             List<Diaconia_M> lstModeloRespuesta = new List<Diaconia_M>();
@@ -44,6 +48,10 @@ namespace SIDEPS.Controllers
 
         public ActionResult AgregarDiaconia()
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             TempData.Keep();
             var modelo = new Diaconia_M();
             using(var svc = new ServiciosWCFClient())
@@ -56,6 +64,10 @@ namespace SIDEPS.Controllers
 
         public ActionResult DetalleDiaconias(int id)
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             TempData.Keep();
             SP_CONXID_REGDIAC_Result objRespuesta = new SP_CONXID_REGDIAC_Result();
             Diaconia_M objDiaconia = new Diaconia_M();
@@ -81,6 +93,10 @@ namespace SIDEPS.Controllers
 
         public ActionResult EliminarDiaconias(int id)
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             TempData.Keep();
             SP_CONXID_REGDIAC_Result objRespuesta = new SP_CONXID_REGDIAC_Result();
             Diaconia_M objDiaconia = new Diaconia_M();
@@ -106,6 +122,10 @@ namespace SIDEPS.Controllers
 
         public ActionResult ModificarDiaconias(int id)
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             TempData.Keep();
             SP_CONXID_REGDIAC_Result objRespuesta = new SP_CONXID_REGDIAC_Result();
             Diaconia_M objDiaconia = new Diaconia_M();
@@ -171,6 +191,10 @@ namespace SIDEPS.Controllers
 
         public ActionResult HistoricoPorDiaconia()
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             string cedulaUsuario = TempData[_CEDULAUSUARIO].ToString();
             TempData.Keep();
 
@@ -206,6 +230,10 @@ namespace SIDEPS.Controllers
 
         public ActionResult DetallesHistorico(int codigoCaso)
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             var modelo = new DetallesHistoricoCaso_M();
 
             using (var svc = new ServiciosWCFClient())

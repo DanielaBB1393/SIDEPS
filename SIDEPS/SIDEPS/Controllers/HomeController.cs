@@ -10,25 +10,6 @@ namespace SIDEPS.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
         public ActionResult Login()
         {
             return View();
@@ -73,16 +54,28 @@ namespace SIDEPS.Controllers
 
         public ActionResult MenuAdministradorDiaconia()
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             return View();
         }
 
         public ActionResult MenuColaboradorDiaconia()
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             return View();
         }
 
         public ActionResult MenuAdministradorParroquial()
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             return View();
         }
 

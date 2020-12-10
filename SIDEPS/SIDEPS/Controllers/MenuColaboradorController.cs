@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using SIDEPS.Models;
 using System.Web.Mvc;
 
 namespace SIDEPS.Controllers
@@ -11,8 +8,11 @@ namespace SIDEPS.Controllers
         // GET: MenuColaborador
         public ActionResult MenuColaborador()
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             return View();
         }
-       
     }
 }

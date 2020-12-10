@@ -24,6 +24,10 @@ namespace SIDEPS.Controllers
         //-------
         public ActionResult DatosPersonales()
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             TempData.Keep();
 
             var modelo = new DatosPersonales_M();
@@ -72,6 +76,10 @@ namespace SIDEPS.Controllers
         //-------
         public ActionResult AspectoSalud()
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             TempData.Keep();
 
             var modelo = new AspectoSalud_M();
@@ -107,6 +115,10 @@ namespace SIDEPS.Controllers
         //-------
         public ActionResult Vivienda()
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             TempData.Keep();
 
             var modelo = new Vivienda_M();
@@ -142,6 +154,10 @@ namespace SIDEPS.Controllers
         //-------
         public ActionResult GrupoFamiliar()
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             string cedulaSolicitante = TempData[Combos._CEDULAPERSONA].ToString();
             TempData.Keep();
 
@@ -193,6 +209,10 @@ namespace SIDEPS.Controllers
 
         public ActionResult DetallesFamiliar(string id)
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             TempData.Keep();
 
             MiembroFamiliar_M modelo;
@@ -208,6 +228,10 @@ namespace SIDEPS.Controllers
 
         public ActionResult EliminarFamiliar(string id)
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             TempData.Keep();
 
             MiembroFamiliar_M modelo;
@@ -236,6 +260,10 @@ namespace SIDEPS.Controllers
 
         public ActionResult ModificarFamiliar(string id)
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             TempData.Keep();
 
             MiembroFamiliar_M modelo;
@@ -272,6 +300,10 @@ namespace SIDEPS.Controllers
         //-------
         public ActionResult Egresos()
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             TempData.Keep();
 
             return View();
@@ -298,6 +330,10 @@ namespace SIDEPS.Controllers
         //-------
         public ActionResult MotivoSolicitud()
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             TempData.Keep();
 
             return View();
@@ -327,6 +363,10 @@ namespace SIDEPS.Controllers
         //---------------
         public ActionResult HistoricoDeCasos(int? diaconiaSeleccionada)
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             string cedulaUsuario = TempData[Combos._CEDULAUSUARIO].ToString();
             TempData.Keep();
 
@@ -368,6 +408,10 @@ namespace SIDEPS.Controllers
 
         public ActionResult DetallesHistorico(int codigoCaso)
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             var modelo = new DetallesHistoricoCaso_M();
 
             using (var svc = new ServiciosWCFClient())
@@ -385,6 +429,10 @@ namespace SIDEPS.Controllers
 
         public ActionResult MenuCasos()
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             string tipoUsuario = TempData[Combos._TIPOUSUARIO].ToString();
 
             switch (tipoUsuario)
@@ -414,6 +462,10 @@ namespace SIDEPS.Controllers
 
         public ActionResult ValidarCaso()
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             string cedulaUsuario = TempData[Combos._CEDULAUSUARIO].ToString();
             TempData.Keep();
 
@@ -447,6 +499,10 @@ namespace SIDEPS.Controllers
         }
         public ActionResult CasoIncompleto()
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             string cedulaUsuario = TempData[Combos._CEDULAUSUARIO].ToString();
             TempData.Keep();
 
@@ -480,6 +536,10 @@ namespace SIDEPS.Controllers
         }
         public ActionResult ValidarCasoMantenimiento()
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             string cedulaUsuario = TempData[Combos._CEDULAUSUARIO].ToString();
             TempData.Keep();
 
@@ -513,6 +573,10 @@ namespace SIDEPS.Controllers
         }
         public ActionResult ValidarCasoAprobados()
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             string cedulaUsuario = TempData[Combos._CEDULAUSUARIO].ToString();
             TempData.Keep();
 
@@ -546,6 +610,10 @@ namespace SIDEPS.Controllers
         }
         public ActionResult ModificarCaso(int id)
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             SP_CON_CASOXID_Result resultado;
 
             using (var svc = new ServiciosWCFClient())
@@ -570,6 +638,10 @@ namespace SIDEPS.Controllers
 
         public ActionResult ValidarCasoDetalles(int codigoCaso)
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             var modelo = new DetallesHistoricoCaso_M();
 
             using (var svc = new ServiciosWCFClient())
@@ -587,6 +659,10 @@ namespace SIDEPS.Controllers
 
         public ActionResult AprobarCaso(int id)
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             TempData.Keep();
 
             var caso = this.casosSvc.ConCaso(id);
@@ -641,6 +717,10 @@ namespace SIDEPS.Controllers
 
         public ActionResult RechazarCaso(int id)
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             TempData.Keep();
 
             var resultado = this.casosSvc.ConCaso(id);

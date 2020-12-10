@@ -10,8 +10,12 @@ namespace SIDEPS.Controllers
     public class UsuariosController : Controller
     {
         public ActionResult ListarUsuarios()
-
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
+
             List<SP_CON_REGUSRO_Result> lstRespuesta = new List<SP_CON_REGUSRO_Result>();
             List<M_Usuarios> lstModeloRespuesta = new List<M_Usuarios>();
             try
@@ -52,6 +56,10 @@ namespace SIDEPS.Controllers
 
         public ActionResult AgregarUsuario()
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             string tipoUsuario = TempData[Combos._TIPOUSUARIO].ToString();
             M_Usuarios modelo = new M_Usuarios();
 
@@ -68,9 +76,11 @@ namespace SIDEPS.Controllers
                     case Combos.ADMIN_PARROQUIAL:
                         codigosRoles = new List<int> { 1, 2, 3 };
                         break;
+
                     case Combos.ADMIN_DIACONAL:
                         codigosRoles = new List<int> { 3 };
                         break;
+
                     case Combos.COLABORADOR:
                     default:
                         codigosRoles = new List<int>();
@@ -78,7 +88,7 @@ namespace SIDEPS.Controllers
                 }
 
                 modelo.Roles = svc.SP_Con_TipoUsuario()
-                .Where(r => codigosRoles.Contains(r.CODUSRO05))    
+                .Where(r => codigosRoles.Contains(r.CODUSRO05))
                 .Select(r => new Categoria { Codigo = r.CODUSRO05, Descripcion = r.DESUSRO05 }).ToList();
             }
             return View(modelo);
@@ -86,6 +96,10 @@ namespace SIDEPS.Controllers
 
         public ActionResult DetalleUsuario(int id)
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             SP_CONXID_REGUSRO_Result objRespuesta = new SP_CONXID_REGUSRO_Result();
             M_Usuarios objUsuario = new M_Usuarios();
             try
@@ -122,6 +136,10 @@ namespace SIDEPS.Controllers
 
         public ActionResult ModificarUsuario(int id)
         {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             SP_CONXID_REGUSRO_Result objRespuesta = new SP_CONXID_REGUSRO_Result();
             M_Usuarios objUsuario = new M_Usuarios();
             try
