@@ -5,7 +5,9 @@ select * from SIDEPS_20REGVIVI
 select * from SIDEPS_24REGEGRF
 select * from SIDEPS_22REGFAML
 select * from SIDEPS_23CATFINA
+select * from SIDEPS_27TIPAYUD
 
+--delete from SIDEPS_27TIPAYUD
 --delete from SIDEPS_25REGCASO
 --delete from SIDEPS_23CATFINA
 --delete from SIDEPS_22REGFAML
