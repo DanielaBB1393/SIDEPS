@@ -9,11 +9,6 @@ namespace SIDEPS.Controllers
 {
     public class CasosController : Controller
     {
-        private const string _CODIGOCASO = "codigoCaso";
-        private const string _CEDULAPERSONA = "cedulaPersona";
-        private const string _CODIGOVIVIENDA = "codigoVivienda";
-        private const string _CEDULAUSUARIO = "cedulaUsuario";
-
         private readonly ServiciosWCFClient casosSvc = new ServiciosWCFClient();
 
         // GET: Casos
@@ -48,7 +43,7 @@ namespace SIDEPS.Controllers
         [HttpPost]
         public ActionResult DatosPersonales(DatosPersonales_M persona)
         {
-            string cedulaUsuario = TempData[_CEDULAUSUARIO].ToString();
+            string cedulaUsuario = TempData[Combos._CEDULAUSUARIO].ToString();
             TempData.Keep();
 
             var resultadoP = this.casosSvc.SP_Ins_Persona(persona.ConvertirEntidad());
@@ -63,8 +58,8 @@ namespace SIDEPS.Controllers
                 var resultadoC = this.casosSvc.SP_Ins_Caso(caso.ConvertirEntidad());
                 if (resultadoC > 0)
                 {
-                    TempData[_CEDULAPERSONA] = persona.CEDPERS13;
-                    TempData[_CODIGOCASO] = resultadoC;
+                    TempData[Combos._CEDULAPERSONA] = persona.CEDPERS13;
+                    TempData[Combos._CODIGOCASO] = resultadoC;
 
                     return RedirectToAction("AspectoSalud");
                 }
@@ -92,8 +87,8 @@ namespace SIDEPS.Controllers
         [HttpPost]
         public ActionResult AspectoSalud(AspectoSalud_M aspecto)
         {
-            aspecto.CEDPERS13 = TempData[_CEDULAPERSONA].ToString();
-            int codigoCaso = Convert.ToInt32(TempData[_CODIGOCASO].ToString());
+            aspecto.CEDPERS13 = TempData[Combos._CEDULAPERSONA].ToString();
+            int codigoCaso = Convert.ToInt32(TempData[Combos._CODIGOCASO].ToString());
             TempData.Keep();
 
             var resultado = this.casosSvc.SP_Ins_AspectoSalud(aspecto.ConvertirEntidad(), codigoCaso);
@@ -128,14 +123,14 @@ namespace SIDEPS.Controllers
         [HttpPost]
         public ActionResult Vivienda(Vivienda_M vivienda)
         {
-            int codigoCaso = Convert.ToInt32(TempData[_CODIGOCASO].ToString());
+            int codigoCaso = Convert.ToInt32(TempData[Combos._CODIGOCASO].ToString());
             TempData.Keep();
 
             var resultado = this.casosSvc.SP_Ins_Vivienda(vivienda.ConvertirEntidad(), codigoCaso);
 
             if (resultado > 0)
             {
-                TempData[_CODIGOVIVIENDA] = resultado;
+                TempData[Combos._CODIGOVIVIENDA] = resultado;
                 return RedirectToAction("GrupoFamiliar");
             }
 
@@ -147,7 +142,7 @@ namespace SIDEPS.Controllers
         //-------
         public ActionResult GrupoFamiliar()
         {
-            string cedulaSolicitante = TempData[_CEDULAPERSONA].ToString();
+            string cedulaSolicitante = TempData[Combos._CEDULAPERSONA].ToString();
             TempData.Keep();
 
             List<MiembroFamiliar_M> grupoFamiliar;
@@ -184,7 +179,7 @@ namespace SIDEPS.Controllers
         [HttpPost]
         public ActionResult AgregarFamiliar(MiembroFamiliar_M modelo)
         {
-            var cedulaSolicitante = TempData[_CEDULAPERSONA].ToString();
+            var cedulaSolicitante = TempData[Combos._CEDULAPERSONA].ToString();
             TempData.Keep();
 
             var resultado = this.casosSvc.SP_Ins_MiembroFamiliar(modelo.ConvertirEntidad(), cedulaSolicitante);
@@ -285,7 +280,7 @@ namespace SIDEPS.Controllers
         [HttpPost]
         public ActionResult Egresos(Egresos_M egresosMensuales)
         {
-            int codigoCaso = Convert.ToInt32(TempData[_CODIGOCASO].ToString());
+            int codigoCaso = Convert.ToInt32(TempData[Combos._CODIGOCASO].ToString());
             TempData.Keep();
 
             var resultado = this.casosSvc.SP_Ins_Egresos(egresosMensuales.ConvertirEntidad(), codigoCaso);
@@ -311,7 +306,7 @@ namespace SIDEPS.Controllers
         [HttpPost]
         public ActionResult MotivoSolicitud(Caso_M motivoSolicitud)
         {
-            int codigoCaso = Convert.ToInt32(TempData[_CODIGOCASO].ToString());
+            int codigoCaso = Convert.ToInt32(TempData[Combos._CODIGOCASO].ToString());
             TempData.Keep();
 
             motivoSolicitud.CODCASO25 = codigoCaso;
@@ -332,7 +327,7 @@ namespace SIDEPS.Controllers
         //---------------
         public ActionResult HistoricoDeCasos(int? diaconiaSeleccionada)
         {
-            string cedulaUsuario = TempData[_CEDULAUSUARIO].ToString();
+            string cedulaUsuario = TempData[Combos._CEDULAUSUARIO].ToString();
             TempData.Keep();
 
             var modelo = new List<HistoricoCaso_M>();
@@ -390,6 +385,28 @@ namespace SIDEPS.Controllers
 
         public ActionResult MenuCasos()
         {
+            string tipoUsuario = TempData[Combos._TIPOUSUARIO].ToString();
+
+            switch (tipoUsuario)
+            {
+                case Combos.COLABORADOR:
+                    ViewData["menuPrevioMetodo"] = "MenuColaborador";
+                    ViewData["menuPrevioControlador"] = "MenuColaborador";
+                    break;
+                case Combos.ADMIN_PARROQUIAL:
+                    ViewData["menuPrevioMetodo"] = "MenuParroquial";
+                    ViewData["menuPrevioControlador"] = "AdminParroquial";
+                    break;
+                case Combos.ADMIN_DIACONAL:
+                    ViewData["menuPrevioMetodo"] = "AdminDiaconal";
+                    ViewData["menuPrevioControlador"] = "AdminDiaconal";
+                    break;
+                default:
+                    ViewData["menuPrevioMetodo"] = "Salir";
+                    ViewData["menuPrevioControlador"] = "Home";
+                    break;
+            }
+
             TempData.Keep();
 
             return View();
@@ -397,7 +414,7 @@ namespace SIDEPS.Controllers
 
         public ActionResult ValidarCaso()
         {
-            string cedulaUsuario = TempData[_CEDULAUSUARIO].ToString();
+            string cedulaUsuario = TempData[Combos._CEDULAUSUARIO].ToString();
             TempData.Keep();
 
             var modelo = new List<HistoricoCaso_M>();
@@ -406,7 +423,7 @@ namespace SIDEPS.Controllers
             {
                 int diaconia = svc.conUsuarioXCedula(cedulaUsuario).CODDIAC04.GetValueOrDefault();
 
-                var resultado = svc.SP_Con_HistoricoCasos(diaconia);
+                var resultado = svc.SP_Con_HistoricoCasos(diaconia).Where(caso => caso.ESTCASO25.Equals(Combos.CASO_PENDIENTE));
                 foreach (var item in resultado)
                 {
                     var registro = new HistoricoCaso_M();
@@ -428,7 +445,105 @@ namespace SIDEPS.Controllers
 
             return View(modelo);
         }
+        public ActionResult CasoIncompleto()
+        {
+            string cedulaUsuario = TempData[Combos._CEDULAUSUARIO].ToString();
+            TempData.Keep();
 
+            var modelo = new List<HistoricoCaso_M>();
+
+            using (var svc = new ServiciosWCFClient())
+            {
+                int diaconia = svc.conUsuarioXCedula(cedulaUsuario).CODDIAC04.GetValueOrDefault();
+
+                var resultado = svc.SP_Con_HistoricoCasos(diaconia).Where(caso => caso.ESTCASO25.Equals(Combos.CASO_INCOMPLETO));
+                foreach (var item in resultado)
+                {
+                    var registro = new HistoricoCaso_M();
+                    registro.CODCASO25 = item.CODCASO25;
+                    registro.CEDPERS13 = item.CEDPERS13;
+                    registro.CEDUSRO07 = item.CEDUSRO07;
+                    registro.FEICASO25 = item.FEICASO25;
+                    registro.FEFCASO25 = item.FEFCASO25;
+                    registro.DESCASO25 = item.DESCASO25;
+                    registro.OPICASO25 = item.OPICASO25;
+                    registro.ESTCASO25 = item.ESTCASO25;
+                    registro.NOMUSRO07 = item.NOMUSRO07;
+                    registro.PAPUSRO07 = item.PAPUSRO07;
+                    registro.NOMPERS13 = item.NOMPERS13;
+                    registro.PAPPERS13 = item.PAPPERS13;
+                    modelo.Add(registro);
+                }
+            }
+
+            return View(modelo);
+        }
+        public ActionResult ValidarCasoMantenimiento()
+        {
+            string cedulaUsuario = TempData[Combos._CEDULAUSUARIO].ToString();
+            TempData.Keep();
+
+            var modelo = new List<HistoricoCaso_M>();
+
+            using (var svc = new ServiciosWCFClient())
+            {
+                int diaconia = svc.conUsuarioXCedula(cedulaUsuario).CODDIAC04.GetValueOrDefault();
+
+                var resultado = svc.SP_Con_HistoricoCasos(diaconia).Where(caso => !caso.ESTCASO25.Equals(Combos.CASO_PENDIENTE));
+                foreach (var item in resultado)
+                {
+                    var registro = new HistoricoCaso_M();
+                    registro.CODCASO25 = item.CODCASO25;
+                    registro.CEDPERS13 = item.CEDPERS13;
+                    registro.CEDUSRO07 = item.CEDUSRO07;
+                    registro.FEICASO25 = item.FEICASO25;
+                    registro.FEFCASO25 = item.FEFCASO25;
+                    registro.DESCASO25 = item.DESCASO25;
+                    registro.OPICASO25 = item.OPICASO25;
+                    registro.ESTCASO25 = item.ESTCASO25;
+                    registro.NOMUSRO07 = item.NOMUSRO07;
+                    registro.PAPUSRO07 = item.PAPUSRO07;
+                    registro.NOMPERS13 = item.NOMPERS13;
+                    registro.PAPPERS13 = item.PAPPERS13;
+                    modelo.Add(registro);
+                }
+            }
+
+            return View(modelo);
+        }
+        public ActionResult ValidarCasoAprobados()
+        {
+            string cedulaUsuario = TempData[Combos._CEDULAUSUARIO].ToString();
+            TempData.Keep();
+
+            var modelo = new List<HistoricoCaso_M>();
+
+            using (var svc = new ServiciosWCFClient())
+            {
+                int diaconia = svc.conUsuarioXCedula(cedulaUsuario).CODDIAC04.GetValueOrDefault();
+
+                var resultado = svc.SP_Con_HistoricoCasos(diaconia).Where(caso => caso.ESTCASO25.Equals(Combos.CASO_APROBADO));
+                foreach (var item in resultado)
+                {
+                    var registro = new HistoricoCaso_M();
+                    registro.CODCASO25 = item.CODCASO25;
+                    registro.CEDPERS13 = item.CEDPERS13;
+                    registro.CEDUSRO07 = item.CEDUSRO07;
+                    registro.FEICASO25 = item.FEICASO25;
+                    registro.FEFCASO25 = item.FEFCASO25;
+                    registro.DESCASO25 = item.DESCASO25;
+                    registro.OPICASO25 = item.OPICASO25;
+                    registro.ESTCASO25 = item.ESTCASO25;
+                    registro.NOMUSRO07 = item.NOMUSRO07;
+                    registro.PAPUSRO07 = item.PAPUSRO07;
+                    registro.NOMPERS13 = item.NOMPERS13;
+                    registro.PAPPERS13 = item.PAPPERS13;
+                    modelo.Add(registro);
+                }
+            }
+
+            return View(modelo);
+        }
         public ActionResult ModificarCaso(int id)
         {
             SP_CON_CASOXID_Result resultado;
@@ -450,7 +565,7 @@ namespace SIDEPS.Controllers
                 svc.SP_Mod_Caso(caso.ConvertirEntidad());
             }
 
-            return RedirectToAction("ValidarCaso");
+            return RedirectToAction("MenuCasos");
         }
 
         public ActionResult ValidarCasoDetalles(int codigoCaso)

@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<SIDEPS.Models.HistoricoCaso_M>
 
 @{
-    ViewBag.Title = "Validar Caso";
+    ViewBag.Title = "CasoIncompleto";
 }
 
-<h2>Validar Caso</h2>
+<h2>Casos Incompletos</h2>
 
 <table class="table">
     <tr>
@@ -87,8 +87,8 @@
                 @Html.DisplayFor(modelItem => item.ESTCASO25)
             </td>
             <td>
-                @Html.ActionLink("Aprobar", "AprobarCaso", new { id = item.CODCASO25 }) |
-                @Html.ActionLink("Rechazar", "RechazarCaso", new { id = item.CODCASO25 }) |
+
+                @Html.ActionLink("Eliminar", " ", new { codigoCaso = item.CODCASO25 })
                 @Html.ActionLink("Detalles", "ValidarCasoDetalles", new { codigoCaso = item.CODCASO25 })
             </td>
         </tr>

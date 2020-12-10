@@ -17,36 +17,43 @@
             @Html.ActionLink("Registro de Caso", "DatosPersonales", "Casos", null, new { @class = "boton_1" })
             <br><br><br><br>
                         <center>
-                            @Html.ActionLink("Validar Casos", "ValidarCaso", "Casos", null, new { @class = "boton_1" })
+             @Html.ActionLink("Validar Casos", "ValidarCaso", "Casos", null, new { @class = "boton_1" })
                                            <br><br><br><br>
                                             <center>
-                            @Html.ActionLink("Modificar Caso", "ValidarCaso", "Casos", null, new { @class = "boton_1" })
+             @Html.ActionLink("Modificar Caso", "ValidarCasoMantenimiento", "Casos", null, new { @class = "boton_1" })
                             <br><br><br><br>
                                         <center>
-                            @Html.ActionLink("Volver", "ValidarCaso", "Casos", null, new { @class = "boton_1" })
-                             
+              @Html.ActionLink("Casos Aprobados", "ValidarCasoAprobados", "Casos", null, new { @class = "boton_1" })
 
-                                                <style type="text/css">
-                                                    .boton_1 {
-                                                        text-decoration: none;
-                                                        padding: 3px;
-                                                        padding-left: 10px;
-                                                        padding-right: 10px;
-                                                        font-family: helvetica;
-                                                        font-weight: 300;
-                                                        font-size: 25px;
-                                                        font-style: italic;
-                                                        color: #FFFFFF;
-                                                        background-color: #39B411;
-                                                        border-radius: 15px;
-                                                        border: 3px double #006505;
-                                                    }
+                                            <br><br><br><br>
+                                            <center>
+               @Html.ActionLink("Casos Incompletos", "CasoIncompleto", "Casos", null, new { @class = "boton_1" })
+                                                <br><br><br><br>
+                                                <center>
+                @Html.ActionLink("Volver", ViewData["menuPrevioMetodo"].ToString(), ViewData["menuPrevioControlador"].ToString(), null, new { @class = "boton_1" })
 
-                                                        .boton_1:hover {
-                                                            opacity: 0.6;
+
+  <style type="text/css">
+                                                        .boton_1 {
                                                             text-decoration: none;
+                                                            padding: 3px;
+                                                            padding-left: 10px;
+                                                            padding-right: 10px;
+                                                            font-family: helvetica;
+                                                            font-weight: 300;
+                                                            font-size: 25px;
+                                                            font-style: italic;
+                                                            color: #FFFFFF;
+                                                            background-color: #39B411;
+                                                            border-radius: 15px;
+                                                            border: 3px double #006505;
                                                         }
-                                                </style>
+
+                                                            .boton_1:hover {
+                                                                opacity: 0.6;
+                                                                text-decoration: none;
+                                                            }
+                                                    </style>
 </body>
 </html>
 
