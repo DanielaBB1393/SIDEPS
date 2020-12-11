@@ -249,8 +249,8 @@
           <Property Name="CEDUSRO07" Type="varchar" MaxLength="20" />
           <Property Name="CODVIVI20" Type="int" />
           <Property Name="CODEGRF24" Type="int" />
-          <Property Name="FEICASO25" Type="date" />
-          <Property Name="FEFCASO25" Type="date" />
+          <Property Name="FEICASO25" Type="datetime" />
+          <Property Name="FEFCASO25" Type="datetime" />
           <Property Name="DESCASO25" Type="varchar" MaxLength="200" />
           <Property Name="OPICASO25" Type="varchar" MaxLength="200" />
           <Property Name="ESTCASO25" Type="varchar" MaxLength="20" />
@@ -1335,8 +1335,8 @@
           <Property Name="CEDUSRO07" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="CODVIVI20" Type="Int32" />
           <Property Name="CODEGRF24" Type="Int32" />
-          <Property Name="FEICASO25" Type="DateTime" Precision="0" />
-          <Property Name="FEFCASO25" Type="DateTime" Precision="0" />
+          <Property Name="FEICASO25" Type="DateTime" Precision="3" />
+          <Property Name="FEFCASO25" Type="DateTime" Precision="3" />
           <Property Name="DESCASO25" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="OPICASO25" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="ESTCASO25" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
@@ -2088,22 +2088,6 @@
             <Parameter Name="ESTDIAC04" Mode="In" Type="String" />
             <Parameter Name="CODCANT03" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="SP_MOD_REGUSRO">
-            <Parameter Name="CEDUSRO07" Mode="In" Type="String" />
-            <Parameter Name="NOMUSRO07" Mode="In" Type="String" />
-            <Parameter Name="PAPUSRO07" Mode="In" Type="String" />
-            <Parameter Name="SAPUSRO07" Mode="In" Type="String" />
-            <Parameter Name="CODCANT03" Mode="In" Type="Int32" />
-            <Parameter Name="CODDIAC04" Mode="In" Type="Int32" />
-            <Parameter Name="CODUSRO05" Mode="In" Type="Int32" />
-            <Parameter Name="ESTUSRO07" Mode="In" Type="String" />
-            <Parameter Name="DIRUSRO07" Mode="In" Type="String" />
-            <Parameter Name="NACUSRO07" Mode="In" Type="String" />
-            <Parameter Name="CNTUSRO07" Mode="In" Type="String" />
-            <Parameter Name="FEIUSRO07" Mode="In" Type="DateTime" />
-            <Parameter Name="FEFUSRO07" Mode="In" Type="DateTime" />
-            <Parameter Name="FENUSRO07" Mode="In" Type="DateTime" />
-          </FunctionImport>
           <FunctionImport Name="DETASPS" ReturnType="Collection(SIDEPS.DETASPS_Result)">
           <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -2132,7 +2116,23 @@
           <Parameter Name="CEDUSRO07" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_CON_CASOXID" ReturnType="Collection(SIDEPS.SP_CON_CASOXID_Result)">
-            <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
+          <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_MOD_REGUSRO">
+            <Parameter Name="CEDUSRO07" Mode="In" Type="String" />
+            <Parameter Name="NOMUSRO07" Mode="In" Type="String" />
+            <Parameter Name="PAPUSRO07" Mode="In" Type="String" />
+            <Parameter Name="SAPUSRO07" Mode="In" Type="String" />
+            <Parameter Name="CODCANT03" Mode="In" Type="Int32" />
+            <Parameter Name="CODDIAC04" Mode="In" Type="Int32" />
+            <Parameter Name="CODUSRO05" Mode="In" Type="Int32" />
+            <Parameter Name="ESTUSRO07" Mode="In" Type="String" />
+            <Parameter Name="DIRUSRO07" Mode="In" Type="String" />
+            <Parameter Name="NACUSRO07" Mode="In" Type="String" />
+            <Parameter Name="CNTUSRO07" Mode="In" Type="String" />
+            <Parameter Name="FEIUSRO07" Mode="In" Type="DateTime" />
+            <Parameter Name="FEFUSRO07" Mode="In" Type="DateTime" />
+            <Parameter Name="FENUSRO07" Mode="In" Type="DateTime" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="SP_CON_CATAYUD_Result">
@@ -2940,7 +2940,6 @@
           <FunctionImportMapping FunctionImportName="SP_INS_REGUSRO" FunctionName="SIDEPS.Store.SP_INS_REGUSRO" />
           <FunctionImportMapping FunctionImportName="SP_INS_REGVIVI" FunctionName="SIDEPS.Store.SP_INS_REGVIVI" />
           <FunctionImportMapping FunctionImportName="SP_MOD_REGDIAC" FunctionName="SIDEPS.Store.SP_MOD_REGDIAC" />
-          <FunctionImportMapping FunctionImportName="SP_MOD_REGUSRO" FunctionName="SIDEPS.Store.SP_MOD_REGUSRO" />
           <FunctionImportMapping FunctionImportName="DETASPS" FunctionName="SIDEPS.Store.DETASPS">
             <ResultMapping>
               <ComplexTypeMapping TypeName="SIDEPS.DETASPS_Result">
@@ -3087,6 +3086,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_MOD_REGUSRO" FunctionName="SIDEPS.Store.SP_MOD_REGUSRO" />
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

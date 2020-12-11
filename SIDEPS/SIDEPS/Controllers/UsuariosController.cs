@@ -16,6 +16,33 @@ namespace SIDEPS.Controllers
                 return RedirectToAction("Login", "Home");
             }
 
+            string tipoUsuario = TempData[Combos._TIPOUSUARIO].ToString();
+
+            switch (tipoUsuario)
+            {
+                case Combos.COLABORADOR:
+                    ViewData["menuPrevioMetodo"] = "MenuColaborador";
+                    ViewData["menuPrevioControlador"] = "MenuColaborador";
+                    break;
+
+                case Combos.ADMIN_PARROQUIAL:
+                    ViewData["menuPrevioMetodo"] = "MenuMantenimiento";
+                    ViewData["menuPrevioControlador"] = "AdminParroquial";
+                    break;
+
+                case Combos.ADMIN_DIACONAL:
+                    ViewData["menuPrevioMetodo"] = "AdminDiaconal";
+                    ViewData["menuPrevioControlador"] = "AdminDiaconal";
+                    break;
+
+                default:
+                    ViewData["menuPrevioMetodo"] = "Salir";
+                    ViewData["menuPrevioControlador"] = "Home";
+                    break;
+            }
+
+            TempData.Keep();
+
             List<SP_CON_REGUSRO_Result> lstRespuesta = new List<SP_CON_REGUSRO_Result>();
             List<M_Usuarios> lstModeloRespuesta = new List<M_Usuarios>();
             try
@@ -61,6 +88,9 @@ namespace SIDEPS.Controllers
                 return RedirectToAction("Login", "Home");
             }
             string tipoUsuario = TempData[Combos._TIPOUSUARIO].ToString();
+
+            TempData.Keep();
+
             M_Usuarios modelo = new M_Usuarios();
 
             using (ServiciosWCFClient svc = new ServiciosWCFClient())
@@ -100,6 +130,9 @@ namespace SIDEPS.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
+
+            TempData.Keep();
+
             SP_CONXID_REGUSRO_Result objRespuesta = new SP_CONXID_REGUSRO_Result();
             M_Usuarios objUsuario = new M_Usuarios();
             try
@@ -140,6 +173,9 @@ namespace SIDEPS.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
+
+            TempData.Keep();
+
             SP_CONXID_REGUSRO_Result objRespuesta = new SP_CONXID_REGUSRO_Result();
             M_Usuarios objUsuario = new M_Usuarios();
             try
@@ -177,6 +213,8 @@ namespace SIDEPS.Controllers
         [HttpPost]
         public ActionResult AgregarUsuario(SIDEPS_07REGUSRO objUsuario)
         {
+            TempData.Keep();
+
             try
             {
                 using (ServiciosWCFClient srvUsuarios = new ServiciosWCFClient())
@@ -194,6 +232,8 @@ namespace SIDEPS.Controllers
         [HttpPost]
         public ActionResult ModificarUsuario(SIDEPS_07REGUSRO objUsuario)
         {
+            TempData.Keep();
+
             try
             {
                 using (ServiciosWCFClient srvUsuarios = new ServiciosWCFClient())
