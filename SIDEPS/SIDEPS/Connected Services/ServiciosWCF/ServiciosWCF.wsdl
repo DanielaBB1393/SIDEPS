@@ -301,6 +301,12 @@
   <wsdl:message name="IServiciosWCF_ConCaso_OutputMessage">
     <wsdl:part name="parameters" element="tns:ConCasoResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiciosWCF_EliminarCaso_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarCaso" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosWCF_EliminarCaso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarCasoResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiciosWCF_SP_Ins_AyudasXCaso_InputMessage">
     <wsdl:part name="parameters" element="tns:SP_Ins_AyudasXCaso" />
   </wsdl:message>
@@ -503,6 +509,10 @@
     <wsdl:operation name="ConCaso">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/ConCaso" message="tns:IServiciosWCF_ConCaso_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/ConCasoResponse" message="tns:IServiciosWCF_ConCaso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCaso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/EliminarCaso" message="tns:IServiciosWCF_EliminarCaso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/EliminarCasoResponse" message="tns:IServiciosWCF_EliminarCaso_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="SP_Ins_AyudasXCaso">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_AyudasXCaso" message="tns:IServiciosWCF_SP_Ins_AyudasXCaso_InputMessage" />
@@ -945,6 +955,15 @@
     </wsdl:operation>
     <wsdl:operation name="ConCaso">
       <soap:operation soapAction="http://tempuri.org/IServiciosWCF/ConCaso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCaso">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/EliminarCaso" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

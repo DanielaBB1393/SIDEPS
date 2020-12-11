@@ -153,6 +153,19 @@ namespace AccesoDatos.Implementacion
             }
         }
 
+        public void EliminarCaso(int codigoCaso)
+        {
+            try
+            {
+                this.contexto.SP_DEL_REGCASO(codigoCaso);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public bool SP_Ins_AyudasXCaso(List<SIDEPS_27TIPAYUD> ayudasAprobadas)
         {
             try

@@ -374,7 +374,7 @@ namespace SIDEPS.Controllers
 
             using (var svc = new ServiciosWCFClient())
             {
-                if(diaconiaSeleccionada == null)
+                if (diaconiaSeleccionada == null)
                 {
                     // diaconia a la que el usuario pertenece
                     diaconiaSeleccionada = svc.conUsuarioXCedula(cedulaUsuario).CODDIAC04;
@@ -441,14 +441,17 @@ namespace SIDEPS.Controllers
                     ViewData["menuPrevioMetodo"] = "MenuColaborador";
                     ViewData["menuPrevioControlador"] = "MenuColaborador";
                     break;
+
                 case Combos.ADMIN_PARROQUIAL:
                     ViewData["menuPrevioMetodo"] = "MenuParroquial";
                     ViewData["menuPrevioControlador"] = "AdminParroquial";
                     break;
+
                 case Combos.ADMIN_DIACONAL:
                     ViewData["menuPrevioMetodo"] = "AdminDiaconal";
                     ViewData["menuPrevioControlador"] = "AdminDiaconal";
                     break;
+
                 default:
                     ViewData["menuPrevioMetodo"] = "Salir";
                     ViewData["menuPrevioControlador"] = "Home";
@@ -497,6 +500,7 @@ namespace SIDEPS.Controllers
 
             return View(modelo);
         }
+
         public ActionResult CasoIncompleto()
         {
             if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
@@ -534,6 +538,37 @@ namespace SIDEPS.Controllers
 
             return View(modelo);
         }
+
+        public ActionResult EliminarCaso(int codigoCaso)
+        {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
+            string cedulaUsuario = TempData[Combos._CEDULAUSUARIO].ToString();
+            TempData.Keep();
+
+            Caso_M modelo = new Caso_M();
+
+            using(var casosSvc = new ServiciosWCFClient())
+            {
+                modelo = new Caso_M(casosSvc.ConCaso(codigoCaso));
+            }
+
+            return View(modelo);
+        }
+
+        [HttpPost]
+        public ActionResult EliminarCaso(Caso_M caso)
+        {
+            using(var svc = new ServiciosWCFClient())
+            {
+                svc.EliminarCaso(caso.CODCASO25);
+            }
+
+            return RedirectToAction("CasoIncompleto");
+        }
+
         public ActionResult ValidarCasoMantenimiento()
         {
             if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
@@ -571,6 +606,7 @@ namespace SIDEPS.Controllers
 
             return View(modelo);
         }
+
         public ActionResult ValidarCasoAprobados()
         {
             if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
@@ -608,6 +644,7 @@ namespace SIDEPS.Controllers
 
             return View(modelo);
         }
+
         public ActionResult ModificarCaso(int id)
         {
             if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
@@ -692,14 +729,13 @@ namespace SIDEPS.Controllers
                 FEICASO25 = DateTime.Now,
                 ESTCASO25 = Combos.CASO_APROBADO,
                 CODCASO25 = model.CodigoCaso,
-                
             };
 
             this.casosSvc.SP_Mod_Caso(caso.ConvertirEntidad());
 
             List<SIDEPS_27TIPAYUD> ayudasAprobadas = new List<SIDEPS_27TIPAYUD>();
-            
-            foreach(var ayuda in model.Ayudas.Where( ayuda => ayuda.Aprobado))
+
+            foreach (var ayuda in model.Ayudas.Where(ayuda => ayuda.Aprobado))
             {
                 var ayudaBD = new SIDEPS_27TIPAYUD
                 {

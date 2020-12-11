@@ -22,6 +22,18 @@ namespace LogicaNegocios.Implementacion
             }
         }
 
+        public void EliminarCaso(int codigoCaso)
+        {
+            try
+            {
+                this.accesoDatos.EliminarCaso(codigoCaso);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         public DETASPS_Result SP_Con_AspectoSalud(int codigoCaso)
         {
             try

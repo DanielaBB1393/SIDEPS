@@ -88,8 +88,7 @@
             </td>
             <td>
 
-                @Html.ActionLink("Eliminar", " ", new { codigoCaso = item.CODCASO25 })
-                @Html.ActionLink("Detalles", "ValidarCasoDetalles", new { codigoCaso = item.CODCASO25 })
+                @Html.ActionLink("Eliminar", "EliminarCaso", new { codigoCaso = item.CODCASO25 })
             </td>
         </tr>
     }
@@ -117,3 +116,4 @@
             opacity: 0.6;
             text-decoration: none;
         }
+</style>

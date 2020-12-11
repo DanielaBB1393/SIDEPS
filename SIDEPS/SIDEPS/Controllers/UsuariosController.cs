@@ -49,7 +49,20 @@ namespace SIDEPS.Controllers
             {
                 using (ServiciosWCFClient srvUsuario = new ServiciosWCFClient())
                 {
-                    lstRespuesta = srvUsuario.conUsuario();
+                    // si el usuario es admin diaconal muestra colaboradores
+                    if (tipoUsuario.Equals(Combos.ADMIN_DIACONAL))
+                    {
+                        // Admin Diaconal solo puede ver colaboradores
+                        lstRespuesta = srvUsuario.conUsuario().Where(usuario => tipoUsuario.Equals(Combos.ADMIN_DIACONAL, StringComparison.OrdinalIgnoreCase) && usuario.CODUSRO05 == 3).ToList();
+                    }
+
+                    // si el usuario es admin parroquial muestra todos los tipos de usuarios
+                    else
+                    {
+                        // Admin Parroquial
+                        lstRespuesta = srvUsuario.conUsuario().ToList();
+                    }
+
                     ViewData["cantones"] = srvUsuario.SP_Con_Cantones().Select(par => new Categoria { Codigo = par.CODCANT03, Descripcion = par.NOMCANT03 }).ToDictionary(i => i.Codigo, i => i.Descripcion);
                     ViewData["diaconias"] = srvUsuario.conDiaconias().Select(par => new Categoria { Codigo = par.CODDIAC04, Descripcion = par.NOMDIAC04 }).ToDictionary(i => i.Codigo, i => i.Descripcion);
                     ViewData["roles"] = srvUsuario.SP_Con_TipoUsuario().Select(par => new Categoria { Codigo = par.CODUSRO05, Descripcion = par.DESUSRO05 }).ToDictionary(i => i.Codigo, i => i.Descripcion);
@@ -180,6 +193,8 @@ namespace SIDEPS.Controllers
             M_Usuarios objUsuario = new M_Usuarios();
             try
             {
+                string tipoUsuario = TempData[Combos._TIPOUSUARIO].ToString();
+
                 using (ServiciosWCFClient srvUsuarios = new ServiciosWCFClient())
                 {
                     objRespuesta = srvUsuarios.conUsuarioXId(id);
@@ -187,6 +202,29 @@ namespace SIDEPS.Controllers
                     objUsuario.Cantones = srvUsuarios.SP_Con_Cantones().Select(r => new Categoria { Codigo = r.CODCANT03, Descripcion = r.NOMCANT03 }).ToList();
                     objUsuario.Diaconias = srvUsuarios.conDiaconias().Select(r => new Categoria { Codigo = r.CODDIAC04, Descripcion = r.NOMDIAC04 }).ToList();
                     objUsuario.Roles = srvUsuarios.SP_Con_TipoUsuario().Select(r => new Categoria { Codigo = r.CODUSRO05, Descripcion = r.DESUSRO05 }).ToList();
+                    
+                    // defino cuales codigos de roles puede agregar un usuario
+                    List<int> codigosRoles;
+
+                    switch (tipoUsuario)
+                    {
+                        case Combos.ADMIN_PARROQUIAL:
+                            codigosRoles = new List<int> { 1, 2, 3 };
+                            break;
+
+                        case Combos.ADMIN_DIACONAL:
+                            codigosRoles = new List<int> { 3 };
+                            break;
+
+                        case Combos.COLABORADOR:
+                        default:
+                            codigosRoles = new List<int>();
+                            break;
+                    }
+
+                    objUsuario.Roles = srvUsuarios.SP_Con_TipoUsuario()
+                    .Where(r => codigosRoles.Contains(r.CODUSRO05))
+                    .Select(r => new Categoria { Codigo = r.CODUSRO05, Descripcion = r.DESUSRO05 }).ToList();
                 }
                 objUsuario.CEDUSRO07 = objRespuesta.CEDUSRO07;
                 objUsuario.NOMUSRO07 = objRespuesta.NOMUSRO07;

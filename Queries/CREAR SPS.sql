@@ -1022,3 +1022,104 @@ WHERE
 		CEDUSRO07 = @CEDUSRO07
 END
 GO
+
+-- Eliminar Caso con todas sus referencias
+IF OBJECT_ID('SP_DEL_REGCASO') IS NOT NULL
+	DROP PROCEDURE SP_DEL_REGCASO
+GO
+CREATE PROCEDURE SP_DEL_REGCASO
+	@codigoCaso INT
+AS
+BEGIN
+BEGIN TRY
+BEGIN TRANSACTION
+	-- recopilar foreign keys del caso hacia otras tablas
+	DECLARE @cedPersona VARCHAR(20)
+	DECLARE @aspectoSalud INT
+	DECLARE @codigovivienda INT
+	DECLARE @codigoegreso INT
+
+	-- Cargo foreign keys en variables para usarlas en los where
+	SELECT
+		@cedPersona		= CASO.CEDPERS13,
+		@aspectoSalud	= CASO.CODASPS16,
+		@codigovivienda = CASO.CODVIVI20,
+		@codigoegreso	= CASO.CODEGRF24
+	FROM
+		SIDEPS_25REGCASO CASO
+	WHERE
+		CASO.CODCASO25 = @codigoCaso
+			
+
+	--delete from SIDEPS_27TIPAYUD
+	DELETE
+			ayudaXcaso
+	FROM
+			SIDEPS_27TIPAYUD ayudaXcaso
+	WHERE
+			ayudaXcaso.CODCASO25 = @codigoCaso
+
+	--delete from SIDEPS_25REGCASO
+	DELETE
+			CAS
+	FROM
+			SIDEPS_25REGCASO CAS
+	WHERE
+			CAS.CODCASO25 = @codigoCaso
+
+	--delete from SIDEPS_23CATFINA (tabla intermedia familiares por solicitante)
+	DELETE
+			familiarXsolicitante
+	FROM
+			SIDEPS_23CATFINA familiarXsolicitante
+	WHERE
+			familiarXsolicitante.CEDPERS13 = @cedPersona
+
+	--delete from SIDEPS_22REGFAML (registros de familiares - entidades)
+	--DELETE
+	--		familiar
+	--FROM
+	--		SIDEPS_22REGFAML familiar
+	--		JOIN SIDEPS_23CATFINA.
+	--		JOIN SIDEPS_25REGCASO CAS ON 
+	--WHERE
+	--		CAS.CODCASO25 = @codigoCaso
+
+	--delete from SIDEPS_24REGEGRF
+	DELETE
+			egresos
+	FROM
+			SIDEPS_24REGEGRF egresos
+	WHERE
+			egresos.CODEGRF24 = @codigoegreso
+
+	--delete from SIDEPS_20REGVIVI
+	DELETE
+			vivienda
+	FROM
+			SIDEPS_20REGVIVI vivienda
+	WHERE
+			vivienda.CODVIVI20 = @codigovivienda
+
+	--delete from SIDEPS_16REGASPS
+	DELETE
+			aspectoSalud
+	FROM
+			SIDEPS_16REGASPS aspectoSalud
+	WHERE
+			aspectoSalud.CODASPS16 = @aspectoSalud
+
+	--delete from SIDEPS_13REGPERS
+	DELETE
+			persona
+	FROM
+			SIDEPS_13REGPERS persona
+	WHERE
+			persona.CEDPERS13 = @cedPersona
+COMMIT
+END TRY
+BEGIN CATCH
+	ROLLBACK
+END CATCH
+END
+GO

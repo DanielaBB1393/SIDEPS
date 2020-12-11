@@ -144,7 +144,8 @@ namespace AccesoDatos.Implementacion
                 var rolUsuario = gobjContextoSP.SIDEPS_07REGUSRO
                     .Where(usr => 
                         usr.CEDUSRO07.Equals(cedula, StringComparison.OrdinalIgnoreCase) && 
-                        usr.CNTUSRO07.Equals(contrasena))
+                        usr.CNTUSRO07.Equals(contrasena) &&
+                        usr.ESTUSRO07.Equals("ACTIVO", StringComparison.OrdinalIgnoreCase))
                     .FirstOrDefault()?.CODUSRO05;
 
                 if (rolUsuario.HasValue)

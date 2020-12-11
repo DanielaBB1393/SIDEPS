@@ -343,6 +343,7 @@
     <Content Include="Views\Casos\ValidarCasoMantenimiento.cshtml" />
     <Content Include="Views\Casos\ValidarCasoAprobados.cshtml" />
     <Content Include="Views\Casos\CasoIncompleto.cshtml" />
+    <Content Include="Views\Casos\EliminarCaso.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

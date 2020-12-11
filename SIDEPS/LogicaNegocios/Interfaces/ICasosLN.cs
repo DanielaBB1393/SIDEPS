@@ -9,6 +9,8 @@ namespace LogicaNegocios.Interfaces
 
         bool SP_Mod_Caso(SIDEPS_25REGCASO caso);
 
+        void EliminarCaso(int codigoCaso);
+
         List<SP_CON_HISTCASOS_Result> SP_Con_HistoricoCasos(int diaconia);
 
         DETPERS_Result SP_Con_DatosPersonales(int codigoCaso);

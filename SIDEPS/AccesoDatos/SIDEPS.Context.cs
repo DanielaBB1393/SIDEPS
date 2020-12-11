@@ -755,5 +755,14 @@ namespace AccesoDatos
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_MOD_REGUSRO", cEDUSRO07Parameter, nOMUSRO07Parameter, pAPUSRO07Parameter, sAPUSRO07Parameter, cODCANT03Parameter, cODDIAC04Parameter, cODUSRO05Parameter, eSTUSRO07Parameter, dIRUSRO07Parameter, nACUSRO07Parameter, cNTUSRO07Parameter, fEIUSRO07Parameter, fEFUSRO07Parameter, fENUSRO07Parameter);
         }
+    
+        public virtual int SP_DEL_REGCASO(Nullable<int> codigoCaso)
+        {
+            var codigoCasoParameter = codigoCaso.HasValue ?
+                new ObjectParameter("codigoCaso", codigoCaso) :
+                new ObjectParameter("codigoCaso", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_DEL_REGCASO", codigoCasoParameter);
+        }
     }
 }

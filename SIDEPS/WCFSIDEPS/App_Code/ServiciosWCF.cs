@@ -630,6 +630,19 @@ public class ServiciosWCF : IServiciosWCF
         }
     }
 
+    public void EliminarCaso(int codigoCaso)
+    {
+        try
+        {
+            this.casosLN.EliminarCaso(codigoCaso);
+        }
+        catch (Exception ex)
+        {
+
+            throw ex;
+        }
+    }
+
     public bool SP_Ins_AyudasXCaso(List<SIDEPS_27TIPAYUD> ayudasAprobadas)
     {
         try

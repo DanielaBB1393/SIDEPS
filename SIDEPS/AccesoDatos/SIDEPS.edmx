@@ -746,6 +746,9 @@
         <Function Name="SP_CONXID_REGUSRO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CEDUSRO07" Type="int" Mode="In" />
         </Function>
+        <Function Name="SP_DEL_REGCASO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigoCaso" Type="int" Mode="In" />
+        </Function>
         <Function Name="SP_DEL_REGDIAC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CODDIAC04" Type="int" Mode="In" />
         </Function>
@@ -2134,6 +2137,9 @@
             <Parameter Name="FEFUSRO07" Mode="In" Type="DateTime" />
             <Parameter Name="FENUSRO07" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <FunctionImport Name="SP_DEL_REGCASO">
+            <Parameter Name="codigoCaso" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="SP_CON_CATAYUD_Result">
           <Property Type="Int32" Name="CODAYUD26" Nullable="false" />
@@ -3087,6 +3093,7 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_MOD_REGUSRO" FunctionName="SIDEPS.Store.SP_MOD_REGUSRO" />
+          <FunctionImportMapping FunctionImportName="SP_DEL_REGCASO" FunctionName="SIDEPS.Store.SP_DEL_REGCASO" />
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

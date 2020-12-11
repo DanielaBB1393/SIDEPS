@@ -1,0 +1,143 @@
+﻿@model SIDEPS.Models.Caso_M
+
+@{
+    ViewBag.Title = "Eliminar Caso";
+}
+
+<h2>Eliminar Caso</h2>
+
+<h3>Está seguro que desea eliminar el caso?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CODCASO25)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODCASO25)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CEDPERS13)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CEDPERS13)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODASPS16)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODASPS16)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CEDUSRO07)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CEDUSRO07)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODVIVI20)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODVIVI20)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODEGRF24)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODEGRF24)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FEICASO25)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FEICASO25)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FEFCASO25)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FEFCASO25)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCASO25)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCASO25)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OPICASO25)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OPICASO25)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ESTDESC25)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ESTDESC25)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ESTCASO25)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ESTCASO25)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        @Html.HiddenFor(model => model.CODCASO25)
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="" /> |
+            @Html.ActionLink("Regresar", "CasoIncompleto", null, new { @class = "" })
+        </div>
+    }
+</div>
+
+<style type="text/css">
+    .boton_1 {
+        text-decoration: none;
+        padding: 3px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-family: helvetica;
+        font-weight: 300;
+        font-size: 25px;
+        font-style: italic;
+        color: #FFFFFF;
+        background-color: #39B411;
+        border-radius: 15px;
+        border: 3px double #006505;
+    }
+
+        .boton_1:hover {
+            opacity: 0.6;
+            text-decoration: none;
+        }
+</style>
