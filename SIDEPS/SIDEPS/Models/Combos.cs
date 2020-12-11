@@ -9,18 +9,9 @@ namespace SIDEPS.Models
             "ACTIVO","INACTIVO"
         };
 
-        public static List<Categoria> SiNo = new List<Categoria>()
+        public static List<string> SiNo = new List<string>()
         {
-            new Categoria
-            {
-                Codigo = 1,
-                Descripcion = "SI"
-            },
-            new Categoria
-            {
-                Codigo = 0,
-                Descripcion = "NO"
-            }
+            "SI","NO"
         };
 
         public static List<string> ValidarCasos = new List<string>

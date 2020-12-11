@@ -15,10 +15,21 @@
     <h4>Aspecto Salud</h4>
     <hr />
 
+
+    <!--Sufre alguna enfermedad-->
+    <div class="form-group">
+        @Html.LabelFor(model => model.DESENFR16, htmlAttributes: new { @class = "control-label col-md-4" })
+        <div class="col-md-8">
+            @Html.DropDownListFor(model => model.DESENFR16, new SelectList(SIDEPS.Models.Combos.SiNo), new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.DESENFR16, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <!--Cual enfermedad sufre-->
     <div class="form-group">
         @Html.LabelFor(model => model.CODENFR15, htmlAttributes: new { @class = "control-label col-md-4" })
         <div class="col-md-8">
-            @Html.DropDownListFor(model => model.CODENFR15, new SelectList(SIDEPS.Models.Combos.SiNo, "Codigo", "Descripcion"), new { @class = "form-control" })
+            @Html.DropDownListFor(model => model.CODENFR15, new SelectList(Model.Enfermedades, "Codigo", "Descripcion"), new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.CODENFR15, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -28,14 +39,6 @@
         <div class="col-md-8">
             @Html.DropDownListFor(model => model.CODSEGU14, new SelectList(Model.TiposSeguro, "Codigo", "Descripcion"), new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.CODSEGU14, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.DESENFR16, htmlAttributes: new { @class = "control-label col-md-4" })
-        <div class="col-md-8">
-            @Html.DropDownListFor(model => model.DESENFR16, new SelectList(Model.Enfermedades, "Codigo", "Descripcion"), new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.DESENFR16, "", new { @class = "text-danger" })
         </div>
     </div>
 

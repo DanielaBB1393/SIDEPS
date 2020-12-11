@@ -18,9 +18,9 @@ namespace SIDEPS.Models
         [DisplayName("Tipo Seguro")]
         [Required(ErrorMessage = "Tipo Seguro Requerido.")]
         public Nullable<int> CODSEGU14 { get; set; }
-        [DisplayName("Sufre alguna enfermedad")]
-        public Nullable<int> CODENFR15 { get; set; }
         [DisplayName("Descripción enfermedad")]
+        public Nullable<int> CODENFR15 { get; set; }
+        [DisplayName("Sufre alguna enfermedad")]
         public string DESENFR16 { get; set; }
         [DisplayName("Recibe algún tratamiento")]
         [Required(ErrorMessage = "Recibe algún tratamiento Requerido.")]

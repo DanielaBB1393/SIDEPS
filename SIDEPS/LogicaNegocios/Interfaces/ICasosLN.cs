@@ -28,5 +28,7 @@ namespace LogicaNegocios.Interfaces
         SP_CON_CASOXID_Result ConCaso(int codigoCaso);
 
         bool SP_Ins_AyudasXCaso(List<SIDEPS_27TIPAYUD> ayudasAprobadas);
+
+        List<SP_CON_CATCASOAY_Result> SP_Con_AyudasXcaso(int codigoCaso);
     }
 }

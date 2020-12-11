@@ -422,6 +422,7 @@ namespace SIDEPS.Controllers
                 modelo.GrupoFamiliar = svc.SP_Con_GrupoFamiliar(codigoCaso).Select(familiar => new MiembroFamiliar_M(familiar)).ToList();
                 modelo.Egresos = new Egresos_M(svc.SP_Con_Egresos(codigoCaso));
                 modelo.OpinionCaso = svc.SP_Con_ObservacionesCaso(codigoCaso);
+                modelo.AyudasAprobadas = svc.SP_Con_AyudasXcaso(codigoCaso);
             }
 
             return View(modelo);
