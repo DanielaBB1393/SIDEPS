@@ -76,6 +76,15 @@ namespace AccesoDatos.Implementacion
             bool lobjRespuesta = new bool();
             try
             {
+                var existente = gobjContextoSP.SIDEPS_07REGUSRO
+                    .Any(usuario => usuario.CEDUSRO07.Equals(pobjUsuario.CEDUSRO07, StringComparison.OrdinalIgnoreCase));
+
+                if (existente)
+                {
+                    // ya existe un usuario con esta cédula
+                    return false;
+                }
+
                 lobjRespuesta = false;
                 int intVal = 0;
                 intVal = gobjContextoSP.SP_INS_REGUSRO(pobjUsuario.CEDUSRO07, pobjUsuario.NOMUSRO07,

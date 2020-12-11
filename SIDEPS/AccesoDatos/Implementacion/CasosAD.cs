@@ -14,7 +14,7 @@ namespace AccesoDatos.Implementacion
         {
             try
             {
-                return this.contexto.DETASPS(codigoCaso).First();
+                return this.contexto.DETASPS(codigoCaso).FirstOrDefault();
             }
             catch (Exception ex)
             {
@@ -27,7 +27,7 @@ namespace AccesoDatos.Implementacion
         {
             try
             {
-                return this.contexto.DETPERS(codigoCaso).First();
+                return this.contexto.DETPERS(codigoCaso).FirstOrDefault();
             }
             catch (Exception ex)
             {
@@ -40,7 +40,7 @@ namespace AccesoDatos.Implementacion
         {
             try
             {
-                return this.contexto.DETEGRF(codigoCaso).First();
+                return this.contexto.DETEGRF(codigoCaso).FirstOrDefault();
             }
             catch (Exception ex)
             {
@@ -66,7 +66,7 @@ namespace AccesoDatos.Implementacion
         {
             try
             {
-                return this.contexto.DETCASO(codigoCaso).First();
+                return this.contexto.DETCASO(codigoCaso).FirstOrDefault();
             }
             catch (Exception ex)
             {
@@ -79,7 +79,7 @@ namespace AccesoDatos.Implementacion
         {
             try
             {
-                return this.contexto.DETVIVI(codigoCaso).First();
+                return this.contexto.DETVIVI(codigoCaso).FirstOrDefault();
             }
             catch (Exception ex)
             {
@@ -145,7 +145,7 @@ namespace AccesoDatos.Implementacion
         {
             try
             {
-                return this.contexto.SP_CON_CASOXID(codigoCaso).First();
+                return this.contexto.SP_CON_CASOXID(codigoCaso).FirstOrDefault();
             }
             catch (Exception ex)
             {

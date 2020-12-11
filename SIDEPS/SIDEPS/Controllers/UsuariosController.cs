@@ -249,15 +249,48 @@ namespace SIDEPS.Controllers
         }
 
         [HttpPost]
-        public ActionResult AgregarUsuario(SIDEPS_07REGUSRO objUsuario)
+        public ActionResult AgregarUsuario(M_Usuarios objUsuario)
         {
+            string tipoUsuario = TempData[Combos._TIPOUSUARIO].ToString();
             TempData.Keep();
 
             try
             {
+                bool agregado = false;
                 using (ServiciosWCFClient srvUsuarios = new ServiciosWCFClient())
                 {
-                    srvUsuarios.insUsuario(objUsuario);
+                    agregado = srvUsuarios.insUsuario(objUsuario.ConvertirEntidad());
+                    if (!agregado)
+                    {
+                        ModelState.AddModelError("CEDUSRO07", "El usuario ya existe");
+                        objUsuario.Cantones = srvUsuarios.SP_Con_Cantones().Select(r => new Categoria { Codigo = r.CODCANT03, Descripcion = r.NOMCANT03 }).ToList();
+                        objUsuario.Diaconias = srvUsuarios.conDiaconias().Select(r => new Categoria { Codigo = r.CODDIAC04, Descripcion = r.NOMDIAC04 }).ToList();
+
+                        // defino cuales codigos de roles puede agregar un usuario
+                        List<int> codigosRoles;
+
+                        switch (tipoUsuario)
+                        {
+                            case Combos.ADMIN_PARROQUIAL:
+                                codigosRoles = new List<int> { 1, 2, 3 };
+                                break;
+
+                            case Combos.ADMIN_DIACONAL:
+                                codigosRoles = new List<int> { 3 };
+                                break;
+
+                            case Combos.COLABORADOR:
+                            default:
+                                codigosRoles = new List<int>();
+                                break;
+                        }
+
+                        objUsuario.Roles = srvUsuarios.SP_Con_TipoUsuario()
+                        .Where(r => codigosRoles.Contains(r.CODUSRO05))
+                        .Select(r => new Categoria { Codigo = r.CODUSRO05, Descripcion = r.DESUSRO05 }).ToList();
+
+                        return View(objUsuario);
+                    }
                 }
             }
             catch (Exception ex)

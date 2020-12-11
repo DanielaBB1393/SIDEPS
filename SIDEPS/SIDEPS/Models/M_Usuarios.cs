@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SIDEPS.ServiciosWCF;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -6,14 +7,12 @@ namespace SIDEPS.Models
 {
     public class M_Usuarios
     {
-
         [Required(ErrorMessage = "La Cédula es Requerida.")]
         [Display(Name = "Cédula")]
         public string CEDUSRO07 { get; set; }
 
         [Required(ErrorMessage = "El Nombre es Requerido.")]
         [Display(Name = "Nombre")]
- 
         public string NOMUSRO07 { get; set; }
 
         [Required(ErrorMessage = "El Apellido es Requerido.")]
@@ -57,25 +56,43 @@ namespace SIDEPS.Models
         public string CNTUSRO07 { get; set; }
 
         [DataType(DataType.Date)]
-  
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Fecha de Ingreso")]
         public Nullable<System.DateTime> FEIUSRO07 { get; set; }
 
         [DataType(DataType.Date)]
-     
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Fecha de Salida")]
         public Nullable<System.DateTime> FEFUSRO07 { get; set; }
 
         [DataType(DataType.Date)]
-
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode =true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Fecha de Nacimiento")]
         public Nullable<System.DateTime> FENUSRO07 { get; set; }
 
         public List<Categoria> Cantones { get; set; }
         public List<Categoria> Diaconias { get; set; }
         public List<Categoria> Roles { get; set; }
+
+        public SIDEPS_07REGUSRO ConvertirEntidad()
+        {
+            return new SIDEPS_07REGUSRO
+            {
+                CEDUSRO07 = this.CEDUSRO07,
+                NOMUSRO07 = this.NOMUSRO07,
+                PAPUSRO07 = this.PAPUSRO07,
+                SAPUSRO07 = this.SAPUSRO07,
+                CODCANT03 = this.CODCANT03,
+                CODDIAC04 = this.CODDIAC04,
+                CODUSRO05 = this.CODUSRO05,
+                ESTUSRO07 = this.ESTUSRO07,
+                DIRUSRO07 = this.DIRUSRO07,
+                NACUSRO07 = this.NACUSRO07,
+                CNTUSRO07 = this.CNTUSRO07,
+                FEIUSRO07 = this.FEIUSRO07,
+                FEFUSRO07 = this.FEFUSRO07,
+                FENUSRO07 = this.FENUSRO07,
+            };
+        }
     }
 }

@@ -9,236 +9,246 @@
 <div>
     <hr />
     <h4>Datos Personales</h4>
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.DatosPersonales.CEDPERS13)
-        </dt>
+    @if (Model.DatosPersonales != null)
+    {
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.DatosPersonales.CEDPERS13)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DatosPersonales.CEDPERS13)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.DatosPersonales.CEDPERS13)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DatosPersonales.NOMPERS13)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.DatosPersonales.NOMPERS13)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DatosPersonales.NOMPERS13)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.DatosPersonales.NOMPERS13)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DatosPersonales.PAPPERS13)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.DatosPersonales.PAPPERS13)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DatosPersonales.PAPPERS13)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.DatosPersonales.PAPPERS13)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DatosPersonales.SAPPERS13)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.DatosPersonales.SAPPERS13)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DatosPersonales.SAPPERS13)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.DatosPersonales.SAPPERS13)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DatosPersonales.NACPERS13)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.DatosPersonales.NACPERS13)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DatosPersonales.NACPERS13)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.DatosPersonales.NACPERS13)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DatosPersonales.DIRPERS13)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.DatosPersonales.DIRPERS13)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DatosPersonales.DIRPERS13)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.DatosPersonales.DIRPERS13)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DatosPersonales.OACPERS13)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.DatosPersonales.OACPERS13)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DatosPersonales.OACPERS13)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.DatosPersonales.OACPERS13)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DatosPersonales.OANPERS13)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.DatosPersonales.OANPERS13)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DatosPersonales.OANPERS13)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.DatosPersonales.OANPERS13)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DatosPersonales.DESESTC06)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.DatosPersonales.DESESTC06)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DatosPersonales.DESESTC06)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.DatosPersonales.DESESTC06)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DatosPersonales.DESRELG11)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.DatosPersonales.DESRELG11)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DatosPersonales.DESRELG11)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.DatosPersonales.DESRELG11)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DatosPersonales.DESSOLI10)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.DatosPersonales.DESSOLI10)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DatosPersonales.DESSOLI10)
-        </dd>
-    </dl>
+            <dd>
+                @Html.DisplayFor(model => model.DatosPersonales.DESSOLI10)
+            </dd>
+        </dl>
+    }
 
 
 
     <hr />
     <h4>Aspecto Salud</h4>
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.AspectoSalud.DESENFR15)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.AspectoSalud.DESENFR15)
-        </dd>
+    @if (Model.AspectoSalud != null)
+    {
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.AspectoSalud.DESENFR15)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AspectoSalud.RECTRAT16)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.AspectoSalud.DESENFR15)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.AspectoSalud.RECTRAT16)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.AspectoSalud.RECTRAT16)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AspectoSalud.DESTRAT16)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.AspectoSalud.RECTRAT16)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.AspectoSalud.DESTRAT16)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.AspectoSalud.DESTRAT16)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AspectoSalud.DESSEGU14)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.AspectoSalud.DESTRAT16)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.AspectoSalud.DESSEGU14)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.AspectoSalud.DESSEGU14)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AspectoSalud.DESENFR16)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.AspectoSalud.DESSEGU14)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.AspectoSalud.DESENFR16)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.AspectoSalud.DESENFR16)
+            </dt>
 
-    </dl>
+            <dd>
+                @Html.DisplayFor(model => model.AspectoSalud.DESENFR16)
+            </dd>
+
+        </dl>
+    }
 
 
 
     <hr />
     <h4>Vivienda</h4>
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Vivienda.DESTIPV18)
-        </dt>
+    @if (Model.Vivienda != null)
+    {
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Vivienda.DESTIPV18)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Vivienda.DESTIPV18)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Vivienda.DESTIPV18)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Vivienda.DESESTV19)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Vivienda.DESESTV19)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Vivienda.DESESTV19)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Vivienda.DESESTV19)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Vivienda.DESMATE17)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Vivienda.DESMATE17)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Vivienda.DESMATE17)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Vivienda.DESMATE17)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Vivienda.MTOVIVI20)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Vivienda.MTOVIVI20)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Vivienda.MTOVIVI20)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Vivienda.MTOVIVI20)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Vivienda.NAPVIVI20)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Vivienda.NAPVIVI20)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Vivienda.NAPVIVI20)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Vivienda.NAPVIVI20)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Vivienda.SRCVIVI20)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Vivienda.SRCVIVI20)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Vivienda.SRCVIVI20)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Vivienda.SRCVIVI20)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Vivienda.SRIVIVI20)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Vivienda.SRIVIVI20)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Vivienda.SRIVIVI20)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Vivienda.SRIVIVI20)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Vivienda.SRLVIVI20)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Vivienda.SRLVIVI20)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Vivienda.SRLVIVI20)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Vivienda.SRLVIVI20)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Vivienda.SRMVIVI20)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Vivienda.SRMVIVI20)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Vivienda.SRMVIVI20)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Vivienda.SRMVIVI20)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Vivienda.SRBVIVI20)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Vivienda.SRBVIVI20)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Vivienda.SRBVIVI20)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Vivienda.SRBVIVI20)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Vivienda.SREVIVI20)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Vivienda.SREVIVI20)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Vivienda.SREVIVI20)
-        </dd>
-    </dl>
+            <dd>
+                @Html.DisplayFor(model => model.Vivienda.SREVIVI20)
+            </dd>
+        </dl>
+    }
 
 
 
@@ -329,96 +339,99 @@
 
     <hr />
     <h4>Egresos</h4>
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Egresos.MTOALQU24)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Egresos.MTOALQU24)
-        </dd>
+    @if (Model.Egresos != null)
+    {
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Egresos.MTOALQU24)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Egresos.MTOALIM24)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Egresos.MTOALQU24)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Egresos.MTOALIM24)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Egresos.MTOALIM24)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Egresos.MTOELEC24)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Egresos.MTOALIM24)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Egresos.MTOELEC24)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Egresos.MTOELEC24)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Egresos.MTOGAST24)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Egresos.MTOELEC24)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Egresos.MTOGAST24)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Egresos.MTOGAST24)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Egresos.MTCAGUA24)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Egresos.MTOGAST24)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Egresos.MTCAGUA24)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Egresos.MTCAGUA24)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Egresos.MTOCABL24)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Egresos.MTCAGUA24)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Egresos.MTOCABL24)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Egresos.MTOCABL24)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Egresos.MTOTELF24)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Egresos.MTOCABL24)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Egresos.MTOTELF24)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Egresos.MTOTELF24)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Egresos.MTOINTE24)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Egresos.MTOTELF24)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Egresos.MTOINTE24)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Egresos.MTOINTE24)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Egresos.MTOEDUC24)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Egresos.MTOINTE24)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Egresos.MTOEDUC24)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Egresos.MTOEDUC24)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Egresos.MTOSEGU24)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Egresos.MTOEDUC24)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Egresos.MTOSEGU24)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Egresos.MTOSEGU24)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Egresos.MTOOTRO24)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Egresos.MTOSEGU24)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Egresos.MTOOTRO24)
-        </dd>
-    </dl>
+            <dt>
+                @Html.DisplayNameFor(model => model.Egresos.MTOOTRO24)
+            </dt>
 
+            <dd>
+                @Html.DisplayFor(model => model.Egresos.MTOOTRO24)
+            </dd>
+        </dl>
+    }
 
 
     <hr />

@@ -78,17 +78,20 @@ namespace SIDEPS.Models
 
         public Vivienda_M(DETVIVI_Result vivienda)
         {
-            this.MTOVIVI20 = vivienda.MTOVIVI20;
-            this.NAPVIVI20 = vivienda.NAPVIVI20;
-            this.SRCVIVI20 = vivienda.SRCVIVI20.GetValueOrDefault();
-            this.SRIVIVI20 = vivienda.SRIVIVI20.GetValueOrDefault();
-            this.SRLVIVI20 = vivienda.SRLVIVI20.GetValueOrDefault();
-            this.SRMVIVI20 = vivienda.SRMVIVI20.GetValueOrDefault();
-            this.SRBVIVI20 = vivienda.SRBVIVI20.GetValueOrDefault();
-            this.SREVIVI20 = vivienda.SREVIVI20.GetValueOrDefault();
-            this.DESTIPV18 = vivienda.DESTIPV18;
-            this.DESESTV19 = vivienda.DESESTV19;
-            this.DESMATE17 = vivienda.DESMATE17;
+            if(vivienda != null)
+            {
+                this.MTOVIVI20 = vivienda.MTOVIVI20;
+                this.NAPVIVI20 = vivienda.NAPVIVI20;
+                this.SRCVIVI20 = vivienda.SRCVIVI20.GetValueOrDefault();
+                this.SRIVIVI20 = vivienda.SRIVIVI20.GetValueOrDefault();
+                this.SRLVIVI20 = vivienda.SRLVIVI20.GetValueOrDefault();
+                this.SRMVIVI20 = vivienda.SRMVIVI20.GetValueOrDefault();
+                this.SRBVIVI20 = vivienda.SRBVIVI20.GetValueOrDefault();
+                this.SREVIVI20 = vivienda.SREVIVI20.GetValueOrDefault();
+                this.DESTIPV18 = vivienda.DESTIPV18;
+                this.DESESTV19 = vivienda.DESESTV19;
+                this.DESMATE17 = vivienda.DESMATE17;
+            }
         }
 
         public SIDEPS_20REGVIVI ConvertirEntidad()
