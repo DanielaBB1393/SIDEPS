@@ -746,13 +746,6 @@
         <Function Name="SP_CONXID_REGUSRO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CEDUSRO07" Type="int" Mode="In" />
         </Function>
-        <Function Name="SP_DEL_CATCASO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="CODCASO25" Type="int" Mode="In" />
-          <Parameter Name="CODASPS16" Type="int" Mode="In" />
-          <Parameter Name="CEDPERS13" Type="varchar" Mode="In" />
-          <Parameter Name="CODVIVI20" Type="int" Mode="In" />
-          <Parameter Name="CODEGRF24" Type="int" Mode="In" />
-        </Function>
         <Function Name="SP_DEL_REGCASO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="codigoCaso" Type="int" Mode="In" />
         </Function>
@@ -2122,9 +2115,6 @@
           <FunctionImport Name="SP_CON_HISTCASOS" ReturnType="Collection(SIDEPS.SP_CON_HISTCASOS_Result)">
           <Parameter Name="diaconia" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="SP_CON_USROXCED" ReturnType="Collection(SIDEPS.SP_CONXID_REGUSRO_Result)">
-          <Parameter Name="CEDUSRO07" Mode="In" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="SP_CON_CASOXID" ReturnType="Collection(SIDEPS.SP_CON_CASOXID_Result)">
           <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -2153,6 +2143,9 @@
             <Parameter Name="CEDPERS13" Mode="In" Type="String" />
             <Parameter Name="CODVIVI20" Mode="In" Type="Int32" />
             <Parameter Name="CODEGRF24" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CON_USROXCED" ReturnType="Collection(SIDEPS.SP_CONXID_REGUSRO_Result)">
+            <Parameter Name="CEDUSRO07" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="SP_CON_CATAYUD_Result">
@@ -2392,6 +2385,22 @@
           <Property Type="String" Name="DESCASO25" Nullable="true" MaxLength="200" />
           <Property Type="String" Name="OPICASO25" Nullable="true" MaxLength="200" />
           <Property Type="String" Name="ESTCASO25" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="SP_CON_USROXCED_Result">
+          <Property Type="String" Name="CEDUSRO07" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="NOMUSRO07" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PAPUSRO07" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SAPUSRO07" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="CODCANT03" Nullable="true" />
+          <Property Type="Int32" Name="CODDIAC04" Nullable="true" />
+          <Property Type="Int32" Name="CODUSRO05" Nullable="true" />
+          <Property Type="String" Name="ESTUSRO07" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="DIRUSRO07" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="NACUSRO07" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="CNTUSRO07" Nullable="true" MaxLength="30" />
+          <Property Type="DateTime" Name="FEIUSRO07" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="FEFUSRO07" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="FENUSRO07" Nullable="true" Precision="23" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -3069,26 +3078,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SP_CON_USROXCED" FunctionName="SIDEPS.Store.SP_CON_USROXCED">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="SIDEPS.SP_CONXID_REGUSRO_Result">
-                <ScalarProperty Name="CEDUSRO07" ColumnName="CEDUSRO07" />
-                <ScalarProperty Name="NOMUSRO07" ColumnName="NOMUSRO07" />
-                <ScalarProperty Name="PAPUSRO07" ColumnName="PAPUSRO07" />
-                <ScalarProperty Name="SAPUSRO07" ColumnName="SAPUSRO07" />
-                <ScalarProperty Name="CODCANT03" ColumnName="CODCANT03" />
-                <ScalarProperty Name="CODDIAC04" ColumnName="CODDIAC04" />
-                <ScalarProperty Name="CODUSRO05" ColumnName="CODUSRO05" />
-                <ScalarProperty Name="ESTUSRO07" ColumnName="ESTUSRO07" />
-                <ScalarProperty Name="DIRUSRO07" ColumnName="DIRUSRO07" />
-                <ScalarProperty Name="NACUSRO07" ColumnName="NACUSRO07" />
-                <ScalarProperty Name="CNTUSRO07" ColumnName="CNTUSRO07" />
-                <ScalarProperty Name="FEIUSRO07" ColumnName="FEIUSRO07" />
-                <ScalarProperty Name="FEFUSRO07" ColumnName="FEFUSRO07" />
-                <ScalarProperty Name="FENUSRO07" ColumnName="FENUSRO07" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_CON_CASOXID" FunctionName="SIDEPS.Store.SP_CON_CASOXID">
             <ResultMapping>
               <ComplexTypeMapping TypeName="SIDEPS.SP_CON_CASOXID_Result">
@@ -3108,7 +3097,26 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_MOD_REGUSRO" FunctionName="SIDEPS.Store.SP_MOD_REGUSRO" />
           <FunctionImportMapping FunctionImportName="SP_DEL_REGCASO" FunctionName="SIDEPS.Store.SP_DEL_REGCASO" />
-          <FunctionImportMapping FunctionImportName="SP_DEL_CATCASO" FunctionName="SIDEPS.Store.SP_DEL_CATCASO" />
+          <FunctionImportMapping FunctionImportName="SP_CON_USROXCED" FunctionName="SIDEPS.Store.SP_CON_USROXCED">
+          <ResultMapping>
+              <ComplexTypeMapping TypeName="SIDEPS.SP_CONXID_REGUSRO_Result">
+                <ScalarProperty Name="CEDUSRO07" ColumnName="CEDUSRO07" />
+                <ScalarProperty Name="NOMUSRO07" ColumnName="NOMUSRO07" />
+                <ScalarProperty Name="PAPUSRO07" ColumnName="PAPUSRO07" />
+                <ScalarProperty Name="SAPUSRO07" ColumnName="SAPUSRO07" />
+                <ScalarProperty Name="CODCANT03" ColumnName="CODCANT03" />
+                <ScalarProperty Name="CODDIAC04" ColumnName="CODDIAC04" />
+                <ScalarProperty Name="CODUSRO05" ColumnName="CODUSRO05" />
+                <ScalarProperty Name="ESTUSRO07" ColumnName="ESTUSRO07" />
+                <ScalarProperty Name="DIRUSRO07" ColumnName="DIRUSRO07" />
+                <ScalarProperty Name="NACUSRO07" ColumnName="NACUSRO07" />
+                <ScalarProperty Name="CNTUSRO07" ColumnName="CNTUSRO07" />
+                <ScalarProperty Name="FEIUSRO07" ColumnName="FEIUSRO07" />
+                <ScalarProperty Name="FEFUSRO07" ColumnName="FEFUSRO07" />
+                <ScalarProperty Name="FENUSRO07" ColumnName="FENUSRO07" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

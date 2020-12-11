@@ -62,7 +62,7 @@ namespace AccesoDatos.Implementacion
             SP_CONXID_REGUSRO_Result lobjRespuesta = new SP_CONXID_REGUSRO_Result();
             try
             {
-                lobjRespuesta = gobjContextoSP.SP_CON_USROXCED(cedulaUsuario).Single();
+                lobjRespuesta = gobjContextoSP.SP_CON_USROXCED(cedulaUsuario).SingleOrDefault();
             }
             catch (Exception ex)
             {
