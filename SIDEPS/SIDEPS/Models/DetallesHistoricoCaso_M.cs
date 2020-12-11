@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using SIDEPS.ServiciosWCF;
+using System.Collections.Generic;
 
 namespace SIDEPS.Models
 {
@@ -10,5 +11,6 @@ namespace SIDEPS.Models
         public List<MiembroFamiliar_M> GrupoFamiliar { get; set; }
         public Egresos_M Egresos { get; set; }
         public string OpinionCaso { get; set; }
+        public List<SP_CON_CATCASOAY_Result> AyudasAprobadas { get; set; }
     }
 }

@@ -654,4 +654,16 @@ public class ServiciosWCF : IServiciosWCF
             throw;
         }
     }
+
+    public List<SP_CON_CATCASOAY_Result> SP_Con_AyudasXcaso(int codigoCaso)
+    {
+        try
+        {
+            return this.casosLN.SP_Con_AyudasXcaso(codigoCaso);
+        }
+        catch
+        {
+            throw;
+        }
+    }
 }

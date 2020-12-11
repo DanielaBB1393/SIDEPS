@@ -435,10 +435,24 @@
 
 
     <hr />
+    <h4>Ayudas Aprobadas</h4>
+    <dl class="dl-horizontal">
+        @foreach (var ayuda in Model.AyudasAprobadas)
+        {
+            <dd>
+                @Html.DisplayFor(model => ayuda.DESAYUD26)
+            </dd>
+        }
+    </dl>
+    0
+
+
+    <hr />
     <h4>Comentarios</h4>
     <dl class="dl-horizontal">
         @Html.DisplayFor(model => model.OpinionCaso)
     </dl>
+
 </div>
 <p>
     @Html.ActionLink("Regresar", "HistoricoDeCasos")

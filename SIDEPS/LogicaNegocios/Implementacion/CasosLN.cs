@@ -46,6 +46,18 @@ namespace LogicaNegocios.Implementacion
             }
         }
 
+        public List<SP_CON_CATCASOAY_Result> SP_Con_AyudasXcaso(int codigoCaso)
+        {
+            try
+            {
+                return this.accesoDatos.SP_Con_AyudasXcaso(codigoCaso);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         public DETPERS_Result SP_Con_DatosPersonales(int codigoCaso)
         {
             try

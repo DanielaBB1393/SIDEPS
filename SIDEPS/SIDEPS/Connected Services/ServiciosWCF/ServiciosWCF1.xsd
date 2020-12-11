@@ -676,4 +676,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="SP_Con_AyudasXcaso">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codigoCaso" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Con_AyudasXcasoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="SP_Con_AyudasXcasoResult" nillable="true" type="q48:ArrayOfSP_CON_CATCASOAY_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

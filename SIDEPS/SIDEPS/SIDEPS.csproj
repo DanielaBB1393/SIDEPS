@@ -279,6 +279,9 @@
     <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CON_CASOXID_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServiciosWCF\SIDEPS.ServiciosWCF.SP_CON_CATCASOAY_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

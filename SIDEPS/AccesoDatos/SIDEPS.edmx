@@ -746,6 +746,13 @@
         <Function Name="SP_CONXID_REGUSRO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CEDUSRO07" Type="int" Mode="In" />
         </Function>
+        <Function Name="SP_DEL_CATCASO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODCASO25" Type="int" Mode="In" />
+          <Parameter Name="CODASPS16" Type="int" Mode="In" />
+          <Parameter Name="CEDPERS13" Type="varchar" Mode="In" />
+          <Parameter Name="CODVIVI20" Type="int" Mode="In" />
+          <Parameter Name="CODEGRF24" Type="int" Mode="In" />
+        </Function>
         <Function Name="SP_DEL_REGCASO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="codigoCaso" Type="int" Mode="In" />
         </Function>
@@ -2138,7 +2145,14 @@
             <Parameter Name="FENUSRO07" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="SP_DEL_REGCASO">
-            <Parameter Name="codigoCaso" Mode="In" Type="Int32" />
+          <Parameter Name="codigoCaso" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_DEL_CATCASO">
+            <Parameter Name="CODCASO25" Mode="In" Type="Int32" />
+            <Parameter Name="CODASPS16" Mode="In" Type="Int32" />
+            <Parameter Name="CEDPERS13" Mode="In" Type="String" />
+            <Parameter Name="CODVIVI20" Mode="In" Type="Int32" />
+            <Parameter Name="CODEGRF24" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="SP_CON_CATAYUD_Result">
@@ -3094,6 +3108,7 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_MOD_REGUSRO" FunctionName="SIDEPS.Store.SP_MOD_REGUSRO" />
           <FunctionImportMapping FunctionImportName="SP_DEL_REGCASO" FunctionName="SIDEPS.Store.SP_DEL_REGCASO" />
+          <FunctionImportMapping FunctionImportName="SP_DEL_CATCASO" FunctionName="SIDEPS.Store.SP_DEL_CATCASO" />
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

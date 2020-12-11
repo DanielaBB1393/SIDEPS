@@ -862,4 +862,17 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SP_CON_CASOXID_Result" nillable="true" type="tns:SP_CON_CASOXID_Result" />
+  <xs:complexType name="ArrayOfSP_CON_CATCASOAY_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SP_CON_CATCASOAY_Result" nillable="true" type="tns:SP_CON_CATCASOAY_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSP_CON_CATCASOAY_Result" nillable="true" type="tns:ArrayOfSP_CON_CATCASOAY_Result" />
+  <xs:complexType name="SP_CON_CATCASOAY_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODAYUD26" type="xs:int" />
+      <xs:element minOccurs="0" name="DESAYUD26" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SP_CON_CATCASOAY_Result" nillable="true" type="tns:SP_CON_CATCASOAY_Result" />
 </xs:schema>
