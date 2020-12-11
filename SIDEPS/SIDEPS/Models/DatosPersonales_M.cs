@@ -49,11 +49,11 @@ namespace SIDEPS.Models
 
         [DisplayName("Dirección")]
         public string DIRPERS13 { get; set; }
-
-        [DisplayName("Opinion 1")]
+        [Required(ErrorMessage = "La Ocupación Actual es Requerida.")]
+        [DisplayName("Ocupación Actual")]
         public string OACPERS13 { get; set; }
 
-        [DisplayName("Opinion 2")]
+        [DisplayName("Ocupación Anterior")]
         public string OANPERS13 { get; set; }
 
         [DisplayName("Estado Civil")]
@@ -67,8 +67,10 @@ namespace SIDEPS.Models
 
         [DisplayName("Religión")]
         public string DESRELG11 { get; set; }
-
-        public DateTime? FENPERS13 { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Fecha de Nacimiento")]
+        public Nullable<System.DateTime> FENPERS13 { get; set; }
 
         public List<Categoria> Religiones { get; set; }
         public List<Categoria> Cantones { get; set; }
@@ -95,6 +97,7 @@ namespace SIDEPS.Models
             this.DIRPERS13 = persona.DIRPERS13;
             this.OACPERS13 = persona.OACPERS13;
             this.OANPERS13 = persona.OANPERS13;
+            this.FENPERS13 = persona.FENPERS13;
         }
 
         public DatosPersonales_M(DETPERS_Result persona)
@@ -131,7 +134,8 @@ namespace SIDEPS.Models
                 DIRPERS13 = this.DIRPERS13,
                 OACPERS13 = this.OACPERS13,
                 OANPERS13 = this.OANPERS13,
-            };
+                FENPERS13 = this.FENPERS13,
+        };
         }
     }
 }

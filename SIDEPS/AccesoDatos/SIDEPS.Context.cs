@@ -421,7 +421,7 @@ namespace AccesoDatos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_INS_REGFAML", cEDFAML22Parameter, nOMFAML22Parameter, eDAFAML22Parameter, cODESTC06Parameter, cODNEDU09Parameter, oACFAML22Parameter, iNGFAML22Parameter, dESFAML22Parameter, cODORGS21Parameter, cODENFR15Parameter, cODPARE12Parameter);
         }
     
-        public virtual int SP_INS_REGPERS(string cEDPERS13, Nullable<int> cODESTC06, Nullable<int> cODNEDU09, Nullable<int> cODCANT03, Nullable<int> cODSOLI10, Nullable<int> cODRELG11, string nOMPERS13, string pAPPERS13, string sAPPERS13, string nACPERS13, string dIRPERS13, string oACPERS13, string oANPERS13)
+        public virtual int SP_INS_REGPERS(string cEDPERS13, Nullable<int> cODESTC06, Nullable<int> cODNEDU09, Nullable<int> cODCANT03, Nullable<int> cODSOLI10, Nullable<int> cODRELG11, string nOMPERS13, string pAPPERS13, string sAPPERS13, string nACPERS13, string dIRPERS13, string oACPERS13, string oANPERS13, DateTime FENPERS13)
         {
             var cEDPERS13Parameter = cEDPERS13 != null ?
                 new ObjectParameter("CEDPERS13", cEDPERS13) :
@@ -474,8 +474,12 @@ namespace AccesoDatos
             var oANPERS13Parameter = oANPERS13 != null ?
                 new ObjectParameter("OANPERS13", oANPERS13) :
                 new ObjectParameter("OANPERS13", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_INS_REGPERS", cEDPERS13Parameter, cODESTC06Parameter, cODNEDU09Parameter, cODCANT03Parameter, cODSOLI10Parameter, cODRELG11Parameter, nOMPERS13Parameter, pAPPERS13Parameter, sAPPERS13Parameter, nACPERS13Parameter, dIRPERS13Parameter, oACPERS13Parameter, oANPERS13Parameter);
+
+            var FENPERS13Parameter = FENPERS13 != null ?
+                      new ObjectParameter("FENPERS13", FENPERS13) :
+                      new ObjectParameter("FENPERS13", typeof(DateTime));
+
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_INS_REGPERS", cEDPERS13Parameter, cODESTC06Parameter, cODNEDU09Parameter, cODCANT03Parameter, cODSOLI10Parameter, cODRELG11Parameter, nOMPERS13Parameter, pAPPERS13Parameter, sAPPERS13Parameter, nACPERS13Parameter, dIRPERS13Parameter, oACPERS13Parameter, oANPERS13Parameter, FENPERS13Parameter);
         }
     
         public virtual int SP_INS_REGUSRO(string cEDUSRO07, string nOMUSRO07, string pAPUSRO07, string sAPUSRO07, Nullable<int> cODCANT03, Nullable<int> cODDIAC04, Nullable<int> cODUSRO05, string dIRUSRO07, string nACUSRO07, string cNTUSRO07, Nullable<System.DateTime> fENUSRO07)
