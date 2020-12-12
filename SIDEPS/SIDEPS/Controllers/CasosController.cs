@@ -35,10 +35,9 @@ namespace SIDEPS.Controllers
 
             using (ServiciosWCFClient svc = new ServiciosWCFClient())
             {
-                DETPERS_Result entidad;
                 if (codigoCaso.HasValue)
                 {
-                    entidad = svc.SP_Con_DatosPersonales(codigoCaso.Value);
+                    var entidad = svc.SP_Con_DatosPersonales(codigoCaso.Value);
                     modelo = new DatosPersonales_M(entidad);
                 }
 
@@ -84,7 +83,7 @@ namespace SIDEPS.Controllers
                     TempData[Combos._CEDULAPERSONA] = persona.CEDPERS13;
                     TempData[Combos._CODIGOCASO] = casoInsertado;
 
-                    return RedirectToAction("AspectoSalud");
+                    return RedirectToAction("AspectoSalud", new { codigoCaso });
                 }
             }
             else
@@ -117,6 +116,11 @@ namespace SIDEPS.Controllers
             var modelo = new AspectoSalud_M();
             using (var svc = new ServiciosWCFClient())
             {
+                if (codigoCaso.HasValue)
+                {
+                    var entidad = svc.SP_Con_AspectoSalud(codigoCaso.Value);
+                    modelo = new AspectoSalud_M(entidad);
+                }
                 modelo.Enfermedades = svc.SP_Con_Enfermedades().Select(enf => new Categoria { Codigo = enf.CODENFR15, Descripcion = enf.DESENFR15 }).ToList();
                 modelo.TiposSeguro = svc.SP_Con_Seguros().Select(seg => new Categoria { Codigo = seg.CODSEGU14, Descripcion = seg.DESSEGU14 }).ToList();
             }
@@ -134,10 +138,15 @@ namespace SIDEPS.Controllers
             var resultado = this.casosSvc.SP_Ins_AspectoSalud(aspecto.ConvertirEntidad(), codigoCaso);
             if (resultado > 0)
             {
-                return RedirectToAction("Vivienda");
+                return RedirectToAction("Vivienda", new { codigoCaso });
             }
             else
             {
+                using(var svc = new ServiciosWCFClient())
+                {
+                    aspecto.Enfermedades = svc.SP_Con_Enfermedades().Select(enf => new Categoria { Codigo = enf.CODENFR15, Descripcion = enf.DESENFR15 }).ToList();
+                    aspecto.TiposSeguro = svc.SP_Con_Seguros().Select(seg => new Categoria { Codigo = seg.CODSEGU14, Descripcion = seg.DESSEGU14 }).ToList();
+                }
                 return View(aspecto);
             }
         }
@@ -156,6 +165,11 @@ namespace SIDEPS.Controllers
             var modelo = new Vivienda_M();
             using (var svc = new ServiciosWCFClient())
             {
+                if (codigoCaso.HasValue)
+                {
+                    var entidad = svc.SP_Con_Vivienda(codigoCaso.Value);
+                    modelo = new Vivienda_M(entidad);
+                }
                 modelo.Tipos = svc.SP_Con_TipoVivienda().Select(tip => new Categoria { Codigo = tip.CODTIPV18, Descripcion = tip.DESTIPV18 }).ToList();
                 modelo.Estados = svc.SP_Con_EstadoVivienda().Select(est => new Categoria { Codigo = est.CODESTV19, Descripcion = est.DESESTV19 }).ToList();
                 modelo.Materiales = svc.SP_Con_Materiales().Select(mat => new Categoria { Codigo = mat.CODMATE17, Descripcion = mat.DESMATE17 }).ToList();
@@ -175,7 +189,7 @@ namespace SIDEPS.Controllers
             if (resultado > 0)
             {
                 TempData[Combos._CODIGOVIVIENDA] = resultado;
-                return RedirectToAction("GrupoFamiliar");
+                return RedirectToAction("GrupoFamiliar", new { codigoCaso });
             }
 
             return View(vivienda);
@@ -192,6 +206,7 @@ namespace SIDEPS.Controllers
             }
             string cedulaSolicitante = TempData[Combos._CEDULAPERSONA].ToString();
             TempData.Keep();
+            ViewData["codigoCaso"] = codigoCaso;
 
             List<MiembroFamiliar_M> grupoFamiliar;
             using (ServiciosWCFClient svc = new ServiciosWCFClient())
@@ -347,7 +362,17 @@ namespace SIDEPS.Controllers
             }
             TempData.Keep();
 
-            return View();
+            Egresos_M modelo = new Egresos_M();
+            using(var svc = new ServiciosWCFClient())
+            {
+                if (codigoCaso.HasValue)
+                {
+                    var entidad = svc.SP_Con_Egresos(codigoCaso.Value);
+                    modelo = new Egresos_M(entidad);
+                }
+            }
+
+            return View(modelo);
         }
 
         [HttpPost]
@@ -360,7 +385,7 @@ namespace SIDEPS.Controllers
 
             if (resultado > 0)
             {
-                return RedirectToAction("MotivoSolicitud");
+                return RedirectToAction("MotivoSolicitud", new { codigoCaso });
             }
 
             return View(egresosMensuales);
@@ -377,7 +402,17 @@ namespace SIDEPS.Controllers
             }
             TempData.Keep();
 
-            return View();
+            Caso_M modelo = new Caso_M();
+            using(var svc = new ServiciosWCFClient())
+            {
+                if (codigoCaso.HasValue)
+                {
+                    var entidad = svc.ConCaso(codigoCaso.Value);
+                    modelo = new Caso_M(entidad);
+                }
+            }
+
+            return View(modelo);
         }
 
         [HttpPost]
@@ -387,7 +422,10 @@ namespace SIDEPS.Controllers
             TempData.Keep();
 
             motivoSolicitud.CODCASO25 = codigoCaso;
-            motivoSolicitud.ESTCASO25 = Combos.CASO_PENDIENTE;
+            if (motivoSolicitud.ESTCASO25.Equals(Combos.CASO_INCOMPLETO))
+            {
+                motivoSolicitud.ESTCASO25 = Combos.CASO_PENDIENTE;
+            }
 
             var resultado = this.casosSvc.SP_Mod_Caso(motivoSolicitud.ConvertirEntidad());
 

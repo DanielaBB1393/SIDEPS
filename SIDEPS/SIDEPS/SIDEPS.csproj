@@ -150,7 +150,6 @@
     <Compile Include="Models\MotivoSolicitud_M.cs" />
     <Compile Include="Models\DatosPersonales_M.cs" />
     <Compile Include="Models\M_Usuarios.cs" />
-    <Compile Include="Models\ProblemasSociales_M.cs" />
     <Compile Include="Models\GrupoFamiliar_M.cs" />
     <Compile Include="Models\TipoAyuda_M.cs" />
     <Compile Include="Models\Vivienda_M.cs" />

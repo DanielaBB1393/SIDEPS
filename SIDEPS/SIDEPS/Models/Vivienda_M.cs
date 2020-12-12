@@ -60,26 +60,11 @@ namespace SIDEPS.Models
         {
         }
 
-        public Vivienda_M(SIDEPS_20REGVIVI vivienda)
-        {
-            this.CODVIVI20 = vivienda.CODVIVI20;
-            this.CODTIPV18 = vivienda.CODTIPV18;
-            this.CODESTV19 = vivienda.CODESTV19;
-            this.CODMATE17 = vivienda.CODMATE17;
-            this.MTOVIVI20 = vivienda.MTOVIVI20;
-            this.NAPVIVI20 = vivienda.NAPVIVI20;
-            this.SRCVIVI20 = vivienda.SRCVIVI20.GetValueOrDefault();
-            this.SRIVIVI20 = vivienda.SRIVIVI20.GetValueOrDefault();
-            this.SRLVIVI20 = vivienda.SRLVIVI20.GetValueOrDefault();
-            this.SRMVIVI20 = vivienda.SRMVIVI20.GetValueOrDefault();
-            this.SRBVIVI20 = vivienda.SRBVIVI20.GetValueOrDefault();
-            this.SREVIVI20 = vivienda.SREVIVI20.GetValueOrDefault();
-        }
-
         public Vivienda_M(DETVIVI_Result vivienda)
         {
             if(vivienda != null)
             {
+                this.CODVIVI20 = vivienda.CODVIVI20;
                 this.MTOVIVI20 = vivienda.MTOVIVI20;
                 this.NAPVIVI20 = vivienda.NAPVIVI20;
                 this.SRCVIVI20 = vivienda.SRCVIVI20.GetValueOrDefault();

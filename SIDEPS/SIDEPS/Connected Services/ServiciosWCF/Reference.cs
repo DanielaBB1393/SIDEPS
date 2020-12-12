@@ -481,6 +481,9 @@ namespace SIDEPS.ServiciosWCF {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CODASPS16Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DESENFR15Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -502,6 +505,19 @@ namespace SIDEPS.ServiciosWCF {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CODASPS16 {
+            get {
+                return this.CODASPS16Field;
+            }
+            set {
+                if ((this.CODASPS16Field.Equals(value) != true)) {
+                    this.CODASPS16Field = value;
+                    this.RaisePropertyChanged("CODASPS16");
+                }
             }
         }
         
@@ -590,6 +606,9 @@ namespace SIDEPS.ServiciosWCF {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CODVIVI20Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DESESTV19Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -629,6 +648,19 @@ namespace SIDEPS.ServiciosWCF {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CODVIVI20 {
+            get {
+                return this.CODVIVI20Field;
+            }
+            set {
+                if ((this.CODVIVI20Field.Equals(value) != true)) {
+                    this.CODVIVI20Field = value;
+                    this.RaisePropertyChanged("CODVIVI20");
+                }
             }
         }
         
@@ -1016,6 +1048,9 @@ namespace SIDEPS.ServiciosWCF {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CODEGRF24Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<decimal> MTCAGUA24Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1055,6 +1090,19 @@ namespace SIDEPS.ServiciosWCF {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CODEGRF24 {
+            get {
+                return this.CODEGRF24Field;
+            }
+            set {
+                if ((this.CODEGRF24Field.Equals(value) != true)) {
+                    this.CODEGRF24Field = value;
+                    this.RaisePropertyChanged("CODEGRF24");
+                }
             }
         }
         

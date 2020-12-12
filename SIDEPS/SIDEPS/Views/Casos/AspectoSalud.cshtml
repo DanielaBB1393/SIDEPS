@@ -10,6 +10,7 @@
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.CODASPS16)
     
 <div class="form-horizontal">
     <h4>Aspecto Salud</h4>
@@ -45,7 +46,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.RECTRAT16, htmlAttributes: new { @class = "control-label col-md-4" })
         <div class="col-md-8">
-            @Html.EditorFor(model => model.RECTRAT16, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.DropDownListFor(model => model.RECTRAT16, new SelectList(SIDEPS.Models.Combos.SiNo), new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.RECTRAT16, "", new { @class = "text-danger" })
         </div>
     </div>

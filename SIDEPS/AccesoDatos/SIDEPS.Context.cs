@@ -609,33 +609,6 @@ namespace AccesoDatos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_MOD_REGDIAC", cODDIAC04Parameter, nOMDIAC04Parameter, lUGDIAC04Parameter, tELDIAC04Parameter, eSTDIAC04Parameter, cODCANT03Parameter);
         }
     
-        public virtual ObjectResult<DETASPS_Result> DETASPS(Nullable<int> cODCASO25)
-        {
-            var cODCASO25Parameter = cODCASO25.HasValue ?
-                new ObjectParameter("CODCASO25", cODCASO25) :
-                new ObjectParameter("CODCASO25", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DETASPS_Result>("DETASPS", cODCASO25Parameter);
-        }
-    
-        public virtual ObjectResult<string> DETCASO(Nullable<int> cODCASO25)
-        {
-            var cODCASO25Parameter = cODCASO25.HasValue ?
-                new ObjectParameter("CODCASO25", cODCASO25) :
-                new ObjectParameter("CODCASO25", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("DETCASO", cODCASO25Parameter);
-        }
-    
-        public virtual ObjectResult<DETEGRF_Result> DETEGRF(Nullable<int> cODCASO25)
-        {
-            var cODCASO25Parameter = cODCASO25.HasValue ?
-                new ObjectParameter("CODCASO25", cODCASO25) :
-                new ObjectParameter("CODCASO25", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DETEGRF_Result>("DETEGRF", cODCASO25Parameter);
-        }
-    
         public virtual ObjectResult<DETFAML_Result> DETFAML(Nullable<int> cODCASO25)
         {
             var cODCASO25Parameter = cODCASO25.HasValue ?
@@ -652,15 +625,6 @@ namespace AccesoDatos
                 new ObjectParameter("CODCASO25", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DETPERS_Result>("DETPERS", cODCASO25Parameter);
-        }
-    
-        public virtual ObjectResult<DETVIVI_Result> DETVIVI(Nullable<int> cODCASO25)
-        {
-            var cODCASO25Parameter = cODCASO25.HasValue ?
-                new ObjectParameter("CODCASO25", cODCASO25) :
-                new ObjectParameter("CODCASO25", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DETVIVI_Result>("DETVIVI", cODCASO25Parameter);
         }
     
         public virtual ObjectResult<SP_CON_CATCASOAY_Result> SP_CON_CATCASOAY(Nullable<int> cODCASO25)
@@ -992,6 +956,42 @@ namespace AccesoDatos
                 new ObjectParameter("SREVIVI20", typeof(bool));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_MOD_REGVIVI", cODVIVI20Parameter, cODTIPV18Parameter, cODESTV19Parameter, cODMATE17Parameter, mTOVIVI20Parameter, nAPVIVI20Parameter, sRCVIVI20Parameter, sRIVIVI20Parameter, sRLVIVI20Parameter, sRMVIVI20Parameter, sRBVIVI20Parameter, sREVIVI20Parameter);
+        }
+    
+        public virtual ObjectResult<DETASPS_Result> DETASPS(Nullable<int> cODCASO25)
+        {
+            var cODCASO25Parameter = cODCASO25.HasValue ?
+                new ObjectParameter("CODCASO25", cODCASO25) :
+                new ObjectParameter("CODCASO25", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DETASPS_Result>("DETASPS", cODCASO25Parameter);
+        }
+    
+        public virtual ObjectResult<string> DETCASO(Nullable<int> cODCASO25)
+        {
+            var cODCASO25Parameter = cODCASO25.HasValue ?
+                new ObjectParameter("CODCASO25", cODCASO25) :
+                new ObjectParameter("CODCASO25", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("DETCASO", cODCASO25Parameter);
+        }
+    
+        public virtual ObjectResult<DETEGRF_Result> DETEGRF(Nullable<int> cODCASO25)
+        {
+            var cODCASO25Parameter = cODCASO25.HasValue ?
+                new ObjectParameter("CODCASO25", cODCASO25) :
+                new ObjectParameter("CODCASO25", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DETEGRF_Result>("DETEGRF", cODCASO25Parameter);
+        }
+    
+        public virtual ObjectResult<DETVIVI_Result> DETVIVI(Nullable<int> cODCASO25)
+        {
+            var cODCASO25Parameter = cODCASO25.HasValue ?
+                new ObjectParameter("CODCASO25", cODCASO25) :
+                new ObjectParameter("CODCASO25", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DETVIVI_Result>("DETVIVI", cODCASO25Parameter);
         }
     }
 }

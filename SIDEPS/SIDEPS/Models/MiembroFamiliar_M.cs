@@ -68,21 +68,6 @@ namespace SIDEPS.Models
         {
         }
 
-        public MiembroFamiliar_M(SIDEPS_22REGFAML familiar)
-        {
-            this.CEDFAML22 = familiar.CEDFAML22;
-            this.NOMFAML22 = familiar.NOMFAML22;
-            this.EDAFAML22 = familiar.EDAFAML22;
-            this.CODESTC06 = familiar.CODESTC06;
-            this.CODNEDU09 = familiar.CODNEDU09;
-            this.OACFAML22 = familiar.OACFAML22;
-            this.INGFAML22 = familiar.INGFAML22;
-            this.DESFAML22 = familiar.DESFAML22;
-            this.CODORGS21 = familiar.CODORGS21;
-            this.CODENFR15 = familiar.CODENFR15;
-            this.CODPARE12 = familiar.CODPARE12;
-        }
-
         public MiembroFamiliar_M(SP_CON_REGFAML_Result familiar)
         {
             if(familiar != null)

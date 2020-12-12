@@ -44,21 +44,11 @@ namespace SIDEPS.Models
         {
         }
 
-        public AspectoSalud_M(SIDEPS_16REGASPS aspecto)
-        {
-            this.CODASPS16 = aspecto.CODASPS16;
-            this.CEDPERS13 = aspecto.CEDPERS13;
-            this.CODSEGU14 = aspecto.CODSEGU14;
-            this.CODENFR15 = aspecto.CODENFR15;
-            this.DESENFR16 = aspecto.DESENFR16;
-            this.RECTRAT16 = aspecto.RECTRAT16;
-            this.DESTRAT16 = aspecto.DESTRAT16;
-        }
-
         public AspectoSalud_M(DETASPS_Result aspecto)
         {
             if (aspecto != null)
             {
+                this.CODASPS16 = aspecto.CODASPS16;
                 this.DESENFR16 = aspecto.DESENFR16;
                 this.RECTRAT16 = aspecto.RECTRAT16;
                 this.DESTRAT16 = aspecto.DESTRAT16;

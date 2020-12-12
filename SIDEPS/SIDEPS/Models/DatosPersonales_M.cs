@@ -82,24 +82,6 @@ namespace SIDEPS.Models
         {
         }
 
-        public DatosPersonales_M(SIDEPS_13REGPERS persona)
-        {
-            this.CEDPERS13 = persona.CEDPERS13;
-            this.CODESTC06 = persona.CODESTC06;
-            this.CODNEDU09 = persona.CODNEDU09;
-            this.CODCANT03 = persona.CODCANT03;
-            this.CODSOLI10 = persona.CODSOLI10;
-            this.CODRELG11 = persona.CODRELG11;
-            this.NOMPERS13 = persona.NOMPERS13;
-            this.PAPPERS13 = persona.PAPPERS13;
-            this.SAPPERS13 = persona.SAPPERS13;
-            this.NACPERS13 = persona.NACPERS13;
-            this.DIRPERS13 = persona.DIRPERS13;
-            this.OACPERS13 = persona.OACPERS13;
-            this.OANPERS13 = persona.OANPERS13;
-            this.FENPERS13 = persona.FENPERS13;
-        }
-
         public DatosPersonales_M(DETPERS_Result persona)
         {
             this.CEDPERS13 = persona.CEDPERS13;

@@ -10,17 +10,9 @@
 namespace Entidades
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class SIDEPS_07REGUSRO
+    public partial class SP_CON_USROXCED_Result
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public SIDEPS_07REGUSRO()
-        {
-            this.SIDEPS_08REGTELF = new HashSet<SIDEPS_08REGTELF>();
-            this.SIDEPS_25REGCASO = new HashSet<SIDEPS_25REGCASO>();
-        }
-    
         public string CEDUSRO07 { get; set; }
         public string NOMUSRO07 { get; set; }
         public string PAPUSRO07 { get; set; }
@@ -35,13 +27,5 @@ namespace Entidades
         public Nullable<System.DateTime> FEIUSRO07 { get; set; }
         public Nullable<System.DateTime> FEFUSRO07 { get; set; }
         public Nullable<System.DateTime> FENUSRO07 { get; set; }
-    
-        public virtual SIDEPS_03CATCANT SIDEPS_03CATCANT { get; set; }
-        public virtual SIDEPS_04REGDIAC SIDEPS_04REGDIAC { get; set; }
-        public virtual SIDEPS_05TIPUSRO SIDEPS_05TIPUSRO { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SIDEPS_08REGTELF> SIDEPS_08REGTELF { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SIDEPS_25REGCASO> SIDEPS_25REGCASO { get; set; }
     }
 }
