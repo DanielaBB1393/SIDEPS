@@ -130,11 +130,11 @@ namespace LogicaNegocios.Implementacion
             }
         }
 
-        public bool SP_Ins_AyudasXCaso(List<SIDEPS_27TIPAYUD> ayudasAprobadas)
+        public bool SP_InsMod_AyudasXCaso(List<SIDEPS_27TIPAYUD> ayudasAprobadas, int codigoCaso)
         {
             try
             {
-                return this.accesoDatos.SP_Ins_AyudasXCaso(ayudasAprobadas);
+                return this.accesoDatos.SP_InsMod_AyudasXCaso(ayudasAprobadas, codigoCaso);
             }
             catch
             {

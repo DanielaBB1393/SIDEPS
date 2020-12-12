@@ -28,7 +28,7 @@ namespace AccesoDatos.Implementacion
             }
             return lobjRespuesta;
         }
-
+        // Metodo para consultar la lista de los usuarios
         public List<SP_CON_REGUSRO_Result> conUsuario()
         {
             List<SP_CON_REGUSRO_Result> lobjRespuesta = new List<SP_CON_REGUSRO_Result>();
@@ -42,7 +42,7 @@ namespace AccesoDatos.Implementacion
             }
             return lobjRespuesta;
         }
-
+        //Metodo ?
         public SP_CONXID_REGUSRO_Result conUsuarioXId(int pid)
         {
             SP_CONXID_REGUSRO_Result lobjRespuesta = new SP_CONXID_REGUSRO_Result();
@@ -56,7 +56,7 @@ namespace AccesoDatos.Implementacion
             }
             return lobjRespuesta;
         }
-
+        //Metodo consultar usuario por cedula
         public SP_CONXID_REGUSRO_Result conUsuarioXCedula(string cedulaUsuario)
         {
             SP_CONXID_REGUSRO_Result lobjRespuesta = new SP_CONXID_REGUSRO_Result();
@@ -70,7 +70,7 @@ namespace AccesoDatos.Implementacion
             }
             return lobjRespuesta;
         }
-
+        //Metodo insertar usuario
         public bool insUsuario(SIDEPS_07REGUSRO pobjUsuario)
         {
             bool lobjRespuesta = new bool();
@@ -102,7 +102,7 @@ namespace AccesoDatos.Implementacion
             }
             return lobjRespuesta;
         }
-
+        //Metodo modificar usuario
         public bool modUsuario(SIDEPS_07REGUSRO pobjUsuario)
         {
             bool lobjRespuesta = new bool();
@@ -125,7 +125,7 @@ namespace AccesoDatos.Implementacion
             }
             return lobjRespuesta;
         }
-
+        //Metodo eliminar usuario
         public bool delUsuario(SIDEPS_07REGUSRO pobjUsuario)
         {
             bool lobjRespuesta = new bool();
@@ -145,13 +145,13 @@ namespace AccesoDatos.Implementacion
             }
             return lobjRespuesta;
         }
-
-        public string Login(string cedula, string contrasena)
+        //METODO LOGIN
+        public string Login(string cedula, string contrasena)//Parametros
         {
             try
             {
-                var rolUsuario = gobjContextoSP.SIDEPS_07REGUSRO
-                    .Where(usr => 
+                var rolUsuario = gobjContextoSP.SIDEPS_07REGUSRO //Variable de rol de usuario
+                    .Where(usr => //Compara con base de datos
                         usr.CEDUSRO07.Equals(cedula, StringComparison.OrdinalIgnoreCase) && 
                         usr.CNTUSRO07.Equals(contrasena) &&
                         usr.ESTUSRO07.Equals("ACTIVO", StringComparison.OrdinalIgnoreCase))

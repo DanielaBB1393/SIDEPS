@@ -307,11 +307,11 @@
   <wsdl:message name="IServiciosWCF_EliminarCaso_OutputMessage">
     <wsdl:part name="parameters" element="tns:EliminarCasoResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiciosWCF_SP_Ins_AyudasXCaso_InputMessage">
-    <wsdl:part name="parameters" element="tns:SP_Ins_AyudasXCaso" />
+  <wsdl:message name="IServiciosWCF_SP_InsMod_AyudasXCaso_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_InsMod_AyudasXCaso" />
   </wsdl:message>
-  <wsdl:message name="IServiciosWCF_SP_Ins_AyudasXCaso_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SP_Ins_AyudasXCasoResponse" />
+  <wsdl:message name="IServiciosWCF_SP_InsMod_AyudasXCaso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_InsMod_AyudasXCasoResponse" />
   </wsdl:message>
   <wsdl:message name="IServiciosWCF_SP_Con_AyudasXcaso_InputMessage">
     <wsdl:part name="parameters" element="tns:SP_Con_AyudasXcaso" />
@@ -520,9 +520,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/EliminarCaso" message="tns:IServiciosWCF_EliminarCaso_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/EliminarCasoResponse" message="tns:IServiciosWCF_EliminarCaso_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="SP_Ins_AyudasXCaso">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_AyudasXCaso" message="tns:IServiciosWCF_SP_Ins_AyudasXCaso_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_AyudasXCasoResponse" message="tns:IServiciosWCF_SP_Ins_AyudasXCaso_OutputMessage" />
+    <wsdl:operation name="SP_InsMod_AyudasXCaso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_InsMod_AyudasXCaso" message="tns:IServiciosWCF_SP_InsMod_AyudasXCaso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_InsMod_AyudasXCasoResponse" message="tns:IServiciosWCF_SP_InsMod_AyudasXCaso_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="SP_Con_AyudasXcaso">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Con_AyudasXcaso" message="tns:IServiciosWCF_SP_Con_AyudasXcaso_InputMessage" />
@@ -981,8 +981,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SP_Ins_AyudasXCaso">
-      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Ins_AyudasXCaso" style="document" />
+    <wsdl:operation name="SP_InsMod_AyudasXCaso">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_InsMod_AyudasXCaso" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

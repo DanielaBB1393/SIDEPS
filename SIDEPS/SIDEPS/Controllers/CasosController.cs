@@ -656,13 +656,19 @@ namespace SIDEPS.Controllers
                 return RedirectToAction("Login", "Home");
             }
             string cedulaUsuario = TempData[Combos._CEDULAUSUARIO].ToString();
+            string tipoUsuario = TempData[Combos._TIPOUSUARIO].ToString();
+
             TempData.Keep();
 
             var modelo = new List<HistoricoCaso_M>();
 
             using (var svc = new ServiciosWCFClient())
             {
-                int diaconia = svc.conUsuarioXCedula(cedulaUsuario).CODDIAC04.GetValueOrDefault();
+                int diaconia = 0;
+                if (tipoUsuario.Equals(Combos.ADMIN_DIACONAL, StringComparison.OrdinalIgnoreCase))
+                {
+                    diaconia = svc.conUsuarioXCedula(cedulaUsuario).CODDIAC04.GetValueOrDefault();
+                }
 
                 var resultado = svc.SP_Con_HistoricoCasos(diaconia).Where(caso => !caso.ESTCASO25.Equals(Combos.CASO_PENDIENTE));
                 foreach (var item in resultado)
@@ -725,6 +731,66 @@ namespace SIDEPS.Controllers
             return View(modelo);
         }
 
+        public ActionResult ModificarAyudas(int id)
+        {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
+            TempData.Keep();
+
+            var caso = this.casosSvc.ConCaso(id);
+            var modelo = new AprobarCaso_M()
+            {
+                CodigoCaso = caso.CODCASO25
+            };
+
+            var ayudas = this.casosSvc.SP_Con_CategoriasAyudas();
+            var ayudasAsignadas = this.casosSvc.SP_Con_AyudasXcaso(id);
+
+            modelo.Ayudas = ayudas.Select(ayuda => new TipoAyuda_M
+            {
+                //si la ayudas esta asignada la muestra seleccionada en el checkbox
+                Aprobado = ayudasAsignadas.Any(aya => aya.CODAYUD26 == ayuda.CODAYUD26),
+                Codigo = ayuda.CODAYUD26,
+                Descripcion = ayuda.DESAYUD26
+            }).ToList();
+
+            return View(modelo);
+        }
+
+        [HttpPost]
+        public ActionResult ModificarAyudas(AprobarCaso_M modelo)
+        {
+            TempData.Keep();
+
+            var caso = new Caso_M
+            {
+                FEICASO25 = DateTime.Now,
+                ESTCASO25 = Combos.CASO_APROBADO,
+                CODCASO25 = modelo.CodigoCaso,
+            };
+
+            this.casosSvc.SP_Mod_Caso(caso.ConvertirEntidad());
+
+            List<SIDEPS_27TIPAYUD> ayudasAprobadas = new List<SIDEPS_27TIPAYUD>();
+
+            foreach (var ayuda in modelo.Ayudas.Where(ayuda => ayuda.Aprobado))
+            {
+                var ayudaBD = new SIDEPS_27TIPAYUD
+                {
+                    CODCASO25 = modelo.CodigoCaso,
+                    CODAYUD26 = ayuda.Codigo
+                };
+
+                ayudasAprobadas.Add(ayudaBD);
+            }
+
+            this.casosSvc.SP_InsMod_AyudasXCaso(ayudasAprobadas, modelo.CodigoCaso);
+
+            return RedirectToAction("MenuCasos");
+        }
+
         public ActionResult ModificarCaso(int id)
         {
             if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
@@ -752,6 +818,36 @@ namespace SIDEPS.Controllers
 
             return RedirectToAction("MenuCasos");
         }
+
+
+        public ActionResult ModificarEstadoCaso(int id)
+        {
+            if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
+            {
+                return RedirectToAction("Login", "Home");
+            }
+            SP_CON_CASOXID_Result resultado;
+
+            using (var svc = new ServiciosWCFClient())
+            {
+                resultado = svc.ConCaso(id);
+            }
+
+            var caso = new Caso_M(resultado);
+            return View(caso);
+        }
+
+        [HttpPost]
+        public ActionResult ModificarEstadoCaso(Caso_M caso)
+        {
+            using (var svc = new ServiciosWCFClient())
+            {
+                svc.SP_Mod_Caso(caso.ConvertirEntidad());
+            }
+
+            return RedirectToAction("MenuCasos");
+        }
+
 
         public ActionResult ValidarCasoDetalles(int codigoCaso)
         {
@@ -826,7 +922,7 @@ namespace SIDEPS.Controllers
                 ayudasAprobadas.Add(ayudaBD);
             }
 
-            this.casosSvc.SP_Ins_AyudasXCaso(ayudasAprobadas);
+            this.casosSvc.SP_InsMod_AyudasXCaso(ayudasAprobadas, model.CodigoCaso);
 
             return RedirectToAction("MenuCasos");
         }

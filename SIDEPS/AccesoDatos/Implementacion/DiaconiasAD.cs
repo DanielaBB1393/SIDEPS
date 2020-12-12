@@ -16,6 +16,7 @@ namespace AccesoDatos.Implementacion
         {
             this.gobjContextoSP = _gobjContextoPS;
         }
+        //Metodo para eliminar la diaconia
         public List<SIDEPS_04REGDIAC> Diaconia()
         {
             List<SIDEPS_04REGDIAC> lobjRespuesta = new List<SIDEPS_04REGDIAC>();
@@ -29,6 +30,7 @@ namespace AccesoDatos.Implementacion
             }
             return lobjRespuesta;
         }
+        //Metodo para consultar todas las diaconias
         public List<SP_CON_REGDIAC_Result> conDiaconias()
         {
             List<SP_CON_REGDIAC_Result> lobjRespuesta = new List<SP_CON_REGDIAC_Result>();
@@ -42,6 +44,7 @@ namespace AccesoDatos.Implementacion
             }
             return lobjRespuesta;
         }
+        //Metodo para consultar diaconias por id
         public SP_CONXID_REGDIAC_Result conDiaconiasXId(int pid)
         {
             SP_CONXID_REGDIAC_Result lobjRespuesta = new SP_CONXID_REGDIAC_Result();
@@ -55,7 +58,8 @@ namespace AccesoDatos.Implementacion
             }
             return lobjRespuesta;
         }
-        public bool insDiaconia(SIDEPS_04REGDIAC pobjDiac)
+        //Metodo para insertar la diaconia
+        public bool insDiaconia(SIDEPS_04REGDIAC pobjDiac)// recibe como parametro
         {
             bool lobjRespuesta = new bool();
             try
@@ -74,8 +78,8 @@ namespace AccesoDatos.Implementacion
             }
             return lobjRespuesta;
         }
-
-        public bool modDiaconia(SIDEPS_04REGDIAC pobjDiac)
+        //Metodo para modificar la diaconia
+        public bool modDiaconia(SIDEPS_04REGDIAC pobjDiac)//recibe como parametro
         {
             bool lobjRespuesta = new bool();
             try
@@ -94,7 +98,8 @@ namespace AccesoDatos.Implementacion
             }
             return lobjRespuesta;
         }
-        public bool delDiaconia(SIDEPS_04REGDIAC pobjDiac)
+        //Metodo para eliminar la diaconia
+        public bool delDiaconia(SIDEPS_04REGDIAC pobjDiac)//recibe como parametro
         {
             bool lobjRespuesta = new bool();
             try

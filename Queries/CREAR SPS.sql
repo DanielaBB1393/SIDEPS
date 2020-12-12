@@ -942,7 +942,7 @@ FROM
 				CASO.CEDPERS13 = PERS.CEDPERS13
 WHERE
 		1=1
-		AND DIAC.CODDIAC04 = @diaconia
+		AND (DIAC.CODDIAC04 = @diaconia OR @diaconia = 0)
 END
 GO
 
@@ -1184,7 +1184,7 @@ BEGIN TRANSACTION
 		CASO.CODCASO25 = @codigoCaso
 			
 
-	--delete from SIDEPS_27TIPAYUD
+	-- elimina ayudas por caso
 	DELETE
 			ayudaXcaso
 	FROM
@@ -1192,7 +1192,7 @@ BEGIN TRANSACTION
 	WHERE
 			ayudaXcaso.CODCASO25 = @codigoCaso
 
-	--delete from SIDEPS_25REGCASO
+	-- elimina el caso
 	DELETE
 			CAS
 	FROM
@@ -1200,25 +1200,48 @@ BEGIN TRANSACTION
 	WHERE
 			CAS.CODCASO25 = @codigoCaso
 
-	--delete from SIDEPS_23CATFINA (tabla intermedia familiares por solicitante)
-	DELETE
-			familiarXsolicitante
+	--elimina grupo familiar
+	------------------------	
+
+	-- averiguar familiares del solicitante(catfina)
+	DECLARE @familiarXpersonaTabla AS TABLE(CODFINA INT, CEDPERSONA VARCHAR(20))
+
+	INSERT INTO @familiarXpersonaTabla(
+		CODFINA,
+		CEDPERSONA
+	)
+	SELECT
+			FamiliarXPersona.CODFINA23,
+			FamiliarXPersona.CEDFAML22
 	FROM
-			SIDEPS_23CATFINA familiarXsolicitante
+			SIDEPS_23CATFINA FamiliarXPersona
 	WHERE
-			familiarXsolicitante.CEDPERS13 = @cedPersona
+			FamiliarXPersona.CEDPERS13 = @cedPersona
 
-	--delete from SIDEPS_22REGFAML (registros de familiares - entidades)
-	--DELETE
-	--		familiar
-	--FROM
-	--		SIDEPS_22REGFAML familiar
-	--		JOIN SIDEPS_23CATFINA.
-	--		JOIN SIDEPS_25REGCASO CAS ON 
-	--WHERE
-	--		CAS.CODCASO25 = @codigoCaso
 
-	--delete from SIDEPS_24REGEGRF
+
+	--eliminar referencias de catfina (table intermedia) 
+	DELETE
+			familiarXPersona
+	FROM
+			SIDEPS_23CATFINA familiarXPersona
+			INNER JOIN @familiarXpersonaTabla t ON
+					t.CODFINA = familiarXPersona.CODFINA23
+
+	--elimina la entidad de familiar 
+	DELETE
+			familiar
+	FROM
+			SIDEPS_22REGFAML familiar
+			INNER JOIN @familiarXpersonaTabla T ON
+					T.CEDPERSONA = familiar.CEDFAML22
+
+
+
+
+
+	-- elimina egresos
+
 	DELETE
 			egresos
 	FROM
@@ -1226,7 +1249,7 @@ BEGIN TRANSACTION
 	WHERE
 			egresos.CODEGRF24 = @codigoegreso
 
-	--delete from SIDEPS_20REGVIVI
+	-- elimina vivienda
 	DELETE
 			vivienda
 	FROM
@@ -1234,7 +1257,7 @@ BEGIN TRANSACTION
 	WHERE
 			vivienda.CODVIVI20 = @codigovivienda
 
-	--delete from SIDEPS_16REGASPS
+	-- elimina aspecto salud
 	DELETE
 			aspectoSalud
 	FROM
@@ -1242,13 +1265,14 @@ BEGIN TRANSACTION
 	WHERE
 			aspectoSalud.CODASPS16 = @aspectoSalud
 
-	--delete from SIDEPS_13REGPERS
+	-- elimina registro persona
 	DELETE
 			persona
 	FROM
 			SIDEPS_13REGPERS persona
 	WHERE
 			persona.CEDPERS13 = @cedPersona
+
 COMMIT
 END TRY
 BEGIN CATCH

@@ -1,15 +1,15 @@
 ﻿@model SIDEPS.Models.Caso_M
 
 @{
-    ViewBag.Title = "Finalizar Caso";
+    ViewBag.Title = "Modificar Estado Caso";
 }
 
-<h2>Finalizar Caso</h2>
+<h2>Modificar Estado Caso</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -21,7 +21,7 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.CODCASO25, new { htmlAttributes = new { @class = "form-control", disabled = true } })
             </div>
-        </div>        
+        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.FEICASO25, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.FEFCASO25, htmlAttributes: new { @class = "control-label col-md-2"})
+            @Html.LabelFor(model => model.FEFCASO25, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.FEFCASO25, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.FEFCASO25, "", new { @class = "text-danger" })
@@ -42,14 +42,14 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ESTCASO25, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.ESTCASO25, new SelectList(new List<string> { SIDEPS.Models.Combos.CASO_FINALIZADO }), new { @class = "form-control" } )
+                @Html.DropDownListFor(model => model.ESTCASO25, new SelectList( SIDEPS.Models.Combos.EstadosCaso ), new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ESTCASO25, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Finalizar Caso" class="btn btn-success" />
+                <input type="submit" value="Modificar Caso" class="btn btn-success" />
             </div>
         </div>
     </div>

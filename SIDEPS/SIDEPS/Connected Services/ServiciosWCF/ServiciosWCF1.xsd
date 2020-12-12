@@ -663,17 +663,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="SP_Ins_AyudasXCaso">
+  <xs:element name="SP_InsMod_AyudasXCaso">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ayudasAprobadas" nillable="true" type="q47:ArrayOfSIDEPS_27TIPAYUD" />
+        <xs:element minOccurs="0" name="codigoCaso" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SP_Ins_AyudasXCasoResponse">
+  <xs:element name="SP_InsMod_AyudasXCasoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="SP_Ins_AyudasXCasoResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="SP_InsMod_AyudasXCasoResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

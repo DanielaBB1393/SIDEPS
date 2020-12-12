@@ -172,7 +172,6 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="img_avatar.png" />
-    <Content Include="img_avatar2.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Connected Services\ServiciosWCF\ServiciosWCF.wsdl" />
@@ -346,6 +345,8 @@
     <Content Include="Views\Casos\ValidarCasoAprobados.cshtml" />
     <Content Include="Views\Casos\CasoIncompleto.cshtml" />
     <Content Include="Views\Casos\EliminarCaso.cshtml" />
+    <Content Include="Views\Casos\ModificarAyudas.cshtml" />
+    <Content Include="Views\Casos\ModificarEstadoCaso.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

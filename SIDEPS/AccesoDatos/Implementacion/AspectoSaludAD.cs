@@ -7,12 +7,12 @@ namespace AccesoDatos.Implementacion
     public class AspectoSaludAD : IAspectoSaludAD
     {
         private readonly SIDEPSEntities contexto = new SIDEPSEntities();
-
-        public int SP_Ins_AspectoSalud(SIDEPS_16REGASPS aspecto, int codigoCaso)
+        // Metodo para insertar  y modificar el aspecto de salud
+        public int SP_Ins_AspectoSalud(SIDEPS_16REGASPS aspecto, int codigoCaso)// recibe como parametros
         {
             try
             {
-                if(this.contexto.SIDEPS_16REGASPS.Find(aspecto.CODASPS16) != null)
+                if(this.contexto.SIDEPS_16REGASPS.Find(aspecto.CODASPS16) != null)// Si el aspecto de salud es diferente de null
                 {
                     //modifica aspecto salud existente
                     return this.contexto.SP_MOD_REGASPS(
@@ -34,7 +34,7 @@ namespace AccesoDatos.Implementacion
                     //al caso existente le referencia el nuevo aspecto salud
                     SIDEPS_25REGCASO caso = this.contexto.SIDEPS_25REGCASO.Find(codigoCaso);
                     caso.CODASPS16 = resultado.CODASPS16;
-                    this.contexto.SaveChanges();
+                    this.contexto.SaveChanges(); // Devuelve el numero de aspecto de salud creado
 
                     return resultado.CODASPS16;
                 }

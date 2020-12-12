@@ -643,11 +643,11 @@ public class ServiciosWCF : IServiciosWCF
         }
     }
 
-    public bool SP_Ins_AyudasXCaso(List<SIDEPS_27TIPAYUD> ayudasAprobadas)
+    public bool SP_InsMod_AyudasXCaso(List<SIDEPS_27TIPAYUD> ayudasAprobadas, int codigoCaso)
     {
         try
         {
-            return this.casosLN.SP_Ins_AyudasXCaso(ayudasAprobadas);
+            return this.casosLN.SP_InsMod_AyudasXCaso(ayudasAprobadas, codigoCaso);
         }
         catch
         {

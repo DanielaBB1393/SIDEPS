@@ -9,7 +9,7 @@ namespace AccesoDatos.Implementacion
     public class CategoriasAD : ICategoriasAD
     {
         private readonly SIDEPSEntities contexto = new SIDEPSEntities();
-
+       //Metodo para consultar todos los cantones
         public List<SP_CON_CATCANT_Result> SP_Con_Cantones()
         {
             try
@@ -21,7 +21,7 @@ namespace AccesoDatos.Implementacion
                 throw ex;
             }
         }
-
+        //Metodo para consultar todos los estados civiles
         public List<SP_CON_CATESTC_Result> SP_Con_EstadosCivil()
         {
             try
@@ -33,7 +33,7 @@ namespace AccesoDatos.Implementacion
                 throw;
             }
         }
-
+        //Metodo para consultar todas las religiones
         public List<SP_CON_CATRELG_Result> SP_Con_Religiones()
         {
             try
@@ -45,7 +45,7 @@ namespace AccesoDatos.Implementacion
                 throw ex;
             }
         }
-
+        //Metodo para consultar todos los  niveles educativos
         public List<SP_CON_CATNEDU_Result> SP_Con_NivelEducativo()
         {
             try
@@ -57,7 +57,7 @@ namespace AccesoDatos.Implementacion
                 throw ex;
             }
         }
-
+        //Metodo para consultar todos los paises
         public List<SP_CON_CATPAIS_Result> SP_Con_Pais()
         {
             try
@@ -69,7 +69,7 @@ namespace AccesoDatos.Implementacion
                 throw ex;
             }
         }
-
+        //Metodo para consultar todas las provincias
         public List<SP_CON_CATPROV_Result> SP_Con_Provincia()
         {
             try
@@ -81,7 +81,7 @@ namespace AccesoDatos.Implementacion
                 throw ex;
             }
         }
-
+        //Metodo para consultar todos los tipos de usuario
         public List<SP_CON_TIPUSRO_Result> SP_Con_TipoUsuario()
         {
             try
@@ -93,7 +93,7 @@ namespace AccesoDatos.Implementacion
                 throw ex;
             }
         }
-
+        //Metodo para consultar los tipos de solicitantes
         public List<SP_CON_CATSOLI_Result> SP_Con_CategoriaSolicitud()
         {
             try
@@ -105,7 +105,7 @@ namespace AccesoDatos.Implementacion
                 throw ex;
             }
         }
-
+        //Metodo para consultar todos los parentescos
         public List<SP_CON_CATPARE_Result> SP_Con_Parentescos()
         {
             try
@@ -117,7 +117,7 @@ namespace AccesoDatos.Implementacion
                 throw ex;
             }
         }
-
+        //Metodo para consultar todos los tipos de seguros
         public List<SP_CON_CATSEGU_Result> SP_Con_Seguros()
         {
             try
@@ -129,7 +129,7 @@ namespace AccesoDatos.Implementacion
                 throw ex;
             }
         }
-
+        //Metodo para consultar todos los tipos de enfermedades
         public List<SP_CON_CATENFR_Result> SP_Con_Enfermedades()
         {
             try
@@ -141,7 +141,7 @@ namespace AccesoDatos.Implementacion
                 throw ex;
             }
         }
-
+        //Metodo para consultar todos los tipos de materiales
         public List<SP_CON_CATMATE_Result> SP_Con_Materiales()
         {
             try
@@ -153,7 +153,7 @@ namespace AccesoDatos.Implementacion
                 throw ex;
             }
         }
-
+        //Metodo para consultar todos los tipos de vivienda
         public List<SP_CON_TIPVIVI_Result> SP_Con_TipoVivienda()
         {
             try
@@ -165,7 +165,7 @@ namespace AccesoDatos.Implementacion
                 throw ex;
             }
         }
-
+        //Metodo para consultar todos los estados de la vivienda (Bueno, Malo.....)
         public List<SP_CON_ESTVIVI_Result> SP_Con_EstadoVivienda()
         {
             try
@@ -177,7 +177,7 @@ namespace AccesoDatos.Implementacion
                 throw ex;
             }
         }
-
+        //Metodo para consultar todas las organizaciones de ayuda
         public List<SP_CON_CATORGS_Result> SP_Con_Organizaciones()
         {
             try
@@ -189,7 +189,7 @@ namespace AccesoDatos.Implementacion
                 throw ex;
             }
         }
-
+        //Metodo para consultar todos los tipos de ayuda
         public List<SP_CON_CATAYUD_Result> SP_Con_CategoriasAyudas()
         {
             try

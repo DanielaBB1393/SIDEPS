@@ -34,6 +34,7 @@ namespace SIDEPS.Models
         public static string CASO_PENDIENTE = "PENDIENTE";
         public static string CASO_APROBADO = "APROBADO";
         public static string CASO_RECHAZADO = "RECHAZADO";
+        public static string CASO_FINALIZADO = "FINALIZADO";
 
         // Tipos de usuarios
         public const string ADMIN_PARROQUIAL = "ADMIN PARROQUIAL";

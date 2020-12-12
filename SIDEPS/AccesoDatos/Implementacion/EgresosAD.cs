@@ -7,11 +7,12 @@ namespace AccesoDatos.Implementacion
     public class EgresosAD : IEgresosAD
     {
         private readonly SIDEPSEntities contexto = new SIDEPSEntities();
-
-        public int SP_Ins_Egresos(SIDEPS_24REGEGRF egresos, int codigoCaso)
+        //Metodo para insertar egresos
+        public int SP_Ins_Egresos(SIDEPS_24REGEGRF egresos, int codigoCaso)//recibe como parametro
         {
             try
             {
+                // Si el egreso esta vacio se inserta si no se modifica
                 if (this.contexto.SIDEPS_24REGEGRF.Find(egresos.CODEGRF24) != null)
                 {
                     //modifica egresos existentes
@@ -35,7 +36,7 @@ namespace AccesoDatos.Implementacion
                     //inserta nuevos egresos
                     var resultado = this.contexto.SIDEPS_24REGEGRF.Add(egresos);
                     this.contexto.SaveChanges();
-
+                    //al caso existente le referencia el nuevo aspecto salud
                     SIDEPS_25REGCASO caso = this.contexto.SIDEPS_25REGCASO.Find(codigoCaso);
                     caso.CODEGRF24 = resultado.CODEGRF24;
                     this.contexto.SaveChanges();

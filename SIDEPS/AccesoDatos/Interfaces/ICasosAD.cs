@@ -27,7 +27,7 @@ namespace AccesoDatos.Interfaces
 
         SP_CON_CASOXID_Result ConCaso(int codigoCaso);
 
-        bool SP_Ins_AyudasXCaso(List<SIDEPS_27TIPAYUD> ayudasAprobadas);
+        bool SP_InsMod_AyudasXCaso(List<SIDEPS_27TIPAYUD> ayudasAprobadas, int codigoCaso);
 
         List<SP_CON_CATCASOAY_Result> SP_Con_AyudasXcaso(int codigoCaso);
     }
