@@ -50,9 +50,10 @@ namespace SIDEPS.Controllers
             string cedulaUsuario = TempData[Combos._CEDULAUSUARIO].ToString();
             TempData.Keep();
 
-            var resultadoP = this.casosSvc.SP_Ins_Persona(persona.ConvertirEntidad());
-            if (resultadoP)
+            var guardoPersona = this.casosSvc.SP_Ins_Persona(persona.ConvertirEntidad());
+            if (guardoPersona)
             {
+                // si guardó la persona entonces guarda el caso
                 var caso = new Caso_M
                 {
                     CEDPERS13 = persona.CEDPERS13,
@@ -66,6 +67,19 @@ namespace SIDEPS.Controllers
                     TempData[Combos._CODIGOCASO] = resultadoC;
 
                     return RedirectToAction("AspectoSalud");
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("CEDPERS13", "El usuario ya existe");
+                // no pudo guardar la persona
+                using (ServiciosWCFClient svc = new ServiciosWCFClient())
+                {
+                    persona.Religiones = svc.SP_Con_Religiones().Select(r => new Categoria { Codigo = r.CODRELG11, Descripcion = r.DESRELG11 }).ToList();
+                    persona.Cantones = svc.SP_Con_Cantones().Select(r => new Categoria { Codigo = r.CODCANT03, Descripcion = r.NOMCANT03 }).ToList();
+                    persona.EstadosCiviles = svc.SP_Con_EstadosCivil().Select(r => new Categoria { Codigo = r.CODESTC06, Descripcion = r.DESESTC06 }).ToList();
+                    persona.Escolaridades = svc.SP_Con_NivelEducativo().Select(r => new Categoria { Codigo = r.CODNEDU09, Descripcion = r.DESNEDU09 }).ToList();
+                    persona.CategoriaSolicitante = svc.SP_Con_CategoriaSolicitud().Select(r => new Categoria { Codigo = r.CODSOLI10, Descripcion = r.DESSOLI10 }).ToList();
                 }
             }
             return View(persona);

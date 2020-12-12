@@ -1,6 +1,7 @@
 ﻿using AccesoDatos.Interfaces;
 using Entidades;
 using System;
+using System.Linq;
 
 namespace AccesoDatos.Implementacion
 {
@@ -12,6 +13,15 @@ namespace AccesoDatos.Implementacion
         {
             try
             {
+                bool existe = this.contexto.SIDEPS_13REGPERS
+                    .Any(regper => regper.CEDPERS13.Equals(persona.CEDPERS13, StringComparison.OrdinalIgnoreCase));
+
+                if (existe)
+                {
+                    // no puede insertar porque ya la cedula existe
+                    return false;
+                }
+
                 var resultado = this.contexto.SIDEPS_13REGPERS.Add(persona);
                 return this.contexto.SaveChanges() > 0;
             }
