@@ -33,7 +33,7 @@ public interface IServiciosWCF
     bool SP_Mod_Caso(SIDEPS_25REGCASO caso);
 
     [OperationContract]
-    bool SP_Ins_Persona(SIDEPS_13REGPERS persona);
+    bool SP_InsMod_Persona(SIDEPS_13REGPERS persona, int? codigoCaso);
 
     [OperationContract]
     int SP_Ins_AspectoSalud(SIDEPS_16REGASPS aspecto, int codigoCaso);

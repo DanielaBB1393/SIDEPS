@@ -22,18 +22,26 @@ namespace SIDEPS.Controllers
         //-------
         // Paso 1
         //-------
-        public ActionResult DatosPersonales()
+        public ActionResult DatosPersonales(int? codigoCaso)
         {
             if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
             {
                 return RedirectToAction("Login", "Home");
             }
             TempData.Keep();
+            ViewData["codigoCaso"] = codigoCaso;
 
             var modelo = new DatosPersonales_M();
 
             using (ServiciosWCFClient svc = new ServiciosWCFClient())
             {
+                DETPERS_Result entidad;
+                if (codigoCaso.HasValue)
+                {
+                    entidad = svc.SP_Con_DatosPersonales(codigoCaso.Value);
+                    modelo = new DatosPersonales_M(entidad);
+                }
+
                 modelo.Religiones = svc.SP_Con_Religiones().Select(r => new Categoria { Codigo = r.CODRELG11, Descripcion = r.DESRELG11 }).ToList();
                 modelo.Cantones = svc.SP_Con_Cantones().Select(r => new Categoria { Codigo = r.CODCANT03, Descripcion = r.NOMCANT03 }).ToList();
                 modelo.EstadosCiviles = svc.SP_Con_EstadosCivil().Select(r => new Categoria { Codigo = r.CODESTC06, Descripcion = r.DESESTC06 }).ToList();
@@ -45,12 +53,12 @@ namespace SIDEPS.Controllers
         }
 
         [HttpPost]
-        public ActionResult DatosPersonales(DatosPersonales_M persona)
+        public ActionResult DatosPersonales(int? codigoCaso, DatosPersonales_M persona)
         {
             string cedulaUsuario = TempData[Combos._CEDULAUSUARIO].ToString();
             TempData.Keep();
 
-            var guardoPersona = this.casosSvc.SP_Ins_Persona(persona.ConvertirEntidad());
+            var guardoPersona = this.casosSvc.SP_InsMod_Persona(persona.ConvertirEntidad(), codigoCaso);
             if (guardoPersona)
             {
                 // si guardó la persona entonces guarda el caso
@@ -60,11 +68,21 @@ namespace SIDEPS.Controllers
                     CEDUSRO07 = cedulaUsuario,
                 };
 
-                var resultadoC = this.casosSvc.SP_Ins_Caso(caso.ConvertirEntidad());
-                if (resultadoC > 0)
+                int casoInsertado;
+                if (codigoCaso.HasValue)
+                {
+                    // no inserta solo asigna el codigo del caso que se esta modificando
+                    casoInsertado = codigoCaso.Value;
+                }
+                else
+                {
+                    // inserta el caso porque es un caso nuevo
+                    casoInsertado = this.casosSvc.SP_Ins_Caso(caso.ConvertirEntidad());
+                }
+                if (casoInsertado > 0)
                 {
                     TempData[Combos._CEDULAPERSONA] = persona.CEDPERS13;
-                    TempData[Combos._CODIGOCASO] = resultadoC;
+                    TempData[Combos._CODIGOCASO] = casoInsertado;
 
                     return RedirectToAction("AspectoSalud");
                 }
@@ -88,7 +106,7 @@ namespace SIDEPS.Controllers
         //-------
         // Paso 2
         //-------
-        public ActionResult AspectoSalud()
+        public ActionResult AspectoSalud(int? codigoCaso)
         {
             if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
             {
@@ -127,7 +145,7 @@ namespace SIDEPS.Controllers
         //-------
         // Paso 3
         //-------
-        public ActionResult Vivienda()
+        public ActionResult Vivienda(int? codigoCaso)
         {
             if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
             {
@@ -166,7 +184,7 @@ namespace SIDEPS.Controllers
         //-------
         // Paso 4
         //-------
-        public ActionResult GrupoFamiliar()
+        public ActionResult GrupoFamiliar(int? codigoCaso)
         {
             if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
             {
@@ -321,7 +339,7 @@ namespace SIDEPS.Controllers
         //-------
         // Paso 5
         //-------
-        public ActionResult Egresos()
+        public ActionResult Egresos(int? codigoCaso)
         {
             if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
             {
@@ -351,7 +369,7 @@ namespace SIDEPS.Controllers
         //-------
         // Paso 6
         //-------
-        public ActionResult MotivoSolicitud()
+        public ActionResult MotivoSolicitud(int? codigoCaso)
         {
             if (!TempData.ContainsKey(Combos._CEDULAUSUARIO))
             {

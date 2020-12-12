@@ -6,8 +6,7 @@
 
 <h2>Paso 1</h2>
 
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm(new RouteValueDictionary(new { codigoCaso = ViewData["codigoCaso"] })))
 {
     @Html.AntiForgeryToken()
     

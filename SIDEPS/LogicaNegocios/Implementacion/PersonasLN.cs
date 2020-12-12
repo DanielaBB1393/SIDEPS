@@ -9,11 +9,11 @@ namespace LogicaNegocios.Implementacion
     {
         private readonly IPersonasAD registroPersonaAD = new PersonasAD();
 
-        public bool SP_Ins_RegistroPersona(SIDEPS_13REGPERS persona)
+        public bool SP_InsMod_RegistroPersona(SIDEPS_13REGPERS persona, int? codigoCaso)
         {
             try
             {
-                return registroPersonaAD.SP_Ins_RegistroPersona(persona);
+                return registroPersonaAD.SP_InsMod_RegistroPersona(persona, codigoCaso);
             }
             catch
             {

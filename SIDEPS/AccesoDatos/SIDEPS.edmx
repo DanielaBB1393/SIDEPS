@@ -821,6 +821,7 @@
           <Parameter Name="DIRPERS13" Type="varchar" Mode="In" />
           <Parameter Name="OACPERS13" Type="varchar" Mode="In" />
           <Parameter Name="OANPERS13" Type="varchar" Mode="In" />
+          <Parameter Name="FENPERS13" Type="datetime" Mode="In" />
         </Function>
         <Function Name="SP_INS_REGUSRO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CEDUSRO07" Type="varchar" Mode="In" />
@@ -848,6 +849,15 @@
           <Parameter Name="SRBVIVI20" Type="varchar" Mode="In" />
           <Parameter Name="SREVIVI20" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="SP_MOD_REGASPS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODASPS16" Type="int" Mode="In" />
+          <Parameter Name="CEDPERS13" Type="varchar" Mode="In" />
+          <Parameter Name="CODSEGU14" Type="int" Mode="In" />
+          <Parameter Name="CODENFR15" Type="int" Mode="In" />
+          <Parameter Name="DESENFR16" Type="varchar" Mode="In" />
+          <Parameter Name="RECTRAT16" Type="varchar" Mode="In" />
+          <Parameter Name="DESTRAT16" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="SP_MOD_REGDIAC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CODDIAC04" Type="int" Mode="In" />
           <Parameter Name="NOMDIAC04" Type="varchar" Mode="In" />
@@ -855,6 +865,36 @@
           <Parameter Name="TELDIAC04" Type="varchar" Mode="In" />
           <Parameter Name="ESTDIAC04" Type="varchar" Mode="In" />
           <Parameter Name="CODCANT03" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_MOD_REGEGRF" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODEGRF24" Type="int" Mode="In" />
+          <Parameter Name="MTOALQU24" Type="decimal" Mode="In" />
+          <Parameter Name="MTOALIM24" Type="decimal" Mode="In" />
+          <Parameter Name="MTOELEC24" Type="decimal" Mode="In" />
+          <Parameter Name="MTOGAST24" Type="decimal" Mode="In" />
+          <Parameter Name="MTCAGUA24" Type="decimal" Mode="In" />
+          <Parameter Name="MTOCABL24" Type="decimal" Mode="In" />
+          <Parameter Name="MTOTELF24" Type="decimal" Mode="In" />
+          <Parameter Name="MTOINTE24" Type="decimal" Mode="In" />
+          <Parameter Name="MTOEDUC24" Type="decimal" Mode="In" />
+          <Parameter Name="MTOSEGU24" Type="decimal" Mode="In" />
+          <Parameter Name="MTOOTRO24" Type="decimal" Mode="In" />
+        </Function>
+        <Function Name="SP_MOD_REGPERS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CEDPERS13" Type="varchar" Mode="In" />
+          <Parameter Name="CODESTC06" Type="int" Mode="In" />
+          <Parameter Name="CODNEDU09" Type="int" Mode="In" />
+          <Parameter Name="CODCANT03" Type="int" Mode="In" />
+          <Parameter Name="CODSOLI10" Type="int" Mode="In" />
+          <Parameter Name="CODRELG11" Type="int" Mode="In" />
+          <Parameter Name="NOMPERS13" Type="varchar" Mode="In" />
+          <Parameter Name="PAPPERS13" Type="varchar" Mode="In" />
+          <Parameter Name="SAPPERS13" Type="varchar" Mode="In" />
+          <Parameter Name="NACPERS13" Type="varchar" Mode="In" />
+          <Parameter Name="DIRPERS13" Type="varchar" Mode="In" />
+          <Parameter Name="OACPERS13" Type="varchar" Mode="In" />
+          <Parameter Name="OANPERS13" Type="varchar" Mode="In" />
+          <Parameter Name="FENPERS13" Type="datetime" Mode="In" />
         </Function>
         <Function Name="SP_MOD_REGUSRO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CEDUSRO07" Type="varchar" Mode="In" />
@@ -871,6 +911,20 @@
           <Parameter Name="FEIUSRO07" Type="datetime" Mode="In" />
           <Parameter Name="FEFUSRO07" Type="datetime" Mode="In" />
           <Parameter Name="FENUSRO07" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="SP_MOD_REGVIVI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODVIVI20" Type="int" Mode="In" />
+          <Parameter Name="CODTIPV18" Type="int" Mode="In" />
+          <Parameter Name="CODESTV19" Type="int" Mode="In" />
+          <Parameter Name="CODMATE17" Type="int" Mode="In" />
+          <Parameter Name="MTOVIVI20" Type="decimal" Mode="In" />
+          <Parameter Name="NAPVIVI20" Type="int" Mode="In" />
+          <Parameter Name="SRCVIVI20" Type="bit" Mode="In" />
+          <Parameter Name="SRIVIVI20" Type="bit" Mode="In" />
+          <Parameter Name="SRLVIVI20" Type="bit" Mode="In" />
+          <Parameter Name="SRMVIVI20" Type="bit" Mode="In" />
+          <Parameter Name="SRBVIVI20" Type="bit" Mode="In" />
+          <Parameter Name="SREVIVI20" Type="bit" Mode="In" />
         </Function>
         <EntityContainer Name="SIDEPSStoreContainer">
           <EntitySet Name="SIDEPS_01CATPAIS" EntityType="Self.SIDEPS_01CATPAIS" Schema="dbo" store:Type="Tables" />
@@ -2056,6 +2110,7 @@
             <Parameter Name="DIRPERS13" Mode="In" Type="String" />
             <Parameter Name="OACPERS13" Mode="In" Type="String" />
             <Parameter Name="OANPERS13" Mode="In" Type="String" />
+            <Parameter Name="FENPERS13" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="SP_INS_REGUSRO">
             <Parameter Name="CEDUSRO07" Mode="In" Type="String" />
@@ -2145,7 +2200,60 @@
             <Parameter Name="CODEGRF24" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SP_CON_USROXCED" ReturnType="Collection(SIDEPS.SP_CONXID_REGUSRO_Result)">
-            <Parameter Name="CEDUSRO07" Mode="In" Type="String" />
+          <Parameter Name="CEDUSRO07" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_MOD_REGASPS">
+            <Parameter Name="CODASPS16" Mode="In" Type="Int32" />
+            <Parameter Name="CEDPERS13" Mode="In" Type="String" />
+            <Parameter Name="CODSEGU14" Mode="In" Type="Int32" />
+            <Parameter Name="CODENFR15" Mode="In" Type="Int32" />
+            <Parameter Name="DESENFR16" Mode="In" Type="String" />
+            <Parameter Name="RECTRAT16" Mode="In" Type="String" />
+            <Parameter Name="DESTRAT16" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_MOD_REGEGRF">
+            <Parameter Name="CODEGRF24" Mode="In" Type="Int32" />
+            <Parameter Name="MTOALQU24" Mode="In" Type="Decimal" />
+            <Parameter Name="MTOALIM24" Mode="In" Type="Decimal" />
+            <Parameter Name="MTOELEC24" Mode="In" Type="Decimal" />
+            <Parameter Name="MTOGAST24" Mode="In" Type="Decimal" />
+            <Parameter Name="MTCAGUA24" Mode="In" Type="Decimal" />
+            <Parameter Name="MTOCABL24" Mode="In" Type="Decimal" />
+            <Parameter Name="MTOTELF24" Mode="In" Type="Decimal" />
+            <Parameter Name="MTOINTE24" Mode="In" Type="Decimal" />
+            <Parameter Name="MTOEDUC24" Mode="In" Type="Decimal" />
+            <Parameter Name="MTOSEGU24" Mode="In" Type="Decimal" />
+            <Parameter Name="MTOOTRO24" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_MOD_REGPERS">
+            <Parameter Name="CEDPERS13" Mode="In" Type="String" />
+            <Parameter Name="CODESTC06" Mode="In" Type="Int32" />
+            <Parameter Name="CODNEDU09" Mode="In" Type="Int32" />
+            <Parameter Name="CODCANT03" Mode="In" Type="Int32" />
+            <Parameter Name="CODSOLI10" Mode="In" Type="Int32" />
+            <Parameter Name="CODRELG11" Mode="In" Type="Int32" />
+            <Parameter Name="NOMPERS13" Mode="In" Type="String" />
+            <Parameter Name="PAPPERS13" Mode="In" Type="String" />
+            <Parameter Name="SAPPERS13" Mode="In" Type="String" />
+            <Parameter Name="NACPERS13" Mode="In" Type="String" />
+            <Parameter Name="DIRPERS13" Mode="In" Type="String" />
+            <Parameter Name="OACPERS13" Mode="In" Type="String" />
+            <Parameter Name="OANPERS13" Mode="In" Type="String" />
+            <Parameter Name="FENPERS13" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_MOD_REGVIVI">
+            <Parameter Name="CODVIVI20" Mode="In" Type="Int32" />
+            <Parameter Name="CODTIPV18" Mode="In" Type="Int32" />
+            <Parameter Name="CODESTV19" Mode="In" Type="Int32" />
+            <Parameter Name="CODMATE17" Mode="In" Type="Int32" />
+            <Parameter Name="MTOVIVI20" Mode="In" Type="Decimal" />
+            <Parameter Name="NAPVIVI20" Mode="In" Type="Int32" />
+            <Parameter Name="SRCVIVI20" Mode="In" Type="Boolean" />
+            <Parameter Name="SRIVIVI20" Mode="In" Type="Boolean" />
+            <Parameter Name="SRLVIVI20" Mode="In" Type="Boolean" />
+            <Parameter Name="SRMVIVI20" Mode="In" Type="Boolean" />
+            <Parameter Name="SRBVIVI20" Mode="In" Type="Boolean" />
+            <Parameter Name="SREVIVI20" Mode="In" Type="Boolean" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="SP_CON_CATAYUD_Result">
@@ -3117,6 +3225,10 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_MOD_REGASPS" FunctionName="SIDEPS.Store.SP_MOD_REGASPS" />
+          <FunctionImportMapping FunctionImportName="SP_MOD_REGEGRF" FunctionName="SIDEPS.Store.SP_MOD_REGEGRF" />
+          <FunctionImportMapping FunctionImportName="SP_MOD_REGPERS" FunctionName="SIDEPS.Store.SP_MOD_REGPERS" />
+          <FunctionImportMapping FunctionImportName="SP_MOD_REGVIVI" FunctionName="SIDEPS.Store.SP_MOD_REGVIVI" />
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

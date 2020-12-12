@@ -9,20 +9,45 @@ namespace AccesoDatos.Implementacion
     {
         private readonly SIDEPSEntities contexto = new SIDEPSEntities();
 
-        public bool SP_Ins_RegistroPersona(SIDEPS_13REGPERS persona)
+        public bool SP_InsMod_RegistroPersona(SIDEPS_13REGPERS persona, int? codigoCaso)
         {
             try
             {
                 bool existe = this.contexto.SIDEPS_13REGPERS
                     .Any(regper => regper.CEDPERS13.Equals(persona.CEDPERS13, StringComparison.OrdinalIgnoreCase));
 
-                if (existe)
+                if (existe && !codigoCaso.HasValue)
                 {
                     // no puede insertar porque ya la cedula existe
                     return false;
                 }
 
-                var resultado = this.contexto.SIDEPS_13REGPERS.Add(persona);
+                if (codigoCaso.HasValue)
+                {
+                    //modifica
+                    return this.contexto.SP_MOD_REGPERS(
+                        persona.CEDPERS13,
+                        persona.CODESTC06,
+                        persona.CODNEDU09,
+                        persona.CODCANT03,
+                        persona.CODSOLI10,
+                        persona.CODRELG11,
+                        persona.NOMPERS13,
+                        persona.PAPPERS13,
+                        persona.SAPPERS13,
+                        persona.NACPERS13,
+                        persona.DIRPERS13,
+                        persona.OACPERS13,
+                        persona.OANPERS13,
+                        persona.FENPERS13
+                    ) > 0;
+                }
+                else
+                {
+                    //inserta
+                    this.contexto.SIDEPS_13REGPERS.Add(persona);
+                }
+                
                 return this.contexto.SaveChanges() > 0;
             }
             catch (Exception ex)

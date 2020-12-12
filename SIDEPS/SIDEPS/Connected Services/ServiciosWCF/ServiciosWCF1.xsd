@@ -127,17 +127,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SP_Ins_Persona">
+  <xs:element name="SP_InsMod_Persona">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="persona" nillable="true" type="q9:SIDEPS_13REGPERS" />
+        <xs:element minOccurs="0" name="codigoCaso" nillable="true" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SP_Ins_PersonaResponse">
+  <xs:element name="SP_InsMod_PersonaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="SP_Ins_PersonaResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="SP_InsMod_PersonaResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -421,7 +421,7 @@ namespace AccesoDatos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_INS_REGFAML", cEDFAML22Parameter, nOMFAML22Parameter, eDAFAML22Parameter, cODESTC06Parameter, cODNEDU09Parameter, oACFAML22Parameter, iNGFAML22Parameter, dESFAML22Parameter, cODORGS21Parameter, cODENFR15Parameter, cODPARE12Parameter);
         }
     
-        public virtual int SP_INS_REGPERS(string cEDPERS13, Nullable<int> cODESTC06, Nullable<int> cODNEDU09, Nullable<int> cODCANT03, Nullable<int> cODSOLI10, Nullable<int> cODRELG11, string nOMPERS13, string pAPPERS13, string sAPPERS13, string nACPERS13, string dIRPERS13, string oACPERS13, string oANPERS13, DateTime FENPERS13)
+        public virtual int SP_INS_REGPERS(string cEDPERS13, Nullable<int> cODESTC06, Nullable<int> cODNEDU09, Nullable<int> cODCANT03, Nullable<int> cODSOLI10, Nullable<int> cODRELG11, string nOMPERS13, string pAPPERS13, string sAPPERS13, string nACPERS13, string dIRPERS13, string oACPERS13, string oANPERS13, Nullable<System.DateTime> fENPERS13)
         {
             var cEDPERS13Parameter = cEDPERS13 != null ?
                 new ObjectParameter("CEDPERS13", cEDPERS13) :
@@ -474,12 +474,12 @@ namespace AccesoDatos
             var oANPERS13Parameter = oANPERS13 != null ?
                 new ObjectParameter("OANPERS13", oANPERS13) :
                 new ObjectParameter("OANPERS13", typeof(string));
-
-            var FENPERS13Parameter = FENPERS13 != null ?
-                      new ObjectParameter("FENPERS13", FENPERS13) :
-                      new ObjectParameter("FENPERS13", typeof(DateTime));
-
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_INS_REGPERS", cEDPERS13Parameter, cODESTC06Parameter, cODNEDU09Parameter, cODCANT03Parameter, cODSOLI10Parameter, cODRELG11Parameter, nOMPERS13Parameter, pAPPERS13Parameter, sAPPERS13Parameter, nACPERS13Parameter, dIRPERS13Parameter, oACPERS13Parameter, oANPERS13Parameter, FENPERS13Parameter);
+    
+            var fENPERS13Parameter = fENPERS13.HasValue ?
+                new ObjectParameter("FENPERS13", fENPERS13) :
+                new ObjectParameter("FENPERS13", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_INS_REGPERS", cEDPERS13Parameter, cODESTC06Parameter, cODNEDU09Parameter, cODCANT03Parameter, cODSOLI10Parameter, cODRELG11Parameter, nOMPERS13Parameter, pAPPERS13Parameter, sAPPERS13Parameter, nACPERS13Parameter, dIRPERS13Parameter, oACPERS13Parameter, oANPERS13Parameter, fENPERS13Parameter);
         }
     
         public virtual int SP_INS_REGUSRO(string cEDUSRO07, string nOMUSRO07, string pAPUSRO07, string sAPUSRO07, Nullable<int> cODCANT03, Nullable<int> cODDIAC04, Nullable<int> cODUSRO05, string dIRUSRO07, string nACUSRO07, string cNTUSRO07, Nullable<System.DateTime> fENUSRO07)
@@ -792,6 +792,206 @@ namespace AccesoDatos
                 new ObjectParameter("CEDUSRO07", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONXID_REGUSRO_Result>("SP_CON_USROXCED", cEDUSRO07Parameter);
+        }
+    
+        public virtual int SP_MOD_REGASPS(Nullable<int> cODASPS16, string cEDPERS13, Nullable<int> cODSEGU14, Nullable<int> cODENFR15, string dESENFR16, string rECTRAT16, string dESTRAT16)
+        {
+            var cODASPS16Parameter = cODASPS16.HasValue ?
+                new ObjectParameter("CODASPS16", cODASPS16) :
+                new ObjectParameter("CODASPS16", typeof(int));
+    
+            var cEDPERS13Parameter = cEDPERS13 != null ?
+                new ObjectParameter("CEDPERS13", cEDPERS13) :
+                new ObjectParameter("CEDPERS13", typeof(string));
+    
+            var cODSEGU14Parameter = cODSEGU14.HasValue ?
+                new ObjectParameter("CODSEGU14", cODSEGU14) :
+                new ObjectParameter("CODSEGU14", typeof(int));
+    
+            var cODENFR15Parameter = cODENFR15.HasValue ?
+                new ObjectParameter("CODENFR15", cODENFR15) :
+                new ObjectParameter("CODENFR15", typeof(int));
+    
+            var dESENFR16Parameter = dESENFR16 != null ?
+                new ObjectParameter("DESENFR16", dESENFR16) :
+                new ObjectParameter("DESENFR16", typeof(string));
+    
+            var rECTRAT16Parameter = rECTRAT16 != null ?
+                new ObjectParameter("RECTRAT16", rECTRAT16) :
+                new ObjectParameter("RECTRAT16", typeof(string));
+    
+            var dESTRAT16Parameter = dESTRAT16 != null ?
+                new ObjectParameter("DESTRAT16", dESTRAT16) :
+                new ObjectParameter("DESTRAT16", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_MOD_REGASPS", cODASPS16Parameter, cEDPERS13Parameter, cODSEGU14Parameter, cODENFR15Parameter, dESENFR16Parameter, rECTRAT16Parameter, dESTRAT16Parameter);
+        }
+    
+        public virtual int SP_MOD_REGEGRF(Nullable<int> cODEGRF24, Nullable<decimal> mTOALQU24, Nullable<decimal> mTOALIM24, Nullable<decimal> mTOELEC24, Nullable<decimal> mTOGAST24, Nullable<decimal> mTCAGUA24, Nullable<decimal> mTOCABL24, Nullable<decimal> mTOTELF24, Nullable<decimal> mTOINTE24, Nullable<decimal> mTOEDUC24, Nullable<decimal> mTOSEGU24, Nullable<decimal> mTOOTRO24)
+        {
+            var cODEGRF24Parameter = cODEGRF24.HasValue ?
+                new ObjectParameter("CODEGRF24", cODEGRF24) :
+                new ObjectParameter("CODEGRF24", typeof(int));
+    
+            var mTOALQU24Parameter = mTOALQU24.HasValue ?
+                new ObjectParameter("MTOALQU24", mTOALQU24) :
+                new ObjectParameter("MTOALQU24", typeof(decimal));
+    
+            var mTOALIM24Parameter = mTOALIM24.HasValue ?
+                new ObjectParameter("MTOALIM24", mTOALIM24) :
+                new ObjectParameter("MTOALIM24", typeof(decimal));
+    
+            var mTOELEC24Parameter = mTOELEC24.HasValue ?
+                new ObjectParameter("MTOELEC24", mTOELEC24) :
+                new ObjectParameter("MTOELEC24", typeof(decimal));
+    
+            var mTOGAST24Parameter = mTOGAST24.HasValue ?
+                new ObjectParameter("MTOGAST24", mTOGAST24) :
+                new ObjectParameter("MTOGAST24", typeof(decimal));
+    
+            var mTCAGUA24Parameter = mTCAGUA24.HasValue ?
+                new ObjectParameter("MTCAGUA24", mTCAGUA24) :
+                new ObjectParameter("MTCAGUA24", typeof(decimal));
+    
+            var mTOCABL24Parameter = mTOCABL24.HasValue ?
+                new ObjectParameter("MTOCABL24", mTOCABL24) :
+                new ObjectParameter("MTOCABL24", typeof(decimal));
+    
+            var mTOTELF24Parameter = mTOTELF24.HasValue ?
+                new ObjectParameter("MTOTELF24", mTOTELF24) :
+                new ObjectParameter("MTOTELF24", typeof(decimal));
+    
+            var mTOINTE24Parameter = mTOINTE24.HasValue ?
+                new ObjectParameter("MTOINTE24", mTOINTE24) :
+                new ObjectParameter("MTOINTE24", typeof(decimal));
+    
+            var mTOEDUC24Parameter = mTOEDUC24.HasValue ?
+                new ObjectParameter("MTOEDUC24", mTOEDUC24) :
+                new ObjectParameter("MTOEDUC24", typeof(decimal));
+    
+            var mTOSEGU24Parameter = mTOSEGU24.HasValue ?
+                new ObjectParameter("MTOSEGU24", mTOSEGU24) :
+                new ObjectParameter("MTOSEGU24", typeof(decimal));
+    
+            var mTOOTRO24Parameter = mTOOTRO24.HasValue ?
+                new ObjectParameter("MTOOTRO24", mTOOTRO24) :
+                new ObjectParameter("MTOOTRO24", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_MOD_REGEGRF", cODEGRF24Parameter, mTOALQU24Parameter, mTOALIM24Parameter, mTOELEC24Parameter, mTOGAST24Parameter, mTCAGUA24Parameter, mTOCABL24Parameter, mTOTELF24Parameter, mTOINTE24Parameter, mTOEDUC24Parameter, mTOSEGU24Parameter, mTOOTRO24Parameter);
+        }
+    
+        public virtual int SP_MOD_REGPERS(string cEDPERS13, Nullable<int> cODESTC06, Nullable<int> cODNEDU09, Nullable<int> cODCANT03, Nullable<int> cODSOLI10, Nullable<int> cODRELG11, string nOMPERS13, string pAPPERS13, string sAPPERS13, string nACPERS13, string dIRPERS13, string oACPERS13, string oANPERS13, Nullable<System.DateTime> fENPERS13)
+        {
+            var cEDPERS13Parameter = cEDPERS13 != null ?
+                new ObjectParameter("CEDPERS13", cEDPERS13) :
+                new ObjectParameter("CEDPERS13", typeof(string));
+    
+            var cODESTC06Parameter = cODESTC06.HasValue ?
+                new ObjectParameter("CODESTC06", cODESTC06) :
+                new ObjectParameter("CODESTC06", typeof(int));
+    
+            var cODNEDU09Parameter = cODNEDU09.HasValue ?
+                new ObjectParameter("CODNEDU09", cODNEDU09) :
+                new ObjectParameter("CODNEDU09", typeof(int));
+    
+            var cODCANT03Parameter = cODCANT03.HasValue ?
+                new ObjectParameter("CODCANT03", cODCANT03) :
+                new ObjectParameter("CODCANT03", typeof(int));
+    
+            var cODSOLI10Parameter = cODSOLI10.HasValue ?
+                new ObjectParameter("CODSOLI10", cODSOLI10) :
+                new ObjectParameter("CODSOLI10", typeof(int));
+    
+            var cODRELG11Parameter = cODRELG11.HasValue ?
+                new ObjectParameter("CODRELG11", cODRELG11) :
+                new ObjectParameter("CODRELG11", typeof(int));
+    
+            var nOMPERS13Parameter = nOMPERS13 != null ?
+                new ObjectParameter("NOMPERS13", nOMPERS13) :
+                new ObjectParameter("NOMPERS13", typeof(string));
+    
+            var pAPPERS13Parameter = pAPPERS13 != null ?
+                new ObjectParameter("PAPPERS13", pAPPERS13) :
+                new ObjectParameter("PAPPERS13", typeof(string));
+    
+            var sAPPERS13Parameter = sAPPERS13 != null ?
+                new ObjectParameter("SAPPERS13", sAPPERS13) :
+                new ObjectParameter("SAPPERS13", typeof(string));
+    
+            var nACPERS13Parameter = nACPERS13 != null ?
+                new ObjectParameter("NACPERS13", nACPERS13) :
+                new ObjectParameter("NACPERS13", typeof(string));
+    
+            var dIRPERS13Parameter = dIRPERS13 != null ?
+                new ObjectParameter("DIRPERS13", dIRPERS13) :
+                new ObjectParameter("DIRPERS13", typeof(string));
+    
+            var oACPERS13Parameter = oACPERS13 != null ?
+                new ObjectParameter("OACPERS13", oACPERS13) :
+                new ObjectParameter("OACPERS13", typeof(string));
+    
+            var oANPERS13Parameter = oANPERS13 != null ?
+                new ObjectParameter("OANPERS13", oANPERS13) :
+                new ObjectParameter("OANPERS13", typeof(string));
+    
+            var fENPERS13Parameter = fENPERS13.HasValue ?
+                new ObjectParameter("FENPERS13", fENPERS13) :
+                new ObjectParameter("FENPERS13", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_MOD_REGPERS", cEDPERS13Parameter, cODESTC06Parameter, cODNEDU09Parameter, cODCANT03Parameter, cODSOLI10Parameter, cODRELG11Parameter, nOMPERS13Parameter, pAPPERS13Parameter, sAPPERS13Parameter, nACPERS13Parameter, dIRPERS13Parameter, oACPERS13Parameter, oANPERS13Parameter, fENPERS13Parameter);
+        }
+    
+        public virtual int SP_MOD_REGVIVI(Nullable<int> cODVIVI20, Nullable<int> cODTIPV18, Nullable<int> cODESTV19, Nullable<int> cODMATE17, Nullable<decimal> mTOVIVI20, Nullable<int> nAPVIVI20, Nullable<bool> sRCVIVI20, Nullable<bool> sRIVIVI20, Nullable<bool> sRLVIVI20, Nullable<bool> sRMVIVI20, Nullable<bool> sRBVIVI20, Nullable<bool> sREVIVI20)
+        {
+            var cODVIVI20Parameter = cODVIVI20.HasValue ?
+                new ObjectParameter("CODVIVI20", cODVIVI20) :
+                new ObjectParameter("CODVIVI20", typeof(int));
+    
+            var cODTIPV18Parameter = cODTIPV18.HasValue ?
+                new ObjectParameter("CODTIPV18", cODTIPV18) :
+                new ObjectParameter("CODTIPV18", typeof(int));
+    
+            var cODESTV19Parameter = cODESTV19.HasValue ?
+                new ObjectParameter("CODESTV19", cODESTV19) :
+                new ObjectParameter("CODESTV19", typeof(int));
+    
+            var cODMATE17Parameter = cODMATE17.HasValue ?
+                new ObjectParameter("CODMATE17", cODMATE17) :
+                new ObjectParameter("CODMATE17", typeof(int));
+    
+            var mTOVIVI20Parameter = mTOVIVI20.HasValue ?
+                new ObjectParameter("MTOVIVI20", mTOVIVI20) :
+                new ObjectParameter("MTOVIVI20", typeof(decimal));
+    
+            var nAPVIVI20Parameter = nAPVIVI20.HasValue ?
+                new ObjectParameter("NAPVIVI20", nAPVIVI20) :
+                new ObjectParameter("NAPVIVI20", typeof(int));
+    
+            var sRCVIVI20Parameter = sRCVIVI20.HasValue ?
+                new ObjectParameter("SRCVIVI20", sRCVIVI20) :
+                new ObjectParameter("SRCVIVI20", typeof(bool));
+    
+            var sRIVIVI20Parameter = sRIVIVI20.HasValue ?
+                new ObjectParameter("SRIVIVI20", sRIVIVI20) :
+                new ObjectParameter("SRIVIVI20", typeof(bool));
+    
+            var sRLVIVI20Parameter = sRLVIVI20.HasValue ?
+                new ObjectParameter("SRLVIVI20", sRLVIVI20) :
+                new ObjectParameter("SRLVIVI20", typeof(bool));
+    
+            var sRMVIVI20Parameter = sRMVIVI20.HasValue ?
+                new ObjectParameter("SRMVIVI20", sRMVIVI20) :
+                new ObjectParameter("SRMVIVI20", typeof(bool));
+    
+            var sRBVIVI20Parameter = sRBVIVI20.HasValue ?
+                new ObjectParameter("SRBVIVI20", sRBVIVI20) :
+                new ObjectParameter("SRBVIVI20", typeof(bool));
+    
+            var sREVIVI20Parameter = sREVIVI20.HasValue ?
+                new ObjectParameter("SREVIVI20", sREVIVI20) :
+                new ObjectParameter("SREVIVI20", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_MOD_REGVIVI", cODVIVI20Parameter, cODTIPV18Parameter, cODESTV19Parameter, cODMATE17Parameter, mTOVIVI20Parameter, nAPVIVI20Parameter, sRCVIVI20Parameter, sRIVIVI20Parameter, sRLVIVI20Parameter, sRMVIVI20Parameter, sRBVIVI20Parameter, sREVIVI20Parameter);
         }
     }
 }

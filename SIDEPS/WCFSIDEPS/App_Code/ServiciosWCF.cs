@@ -52,11 +52,11 @@ public class ServiciosWCF : IServiciosWCF
         }
     }
 
-    public bool SP_Ins_Persona(SIDEPS_13REGPERS persona)
+    public bool SP_InsMod_Persona(SIDEPS_13REGPERS persona, int? codigoCaso)
     {
         try
         {
-            return this.personasLN.SP_Ins_RegistroPersona(persona);
+            return this.personasLN.SP_InsMod_RegistroPersona(persona, codigoCaso);
         }
         catch
         {

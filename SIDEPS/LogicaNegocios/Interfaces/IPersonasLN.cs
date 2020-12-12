@@ -4,6 +4,6 @@ namespace LogicaNegocios.Interfaces
 {
     public interface IPersonasLN
     {
-        bool SP_Ins_RegistroPersona(SIDEPS_13REGPERS persona);
+        bool SP_InsMod_RegistroPersona(SIDEPS_13REGPERS persona, int? codigoCaso);
     }
 }
