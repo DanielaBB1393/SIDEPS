@@ -212,10 +212,19 @@ namespace SIDEPS.Controllers
             var cedulaSolicitante = TempData[Combos._CEDULAPERSONA].ToString();
             TempData.Keep();
 
-            var resultado = this.casosSvc.SP_Ins_MiembroFamiliar(modelo.ConvertirEntidad(), cedulaSolicitante);
-            if (!resultado)
+            var guardoFamiliar = this.casosSvc.SP_Ins_MiembroFamiliar(modelo.ConvertirEntidad(), cedulaSolicitante);
+            if (!guardoFamiliar)
             {
-                ViewData["mensaje"] = "Ocurrió un error agregando a " + modelo.NOMFAML22;
+                using (var svc = new ServiciosWCFClient())
+                {
+                    modelo.EstadosCiviles = svc.SP_Con_EstadosCivil().Select(ec => new Categoria { Codigo = ec.CODESTC06, Descripcion = ec.DESESTC06 }).ToList();
+                    modelo.Escolaridad = svc.SP_Con_NivelEducativo().Select(edu => new Categoria { Codigo = edu.CODNEDU09, Descripcion = edu.DESNEDU09 }).ToList();
+                    modelo.Organizaciones = svc.SP_Con_Organizaciones().Select(org => new Categoria { Codigo = org.CODORGS21, Descripcion = org.DESORGS21 }).ToList();
+                    modelo.Enfermedades = svc.SP_Con_Enfermedades().Select(enf => new Categoria { Codigo = enf.CODENFR15, Descripcion = enf.DESENFR15 }).ToList();
+                    modelo.Parentescos = svc.SP_Con_Parentescos().Select(par => new Categoria { Codigo = par.CODPARE12, Descripcion = par.DESPARE12 }).ToList();
+                }
+
+                ModelState.AddModelError("CEDFAML22", "El familiar ya existe");
                 return View(modelo);
             }
             return RedirectToAction("GrupoFamiliar");

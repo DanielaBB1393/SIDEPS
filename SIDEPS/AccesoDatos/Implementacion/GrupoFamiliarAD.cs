@@ -56,6 +56,12 @@ namespace AccesoDatos.Implementacion
         {
             try
             {
+
+                bool existe = this.contexto.SIDEPS_22REGFAML.Any(regfamilia => regfamilia.CEDFAML22.Equals(grupoFamiliar.CEDFAML22, StringComparison.OrdinalIgnoreCase));
+                if(existe)
+                {
+                    return false;
+                }
                 // agrega el nuevo familiar
                 var familiar = this.contexto.SIDEPS_22REGFAML.Add(grupoFamiliar);
                 this.contexto.SaveChanges();
