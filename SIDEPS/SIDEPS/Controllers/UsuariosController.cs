@@ -101,6 +101,7 @@ namespace SIDEPS.Controllers
                 return RedirectToAction("Login", "Home");
             }
             string tipoUsuario = TempData[Combos._TIPOUSUARIO].ToString();
+            string cedulaUsuario = TempData[Combos._CEDULAUSUARIO].ToString();
 
             TempData.Keep();
 
@@ -110,6 +111,7 @@ namespace SIDEPS.Controllers
             {
                 modelo.Cantones = svc.SP_Con_Cantones().Select(r => new Categoria { Codigo = r.CODCANT03, Descripcion = r.NOMCANT03 }).ToList();
                 modelo.Diaconias = svc.conDiaconias().Select(r => new Categoria { Codigo = r.CODDIAC04, Descripcion = r.NOMDIAC04 }).ToList();
+                int diaconiaUsuario = svc.conUsuarioXCedula(cedulaUsuario).CODDIAC04.GetValueOrDefault();
 
                 // defino cuales codigos de roles puede agregar un usuario
                 List<int> codigosRoles;
@@ -122,11 +124,14 @@ namespace SIDEPS.Controllers
 
                     case Combos.ADMIN_DIACONAL:
                         codigosRoles = new List<int> { 3 };
+                        modelo.Diaconias = modelo.Diaconias.Where(d => d.Codigo == diaconiaUsuario).ToList();
                         break;
 
                     case Combos.COLABORADOR:
                     default:
                         codigosRoles = new List<int>();
+                        modelo.Diaconias = new List<Categoria>();
+                        modelo.Cantones = new List<Categoria>();
                         break;
                 }
 
@@ -186,7 +191,7 @@ namespace SIDEPS.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
-
+            string cedulaUsuario = TempData[Combos._CEDULAUSUARIO].ToString();
             TempData.Keep();
 
             SP_CONXID_REGUSRO_Result objRespuesta = new SP_CONXID_REGUSRO_Result();
@@ -202,7 +207,7 @@ namespace SIDEPS.Controllers
                     objUsuario.Cantones = srvUsuarios.SP_Con_Cantones().Select(r => new Categoria { Codigo = r.CODCANT03, Descripcion = r.NOMCANT03 }).ToList();
                     objUsuario.Diaconias = srvUsuarios.conDiaconias().Select(r => new Categoria { Codigo = r.CODDIAC04, Descripcion = r.NOMDIAC04 }).ToList();
                     objUsuario.Roles = srvUsuarios.SP_Con_TipoUsuario().Select(r => new Categoria { Codigo = r.CODUSRO05, Descripcion = r.DESUSRO05 }).ToList();
-                    
+                    int diaconiaUsuario = srvUsuarios.conUsuarioXCedula(cedulaUsuario).CODDIAC04.GetValueOrDefault();
                     // defino cuales codigos de roles puede agregar un usuario
                     List<int> codigosRoles;
 
@@ -214,11 +219,14 @@ namespace SIDEPS.Controllers
 
                         case Combos.ADMIN_DIACONAL:
                             codigosRoles = new List<int> { 3 };
+                            objUsuario.Diaconias = objUsuario.Diaconias.Where(d => d.Codigo == diaconiaUsuario).ToList();
                             break;
 
                         case Combos.COLABORADOR:
                         default:
                             codigosRoles = new List<int>();
+                            objUsuario.Diaconias = new List<Categoria>();
+                            objUsuario.Cantones = new List<Categoria>();
                             break;
                     }
 
