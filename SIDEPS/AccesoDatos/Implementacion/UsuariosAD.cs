@@ -146,22 +146,26 @@ namespace AccesoDatos.Implementacion
             return lobjRespuesta;
         }
         //METODO LOGIN
-        public string Login(string cedula, string contrasena)//Parametros
+        public string Login(string cedula, string contrasena)//Parametros que recibe
         {
             try
             {
-                var rolUsuario = gobjContextoSP.SIDEPS_07REGUSRO //Variable de rol de usuario
-                    .Where(usr => //Compara con base de datos
-                        usr.CEDUSRO07.Equals(cedula, StringComparison.OrdinalIgnoreCase) && 
-                        usr.CNTUSRO07.Equals(contrasena) &&
-                        usr.ESTUSRO07.Equals("ACTIVO", StringComparison.OrdinalIgnoreCase))
-                    .FirstOrDefault()?.CODUSRO05;
+                SIDEPS_07REGUSRO regUsuario = gobjContextoSP.SIDEPS_07REGUSRO
+                    .Where(usr => //Filtra por cedula, contraseña y que sea activo
+                       usr.CEDUSRO07.Equals(cedula, StringComparison.OrdinalIgnoreCase) &&
+                       usr.CNTUSRO07.Equals(contrasena) &&
+                       usr.ESTUSRO07.Equals("ACTIVO", StringComparison.OrdinalIgnoreCase))
+                    .FirstOrDefault(); //toma el primero o devulve null si no encuentra
 
-                if (rolUsuario.HasValue)
+                int? CODUSRO05 = null;
+                if (regUsuario != null)
                 {
-                    return this.gobjContextoSP.SIDEPS_05TIPUSRO.Find(rolUsuario).DESUSRO05;
+                    // si encontro el usuario asigna el codigo del tipo de usuario
+                    CODUSRO05 = regUsuario.CODUSRO05;
+                    return this.gobjContextoSP.SIDEPS_05TIPUSRO.Find(CODUSRO05.Value).DESUSRO05;
                 }
 
+                // si no encuentra usuario devuelve null
                 return null;
             }
             catch (Exception ex)

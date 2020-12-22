@@ -23,7 +23,7 @@ namespace SIDEPS.Models
         public Nullable<decimal> MTOVIVI20 { get; set; }
 
         [DisplayName("Numero aposentos")]
-        public int? NAPVIVI20 { get; set; }
+        public Nullable<int> NAPVIVI20 { get; set; }
 
         [DisplayName("Servicio cable")]
         public bool SRCVIVI20 { get; set; }

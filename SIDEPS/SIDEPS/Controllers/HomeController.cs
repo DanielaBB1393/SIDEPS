@@ -10,6 +10,7 @@ namespace SIDEPS.Controllers
 {
     public class HomeController : Controller
     {
+    
         public ActionResult Login()
         {
             return View();
@@ -23,7 +24,9 @@ namespace SIDEPS.Controllers
                 string resultado = svc.Login(credenciales.CEDUSRO07, credenciales.CNTUSRO07);
                 if (resultado != null)
                 {
+                    //Guarda en memoria
                     TempData[Combos._CEDULAUSUARIO] = credenciales.CEDUSRO07;
+                    //Guarda en memoria
                     TempData[Combos._TIPOUSUARIO] = resultado;
 
                     switch (resultado)

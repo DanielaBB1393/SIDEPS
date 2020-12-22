@@ -13,6 +13,7 @@ namespace AccesoDatos.Implementacion
         {
             try
             {
+                // verifica si la persona ya existe para modificarla o sino insertar una nueva persona
                 bool existe = this.contexto.SIDEPS_13REGPERS
                     .Any(regper => regper.CEDPERS13.Equals(persona.CEDPERS13, StringComparison.OrdinalIgnoreCase));
 

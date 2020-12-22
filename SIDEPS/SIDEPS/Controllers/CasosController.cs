@@ -40,7 +40,7 @@ namespace SIDEPS.Controllers
                     var entidad = svc.SP_Con_DatosPersonales(codigoCaso.Value);
                     modelo = new DatosPersonales_M(entidad);
                 }
-
+                // Carga las listas que se usan en los Dropdowns
                 modelo.Religiones = svc.SP_Con_Religiones().Select(r => new Categoria { Codigo = r.CODRELG11, Descripcion = r.DESRELG11 }).ToList();
                 modelo.Cantones = svc.SP_Con_Cantones().Select(r => new Categoria { Codigo = r.CODCANT03, Descripcion = r.NOMCANT03 }).ToList();
                 modelo.EstadosCiviles = svc.SP_Con_EstadosCivil().Select(r => new Categoria { Codigo = r.CODESTC06, Descripcion = r.DESESTC06 }).ToList();
@@ -52,38 +52,40 @@ namespace SIDEPS.Controllers
         }
 
         [HttpPost]
-        public ActionResult DatosPersonales(int? codigoCaso, DatosPersonales_M persona)
+        public ActionResult DatosPersonales(int? codigoCasoModificar, DatosPersonales_M persona)
         {
+            //obtiene de la memoria el usuario que esta loguiado
             string cedulaUsuario = TempData[Combos._CEDULAUSUARIO].ToString();
             TempData.Keep();
 
-            var guardoPersona = this.casosSvc.SP_InsMod_Persona(persona.ConvertirEntidad(), codigoCaso);
+            var guardoPersona = this.casosSvc.SP_InsMod_Persona(persona.ConvertirEntidad(), codigoCasoModificar);
             if (guardoPersona)
             {
-                // si guardó la persona entonces guarda el caso
+          
                 var caso = new Caso_M
                 {
                     CEDPERS13 = persona.CEDPERS13,
                     CEDUSRO07 = cedulaUsuario,
                 };
-
-                int casoInsertado;
-                if (codigoCaso.HasValue)
+                
+                int codigoCaso;
+                if (codigoCasoModificar != null)
                 {
                     // no inserta solo asigna el codigo del caso que se esta modificando
-                    casoInsertado = codigoCaso.Value;
+                    codigoCaso = codigoCasoModificar.Value;
                 }
                 else
                 {
-                    // inserta el caso porque es un caso nuevo
-                    casoInsertado = this.casosSvc.SP_Ins_Caso(caso.ConvertirEntidad());
+                    // inserta el caso en base de datos porque es un caso nuevo
+                    codigoCaso = this.casosSvc.SP_Ins_Caso(caso.ConvertirEntidad());
                 }
-                if (casoInsertado > 0)
+                if (codigoCaso > 0)
                 {
+                    // el caso se inserto
                     TempData[Combos._CEDULAPERSONA] = persona.CEDPERS13;
-                    TempData[Combos._CODIGOCASO] = casoInsertado;
+                    TempData[Combos._CODIGOCASO] = codigoCaso;
 
-                    return RedirectToAction("AspectoSalud", new { codigoCaso });
+                    return RedirectToAction("AspectoSalud", new { codigoCasoModificar });
                 }
             }
             else
@@ -438,7 +440,7 @@ namespace SIDEPS.Controllers
         }
 
         //---------------
-        // Mantenimientos
+        //Historiales
         //---------------
         public ActionResult HistoricoDeCasos(int? diaconiaSeleccionada)
         {
@@ -455,9 +457,18 @@ namespace SIDEPS.Controllers
             {
                 if (diaconiaSeleccionada == null)
                 {
-                    // diaconia a la que el usuario pertenece
+                    // diaconía a la que el usuario pertenece
                     diaconiaSeleccionada = svc.conUsuarioXCedula(cedulaUsuario).CODDIAC04;
                 }
+
+                //List<Categoria> diaconiasCombo = new List<Categoria>();
+
+                //List<SP_CON_REGDIAC_Result> diaconias = svc.conDiaconias();
+                //foreach (var diaconia in diaconias)
+                //{
+                //    diaconiasCombo.Add(new Categoria { Codigo = diaconia.CODDIAC04, Descripcion = diaconia.NOMDIAC04 });
+
+                //}
 
                 var diaconias = svc.conDiaconias().Select(diaconia => new Categoria { Codigo = diaconia.CODDIAC04, Descripcion = diaconia.NOMDIAC04 }).ToList();
                 ViewData["diaconias"] = diaconias;
