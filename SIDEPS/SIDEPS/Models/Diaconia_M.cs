@@ -21,7 +21,6 @@ namespace SIDEPS.Models
         [MinLength(3, ErrorMessage = "El nombre del lugar debe ser mayor o igual a 3 caracteres")]
         public string LUGDIAC04 { get; set; }
 
-        [Required(ErrorMessage = "Teléfono de Diaconia Requerido.")]
         [Display(Name = "Teléfono")]
         public string TELDIAC04 { get; set; }
 
