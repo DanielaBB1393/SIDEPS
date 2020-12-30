@@ -67,11 +67,11 @@
   <wsdl:message name="IServiciosWCF_SP_InsMod_Persona_OutputMessage">
     <wsdl:part name="parameters" element="tns:SP_InsMod_PersonaResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiciosWCF_SP_Ins_AspectoSalud_InputMessage">
-    <wsdl:part name="parameters" element="tns:SP_Ins_AspectoSalud" />
+  <wsdl:message name="IServiciosWCF_SP_InsMod_AspectoSalud_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_InsMod_AspectoSalud" />
   </wsdl:message>
-  <wsdl:message name="IServiciosWCF_SP_Ins_AspectoSalud_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SP_Ins_AspectoSaludResponse" />
+  <wsdl:message name="IServiciosWCF_SP_InsMod_AspectoSalud_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_InsMod_AspectoSaludResponse" />
   </wsdl:message>
   <wsdl:message name="IServiciosWCF_SP_Ins_Vivienda_InputMessage">
     <wsdl:part name="parameters" element="tns:SP_Ins_Vivienda" />
@@ -360,9 +360,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_InsMod_Persona" message="tns:IServiciosWCF_SP_InsMod_Persona_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_InsMod_PersonaResponse" message="tns:IServiciosWCF_SP_InsMod_Persona_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="SP_Ins_AspectoSalud">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_AspectoSalud" message="tns:IServiciosWCF_SP_Ins_AspectoSalud_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_AspectoSaludResponse" message="tns:IServiciosWCF_SP_Ins_AspectoSalud_OutputMessage" />
+    <wsdl:operation name="SP_InsMod_AspectoSalud">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_InsMod_AspectoSalud" message="tns:IServiciosWCF_SP_InsMod_AspectoSalud_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciosWCF/SP_InsMod_AspectoSaludResponse" message="tns:IServiciosWCF_SP_InsMod_AspectoSalud_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="SP_Ins_Vivienda">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiciosWCF/SP_Ins_Vivienda" message="tns:IServiciosWCF_SP_Ins_Vivienda_InputMessage" />
@@ -621,8 +621,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SP_Ins_AspectoSalud">
-      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_Ins_AspectoSalud" style="document" />
+    <wsdl:operation name="SP_InsMod_AspectoSalud">
+      <soap:operation soapAction="http://tempuri.org/IServiciosWCF/SP_InsMod_AspectoSalud" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

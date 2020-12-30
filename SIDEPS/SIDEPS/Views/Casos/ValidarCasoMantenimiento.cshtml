@@ -87,8 +87,8 @@
                 @Html.DisplayFor(modelItem => item.ESTCASO25)
             </td>
             <td>
-                @Html.ActionLink("Modificar Estado", "ModificarEstadoCaso", new { id = item.CODCASO25 })
-                @Html.ActionLink("Modificar Caso", "DatosPersonales", new { codigoCaso = item.CODCASO25 })
+                @Html.ActionLink("Modificar Estado", "ModificarEstadoCaso", new { id = item.CODCASO25 }) |
+                @Html.ActionLink("Modificar Caso", "DatosPersonales", new { codigoCaso = item.CODCASO25 }) |
                 @Html.ActionLink("Detalles", "ValidarCasoDetalles", new { codigoCaso = item.CODCASO25 })
             </td>
         </tr>

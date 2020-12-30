@@ -85,7 +85,7 @@ namespace SIDEPS.Controllers
                     TempData[Combos._CEDULAPERSONA] = persona.CEDPERS13;
                     TempData[Combos._CODIGOCASO] = codigoCaso;
 
-                    return RedirectToAction("AspectoSalud", new { codigoCasoModificar });
+                    return RedirectToAction("AspectoSalud", new { codigoCaso = codigoCasoModificar });
                 }
             }
             else
@@ -137,7 +137,7 @@ namespace SIDEPS.Controllers
             int codigoCaso = Convert.ToInt32(TempData[Combos._CODIGOCASO].ToString());
             TempData.Keep();
 
-            var resultado = this.casosSvc.SP_Ins_AspectoSalud(aspecto.ConvertirEntidad(), codigoCaso);
+            var resultado = this.casosSvc.SP_InsMod_AspectoSalud(aspecto.ConvertirEntidad(), codigoCaso);
             if (resultado > 0)
             {
                 return RedirectToAction("Vivienda", new { codigoCaso });
@@ -502,6 +502,8 @@ namespace SIDEPS.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
+            TempData.Keep();
+
             var modelo = new DetallesHistoricoCaso_M();
 
             using (var svc = new ServiciosWCFClient())
@@ -652,7 +654,9 @@ namespace SIDEPS.Controllers
         [HttpPost]
         public ActionResult EliminarCaso(Caso_M caso)
         {
-            using(var svc = new ServiciosWCFClient())
+            TempData.Keep();
+
+            using (var svc = new ServiciosWCFClient())
             {
                 svc.EliminarCaso(caso.CODCASO25);
             }
@@ -808,6 +812,8 @@ namespace SIDEPS.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
+            TempData.Keep();
+
             SP_CON_CASOXID_Result resultado;
 
             using (var svc = new ServiciosWCFClient())
@@ -822,6 +828,8 @@ namespace SIDEPS.Controllers
         [HttpPost]
         public ActionResult ModificarCaso(Caso_M caso)
         {
+            TempData.Keep();
+
             using (var svc = new ServiciosWCFClient())
             {
                 svc.SP_Mod_Caso(caso.ConvertirEntidad());
@@ -837,6 +845,8 @@ namespace SIDEPS.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
+            TempData.Keep();
+
             SP_CON_CASOXID_Result resultado;
 
             using (var svc = new ServiciosWCFClient())
@@ -851,6 +861,8 @@ namespace SIDEPS.Controllers
         [HttpPost]
         public ActionResult ModificarEstadoCaso(Caso_M caso)
         {
+            TempData.Keep();
+
             using (var svc = new ServiciosWCFClient())
             {
                 svc.SP_Mod_Caso(caso.ConvertirEntidad());
@@ -866,6 +878,8 @@ namespace SIDEPS.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
+            TempData.Keep();
+
             var modelo = new DetallesHistoricoCaso_M();
 
             using (var svc = new ServiciosWCFClient())

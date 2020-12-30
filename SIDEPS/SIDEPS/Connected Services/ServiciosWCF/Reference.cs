@@ -7807,11 +7807,11 @@ namespace SIDEPS.ServiciosWCF {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_InsMod_Persona", ReplyAction="http://tempuri.org/IServiciosWCF/SP_InsMod_PersonaResponse")]
         System.Threading.Tasks.Task<bool> SP_InsMod_PersonaAsync(SIDEPS.ServiciosWCF.SIDEPS_13REGPERS persona, System.Nullable<int> codigoCaso);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Ins_AspectoSalud", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Ins_AspectoSaludResponse")]
-        int SP_Ins_AspectoSalud(SIDEPS.ServiciosWCF.SIDEPS_16REGASPS aspecto, int codigoCaso);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_InsMod_AspectoSalud", ReplyAction="http://tempuri.org/IServiciosWCF/SP_InsMod_AspectoSaludResponse")]
+        int SP_InsMod_AspectoSalud(SIDEPS.ServiciosWCF.SIDEPS_16REGASPS aspecto, int codigoCaso);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Ins_AspectoSalud", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Ins_AspectoSaludResponse")]
-        System.Threading.Tasks.Task<int> SP_Ins_AspectoSaludAsync(SIDEPS.ServiciosWCF.SIDEPS_16REGASPS aspecto, int codigoCaso);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_InsMod_AspectoSalud", ReplyAction="http://tempuri.org/IServiciosWCF/SP_InsMod_AspectoSaludResponse")]
+        System.Threading.Tasks.Task<int> SP_InsMod_AspectoSaludAsync(SIDEPS.ServiciosWCF.SIDEPS_16REGASPS aspecto, int codigoCaso);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiciosWCF/SP_Ins_Vivienda", ReplyAction="http://tempuri.org/IServiciosWCF/SP_Ins_ViviendaResponse")]
         int SP_Ins_Vivienda(SIDEPS.ServiciosWCF.SIDEPS_20REGVIVI vivienda, int codigoCaso);
@@ -8167,12 +8167,12 @@ namespace SIDEPS.ServiciosWCF {
             return base.Channel.SP_InsMod_PersonaAsync(persona, codigoCaso);
         }
         
-        public int SP_Ins_AspectoSalud(SIDEPS.ServiciosWCF.SIDEPS_16REGASPS aspecto, int codigoCaso) {
-            return base.Channel.SP_Ins_AspectoSalud(aspecto, codigoCaso);
+        public int SP_InsMod_AspectoSalud(SIDEPS.ServiciosWCF.SIDEPS_16REGASPS aspecto, int codigoCaso) {
+            return base.Channel.SP_InsMod_AspectoSalud(aspecto, codigoCaso);
         }
         
-        public System.Threading.Tasks.Task<int> SP_Ins_AspectoSaludAsync(SIDEPS.ServiciosWCF.SIDEPS_16REGASPS aspecto, int codigoCaso) {
-            return base.Channel.SP_Ins_AspectoSaludAsync(aspecto, codigoCaso);
+        public System.Threading.Tasks.Task<int> SP_InsMod_AspectoSaludAsync(SIDEPS.ServiciosWCF.SIDEPS_16REGASPS aspecto, int codigoCaso) {
+            return base.Channel.SP_InsMod_AspectoSaludAsync(aspecto, codigoCaso);
         }
         
         public int SP_Ins_Vivienda(SIDEPS.ServiciosWCF.SIDEPS_20REGVIVI vivienda, int codigoCaso) {

@@ -64,11 +64,11 @@ public class ServiciosWCF : IServiciosWCF
         }
     }
 
-    public int SP_Ins_AspectoSalud(SIDEPS_16REGASPS aspecto, int codigoCaso)
+    public int SP_InsMod_AspectoSalud(SIDEPS_16REGASPS aspecto, int codigoCaso)
     {
         try
         {
-            return this.aspectoSaludLN.SP_Ins_AspectoSalud(aspecto, codigoCaso);
+            return this.aspectoSaludLN.SP_InsMod_AspectoSalud(aspecto, codigoCaso);
         }
         catch
         {

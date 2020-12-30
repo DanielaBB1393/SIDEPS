@@ -4,6 +4,6 @@ namespace LogicaNegocios.Interfaces
 {
     public interface IAspectoSaludLN
     {
-        int SP_Ins_AspectoSalud(SIDEPS_16REGASPS aspecto, int codigoCaso);
+        int SP_InsMod_AspectoSalud(SIDEPS_16REGASPS aspecto, int codigoCaso);
     }
 }

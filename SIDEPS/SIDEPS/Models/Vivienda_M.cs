@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace SIDEPS.Models
 {
@@ -20,6 +21,7 @@ namespace SIDEPS.Models
         public Nullable<int> CODMATE17 { get; set; }
 
         [DisplayName("Monto vivienda")]
+        [DisplayFormat(DataFormatString = "{0:#.##}", ApplyFormatInEditMode = true)]
         public Nullable<decimal> MTOVIVI20 { get; set; }
 
         [DisplayName("Numero aposentos")]

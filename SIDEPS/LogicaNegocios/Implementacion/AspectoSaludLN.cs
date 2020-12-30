@@ -9,11 +9,11 @@ namespace LogicaNegocios.Implementacion
     {
         private readonly IAspectoSaludAD aspectoSaludAD = new AspectoSaludAD();
 
-        public int SP_Ins_AspectoSalud(SIDEPS_16REGASPS aspecto, int codigoCaso)
+        public int SP_InsMod_AspectoSalud(SIDEPS_16REGASPS aspecto, int codigoCaso)
         {
             try
             {
-                return this.aspectoSaludAD.SP_Ins_AspectoSalud(aspecto, codigoCaso);
+                return this.aspectoSaludAD.SP_InsMod_AspectoSalud(aspecto, codigoCaso);
             }
             catch
             {

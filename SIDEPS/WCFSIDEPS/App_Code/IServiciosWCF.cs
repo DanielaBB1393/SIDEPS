@@ -36,7 +36,7 @@ public interface IServiciosWCF
     bool SP_InsMod_Persona(SIDEPS_13REGPERS persona, int? codigoCaso);
 
     [OperationContract]
-    int SP_Ins_AspectoSalud(SIDEPS_16REGASPS aspecto, int codigoCaso);
+    int SP_InsMod_AspectoSalud(SIDEPS_16REGASPS aspecto, int codigoCaso);
 
     [OperationContract]
     int SP_Ins_Vivienda(SIDEPS_20REGVIVI vivienda, int codigoCaso);

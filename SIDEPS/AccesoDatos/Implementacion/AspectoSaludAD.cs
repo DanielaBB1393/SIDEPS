@@ -8,7 +8,7 @@ namespace AccesoDatos.Implementacion
     {
         private readonly SIDEPSEntities contexto = new SIDEPSEntities();
         // Metodo para insertar  y modificar el aspecto de salud
-        public int SP_Ins_AspectoSalud(SIDEPS_16REGASPS aspecto, int codigoCaso)// recibe como parametros
+        public int SP_InsMod_AspectoSalud(SIDEPS_16REGASPS aspecto, int codigoCaso)// recibe como parametros
         {
             try
             {
